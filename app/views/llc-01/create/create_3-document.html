@@ -1,0 +1,35 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Register a local land charge </h1>
+          <h2 class="heading-medium">What document gave rise to the charge? </h2>
+
+          <form>
+            <fieldset class="inline">
+                <legend class="visuallyhidden">What document gave rise to the charge? </legend>
+
+                <div class="form-group">
+                  <label class="form-label" for="document">
+                    Document
+                  </label>
+                    <input class="form-control" id="document" type="text">
+                </div>
+
+              </fieldset>
+              <a class="button" href="/llc-01/create-4" role="button">Continue</a>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

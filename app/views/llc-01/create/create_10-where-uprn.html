@@ -1,0 +1,38 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Register a local land charge </h1>
+          <h2 class="heading-medium">What land does the charge affect? </h2>
+
+          <form>
+            <fieldset class="inline">
+                <legend class="visuallyhidden">What land does the charge affect?</legend>
+
+                <div class="form-group">
+                 <label class="form-label" for="geo-desc">Geographical description</label>
+                    <input class="form-control" id="geo-desc" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="orig-auth">Unique Property Reference Number</label>
+                    <input class="form-control" id="orig-auth" type="text">
+                </div>
+
+              </fieldset>
+              <a class="button" href="/llc-01/create-11" role="button">Continue</a>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

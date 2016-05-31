@@ -1,0 +1,42 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1 class="heading-large">Register a local land charge </h1>
+            <h2 class="heading-medium">s8 Land compensation charge stuff </h2>
+
+          <form>
+            <fieldset class="inline">
+                <legend class="visuallyhidden">s8 Land compensation charge stuff</legend>
+
+                <div class="form-group">
+                  <label class="form-label" for="capacity">
+                    Retained land description
+                  </label>
+                    <input class="form-control" id="capacity" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="compensation">
+                    Works particulars
+                  </label>
+                    <input class="form-control" id="compensation" type="text">
+                </div>
+
+              </fieldset>
+              <a class="button" href="/llc-01/create-7" role="button">Continue</a>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}
