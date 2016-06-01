@@ -1,6 +1,8 @@
 # llc-prototype
 Local land charge register Prototype
 
+Can be seen running https://heroku.com/apps/lr-llc-prototype/
+
 Follow the installation instructions below to install. It's that simple.
 
 ## Requirements
@@ -20,12 +22,6 @@ If you don't have Node, download it here: [http://nodejs.org/](http://nodejs.org
 ## Getting started
 
 Install Node.js (see requirements)
-
-#### Download the drv ux prototype kit
-
-[Download the ZIP](https://github.com/LandRegistry/drv-ux-prototypes/archive/master.zip)
-
-Unzip the file
 
 #### Install dependencies
 
@@ -90,3 +86,4 @@ Read the [project principles](docs/principles.md).
 - [Creating routes (server-side programming)](docs/creating-routes.md)
 
 This project is built on top of Express, the idea is that it is straightforward to create simple static pages out of the box. However, you're not limited to that - more dynamic sites can be built with more understanding of Express. Here's a good [Express tutorial.](http://code.tutsplus.com/tutorials/introduction-to-express--net-33367)
+
