@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/llc-:version/create-:screen', function (req, res) {
+router.get('/llc-01/create-:screen', function (req, res) {
   desc = '';
   today ='';
   charge_type='';
@@ -46,4 +46,32 @@ router.get('/llc-:version/create-:screen', function (req, res) {
     {'title' : '', 'today' : today, 'charge_type' : 'light obstruction notice'});
 });
 
+router.get('/llc-02/register-:screen', function (req, res) {
+  desc = '';
+  today ='';
+  charge_type='';
+if (req.params.screen == 1) {
+    desc = 'charge-type' }
+  else if (req.params.screen == 2) {
+    charge_type = req.body.charge_type;
+    desc = 'where'}
+  else if (req.params.screen == 3)
+    desc = 'where-map'
+  else if (req.params.screen == 4)
+    desc = 'description'
+  else if (req.params.screen == 5)
+    desc = 'law'
+  else if (req.params.screen == 6)
+    desc = 'instrument'
+  else if (req.params.screen == 7)
+    desc = 'further-info'
+  else if (req.params.screen == 8)
+    desc = 'term'
+  else if (req.params.screen == 9)
+    desc = 'submit'
+  else if (req.params.screen == 10)
+    desc = 'confirm'
+  res.render('llc-' + '02' + '/register/register_' +req.params.screen + '-' + desc,
+    {'title' : '', 'today' : today, 'charge_type' : 'light obstruction notice'});
+});
 module.exports = router;

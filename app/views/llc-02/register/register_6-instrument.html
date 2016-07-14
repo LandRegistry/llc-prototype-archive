@@ -1,0 +1,75 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Register a local land charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a local land charge </h1>
+          <h2 class="heading-medium">What instrument was used to create the charge?</h2>
+          <form method="post">
+            <fieldset>
+              <div class="form-group">
+                <legend class="visuallyhidden">What instrument was used to create the charge?</legend>
+
+                <label class="block-label" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="charge_type" value="light_obstruction">
+                  Agreement
+                </label>
+                <label class="block-label" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="charge_type" value="local_compensation_charge">
+                  Certificate
+                </label>
+                <label class="block-label" for="radio-inline-3">
+                  <input id="radio-inline-3" type="radio" name="charge_type" value="smoke_control">
+                  Covenants
+                </label>
+                <label class="block-label" for="radio-inline-4">
+                  <input id="radio-inline-4" type="radio" name="charge_type" value="other">
+                  Deed
+                </label>
+                  <label class="block-label" for="radio-inline-5">
+                  <input id="radio-inline-5" type="radio" name="charge_type" value="other">
+                  Deed of modification
+                </label>
+                <label class="block-label" for="radio-inline-6">
+                  <input id="radio-inline-6" type="radio" name="charge_type" value="other">
+                  Notice
+                </label>
+                <label class="block-label" for="radio-inline-7">
+                  <input id="radio-inline-7" type="radio" name="charge_type" value="other">
+                  Order
+                </label>
+                <label class="block-label" for="radio-inline-8">
+                  <input id="radio-inline-8" type="radio" name="charge_type" value="other">
+                  Resolution
+                </label>
+                <label class="block-label" for="radio-inline-9">
+                  <input id="radio-inline-9" type="radio" name="charge_type" value="other">
+                  Scheme
+                </label>
+                <label class="block-label" for="radio-inline-10">
+                  <input id="radio-inline-10" type="radio" name="charge_type" value="other">
+                  Transfer
+                </label>
+                <label class="block-label" for="radio-inline-11">
+                  <input id="radio-inline-11" type="radio" name="charge_type" value="other">
+                  Undertaking
+                </label>
+              </div>
+            </fieldset>
+
+            <a class="button" href="/llc-02/register-7" role="button">Continue</a>
+        </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

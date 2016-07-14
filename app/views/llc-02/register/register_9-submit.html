@@ -1,0 +1,113 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Register a local land charge
+  </h1>
+    <h2 class="heading-medium">
+        Check the local land charge details before registering
+    </h2>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Local land charge
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Charge type
+        </td>
+        <td>
+          {{ charge_type }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Charge type</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Statutory provisions
+        </td>
+        <td>
+          (law/act/agreement)<br>
+          (section)<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Statutory provisions</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Document
+        </td>
+        <td>
+          (document type)<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Document</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Additional stuff
+        </td>
+        <td>
+          (some conditional additional stuff)
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Additional stuff</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Location
+        </td>
+        <td>
+          (map thumbnail)<br>
+          (text description)<br>
+            (UPRN)
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Location</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="form-group">
+    <a href="/llc-02/register-10" class="button">Register</a>
+  </div>
+
+</main>
+
+{% endblock %}

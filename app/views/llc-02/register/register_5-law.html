@@ -1,0 +1,43 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a local land charge </h1>
+          <h2 class="heading-medium">What legal provision allows the {{ charge_type }} to be registered? </h2>
+
+          <form>
+            <fieldset class="inline">
+                <legend class="visuallyhidden">What legal provision allows the charge to be registered? </legend>
+
+                <div class="form-group">
+                  <label class="form-label" for="law-act-agree">
+                    Law, Act or Agreement
+                  </label>
+                    <input class="form-control" id="law-act-agree" type="text">
+                </div>
+
+              <div class="form-group">
+                  <label class="form-label" for="section">
+                    Section
+                  </label>
+                    <input class="form-control" id="section" type="text">
+                </div>
+
+              </fieldset>
+              <a class="button" href="/llc-02/register-6" role="button">Continue</a>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

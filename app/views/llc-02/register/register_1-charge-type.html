@@ -1,0 +1,43 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Register a local land charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a local land charge </h1>
+          <h2 class="heading-medium">What is the charge type?</h2>
+          <form method="post">
+            <fieldset>
+              <div class="form-group">
+                <legend class="visuallyhidden">What is the charge type?</legend>
+
+                <label class="block-label" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="charge_type" value="light_obstruction">
+                  Conditional planning
+                </label>
+                <label class="block-label" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="charge_type" value="local_compensation_charge">
+                  Planning obligation
+                </label>
+                <label class="block-label" for="radio-inline-3">
+                  <input id="radio-inline-3" type="radio" name="charge_type" value="smoke_control">
+                  Enforcement notice
+                </label>
+              </div>
+            </fieldset>
+
+            <a class="button" href="/llc-02/register-2" role="button">Continue</a>
+        </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}
