@@ -1,0 +1,37 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a {{ charge_type }} charge </h1>
+          <h2 class="heading-medium">Description</h2>
+          <form action="/llc-03/register-6" method="POST">
+            <fieldset class="inline">
+                <legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
+
+                <div class="form-group">
+                  <label class="form-label" for="description">
+                     Describe where the charge is and what it affects
+                  </label>
+                    <span class="form-hint">For example, Land to the west of 2 William Prance Road PL6 5WS.</span>
+                    <textarea class="form-control" id="description" name="description" cols="30" rows="10" value="{{ address }}">{{ address }}</textarea>
+                </div>
+            </fieldset>
+              <div class="form-group">
+                <input class="button" type="submit" value="Continue">
+              </div>
+          </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

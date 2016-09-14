@@ -1,0 +1,32 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight">
+        <h1 class="bold-large">The {{ charge_type }} charge was registered</h1>
+        <p>
+          The reference number is <br>
+          <strong class="heading-medium">HDJ2123F</strong>
+        </p>
+      </div>
+
+      <!--<p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>-->
+
+    </div>
+  </div>
+
+  <a href="/llc-03/register-0">Register a local land charge</a>
+
+</main>
+
+{% endblock %}

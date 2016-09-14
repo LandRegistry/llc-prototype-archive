@@ -1,0 +1,45 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Register a {{ charge_type }} charge </h1>
+          <h2 class="heading-medium">Location</h2>
+
+
+              <div class="form-group">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Where is the charge?</legend>
+
+                    <div class="form-group spacing-bottom-half ">
+
+                        <label class="form-label" for="postcode">
+                            Enter the postcode or area
+                        </label>
+
+                        <input class="form-control" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+                        <a class="button" href="#" role="button">Search</a>
+                    </div>
+              </fieldset>
+              </div>
+              <!--<input class="button" type="submit" value="Continue">-->
+
+        </div>
+      </div>
+
+    <span class="form-hint">Draw the boundary of the charge.</span>
+    <img src="/public/images/llc-03/postcode.png" style="width:960px;height:480px;">
+    <form action="/llc-03/register-43" method="POST">
+        <input class="button" type="submit" value="Continue">
+    </form>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Register a {{ charge_type }} charge
+  </h1>
+
+  <p class="text">
+     The local land charge is now ready to be registered. Check the details are correct before registering.
+  </p>
+
+  <form action="/llc-03/register-10" method="POST">
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Charge
+        </td>
+        <td>
+          {{ charge_type }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Charge type</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Legislation
+        </td>
+        <td>
+          {{ act_agree }} <br>
+          {{ section }} <br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Legislation</span>
+          </a>
+        </td>
+      </tr>
+       <tr>
+        <td>
+          Location
+        </td>
+        <td>
+            <img src="/public/images/llc-03/boundary.png" style="width:388px;height:317px;">
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Location</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Description
+        </td>
+        <td>
+          {{ description }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Description</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Additional information
+        </td>
+        <td>
+          {{ further_info }}<br>
+          {{ reference }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Additional information</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Instrument
+        </td>
+        <td>
+          {{ instrument }}<br>
+          {{ creation_date }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Instrument</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Expiry
+        </td>
+        <td>
+          {{ expiry }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">expiry</span>
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+    <p></p>
+
+
+  <div class="form-group">
+      <input class="button" type="submit" value="Register">
+  </div>
+</form>
+
+</main>
+
+{% endblock %}

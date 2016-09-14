@@ -1,0 +1,92 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Register a {{ charge_type }} charge </h1>
+          <h2 class="heading-medium">Search results for</h2>
+
+          <form action="/llc-03/register-3" method="POST">
+              <div class="form-group">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Where is the charge?</legend>
+
+                    <div class="form-group spacing-bottom-half ">
+
+                        <label class="form-label" for="search_term">
+                        </label>
+                        <input class="form-control" id="search_term" name="search_term" type="text" value="{{ search_term }}" autofocus="autofocus">
+                        <a class="button" href="#" role="button">Search</a>
+                        <br>
+                        <br>
+                        <ul class="list">
+                            <li><a href="/llc-03/register-42/address=1 Clinton Street, Exeter {{ search_term }}">
+                                1 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=3 Clinton Street, Exeter {{ search_term }}">
+                                3 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=5 Clinton Street, Exeter {{ search_term }}">
+                                5 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=7 Clinton Street, Exeter {{ search_term }}">
+                                7 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=9 Clinton Street, Exeter {{ search_term }}">
+                                9 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=11 Clinton Street, Exeter {{ search_term }}">
+                                11 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=13 Clinton Street, Exeter {{ search_term }}">
+                                13 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=15 Clinton Street, Exeter {{ search_term }}">
+                                15 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=17 Clinton Street, Exeter {{ search_term }}">
+                                17 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=19 Clinton Street, Exeter {{ search_term }}">
+                                19 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=21 Clinton Street, Exeter {{ search_term }}">
+                                21 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=23 Clinton Street, Exeter {{ search_term }}">
+                                23 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=25 Clinton Street, Exeter {{ search_term }}">
+                                25 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=27 Clinton Street, Exeter {{ search_term }}">
+                                27 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=29 Clinton Street, Exeter {{ search_term }}">
+                                29 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="/llc-03/register-42/address=31 Clinton Street, Exeter {{ search_term }}">
+                                31 Clinton Street, Exeter {{ search_term }}
+                            </a></li>
+                            <li><a href="#" class="bold-xsmall">
+                                Show the map for {{ search_term }}
+                            </a></li>
+                        </ul>
+
+                    </div>
+                </fieldset>
+              </div>
+
+            </form>
+      </div>
+
+</main>
+
+{% endblock %}

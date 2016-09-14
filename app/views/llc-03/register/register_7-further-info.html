@@ -1,0 +1,44 @@
+{% extends "layout_lr.html" %}
+
+{% block page_title %}
+  Local land charges
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1 class="heading-large">Register a {{ charge_type }} charge </h1>
+            <h2 class="heading-medium">Additional information</h2>
+
+            <form action="/llc-03/register-7" method="POST">
+            <fieldset class="inline">
+                <legend class="visuallyhidden">Is there any additional information held somewhere else? </legend>
+
+                <div class="form-group">
+                      <label class="form-label" for="ext-link">
+                        Is there any additional information held somewhere else? <br>
+                      </label>
+                    <span class="form-hint">This could be a link, location or address. </span>
+                        <textarea class="form-control" id="ext-link" name="further_info" cols="60" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reference">
+                        Reference
+                    </label>
+                    <input class="form-control" id="reference" name="reference" type="text">
+                </div>
+
+              </fieldset>
+              <div class="form-group">
+                <input class="button" type="submit" value="Continue">
+              </div>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

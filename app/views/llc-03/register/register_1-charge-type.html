@@ -12,28 +12,28 @@
         <div class="column-two-thirds">
 
           <h1 class="heading-large">Register a local land charge </h1>
-          <h2 class="heading-medium">What is the charge type?</h2>
-          <form name="llc" method="post">
+          <h2 class="heading-medium">What does the local land charge relate to?</h2>
+          <form action="/llc-03/register-1" method="POST">
             <fieldset>
               <div class="form-group">
-                <legend class="visuallyhidden">What is the charge type?</legend>
+                <legend class="visuallyhidden">What does the local land charge relate to?</legend>
 
                 <label class="block-label" for="radio-inline-1">
-                  <input id="radio-inline-1" type="radio" name="charge_type" value="conditional planning">
-                  Conditional planning
+                  <input id="radio-inline-1" type="radio" name="charge_type" value="planning">
+                  Planning
                 </label>
                 <label class="block-label" for="radio-inline-2">
-                  <input id="radio-inline-2" type="radio" name="charge_type" value="planning obligation">
-                  Planning obligation
+                  <input id="radio-inline-2" type="radio" name="charge_type" value="miscellaneous">
+                  Miscellaneous
                 </label>
                 <label class="block-label" for="radio-inline-3">
-                  <input id="radio-inline-3" type="radio" name="charge_type" value="enforcement notice">
-                  Enforcement notice
+                  <input id="radio-inline-3" type="radio" name="charge_type" value="listed building">
+                  Listed building
                 </label>
               </div>
             </fieldset>
 
-            <a class="button" href="/llc-02/register-2" role="button">Continue</a>
+            <input class="button" type="submit" value="Continue">
         </form>
         </div>
       </div>
