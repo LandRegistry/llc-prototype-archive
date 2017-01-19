@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirm address
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <h1 class="heading-large">Register a <span class="charge_type_v1-1"></span> charge </h1>
+        <h2 class="heading-medium">Search results for <span class="post_code"></span></h2>
+
+        <label class="form-label" for="search_term">
+        </label>
+        <input class="form-control postcode_searched" id="search_term" name="search_term" type="text" value="{{ search_term }}">
+        <a class="button search" href="#" role="button">Search</a><br><br>
+        
+        <form action="/llc-03/register-3" method="POST">
+          <div class="form-group">
+            <fieldset class="inline">
+                <legend class="visuallyhidden">Where is the charge?</legend>
+
+                <div class="form-group spacing-bottom-half ">
+
+                    <p>Select the address from the list below:</p>
+                    
+                    <div class="browse">
+                        <ul class="list">
+                            <li><a href="register_42-where-map-address.html">
+                                1 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                3 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                5 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                7 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                9 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                11 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                13 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                15 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                17 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                19 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                21 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                23 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                25 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                27 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                29 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                            <li><a href="register_42-where-map-address.html">
+                                31 Clinton Street, Exeter <span class="post_code"></span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+
+                </div>
+                <p><a href="#" class="bold-xsmall">
+                    Show the map for <span class="post_code"></span>
+                </a></p>
+
+            </div>
+        </fieldset>
+        
+    </div>
+    <!-- <div class="column-two-thirds">
+    <img src="/public/images/llc-03/address.png" style="width:500px;height:auto;margin-top: ">
+    </div> -->
+
+
+</form>
+</div>
+
+</main>
+
+<script>
+    chargeType = sessionStorage.getItem("chargeType");
+    chargeType = chargeType.toLowerCase();
+    console.log(chargeType);
+    postcode = sessionStorage.getItem("postcode");
+    console.log(postcode);
+</script>
+
+{% endblock %}

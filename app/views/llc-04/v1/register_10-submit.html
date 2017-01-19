@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Review new charge details
+{% endblock %} 
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Register a <span class="charge_type"></span> charge
+  </h1>
+
+  <p class="text">
+   The local land charge is now ready to be registered. Check the details are correct and click the 'Register' button below.
+ </p>
+
+ <form action="/llc-03/register-10" method="POST">
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Charge
+        </td>
+        <td>
+          <span class="charge_type"></span><br>
+        </td>
+        <td class="change-answer">
+          <a href="register_1-charge-type_new.html">
+            Edit <span class="visuallyhidden">Charge type</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Legislation
+        </td>
+        <td>
+          <span class="legislation"></span>
+        </td>
+        <td class="change-answer">
+          <a href="register_1-charge-type_new.html">
+            Edit <span class="visuallyhidden">Legislation</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Location
+        </td>
+        <td>
+          <span class="address"></span><br><br>
+          <img src="/public/images/llc-03/boundary.png" style="width:388px;height:317px;">
+        </td>
+        <td class="change-answer">
+          <a href="register_31-where-search.html">
+            Edit <span class="visuallyhidden">Location</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Description
+        </td>
+        <td>
+          <span class="description"></span><br>
+        </td>
+        <td class="change-answer">
+          <a href="register_6-description.html">
+            Edit <span class="visuallyhidden">Description</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Additional information
+        </td>
+        <td>
+          <span class="further_info"></span><br>
+          <span class="reference"></span><br>
+        </td>
+        <td class="change-answer">
+          <a href="register_7-further-info.html">
+            Edit <span class="visuallyhidden">Additional information</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Instrument
+        </td>
+        <td>
+          <span class="instrument_result"></span><br>
+          <span class="doc-day"></span> / <span class="doc-month"></span> / <span class="doc-year"></span><br>
+        </td>
+        <td class="change-answer">
+          <a href="register_8-instrument.html">
+            Edit <span class="visuallyhidden">Instrument</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Expiry
+        </td>
+        <td>
+          <span class="expiry"></span><br>
+        </td>
+        <td class="change-answer">
+          <a href="register_9-term.html">
+            Edit <span class="visuallyhidden">expiry</span>
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p></p>
+
+
+  <p>
+    <a class="button" href="register_11-confirm.html" role="button">Register</a>
+  </p>
+</form>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+      chargeType = chargeType.toLowerCase();
+      console.log(chargeType);
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+  description = sessionStorage.getItem("description");
+  console.log(description);
+  furtherInfo = sessionStorage.getItem("furtherInfo");
+  console.log(furtherInfo);
+  instrument = sessionStorage.getItem("instrument");
+  console.log(instrument);
+  docDay = sessionStorage.getItem("docDay");
+  console.log(docDay);
+  docMonth = sessionStorage.getItem("docMonth");
+  console.log(docMonth);
+  docYear = sessionStorage.getItem("docYear");
+  console.log(docYear);
+  expiry = sessionStorage.getItem("expiry");
+  console.log(expiry);
+  reference = sessionStorage.getItem("reference");
+  console.log(reference);
+  legislation = sessionStorage.getItem("legislation");
+  console.log(legislation);
+</script>
+
+{% endblock %}

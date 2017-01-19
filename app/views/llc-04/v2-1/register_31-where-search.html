@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Find the place that the charge affects
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Where is the charge?</h2>
+      <p>Find the place that the charge affects.</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">Where is the charge?</legend>
+
+            <div class="form-group spacing-bottom-half ">
+
+              <label class="form-label" for="search_term">
+                Enter the postcode or place name
+              </label>
+
+              <input class="form-control postcode_field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus"><a class="button postcode_button search" href="register_32-where-search-results.html" role="button">Search</a>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <script>
+
+      chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+
+
+  </script>
+
+  {% endblock %}

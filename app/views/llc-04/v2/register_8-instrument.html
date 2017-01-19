@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Instrument of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Instrument</h2>
+      <form action="/llc-03/register-8" method="POST">
+        <fieldset>
+          <div class="form-group">  
+            <legend><span class="form-label-bold">What type of instrument was used to create the charge?</span><span class="form-hint" id="doc-hint">Select one from the list below</span></legend>
+            <label class="block-label" for="radio-inline-1">
+              <input id="radio-inline-1" class="instrument_radio" type="radio" name="instrument" value="agreement">
+              Agreement
+            </label>
+            <label class="block-label" for="radio-inline-2">
+              <input id="radio-inline-2" class="instrument_radio" type="radio" name="instrument" value="certificate">
+              Certificate
+            </label>
+            <label class="block-label" for="radio-inline-3">
+              <input id="radio-inline-3" class="instrument_radio" type="radio" name="instrument" value="covenants">
+              Covenants
+            </label>
+            <label class="block-label" for="radio-inline-4">
+              <input id="radio-inline-4" class="instrument_radio" type="radio" name="instrument" value="deed">
+              Deed
+            </label>
+            <label class="block-label" for="radio-inline-5">
+              <input id="radio-inline-5" class="instrument_radio" type="radio" name="instrument" value="deed of modification">
+              Deed of modification
+            </label>
+            <label class="block-label" for="radio-inline-6">
+              <input id="radio-inline-6" class="instrument_radio" type="radio" name="instrument" value="notice">
+              Notice
+            </label>
+            <label class="block-label" for="radio-inline-7">
+              <input id="radio-inline-7" class="instrument_radio" type="radio" name="instrument" value="order">
+              Order
+            </label>
+            <label class="block-label" for="radio-inline-8">
+              <input id="radio-inline-8" class="instrument_radio" type="radio" name="instrument" value="resolution">
+              Resolution
+            </label>
+            <label class="block-label" for="radio-inline-9">
+              <input id="radio-inline-9" class="instrument_radio" type="radio" name="instrument" value="scheme">
+              Scheme
+            </label>
+            <label class="block-label" for="radio-inline-10">
+              <input id="radio-inline-10" class="instrument_radio" type="radio" name="instrument" value="transfer">
+              Transfer
+            </label>
+            <label class="block-label" for="radio-inline-11">
+              <input id="radio-inline-11" class="instrument_radio" type="radio" name="instrument" value="undertaking">
+              Undertaking
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <legend>
+              <span class="form-label-bold">
+                What is the date of the instrument?
+              </span>
+              <span class="form-hint" id="doc-hint">For example, 31 3 2016</span>
+            </legend>
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="doc-day">Day</label>
+                <input class="form-control" id="doc-day" name="doc_day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+              </div>
+              <div class="form-group form-group-month">
+                <label class="form-label" for="doc-month">Month</label>
+                <input class="form-control" id="doc-month" name="doc_month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label class="form-label" for="doc-year">Year</label>
+                <input class="form-control" id="doc-year" name="doc_year" type="number" pattern="[0-9]*" min="0" max="2016">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <p>
+          <a class="button instrument_button" href="register_9-term.html" role="button">Continue</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+ chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+</script>
+
+{% endblock %}

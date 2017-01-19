@@ -1,0 +1,11 @@
+<ul>
+	<li><a href="register_31-where-search.html">Buildings of Special Architectural and Historic Interest</a></li>
+	<li><a href="register_31-where-search.html">Planning (Listed Buildings and Conservation Areas) Act 1990</a></li>
+</ul>
+
+<script>
+	$(".result_1 li a").click(function() {
+		var legislation = $(this).html();
+		sessionStorage.setItem("legislation", legislation);
+	});
+</script>

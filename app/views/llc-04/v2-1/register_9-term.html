@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Expiry date of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Expiry</h2>
+
+
+      <form action="/llc-03/register-9" method="POST">
+        <fieldset class="inline">
+          <legend class="visuallyhidden"></legend>
+
+          <div class="form-group">
+            <label class="form-label" for="expiry-date">
+              When does the charge expire? (optional)
+              <span class="form-hint">For example, 19/05/2020 or 5 years after building works start</span>
+            </label>
+            <input class="form-control" id="expiry-date" name="expiry" type="text">
+          </div>
+
+        </fieldset>
+        <p>
+          <a class="button expiry_button" href="register_10-submit.html" role="button">Continue</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+</script>
+
+{% endblock %}

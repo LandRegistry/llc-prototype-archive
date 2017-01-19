@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Description of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Description</h2>
+      <form action="/llc-03/register-6" method="POST">
+        <fieldset class="inline">
+          <legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="description">
+             Describe where the charge is for <span class="address"></span> and what it affects.
+           </label>
+           <span class="form-hint">For example, Land to the west of <span class="address"></span>.</span>
+           <textarea class="form-control" id="description" name="description" cols="30" rows="10" value="{{ address }}"></textarea>
+         </div>
+       </fieldset>
+       
+     </form>
+     <p>
+      <a class="button description_button" href="register_7-further-info.html" role="button">Continue</a>
+    </p>
+  </div>
+</div>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+</script>
+
+{% endblock %}
