@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Select charge type
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge</h1>
+      <h2 class="heading-medium">Legislation</h2>
+      <div class="ui-widget">
+        <label class="form-label" for="tags">
+          Legislation 
+          <span class="form-hint">Start typing the legislation you are looking for and select it from the list</span>
+        </label>
+        <input class="form-control" id="tags" type="text">
+        <p>
+          <a class="button legislation_button" href="register_31-where-search" role="button">Continue</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    var availableTags = [
+    "Requisitioned Land and War Works 1948",
+      "National Park and Access to the Countryside Act",
+      "Hill Farming Act 1954",
+      "Underground Works (London) Act 1956",
+      "Land Powers (Defence) Act 1958",
+      "Weeds Act 1959",
+      "Gas Act 1965",
+      "Agriculture Act 1967",
+      "European Communities Act 1972",
+      "Ancient Monuments Archaeological Areas Act 1979",
+      "Highways Act 1980",
+      "Compulsory Purchase (Vesting Decorations) Act 1981",
+      "Disused Burial Grounds (Amendment) Act 1981",
+      "Wildlife and Countryside Act 1981",
+      "Local Government (Miscellaneous Provisions) Act 1982",
+      "Pastoral Measure 1983",
+      "Building Act 1984",
+      "Housing Act 1985",
+      "Yorkshire Water Authority Act 1986",
+      "Housing Act 1988",
+      "Local Government and Housing Act",
+      "The Education (Inner London Education Authority) (Property Transfer) Order",
+      "Case of Churches and Ecclesiastical Jurisdiction Measure 1991",
+      "New Road and Street Works Act",
+      "Water Industry Act 1991",
+      "The Education (London Residuary Body)(Property Transfer) Order 1991",
+      "Cardiff Bay Barage Act 1993",
+      "Clean Air Act 1993",
+      "Leasehold Reform, Housing and Urban Development Act 1993",
+      "The Conservation (Natural Habitats etc.) Regulations",
+      "Environment Act 1995",
+      "Housing Act 1996",
+      "Housing Grants, Construction and Regeneration Act 1996",
+      "Countryside and Rights of Way Act 2000",
+      "The Regulatory Reform (Housing Assistance) (England and Wales) Order 2002",
+      "Anti Social Behaviour Act 2003",
+      "Housing Act 2004"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Legal
+{% endblock %}
+
+{% block proposition_header %}
+    {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a {{ charge_type }} charge </h1>
+          <h2 class="heading-medium">Legislation</h2>
+            <form action="/llc-03/register-2" method="POST">
+            <fieldset class="inline">
+                <legend class="visuallyhidden">What legislation created the {{ data.charge_type }} charge? </legend>
+
+                    <div class="form-group">
+                      <label class="form-label" for="select-box">Select the act or agreement and section</label>
+                      <select class="form-control" id="select-box" name="act_agree" style="width: 650px">
+                          <option value="">Please select</option>
+                        <option>Town and Country Planning Act 1990 section 110(4)</option>
+                          <option>Town and Country Planning Act 1990 section 70</option>
+                         <option>Town and Country Planning Act 1990</option>
+                         <option>Town and Country Planning Act 1990 Section 172</option>
+                         <option>Town and Country Planning Act 1990 section 187A</option>
+                          <option>Town and Country Planning Act 1990 section 102</option>
+                          <option>Town and Country Planning Act 1990 section 106</option>
+                          <option>Town and Country Planning Act 1990 section 97</option>
+                          <option>Town and Country Planning Act 1990 schedule 9</option>
+                          <option>Town and Country Planning Act 1990 section 198</option>
+                          <option>Town and Country Planning Act 1990 section 201</option>
+                          <option>Town and Country Planning Act 1990 section 202</option>
+                          <option>Town and Country Planning Act 1990 section 215</option>
+                          <option>Town and Country Planning (General Permitted Development) 1995</option>
+                          <option>Planning and Compulsory Purchase Act 1995 schedule 3</option>
+                          <option></option>
+                      </select>
+                    </div>
+                </fieldset>
+
+                <p>
+                  <a class="button" href="register_31-where-search" role="button">Continue</a>
+                </p>
+            </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

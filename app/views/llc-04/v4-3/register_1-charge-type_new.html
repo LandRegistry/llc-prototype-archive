@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Select charge type
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Register a local land charge</h1>
+      <h2 class="heading-medium">What does the local land charge relate to?</h2>
+      <div class="">
+        <div class="column-third charge">
+          <form>
+            <div class="form-group">
+              <fieldset>
+
+                <legend class="visually-hidden">Charge type</legend>
+
+                <label class="block-label selection-button-radio charge_label" for="radio-1">
+                  <input id="radio-1" type="radio" name="radio-group" value="Planning">
+                  Planning
+                </label>
+                <label class="block-label selection-button-radio charge_label" for="radio-2">
+                  <input id="radio-2" type="radio" name="radio-group" value="Miscellaneous">
+                  Miscellaneous
+                </label>
+                <label class="block-label selection-button-radio charge_label" for="radio-3">
+                  <input id="radio-3" type="radio" name="radio-group" value="Listed building">
+                  Listed building
+                </label>
+                <label class="block-label selection-button-radio charge_label" for="radio-4">
+                  <input id="radio-4" type="radio" name="radio-group" value="General financial">
+                  General financial
+                </label>
+
+              </fieldset>
+
+            </div>
+            <p>
+            <a class="button button-start charge_button" role="button">Start now</a>
+            </p>
+          </form>
+        </div>
+        <div class="column-two-thirds result_1" id="result_1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+{% endblock %}

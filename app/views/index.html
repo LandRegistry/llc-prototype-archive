@@ -1,56 +1,76 @@
 {% extends "layout_lr.html" %}
 
 {% block page_title %}
-  Land Registry
+Land Registry
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-		<h1 class="heading-large">Local land charges <span class="heading-secondary">Prototypes</span></h1>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Local land charges <span class="heading-secondary">Prototypes</span></h1>
+
+			<div class="grid-row">
+				<div class="column-two-thirds">
+					<h2 class="heading-medium"><a href="/llc-04/v4-1/register_1-charge-type_new">Version 4</a></h2>
+					<h3 class="heading-small">Register a local land charge</h3>
+					<ul class="list list-number">
+						<li>General</li>
+						<ul class="list list-bullet">
+							<li>Added gov.uk header</li>
+						</ul>
+						<li>Charge description</li>
+						<ul class="list list-bullet">
+							<li>There are 2 UI versions to select the charge type - one where it uses <a href="/llc-04/v4-1/register_1-charge-type_new">accordion columns</a> and one where it uses <a href="/llc-04/v4-2/register_1-charge-type_new">autocomplete</a>.</li>
+							<li>There are also variations to these versions: one where it shows how many legislations apply to charge type (<a href="/llc-04/v4-3/register_1-charge-type_new">accordion</a>) and one where there is a link to a gov.uk page where it explains what these charge types are (<a href="/llc-04/v4-4/register_1-charge-type_new">autocomplete</a>).</li>
+							<li><a href="/llc-04/v4-1/lists/list1">test</a></li>
+						</ul>
+					</ul>
+				</ul>
+			</div>
+		</div>
 
 		<div class="grid-row">
 			<div class="column-two-thirds">
-			  <h2 class="heading-medium">Register a local land charge <a href="/llc-03/register-0">Version 3</a></h2>
+				<h2 class="heading-medium">Register a local land charge <a href="/llc-03/register-0">Version 3</a></h2>
 
 				<h3 class="heading-small">Tackling <a href="https://drive.google.com/file/d/0B_hFQnGgK8smRmE4eVBmRFNQZmM/view?usp=sharing">findings from user testing round 1</a></h3>
 
 				<ul class="list list-number">
 					<li>Charge description</li>
-						<ul class="list list-bullet">
-							<li>Reworded </li>
-							<li>Text box replaced with text area</li>
-							<li>Text area pre-populated with previously selected address - user able to amend or add to this information</li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>Reworded </li>
+						<li>Text box replaced with text area</li>
+						<li>Text area pre-populated with previously selected address - user able to amend or add to this information</li>
+					</ul>
 					<li>Legal provision</li>
-						<ul class="list list-bullet">
-							<li>Reworded</li>
-							<li>Text box replaced with drop-down populated with some values. </li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>Reworded</li>
+						<li>Text box replaced with drop-down populated with some values. </li>
+					</ul>
 					<li>Creation date</li>
-						<ul class="list list-bullet">
-							<li>Moved to different screen as this is actually the date of the document (instrument)</li>
-							<li>Text amended to refer to the document date.</li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>Moved to different screen as this is actually the date of the document (instrument)</li>
+						<li>Text amended to refer to the document date.</li>
+					</ul>
 					<li>Instrument</li>
-						<ul class="list list-bullet">
-							<li>Reworded</li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>Reworded</li>
+					</ul>
 
 					<li>Additional information</li>
 					<ul class="list list-bullet">
-							<li>Reworded </li>
-						</ul>
+						<li>Reworded </li>
+					</ul>
 					<li>Charge type</li>
-						<ul class="list list-bullet">
-							<li>(Not changed - remains limited to the most common charge types for simplicity)</li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>(Not changed - remains limited to the most common charge types for simplicity)</li>
+					</ul>
 					<li>Address list</li>
-						<ul class="list list-bullet">
-							<li>Screen added displaying list of addresses </li>
-						</ul>
+					<ul class="list list-bullet">
+						<li>Screen added displaying list of addresses </li>
+					</ul>
 				</ul>
 				<h4 class="heading-small">General changes</h4>
 				<ul class="list list-bullet">
@@ -72,65 +92,65 @@
 
 		<div class="grid-row">
 			<div class="column-two-thirds">
-			  <h2 class="heading-medium">Version 2 </h2>
+				<h2 class="heading-medium">Version 2 </h2>
 				<h3 class="heading-small"><a href="/llc-02/register-1">Register a local land charge</a></h3>
 			</div>
 		</div>
 
-      <div class="grid-row">
-        <div class="column-two-thirds">
-          <h2 class="heading-medium">Version 1</h2>
-			<h3 class="heading-small">Create local land charge</h3>
-			<ul>
-				<li><a href="/llc-01/create-1">Charge type</a></li>
-				<li><a href="/llc-01/create-2">Statutory provisions</a></li>
-				<li><a href="/llc-01/create-3">Document</a></li>
-				<li><a href="/llc-01/create-4">Term</a></li>
-				<li><a href="/llc-01/create-5">s8</a></li>
-				<li><a href="/llc-01/create-6">s52</a></li>
-				<li><a href="/llc-01/create-7">Additional info</a></li>
-				<li><a href="/llc-01/create-8">Originating authority</a></li>
-				<li><a href="/llc-01/create-9">Mapping</a></li>
-				<li><a href="/llc-01/create-10">UPRN</a></li>
-				<li><a href="/llc-01/create-11">Submit</a></li>
-				<li><a href="/llc-01/create-12">Confirm</a></li>
-			</ul>
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<h2 class="heading-medium">Version 1</h2>
+				<h3 class="heading-small">Create local land charge</h3>
+				<ul>
+					<li><a href="/llc-01/create-1">Charge type</a></li>
+					<li><a href="/llc-01/create-2">Statutory provisions</a></li>
+					<li><a href="/llc-01/create-3">Document</a></li>
+					<li><a href="/llc-01/create-4">Term</a></li>
+					<li><a href="/llc-01/create-5">s8</a></li>
+					<li><a href="/llc-01/create-6">s52</a></li>
+					<li><a href="/llc-01/create-7">Additional info</a></li>
+					<li><a href="/llc-01/create-8">Originating authority</a></li>
+					<li><a href="/llc-01/create-9">Mapping</a></li>
+					<li><a href="/llc-01/create-10">UPRN</a></li>
+					<li><a href="/llc-01/create-11">Submit</a></li>
+					<li><a href="/llc-01/create-12">Confirm</a></li>
+				</ul>
 
-        </div>
-      </div>
+			</div>
+		</div>
 
-      <div class="grid-row">
-        <div class="column-two-thirds">
+		<div class="grid-row">
+			<div class="column-two-thirds">
 
-          <hr class="spacing-top-flush">
+				<hr class="spacing-top-flush">
 
-          <h2 class="heading-medium">Other resources</h2>
+				<h2 class="heading-medium">Other resources</h2>
 
-			<ul class="list list-bullet">
-				<li>
-					<a href="http://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
-
-
-        </div>
-      </div>
+				<ul class="list list-bullet">
+					<li>
+						<a href="http://govuk-elements.herokuapp.com/snippets/">
+							Guide to GOV.UK Elements
+						</a>
+					</li>
+					<li>
+						<a href="https://www.gov.uk/service-manual">
+							Service design manual
+						</a>
+					</li>
+					<li>
+						<a href="https://www.gov.uk/design-principles">
+							Government Digital Service Design Principles
+						</a>
+					</li>
+				</ul>
 
 
-    </div>
-  </div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
 </main>
 
 {% endblock %}

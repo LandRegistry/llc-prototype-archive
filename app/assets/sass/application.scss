@@ -39,41 +39,235 @@
 }
 
 #global-header #logo {
-    background: none;
-    }
+  background: none;
+}
 
 #global-header #logo img {
-    height: 0px;
-  }
+  height: 32px;
+}
 
-  #global-header-bar {
-    height: 10px;
-    background-color: #66CC33;
+#global-header-bar {
+  height: 10px;
+  background-color: #66CC33;
 }
 
  // Remove GOV.UK footer styles
-  #footer {
+  /* #footer {
     border: 0;
     background: $white;
-  }
+    }*/
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .highlighted-event {
-    background-color: #28a197;
-    color: #fff;
-    text-align: center;
-    padding: 0.1em 2em 0.2em 2em;
-    margin: 0 -1em 1em -1em;
+  background-color: #28a197;
+  color: #fff;
+  text-align: center;
+  padding: 0.1em 2em 0.2em 2em;
+  margin: 0 -1em 1em -1em;
 }
 
 .warning {
-    background-color: #fff2d3;
-    padding: 20px;
-    margin: 30px 0;
+  background-color: #fff2d3;
+  padding: 20px;
+  margin: 30px 0;
 }
 
 .media-item {
+  float: left;
+  margin-right: 20px;
+}
+
+// This is where the new UI styles are
+
+.browse ul li a,
+.control ul li a,
+.result_1 ul li a {
+  color: #005ea5;
+  text-decoration: none;
+  line-height: 1.5;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.control ul a::after {
+  position: relative;
+  top: 50%;
+  margin-top: -2px;
+  right: 10px;
+  /*float: right;*/
+  margin-left: 10px;
+  float: right;
+  content: "\203A";
+}
+
+.control ul li a:hover,
+.result_1 ul li a:hover,
+.browse ul li a:hover {
+  background: #F8F8F8;
+}
+
+.search {
+  margin-left: 1em;
+}
+
+#description,
+#further_info {
+  width: 100%;
+}
+
+.browse ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+  overflow: none;
+}
+
+// The new GOV.uk toolkit style override
+.block-label {
+
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  background: white;
+  border: 0;
+
+  padding: (8px $gutter-one-third 9px 50px);
+  margin-bottom: $gutter-one-third;
+
+  cursor: pointer; // Encourage clicking on block labels
+
+   // remove 300ms pause on mobile
+   -ms-touch-action: manipulation;
+   touch-action: manipulation;
+
+   @include media(tablet) {
     float: left;
-    margin-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    // width: 25%; - Test : check that text within labels will wrap
+  }
+
+  // Absolutely position inputs within label, to allow text to wrap
+  input {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 38px;
+
+    // IE8 doesn’t support pseudoelements, so we don’t want to hide native elements there.
+    @if ($is-ie == false) or ($ie-version == 9) {
+      .js-enabled & {
+        margin: 0;
+        @include opacity(0);
+      }
+    }
+  }
+
+  .js-enabled & {
+    &.selection-button-radio::before {
+      content: "";
+      border: 2px solid;
+      background: transparent;
+      width: 34px;
+      height: 34px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include border-radius(50%);
+    }
+
+    &.selection-button-radio::after {
+      content: "";
+      border: 10px solid;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 9px;
+      left: 9px;
+      @include border-radius(50%);
+      @include opacity(0);
+    }
+
+    &.selection-button-checkbox::before {
+      content: "";
+      border: 2px solid;
+      background: transparent;
+      width: 34px;
+      height: 34px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.selection-button-checkbox::after {
+      content: "";
+      border: solid;
+      border-width: 0 0 5px 5px;
+      background: transparent;
+      width: 17px;
+      height: 7px;
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      -moz-transform: rotate(-45deg); // Firefox 15 compatibility
+      -o-transform: rotate(-45deg); // Opera 12.0 compatibility
+      -webkit-transform: rotate(-45deg); // Safari 8 compatibility
+      -ms-transform: rotate(-45deg); // IE9 compatibility
+      transform: rotate(-45deg);
+      @include opacity(0);
+    }
+
+    // Focused state
+    &.selection-button-radio,
+    &.selection-button-checkbox {
+      &.focused::before {
+        @include box-shadow(0 0 0 5px $focus-colour);
+      }
+      // IE8 focus outline should stay as a border around the entire label
+      // Lack of padding doesn’t matter as IE8 won’t resize the inputs.
+      @include ie-lte(8) {
+        &.focused {
+          outline: 3px solid $focus-colour;
+
+          input:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    // Selected state
+    &.selection-button-radio,
+    &.selection-button-checkbox {
+      &.selected::after {
+        @include opacity(1);
+      }
+    }
+  }
+
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// To stack horizontally, use .inline on parent, to sit block labels next to each other
+.inline .block-label {
+  clear: none;
+
+  @include media (tablet) {
+    margin-bottom: 0;
+    margin-right: $gutter;
+  }
+}
+
+
+#global-header #logo img {
+  background-color: white;
 }
