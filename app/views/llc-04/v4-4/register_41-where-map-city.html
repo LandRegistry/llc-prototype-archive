@@ -15,8 +15,10 @@ Where map city
   <form action="/llc-03/register-41" method="POST">
     <div class="grid-row">
       <div class="column-two-thirds">
-        <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
-        <h2 class="heading-medium">Location</h2>
+        <h1 class="heading-large">Add a <span class="charge_type"></span> charge </h1>
+        <h2 class="heading-medium">Location of the charge</h2>
+        <p>This is the map view of <span class="city"></span>.</p>
+        <p>Adjust the boundaries of the charge using the toolks on the map. If the area is wrong, search again using the form below.</p>
 
         <!--<form action="/llc-03/register-41" method="POST">-->
         <div class="form-group">
@@ -54,8 +56,15 @@ Where map city
     <script>
       chargeType = sessionStorage.getItem("chargeType");
       chargeType = chargeType.toLowerCase();
+      console.log(chargeType);
       postcode = sessionStorage.getItem("postcode");
       console.log(postcode);
+      address = sessionStorage.getItem("address");
+      console.log(address);
+      function innerText() {
+        document.querySelector(".address").innerHTML = address;
+      }
+      innerText();
     </script>
 
     {% endblock %}
