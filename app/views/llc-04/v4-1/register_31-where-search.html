@@ -30,7 +30,7 @@ Find the place that the charge affects
               </label>
               <span class="form-hint">For example SW1A 2AA or Manchester</span>
 
-              <input class="form-control postcode_field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus"><a class="button postcode_button search " href="" role="button">Search</a><br><br>
+              <input class="form-control postcode_field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus"><a class="button postcode_button search" id="targetToChange" href="register_32-where-search-results" role="button">Search</a><br><br>
 
               <p class="form-block">or</p>
               <p> <a href="register_33-map-search">Search using a map</a></p>
@@ -48,6 +48,7 @@ Find the place that the charge affects
   chargeType = sessionStorage.getItem("chargeType");
   chargeType = chargeType.toLowerCase();
   console.log(charge);
+
 
 
 </script>

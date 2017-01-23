@@ -23,19 +23,19 @@ Confirm address
         <a class="button search" href="#" role="button">Search</a><br><br>
         
 
-        <p>Draw the location of the charge on the map or adjust the highlighted section using map controls, <strong class="bold-small">or</strong> select the address from the options below</p>
-        <img src="/public/images/llc-03/address.png" style="width:960px;height:395px;">
+        <p>Draw the location of the charge on the map or adjust the highlighted section using map controls and press continue, <strong class="bold-small">or</strong> select the address from the options below</p>
+        <img id="imageToChange" src="/public/images/llc-03/city.png" style="width:960px;height:395px;">
 
         <div class="button-list">
             <div class="inline">
                 <p>
-                    <a class="button" href="register_6-description" role="button">Continue</a>
+                    <a class="button" href="register_32-where-search-results-confirm" role="button">Continue</a>
                 </p> 
             </div>
         </div>
         <p class="form-hint">Select an address from the options below</p>
         <div class="browse address_list">
-            <ul class="list">
+            <ul class="list" id="address_list">
                 <li><a href="register_42-where-map-address">
                     1 Clinton Street, Exeter <span class="post_code"></span>
                 </a></li>
@@ -101,9 +101,34 @@ Confirm address
     console.log(chargeType);
     postcode = sessionStorage.getItem("postcode");
     console.log(postcode);
+    var postcodeArray = postcode.split("");
+    var newArray = [];
+
+    for (var i = 0; i < postcodeArray.length; i++) {
+        var v = postcodeArray[i];
+        v = Number(v);
+        newArray.push(v);
+    }
+
+    var e = 0;
+    while (e < newArray.length) {
+        if(isNaN(newArray[e]) || newArray[e] == 0) {
+            console.log("not a number");
+            e++;
+            document.getElementById("address_list").setAttribute("style", "display: none");
+        } else {
+            console.log("there is a number");
+            document.getElementById("imageToChange").src="/public/images/llc-03/postcode.png";
+            document.getElementById("address_list").setAttribute("style", "display: flex");
+            break;
+        }
+    }
+
+
     Array.prototype.slice.call(document.querySelectorAll(".post_code")).forEach(function(e){
         e.innerHTML = postcode;
     });
+    
 </script>
 
 {% endblock %}
