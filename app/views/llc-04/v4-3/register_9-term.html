@@ -14,7 +14,7 @@ Expiry date of the charge
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h1 class="heading-large">Add a <span class="charge_type"></span> charge </h1>
       <h2 class="heading-medium">Expiry</h2>
 
 
@@ -32,7 +32,7 @@ Expiry date of the charge
 
         </fieldset>
         <p>
-          <a class="button expiry_button" href="register_10-submit" role="button">Continue</a>
+          <a id="toSubmitPage" class="button expiry_button" href="register_10-submit" role="button">Continue</a>
         </p>
       </form>
     </div>
@@ -44,10 +44,22 @@ Expiry date of the charge
   chargeType = sessionStorage.getItem("chargeType");
   chargeType = chargeType.toLowerCase();
   console.log(chargeType);
-  postcode = sessionStorage.getItem("postcode");
-  console.log(postcode);
-  address = sessionStorage.getItem("address");
-  console.log(address);
+  
+  
+  function targetSubmit() {
+    var origin = sessionStorage.getItem("origin");
+    var toSubmitPage = document.getElementById("toSubmitPage");
+    if (origin == "city") {
+      toSubmitPage.setAttribute("href", "register_10-submit-city");
+    } else if (origin == "street") {
+      toSubmitPage.setAttribute("href", "register_10-submit-street");
+    } else {
+      toSubmitPage.setAttribute("href", "register_10-submit");
+    }
+    console.log(toSubmitPage.getAttribute("href")); 
+  }
+  targetSubmit();
+  
 </script>
 
 {% endblock %}
