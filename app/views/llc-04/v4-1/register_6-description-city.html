@@ -23,9 +23,9 @@ Description of the charge
 
           <div class="form-group">
             <label class="form-label" for="description">
-             Describe where the charge is for <span class="address"></span> and what it affects.
+             Describe where the charge is for <span class="post_code"></span> and what it affects.
            </label>
-           <span class="form-hint">For example, Land to the west of <span class="address"></span>.</span>
+           <span class="form-hint">For example, Land to the west of <span class="post_code"></span>.</span>
            <textarea class="form-control" id="description" name="description" cols="30" rows="10" value="{{ address }}"></textarea>
          </div>
        </fieldset>
@@ -45,8 +45,9 @@ Description of the charge
   console.log(chargeType);
   postcode = sessionStorage.getItem("postcode");
   console.log(postcode);
-  address = sessionStorage.getItem("address");
-  console.log(address);
+  Array.prototype.slice.call(document.querySelectorAll(".post_code")).forEach(function(e){
+        e.innerHTML = postcode;
+    });
 </script>
 
 {% endblock %}
