@@ -123,11 +123,16 @@ Confirm address
             document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm-city");
         } else {
             console.log("there is a number");
-            document.getElementById("imageToChange").src="/public/images/llc-03/postcode.png";
-            document.getElementById("address_list").setAttribute("style", "display: flex");
-            document.getElementById("elementToHide").setAttribute("style", "display: block");
-            document.getElementById("spanToHide").setAttribute("style", "display: inline");
-            document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm");
+            if (newArray.length < 5) {
+                document.getElementById("imageToChange").src="/public/images/llc-03/street.png";
+                document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm-street");
+            } else {
+                document.getElementById("imageToChange").src="/public/images/llc-03/postcode.png";
+                document.getElementById("address_list").setAttribute("style", "display: flex");
+                document.getElementById("elementToHide").setAttribute("style", "display: block");
+                document.getElementById("spanToHide").setAttribute("style", "display: inline");
+                document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm");
+            }
             break;
         }
     }
