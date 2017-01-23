@@ -33,6 +33,8 @@ $(document).ready(function() {
 		sessionStorage.setItem("postcode", postcode);
 	});
 
+	// address
+	// potscode search only
 	$(".list li a").click(function() {
 		var address = $(this).html();
 		sessionStorage.setItem("address", address);
