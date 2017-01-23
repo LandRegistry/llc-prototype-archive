@@ -23,68 +23,70 @@ Confirm address
         <a class="button search" href="#" role="button">Search</a><br><br>
         
 
-        <p>Draw the location of the charge on the map or adjust the highlighted section using map controls, <strong class="bold-small">or</strong> select the address from the options below</p>
-        <img src="/public/images/llc-03/address.png" style="width:960px;height:395px;">
+        <p>Draw the location of the charge on the map or adjust the highlighted section using map controls and press continue<span id="spanToHide">, <strong class="bold-small">or</strong> select the address from the options below</span>.</p>
+        <img id="imageToChange" src="/public/images/llc-03/city.png" style="width:960px;height:395px;">
 
         <div class="button-list">
             <div class="inline">
                 <p>
-                    <a class="button" href="register_6-description" role="button">Continue</a>
+                    <a id="targetToChange" class="button" href="register_32-where-search-results-confirm" role="button">Continue</a>
                 </p> 
             </div>
         </div>
-        <p class="form-hint">Select an address from the options below</p>
-        <div class="browse address_list">
-            <ul class="list">
-                <li><a href="register_42-where-map-address">
-                    1 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    3 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    5 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    7 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    9 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    11 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    13 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    15 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    17 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    19 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    21 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    23 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    25 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    27 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    29 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-                <li><a href="register_42-where-map-address">
-                    31 Clinton Street, Exeter <span class="post_code"></span>
-                </a></li>
-            </ul>
+        <p id="elementToHide" class="form-hint">Select an address from the options below</p>
+        <div id="address_list">
+            <div class="browse address_list">
+                <ul class="list">
+                    <li><a href="register_42-where-map-address">
+                        1 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        3 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        5 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        7 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        9 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        11 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        13 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        15 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        17 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        19 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        21 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        23 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        25 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        27 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        29 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                    <li><a href="register_42-where-map-address">
+                        31 Clinton Street, Exeter <span class="post_code"></span>
+                    </a></li>
+                </ul>
+            </div>
         </div>
 
 
@@ -101,9 +103,45 @@ Confirm address
     console.log(chargeType);
     postcode = sessionStorage.getItem("postcode");
     console.log(postcode);
+    var postcodeArray = postcode.split("");
+    var newArray = [];
+
+    for (var i = 0; i < postcodeArray.length; i++) {
+        var v = postcodeArray[i];
+        v = Number(v);
+        newArray.push(v);
+    }
+
+    var e = 0;
+    while (e < newArray.length) {
+        if(isNaN(newArray[e]) || newArray[e] == 0) {
+            console.log("not a number");
+            e++;
+            document.getElementById("address_list").setAttribute("style", "display: none");
+            document.getElementById("elementToHide").setAttribute("style", "display: none");
+            document.getElementById("spanToHide").setAttribute("style", "display: none");
+            document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm-city");
+        } else {
+            console.log("there is a number");
+            if (newArray.length < 5) {
+                document.getElementById("imageToChange").src="/public/images/llc-03/street.png";
+                document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm-street");
+            } else {
+                document.getElementById("imageToChange").src="/public/images/llc-03/postcode.png";
+                document.getElementById("address_list").setAttribute("style", "display: flex");
+                document.getElementById("elementToHide").setAttribute("style", "display: block");
+                document.getElementById("spanToHide").setAttribute("style", "display: inline");
+                document.getElementById("targetToChange").setAttribute("href", "register_32-where-search-results-confirm");
+            }
+            break;
+        }
+    }
+
+
     Array.prototype.slice.call(document.querySelectorAll(".post_code")).forEach(function(e){
         e.innerHTML = postcode;
     });
+    
 </script>
 
 {% endblock %}
