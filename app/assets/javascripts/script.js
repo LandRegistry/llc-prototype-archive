@@ -43,7 +43,17 @@ $(document).ready(function() {
 	$(".description_button").click(function() {
 		var description = $("#description").val();
 		sessionStorage.setItem("description", description);
-	})
+	});
+
+	$(".description_city").click(function() {
+		var origin = "city";
+		sessionStorage.setItem("origin", origin);
+	});
+
+	$(".description_street").click(function() {
+		var origin = "street";
+		sessionStorage.setItem("origin", origin);
+	});
 
 	$(".further_info_button").click(function() {
 		var furtherInfo = $("#further_info").val();
