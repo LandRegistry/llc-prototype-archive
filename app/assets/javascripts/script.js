@@ -50,6 +50,11 @@ $(document).ready(function() {
 		sessionStorage.setItem("origin", origin);
 	});
 
+	$(".description_map").click(function() {
+		var origin = "map";
+		sessionStorage.setItem("origin", origin);
+	});
+
 	$(".description_street").click(function() {
 		var origin = "street";
 		sessionStorage.setItem("origin", origin);
