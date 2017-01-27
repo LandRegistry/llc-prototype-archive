@@ -38,10 +38,6 @@
   }
 }
 
-#global-header #logo {
-  background: none;
-}
-
 #global-header #logo img {
   height: 32px;
 }
@@ -87,7 +83,7 @@
   text-decoration: none;
   line-height: 1.5;
   display: block;
-  padding: 10px;
+  padding: 10px 5px;
   cursor: pointer;
 }
 

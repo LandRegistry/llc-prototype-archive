@@ -12,6 +12,10 @@
 	$(".result_1 li a").click(function() {
 		var legislation = $(this).html();
 		sessionStorage.setItem("legislation", legislation);
+		sessionStorage.setItem("editStart", editStart)
+		if(editStart === "edited") {
+			$(this).href("register_10-submit");
+		}
 	});
 </script>
 
