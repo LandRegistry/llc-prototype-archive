@@ -68,15 +68,24 @@ $(document).ready(function() {
 	});
 
 	$(".instrument_button").click(function() {
-		var instrument = $(".instrument_radio").val();
-		var docDay = $("#doc-day").val();
-		var docMonth = $("#doc-month").val();
-		var docYear = $("#doc-year").val();
-		sessionStorage.setItem("instrument", instrument);
-		sessionStorage.setItem("docDay", docDay);
-		sessionStorage.setItem("docMonth", docMonth);
-		sessionStorage.setItem("docYear", docYear);
+		var instrumentSelected = $(".instrument_radio").val();
+		sessionStorage.setItem("instrumentSelected", instrumentSelected);
 	});
+
+	$(".dates_button").click(function() {
+		var docDayStart = $("#doc-day-start").val();
+		var docMonthStart = $("#doc-month-start").val();
+		var docYearStart = $("#doc-year-start").val();
+		var docDayEnd = $("#doc-day-end").val();
+		var docMonthEnd = $("#doc-month-end").val();
+		var docYearEnd = $("#doc-year-end").val();
+		sessionStorage.setItem("docDayStart", docDayStart);
+		sessionStorage.setItem("docMonthStart", docMonthStart);
+		sessionStorage.setItem("docYearStart", docYearStart);
+		sessionStorage.setItem("docDayEnd", docDayEnd);
+		sessionStorage.setItem("docMonthEnd", docMonthEnd);
+		sessionStorage.setItem("docYearEnd", docYearEnd);
+	})
 
 	$(".expiry_button").click(function() {
 		var expiry = $("#expiry-date").val();

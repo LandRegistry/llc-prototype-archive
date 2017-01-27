@@ -31,7 +31,7 @@ Description of the charge
        
      </form>
      <p>
-      <a class="button description_button" href="dates" role="button">Continue</a>
+     <a class="button description_button" href="register_7-further-info" role="button">Continue</a>
     </p>
   </div>
 </div>
@@ -46,9 +46,11 @@ Description of the charge
   console.log(postcode);
   address = sessionStorage.getItem("address");
   console.log(address);
+  var instrumentSelected = sessionStorage.getItem("instrument");
+  console.log(instrumentSelected);
   Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
-        e.innerHTML = address;
-    });
+    e.innerHTML = address;
+  });
 </script>
 
 {% endblock %}
