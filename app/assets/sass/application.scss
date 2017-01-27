@@ -125,6 +125,15 @@
   overflow: none;
 }
 
+.form-group-instrument {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: column wrap;
+  align-content: stretch;
+  height: 300px;
+}
+
 // The new GOV.uk toolkit style override
 .block-label {
 
@@ -271,3 +280,4 @@
 #global-header #logo img {
   background-color: white;
 }
+
