@@ -76,20 +76,20 @@ $(document).ready(function() {
 		var docDayStart = $("#doc-day-start").val();
 		var docMonthStart = $("#doc-month-start").val();
 		var docYearStart = $("#doc-year-start").val();
-		/* var docDayEnd = $("#doc-day-end").val();
-		var docMonthEnd = $("#doc-month-end").val();
-		var docYearEnd = $("#doc-year-end").val();*/
 		sessionStorage.setItem("docDayStart", docDayStart);
 		sessionStorage.setItem("docMonthStart", docMonthStart);
 		sessionStorage.setItem("docYearStart", docYearStart);
-		/*sessionStorage.setItem("docDayEnd", docDayEnd);
-		sessionStorage.setItem("docMonthEnd", docMonthEnd);
-		sessionStorage.setItem("docYearEnd", docYearEnd);*/
-	})
+	});
 
 	$(".expiry_button").click(function() {
-		var expiryDate = $("#expiry-date").val();
+		var expiryDate = $("#expiry-date-text").val();
 		sessionStorage.setItem("expiryDate", expiryDate);
+		var docDayEnd = $("#doc-day-end").val();
+		var docMonthEnd = $("#doc-month-end").val();
+		var docYearEnd = $("#doc-year-end").val();
+		sessionStorage.setItem("docDayEnd", docDayEnd);
+		sessionStorage.setItem("docMonthEnd", docMonthEnd);
+		sessionStorage.setItem("docYearEnd", docYearEnd);
 	});
 
 	$(".charge_type").html(chargeType);
@@ -103,7 +103,7 @@ $(document).ready(function() {
 	$(".doc-day").html(docDay);
 	$(".doc-month").html(docMonth);
 	$(".doc-year").html(docYear);
-	$(".expiry").html(expiry);
+	/*$(".expiry").html(expiry);*/
 	$(".reference").html(reference);
 	$(".legislation").html(legislation);
 });
