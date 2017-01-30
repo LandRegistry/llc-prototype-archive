@@ -122,7 +122,8 @@ Review new charge details
           Expiry
         </td>
         <td>
-          <span class="doc-day-end"></span> / <span class="doc-month-end"></span> / <span class="doc-year-end"></span><br>
+          <!-- <span class="doc-day-end"></span> / <span class="doc-month-end"></span> / <span class="doc-year-end"></span><br> -->
+          <span class="expiry_date"></span><br>
         </td>
         <td class="change-answer">
           <a class="edit" href="dates">
@@ -157,16 +158,17 @@ Review new charge details
   console.log(docMonthStart);
   docYearStart = sessionStorage.getItem("docYearStart");
   console.log(docYearStart);
-  docDayEnd = sessionStorage.getItem("docDayEnd");
+  /*docDayEnd = sessionStorage.getItem("docDayEnd");
   console.log(docDayEnd);
   docMonthEnd = sessionStorage.getItem("docMonthEnd");
   console.log(docMonthEnd);
   docYearEnd = sessionStorage.getItem("docYearEnd");
-  console.log(docYearEnd);
+  console.log(docYearEnd);*/
   legislation = sessionStorage.getItem("legislation");
   console.log(legislation);
   furtherInfo = sessionStorage.getItem("furtherInfo");
   reference = sessionStorage.getItem("reference");
+  expiryDate = sessionStorage.getItem("expiryDate");
 
   function innerText() {
     document.querySelector(".description").innerHTML = description;
@@ -174,14 +176,14 @@ Review new charge details
     document.querySelector(".doc-day-start").innerHTML = docDayStart;
     document.querySelector(".doc-month-start").innerHTML = docMonthStart;
     document.querySelector(".doc-year-start").innerHTML = docYearStart;
-    document.querySelector(".doc-day-end").innerHTML = docDayEnd;
+    /*document.querySelector(".doc-day-end").innerHTML = docDayEnd;
     document.querySelector(".doc-month-end").innerHTML = docMonthEnd;
-    document.querySelector(".doc-year-end").innerHTML = docYearEnd;
+    document.querySelector(".doc-year-end").innerHTML = docYearEnd;*/
     document.querySelector(".legislation").innerHTML = legislation;
     document.querySelector(".post_code").innerHTML = postcode;
     document.querySelector(".further_info").innerHTML = furtherInfo;
     document.querySelector(".reference").innerHTML = reference;
-
+    document.querySelector(".expiry_date").innerHTML = expiryDate;
   }
   innerText();
 </script>
