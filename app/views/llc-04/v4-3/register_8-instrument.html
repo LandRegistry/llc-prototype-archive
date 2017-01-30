@@ -18,8 +18,8 @@ Instrument of the charge
       <h1 class="heading-large">Type of charge</h1>
       <form action="/llc-03/register-8" method="POST">
         <fieldset>
-          <div class="form-group">  
-            <legend><span class="form-label-bold">What type of instrument was used to create the charge?</span><span class="form-hint" id="doc-hint">Select one from the list below</span></legend>
+          <div class="form-group form-group-instrument">  
+            
             <label class="block-label selection-button-radio" for="radio-inline-1">
               <input id="radio-inline-1" class="instrument_radio" type="radio" name="instrument" value="agreement">
               Agreement
@@ -66,47 +66,15 @@ Instrument of the charge
             </label>
           </div>
         </fieldset>
-        <fieldset>
-          <div class="form-group">
-            <legend>
-              <span class="form-label-bold">
-                What is the date of the charge?
-              </span>
-              <span class="form-hint" id="doc-hint">For example, 31 3 2016</span>
-            </legend>
-            <div class="form-date">
-              <div class="form-group form-group-day">
-                <label class="form-label" for="doc-day">Day</label>
-                <input class="form-control" id="doc-day" name="doc_day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-              </div>
-              <div class="form-group form-group-month">
-                <label class="form-label" for="doc-month">Month</label>
-                <input class="form-control" id="doc-month" name="doc_month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
-              <div class="form-group form-group-year">
-                <label class="form-label" for="doc-year">Year</label>
-                <input class="form-control" id="doc-year" name="doc_year" type="number" pattern="[0-9]*" min="0" max="2016">
-              </div>
-            </div>
-          </div>
-        </fieldset>
+        
 
         <p>
-          <a class="button instrument_button" href="register_9-term" role="button">Continue</a>
+          <a class="button instrument_button" href="register_1-charge-type_new" role="button">Continue</a>
         </p>
       </form>
     </div>
   </div>
 </main>
 
-<script>
-  chargeType = sessionStorage.getItem("chargeType");
-      chargeType = chargeType.toLowerCase();
-      console.log(chargeType);
-  postcode = sessionStorage.getItem("postcode");
-  console.log(postcode);
-  address = sessionStorage.getItem("address");
-  console.log(address);
-</script>
 
 {% endblock %}
