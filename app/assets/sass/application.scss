@@ -277,3 +277,13 @@
   background-color: white;
 }
 
+
+// This is the alpha-beta tag override
+
+.phase-tag {
+  @include phase-tag(alpha);
+}
+
+.phase-banner {
+  @include phase-banner(alpha);
+}
