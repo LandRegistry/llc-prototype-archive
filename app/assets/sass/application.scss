@@ -282,6 +282,7 @@
 
 .phase-tag {
   @include phase-tag(alpha);
+  background: $govuk-blue;
 }
 
 .phase-banner {
