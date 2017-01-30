@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Description of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Describe your charge</h1>
+      <form action="/llc-03/register-6" method="POST">
+        <fieldset class="inline">
+          <legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="description">
+             Describe what the charge does and why is it needed.
+           </label>
+           <span class="form-hint">For example, this charge protects a rare species of tree from being chopped down.</span>
+           <textarea class="form-control" id="description" name="description" cols="30" rows="10" value="{{ address }}"></textarea>
+         </div>
+       </fieldset>
+       
+     </form>
+     <p>
+     <a class="button description_button" href="register_7-further-info" role="button">Continue</a>
+    </p>
+  </div>
+</div>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  console.log(chargeType);
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+  var instrumentSelected = sessionStorage.getItem("instrument");
+  console.log(instrumentSelected);
+  Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
+    e.innerHTML = address;
+  });
+</script>
+
+{% endblock %}

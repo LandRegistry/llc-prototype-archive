@@ -15,23 +15,24 @@ Description of the charge
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">Describe your charge</h1>
+      <h1 class="heading-large">Add a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Description</h2>
       <form action="/llc-03/register-6" method="POST">
         <fieldset class="inline">
           <legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
 
           <div class="form-group">
             <label class="form-label" for="description">
-             Describe what the charge does and why is it needed.
+             Describe where the charge is for <span class="address"></span> and what it affects.
            </label>
-           <span class="form-hint">For example, this charge protects a rare species of tree from being chopped down.</span>
+           <span class="form-hint">For example, Land to the west of <span class="address"></span>.</span>
            <textarea class="form-control" id="description" name="description" cols="30" rows="10" value="{{ address }}"></textarea>
          </div>
        </fieldset>
        
      </form>
      <p>
-     <a class="button description_button" href="register_7-further-info" role="button">Continue</a>
+      <a class="button description_button" href="register_7-further-info" role="button">Continue</a>
     </p>
   </div>
 </div>
@@ -46,11 +47,9 @@ Description of the charge
   console.log(postcode);
   address = sessionStorage.getItem("address");
   console.log(address);
-  var instrumentSelected = sessionStorage.getItem("instrument");
-  console.log(instrumentSelected);
   Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
-    e.innerHTML = address;
-  });
+        e.innerHTML = address;
+    });
 </script>
 
 {% endblock %}

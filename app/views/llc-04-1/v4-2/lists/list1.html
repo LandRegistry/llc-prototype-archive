@@ -1,0 +1,15 @@
+<ul>
+	<li><a href="register_31-where-search">Town and Country Planning Act 1990</a></li>
+	<li><a href="register_31-where-search">Town and Country Planning (General Permitted Development Order) 1995</a></li>
+	<li><a href="register_31-where-search">Planning and Compulsory Purchase Act 1990</a></li>
+	<li><a href="register_31-where-search">Town and Country Planning Control of Advertisement (England) Regulations 2007</a></li>
+	<li><a href="register_31-where-search">Planning (Hazardous Substances) Act 1990</a></li>
+	<li><a href="register_31-where-search">Planning (Listed Buildings and Conservation Areas) Act 1990</a></li>
+	<li><a href="register_31-where-search">Planning Act 2008</a></li>
+</ul>
+<script>
+	$(".result_1 li a").click(function() {
+		var legislation = $(this).html();
+		sessionStorage.setItem("legislation", legislation);
+	});
+</script>

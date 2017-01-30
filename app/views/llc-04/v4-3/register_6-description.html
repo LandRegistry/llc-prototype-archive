@@ -15,7 +15,8 @@ Description of the charge
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">Description</h1>
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Description</h2>
       <form action="/llc-03/register-6" method="POST">
         <fieldset class="inline">
           <legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
@@ -44,11 +45,9 @@ Description of the charge
   console.log(chargeType);
   postcode = sessionStorage.getItem("postcode");
   console.log(postcode);
-  address = sessionStorage.getItem("address");
-  console.log(address);
-  Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
+  /*Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
         e.innerHTML = address;
-    });
+    });*/
 </script>
 
 {% endblock %}

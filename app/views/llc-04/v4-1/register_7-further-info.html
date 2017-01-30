@@ -14,7 +14,8 @@ Further information and reference
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Additional information</h1>
+      <h1 class="heading-large">Add a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Additional information</h2>
 
       <form action="/llc-03/register-7" method="POST">
         <fieldset class="inline">
@@ -36,7 +37,7 @@ Further information and reference
 
         </fieldset>
         <p>
-          <a class="button further_info_button" href="dates" role="button">Continue</a>
+          <a class="button further_info_button" href="register_8-instrument" role="button">Continue</a>
         </p>
       </form>
     </div>
@@ -49,6 +50,8 @@ Further information and reference
   console.log(chargeType);
   postcode = sessionStorage.getItem("postcode");
   console.log(postcode);
+  origin = sessionStorage.getItem("origin");
+  console.log(origin);
 </script>
 
 {% endblock %}

@@ -15,7 +15,8 @@ Instrument of the charge
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">Type of charge</h1>
+      <h1 class="heading-large">Register a <span class="charge_type"></span> charge </h1>
+      <h2 class="heading-medium">Instrument</h2>
       <form action="/llc-03/register-8" method="POST">
         <fieldset>
           <div class="form-group">  
@@ -70,7 +71,7 @@ Instrument of the charge
           <div class="form-group">
             <legend>
               <span class="form-label-bold">
-                What is the date of the charge?
+                What is the date of the instrument?
               </span>
               <span class="form-hint" id="doc-hint">For example, 31 3 2016</span>
             </legend>
@@ -100,13 +101,13 @@ Instrument of the charge
 </main>
 
 <script>
-  chargeType = sessionStorage.getItem("chargeType");
-      chargeType = chargeType.toLowerCase();
-      console.log(chargeType);
-  postcode = sessionStorage.getItem("postcode");
-  console.log(postcode);
-  address = sessionStorage.getItem("address");
-  console.log(address);
+ chargeType = sessionStorage.getItem("chargeType");
+ chargeType = chargeType.toLowerCase();
+ console.log(chargeType);
+ postcode = sessionStorage.getItem("postcode");
+ console.log(postcode);
+ address = sessionStorage.getItem("address");
+ console.log(address);
 </script>
 
 {% endblock %}
