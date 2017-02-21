@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Charge type
+{% endblock %}
+
+{% block proposition_header %}
+    {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-large">Register a local land charge</h1>
+          <h2 class="heading-medium">What does the local land charge relate to?</h2>
+          <form action="/llc-03/register-1" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <legend class="visuallyhidden">What does the local land charge relate to?</legend>
+
+                <label class="block-label" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="charge_type" value="planning">
+                  Planning
+                </label>
+                <label class="block-label" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="charge_type" value="miscellaneous">
+                  Miscellaneous
+                </label>
+                <label class="block-label" for="radio-inline-3">
+                  <input id="radio-inline-3" type="radio" name="charge_type" value="listed building">
+                  Listed building
+                </label>
+              </div>
+            </fieldset>
+
+            <p>
+              <a class="button button-start" href="register_2-legal.html" role="button">Start now</a>
+            </p>
+        </form>
+        </div>
+      </div>
+
+</main>
+
+{% endblock %}

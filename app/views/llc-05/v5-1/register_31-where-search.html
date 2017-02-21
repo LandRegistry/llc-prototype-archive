@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Find the place that the charge affects
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation_lr_alpha.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">alpha</strong>
+      <span>This is a new service</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Location</h1>
+      <p>Use a postcode, Unique Property Reference Number (UPRN) or place name to show us where to find your charge.</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">Where is the charge?</legend>
+
+
+            <div class="form-group spacing-bottom-half ">
+
+              <label class="form-label" for="search_term">
+               <strong class="bold-small">Search by postcode, place name or UPRN</strong>
+             </label>
+             <span class="form-hint">For example SW1A 2AA or Manchester</span>
+
+             <input class="form-control postcode_field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus"><a class="button postcode_button search" id="targetToChange" href="register_32-where-search-results_1" role="button">Search</a><br><br>
+
+             
+           </div>
+
+           
+         </div>
+       </fieldset>
+
+
+     </div>
+
+
+   </form>
+
+
+ </div>
+ <ul class="list list-bullet">
+   <li><a href="register_33-map-search">Search using a map</a></li>
+   <li>Search using the Royal Mail's <a href="http://www.royalmail.com/find-a-postcode">postcode finder</a></li>
+   <li>Ask the person who created the charge</li>
+ </ul>
+ 
+
+</main>
+
+{% endblock %}
