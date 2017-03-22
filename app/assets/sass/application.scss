@@ -287,3 +287,304 @@
 .phase-banner {
   @include phase-banner(alpha);
 }
+
+// Stuff from llc-prototypes
+// Horizontal carousel styles
+.browse ul li,
+.control ul li,
+.result ul li a,
+.maintain-control ul li,
+.maintain-result ul li {
+  color: #005ea5;
+  text-decoration: none;
+  line-height: 1.5;
+  display: block;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.control ul li::after,
+.maintain-control ul li::after {
+  position: relative;
+  top: 50%;
+  margin-top: -2px;
+  right: 10px;
+  margin-left: 10px;
+  float: right;
+  content: "\203A";
+}
+
+.control ul li:hover,
+.result ul li a:hover,
+.browse ul li:hover,
+.maintain-control ul li:hover,
+.maintain-result ul li:hover {
+  background: #F8F8F8;
+}
+
+// search icon
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .search-button {
+    line-height: 34px;
+  }
+  .autocomplete-search,
+  .maintain-map-search-button {
+    position: relative;
+    top: 11px;
+  }
+  .maintain-map-search-button {
+    top: 13px;
+  }
+}
+.search-button,
+.search-button-map {
+  background-size: 52.5px 35px;
+  background-position: 115% 50%;
+  box-sizing: border-box;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -5000px;
+  background: #0b0c0c url("../images/search-button.png") no-repeat 2px 50%;
+  border: 0;
+  position: relative;
+  right: 4px;
+}
+
+// map stuff
+#map { 
+  height: 500px;
+  width: 960px;
+  position: relative;
+}
+
+#map .ol-zoom .ol-zoom-out {
+  background:rgba(51,122,183,.8);
+  margin-top: 204px;
+}
+
+#map .ol-zoom .ol-zoom-in {
+  background:rgba(51,122,183,.8);
+}
+
+#map .ol-zoomslider {
+  background-color: transparent;
+  top: 2.3em;
+}
+
+#map .ol-zoomslider-thumb {
+  background:rgba(51,122,183,.8);
+}
+
+#map .ol-mouse-position {
+  background:rgba(51,122,183,.8);
+  border-radius: 10px;
+  border-color: grey;
+  padding: 5px;
+  font: 12px arial, bold;
+  color: white;
+  top: auto;
+  bottom: 0.5em;
+  left: 0.5em;
+  right: auto;
+}
+
+#map .ol-nav-buttons {
+  background:rgba(51,122,183,.3);
+  top: auto;
+  bottom: 0.5em;
+  left: 0.5em;
+  right: auto;
+}
+
+/*#map-nav {
+  position: relative;
+}*/
+
+.postcode-search {
+  position: absolute;
+  top: 0.5em;
+  bottom: auto;
+  right: auto;
+  opacity: 0.9;
+}
+
+.postcode-search .btn {
+  background-color: rgba(51,122,183,.8);
+  color: #fff;
+}
+
+.postcode-search .btn:hover {
+  background-color: rgba(51,122,183,.9);
+}
+
+#postcode-error {
+  color: red;
+  background-color: rgba(255,255,255,.6);
+}
+
+.up-nav-button {
+  margin: auto;
+  width: 38%;
+}
+
+.nav-buttons {
+  margin: auto;
+}
+
+.custom-draw {
+  top: 0.5em;
+  right: 0.5em;
+  opacity: 0.9;
+}
+
+#ol-tool-tip {
+  background:rgba(51,122,183,.8);
+  border-radius: 10px;
+  border-color: grey;
+  padding: 5px;
+  font: 12px arial, bold;
+  color: white;
+  top: 7em;
+  right: 0.5em;
+}
+
+// reason page layout
+.form-group-reason {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: column wrap;
+  align-content: stretch;
+  height: 300px;
+}
+
+// maintain llc stuff
+#maintain-map-search {
+  border: 2px solid black;
+  width: 310px;
+  display: inline !important;
+  height: 38px;
+}
+
+.maintain-llc-map {
+  width: 55% !important;
+  /* outline: 1px solid red;*/
+  position: relative;
+  left: -22px;
+
+  & canvas {
+    width: 55%;
+  }
+
+  & .ol-zoom {
+    top: 100px;
+  }
+}
+
+.filter .form-group{
+  background-color: #F8F8F8;
+  width: 100%;
+  padding: 0 1em;
+}
+
+.filter label {
+  padding-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.toggle {
+  width: 100% !important;
+  margin-top: 1em;
+}
+
+.select-all {
+  padding-bottom: 0 !important;
+}
+
+.select-controls {
+  margin-bottom: 0.5em;
+  position: relative;
+  top: 1em;
+  padding-left: 300px;
+
+  & a {
+    position: relative;
+    top: 0.4em;
+    text-decoration: underline;
+  }
+}
+
+.filter-heading {
+  float: left;
+}
+
+.filter .selection-button-checkbox::before {
+  width: 14px !important;
+  height: 14px !important;
+  position: relative;
+  top: 7px !important;
+}
+
+.filter .selection-button-checkbox::after {
+  width: 7px !important;
+  height: 7px !important;
+  position: relative;
+  left: 3px !important;
+}
+
+.result-count {
+  margin-top: 1em;
+}
+
+.charge-list-item {
+  border-top: 1px solid #DEE0E2;
+
+  & h3 {
+    margin-top: 0.5em;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #DEE0E2;
+  }
+
+  & a {
+    cursor: pointer;
+    text-decoration: underline;
+    display: block;
+
+    &:hover {
+      background-color: #F8F8F8;
+      color: inherit;
+    }
+  }
+}
+
+.charge-list {
+  z-index: 100000;
+}
+
+.hide-this {
+  display: none !important;
+}
+
+.edit-charge-details input[type="text"] {
+  width: 100%;
+}
+
+.charge-list-options {
+  padding-bottom: 0.5em;
+}
+
+.charge-list-options a {
+  display: inline;
+
+  &:last-child {
+    margin-left: 2em;
+  }
+}
+
+.toHighlight {
+  background-color: #F8F8F8;
+}
