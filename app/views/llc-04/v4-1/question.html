@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Select charge type
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Add a local land charge</h1>
+      <h2 class="heading-medium">Have you used this service before?</h2>
+      <form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Where do you live?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-1">
+        <input id="radio-1" class="yes" type="radio" name="radio-group" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="radio-2">
+        <input id="radio-2" class="no" type="radio" name="radio-group" value="No">
+        No
+      </label>
+
+
+    </fieldset>
+
+  </div>
+  <input class="button" type="submit" value="Continue">
+
+</form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

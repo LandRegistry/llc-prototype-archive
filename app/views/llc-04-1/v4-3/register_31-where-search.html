@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Find the place that the charge affects
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Where is the charge?</h1>
+      <p>You can use a postcode, Unique Property Reference Number (UPRN) or place name to tell us the location of your charge.</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">Where is the charge?</legend>
+
+
+            <div class="form-group spacing-bottom-half ">
+
+              <label class="form-label" for="search_term">
+               <strong class="bold-small">Search by postcode, place name or UPRN</strong>
+             </label>
+             <span class="form-hint">For example SW1A 2AA or Manchester</span>
+
+             <input class="form-control postcode_field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus"><a class="button postcode_button search" id="targetToChange" href="register_32-where-search-results_1" role="button">Search</a><br><br>
+
+             <p class="form-block">or</p>
+             <p> <a href="register_33-map-search">Search using a map</a></p>
+           </div>
+           <h3 class="heading-small">Problems with the postcode, place name or UPRN</h3>
+           <p>You need a postcode, place name or UPRN to register your charge.</p>
+           <h3 class="heading-small">I don't have a postcode or UPRN</h3>
+           <p>If you don’t have a postcode or UPRN, contact the person who asked you to register the charge. Ask them for a postcode, UPRN or place name.</p>
+           <ul class="list list-bullet">
+            <li>You can find a postcode on Royal Mail's <a href="http://www.royalmail.com/find-a-postcode">postcode finder</a></li>
+            <li>You can find a UPRN on ... </li>
+          </ul>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</div>
+
+</main>
+
+<script>
+
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  console.log(charge);
+
+
+
+
+
+</script>
+
+{% endblock %}

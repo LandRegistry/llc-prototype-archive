@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What do you want to do?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">What do you want to do?</h1>
+			<form action="map" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">What do you want to do?</legend>
+						<div class="form-group-welcome">
+							<label class="block-label selection-button-radio" for="welcome-1">
+								<input id="welcome-1" name="welcome" type="radio" value="find a local land charge (llc)">
+								Find a Local Land Charge (LLC)
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-2">
+								<input id="welcome-2" name="welcome" type="radio" value="add a new llc">
+								Add a new LLC
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-3">
+								<input id="welcome-3" name="welcome" type="radio" value="change a llc">
+								Change a LLC
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-4">
+								<input id="welcome-4" name="welcome" type="radio" value="cancel a llc">
+								Cancel a LLC
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<a class="button reason-button" href="map" role="button">Continue</a>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+

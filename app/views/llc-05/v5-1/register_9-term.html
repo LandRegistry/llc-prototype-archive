@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Expiry date of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation_lr_alpha.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">alpha</strong>
+      <span>This is a new service</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Does the charge expire?</h1>
+
+
+      <form action="/llc-03/register-9" method="POST">
+        <fieldset class="inline">
+          <legend class="visuallyhidden"></legend>
+
+          <div class="form-group">
+            <label class="block-label selection-button-checkbox" for="noExpiryDate">
+              <input id="noExpiryDate" name="expiry-date" type="checkbox" value="No">No
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="expiry-date">
+              On a specific date
+            </label>
+            <div class="form-date">
+              <div class="form-group form-group-day">
+              <label class="form-label" for="doc-day-end">Day</label>
+                <input class="form-control" id="doc-day-end" name="doc_day_end" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+              </div>
+              <div class="form-group form-group-month">
+              <label class="form-label" for="doc-month-end">Month</label>
+                <input class="form-control" id="doc-month-end" name="doc_month_end" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+              <label class="form-label" for="doc-year-end">Year</label>
+                <input class="form-control" id="doc-year-end" name="doc_year_end" type="number" pattern="[0-9]*" min="0" max="2016">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="expiry-date">
+              After a period of time
+              <span class="form-hint">For example, 19/05/2020 or 5 years after building works start</span>
+            </label>
+            <input class="form-control" id="expiry-date-text" name="expiry" type="text">
+          </div>
+
+        </fieldset>
+        <p>
+          <a id="toSubmitPage" class="button expiry_button" href="register_10-submit" role="button">Continue</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  console.log(chargeType);
+  
+  
+  function targetSubmit() {
+    var origin = sessionStorage.getItem("origin");
+    var toSubmitPage = document.getElementById("toSubmitPage");
+    if (origin == "city") {
+      toSubmitPage.setAttribute("href", "register_10-submit-city");
+    } else if (origin == "street") {
+      toSubmitPage.setAttribute("href", "register_10-submit-street");
+    } else if (origin == "map") {
+      toSubmitPage.setAttribute("href", "register_10-submit-map");
+    } else {
+      toSubmitPage.setAttribute("href", "register_10-submit");
+    }
+    console.log(toSubmitPage.getAttribute("href")); 
+  }
+  targetSubmit();
+  
+</script>
+
+{% endblock %}

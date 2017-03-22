@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirmation of new charge registration
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight">
+        <h1 class="bold-large">The <span class="charge_type"></span> charge was registered</h1>
+        <p>
+          The reference number is <br>
+          <strong class="heading-medium">HDJ2123F</strong>
+        </p>
+      </div>
+
+      <!--<p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>-->
+
+    </div>
+  </div>
+
+  <p><a href="register_1-charge-type_new">Register another local land charge</a></p>
+
+</main>
+
+<script>
+  chargeType = sessionStorage.getItem("chargeType");
+  chargeType = chargeType.toLowerCase();
+  console.log(chargeType);
+  postcode = sessionStorage.getItem("postcode");
+  console.log(postcode);
+  address = sessionStorage.getItem("address");
+  console.log(address);
+</script>
+
+{% endblock %}

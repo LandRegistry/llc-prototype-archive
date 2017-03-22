@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit charge details
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<p><a href="map-results">Back to search results</a></p>
+			<h1 class="heading-large">Edit charge ID LR-ABC12345</h1>
+			<img src="{{ asset_path }}images/address_1.png" width="100%" height="auto">
+			<p>Change the charge details using the form below. When you are done, click submit at the bottom of the page.</p>
+			<table class="edit-charge-details">
+
+				<thead>
+					<tr>
+						<th colspan="2">
+						</th>
+						<th>
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							Charge type
+						</td>
+						<td>
+							<input class="form-control" id="edit-charge-type-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Legislation
+						</td>
+						<td>
+							<input class="form-control" id="edit-legislation-field" type="text">
+						</td>
+						<td class="change-answer">
+							
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Location<br><br><br><br>
+						</td>
+						<td>
+							<input class="form-control" id="edit-location-field" type="text"><br><br>
+							<input class="form-control" id="edit-location-information-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Further information<br><br><br>
+							Reference<br><br>
+						</td>
+						<td>
+							<input class="form-control" id="edit-further-information-field" type="text"><br><br>
+							<input class="form-control" id="edit-reference-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Originating authority
+						</td>
+						<td>
+							<input class="form-control" id="edit-oa-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Source of charge<br><br>
+							Start date<br>
+						</td>
+						<td>
+							<input class="form-control" id="edit-source-field" type="text"><br><br>
+							<input class="form-control" id="edit-date-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Expiry
+						</td>
+						<td>
+							<input class="form-control" id="edit-expiry-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Retained land description
+						</td>
+						<td>
+							<input class="form-control" id="edit-retained-land-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Particulars of acquired land
+						</td>
+						<td>
+							<input class="form-control" id="edit-particulars-land-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Particulars of relevant interest
+						</td>
+						<td>
+							<input class="form-control" id="edit-particulars-interest-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Compensation
+						</td>
+						<td>
+							<input class="form-control" id="edit-compensation-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Amount
+						</td>
+						<td>
+							<input class="form-control" id="edit-amount-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Rate of interest
+						</td>
+						<td>
+							<input class="form-control" id="edit-interest-field" type="text">
+						</td>
+						<td class="change-answer">
+
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+			<br><br>
+			<p><a href="confirm-changes-infrastructure" class="button">Save</a></p>
+		</div>
+	</div>
+</main>
+<script>
+	var editChargeTypeValue = sessionStorage.getItem("editChargeType")
+	var editLegislationValue = sessionStorage.getItem("editLegislation")
+	var editLocationValue = sessionStorage.getItem("editLocation")
+	var editLocationInformationValue = sessionStorage.getItem("editLocationInformation")
+	var editFurtherInformationValue = sessionStorage.getItem("editFurtherInformation")
+	var editReferenceValue = sessionStorage.getItem("editReference")
+	var editOaValue = sessionStorage.getItem("editOa")
+	var editSourceValue = sessionStorage.getItem("editSource")
+	var editDateValue = sessionStorage.getItem("editDate")
+	var editExpiryValue = sessionStorage.getItem("editExpiry")
+	/*var editRetainedLandValue = sessionStorage.getItem("editRetainedLand")
+	var editParticularsLandValue = sessionStorage.getItem("editParticularsLand")
+	var editParticularsInterestValue = sessionStorage.getItem("editParticularsInterest)
+	var editCompensationValue = sessionStorage.getItem("editCompensation")
+	var editAmountValue = sessionStorage.getItem("editAmount")
+	var editInterestValue = sessionStorage.getItem("editInterest")*/
+
+</script>
+
+{% endblock %}
+
+

@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirm address
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation_lr_alpha.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+    <div class="phase-banner">
+        <p>
+            <strong class="phase-tag">alpha</strong>
+            <span>This is a new service</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" id="showWhenPostcode1">Select an address</h1>
+            <h1 class="heading-large" id="showWhenPlace2">Draw the charge boundary</h1>
+
+        <!-- <label class="form-label" for="search_term">
+        </label>
+        <input class="form-control postcode_searched" id="search_term" name="search_term" type="text" value="{{ search_term }}">
+        <a class="button search" href="#" role="button">Search</a><br><br> -->
+        <div id="showWhenPlace1">
+            <p>This map shows <span class="post_code"></span>.</p>
+            <p>You can show the area where the charge starts and ends using the map tools.</p>
+        </div>
+
+        <div id="showWhenPostcode">
+            <p>You searched for <span class="post_code"></span>.</p>
+            <p>The following addresses match your search. Select one to view this location on a map.</p>
+            <div id="address_list">
+                <div class="browse address_list">
+                    <ul class="list">
+                        <li><a href="register_32-where-search-results-map">
+                            1 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            3 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            5 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            7 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            9 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            11 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            13 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            15 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            17 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            19 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            21 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            23 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            25 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            27 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            29 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                        <li><a href="register_32-where-search-results-map">
+                            31 Clinton Street, Exeter <span class="post_code"></span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="showWhenPlace">
+
+            <h2 class="heading-small">I can't see my location</h2>
+            <p>You can <a href="register_31-where-search">search again</a> using a postcode or UPRN.</p>
+            <img id="imageToChange" src="/public/images/llc-03/city_1.png" style="width:960px;height:395px;">
+            <div class="button-list">
+                <div class="inline">
+                    <p>
+                    <a id="targetToChange" class="button" href="register_6-description" role="button">Continue</a>
+                    </p> 
+                </div>
+            </div>
+        </div>
+
+        
+
+
+    </div>
+
+
+</div>
+
+</main>
+
+<script>
+    chargeType = sessionStorage.getItem("chargeType");
+    chargeType = chargeType.toLowerCase();
+    console.log(chargeType);
+    postcode = sessionStorage.getItem("postcode");
+    console.log(postcode);
+    var postcodeArray = postcode.split("");
+    var newArray = [];
+
+    if (newArray.length < 1) {
+        document.getElementById("showWhenPostcode").setAttribute("style", "display: none");
+        document.getElementById("showWhenPostcode1").setAttribute("style", "display: none");
+        document.getElementById("showWhenPlace").setAttribute("style", "display: block");
+        document.getElementById("showWhenPlace1").setAttribute("style", "display: block");
+    }
+
+    for (var i = 0; i < postcodeArray.length; i++) {
+        var v = postcodeArray[i];
+        v = Number(v);
+        newArray.push(v);
+    }
+
+    var e = 0;
+    while (e < newArray.length) {
+        if(isNaN(newArray[e]) || newArray[e] == 0) {
+            console.log("not a number");
+            e++;
+            document.getElementById("showWhenPostcode").setAttribute("style", "display: none");
+            document.getElementById("showWhenPostcode1").setAttribute("style", "display: none");
+            document.getElementById("showWhenPlace").setAttribute("style", "display: block");
+            document.getElementById("showWhenPlace1").setAttribute("style", "display: block");
+        } else {
+            console.log("there is a number");
+            document.getElementById("showWhenPlace").setAttribute("style", "display: none");
+            document.getElementById("showWhenPlace1").setAttribute("style", "display: none");
+            document.getElementById("showWhenPlace2").setAttribute("style", "display: none");
+            document.getElementById("showWhenPostcode").setAttribute("style", "display: block");
+            document.getElementById("showWhenPostcode1").setAttribute("style", "display: block");
+            break;
+        }
+    }
+
+
+    Array.prototype.slice.call(document.querySelectorAll(".post_code")).forEach(function(e){
+        e.innerHTML = postcode;
+    });
+    
+</script>
+
+{% endblock %}

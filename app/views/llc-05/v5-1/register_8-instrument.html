@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Instrument of the charge
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation_lr_alpha.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+<div class="phase-banner">
+    <p>
+    <strong class="phase-tag">alpha</strong>
+    <span>This is a new service</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">What created the charge?</h1>
+      <form action="/llc-03/register-8" method="POST">
+        <fieldset>
+          <div class="form-group form-group-instrument">  
+            
+            <label class="block-label selection-button-radio" for="radio-inline-1">
+              <input id="radio-inline-1" class="instrument_radio" type="radio" name="instrument" value="agreement">
+              Agreement
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-2">
+              <input id="radio-inline-2" class="instrument_radio" type="radio" name="instrument" value="certificate">
+              Certificate
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-3">
+              <input id="radio-inline-3" class="instrument_radio" type="radio" name="instrument" value="covenants">
+              Covenants
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-4">
+              <input id="radio-inline-4" class="instrument_radio" type="radio" name="instrument" value="deed">
+              Deed
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-5">
+              <input id="radio-inline-5" class="instrument_radio" type="radio" name="instrument" value="deed of modification">
+              Deed of modification
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-6">
+              <input id="radio-inline-6" class="instrument_radio" type="radio" name="instrument" value="notice">
+              Notice
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-7">
+              <input id="radio-inline-7" class="instrument_radio" type="radio" name="instrument" value="order">
+              Order
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-8">
+              <input id="radio-inline-8" class="instrument_radio" type="radio" name="instrument" value="resolution">
+              Resolution
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-9">
+              <input id="radio-inline-9" class="instrument_radio" type="radio" name="instrument" value="scheme">
+              Scheme
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-10">
+              <input id="radio-inline-10" class="instrument_radio" type="radio" name="instrument" value="transfer">
+              Transfer
+            </label>
+            <label class="block-label selection-button-radio" for="radio-inline-11">
+              <input id="radio-inline-11" class="instrument_radio" type="radio" name="instrument" value="undertaking">
+              Undertaking
+            </label>
+          </div>
+        </fieldset>
+        
+
+        <p>
+          <a class="button instrument_button" href="dates" role="button">Continue</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

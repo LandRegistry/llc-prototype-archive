@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add additional information about the charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">What created the charge?</h1>
+			<form action="creation_date" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">What created the charge?</legend>
+						<div class="form-group-reason">
+							<label class="block-label selection-button-checkbox" for="reason-1">
+								<input id="reason-1" name="reason-types" type="checkbox" value="agreement">
+								Agreement
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-2">
+								<input id="reason-2" name="reason-types" type="checkbox" value="certificate">
+								Certificate
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-3">
+								<input id="reason-3" name="reason-types" type="checkbox" value="covenants">
+								Covenants
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-4">
+								<input id="reason-4" name="reason-types" type="checkbox" value="deed">
+								Deed
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-5">
+								<input id="reason-5" name="reason-types" type="checkbox" value="deed-of-modification">
+								Deed of modification
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-6">
+								<input id="reason-6" name="reason-types" type="checkbox" value="notice">
+								Notice
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-7">
+								<input id="reason-7" name="reason-types" type="checkbox" value="order">
+								Order
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-8">
+								<input id="reason-8" name="reason-types" type="checkbox" value="resolution">
+								Resolution
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-9">
+								<input id="reason-9" name="reason-types" type="checkbox" value="scheme">
+								Scheme
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-10">
+								<input id="reason-10" name="reason-types" type="checkbox" value="transfer">
+								Transfer
+							</label>
+							<label class="block-label selection-button-checkbox" for="reason-11">
+								<input id="reason-11" name="reason-types" type="checkbox" value="undertaking">
+								Undertaking
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<a class="button reason-button" href="creation_date" role="button">Continue</a>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+

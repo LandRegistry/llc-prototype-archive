@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirm address
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation_lr_alpha.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+<div class="phase-banner">
+        <p>
+        <strong class="phase-tag">alpha</strong>
+        <span>This is a new service</span>
+        </p>
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <h1 class="heading-large">Draw the charge boundary</h1>
+
+        <!-- <label class="form-label" for="search_term">
+        </label>
+        <input class="form-control postcode_searched" id="search_term" name="search_term" type="text" value="{{ search_term }}">
+        <a class="button search" href="#" role="button">Search</a><br><br> -->
+        
+
+        <p>The map shows <span class="address"></span>.</p>
+        <p>You can show the area where the charge starts and ends using the map tools.</p>
+        <h2 class="heading-small">I can't see my location</h2>
+        <p>You can <a href="register_31-where-search">search again</a> using a postcode or UPRN.</p>
+        <img id="imageToChange" src="/public/images/llc-03/address_1.png" style="width:960px;height:auto;">
+
+        <div class="button-list">
+            <div class="inline">
+                <p>
+                    <a id="targetToChange" class="button" href="register_6-description" role="button">Continue</a>
+                </p> 
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</main>
+
+<script>
+    postcode = sessionStorage.getItem("postcode");
+    console.log(postcode);
+    address = sessionStorage.getItem("address");
+    console.log(address);
+
+
+
+    Array.prototype.slice.call(document.querySelectorAll(".address")).forEach(function(e){
+        e.innerHTML = address;
+    });
+    
+</script>
+
+{% endblock %}

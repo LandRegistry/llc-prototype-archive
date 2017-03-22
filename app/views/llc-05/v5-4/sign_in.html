@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Select charge type
+{% endblock %}
+
+{% block proposition_header %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="v4">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Sign in to register a charge</h1>
+      <form>
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visually-hidden">#</legend>
+
+            <div class="form-group">
+              <label class="form-label" for="user_id">User ID</label>
+              <input class="form-control" id="user_id" name="user_id" type="text">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-control" id="password" name="password" type="password">
+            </div>
+            <p>Problems signing in?</p>
+            <ul class="list">
+              <li><a href="#">Forgotten user ID</a></li>
+              <li><a href="#">Forgotten password</a></li>
+              <li><a href="#">Forgotten user ID and password</a></li>
+              <li><a href="#">I need to register</a></li>
+            </ul>
+
+
+          </fieldset>
+
+        </div>
+        <p><a class="button" href="register_1-charge-type_new" role="button">Continue</a></p>
+
+      </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
