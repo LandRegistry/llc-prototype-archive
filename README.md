@@ -1,7 +1,7 @@
 # llc-prototype
 Local land charge register Prototype
 
-Can be seen running https://lr-llc-prototype.herokuapp.com/
+Can be seen running https://llc-prototype.herokuapp.com/
 
 Follow the installation instructions below to install. It's that simple.
 
