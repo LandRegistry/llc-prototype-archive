@@ -1,18 +1,159 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-GOV.UK prototype kit
+Add more information about the location
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-medium">
-				Add a charge version history
-			</h1>
-			<h2 class="heading-small"><a href="v1/start">Version 1</a></h2>
+			<h1 class="heading-large">Add a charge</h1>
+			<h2 class="heading-medium">Version history</h2>
+
+				<h3 class="heading-small"><a href="/add_charge/v2/01_start">Add a charge (Version 2)</a></h3>
+
+				<p>Changes made to based on <a href="https://drive.google.com/open?id=0BztT72UvfkuQdFJVZ1JIcVY4a1k">feedback from research at Local Authorities February 2017</a></p>
+
+				<ul class="list-bullet">
+					<li>Prompt text for legislation search - changed to black</li>
+					<li>Removed category accordian</li>
+					<li>Search button removed from type ahead, continue button added</li>
+					<li>Added screen with with ‘top 5’ legislations</li>
+					<li>Searching for a place - removed links out to Royal Mail address finder</li>
+					<li>Content changes made - but require approval</li>
+					<li>Header bar - changed for consistency with mockups. For benefit of dev &amp; test. NOTE: this is not the final header bar.</li>
+				</ul>
+
+				<h2 class="heading-medium"><a href="/add_charge/v1/start">Add a charge Version 1</a></h2>
+				<p>Updated version for adding a charge.</p>
+
+				<h2 class="heading-medium">Alpha</h2>
+					<h3 class="heading-small"><a href="/llc-05/v5-1/start_page">Version 5</a></h3>
+
+					<p>Updated version for adding a charge.</p>
+
+
+				<h2 class="heading-medium"><a href="/llc-04-1/v4-1/start_page">Version 4.1</a></h2>
+				<h3 class="heading-small">Register a local land charge</h3>
+
+				<p>Here are the changes based on <a href="https://docs.google.com/presentation/d/1RZhoThX7GOoC7T-I93PMoct67xLMBu6OXYDVFicB80g/edit#slide=id.p4">feedback</a> from the first round of user testing for version 4</p>
+				<ul class="list list-number">
+					<li>Service name</li>
+					<ul class="list list-bullet">
+						<li>Service name changed from "Local land charges register" to "Register or update a local land charge"</li>
+					</ul>
+					<li>General</li>
+					<ul class="list list-bullet">
+						<li><code>&lt;h1&gt;</code> tags are updated on each page so that they now better relfect the content of the page (e.g. "Instrument" became "Charge type")</li>
+						<li>Explanatory texts on various pages have been updated for clarity</li>
+					</ul>
+					<li>Searching for a place</li>
+					<ul class="list list-bullet">
+						<li>If users search by place name, they are taken to a map where they can draw the boundaries</li>
+						<li>If users search by postcode, they are taken to a page that lists the addresses. After they select an address, they are taken to a page with a map that highlights the address</li>
+					</ul>
+					<li>Expiry date</li>
+					<ul class="list list-bullet">
+						<li>Users can enter a date or text if the charge has an expiry date</li>
+					</ul>
+				</ul>
+
+				<h2 class="heading-medium"><a href="/llc-04/v4-1/start_page">Version 4</a></h2>
+				<h3 class="heading-small">Register a local land charge</h3>
+				<ul class="list list-number">
+					<li>General</li>
+					<ul class="list list-bullet">
+						<li>Added gov.uk header</li>
+					</ul>
+					<li>Charge description</li>
+					<ul class="list list-bullet">
+						<li>There are 2 UI versions to select the charge type - one where it uses <a href="/llc-04/v4-1/start_page">accordion columns</a> and one where it uses <a href="/llc-04/v4-3/start_page">autocomplete</a>.</li>
+						<li>There are also variations to these versions: one where it shows how many legislations apply to charge type (<a href="/llc-04/v4-2/start_page">accordion</a>) and one where there is a link to a gov.uk page where it explains what these charge types are (<a href="/llc-04/v4-4/start_page">autocomplete</a>).</li>
+					</ul>
+				</ul>
+
+				<h2 class="heading-medium">Register a local land charge <a href="/llc-03/register-0">Version 3</a></h2>
+
+				<h3 class="heading-small">Tackling <a href="https://drive.google.com/file/d/0B_hFQnGgK8smRmE4eVBmRFNQZmM/view?usp=sharing">findings from user testing round 1</a></h3>
+
+				<ul class="list list-number">
+					<li>Charge description</li>
+					<ul class="list list-bullet">
+						<li>Reworded </li>
+						<li>Text box replaced with text area</li>
+						<li>Text area pre-populated with previously selected address - user able to amend or add to this information</li>
+					</ul>
+					<li>Legal provision</li>
+					<ul class="list list-bullet">
+						<li>Reworded</li>
+						<li>Text box replaced with drop-down populated with some values. </li>
+					</ul>
+					<li>Creation date</li>
+					<ul class="list list-bullet">
+						<li>Moved to different screen as this is actually the date of the document (instrument)</li>
+						<li>Text amended to refer to the document date.</li>
+					</ul>
+					<li>Instrument</li>
+					<ul class="list list-bullet">
+						<li>Reworded</li>
+					</ul>
+
+					<li>Additional information</li>
+					<ul class="list list-bullet">
+						<li>Reworded </li>
+					</ul>
+					<li>Charge type</li>
+					<ul class="list list-bullet">
+						<li>(Not changed - remains limited to the most common charge types for simplicity)</li>
+					</ul>
+					<li>Address list</li>
+					<ul class="list list-bullet">
+						<li>Screen added displaying list of addresses </li>
+					</ul>
+				</ul>
+
+				<h4 class="heading-small">General changes</h4>
+				<ul class="list list-bullet">
+					<li>
+						Map images updated to showing location at different zoom levels.
+					</li>
+					<li>
+						Store values user has entered. Display on confirm page.
+					</li>
+					<li>
+						GOV.UK date pattern
+					</li>
+					<li>
+						Screenflow changed
+					</li>
+				</ul>
+
+			<h2 class="heading-medium">Version 2 </h2>
+			<h3 class="heading-small"><a href="/llc-02/register-1">Register a local land charge</a></h3>
+
+			<h2 class="heading-medium">Version 1</h2>
+			<h3 class="heading-small">Create local land charge</h3>
+			<ul>
+				<li><a href="/llc-01/create-1">Charge type</a></li>
+				<li><a href="/llc-01/create-2">Statutory provisions</a></li>
+				<li><a href="/llc-01/create-3">Document</a></li>
+				<li><a href="/llc-01/create-4">Term</a></li>
+				<li><a href="/llc-01/create-5">s8</a></li>
+				<li><a href="/llc-01/create-6">s52</a></li>
+				<li><a href="/llc-01/create-7">Additional info</a></li>
+				<li><a href="/llc-01/create-8">Originating authority</a></li>
+				<li><a href="/llc-01/create-9">Mapping</a></li>
+				<li><a href="/llc-01/create-10">UPRN</a></li>
+				<li><a href="/llc-01/create-11">Submit</a></li>
+				<li><a href="/llc-01/create-12">Confirm</a></li>
+			</ul>
 		</div>
 	</div>
 </main>
