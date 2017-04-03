@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add additional information about the charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What is the legal basis for this charge?</h1>
+            <p>Choose the law, act or section you're looking for. </p>
+			<form action="creation_date" method="GET">
+				<div class="form-group">
+                  <fieldset>
+                    <legend class="visuallyhidden">What is the legal basis for this charge?</legend>
+
+                    <label for="radio-part-1" class="block-label selection-button-radio">
+                      <input id="radio-part-1" type="radio" name="housing-act" value="Part 1">
+                      <span class="heading-small">Section 70</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-2" class="block-label selection-button-radio">
+                      <input id="radio-part-2" type="radio" name="housing-act" value="Part 2">
+                      <span class="heading-small">Section 106</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-3" class="block-label selection-button-radio">
+                      <input id="radio-part-3" type="radio" name="housing-act" value="Part 3">
+                      <span class="heading-small">Section 198</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-4" class="block-label selection-button-radio">
+                      <input id="radio-part-4" type="radio" name="housing-act" value="Part 4">
+                      <span class="heading-small">Article 4</span><br>
+                      Town &amp; Country Planning Order 1995<br>(General Permitted Development)
+                    </label>
+
+                    <label for="radio-part-5" class="block-label selection-button-radio">
+                      <input id="radio-part-5" type="radio" name="housing-act" value="Part 4">
+                      <span class="heading-small">Section 1</span><br>
+                      Planning Act 1990<br>
+                      (Listed Buildings &amp; Conservation Areas)
+                    </label>
+                  </fieldset>
+                </div>
+
+                <p>If the law, act or section isn't listed <a href="03_charge_search">search for legislation</a></p>
+
+				<a class="button additional-information-button" href="04_postcode" role="button">Continue</a>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
