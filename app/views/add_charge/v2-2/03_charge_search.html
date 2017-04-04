@@ -14,23 +14,24 @@ Select a charge type
 	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-large">Legislation</h1>
-			<p></p>
-			<form action="" method="GET">
-				<div class="form-group">
-					<fieldset>
-						<legend class="visuallyhidden">Where is the charge?</legend>
-						<div class="form-group spacing-bottom-half">
-							<label class="form-label" for="search-term">
-								<strong>Search by postcode, place name or UPRN</strong>
-							</label>
-							<span class="form-hint">For example SW1A 2AA or Manchester</span>
-							<input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-							<input class="search-button submit location-search" type="submit" value="Search"><br><br>
-						</div>
-					</fieldset>
-				</div>
-			</form>
+			<h1 class="heading-large">What is the legal basis for this charge?</h1>
+			<div class="search-by-autocomplete">
+				<form action="search.html" method="GET">
+					<div class="form-group">
+						<fieldset>
+							<legend class="visuallyhidden">What is the legal basis for this charge?</legend>
+							<div class="form-group spacing-bottom-half">
+
+									<p>Start typing the law, act or section you’re looking for. </p>
+								<input class="form-control search-field" id="legislation" name="legislation" type="text" value="" style="width: 500px;" autofocus="autofocus">
+								<!--<input class="search-button submit autocomplete-search" type="submit" name="legislation" value=""><br><br>-->
+							</div>
+						</fieldset>
+						<p>If none of the laws, acts or sections apply then you must <a href="04_doc_mand">select an instrument</a></p>
+					</div>
+					<a class="button additional-information-button" href="05_postcode" role="button">Continue</a>
+				</form>
+			</div>
 		</div>
 	</div>
 </main>
