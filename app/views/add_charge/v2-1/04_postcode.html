@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Find where your charge is
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Where can you find this charge?</h1>
+			<form action="map.html" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">Where is the charge?</legend>
+						<div class="form-group spacing-bottom-half">
+							<label class="form-label" for="search-term">
+								<strong>Enter a postcode or address for your charge.</strong>
+							</label>
+							<span class="form-hint">For example, SW1 6LG.</span>
+							<input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+							<!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
+							<a class="button" href="05_map" role="button">Search</a>
+						</div>
+					</fieldset>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
+
