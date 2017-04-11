@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Select a charge type
+What is the legal basis for this charge?
 {% endblock %}
 
 {% block content %}
@@ -16,16 +16,28 @@ Select a charge type
 		<div class="column-two-thirds">
 			<h1 class="heading-large">What is the legal basis for this charge?</h1>
 			<div class="search-by-autocomplete">
-				<form action="search.html" method="GET">
+				<form action="/add_charge/v2-2/03_charge_search_results" method="POST">
 					<div class="form-group">
 						<fieldset>
 							<legend class="visuallyhidden">What is the legal basis for this charge?</legend>
 							<div class="form-group spacing-bottom-half">
 
-									<p>Start typing the law, act or section you’re looking for. </p>
-								<input class="form-control search-field" id="legislation" name="legislation" type="text" value="" style="width: 500px;" autofocus="autofocus">
-								<!--<input class="search-button submit autocomplete-search" type="submit" name="legislation" value=""><br><br>-->
+								<p>Start typing the law, act or section you’re looking for. </p>
+
+								<input class="form-control search-field" id="legislation" name="legislation" type="text" value="{{ value }}" style="width: 500px" autofocus="autofocus">
+								<input class="search-button submit location-search" type="submit" value="Search"><br><br>
+
+								{% for item in reply %}
+									<label for="radio-part-{{loop.index}}" class="block-label selection-button-radio">
+									  <input id="radio-part-{{loop.index}}" type="radio" name="housing-act" value="Part 1">
+										<span class="heading-small">{{ item[0] }}</span><br>
+										{{ item[1] }}
+										{{ item[2] }}
+									</label>
+								{% endfor %}
+
 							</div>
+
 						</fieldset>
 						<p>If none of the laws, acts or sections apply then you must <a href="04_doc_mand">select an instrument</a></p>
 					</div>

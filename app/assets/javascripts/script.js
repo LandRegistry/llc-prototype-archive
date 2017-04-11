@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// lick charge type to reveal legislation list
-	$(".control li a").click(function() {
+	/*$(".control li a").click(function() {
 		var charge = $(this).attr("href");
 		var chargeType = $(this).html();
 		sessionStorage.setItem("chargeType", chargeType);
@@ -104,7 +104,7 @@ $(document).ready(function() {
 	$(".doc-month").html(docMonth);
 	$(".doc-year").html(docYear);
 	/*$(".expiry").html(expiry);*/
-	$(".reference").html(reference);
+	/*$(".reference").html(reference);
 	$(".legislation").html(legislation);
 
 	// maintain_llc v1.1
@@ -300,7 +300,7 @@ $(document).ready(function() {
 
 
   // replacing values
-  $(".legislation").html(legislationSelected)
+  /*$(".legislation").html(legislationSelected)
   $(".location").html(locationSelected)
   $(".moreInformation").html(moreInformationSelected)
   $(".address").html(addressSelected)
@@ -321,7 +321,7 @@ $(document).ready(function() {
   $(".particularsB").html(particularsBSelected)
   $(".compensation").html(compensationSelected)
   $(".amount").html(amountSelected)
-  $(".interest").html(interestSelected)
+  $(".interest").html(interestSelected)*/
 
  
 

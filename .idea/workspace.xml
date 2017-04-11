@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42635832-9a0a-4ba4-b12d-b2385e40a7fe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_list_top.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_list_top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_list_top.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_list_top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/04_postcode.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/04_postcode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/09_expiration.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/09_expiration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v2-1/10_check.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v2-1/10_check.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/index.html" afterPath="$PROJECT_DIR$/app/views/add_charge/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/llc-03/register/register_2-legal.html" afterPath="$PROJECT_DIR$/app/views/llc-03/register/register_2-legal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/script.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="llc-prototype.iws" />
@@ -19,127 +33,89 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="06_additional_information.html" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.31755915">
-                    <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="llc-prototype" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.666666">
-              <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.82535577">
+              <caret line="306" column="19" selection-start-line="306" selection-start-column="19" selection-end-line="306" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="land_compensation_6a.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/land_compensation_6a.html">
+      <file leaf-file-name="03_charge_list_top.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_list_top.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="health_and_safety.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/health_and_safety.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="land_compensation_6b.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/land_compensation_6b.html">
+      <file leaf-file-name="buildings.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/buildings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="specific_financial.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/specific_financial.html">
+      <file leaf-file-name="environment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/environment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="06_additional_information.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html">
+      <file leaf-file-name="getting-started.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/getting-started.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6940874">
-              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="05_map.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html">
+      <file leaf-file-name="03_charge_search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.5">
-              <caret line="330" column="33" selection-start-line="330" selection-start-column="33" selection-end-line="330" selection-end-column="33" />
-              <folding />
+            <state vertical-scroll-proportion="-12.568627">
+              <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="08_creation_date.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html">
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="78" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="07_document.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.166666">
-              <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="05_more_information.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/05_more_information.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.125">
-              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_sign_in.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/02_sign_in.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
-              <caret line="24" column="30" selection-start-line="21" selection-start-column="24" selection-end-line="24" selection-end-column="30" />
+            <state vertical-scroll-proportion="-17.5">
+              <caret line="28" column="117" selection-start-line="27" selection-start-column="28" selection-end-line="28" selection-end-column="117" />
               <folding />
             </state>
           </provider>
@@ -147,24 +123,19 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/includes/propositional_navigation_alpha.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/charge_type.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/reason.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/02_charge_list.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/02_charge_type.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/02_charge_list_top.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/land_compensation_6a.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/specific_financial.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/more_information.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/land_compensation_6b.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/03_charge_search.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2/03_charge_list_top.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2/05_more_information.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2/07_reason.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2/06_additional_information.html" />
@@ -196,14 +167,26 @@
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/06_map.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/07_more_info.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/08_additional_info.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/05_more_information.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/script.js" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/04_postcode.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_list_top.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/09_expiration.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/10_check.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/add_charge/index.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_list_top.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-2/includes/legislation_search.html" />
+        <option value="$PROJECT_DIR$/app/views/llc-03/register/register_2-legal.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search_results.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-2/03.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search.html" />
+        <option value="$PROJECT_DIR$/app/routes.js" />
       </list>
     </option>
   </component>
@@ -211,9 +194,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
+    <option name="x" value="86" />
     <option name="y" value="23" />
-    <option name="width" value="1661" />
+    <option name="width" value="1568" />
     <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -239,6 +222,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -268,7 +252,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="govuk_modules" />
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -301,50 +285,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-04-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-04" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,7 +332,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="v2-1" />
+              <option name="myItemId" value="v2-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -414,22 +354,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llc-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llc-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llc-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llc-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="govuk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/add_charge/v2-2" />
+      <recent name="$PROJECT_DIR$/app/views/add_charge/v2-1" />
       <recent name="$PROJECT_DIR$/app/views/add_charge" />
       <recent name="$PROJECT_DIR$/app/views/add_charge/v2" />
       <recent name="$PROJECT_DIR$/app/views/llc-03/register" />
-      <recent name="$PROJECT_DIR$/app/views" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/images" />
@@ -574,27 +562,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1661" height="973" extended-state="0" />
+    <frame x="86" y="23" width="1568" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25060976" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21396251" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23220536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23220536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -616,230 +604,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/examples/elements/radio-buttons-checkboxes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39106902">
-          <caret line="77" column="64" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/llc-04-1/v4-4/register_32-where-search-results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="60" selection-start-line="34" selection-start-column="7" selection-end-line="47" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-1/map-results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="157" column="38" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/specific_financial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5">
-          <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/land_compensation_6b.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/land_compensation_6a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/03_charge_search_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/03_charge_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/06_additional_information.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.745098">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/additional_information.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.5">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/reason.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="67" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/10_check.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.458334">
-          <caret line="202" column="87" selection-start-line="202" selection-start-column="87" selection-end-line="202" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/11_confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/07_document.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.803922">
-          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/08_creation_date.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="78" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/09_expiration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.083334">
-          <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/05_more_information.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="82" selection-start-line="14" selection-start-column="4" selection-end-line="16" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/01_start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/02_sign_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/03_charge_list_top.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/05_map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="771" column="3" selection-start-line="771" selection-start-column="3" selection-end-line="771" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2/04_postcode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-1/sign_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-1/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1/sign_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1/cancel-check.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1/cancel-confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1/confirm-changes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layout_unbranded.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -847,77 +611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout_lr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/01_start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/10_check.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/11_confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_list_top.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.583334">
-          <caret line="58" column="71" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.235294">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/04_postcode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/09_expiration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="78" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/land_compensation_6a.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,31 +629,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.666666">
-          <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.166666">
-          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/05_more_information.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-          <folding />
+        <state vertical-scroll-proportion="468.95834">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -965,22 +643,359 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0">
           <caret line="24" column="30" selection-start-line="21" selection-start-column="24" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/01_start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_list_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/04_postcode.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/05_more_information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/07_document.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/09_expiration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/10_check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/11_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/06_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="791" column="0" selection-start-line="791" selection-start-column="0" selection-end-line="791" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/05_map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5">
-          <caret line="330" column="33" selection-start-line="330" selection-start-column="33" selection-end-line="330" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="18" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/05_postcode.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/04_doc_mand_date.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/04_doc_mand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-04/v4-4/register_9-term.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3784764">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/03_charge_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.81195515">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-03/register/register_2-legal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.208333">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="249" column="0" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-01/create/create_1-charge-type.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout_lr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-04/v4-1/register_8-instrument.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/08_creation_date.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7083333">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-02/register/register_4-description.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-1/06_additional_information.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6940874">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state vertical-scroll-proportion="-6.5416665">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-04/v4-1/register_33-map-search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5977584">
+          <caret line="32" column="118" selection-start-line="32" selection-start-column="118" selection-end-line="32" selection-end-column="144" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-04/v4-1/register_32-where-search-results-confirm-street.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/getting-started.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/llc-03/register/register_1-charge-type.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.875">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/tips-and-tricks.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778">
+          <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/creating-routes.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8625">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/making-pages.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.375">
+          <caret line="20" column="7" selection-start-line="18" selection-start-column="3" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/health_and_safety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/buildings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/lists/environment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v1/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="28" column="117" selection-start-line="27" selection-start-column="28" selection-end-line="28" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_list_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v2-2/03_charge_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.568627">
+          <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82535577">
+          <caret line="306" column="19" selection-start-line="306" selection-start-column="19" selection-end-line="306" selection-end-column="19" />
           <folding />
         </state>
       </provider>
