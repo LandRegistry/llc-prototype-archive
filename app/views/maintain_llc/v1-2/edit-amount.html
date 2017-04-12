@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add specific financial information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Specific financial information</h1>
+			<form action="confirm-changes" method="GET">
+				<fieldset class="inline">
+					<legend class="visuallyhidden">Specific financial information </legend>
+
+					<div class="form-group">
+						<label class="form-label" for="amount">
+							Amount originally secured
+						</label>
+						<span class="form-hint">e.g. 20000.00</span>
+						<input class="form-control" id="amount" name="amount" type="text" value=""></input>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="interest">
+							Rate of interest if relevant (optional)
+						</label>
+						<span class="form-hint">e.g. 0.05%</span>
+						<input class="form-control" id="interest" name="interest" type="text" value=""></input>
+					</div>
+				</fieldset>
+				<a class="button specific-financial-button" href="confirm-changes" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
