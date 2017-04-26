@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit charge type and legislation
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Change the legislation</h1>
+			<p>The legislation for this charge is s.107 Building Act 1984</p>
+			<div class="search-by-autocomplete">
+				<form action="confirm-changes" method="GET">
+					<div class="form-group">
+						<fieldset>
+							<legend class="visuallyhidden">Change the legislation for your charge</legend>
+							<div class="form-group spacing-bottom-half">
+								<label class="form-label" for="legislation">
+									<h2 class="heading-medium">New legislation</h2>
+								</label>
+								<span class="form-hint">Start typing the legislation you are looking for and select it from the list</span>
+								<input class="form-control search-field" id="new-legislation" name="new-legislation" type="text" value="" autofocus="autofocus">
+							</div>
+						</fieldset>
+						<a href="confirm-changes" class="button" id="confirm-new-legislation">Continue</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		var legislationList = [
+		"Various",
+		"s.8 Coast Protection Act",
+		"Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010",
+		"Part 8 Regulation 66 Community Infrastructure Levy Regulations 2011",
+		"s.178(1)(b) Town and Country Planning Act 1990",
+		"s.42(1) Planning (Listed Buildings and Conservation Areas) Act 1990",
+		"s.107 Building Act 1984",
+		"Highways Act 1980 (various sections)",
+		"s.278(8) Highways Act 1980",
+		"s.106 Town and Country Planning Act 1990",
+		"Part 8 Regulation 66 Community Infrastructure Levy Regulations 2011",
+		"s.52(2) Housing Grants Construction and Regeneration Act 1996",
+		"s.156(a) Housing Act 1985",
+		"s.36(a) Housing Act 1985",
+		"s.8(4) Land Compensation Act 1973",
+		"s.52(8) Land Compensation Act 1973",
+		"New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)",
+		"s.11(1) Opencast Coal Act 1958",
+		"No specific statutory provision"
+		]
+		$( "#new-legislation" ).autocomplete({
+			source: legislationList
+		})
+	})
+</script>
+
+{% endblock %}
+
+
