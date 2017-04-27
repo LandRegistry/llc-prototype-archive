@@ -588,3 +588,12 @@
 .toHighlight {
   background-color: #F8F8F8;
 }
+
+/* Charge history table rules */
+
+.charge-history {
+  & th,
+  & td {
+    vertical-align: top;
+  }
+}
