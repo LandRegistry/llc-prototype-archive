@@ -64,6 +64,10 @@ Edit charge type and legislation
 		$( "#new-legislation" ).autocomplete({
 			source: legislationList
 		})
+		$("#confirm-new-legislation").click(function() {
+			var legislationChanged = true
+			sessionStorage.setItem("legislationChanged", legislationChanged)
+		})
 	})
 </script>
 

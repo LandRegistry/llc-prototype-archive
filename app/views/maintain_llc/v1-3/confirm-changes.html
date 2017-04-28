@@ -59,7 +59,7 @@ Confirm your changes
 							</a>
 						</td>
 					</tr>
-					<tr>
+					<tr id="moreInformationRow">
 						<td>
 							Location<br><br><br>
 						</td>
@@ -73,7 +73,7 @@ Confirm your changes
 								</a>
 							</td>
 						</tr>
-						<tr>
+						<tr id="furtherInformationRow">
 							<td>
 								Further information<br><br>
 								Reference
@@ -99,7 +99,7 @@ Confirm your changes
 								
 							</td>
 						</tr>
-						<tr>
+						<tr id="noticeRow">
 							<td>
 								Source of charge<br><br>
 								Start date
@@ -125,7 +125,7 @@ Confirm your changes
 
 							</td>
 						</tr>
-						<tr>
+						<tr id="expiryRow">
 							<td>
 								Expiry
 							</td>
@@ -138,7 +138,7 @@ Confirm your changes
 								</a>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>
 								Retained land description
 							</td>
@@ -215,7 +215,7 @@ Confirm your changes
 									Change <span class="visuallyhidden">Rate of interest</span>
 								</a>
 							</td>
-						</tr>
+						</tr> -->
 
 					</tbody>
 				</table>
@@ -224,7 +224,7 @@ Confirm your changes
 			</div>
 		</div>
 	</main>
-	<script>
+	<!-- <script>
 		var toHighlight = sessionStorage.getItem("newLegislation")
 		var changeChecked = sessionStorage.getItem("changeCheck")
 		var test = document.getElementById("legislation-text")
@@ -234,6 +234,29 @@ Confirm your changes
 		if(changeChecked === "legislation changed") {
 			document.getElementById("legislationRow").className += " toHighlight"
 		}
+	</script> -->
+	<script>
+		var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
+		if (legislationChangedCheck = true) {
+			document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var moreInformationChangedCheck = sessionStorage.getItem("moreInformationChanged")
+		if (moreInformationChangedCheck = true) {
+			document.getElementById("moreInformationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
+		if (furtherInformationChangedCheck = true) {
+			document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var noticeChangedCheck = sessionStorage.getItem("noticeChanged")
+		if (noticeChangedCheck = true) {
+			document.getElementById("noticeRow").style.backgroundColor = "#DEE0E2"
+		}
+		var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
+		if (expiryChangedCheck = true) {
+			document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
+		}
+
 	</script>
 
 	{% endblock %}

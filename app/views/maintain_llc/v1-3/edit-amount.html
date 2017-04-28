@@ -34,12 +34,18 @@ Add specific financial information about the location
 						<input class="form-control" id="interest" name="interest" type="text" value=""></input>
 					</div>
 				</fieldset>
-				<a class="button specific-financial-button" href="confirm-changes" role="button">Continue</a>
+				<a class="button specific-financial-button" id="confirm-new-amount" href="confirm-changes" role="button">Continue</a>
 
 			</form>
 		</div>
 	</div>
 </main>
+<script>
+$("#confirm-new-amount").click(function() {
+			var amountChanged = true
+			sessionStorage.setItem("amountChanged", amountChanged)
+		})
+</script>
 
 {% endblock %}
 
