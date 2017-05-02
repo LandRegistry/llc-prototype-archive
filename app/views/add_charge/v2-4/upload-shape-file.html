@@ -14,22 +14,22 @@ Uploading a shape file
 	<!-- main content -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-medium">Do you have a shape file?</h1>
+			<h1 class="heading-large">Do you have a shape file?</h1>
 			<span>Accepted formats are:</span>
 			<ul class="list list-bullet">
 				<li>shapefile (.shp)</li>
 				<li>under 1MB</li>
 			</ul>
-			<form action="draw-charge-boundary" method="get">
+			<form action="05_postcode" method="get">
 				<div class="form-group">
 					<fieldset>
 						<legend class="visuallyhidden">Do you have a shape file?</legend>
 						<div class="form-group">
-							<label class="block-label selection-button-radio selected" for="shapeYes" data-target="shapeExists">
+							<label class="block-label selection-button-radio" for="shapeYes" data-target="shapeExists">
 								<input id="shapeYes" name="shape" type="radio" value="true">
 								Yes
 							</label>
-							<div class="panel panel-border-narrow" id="shapeExists">
+							<div class="panel panel-border-narrow js-hidden" id="shapeExists">
 								<label class="form-label" for="file-input">
 									Upload a file
 								</label>
@@ -40,6 +40,7 @@ Uploading a shape file
 								No
 							</label>
 							<br><br>
+							
 						</div>
 					</fieldset>
 				</div>
