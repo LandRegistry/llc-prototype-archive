@@ -307,4 +307,13 @@ function inArray(query, outerArray) {
     return matches;
 }
 
+router.get('/add_charge/v2-4_test/draw-charge-boundary', function (req, res) {
+  var shape = req.query.shape
+  if (shape === 'true') {
+    res.redirect('/add_charge/v2-4_test/check-charge-boundary')
+  } else {   
+    res.render('/add_charge/v2-4_test/draw-charge-boundary')
+  }
+})
+
 module.exports = router;
