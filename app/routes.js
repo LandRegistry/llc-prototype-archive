@@ -307,7 +307,8 @@ function inArray(query, outerArray) {
     return matches;
 }
 
-router.get('/add_charge/v2-4/05_postcode', function (req, res) {
+// shape upload routes
+/*router.get('/add_charge/v2-4/05_postcode', function (req, res) {
   var shape = req.query.shape
   if (shape === 'true') {
     res.redirect('/add_charge/v2-4/check-charge-boundary')
@@ -322,6 +323,34 @@ router.get('/add_charge/v2-4/check-charge-boundary', function (req, res) {
     res.redirect('/add_charge/v2-4/05_postcode')
   } else {   
     res.render('add_charge/v2-4/check-charge-boundary')
+  }
+})*/
+
+// new routes
+router.get('/llc-06/charge_list_top', function(req, res) {
+  var decision = req.query.welcome
+  if (decision === 'Find a Local Land Charge' || decision === 'Change a LLC' || decision === 'Cancel a LLC') {
+    res.redirect('/llc-06/index')
+  } else {
+    res.render('llc-06/charge_list_top')
+  }
+})
+
+router.get('/llc-06/postcode', function (req, res) {
+  var shape = req.query.shape
+  if (shape === 'true') {
+    res.redirect('/llc-06/check-charge-boundary')
+  } else {   
+    res.render('llc-06/postcode')
+  }
+})
+
+router.get('/llc-06/check-charge-boundary', function (req, res) {
+  var shape = req.query.shape
+  if (shape === 'false') {
+    res.redirect('/llc-06/postcode')
+  } else {   
+    res.render('llc-06/check-charge-boundary')
   }
 })
 

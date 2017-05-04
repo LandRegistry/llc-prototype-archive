@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Check your application</h1>
+			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+			<form action="confirmation.html" method="GET">
+				<table class="check-your-answers">
+
+					<thead>
+						<tr>
+							<th colspan="2">
+							</th>
+							<th>
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								Charge type
+							</td>
+							<td>
+								<span class="reason"></span><br>
+							</td>
+							<td class="change-answer">
+								<a id="edit" href="#">
+									Change <span class="visuallyhidden">Charge type</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Legislation
+							</td>
+							<td>
+								<span class="legislation"></span>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Legislation</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Address
+							</td>
+							<td>
+								<span class="location"></span><br><br>
+								<!-- <img src="images/boundary.png" style="width:388px;height:317px;"> -->
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Location</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Extent
+							</td>
+							<td>
+								<span class="moreInformation"></span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Description</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Research
+							</td>
+							<td>
+								<span class="address"></span><br>
+								<span class="website"></span><br>
+								<span class="phoneNumber"></span><br>
+								<span class="email"></span><br>
+								<span class="reference"></span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Description</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Creation date
+							</td>
+							<td>
+								<span class="startDay"></span>/<span class="startMonth"></span>/<span class="startYear"></span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Instrument</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Expiry date
+							</td>
+							<td>
+								<span class="endDay"></span>/<span class="endMonth"></span>/<span class="endYear"></span><br>
+								<span class="expirationTerm"></span><br>
+								<span class="noExpire"></span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">expiry</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Particulars on acquired land
+							</td>
+							<td>
+								<span class="particularsA">Not applicable</span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Particulars on acquired land</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Particulars of relevant interest
+							</td>
+							<td>
+								<span class="particularsB">Not applicable</span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Particulars of relevant interest</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Compensation
+							</td>
+							<td>
+								<span class="compensation">Not applicable</span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Compensation</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Amount
+							</td>
+							<td>
+								<span class="amount">Not applicable</span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Amount</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Rate of interest
+							</td>
+							<td>
+								<span class="interest">Not applicable</span><br>
+							</td>
+							<td class="change-answer">
+								<a class="edit" href="#">
+									Change <span class="visuallyhidden">Rate of interest</span>
+								</a>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<p></p>
+
+
+				<p>
+					<a class="button" href="confirmation" role="button">Register</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

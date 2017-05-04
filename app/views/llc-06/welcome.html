@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<!-- <div class="grid-row">
+	<div class="column-two-thirds"> -->
+		<h1 class="heading-large">Welcome <span class="user-type">USER</span></h1>
+		<h2 class="heading-medium">What do you want to do?</h2>
+		<form action="charge_list_top" method="GET">
+			<div class="form-group">
+				<fieldset>
+					<legend class="visuallyhidden">What do you want to do?</legend>
+
+					<label for="radio-welcome-1" class="block-label selection-button-radio">
+						<input id="radio-welcome-1" type="radio" name="welcome" value="Find a Local Land Charge">
+						Find a Local Land Charge (LLC)
+					</label>
+
+					<label for="radio-welcome-2" class="block-label selection-button-radio">
+						<input id="radio-welcome-2" type="radio" name="welcome" value="Add a new LLC">
+						Add a new LLC
+					</label>
+
+					<label for="radio-welcome-3" class="block-label selection-button-radio">
+						<input id="radio-welcome-3" type="radio" name="welcome" value="Change a LLC">
+						Change a LLC
+					</label>
+
+					<label for="radio-welcome-4" class="block-label selection-button-radio">
+						<input id="radio-welcome-4" type="radio" name="welcome" value="Cancel a LLC">
+						Cancel a LLC
+					</label>
+
+				</fieldset>
+
+			</div>
+			<input type="submit" value="Continue" class="button shape-button"><br><br>
+
+
+			<p>Can't find the law you need? <a href="03_charge_search">Search all local land charge laws</a></p>
+		</form>
+		<!-- </div>
+	</div> -->
+</main>
+
+{% endblock %}
+
+

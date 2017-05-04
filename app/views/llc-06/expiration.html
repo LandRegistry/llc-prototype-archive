@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Edit the date the charge expires
+Add more information about the location
 {% endblock %}
 
 {% block content %}
@@ -13,11 +13,10 @@ Edit the date the charge expires
 	</div>
 	<!-- main content starts -->
 	<div class="grid-row">
-		<div class="column-full">
+		<div class="column-two-thirds">
 			<h1 class="heading-large">Does the charge expire?</h1>
-			<form action="confirm-changes" method="GET">
+			<form action="check.html" method="GET">
 				<fieldset>
-
 					<div class="form-group">
 						<legend class="visually-hidden">Does the charge expire?</legend>
 						<div class="form-group">
@@ -57,19 +56,12 @@ Edit the date the charge expires
 					</div>
 				</fieldset>
 				<p>
-					<a class="button expiration-button" id="confirm-expiry" href="confirm-changes" role="button">Continue</a>
+					<a class="button expiration-button" href="check" role="button">Continue</a>
 				</p>
 			</form>
 		</div>
 	</div>
 </main>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script>
-	$("#confirm-expiry").click(function() {
-		var expiryChanged = "true"
-		sessionStorage.setItem("expiryChanged", expiryChanged)
-	})
-</script>
 
 {% endblock %}
 

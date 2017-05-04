@@ -77,7 +77,7 @@ Edit reason why charge was created
 	$("#confirm-notice").click(function() {
 		if ($("selection-button-radio").hasClass("selected")) {
 			var newNotice = $(this).text()
-			var noticeChanged = true
+			var noticeChanged = "true"
 			sessionStorage.setItem("newNotice", newNotice)
 			sessionStorage.setItem("noticeChanged", noticeChanged)
 		}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Check the extent
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">alpha</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Check the boundary</h1>
+      <p>This map shows the boundary from your file. Is this the correct boundary?</p>
+      <p>If this isn't the correct boundary, you can:</p>
+      <ul class="list list-bullet">
+        <li>Edit the boundary</li>
+        <li>Delete the boundary</li>
+        <li><a href="upload-shape-file-yes">Upload a new file</a></li>
+        <li><a href="postcode">Start again and search by an address</a></li>
+      </ul>
+
+    </div>
+  </div>
+  <div>
+    <img src="/public/images/llc-03/address_1.png" width="100%" height="auto">
+  </div>
+  <div>
+    <a class="button" href="more_info" role="button">Save and continue</a>
+  </div>
+</main>
+
+
+{% endblock %}
+
+
+

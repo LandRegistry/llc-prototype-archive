@@ -237,23 +237,23 @@ Confirm your changes
 	</script> -->
 	<script>
 		var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
-		if (legislationChangedCheck = true) {
+		if (legislationChangedCheck === "true") {
 			document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
 		}
 		var moreInformationChangedCheck = sessionStorage.getItem("moreInformationChanged")
-		if (moreInformationChangedCheck = true) {
+		if (moreInformationChangedCheck === "true") {
 			document.getElementById("moreInformationRow").style.backgroundColor = "#DEE0E2"
 		}
 		var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
-		if (furtherInformationChangedCheck = true) {
+		if (furtherInformationChangedCheck === "true") {
 			document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
 		}
 		var noticeChangedCheck = sessionStorage.getItem("noticeChanged")
-		if (noticeChangedCheck = true) {
+		if (noticeChangedCheck === "true") {
 			document.getElementById("noticeRow").style.backgroundColor = "#DEE0E2"
 		}
 		var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
-		if (expiryChangedCheck = true) {
+		if (expiryChangedCheck === "true") {
 			document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
 		}
 
