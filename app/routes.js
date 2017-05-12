@@ -326,6 +326,24 @@ router.get('/add_charge/v2-4/check-charge-boundary', function (req, res) {
   }
 })
 
+router.get('/add_charge/v2-5/05_postcode', function (req, res) {
+  var shape = req.query.shape
+  if (shape === 'true') {
+    res.redirect('/add_charge/v2-5/check-charge-boundary')
+  } else {   
+    res.render('add_charge/v2-5/05_postcode')
+  }
+})
+
+router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
+  var shape = req.query.shape
+  if (shape === 'false') {
+    res.redirect('/add_charge/v2-5/05_postcode')
+  } else {   
+    res.render('add_charge/v2-5/check-charge-boundary')
+  }
+})
+
 // new routes
 /*router.get('/llc-06/charge_list_top', function(req, res) {
   var decision = req.query.welcome
