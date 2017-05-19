@@ -17,10 +17,10 @@ Draw the extent
 			<h1 class="heading-large">Draw the extent</h1>
 			<p>This map shows <span class="location"></span></p>
 			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
-			<div id="map" style="border:1px solid rgba(78,78,78,0.5)">
-				<form class="form-inline">
-					<label>Geometry type &nbsp;</label>
-					<select id="type">
+			<div id="map" style="position:relative; bottom: 3em;">
+				<!-- map goes in here -->
+				<form class="form-inline" id="map_controls">
+					<select size="5" id="type">
 						<option value="Point">Point</option>
 						<option value="LineString">LineString</option>
 						<option value="Polygon">Polygon</option>
@@ -28,7 +28,6 @@ Draw the extent
 						<option value="None">None</option>
 					</select>
 				</form>
-				<!-- map goes in here -->
 			</div>
 		</div>
 
