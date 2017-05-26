@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Local land charge
+{% endblock %}
+
+{% block content %}
+<style>
+.summary table, tr, td {
+    border-bottom: 0px solid !important;
+
+.check-your-answers-2 {
+
+  td {
+    @include core-19;
+    vertical-align: top;
+  }
+
+  .change-answer {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0;
+  }
+
+}
+</style>
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-one-half">
+			<p><a href="map-results">Back to search results</a></p>
+			<h1 class="heading-large">Update local land charge</h1>
+
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="heading-small">HMLR-LLC-12871691</td>
+					</tr>
+					<tr>
+						<td>Originating authority</td>
+						<td class="heading-small">Exeter city council</td>
+					</tr>
+					<tr>
+						<td>Registered on</td>
+						<td class="heading-small">Wednesday 3rd May 2017</td>
+					</tr>
+					<tr>
+						<td>Registered by</td>
+						<td class="heading-small">Darrell Arthur</td>
+					</tr>
+					<tr>
+						<td>Updated on</td>
+						<td class="heading-small">Thursday 4th May 2017</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="view-history-infrastructure">View history</a></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="grid-row">
+		<div class="column-one-half">
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Location description</td>
+						<td class="heading-small">1 Clinton Street
+						<br>St. Thomas
+						<br>Exeter
+						<br>EX1 1AX</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="edit-more-information">Update location description</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="column-one-half">
+			<img src="{{ asset_path }}images/maintain_llc_v1-4/address_3.2.png" width="100%" height="auto">
+			<p style="text-align:right"><a href="edit-map">Update extent</a></p>
+		</div>
+	</div>
+	<br>
+
+	<div class="grid-row">
+		<div>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Law</td>
+						<td class="heading-small">Town and Country Planning Act 1979 section 106</td>
+						<td><a href="edit-charge-type">Update law</a></td>
+					</tr>
+					<tr>
+						<td>Source</td>
+						<td class="heading-small">Agreement</td>
+						<td><a href="edit-source">Update source</a></td>
+					</tr>
+					<tr>
+						<td>Created on</td>
+						<td class="heading-small">Monday 1st May 2017</td>
+						<td><a href="#">Update created on</a></td>
+					</tr>
+					<tr>
+						<td>Expiry</td>
+						<td class="heading-small">5 years after the building works start</td>
+						<td><a href="edit-expiry">Update expiry</a></td>
+					</tr>
+					<tr>
+						<td>More information</td>
+						<td class="heading-small"><a class="heading-small" href="#">https://pub.exeter.gov.uk/scripts/Aco...</a></td>
+						<td class="change-answer"><a href="edit-further-information">Update more information</a></td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+						<td class="heading-small">10/2867/11</td>
+						<td class="change-answer"><a href="edit-further-information">Update reference</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br>
+
+		<a class="button" href="#" role="button">Save and continue</a>
+  	</div>
+</main>
+{% endblock %}
+
+

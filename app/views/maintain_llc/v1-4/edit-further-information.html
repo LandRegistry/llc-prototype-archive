@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit additional information about the charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Additional information</h1>
+			<h2 class="heading-medium">Please fill in at least one of the following:</h2>
+			<form action="confirm-changes" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">Any additional information about the charge</legend>
+						<div class="form-group">
+							<label class="form-label" for="address">Your address</label>
+							<span class="form-hint">Address of originating authority</span>
+							<input class="form-control" id="address" name="address" type="text">					
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="website">Main website address</label>
+							<span class="form-hint">Main root address, e.g. www.manchester.gov.uk</span>
+							<input class="form-control" id="website" name="website" type="text" value="http://www.plymouth.gov.uk">					
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="phoneNumber">Phone number</label>
+							<span class="form-hint">Originating Authority main reception or LLCO office number</span>
+							<input class="form-control" id="phoneNumber" name="phoneNumber" type="text">					
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="email">Email address</label>
+							<span class="form-hint">Better if it is a common mailbox address rather than a specific person</span>
+							<input class="form-control" id="email" name="email" type="text">					
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="reference">Your reference</label>
+							<span class="form-hint">Your reference number to assist with enquiries</span>
+							<input class="form-control" id="reference" name="reference" type="text">					
+						</div>
+					</fieldset>
+				</div>
+				<a class="button additional-information-button" id="confirm-further-information" href="confirm-changes" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+<script>
+/*var whichLegislation = sessionStorage.getItem("legislation")
+if (whichLegislation === 's.8(4) Land Compensation Act 1973') {
+	var linkToChange = document.querySelector(".additional-information-button")
+	linkToChange.setAttribute("href", "land_compensation_6a")
+} else if (whichLegislation === 's.52(8) Land Compensation Act 1973') {
+	var linkToChange = document.querySelector(".additional-information-button")
+	linkToChange.setAttribute("href", "land_compensation_6b")
+} else if (whichLegislation === 'Various' || whichLegislation === 's.8 Coast Protection Act' || whichLegislation === 'Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010' || whichLegislation === 'Part 8 Regulation 66 Community Infrastructure Levy Regulations 2011' || whichLegislation === 's.178(1)(b) Town and Country Planning Act 1990' || whichLegislation === 's.42(1) Planning (Listed Buildings and Conservation Areas) Act 1990' || whichLegislation === 's.107 Building Act 1984' || whichLegislation === 'Highways Act 1980 (various sections)' || whichLegislation === 's.278(8) Highways Act 1980' || whichLegislation === 's.106 Town and Country Planning Act 1990' || whichLegislation === 'Part 8 Regulation 66 Community Infrastructure Levy Regulations 2011' || whichLegislation === 's.52(2) Housing Grants Construction and Regeneration Act 1996' || whichLegislation === 's.156(a) Housing Act 1985s.36(a) Housing Act 1985' || whichLegislation === 'New Towns Act 1981:-- Order by Secretary of State- s.10 or s.11 (CPO by a Development Corporation)' || whichLegislation === 's.11(1) Opencast Coal Act 1958') {
+	var linkToChange = document.querySelector(".additional-information-button")
+	linkToChange.setAttribute("href", "specific_financial")
+}*/
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+$("#confirm-further-information").click(function() {
+			var furtherInformationChanged = "true"
+			sessionStorage.setItem("furtherInformationChanged", furtherInformationChanged)
+		})
+</script>
+</script>
+
+{% endblock %}
+
+
