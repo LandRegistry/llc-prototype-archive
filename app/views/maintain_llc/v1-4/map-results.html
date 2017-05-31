@@ -7,10 +7,10 @@ Search for a charge
 {% block content %}
 
 <style>
-.summary table, tr, td {
+  .summary table, tr, td {
     border-bottom: 0px solid !important;
 
-}
+  }
 </style>
 
 <script>
@@ -19,11 +19,11 @@ Search for a charge
 <main id="content" role="main">
 	<!-- alpha banner -->
 	<div class="phase-banner">
-		<p><strong class="phase-tag">alpha</strong></p>
+		<p><strong class="phase-tag">beta</strong></p>
 	</div>
 	<!-- main content starts -->
 	<div class="grid-row">
-		<div class="column-full">
+		<div class="column-two-thirds">
 			<h1 class="heading-large">Search results for <span class="maintainMapAddressItem"></span></h1>
       <form action="#" method="GET">
         <div class="form-group">
@@ -39,48 +39,37 @@ Search for a charge
         </div>
       </form>
 
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-      <div class="column-two-thirds">
-        <div class="container">
-          <div id="map-nav" class="maintain-map form-group">
-            <div id="map" class="maintain-llc-map"></div>
-          </div>
-
-          <form data-disable="false" class="form-horizontal" action="" method="POST">
-            <div class="col-md-12 form-group">
-              <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-3">
-                  <!--<a class="btn btn-primary" href="">Back</a> -->
-                </div>
-              </div>
-            </div>
-          </form>
+      <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+      <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+          <div id="map" class="maintain-llc-map"></div>
         </div>
       </div>
-      <div class="column-one-third charge-list">
-        <h2 class="heading-medium">Local Land Charges in this area</h2>
-        <p class="result-count">There are 2 charges in this area</p>
-        <div class="charge-list-item">
-          <h3 class="heading-small"></h3>
-          <p class="font-xsmall">Charge ID <span class="bold-xsmall">LR-ABC12345</span> </p>
-          <p class="font-xsmall">Registered on <span class="bold-xsmall">12 May 2017</span> </p>
-          <div class="charge-list-options">
-            <a href="planning">View</a>
-            <a href="planning-update">Update or delete</a>
-          </div>
+    </div>
+    <div class="column-one-third charge-list charge-list-maintain-v1-4">
+      <h2 class="heading-medium">Local Land Charges in this area</h2>
+      <p class="result-count">There are 2 charges in this area</p>
+      <div class="charge-list-item">
+        <h3 class="heading-small"></h3>
+        <p class="font-xsmall">Charge ID<br> <span class="bold-small">LR-ABC12345</span> </p>
+        <p class="font-xsmall">Registered on<br> <span class="bold-small">12 May 2017</span> </p>
+        <div class="charge-list-options">
+          <a href="planning" class="font-xsmall">View</a>
+          <a href="planning-update" class="font-xsmall">Update or cancel</a>
         </div>
-        <div class="charge-list-item">
-          <h3 class="heading-small"></h3>
-          <p class="font-xsmall" style="text-align:right">Charge ID <span class="bold-xsmall" style="text-align:right">LR-DEF67890</span> </p>
-          <p class="font-xsmall" style="text-align:right"><span style="text-align:left">Registered on </span><span class="bold-xsmall">19 December 2008</span> </p>
-          <div class="charge-list-options">
-            <a href="planning">View</a>
-            <a href="planning-update">Update or delete</a>
-          </div>
+      </div>
+      <div class="charge-list-item">
+        <h3 class="heading-small"></h3>
+        <p class="font-xsmall">Charge ID<br> <span class="bold-small">LR-DEF67890</span> </p>
+        <p class="font-xsmall">Registered on<br> <span class="bold-small">19 December 2008</span> </p>
+        <div class="charge-list-options">
+          <a href="planning" class="font-xsmall">View</a>
+          <a href="planning-update" class="font-xsmall">Update or cancel</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 </main>
 
 {% endblock %}

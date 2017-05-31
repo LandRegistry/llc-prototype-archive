@@ -473,17 +473,21 @@
 }
 
 .maintain-llc-map {
-  width: 55% !important;
-  /* outline: 1px solid red;*/
+  /*width: 55% !important;
+  outline: 1px solid red;
   position: relative;
-  left: -22px;
+  left: -22px;*/
+  width: 100% !important;
+  position: relative;
+    bottom: 50px;
 
   & canvas {
-    width: 55%;
+    width: 100% !important;
+    height: auto !important;
   }
 
   & .ol-zoom {
-    top: 100px;
+    /*top: 100px;*/
   }
 }
 
@@ -542,6 +546,11 @@
   margin-top: 1em;
 }
 
+.charge-list-maintain-v1-4 {
+  position: relative;
+  top: 165px;
+}
+
 .charge-list-item {
   border-top: 1px solid #DEE0E2;
 
@@ -557,11 +566,6 @@
     cursor: pointer;
     text-decoration: underline;
     display: block;
-
-    &:hover {
-      background-color: #F8F8F8;
-      color: inherit;
-    }
   }
 }
 
@@ -629,4 +633,28 @@
       cursor: pointer;
     }
   }
+}
+
+/* Check your answers table styles */
+.check-your-answers-2 {
+  width: 960px;
+  position: relative;
+  left: 1em;
+}
+
+
+.check-your-answers-2 td {
+  border: none;
+  vertical-align: top;
+    &:first-child {
+      width: 33%;
+    }
+}
+
+.section-end td {
+  border-bottom: 1px solid #BFC1C3;
+}
+
+.location-td {
+  width: 33% !important;
 }

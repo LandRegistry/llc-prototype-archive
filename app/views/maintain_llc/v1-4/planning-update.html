@@ -5,25 +5,6 @@ Local land charge
 {% endblock %}
 
 {% block content %}
-<style>
-.summary table, tr, td {
-    border-bottom: 0px solid !important;
-
-.check-your-answers-2 {
-
-  td {
-    @include core-19;
-    vertical-align: top;
-  }
-
-  .change-answer {
-    text-align: right;
-    font-weight: bold;
-    padding-right: 0;
-  }
-
-}
-</style>
 <main id="content" role="main">
 	<!-- alpha banner -->
 	<div class="phase-banner">
@@ -32,86 +13,86 @@ Local land charge
 	<!-- main content starts -->
 
 	<div class="grid-row">
-		<div class="column-one-half">
+		<div class="column-two-thirds">
 			<p><a href="map-results">Back to search results</a></p>
-			<h1 class="heading-large">Update local land charge</h1>
+			<h1 class="heading-large">View local land charge</h1>
 
+			<div class="panel panel-border-wide">
+				<p>
+					If there are charge details that are incorrect you can <a href="planning-update">update the charge</a>
+				</p>
+				<p>
+					If the charge is no longer relevant then you can <a href="">archive the charge</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="column-full">
 			<table class="check-your-answers-2">
 				<tbody>
 					<tr>
 						<td>Charge ID</td>
-						<td class="heading-small">HMLR-LLC-12871691</td>
+						<td class="bold-small">HMLR-LLC-12871691</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>Originating authority</td>
-						<td class="heading-small">Exeter city council</td>
+						<td class="bold-small">Exeter city council</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>Registered on</td>
-						<td class="heading-small">Wednesday 3rd May 2017</td>
+						<td class="bold-small">Wednesday 3rd May 2017</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>Registered by</td>
-						<td class="heading-small">Darrell Arthur</td>
+						<td class="bold-small">Darrell Arthur</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>Updated on</td>
-						<td class="heading-small">Thursday 4th May 2017</td>
-					</tr>
-					<tr>
+						<td class="bold-small">Thursday 4th May 2017</td>
 						<td></td>
-						<td><a href="view-history-infrastructure">View history</a></td>
 					</tr>
-
+					<tr class="section-end">
+						<td></td>
+						<td><a class="font-small" href="view-history-infrastructure">View history</a></td>
+						<td></td>
+					</tr>
 				</tbody>
 			</table>
-		</div>
-	</div>
-
-	<br><br>
-
-	<div class="grid-row">
-		<div class="column-one-half">
 			<table class="check-your-answers-2">
 				<tbody>
-					<tr>
+					<tr class="section-end">
 						<td>Location description</td>
-						<td class="heading-small">1 Clinton Street
-						<br>St. Thomas
-						<br>Exeter
-						<br>EX1 1AX</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><a href="edit-more-information">Update location description</a></td>
+						<td class="location-td"><span class="bold-small">1 Clinton Street<br>
+							St. Thomas<br>
+							Exeter<br>
+							EX1 1AX</span><br><br>
+							<a class="font-normal" href="edit-more-information">Update location description</a><br>
+							<a class="font-normal" href="edit-extend">Update extend</a>
+						</td>
+						<td><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto">
+						</td>
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div class="column-one-half">
-			<img src="{{ asset_path }}images/maintain_llc_v1-4/address_3.2.png" width="100%" height="auto">
-			<p style="text-align:right"><a href="edit-map">Update extent</a></p>
-		</div>
-	</div>
-	<br>
-
-	<div class="grid-row">
-		<div>
 			<table class="check-your-answers-2">
 				<tbody>
 					<tr>
 						<td>Law</td>
-						<td class="heading-small">Town and Country Planning Act 1979 section 106</td>
+						<td class="bold-small">Town and Country Planning Act 1979 section 106</td>
 						<td><a href="edit-charge-type">Update law</a></td>
 					</tr>
 					<tr>
 						<td>Source</td>
-						<td class="heading-small">Agreement</td>
+						<td class="bold-small">Agreement</td>
 						<td><a href="edit-source">Update source</a></td>
 					</tr>
 					<tr>
 						<td>Created on</td>
-						<td class="heading-small">Monday 1st May 2017</td>
+						<td class="bold-small">Monday 1st May 2017</td>
 						<td><a href="#">Update created on</a></td>
 					</tr>
 					<tr>
@@ -121,22 +102,71 @@ Local land charge
 					</tr>
 					<tr>
 						<td>More information</td>
-						<td class="heading-small"><a class="heading-small" href="#">https://pub.exeter.gov.uk/scripts/Aco...</a></td>
-						<td class="change-answer"><a href="edit-further-information">Update more information</a></td>
+						<td class="bold-small"><a class="bold-small" href="#">https://www.plymouth.gov.uk</a></td>
+						<td><a href="edit-further-information">Update more information</a></td>
 					</tr>
 					<tr>
 						<td>Reference</td>
-						<td class="heading-small">10/2867/11</td>
-						<td class="change-answer"><a href="edit-further-information">Update reference</a></td>
+						<td class="bold-small">10/2867/11</td>
+						<td><a href="edit-further-information">Update reference</a></td>
 					</tr>
+
 				</tbody>
 			</table>
 		</div>
-		<br>
 
-		<a class="button" href="#" role="button">Save and continue</a>
-  	</div>
-</main>
-{% endblock %}
+
+		<br><br>
+
+			<!--<div class="column-two-thirds">
+				<table class="check-your-answers-2">
+					<tbody>
+						<tr>
+							<td>Location description</td>
+							<td class="bold-small">1 Clinton Street<br>
+								St. Thomas<br>
+								Exeter<br>
+								EX1 1AX
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> -->
+			<!--<div class="column-two-thirds">
+				<img src="{{ asset_path }}images/maintain_llc_v1-4/address_3.2.png" width="100%" height="auto">
+				<p style="text-align:right"></p>
+			</div> -->
+			<br>
+
+			<!--<div class="column-two-thirds">
+				<table class="check-your-answers-2">
+					<tbody>
+						<tr>
+							<td>Law</td>
+							<td class="bold-small">Town and Country Planning Act 1979 section 106</td>
+						</tr>
+						<tr>
+							<td>Source</td>
+							<td class="bold-small">Agreement</td>
+						</tr>
+						<tr>
+							<td>Created on</td>
+							<td class="bold-small">Monday 1st May 2017</td>
+						</tr>
+						<tr>
+							<td>More information</td>
+							<td class="bold-small"><a class="bold-small" href="#">https://pub.exeter.gov.uk/scripts/Aco...</a></td>
+						</tr>
+						<tr>
+							<td>Reference</td>
+							<td class="bold-small">10/2867/11</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> -->
+
+		</div>
+	</main>
+	{% endblock %}
 
 
