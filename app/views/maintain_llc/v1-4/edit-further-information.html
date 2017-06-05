@@ -15,35 +15,24 @@ Edit additional information about the charge
 	<div class="grid-row">
 		<div class="column-full">
 			<h1 class="heading-large">Additional information</h1>
-			<h2 class="heading-medium">Please fill in at least one of the following:</h2>
+			<h2 class="heading-medium">How to find more information about the charge:</h2>
+			<p>For example:</p>
+			<ul class="list-bullet list">
+				<li>contact details for someone who can answer questions</li>
+				<li>address of a building where documents are filed</li>
+				<li>website, for example a link to your planning portal</li>
+			</ul>
 			<form action="confirm-planning-update" method="GET">
 				<div class="form-group">
 					<fieldset>
-						<legend class="visuallyhidden">Any additional information about the charge</legend>
+						<legend class="visuallyhidden">How to find more information about the charge</legend>
 						<div class="form-group">
-							<label class="form-label" for="address">Your address</label>
-							<span class="form-hint">Address of originating authority</span>
-							<input class="form-control other-info-change" id="address" name="address" type="text">					
+							<textarea class="form-control other-info-change" name="additional-info" cols="50" rows="10"></textarea>				
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="website">Main website address</label>
-							<span class="form-hint">Main root address, e.g. www.manchester.gov.uk</span>
-							<input class="form-control other-info-change" id="website" name="website" type="text" value="http://www.plymouth.gov.uk">					
-						</div>
-						<div class="form-group">
-							<label class="form-label" for="phoneNumber">Phone number</label>
-							<span class="form-hint">Originating Authority main reception or LLCO office number</span>
-							<input class="form-control other-info-change" id="phoneNumber" name="phoneNumber" type="text">					
-						</div>
-						<div class="form-group">
-							<label class="form-label" for="email">Email address</label>
-							<span class="form-hint">Better if it is a common mailbox address rather than a specific person</span>
-							<input class="form-control other-info-change" id="email" name="email" type="text">					
-						</div>
-						<div class="form-group">
-							<label class="form-label" for="reference">Your reference</label>
-							<span class="form-hint">Your reference number to assist with enquiries</span>
-							<input class="form-control" id="reference" name="reference" type="text">					
+						<h2 class="heading-medium">Reference (legal document that created the charge)</h2>
+						<label class="form-label" for="reference">For example, 'Tree Preservation Order XXX123456'</label>
+						<input id="reference" class="form-control" name="reference" type="text">
 						</div>
 					</fieldset>
 				</div>
@@ -57,15 +46,15 @@ Edit additional information about the charge
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-$("#reference").on("input", function() {
-	var referenceChanged = "true"
-	sessionStorage.setItem("referenceChanged", referenceChanged)
-})
+	$("#reference").on("input", function() {
+		var referenceChanged = "true"
+		sessionStorage.setItem("referenceChanged", referenceChanged)
+	})
 
-$(".other-info-change").on("input", function() {
-	var furtherInformationChanged = "true"
-	sessionStorage.setItem("furtherInformationChanged", furtherInformationChanged)
-})
+	$(".other-info-change").on("input", function() {
+		var furtherInformationChanged = "true"
+		sessionStorage.setItem("furtherInformationChanged", furtherInformationChanged)
+	})
 
 </script>
 

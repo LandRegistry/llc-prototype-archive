@@ -15,16 +15,14 @@ Local land charge
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<p><a href="map-results">Back to search results</a></p>
-			<h1 class="heading-large">View local land charge</h1>
+			<h1 class="heading-large">Confirm changes</h1>
 
 			<div class="panel panel-border-wide">
 				<p>
-					If there are charge details that are incorrect you can <a href="planning-update">update the charge</a>
-				</p>
-				<p>
-					If the charge is no longer relevant then you can <a href="">archive the charge</a>
+					If the charge is no longer relevant then you can <a href="">cancel the charge</a>
 				</p>
 			</div>
+			<p>The changes you have made are highlighted below.</p>
 		</div>
 
 		<div class="column-full">
@@ -46,18 +44,13 @@ Local land charge
 						<td></td>
 					</tr>
 					<tr>
-						<td>Registered by</td>
-						<td class="bold-small">Darrell Arthur</td>
-						<td></td>
-					</tr>
-					<tr>
 						<td>Updated on</td>
 						<td class="bold-small">Thursday 4th May 2017</td>
 						<td></td>
 					</tr>
 					<tr class="section-end">
 						<td></td>
-						<td><a class="font-small" href="view-history-infrastructure">View history</a></td>
+						<td><a class="font-small" href="planning-history">View history</a></td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -71,7 +64,7 @@ Local land charge
 							Exeter<br>
 							EX1 1AX</span><br><br>
 							<a class="font-normal" href="edit-more-information">Update location description</a><br>
-							<a class="font-normal" href="edit-extend">Update extend</a>
+							<a class="font-normal" href="edit-extent">Update extent</a>
 						</td>
 						<td><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto">
 						</td>
@@ -95,7 +88,7 @@ Local land charge
 						<td id="changedDate" class="bold-small">Monday 1st May 2017</td>
 						<td><a href="edit-date">Update created on</a></td>
 					</tr>
-					<tr id="expiryRow">
+					<tr id="expiryRow" class="section-end">
 						<td>Expiry</td>
 						<td id="changedExpiry" class="heading-small">5 years after the building works start</td>
 						<td><a href="edit-expiry">Update expiry</a></td>
@@ -108,92 +101,44 @@ Local land charge
 					<tr id="referenceRow">
 						<td>Reference</td>
 						<td id="changedReference" class="bold-small">10/2867/11</td>
-						<td><a href="edit-further-information">Update reference</a></td>
+						<td></td>
 					</tr>
 
 				</tbody>
 			</table>
 		</div>
 
+	</div>
+	<br><br>
+	<a class="button" href="change-confirm">Save changes</a>
+</main>
+<script>
+	var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
+	if (legislationChangedCheck === "true") {
+		document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
+	}
+	var reasonChangedCheck = sessionStorage.getItem("reasonChanged")
+	if (reasonChangedCheck === "true") {
+		document.getElementById("reasonRow").style.backgroundColor="#DEE0E2"
+	}
+	var referenceChangedCheck = sessionStorage.getItem("referenceChanged")
+	if (referenceChangedCheck === "true") {
+		document.getElementById("referenceRow").style.backgroundColor = "#DEE0E2"
+	}
+	var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
+	if (furtherInformationChangedCheck === "true") {
+		document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
+	}
+	var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
+	if (expiryChangedCheck === "true") {
+		document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
+	}
+	var dateChangedCheck = sessionStorage.getItem("dateChanged")
+	if (dateChangedCheck === "true") {
+		document.getElementById("dateRow").style.backgroundColor = "#DEE0E2"
+	}
 
-		<br><br>
-
-			<!--<div class="column-two-thirds">
-				<table class="check-your-answers-2">
-					<tbody>
-						<tr>
-							<td>Location description</td>
-							<td class="bold-small">1 Clinton Street<br>
-								St. Thomas<br>
-								Exeter<br>
-								EX1 1AX
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div> -->
-			<!--<div class="column-two-thirds">
-				<img src="{{ asset_path }}images/maintain_llc_v1-4/address_3.2.png" width="100%" height="auto">
-				<p style="text-align:right"></p>
-			</div> -->
-			<br>
-
-			<!--<div class="column-two-thirds">
-				<table class="check-your-answers-2">
-					<tbody>
-						<tr>
-							<td>Law</td>
-							<td class="bold-small">Town and Country Planning Act 1979 section 106</td>
-						</tr>
-						<tr>
-							<td>Source</td>
-							<td class="bold-small">Agreement</td>
-						</tr>
-						<tr>
-							<td>Created on</td>
-							<td class="bold-small">Monday 1st May 2017</td>
-						</tr>
-						<tr>
-							<td>More information</td>
-							<td class="bold-small"><a class="bold-small" href="#">https://pub.exeter.gov.uk/scripts/Aco...</a></td>
-						</tr>
-						<tr>
-							<td>Reference</td>
-							<td class="bold-small">10/2867/11</td>
-						</tr>
-					</tbody>
-				</table>
-			</div> -->
-
-		</div>
-	</main>
-	<script>
-		var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
-		if (legislationChangedCheck === "true") {
-			document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
-		}
-		var reasonChangedCheck = sessionStorage.getItem("reasonChanged")
-		if (reasonChangedCheck === "true") {
-			document.getElementById("reasonRow").style.backgroundColor="#DEE0E2"
-		}
-		var referenceChangedCheck = sessionStorage.getItem("referenceChanged")
-		if (referenceChangedCheck === "true") {
-			document.getElementById("referenceRow").style.backgroundColor = "#DEE0E2"
-		}
-		var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
-		if (furtherInformationChangedCheck === "true") {
-			document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
-		}
-		var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
-		if (expiryChangedCheck === "true") {
-			document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
-		}
-		var dateChangedCheck = sessionStorage.getItem("dateChanged")
-		if (dateChangedCheck === "true") {
-			document.getElementById("dateRow").style.backgroundColor = "#DEE0E2"
-		}
-
-	</script>
-	{% endblock %}
+</script>
+{% endblock %}
 
 
