@@ -16,7 +16,7 @@ Add more information about the location
 		<div class="column-two-thirds">
 			<h1 class="heading-large">What created the charge?</h1>
 
-			<form action="08_creation_date" method="GET">
+			<form action="confirm-planning-update" method="GET">
 				<div class="form-group">
 					<fieldset>
 						<legend class="visuallyhidden">What created the charge?</legend>
@@ -68,11 +68,20 @@ Add more information about the location
 						</div>
 					</fieldset>
 				</div>
-				<a class="button reason-button" href="view-planning-update" role="button">Continue</a>
+				<a id="confirm-reason" class="button reason-button" href="confirm-planning-update" role="button">Continue</a>
 			</form>
 		</div>
 	</div>
 </main>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#confirm-reason").click(function() {
+			var reasonChanged = "true"
+			sessionStorage.setItem("reasonChanged", reasonChanged)
+		})
+	})
+</script>
 
 {% endblock %}
 

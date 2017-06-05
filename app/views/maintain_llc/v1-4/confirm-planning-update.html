@@ -80,34 +80,34 @@ Local land charge
 			</table>
 			<table class="check-your-answers-2">
 				<tbody>
-					<tr>
+					<tr id="legislationRow">
 						<td>Law</td>
-						<td class="bold-small">Town and Country Planning Act 1979 section 106</td>
+						<td id="changedLegislation" class="bold-small">Town and Country Planning Act 1979 section 106</td>
 						<td><a href="edit-charge-type">Update law</a></td>
 					</tr>
-					<tr>
+					<tr id="reasonRow">
 						<td>Source</td>
-						<td class="bold-small">Agreement</td>
+						<td id="changedReason" class="bold-small">Agreement</td>
 						<td><a href="edit-source">Update source</a></td>
 					</tr>
-					<tr>
+					<tr id="dateRow">
 						<td>Created on</td>
-						<td class="bold-small">Monday 1st May 2017</td>
+						<td id="changedDate" class="bold-small">Monday 1st May 2017</td>
 						<td><a href="edit-date">Update created on</a></td>
 					</tr>
-					<tr>
+					<tr id="expiryRow">
 						<td>Expiry</td>
-						<td class="heading-small">5 years after the building works start</td>
+						<td id="changedExpiry" class="heading-small">5 years after the building works start</td>
 						<td><a href="edit-expiry">Update expiry</a></td>
 					</tr>
-					<tr>
+					<tr id="furtherInformationRow">
 						<td>More information</td>
-						<td class="bold-small"><a class="bold-small" href="#">https://www.plymouth.gov.uk</a></td>
+						<td id="changedFurtherInformation" class="bold-small"><a class="bold-small" href="#">https://www.plymouth.gov.uk</a></td>
 						<td><a href="edit-further-information">Update more information</a></td>
 					</tr>
-					<tr>
+					<tr id="referenceRow">
 						<td>Reference</td>
-						<td class="bold-small">10/2867/11</td>
+						<td id="changedReference" class="bold-small">10/2867/11</td>
 						<td><a href="edit-further-information">Update reference</a></td>
 					</tr>
 
@@ -167,6 +167,33 @@ Local land charge
 
 		</div>
 	</main>
+	<script>
+		var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
+		if (legislationChangedCheck === "true") {
+			document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var reasonChangedCheck = sessionStorage.getItem("reasonChanged")
+		if (reasonChangedCheck === "true") {
+			document.getElementById("reasonRow").style.backgroundColor="#DEE0E2"
+		}
+		var referenceChangedCheck = sessionStorage.getItem("referenceChanged")
+		if (referenceChangedCheck === "true") {
+			document.getElementById("referenceRow").style.backgroundColor = "#DEE0E2"
+		}
+		var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
+		if (furtherInformationChangedCheck === "true") {
+			document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
+		if (expiryChangedCheck === "true") {
+			document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
+		}
+		var dateChangedCheck = sessionStorage.getItem("dateChanged")
+		if (dateChangedCheck === "true") {
+			document.getElementById("dateRow").style.backgroundColor = "#DEE0E2"
+		}
+
+	</script>
 	{% endblock %}
 
 

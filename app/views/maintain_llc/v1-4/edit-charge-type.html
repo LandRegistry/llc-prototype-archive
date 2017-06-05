@@ -17,7 +17,7 @@ Edit charge type and legislation
 			<h1 class="heading-large">Change the legislation</h1>
 			<p>The legislation for this charge is s.107 Building Act 1984</p>
 			<div class="search-by-autocomplete">
-				<form action="confirm-changes" method="GET">
+				<form action="confirm-planning-update" method="GET">
 					<div class="form-group">
 						<fieldset>
 							<legend class="visuallyhidden">Change the legislation for your charge</legend>
@@ -29,7 +29,7 @@ Edit charge type and legislation
 								<input class="form-control search-field" id="new-legislation" name="new-legislation" type="text" value="" autofocus="autofocus">
 							</div>
 						</fieldset>
-						<a href="confirm-changes" class="button" id="confirm-new-legislation">Continue</a>
+						<a href="confirm-planning-update" class="button" id="confirm-new-legislation">Continue</a>
 					</div>
 				</form>
 			</div>
@@ -66,7 +66,9 @@ Edit charge type and legislation
 		})
 		$("#confirm-new-legislation").click(function() {
 			var legislationChanged = "true"
+			var newLegislation = $("#new-legislation").val()
 			sessionStorage.setItem("legislationChanged", legislationChanged)
+			sessionStorage.setItem("newLegislation", newLegislation)
 		})
 	})
 </script>
