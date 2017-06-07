@@ -14,13 +14,11 @@ Search for a charge
 	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-large">How do you want to search?</h1>
-              <p>Search by:</p>
-              <ul class="list list-bullet">
-                <li>address</li>
-                <li>postcode</li>
-              <li>Unique Property Reference Number (UPRN)</li>
-              </ul>
+			<h1 class="heading-large">Find a charge</h1>
+              Charge ID
+            <span class="form-hint">
+            This can be the charge reference number used by your team, or the Charge ID from an LLC1 search result.
+            </span>
         </div>
     </div>
 
@@ -34,19 +32,15 @@ Search for a charge
                   <label class="form-label" for="legislation">
                   </label>
                   <input class="form-control search-field" id="maintain-map-search" name="maintain-map-search" type="text" value="" autofocus="autofocus">
-                  <input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value="">
                 </div>
               </fieldset>
-                <p>You can also <a href="search_charge_id">find a charge by Charge ID</a></p>
+              <p>You can also <a href="search_place">search by address, postcode or Unique Property Reference Number (UPRN)</a></p>
                 <p>Or you can <a href="search_map">browse an area on a map</a></p>
             </div>
           </form>
-
         </div>
     </div>
-
-    <a class="button" href="map-results" role="button">Find charges</a>
-
+    <a class="button" href="planning" role="button">Find charge</a>
 </div>
 </main>
 {% endblock %}
