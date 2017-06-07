@@ -2,44 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42635832-9a0a-4ba4-b12d-b2385e40a7fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/buildings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/cancel-check.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/cancel-confirmation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/confirm-changes-infrastructure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/confirm-changes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/confirmation-page-infrastructure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/confirmation-page.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/conservation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-amount.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-charge-type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-expiry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-further-information.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-infrastructure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-map.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-more-information.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-notice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-particulars-land.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-relevant-interest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-source.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-specific-financial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/environment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/financial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/health_and_safety.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/industry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/infrastructure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/map-results.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/more-information.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning-history.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning-update.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/search_place.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/sign_in.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/lists/social.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/start-date.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/start.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-4/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/maintain_llc/index.html" afterPath="$PROJECT_DIR$/app/views/maintain_llc/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/buildings.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/cancel-check.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/cancel-confirmation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/confirm-changes-infrastructure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/confirm-changes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/confirm-planning-update.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/confirmation-page-infrastructure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/confirmation-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/conservation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-amount.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-charge-type.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-date.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-expiry.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-extent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-further-information.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-infrastructure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-more-information.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-notice.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-particulars-land.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-relevant-interest.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-source.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/edit-specific-financial.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/environment.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/financial.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/health_and_safety.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/industry.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/infrastructure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/map-results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/more-information.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/planning-history.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/planning-update.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/planning.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/search_place.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/sign_in.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/lists/social.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/start-date.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/start.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/maintain_llc/v1-5/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="llc-prototype.iws" />
@@ -61,17 +63,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="map-results.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map-results.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/map-results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65418226">
-              <caret line="74" column="86" selection-start-line="74" selection-start-column="86" selection-end-line="74" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-28.708334">
+              <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_place.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/search_place.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-5/map.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.75">
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_place.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-5/search_place.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6164383">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,8 +126,8 @@
       <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="10" selection-start-line="44" selection-start-column="4" selection-end-line="55" selection-end-column="10" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="16" column="57" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#main#0;n#!!top" expanded="true" />
               </folding>
@@ -113,16 +140,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="19" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="planning-update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning-update.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -148,26 +165,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-further-information.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-further-information.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="06_map.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3/06_map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="39" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -183,9 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/add_charge/v3/04_doc_mand.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v3/04_doc_mand_date.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/v3/05_postcode.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v3/05_postcode_shape_upload_yes.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v3/07_more_info.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v3/08_additional_info.html" />
@@ -230,10 +224,13 @@
         <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-map.html" />
         <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/view-planning-update.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v3/06_map.html" />
-        <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html" />
         <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-3/map-results.html" />
         <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning.html" />
         <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/map-results.html" />
+        <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html" />
+        <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-4/search_place.html" />
+        <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-5/map.html" />
+        <option value="$PROJECT_DIR$/app/views/maintain_llc/v1-5/search_place.html" />
       </list>
     </option>
   </component>
@@ -241,9 +238,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="25" />
-    <option name="y" value="29" />
-    <option name="width" value="1408" />
+    <option name="x" value="819" />
+    <option name="y" value="23" />
+    <option name="width" value="861" />
     <option name="height" value="971" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -269,6 +266,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -355,76 +354,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maintain_llc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v1-4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="add_charge" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="llc-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,8 +366,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/maintain_llc/v1-4" />
       <recent name="$PROJECT_DIR$/app/views/maintain_llc" />
+      <recent name="$PROJECT_DIR$/app/views/maintain_llc/v1-4" />
       <recent name="$PROJECT_DIR$/app/views/add_charge" />
       <recent name="$PROJECT_DIR$/app/views/add_charge/v2-2" />
       <recent name="$PROJECT_DIR$/app/views/add_charge/v2-1" />
@@ -605,28 +536,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="29" width="1408" height="971" extended-state="0" />
-    <editor active="false" />
+    <frame x="819" y="23" width="861" height="971" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22638789" sideWeight="0.8604924" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43214285" sideWeight="0.845614" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22638789" sideWeight="0.13950762" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43214285" sideWeight="0.15438597" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23220536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -648,22 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/edit-further-information.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3/06_map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="39" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/cancel-confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
@@ -773,13 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/search_place.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -940,7 +848,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/planning-update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
+          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -958,16 +866,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="10" selection-start-line="44" selection-start-column="4" selection-end-line="55" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#main#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,14 +903,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/map-results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65418226">
-          <caret line="74" column="86" selection-start-line="74" selection-start-column="86" selection-end-line="74" selection-end-column="86" />
+        <state vertical-scroll-proportion="-28.708334">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="57" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#main#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-4/search_place.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-5/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.75">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v1-5/search_place.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6164383">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
