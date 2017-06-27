@@ -143,18 +143,6 @@
   background-color: white;
 }
 
-
-// This is the alpha-beta tag override
-
-.phase-tag {
-  @include phase-tag(alpha);
-  background-color: $govuk-blue !important;
-}
-
-.phase-banner {
-  @include phase-banner(alpha);
-}
-
 // Stuff from llc-prototypes
 // Horizontal carousel styles
 .browse ul li,
@@ -506,7 +494,6 @@
 .check-your-answers-2 {
   width: 960px;
   position: relative;
-  left: 1em;
 }
 
 

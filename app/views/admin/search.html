@@ -2,15 +2,21 @@
 <main id="content">
   {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
 	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
-  {{ breadcrumb.backButton('../maintain_llc/v1-4/welcome') }}
+  {{ breadcrumb.backButton() }}
   {% endblock %}
 
-<form action="search-results" method="GET">
+  {% if message %}
+    <div class="panel panel-border-wide alert-success">
+      <p>{{message}}</p>
+    </div>
+	{% endif %}
+
+<form action="search" method="POST">
   <div class="grid-row">
     <div class="column-full">
       <div>
-        <h1 class="heading-xlarge">Account Management</h1>
-        <h2 class="heading-small">Search by any combination of first name, surname or local authority name</h2>
+        <h1 class="heading-large">Account Management</h1>
+        <h2 class="heading-medium">Search by any combination of first name, surname or local authority name</h2>
         <br>
         <form class="form-inline" action="/admin/search-results" method="post" id="searchform">
           <div class="form-group">

@@ -337,17 +337,39 @@ router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
   }
 })
 
-router.get('/maintain_llc/v1-4/welcome', function (req, res) {
-  res.render('maintain_llc/v1-4/welcome')
+router.get('/admin/welcome', function (req, res) {
+  res.render('admin/welcome')
 })
 
-router.post('/maintain_llc/v1-4/welcome', function (req, res) {
-  var radioValue = req.body.welcome
-  if (radioValue === 'Manage users') {
-    res.redirect('/admin/search')
-  } else {
-    res.render('maintain_llc/v1-4/map')
-  }
+router.post('/admin/welcome', function (req, res) {
+  // var radioValue = req.body.welcome
+  // if (radioValue === 'Manage users') {
+  //   res.redirect('/admin/search')
+  // } else {
+  res.render('maintain_llc/v1-4/map')
+  // }
+})
+
+router.get('/admin/search', function (req, res) {
+  res.render('admin/search')
+})
+
+router.post('/admin/search', function (req, res) {
+  return res.render('search-results')
+})
+
+router.get('/admin/add-user-confirmation', function (req, res) {
+  res.render('admin/add-user-confirmation')
+})
+
+// router.post('/admin/add-user-confirmation', function (req, res) {
+//   var string = encodeURIComponent('User added successfully')
+//   return res.redirect('search?message=' + string)
+// })
+
+router.post('/admin/add-user-confirmation', function (req, res) {
+  var string = 'User added successfully'
+  return res.render('admin/search', {message: string})
 })
 
 // new routes

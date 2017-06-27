@@ -1,4 +1,4 @@
-{% macro backButton(page) %}
+{% macro backButton(page, admin) %}
 	<div class="breadcrumbs">
 		<ol>
 			{% if page %}
@@ -8,7 +8,11 @@
       <span class="visuallyhidden"> to the previous page</span>
       </a>
 			<a id="sign-out" href="sign_in" style="float:right">Sign out</a>
-			<span style="float:right; margin-right:10px;">user@landregistry.gov.uk</span>
+			{% if admin %}
+			<a style="float:right; margin-right:10px;" id="account-management" href="search">{{admin}}</a>
+			{% else %}
+			<span style="float:right; margin-right:10px;">jane.doe@landregistry.gov.uk</span>
+			{% endif %}
 		</ol>
 	</div>
 {% endmacro %}

@@ -8,14 +8,16 @@ What do you want to do?
 
 <main id="content" role="main">
 	<!-- alpha banner -->
-	<div class="phase-banner">
-		<p><strong class="phase-tag">BETA</strong></p>
-	</div>
+  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
+	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
+  {{ breadcrumb.backButton('', 'Account Management') }}
+  {% endblock %}
 	<!-- main content starts -->
 	<div class="grid-row">
-		<div class="column-full">
-			<h1 class="heading-large">What do you want to do?</h1>
-			<form action="map" method="GET">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Welcome Jane Doe</h1>
+			<h1 class="heading-medium">What do you want to do?</h1>
+			<form action="welcome" method="POST">
 				<div class="form-group">
 					<fieldset>
 						<legend class="visuallyhidden">What do you want to do?</legend>
@@ -36,12 +38,20 @@ What do you want to do?
 								<input id="welcome-4" name="welcome" type="radio" value="cancel a llc">
 								Cancel a LLC
 							</label>
+							<!--<label class="block-label selection-button-radio" for="welcome-5">
+								<input id="welcome-5" name="welcome" type="radio" value="Manage users">
+								Manage users
+							</label>-->
 						</div>
 					</fieldset>
 				</div>
-				<a class="button reason-button" href="map" role="button">Continue</a>
+				<div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
 			</form>
 		</div>
 	</div>
 </main>
 {% endblock %}
+
+
