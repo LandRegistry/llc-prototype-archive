@@ -1,13 +1,15 @@
-{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content%}
+{% extends "layout.html" %} {% block page_title %} Add user details {% endblock %} {% block content%}
 <main id="content">
   {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
   {% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %} 
   {{ breadcrumb.backButton() }}{% endblock %}
   <div class="grid-row">
     <div class="column-full">
-      
-      <h1 class="heading-large">Add user details</h1>
-      <form method="post" action="/admin/user/add/details">
+      <div class="form-group">
+          <h1 class="heading-large">Add user details</h1>
+      </div>
+
+      <form method="POST" action="add-user-details">
         <div class="form-group ">
           <label class="form-label" for="first_name">First name</label>
           
@@ -50,7 +52,8 @@
                 
               </select>
             </div>
-          <a class="button" href="add-user-confirm" role="button">Continue</a>
+          <!--<a class="button" href="add-user-confirm" role="button">Continue</a>-->
+          <input class="button" type="submit" value="Continue">
       </form>
     </div>
   </div>

@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content%}
+{% extends "layout.html" %} {% block page_title %} Search results {% endblock %} {% block content%}
 <main id="content">
   {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
 	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
@@ -27,7 +27,7 @@
       First name and / or surname
   </span>
 
-              <input class="form-control" id="search_user_id" name="search_user_id" type="search" value="Jane Doe">
+              <input class="form-control" id="search_user_id" name="search_user_id" type="search">
             </fieldset>
           </div>
           <div class="form-group">
@@ -38,7 +38,7 @@
     Local authority, e.g. Plymouth City Council
   </span>
 
-              <input class="form-control" id="search_user_org_id" name="search_user_org_id" type="search">
+              <input class="form-control" id="search_user_org_id" name="search_user_org_id" type="search" value="HM Land Registry">
             </fieldset>
           </div>
         </form>
@@ -52,18 +52,21 @@
         <div class="inner-block">
           <div class="result-count">
 
-            1 results found
+            2 results found
 
             <ol class="results-list">
               <li>
                 <h3 class="heading-medium">
-                  <a href="user">
-              Haresh Vekriya
-            </a>
+                  <a href="user">Jane Doe</a>
                 </h3>
                 <p>HM Land Registry</p>
               </li>
-
+              <li>
+                <h3 class="heading-medium">
+                  <a href="user2">Joe Blogg</a>
+                </h3>
+                <p>HM Land Registry</p>
+              </li>
             </ol>
           </div>
         </div>

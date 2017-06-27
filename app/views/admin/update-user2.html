@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content%}
+{% extends "layout.html" %} {% block page_title %} Update user details {% endblock %} {% block content%}
 <main id="content">
   {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
   {% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %} 
@@ -6,7 +6,8 @@
   <div class="grid-row">
     <div class="column-full">
       <div class="form-group">
-      <h1 class="heading-large">Add user details</h1>
+          <h1 class="heading-large">Add user details</h1>
+      </div>
       <form method="post" action="/admin/user/add/details">
         <div class="form-group ">
           <label class="form-label" for="first_name">First name</label>
@@ -52,12 +53,10 @@
                 
               </select>
         </div>
-        </div>
 
-        <div class="form-group">
           <fieldset>
             <legend class="visuallyhidden">Role</legend>
-            <p id="user_role">Role</p>
+            <h1 class="heading-medium">Role</h1>
             <div class="form-group ">
               <label class="block-label selection-button-radio" for="LLC LA Admins">
                     <input id="LLC LR Users" type="radio"  name="user_role" value="LLC LR Users">
@@ -67,7 +66,7 @@
                     </span>
                   </label>
               <label class="block-label selection-button-radio" for="LLC LA Users">
-                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins">
+                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins" checked>
                     Land Registry Administrator
                     <span class="form-hint">
                       Can add, change or delete:
@@ -77,45 +76,17 @@
                   </label>
             </div>
           </fieldset>
-        </div>
         
+        <div class="form-group">
           <fieldset>
             <legend class="visuallyhidden">Status</legend>
-            <p id="user_role">Status</p>
-            <div class="form-group ">
-              <label class="block-label selection-button-radio" for="LLC LA Admins">
-                    <input id="LLC LR Users" type="radio"  name="user_role" value="LLC LR Users">
-                    Active
-                    <span class="form-hint">
-                      User has access to the register.
-                    </span>
-                  </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users">
-                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins">
-                    User invited, awaiting registration
-                    <span class="form-hint">
-                      User has been invited to access the register.
-                    </span>
-                  </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users">
-                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins">
-                    Inactive
-                    <span class="form-hint">
-                      User is temporarily locked out or suspended.
-                    </span>
-                  </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users">
-                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins">
-                    Archived
-                    <span class="form-hint">
-                      User no longer has access to their account.
-                    </span>
-                  </label>
-            </div>
+            <h1 class="heading-medium">Status</h1>
+            <p>User invited</p>
           </fieldset>
-
+        </div>
+        
         <div class="form-group">
-          <a class="button" href="add-user-confirm" role="button">Continue</a>
+          <a class="button" href="update-user-confirm" role="button">Update</a>
         </div>
       </form>
     </div>

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
 router.use(bodyParser.urlencoded({ extended: false }))
+require('./account-management')
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -337,19 +338,7 @@ router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
   }
 })
 
-router.get('/admin/welcome', function (req, res) {
-  res.render('admin/welcome')
-})
-
-router.post('/admin/welcome', function (req, res) {
-  // var radioValue = req.body.welcome
-  // if (radioValue === 'Manage users') {
-  //   res.redirect('/admin/search')
-  // } else {
-  res.render('maintain_llc/v1-4/map')
-  // }
-})
-
+// Account management Routes
 router.get('/admin/search', function (req, res) {
   res.render('admin/search')
 })
@@ -358,17 +347,29 @@ router.post('/admin/search', function (req, res) {
   return res.render('search-results')
 })
 
-router.get('/admin/add-user-confirmation', function (req, res) {
-  res.render('admin/add-user-confirmation')
+router.get('/admin/add-user-details', function (req, res) {
+  res.render('admin/add-user-details')
 })
 
-// router.post('/admin/add-user-confirmation', function (req, res) {
-//   var string = encodeURIComponent('User added successfully')
-//   return res.redirect('search?message=' + string)
-// })
+router.post('/admin/add-user-details', function (req, res) {
+  return res.render('admin/add-user-confirm')
+})
 
-router.post('/admin/add-user-confirmation', function (req, res) {
+router.get('/admin/add-user-confirm', function (req, res) {
+  res.render('admin/add-user-confirm')
+})
+
+router.post('/admin/add-user-confirm', function (req, res) {
   var string = 'User added successfully'
+  return res.render('admin/search', {message: string})
+})
+
+router.get('/admin/update-user-confirm', function (req, res) {
+  res.render('admin/update-user-confirm')
+})
+
+router.post('/admin/update-user-confirm', function (req, res) {
+  var string = 'User details updated successfully'
   return res.render('admin/search', {message: string})
 })
 

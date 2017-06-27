@@ -1,11 +1,13 @@
-{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content%}
+{% extends "layout.html" %} {% block page_title %} User role {% endblock %} {% block content%}
 <main id="content">
   <div class="grid-row">
     <form method="post" action="/admin/user/add/role" class="column-full">
       {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
       {% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %} 
       {{ breadcrumb.backButton() }}{% endblock %}
-      <h1 class="heading-large">User role</h1>
+      <div class="form-group">
+         <h1 class="heading-large">User role</h1>
+      </div>
       <fieldset>
         <legend class="visuallyhidden">List of user roles</legend>
         <p id="user_role">What type of user are you adding?</p>
