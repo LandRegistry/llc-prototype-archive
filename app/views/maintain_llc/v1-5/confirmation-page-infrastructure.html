@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
+{% extends "layout.html" %}
 
 {% block page_title %}
-Register a local land charge
+Confirmation
 {% endblock %}
 
 {% block content %}
@@ -14,13 +15,15 @@ Register a local land charge
 	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-xlarge">Register a local land charge</h1>
-			<p>You can register a local land charge (LLC) online.</p>
-			<p><a class="button button-start" href="02_sign_in" role="button">Start now</a></p>
+			<div class="govuk-box-highlight">
+				<h1 class="bold-large">Your changes have been saved</h1>
+				<p>
+					The charge ID is <br>
+					<strong class="heading-medium">LR-DEF67890</strong>
+				</p>
+			</div>
+			<p><a href="map">Find another local land charge</a></p>
 		</div>
 	</div>
 </main>
-
 {% endblock %}
-
-
