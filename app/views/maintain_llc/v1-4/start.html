@@ -1,16 +1,13 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Start looking for a charge
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Start looking for a charge {% endblock %} {% block content %}
 
 <main id="content" role="main">
 	<!-- alpha banner -->
 	<div class="phase-banner">
 		<p><strong class="phase-tag">BETA</strong></p>
 	</div>
+	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
+  {{ breadcrumb.backButton() }}
+  {% endblock %}
 	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
@@ -22,5 +19,3 @@ Start looking for a charge
 </main>
 
 {% endblock %}
-
-

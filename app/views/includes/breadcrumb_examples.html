@@ -1,6 +1,14 @@
-<div class="breadcrumbs">
-  <ol role="breadcrumbs">
-    <li><a href="/">GOV.UK prototype kit</a></li>
-    <li><a href="/examples">Examples</a></li>
-  </ol>
-</div>
+{% macro backButton(page) %}
+	<div class="breadcrumbs">
+		<ol>
+			{% if page %}
+			<a class="back-to-previous link-back" href={{page}}>Back
+			{% endif %}
+      <!-- the rest of this label is hidden, only used for screenreaders -->
+      <span class="visuallyhidden"> to the previous page</span>
+      </a>
+			<a id="sign-out" href="sign_in" style="float:right">Sign out</a>
+			<span style="float:right; margin-right:10px;">user@landregistry.gov.uk</span>
+		</ol>
+	</div>
+{% endmacro %}

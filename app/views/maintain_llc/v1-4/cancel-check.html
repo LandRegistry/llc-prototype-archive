@@ -1,10 +1,4 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Confirm cancellation
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Confirm cancellation {% endblock %} {% block content %}
 
 <main id="content" role="main">
 	<!-- alpha banner -->
@@ -14,15 +8,43 @@ Confirm cancellation
 	<!-- main content starts -->
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-large">Are you sure you want to cancel the charge LR-ABC12345?</h1>
-			
+			<h1 class="heading-large">Cancelling a local land charge</h1>
+
+			<p class="lede">Are you sure you want to cancel this charge?</p>
+
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="bold-small">HMLR-LLC-12871691</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Location description</td>
+						<td class="location-td"><span class="bold-small">1 Clinton Street<br>
+							St. Thomas<br>
+							Exeter<br>
+							EX1 1AX</span>
+						</td>
+						<td><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto"></td>
+					</tr>
+					<tr>
+						<td>Registered on</td>
+						<td class="bold-small">3 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Law</td>
+						<td class="bold-small">Town and Country Planning Act 1979 section 106</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
 			<p><a class="button" href="cancel-confirmation">Yes, I want to cancel it</a></p>
-			<p><a href="view-specific-financial">No, I don't want to cancel it</a></p>
-			
+			<p><a href="" onclick="goBack()">No, I don't want to cancel it</a></p>
 		</div>
 	</div>
 </main>
 
 {% endblock %}
-
-
