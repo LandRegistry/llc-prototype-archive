@@ -361,21 +361,21 @@
 
 #map .ol-zoom .ol-zoom-out {
   background:rgba(51,122,183,.8);
-  margin-top: 204px;
+//  margin-top: 204px;
 }
 
 #map .ol-zoom .ol-zoom-in {
   background:rgba(51,122,183,.8);
 }
 
-#map .ol-zoomslider {
-  background-color: transparent;
-  top: 2.3em;
-}
-
-#map .ol-zoomslider-thumb {
-  background:rgba(51,122,183,.8);
-}
+//#map .ol-zoomslider {
+//  background-color: transparent;
+//  top: 2.3em;
+//}
+//
+//#map .ol-zoomslider-thumb {
+//  background:rgba(51,122,183,.8);
+//}
 
 #map .ol-mouse-position {
   background: rgba(51,122,183,.8);
@@ -405,6 +405,62 @@
 /*#map-nav {
   position: relative;
 }*/
+
+/****************/
+/* Map Controls */
+#draw-controls {
+  top: 2%;
+  right: 1%;
+}
+
+#draw-controls button {
+  display: inline;
+  height: auto;
+  width: auto;
+  padding: 4px;
+}
+
+.control-title {
+  font-size: 10px;
+  display: block;
+  margin-top: 2px;
+}
+
+.map-error {
+  background-image: url('../images/map-error.png');
+  height: 400px;
+  border: 2px solid black;
+}
+
+.ol-control button.active {
+  background-color: rgba(0,60,136,1);
+}
+
+#snap-to {
+  bottom: 2%;
+  right: 1%;
+}
+
+#snap-to button {
+  display: inline;
+  height: auto;
+  width: auto;
+  padding: 4px;
+}
+
+.disabled-btn button, .disabled-btn button:hover, .disabled-btn button:focus {
+  background-color: #999;
+  border-color: #999;
+}
+
+#map-nav {
+  min-height: 400px;
+}
+
+.maintain-llc-map {
+  min-height: 400px;
+}
+/****************/
 
 .postcode-search {
   position: absolute;
