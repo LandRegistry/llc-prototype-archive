@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block page_title %} Local land charge {% endblock %} {% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<form action="confirmation" method="POST">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="govuk-box-highlight">
+					{% if message %}
+					<h1 class="bold-large">{{message}}</h1>
+					{% endif %}
+				</div>
+				<p><a href="user">View added user</a></p>
+				<p><a href="search">Search a user</a></p>
+				<p><a href="add-user-role">Add a user</a></p>
+			</div>
+		</div>
+		</div>
+	</form>
+</main>
+{% endblock %}

@@ -8,7 +8,7 @@ var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
 router.use(bodyParser.urlencoded({ extended: false }))
-require('./account-management')
+const adminController = require('./admin-controller')
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -338,41 +338,6 @@ router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
   }
 })
 
-// Account management Routes
-router.get('/admin/search', function (req, res) {
-  res.render('admin/search')
-})
-
-router.post('/admin/search', function (req, res) {
-  return res.render('search-results')
-})
-
-router.get('/admin/add-user-details', function (req, res) {
-  res.render('admin/add-user-details')
-})
-
-router.post('/admin/add-user-details', function (req, res) {
-  return res.render('admin/add-user-confirm')
-})
-
-router.get('/admin/add-user-confirm', function (req, res) {
-  res.render('admin/add-user-confirm')
-})
-
-router.post('/admin/add-user-confirm', function (req, res) {
-  var string = 'User added successfully'
-  return res.render('admin/search', {message: string})
-})
-
-router.get('/admin/update-user-confirm', function (req, res) {
-  res.render('admin/update-user-confirm')
-})
-
-router.post('/admin/update-user-confirm', function (req, res) {
-  var string = 'User details updated successfully'
-  return res.render('admin/search', {message: string})
-})
-
 // new routes
 /* router.get('/llc-06/charge_list_top', function(req, res) {
   var decision = req.query.welcome
@@ -400,5 +365,21 @@ router.get('/llc-06/check-charge-boundary', function (req, res) {
     res.render('llc-06/check-charge-boundary')
   }
 }) */
+
+// Account management home
+router.get('/admin/search', adminController.searchPage)
+router.post('/admin/search', adminController.searchResults)
+
+// Add user
+router.get('/admin/add-user-details', adminController.addUserDetails)
+router.post('/admin/add-user-details', adminController.confirmUserDetails)
+router.get('/admin/add-user-confirm', adminController.confirmUserDetailsPage)
+router.post('/admin/add-user-confirm', adminController.addedUser)
+
+// update user
+router.get('/admin/update-user-confirm', adminController.updateUserConfirmPage)
+router.post('/admin/update-user-confirm', adminController.updatedUser)
+
+/* v2 */
 
 module.exports = router

@@ -1,10 +1,4 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Local land charge
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Local land charge {% endblock %} {% block content %}
 <main id="content" role="main">
 	<!-- alpha banner -->
 	<div class="phase-banner">
@@ -14,19 +8,16 @@ Local land charge
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<p><a href="map-results">Back to search results</a></p>
 			<div class="govuk-box-highlight">
-				<h2 class="heading-large">Your changes have been saved</h2>
-				<p class="fonr-large">The charge ID has not changed
-					<br>
-					<strong class="heading-medium">HMLR-LLC-12871691</strong>
+				<h1 class="bold-large">Your changes have been saved</h1>
+				<p>The charge ID has not changed<br>
+					<strong class="heading-medium">LLC-7CLZU </strong>
 				</p>
 			</div>
-			<p><a href="http://localhost:3010/maintain_llc/v1-4/planning">View the updated charge</a></p>		
+		<p><a href="http://localhost:3010/maintain_llc/v1-4/planning">View the updated charge</a></p>
 		</div>
+	</div>
 	</div>
 
 </main>
 {% endblock %}
-
-
