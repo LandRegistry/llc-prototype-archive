@@ -6,43 +6,43 @@ $(function() {
     // Add New Layer to Open Layers for LLC
     map.addLayer(SEARCH_PAGE.llc_layer);
 
-    // Search Click Event
-    $('#search').on('click', function() {
-        $.getJSON($SCRIPT_ROOT + '/_search/addresses', {
-            search_term: $('#search_term').val(),
-        }, function(response) {
-            $("#search-error").html("")
-            if (response.status == "success") {
-                if($("#error-summary")) {                
-                    $("#error-summary").remove();
-                    $("#error-message-search").remove();
-                    $("#search-fieldset").removeClass("form-group-error");
-                }
-                var extent = new ol.extent.boundingExtent(response.coordinates)
-
-                map.getView().fit(extent, {duration: 1000, maxZoom: 14});
-
-            } else {
-                if ($("#error-summary")) {
-                    $("#error-summary").remove();
-                    $("#error-message-search").remove();
-                    $("#search-fieldset").removeClass("form-group-error");
-                }
-                var errorMsg = '<div id="error-summary" class="error-summary" role="group" ' +
-                    'aria-labelledby="error-summary-heading-example-1" tabindex="-1">' +
-                    '<h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">' +
-                    'There are errors on this page</h1>' +
-                    '<ul id="error-summary-list" class="error-summary-list">' +
-                    '<li><a href="#search_term">' + response.search_message + '</a></li>' +
-                    '</ul></div>';
-
-                var inlineMsg = '<span class="error-message" id="error-message-search">' + response.search_message + '</span>';
-                $("#search-error").html(errorMsg);
-                $("#search_term").before(inlineMsg);
-                $("#search-fieldset").addClass("form-group-error");
-            }
-        });
-    });
+//    // Search Click Event
+//    $('#search').on('click', function() {
+//        $.getJSON($SCRIPT_ROOT + '/_search/addresses', {
+//            search_term: $('#search_term').val(),
+//        }, function(response) {
+//            $("#search-error").html("")
+//            if (response.status == "success") {
+//                if($("#error-summary")) {
+//                    $("#error-summary").remove();
+//                    $("#error-message-search").remove();
+//                    $("#search-fieldset").removeClass("form-group-error");
+//                }
+//                var extent = new ol.extent.boundingExtent(response.coordinates)
+//
+//                map.getView().fit(extent, {duration: 1000, maxZoom: 14});
+//
+//            } else {
+//                if ($("#error-summary")) {
+//                    $("#error-summary").remove();
+//                    $("#error-message-search").remove();
+//                    $("#search-fieldset").removeClass("form-group-error");
+//                }
+//                var errorMsg = '<div id="error-summary" class="error-summary" role="group" ' +
+//                    'aria-labelledby="error-summary-heading-example-1" tabindex="-1">' +
+//                    '<h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">' +
+//                    'There are errors on this page</h1>' +
+//                    '<ul id="error-summary-list" class="error-summary-list">' +
+//                    '<li><a href="#search_term">' + response.search_message + '</a></li>' +
+//                    '</ul></div>';
+//
+//                var inlineMsg = '<span class="error-message" id="error-message-search">' + response.search_message + '</span>';
+//                $("#search-error").html(errorMsg);
+//                $("#search_term").before(inlineMsg);
+//                $("#search-fieldset").addClass("form-group-error");
+//            }
+//        });
+//    });
 
     // Search Enter Event
     $("#search_term").keyup(function(event){
@@ -68,18 +68,23 @@ SEARCH_PAGE.init = function(can_view, can_edit) {
 }
 
 SEARCH_PAGE.get_llc_in_bbox = function() {
-    var extent = map.getView().calculateExtent(map.getSize());
-    var boundingBoxBNG = SEARCH_PAGE.get_bounding_box_from_map(extent);
+//    var extent = map.getView().calculateExtent(map.getSize());
+//    var boundingBoxBNG = SEARCH_PAGE.get_bounding_box_from_map(extent);
+//
+//    $.getJSON($SCRIPT_ROOT + '/_search/local_land_charges', {
+//        boundingBox: JSON.stringify(boundingBoxBNG)
+//    }, function(local_land_charges) {
+//        SEARCH_PAGE.llc_source.clear();
+//
+//        LOCAL_LAND_CHARGES_LAYER.draw_local_land_charges(local_land_charges);
+//        SEARCH_PAGE.fetched_results = SEARCH_PAGE.llc_features.getArray().slice(0);
+//        LOCAL_LAND_CHARGES_LAYER.filter_local_land_charges();
+//    });
 
-    $.getJSON($SCRIPT_ROOT + '/_search/local_land_charges', {
-        boundingBox: JSON.stringify(boundingBoxBNG)
-    }, function(local_land_charges) {
-        SEARCH_PAGE.llc_source.clear();
+    SEARCH_PAGE.llc_source.clear();
+    LOCAL_LAND_CHARGES_LAYER.draw_local_land_charges(example_local_land_charges);
+    SEARCH_PAGE.fetched_results = SEARCH_PAGE.llc_features.getArray().slice(0);
 
-        LOCAL_LAND_CHARGES_LAYER.draw_local_land_charges(local_land_charges);
-        SEARCH_PAGE.fetched_results = SEARCH_PAGE.llc_features.getArray().slice(0);
-        LOCAL_LAND_CHARGES_LAYER.filter_local_land_charges();
-    });
 }
 
 SEARCH_PAGE.get_bounding_box_from_map = function(extent) {

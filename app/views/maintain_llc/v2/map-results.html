@@ -49,7 +49,7 @@ Search for a charge
     <div class="column-one-third charge-list charge-list-maintain-v1-4">
       <h2 class="heading-medium">Local Land Charges in this area</h2>
       <p class="result-count">There are 2 charges in this area</p>
-      <div class="charge-list-item">
+      <div class="charge-list-item" id="LR-ABC12345">
         <h3 class="heading-small"></h3>
         <p class="font-xsmall">Charge ID<br> <span class="bold-small">LR-ABC12345</span> </p>
         <p class="font-xsmall">Registered on<br> <span class="bold-small">12 May 2017</span> </p>
@@ -58,7 +58,7 @@ Search for a charge
           <a href="planning-update" class="font-xsmall">Update</a>
         </div>
       </div>
-      <div class="charge-list-item">
+      <div class="charge-list-item" id="LR-DEF67890">
         <h3 class="heading-small"></h3>
         <p class="font-xsmall">Charge ID<br> <span class="bold-small">LR-DEF67890</span> </p>
         <p class="font-xsmall">Registered on<br> <span class="bold-small">19 December 2008</span> </p>
@@ -76,8 +76,16 @@ Search for a charge
 
 {% block body_end_additional %}
 {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
 <script>
-var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[291202.9875,91997.9],[291368.18749999994,92079.09999999998]]}";
+map.getControls().clear();
+zoomslider = new ol.control.Zoom();
+map.addControl(zoomslider);
+var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
 MAP_HELPERS.zoom_map(geometry);
 </script>
 {% endblock %}
