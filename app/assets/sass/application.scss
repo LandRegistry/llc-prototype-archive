@@ -354,9 +354,10 @@
 
 // map stuff
 #map { 
-  height: 500px;
+  height: calc(100vh - 135px);
   width: 960px;
   position: relative;
+  top: -2em;
 }
 
 #map .ol-zoom .ol-zoom-out {
@@ -369,7 +370,7 @@
 }
 
 #map .ol-zoomslider {
-  background-color: transparent;
+  /*background-color: transparent;*/
   top: 2.3em;
 }
 
@@ -402,9 +403,79 @@
   z-index: 10000;
 }
 
-/*#map-nav {
-  position: relative;
-}*/
+.ol-zoom {
+  position: absolute !important;
+  left: 95vw !important;
+  background-color: #DEE0E2 !important;
+}
+
+/* Search panel */
+#search-panel {
+  width: 26vw;
+  height: calc(100vh - 132px);
+  padding: 0 2vw;
+  z-index: 10000000000;
+  background-color: white;
+  box-shadow: 3px 3px 2px #DEE0E2;
+  position: absolute;
+  overflow: auto;
+  top: 130px;
+
+  & .results-list li {
+    border-bottom: 1px solid #DEE0E2;
+  }
+
+  & .status {
+    float: right;
+    position: relative;
+    top: -5.5em;
+  }
+
+  & .pager {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  & .pager-items li {
+    display: inline;
+    margin: 0 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & .pager-controls {
+    float: right;
+  }
+}
+
+.panel-control {
+  background-color: white;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 30vw;
+  top: 130px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 2px #DEE0E2;
+  text-align: center;
+  cursor: pointer;
+  & img {
+    margin: auto;
+    width: 75%;
+    height: auto;
+    vertical-align: center;
+    position: relative;
+    top: 0.25em;
+  }
+}
+
+.open-button {
+  left: 0;
+}
 
 .postcode-search {
   position: absolute;
@@ -472,24 +543,20 @@
   height: 38px;
 }
 
-.maintain-llc-map {
+/*.maintain-llc-map {
   /*width: 55% !important;
   outline: 1px solid red;
   position: relative;
-  left: -22px;*/
+  left: -22px;
   width: 100% !important;
   position: relative;
-    bottom: 50px;
+  bottom: 50px;
 
   & canvas {
     width: 100% !important;
     height: auto !important;
   }
-
-  & .ol-zoom {
-    /*top: 100px;*/
-  }
-}
+}*/
 
 .filter .form-group{
   background-color: #F8F8F8;
@@ -522,6 +589,12 @@
     top: 0.4em;
     text-decoration: underline;
   }
+}
+
+.map-phase-banner p {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
 }
 
 .filter-heading {
@@ -610,8 +683,8 @@
 
 #map_controls {
   border: none;
-  text-align: right;
-  width: 960px;
+  /*text-align: right;*/
+  text-align: center;
   & #type {
     z-index: 10000000;
     height: 3em;
@@ -621,16 +694,18 @@
     top: 3em;
     right: 0;
     background: none;
+    overflow: hidden !important;
     & option {
       display: inline;
-      margin: 0.2em;
-      padding: 0.5em;
+      margin: 0.3em;
+      padding: 1em;
       height: 3em;
       border: 1px solid rgba(78,78,78,0.3);
       border-radius: 10px;
       background-color: #2b8cc4;
       color: white;
       cursor: pointer;
+      font-size: 1.3em
     }
   }
 }

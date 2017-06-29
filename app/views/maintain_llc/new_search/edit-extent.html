@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit extent
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Edit extent</h1>
+      <p>Edit the charge extend using the map tools below:</p>
+    </div>
+  </div>
+  <br>
+
+  <div id="map" style="position:relative; bottom: 3em;">
+    <!-- map goes in here -->
+    <form class="form-inline" id="map_controls">
+      <select size="5" id="type">
+        <option value="Point">Point</option>
+        <option value="LineString">LineString</option>
+        <option value="Polygon">Polygon</option>
+        <option value="Circle">Circle</option>
+        <option value="None">None</option>
+      </select>
+    </form>
+  </div>
+
+
+  <br>
+  <a class="button" id="confirm-extent-change" href="confirm-planning-update" role="button">Save changes</a>
+</div>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#confirm-extent-change").click(function() {
+      var extentChanged = "true"
+      sessionStorage.setItem("extentChanged", extentChanged)
+    })
+  })
+</script>
+{% endblock %}
