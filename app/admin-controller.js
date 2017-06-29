@@ -30,8 +30,8 @@ exports.confirmationPage = (req, res) => {
 }
 
 exports.addedUser = (req, res) => {
-  var string = 'User added successfully'
-  res.render('admin/confirmation', {message: string})
+  var addMessage = 'User registered'
+  res.render('admin/confirmation', {message: addMessage})
 }
 
 exports.updateUserConfirmPage = (req, res) => {
@@ -39,6 +39,6 @@ exports.updateUserConfirmPage = (req, res) => {
 }
 
 exports.updatedUser = (req, res) => {
-  var string = 'User details updated successfully'
-  res.render('admin/confirmation', {message: string})
+  var updateMessage = 'Changes saved'
+  res.render('admin/confirmation', {message: updateMessage})
 }
