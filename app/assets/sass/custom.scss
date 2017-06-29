@@ -111,6 +111,7 @@
   box-sizing: border-box;
   box-shadow: 3px 3px 2px #DEE0E2;
   text-align: center;
+  z-index: 10000000;
   & img {
     margin: auto;
     width: 75%;
