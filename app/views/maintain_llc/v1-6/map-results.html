@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Search for a charge
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .summary table, tr, td {
+    border-bottom: 0px solid !important;
+
+  }
+</style>
+
+<script>
+  var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+</script>
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">beta</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Search results for <span class="maintainMapAddressItem"></span></h1>
+      <form action="#" method="GET">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">Enter postcode or charge ID to find a charge</legend>
+            <div class="form-group spacing-bottom-half">
+              <label class="form-label" for="legislation">Search again
+              </label>
+              <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text">
+              <input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value=""><br><br>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+
+      <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+      <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+          <div id="map" class="maintain-llc-map"></div>
+        </div>
+      </div>
+    </div>
+    <div class="column-one-third charge-list charge-list-maintain-v1-4">
+      <h2 class="heading-medium">Local Land Charges in this area</h2>
+      <p class="result-count">There are 2 charges in this area</p>
+      <div class="charge-list-item">
+        <h3 class="heading-small"></h3>
+        <p class="font-xsmall">Charge ID<br> <span class="bold-small">HMLR-LLC-12871691</span> </p>
+        <p class="font-xsmall">Registered on<br> <span class="bold-small">3 May 2017</span> </p>
+        <div class="charge-list-options">
+          <a href="planning" class="font-xsmall">View</a>
+          <a href="planning-update" class="font-xsmall">Update</a>
+        </div>
+      </div>
+      <div class="charge-list-item">
+        <h3 class="heading-small"></h3>
+        <p class="font-xsmall">Charge ID<br> <span class="bold-small">HMLR-LLC-31261139</span> </p>
+        <p class="font-xsmall">Registered on<br> <span class="bold-small">30 September 2012</span> </p>
+        <div class="charge-list-options">
+          <a href="planning_2" class="font-xsmall">View</a>
+          <a href="planning_2-update" class="font-xsmall">Update</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+{% endblock %}
+
+

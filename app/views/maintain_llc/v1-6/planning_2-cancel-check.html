@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirm cancellation
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+		<div class="column-full">
+			<h1 class="heading-large">Are you sure you want to cancel the charge?</h1>
+			<div class="grid-row">
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="bold-small">HMLR-LLC-31261139</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Originating authority</td>
+						<td class="bold-small">Exeter city council</td>
+						<td></td>
+					</tr>
+					<tr class="section-end">
+						<td>Registered on</td>
+						<td class="bold-small">30 September 2012</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Location description</td>
+						<td class="bold-small location-td">1 Clinton Street<br>
+							St. Thomas<br>
+							Exeter<br>
+							EX1 1AX
+						</td>
+						<td><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p><a class="button" href="cancel-confirmation">Yes, I want to cancel it</a></p>
+		<p><a href="view-specific-financial">No, I don't want to cancel it</a></p>
+	</div>
+</main>
+
+{% endblock %}
+
+
