@@ -23,14 +23,17 @@
           <input class="form-control" id="email" name="email" type="text" value="jane.doe@landregistry.gov.uk">
         </div>
 
-
+        {% if admin %}
+        <div class="form-group">
+          <label class="form-label" for="lr-organisation">Organisation</label>
+          <input class="form-control" id="lr-organisation" name="organisation" type="text" value="HM Land Registry" readonly="">
+        </div>
+        {% else %}
         <div class="form-group ">
           <label class="form-label" for="organisation">Organisation</label>
 
           <select id="organisation" name="organisation" class="form-control">
-
-                    <option selected value="City of Birmingham" >HM Land Registry</option>
-
+                
                     <option value="City of Birmingham" >City of Birmingham</option>
                 
                     <option value="City of Bristol" >City of Bristol</option>
@@ -51,19 +54,21 @@
                 
               </select>
         </div>
-
-          <fieldset>
-            <legend class="visuallyhidden">Role</legend>
-            <h1 class="heading-medium">Role</h1>
-            <div class="form-group ">
-              <label class="block-label selection-button-radio" for="LLC LA Admins">
+        {% endif %} 
+        
+        {% if admin %}
+        <fieldset>
+          <legend class="visuallyhidden">Role</legend>
+          <h1 class="heading-medium">Role</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LR Users">
                     <input id="LLC LR Users" type="radio"  name="user_role" value="LLC LR Users">
                     Land Registry User
                     <span class="form-hint">
                       Can add, change or delete other users.
                     </span>
                   </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users">
+            <label class="block-label selection-button-radio" for="LLC LR Admins">
                     <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins" checked>
                     Land Registry Administrator
                     <span class="form-hint">
@@ -72,36 +77,60 @@
                       <li>other users</li>
                     </span>
                   </label>
-            </div>
-          </fieldset>
-        
-          <fieldset>
-            <legend class="visuallyhidden">Status</legend>
-            <h1 class="heading-medium">Status</h1>
-            <div class="form-group ">
-              <label class="block-label selection-button-radio" for="LLC LA Admins active">
+          </div>
+        </fieldset>
+        {% else %}
+        <fieldset>
+          <legend class="visuallyhidden">Role</legend>
+          <h1 class="heading-medium">Role</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LA Admins">
+                  <input id="LLC LA Admins" type="radio"  name="user_role" value="LLC LA Admins">
+                  Local Authority User
+                  <span class="form-hint">
+                    Can add, change or delete charges
+                  </span>
+                </label>
+            <label class="block-label selection-button-radio" for="LLC LA Users">
+                  <input id="LLC LA Users" type="radio"  name="user_role" value="LLC LA Users" checked>
+                  Local Authority Administrator
+                  <span class="form-hint">
+                    Can add, change or delete:
+                    <li>charges</li>
+                    <li>other users</li>
+                  </span>
+                </label>
+          </div>
+        </fieldset>
+        {% endif %}
+
+        <fieldset>
+          <legend class="visuallyhidden">Status</legend>
+          <h1 class="heading-medium">Status</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LA Admins active">
                     <input id="LLC LR Users active" type="radio"  name="user_status" value="LLC LR Users" checked>
                     Active
                     <span class="form-hint">
                       User has access to the register.
                     </span>
                   </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users inactive">
+            <label class="block-label selection-button-radio" for="LLC LA Users inactive">
                     <input id="LLC LR Admins inactive" type="radio"  name="user_status" value="LLC LR Admins">
                     Inactive
                     <span class="form-hint">
                       User is temporarily locked out or suspended.
                     </span>
                   </label>
-              <label class="block-label selection-button-radio" for="LLC LA Users archived">
+            <label class="block-label selection-button-radio" for="LLC LA Users archived">
                     <input id="LLC LR Admins archived" type="radio"  name="user_status" value="LLC LR Admins">
                     Archived
                     <span class="form-hint">
                       User no longer has access to their account.
                     </span>
                   </label>
-            </div>
-          </fieldset>
+          </div>
+        </fieldset>
 
         <div class="form-group">
           <a class="button" href="update-user-confirm" role="button">Update</a>
@@ -109,5 +138,5 @@
       </form>
     </div>
   </div>
-</main>
+  </main>
 {% endblock %}

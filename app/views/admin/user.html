@@ -34,7 +34,11 @@ About the user
           </tr>
           <tr> <!-- row 5 -->
             <th scope="row">Role</th>
-            <td>Land Registry Admin</td>
+            {% if admin %}
+              <td>Land Registry Administrator</td>
+            {% else %}
+              <td>Local Authority Administrator</td>
+            {% endif %}
           </tr>
           <tr> <!-- row 6 -->
             <th scope="row">Status</th>

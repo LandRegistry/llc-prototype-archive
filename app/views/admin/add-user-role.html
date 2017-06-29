@@ -29,17 +29,15 @@
                     <li>other users</li>
                   </span>
                 </label>
-                
-      <!-- Uncomment this when testing with Land Registry users-->
-
-          <!--<label class="block-label selection-button-radio" for="LLC LA Admins">
+					{% if admin %}
+          <label class="block-label selection-button-radio" for="LLC LR Users">
                   <input id="LLC LR Users" type="radio"  name="user_role" value="LLC LR Users">
                   Land Registry User
                   <span class="form-hint">
                     Can add, change or delete other users.
                   </span>
                 </label>
-          <label class="block-label selection-button-radio" for="LLC LA Users">
+          <label class="block-label selection-button-radio" for="LLC LR Admins">
                   <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins">
                   Land Registry Administrator
                   <span class="form-hint">
@@ -47,7 +45,8 @@
                     <li>charges</li>
                     <li>other users</li>
                   </span>
-                </label>-->
+                </label>
+           {% endif %}
         </div>
       </fieldset>
           <a class="button" href="add-user-details" role="button">Continue</a>

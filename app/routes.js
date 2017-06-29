@@ -367,16 +367,21 @@ router.get('/llc-06/check-charge-boundary', function (req, res) {
 }) */
 
 // Account management home
+router.get('/admin/sign_in', adminController.signInPage)
+router.post('/admin/sign_in', adminController.signInAuth)
 router.get('/admin/search', adminController.searchPage)
 router.post('/admin/search', adminController.searchResults)
 
 // Add user
-router.get('/admin/add-user-details', adminController.addUserDetails)
+router.get('/admin/add-user-role', adminController.addedUserRolePage)
+router.get('/admin/add-user-details', adminController.addUserDetailsPage)
 router.post('/admin/add-user-details', adminController.confirmUserDetails)
 router.get('/admin/add-user-confirm', adminController.confirmUserDetailsPage)
 router.post('/admin/add-user-confirm', adminController.addedUser)
 
 // update user
+router.get('/admin/user', adminController.userPage)
+router.get('/admin/update-user', adminController.updatedUserPage)
 router.get('/admin/update-user-confirm', adminController.updateUserConfirmPage)
 router.post('/admin/update-user-confirm', adminController.updatedUser)
 
