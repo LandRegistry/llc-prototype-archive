@@ -59,6 +59,11 @@ main {
   @include bold-16();
 }
 
+// Bold, without needing a font size
+.bold {
+  font-weight: 700;
+}
+
 // Common heading sizes
 // Using the bold-xx mixins from the govuk_toolkit _typography.scss file
 // Spacing is set in em, using the px to em function in the elements _helpers.scss file
@@ -206,7 +211,7 @@ p {
     height: 0;
 
     border-top: 5px solid transparent;
-    border-right: 6px solid #0b0c0c;
+    border-right: 6px solid $text-colour;
     border-bottom: 5px solid transparent;
 
     position: absolute;
@@ -220,15 +225,17 @@ p {
   // IE7 doesn't support pseudo-elements, let's fallback to an image instead.
   // Ref: http://caniuse.com/#search=%3Abefore, http://caniuse.com/#search=rgba
   @include ie-lte(8) {
-   background: file-url("icon-arrow-left.png") no-repeat 0 4px;
+    background: file-url("icon-arrow-left.png") no-repeat 0 4px;
   }
 
 }
 
 // Code styles
 .code {
-  color: black;
-  text-shadow: 0 1px white;
+  color: $text-colour;
+  background-color: $highlight-colour;
+
+  text-shadow: 0 1px $page-colour;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 14px;
   direction: ltr;
@@ -247,10 +254,8 @@ p {
   -ms-hyphens: none;
   hyphens: none;
 
-  color: $black;
-  background-color: $highlight-colour;
   border: 1px solid $border-colour;
-  padding: 4px 4px 2px 4px;
+  padding: 4px 4px 2px;
 }
 
 // Horizontal rule style
@@ -262,6 +267,7 @@ hr {
   margin-top: $gutter;
   margin-bottom: $gutter;
   padding: 0;
+
   @include ie-lte(7) {
     color: $border-colour;
   }
@@ -271,15 +277,33 @@ hr {
 .notice {
   @extend %contain-floats;
   position: relative;
+
   .icon {
     position: absolute;
     left: 0;
     top: 50%;
     margin-top: -17px; // Half the height of the important icon
   }
+
   strong {
     display: block;
-    padding-left: (35 + 30)+px;
+    padding-left: (35 + 30) + px;
     margin-left: -$gutter-half;
   }
+}
+
+// Data
+.data {
+  margin-top: em(5, 16);
+  margin-bottom: em(20, 16);
+
+  @include media(tablet) {
+    margin-top: em(5, 19);
+    margin-bottom: em(20, 19);
+  }
+}
+
+.data-item {
+  display: block;
+  line-height: 1;
 }

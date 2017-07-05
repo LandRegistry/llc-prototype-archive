@@ -1,11 +1,6 @@
 // Helpers
 // ==========================================================================
 
-// Path to assets for use with file-url() is not already defined
-@if ($path == false) {
-  $path: "/public/images/";
-}
-
 // Return ems from a pixel value
 // This assumes a base of 19px
 @function em($px, $base: 19) {
@@ -26,15 +21,8 @@
 
 }
 
-// Hide for both screenreaders and browsers
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
 // Hide, but not for screenreaders
-.visually-hidden,
-.visuallyhidden {
+@mixin visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -45,7 +33,7 @@
   border: 0;
 }
 
-// Hide, only when JavaScript is enabled
-.js-enabled .js-hidden {
-  display: none;
+.visually-hidden,
+.visuallyhidden {
+  @include visually-hidden;
 }

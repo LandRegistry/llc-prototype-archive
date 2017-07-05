@@ -1,0 +1,27 @@
+<script src="/public/javascripts/map/la_dictionary.js"></script>
+
+<!-- Custom Map Styles -->
+<script src="/public/javascripts/map/map_styles.js"></script>
+<!-- Master Map Vector Layer -->
+<script src="/public/javascripts/map/master_map_vector_layer.js"></script>
+<!-- Custom Map Controls -->
+<script src="/public/javascripts/map/map_controls.js"></script>
+<script src="/public/javascripts/map/map_helpers.js"></script>
+<!-- Map config -->
+<script>
+    var mastermap_api_key = "demolreg2";
+    var map_base_layer_view_name = "hybrid_bng";
+</script>
+<script src="/public/javascripts/map/map_config.js"></script>
+<!-- Layers -->
+<script src="/public/javascripts/map/geoserver.js"></script>
+<script>
+    var is_lr = false;
+    var organisation = "Exeter City Council";
+    var geoserver_url = "http://internal-llc-integration-alb-internal-1257142244.eu-central-1.elb.amazonaws.com:8075"; //"http://192.168.250.122:8080";
+
+    configure_geoserver_layer_for_user(is_lr, organisation, geoserver_url)
+</script>
+
+<!-- OpenLayers with Mapbox Map -->
+<script src="/public/javascripts/map/map.js"></script>
