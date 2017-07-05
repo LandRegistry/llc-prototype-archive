@@ -276,6 +276,21 @@ router.all('/add_charge/v2-2/03_charge_search_results', function (req, res) {
     })
 })
 
+router.all('/add_charge/v4/06_map', function (req, res) {
+  source = req.query.source;
+  var values = {'title': ''};
+  if (source == "link") {
+    values['geometry'] = JSON.stringify({"type": "Polygon", "coordinates": [[[289271.8965749566, 86964.19601306657], [289271.8965749566, 96855.00479850252], [297579.1996423088, 96855.00479850252], [297579.1996423088, 86964.19601306657], [289271.8965749566, 86964.19601306657]]]});
+  } else if (source == "search") {
+    values['geometry'] = JSON.stringify({"type": "LineString", "coordinates": [[292038.4200000003, 92423.00500000002], [291874.27000000025, 92342.33000000002]]});
+  }
+  res.render('add_charge/v4/06_map', values);
+});
+
+function filterItems(query) {
+   return legs.filter(function(el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
+   })
 function filterItems (query) {
   return legs.filter(function (el) {
     return el.toLowerCase().indexOf(query.toLowerCase()) > -1
@@ -337,34 +352,6 @@ router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
     res.render('add_charge/v2-5/check-charge-boundary')
   }
 })
-
-// new routes
-/* router.get('/llc-06/charge_list_top', function(req, res) {
-  var decision = req.query.welcome
-  if (decision === 'Find a Local Land Charge' || decision === 'Change a LLC' || decision === 'Cancel a LLC') {
-    res.redirect('/llc-06/index')
-  } else {
-    res.render('llc-06/charge_list_top')
-  }
-})
-
-router.get('/llc-06/postcode', function (req, res) {
-  var shape = req.query.shape
-  if (shape === 'true') {
-    res.redirect('/llc-06/check-charge-boundary')
-  } else {
-    res.render('llc-06/postcode')
-  }
-})
-
-router.get('/llc-06/check-charge-boundary', function (req, res) {
-  var shape = req.query.shape
-  if (shape === 'false') {
-    res.redirect('/llc-06/postcode')
-  } else {
-    res.render('llc-06/check-charge-boundary')
-  }
-}) */
 
 // Account management home
 router.get('/admin/sign_in', adminController.signInPage)

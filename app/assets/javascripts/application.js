@@ -261,4 +261,3 @@ function openLayersPlacesLookup (searchQuery) {
 function goBack () {
   window.history.back()
 }
-

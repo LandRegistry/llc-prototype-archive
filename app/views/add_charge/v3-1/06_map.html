@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Draw the extent
+{% endblock %}
+
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Draw the extent</h1>
+			<p>This map shows <span class="location"></span></p>
+			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<div id="map" style="position:relative; bottom: 3em;">
+				<!-- map goes in here -->
+				<form class="form-inline" id="map_controls">
+					<select size="5" id="type">
+						<option value="Point">Point</option>
+						<option value="LineString">LineString</option>
+						<option value="Polygon">Polygon</option>
+						<option value="Circle">Circle</option>
+						<option value="None">None</option>
+					</select>
+				</form>
+			</div>
+			<br>
+			<a class="button" href="07_more_info" role="button">Save and continue</a>
+		</div>
+	</div>
+</main>
+<script>
+
+</script>
+{% endblock %}
+
+
+

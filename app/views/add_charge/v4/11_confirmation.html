@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Charge is registered
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="govuk-box-highlight">
+				<h1 class="bold-large">The <span class="charge_type"></span> charge was registered</h1>
+				<p>
+					The charge ID is <br>
+					<strong class="heading-medium">LLC-7CLZU</strong>
+				</p>
+				<p>Keep this Charge ID. You need it to find the Charge ID again.</p>
+			</div>
+			<p><a href="03_charge_list_top">Register another local land charge</a></p>
+		</div>
+	</div>
+</main>
+{% endblock %}
