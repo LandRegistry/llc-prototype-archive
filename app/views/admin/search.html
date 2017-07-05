@@ -1,0 +1,54 @@
+{% extends "layout.html" %} {% block page_title %} Search {% endblock %} {% block content%}
+<main id="content">
+  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
+	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
+  {{ breadcrumb.backButton() }}
+  {% endblock %}
+
+<form action="search" method="POST">
+  <div class="grid-row">
+    <div class="column-full">
+      <div>
+        <h1 class="heading-large">Account Management</h1>
+        <h2 class="heading-medium">Search by any combination of first name, surname or local authority name</h2>
+        <br>
+        <form class="form-inline" action="/admin/search-results" method="post" id="searchform">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Name of the user to search for</legend>
+              <label class="form-label" for="search_user_id">Find a user</label>
+              <span class="form-hint">
+      First name and / or surname
+  </span>
+
+              <input class="form-control" id="search_user_id" name="search_user_id" type="search">
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Organisation that the user is in</legend>
+              <label class="form-label" for="search_user_org_id">Working in</label>
+              <span class="form-hint">
+    Local authority, e.g. Plymouth City Council
+  </span>
+
+              <input class="form-control" id="search_user_org_id" name="search_user_org_id" type="search">
+            </fieldset>
+          </div>
+        </form>
+        <div>
+          <!--<input form="searchform" class="button" type="submit" value="Search" />-->
+          <a class="button" href="search-results" role="button">Search</a>
+        </div>
+      </div>
+      <br>
+
+      <p>Or</p>
+
+      <p><a id="add-new-user" href="add-user-role">Add a new user</a></p>
+
+    </div>
+  </div>
+</form>
+</main>
+{% endblock %}

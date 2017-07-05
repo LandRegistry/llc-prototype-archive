@@ -1,0 +1,82 @@
+{% extends "layout_map.html" %}
+
+{% block page_title %}
+Search for a charge
+{% endblock %}
+
+{% block content %}
+
+
+<!-- alpha banner -->
+<div class="phase-banner map-phase-banner">
+  <p><strong class="phase-tag">BETA</strong></p>
+</div>
+<!-- main content starts -->
+<div id="map" style="width: 100%">
+  <!-- map goes in here -->
+  <form class="form-inline" id="map_controls">
+    <select size="5" id="type">
+      <option value="Polygon">Polygon</option>
+      <option value="Point">Point</option>
+      <option value="LineString">LineString</option>
+      <option value="Edit">Edit</option>
+      <option value="Remove">Remove</option>
+      <option value="RemoveAll">Remove all</option>
+      <option value="Undo">Undo</option>
+      <option value="SnapTo">Snap to</option>
+    </select>
+  </form>
+</div>
+<div id="search-panel">
+  <h1 class="heading-small">Search for a charge</h1>
+  <form action="map_new" method="GET">
+  <label class="form-label" for="searched_term">Enter a postcode or address</label>
+  <input class="form-control" id="searched_term" type="text" name="searched_term">
+  <input class="button" id="map_search_button" type="submit" value="Search">
+  </form>
+  
+  
+</div>
+<div class="panel-control close">
+  <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    var closePanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "-1000px"
+      }, 100);
+      $(".panel-control").removeClass("close");
+      $(".panel-control").addClass("open-button");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+    }
+
+    var openPanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "0"
+      }, 100);
+      $(".panel-control").removeClass("open-button");
+      $(".panel-control").addClass("close");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+    }
+
+    $(".panel-control").click(function() {
+      if($(this).hasClass("close")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+
+    $("#map_search_button").click(function() {
+      var searchedTerm = $("#searched_term").val();
+      sessionStorage.setItem("searchedTerm", searchedTerm);
+    })
+  });
+</script>
+
+
+{% endblock %}
