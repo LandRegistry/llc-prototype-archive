@@ -118,9 +118,9 @@ router.get('/', function (req, res) {
 })
 
 router.get('/llc-01/create-:screen', function (req, res) {
-  desc = ''
-  today = ''
-  charge_type = ''
+  var desc = ''
+  var today = ''
+  var charge_type = ''
   if (req.params.screen == 1) {
     desc = 'charge-type'
   } else if (req.params.screen == 2) {
@@ -152,9 +152,9 @@ router.get('/llc-01/create-:screen', function (req, res) {
 })
 
 router.get('/llc-02/register-:screen', function (req, res) {
-  desc = ''
-  today = ''
-  charge_type = ''
+  var desc = ''
+  var today = ''
+  var charge_type = ''
   if (req.params.screen == 1) {
     desc = 'charge-type'
   } else if (req.params.screen == 2) {
@@ -182,8 +182,8 @@ router.get('/llc-02/register-:screen', function (req, res) {
 })
 
 router.all('/llc-03/register-:screen', function (req, res) {
-  desc = ''
-  next = ''
+  var desc = ''
+  var next = ''
   if (req.params.screen == 0) {
     next = 1
     desc = 'charge-type'
@@ -250,8 +250,8 @@ router.all('/llc-03/register-:screen', function (req, res) {
 
 router.all('/llc-03/register-:screen/address=:address', function (req, res) {
   req.session.address = req.params.address
-  next = 42
-  desc = 'where-map-address'
+  var next = 42
+  var desc = 'where-map-address'
   res.render('llc-' + '03' + '/register/register_' + next + '-' + desc,
     {'title': '',
       charge_type: req.session.charge_type,
@@ -269,33 +269,23 @@ router.all('/llc-03/register-:screen/address=:address', function (req, res) {
 })
 
 router.all('/add_charge/v2-2/03_charge_search_results', function (req, res) {
-  searchTerm = req.body.legislation
-  searchResult = inArray(searchTerm, legs2)
+  var searchTerm = req.body.legislation
+  var searchResult = inArray(searchTerm, legs2)
   res.render('add_charge/v2-2/03_charge_search',
     {'title': '', reply: searchResult
     })
 })
 
 router.all('/add_charge/v4/06_map', function (req, res) {
-  source = req.query.source;
-  var values = {'title': ''};
-  if (source == "link") {
-    values['geometry'] = JSON.stringify({"type": "Polygon", "coordinates": [[[289271.8965749566, 86964.19601306657], [289271.8965749566, 96855.00479850252], [297579.1996423088, 96855.00479850252], [297579.1996423088, 86964.19601306657], [289271.8965749566, 86964.19601306657]]]});
-  } else if (source == "search") {
-    values['geometry'] = JSON.stringify({"type": "LineString", "coordinates": [[292038.4200000003, 92423.00500000002], [291874.27000000025, 92342.33000000002]]});
+  var source = req.query.source
+  var values = {'title': ''}
+  if (source === 'link') {
+    values['geometry'] = JSON.stringify({'type': 'Polygon', 'coordinates': [[[289271.8965749566, 86964.19601306657], [289271.8965749566, 96855.00479850252], [297579.1996423088, 96855.00479850252], [297579.1996423088, 86964.19601306657], [289271.8965749566, 86964.19601306657]]]})
+  } else if (source === 'search') {
+    values['geometry'] = JSON.stringify({'type': 'LineString', 'coordinates': [[292038.4200000003, 92423.00500000002], [291874.27000000025, 92342.33000000002]]})
   }
-  res.render('add_charge/v4/06_map', values);
-});
-
-function filterItems(query) {
-   return legs.filter(function(el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-   })
-function filterItems (query) {
-  return legs.filter(function (el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) > -1
-  })
-}
+  res.render('add_charge/v4/06_map', values)
+})
 
 function match (query, array) {
   return array.filter(function (el) {
@@ -307,7 +297,7 @@ function inArray (query, outerArray) {
   var lengthOuter = outerArray.length
   var matches = []
   for (var i = 0; i < lengthOuter; i++) {
-    innerArray = outerArray[i]
+    var innerArray = outerArray[i]
     var matched = match(query, innerArray)
     if (matched.length >= 1) {
       matches.push(innerArray)
