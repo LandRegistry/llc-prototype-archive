@@ -1,0 +1,16 @@
+<ul>
+	<li><a href="search">s.18 Clean Air Act 1993</a></li>
+	<li><a href="search">s.17 Land Powers (Defence) Act 1958</a></li>
+	<li><a href="search">s.44 Civil Aviation Act 1982</a></li>
+	<li><a href="search">s.45 Civil Aviation Act 1982</a></li>
+	<li><a href="search">s.46(1) Civil Aviation Act 1982</a></li>
+	<li><a href="search">s.11(1) Opencast Coal Act 1958</a></li>
+	<li><a href="search">No specific statutory provision</a></li>
+</ul>
+
+<script>
+	$(".result li a").click(function() {
+		var legislation = $(this).html();
+		sessionStorage.setItem("legislation", legislation);
+	});
+</script>

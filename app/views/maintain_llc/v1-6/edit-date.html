@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit date of creation
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">When was the charge created?</h1>
+			<form action="05_postcode" method="GET">
+				<fieldset>
+					<div class="form-group">
+						<legend>
+
+							<p>This is the date when:
+								<ul class="list list-bullet">
+									<li>the decision was made to create the charge</li>
+									<li>the legal document was created</li>
+									<li>the charge is protected by law</li>
+								</ul>
+							</p>
+
+						</legend>
+						<span class="form-hint">For example, 31 3 2017</span>
+						<div class="form-date">
+							<div class="form-group form-group-day">
+								<label class="form-label" for="startDay">Day</label>
+								<input class="form-control" id="startDay" name="startDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+							</div>
+							<div class="form-group form-group-month">
+								<label class="form-label" for="startMonth">Month</label>
+								<input class="form-control" id="startMonth" name="startMonth" type="number" pattern="[0-9]*" min="0" max="12">
+							</div>
+							<div class="form-group form-group-year">
+								<label class="form-label" for="startYear">Year</label>
+								<input class="form-control" id="startYear" name="startYear" type="number" pattern="[0-9]*" min="0" max="2016">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<p>
+					<a id="edit-date" class="button creation-date-button" href="confirm-planning-update" role="button">Continue</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#edit-date").click(function() {
+			var dateChanged = "true"
+			sessionStorage.setItem("dateChanged", dateChanged)
+		})
+	})
+</script>
+
+{% endblock %}
+
+
