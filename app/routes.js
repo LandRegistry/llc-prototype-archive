@@ -362,6 +362,16 @@ router.get('/admin/update-user', adminController.updatedUserPage)
 router.get('/admin/update-user-confirm', adminController.updateUserConfirmPage)
 router.post('/admin/update-user-confirm', adminController.updatedUser)
 
+// UPRN search
+router.get('/maintain_llc/new_search_v1-1/map_new', function (req, res) {
+  var uprn = req.query.searched_term
+  if (uprn === 'UPRN12345ABC') {
+    res.redirect('/maintain_llc/new_search_v1-1/map_uprn')
+  } else {
+    res.render('maintain_llc/new_search_v1-1/map_new')
+  }
+})
+
 /* v2 */
 
 module.exports = router
