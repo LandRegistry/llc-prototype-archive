@@ -73,12 +73,6 @@
     border-bottom: 1px solid #DEE0E2;
   }
 
-  & .status {
-    float: right;
-    position: relative;
-    top: -5.5em;
-  }
-
   & .pager {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
@@ -99,6 +93,16 @@
     float: right;
   }
 }
+
+.search-result-header {
+    display: flex;
+    justify-content: space-between;
+
+    & .status {
+      position: relative;
+      top: 1.3em;
+    }
+  }
 
 /* Panel open / close button */
 .panel-control {
