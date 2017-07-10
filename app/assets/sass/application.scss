@@ -210,9 +210,9 @@
 // map stuff
 #map { 
   height: calc(100vh - 135px);
-  width: 960px;
+  width: 100%;
   position: relative;
-  top: -2em;
+  /*top: -2em;*/
 }
 
 #map .ol-zoom .ol-zoom-out {

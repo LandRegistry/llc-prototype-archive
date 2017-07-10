@@ -9,7 +9,7 @@ var MAP_CONFIG = {};
 (function(MAP_CONFIG) {
     // Map Default Position
     MAP_CONFIG.default_center = [546345.8, 179914.45];
-    MAP_CONFIG.default_zoom = 2;
+    MAP_CONFIG.default_zoom = 4;
     MAP_CONFIG.draw_layer_zoom_threshold = 13;
     MAP_CONFIG.max_zoom_level = 14;
 

@@ -3,9 +3,9 @@
 /* map stuff */
 #map { 
   height: calc(100vh - 135px);
-  width: 960px;
-  position: relative;
-  top: -2em;
+  width: 100%;
+  position: absolute;
+  /*top: -2em;*/
 }
 
 #map .ol-zoom .ol-zoom-out {
@@ -70,7 +70,7 @@
   top: 130px;
 
   & .results-list li {
-    border-bottom: 1px solid #DEE0E2;
+    border-bottom: 1px solid #DEE0E2 !important;
   }
 
   & .pager {
@@ -135,6 +135,8 @@
   display: block;
   margin: 0 auto;
 }
+
+
 
 /* map controls */
 
