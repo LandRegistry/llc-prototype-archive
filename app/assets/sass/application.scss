@@ -443,7 +443,8 @@
 // maintain llc stuff
 #maintain-map-search {
   border: 2px solid black;
-  width: 310px;
+  /*width: 310px;*/
+  width: 50% !important;
   display: inline !important;
   height: 38px;
 }
