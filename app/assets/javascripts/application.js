@@ -101,7 +101,8 @@ $(document).ready(function () {
   // and focused states for block labels
   var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']")
   new GOVUK.SelectionButtons($blockLabels)
-
+  $('.js-hidden').css('display', 'none')
+  $('.js-hidden').attr('aria-hidden', 'true').hide()
   // Show and hide toggled content
   // Where .block-label uses the data-target attribute
   var toggleContent = new ShowHideContent()
