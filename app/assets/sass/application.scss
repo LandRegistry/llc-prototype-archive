@@ -643,3 +643,7 @@
   border-color: $turquoise;
   background-color: mix(white, $turquoise, 90%);
 }
+
+.js-hidden {
+  display: none;
+}
