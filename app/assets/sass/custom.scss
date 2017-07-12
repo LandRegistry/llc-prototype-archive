@@ -9,12 +9,12 @@
 }
 
 #map .ol-zoom .ol-zoom-out {
-  background:rgba(51,122,183,.8);
-  margin-top: 204px;
+  background:rgb(12, 96, 163);
+  margin-top: 4px;
 }
 
 #map .ol-zoom .ol-zoom-in {
-  background:rgba(51,122,183,.8);
+  background:rgb(12, 96, 163);
 }
 
 #map .ol-zoomslider {
@@ -23,11 +23,11 @@
 }
 
 #map .ol-zoomslider-thumb {
-  background:rgba(51,122,183,.8);
+  background:rgb(12, 96, 163);
 }
 
 #map .ol-mouse-position {
-  background: rgba(51,122,183,.8);
+  background: rgb(12, 96, 163);
   border-radius: 10px;
   border-color: grey;
   padding: 5px;
@@ -54,7 +54,7 @@
 .ol-zoom {
   position: absolute !important;
   left: 95vw !important;
-  background-color: #DEE0E2 !important;
+  background-color: transparent !important;
 }
 
 /* Search panel */

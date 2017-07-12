@@ -1,22 +1,24 @@
-{% extends "layout.html" %}
+{% extends "layout_map.html" %}
 
 {% block page_title %}
-Where do you want to add the charge?
+Search for a charge
 {% endblock %}
 
 {% block content %}
 
-<main id="content" role="main">
-	<!-- alpha banner -->
-	<div class="phase-banner">
-		<p><strong class="phase-tag">BETA</strong></p>
-	</div>
-	<!-- main content starts -->
-	<div class="grid-row">
-		<div class="column-two-thirds">
-			<h1 class="heading-large">Where do you want to add the charge?</h1>
-			<form action="map.html" method="GET" style="padding-bottom: 0">
-				<div class="form-group">
+
+<!-- alpha banner -->
+<div class="phase-banner map-phase-banner">
+  <p><strong class="phase-tag">BETA</strong></p>
+</div>
+<!-- main content starts -->
+<div id="map" style="width: 100%">
+  <!-- map goes in here -->
+</div>
+<div id="search-panel">
+  <h1 class="heading-medium">Where do you want to add the chrge?</h1>
+  <form action="map-results" method="GET">
+<div class="form-group">
 					<fieldset>
 						<legend class="visuallyhidden">Where do you want to add the charge?</legend>
 						<div class="form-group">
@@ -43,11 +45,11 @@ Where do you want to add the charge?
 								</div>
 								<div class="form-group">
 									<span class="heading-small">Do you have an extent saved on file?</span> 
-									<details>
+									<details role="group">
 
-										<summary><span class="summary">Upload the file</span></summary>
+										<summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Upload the file</span></summary>
 
-										<div class="panel panel-border-narrow">
+										<div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
 
 											<span>Accepted formats are:</span>
 											<ul class="list list-bullet">
@@ -63,23 +65,64 @@ Where do you want to add the charge?
 												<a class="button shape-button" href="check-charge-boundary">Continue</a>
 											</div>
 										</div>
-									</fieldset>
+									</details></div></div></fieldset>
 								</div>
-							</form>
-
-						</div>
-
-					</details>
-				</div>
-			</div>
-		</fieldset>
-	</div>
-</form>
+          </form>
 </div>
+<div class="panel-control close">
+  <img src="{{ asset_path }}images/arrow_collapse.png">
 </div>
-</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    var closePanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "-1000px"
+      }, 100);
+      $(".panel-control").removeClass("close");
+      $(".panel-control").addClass("open-button");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+    }
+
+    var openPanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "0"
+      }, 100);
+      $(".panel-control").removeClass("open-button");
+      $(".panel-control").addClass("close");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+    }
+
+    $(".panel-control").click(function() {
+      if($(this).hasClass("close")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+
+    $("#map-search-button").click(function() {
+      var searchedTerm = $("#maintain-map-search").val();
+      sessionStorage.setItem("searchedTerm", searchedTerm);
+    })
+  });
+</script>
 
 {% endblock %}
-
-
-
+{% block body_end_additional %}
+    {% include "includes/map_scripts.html" %}
+    <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+    <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+    <script src="/public/javascripts/map/search/map_events.js"></script>
+    <script src="/public/javascripts/map/search/sample_data.js"></script>
+    <script src="/public/javascripts/map/search/search.js"></script>
+    <script>
+      map.getControls().clear();
+      zoomslider = new ol.control.Zoom();
+      map.addControl(zoomslider);
+     var geometry = "{{ geometry }}";
+      MAP_HELPERS.zoom_map(geometry);
+    </script>
+    {% endblock %}
