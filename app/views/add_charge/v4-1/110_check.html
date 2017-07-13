@@ -64,7 +64,7 @@ Add more information about the location
 									</td>
 									<td>
 										{{ instrument }}
-										{% if creation_date %}
+										{% if creation_date != '//' %}
 											<br>{{ creation_date }}
 										{% endif %}
 									</td>
@@ -138,8 +138,12 @@ Add more information about the location
 										Expiry date
 									</td>
 									<td>
-										{{ expiry_date }}
-										<br>{{ expiry_text }}
+										{% if expiry_date != '//' %}
+											{{ expiry_date }}
+										{% endif %}
+										{% if expiry_text %}
+											{{ expiry_text }}
+										{% endif %}
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">

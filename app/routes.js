@@ -398,7 +398,6 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
       next = 30
       desc = 'charge_list_top'
     } else {
-      req.session.on_behalf_of = req.query.on_behalf_of
       next = 25
       desc = 'behalf_of'
     }
@@ -407,6 +406,7 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
     next = 26
     desc = 'org_results'
   } else if (req.params.screen == 26) { // CHOOSE ON BEHALF OF
+    req.session.on_behalf_of = req.query.on_behalf_of
     next = 30
     desc = 'charge_list_top'
   } else if (req.params.screen == 30) { // CHARGE TYPE LIST
