@@ -701,15 +701,15 @@
   background: url("../images/snap-to.png");
   background-size: cover;
   &.active {
-    border: 3px solid $yellow;
+    outline: 3px solid $yellow;
   }
   &:focus {
-    outline: none;
+    outline: 3px solid $yellow;
   }
 }
 
 button#active-control {
-  border: 3px solid $yellow;
+  outline: 3px solid $yellow;
 }
 
 button.map-button.polygon:focus,
@@ -720,4 +720,43 @@ button.map-button.edit:focus,
 button.map-button.copy:focus,
 button.map-button.remove:focus {
   outline: none;
+}
+
+#openStreetMap {
+  padding: 0px;
+  margin: 0px;
+  height: 600px;
+
+  & button.map-button.polygon:focus,
+  button.map-button.point:focus,
+  button.map-button.line:focus,
+  button.map-button.circle:focus,
+  button.map-button.edit:focus,
+  button.map-button.copy:focus,
+  button.map-button.remove:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+.esriSimpleSlider {
+  float: right !important;
+  margin-right: 20px;
+  margin-top: 20px;
+  position: sticky !important;
+  background-color: #0c60a3 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border: none !important;
+}
+
+.esriSimpleSliderIncrementButton:hover, .esriSimpleSliderIncrementButton:active,.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderDecrementButton:active {
+  background-color: #0c60a3 !important;
+}
+
+.controls div#draw-controls {
+  position: absolute;
+  top: 140px;
 }
