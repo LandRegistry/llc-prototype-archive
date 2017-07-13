@@ -1,0 +1,103 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+{% if serviceName %} 
+{{ serviceName }} 
+{% endif %} 
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+     <h1 class="heading-xlarge">
+      LLC1 search result: see a list of local land charges on a property
+    </h1>
+    <h2 class="heading-medium">Description of charge</h2>
+  </div>
+
+  <div class="column-full">
+    <table class="check-your-answers-2">
+      <tbody>
+        <tr>
+          <td>Description</td>
+          <td class="bold-small">Single storey rear extension</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Legislation</td>
+          <td class="bold-small">Town &amp; Country Planning Act 1990, section 106</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Originating authority</td>
+          <td class="bold-small">Exeter City Council</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Registered on</td>
+          <td class="bold-small">11 October 2008</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Originating authority reference</td>
+          <td class="bold-small">PLY123</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>HM Land Registry reference</td>
+          <td class="bold-small">LLC/EX38912714</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column-two-thirds">
+    <br><br>
+    <div class="notice">
+      <i class="icon icon-important">
+        <img src="{{ asset_path }}images/icon-information.png">
+      </i>
+      <strong class="bold-small">
+        This is not the official LLC1 search result.
+      </strong>
+    </div>
+    <br>
+    <details>
+      <summary>
+
+        <span class="summary">About official search results</span></summary>
+
+        <div class="panel panel-border-wide">
+
+          <h3 class="heading-medium">What is an official search result?</h3>
+          <p>An official search result will include:</p>
+          <ul class="list list-bullet">
+            <li>official LLC1 search result, guaranteed by HM Land Registry</li>
+            <li>link to source documents</li>
+            <li>charge extent</li>
+            <li>search history</li>
+            <li>option to add your brand logo to the result, next to the HM Land Registry logo</li>
+            <li>option to return to your search result at any time</li>
+            <li>option to download your result in different formats (PDF, JSON, CSV)</li>
+          </ul>
+
+          <p class="bold">You must pay &pound;xx to access the official search results. <a href="pay-continue">Pay for an official search result</a>.</p>
+
+
+        </div>
+
+      </details>
+    </div>
+
+  </div>
+
+
+
+
+
+</main>
+
+{% endblock %}

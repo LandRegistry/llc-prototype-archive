@@ -1,0 +1,61 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+{% if serviceName %} 
+{{ serviceName }} 
+{% endif %} 
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">LLC1 search result: see a list of local land charges on a property</h1>
+      <h3 class="heading-medium">Before you start</h3>
+      <p>You’ll need a debit or credit card to use this service.</p>
+      <p>Read <a href="">guidance on getting information about property and land</a>, including alternative sources of information.</p>
+      <h3 class="heading-medium">Fees</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Documents (each)</th>
+            <th>Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Official search result of local land charges (LLC1)</td>
+            <td>£165.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="heading-medium">How to pay</h3>
+      <p>Payment will be taken by GOV.UK Pay on HM Land Registry's behalf</p>
+      <div class="notice">
+        <i class="icon icon-important">
+          <img src="{{ asset_path }}images/icon-important.png">
+        </i>
+        <strong>
+          <span class="bold-small">Important: make sure this is the property you want.</span><br>
+          You can't cancel once you have paid and the information is displayed.
+        </strong>
+      </div>
+      <br>
+      <p>
+          <a class="button" href="pay" role="button" id="pay">Pay now</a>
+        </p>
+      <h3 class="heading-medium">Help</h3>
+      <p><a href="">Contact HM Land Registry</a> if you need help using this service.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+</main>
+
+{% endblock %}
