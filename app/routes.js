@@ -343,6 +343,142 @@ router.get('/add_charge/v2-5/check-charge-boundary', function (req, res) {
   }
 })
 
+router.get('add_charge/v4-1/03_charge_list_top', function (req, res) {
+  console.log('HIT')
+  res.render('add_charge/v4-1/04_doc_mand',
+    {'title': '',
+      charge_type: 'HIT'
+    })
+})
+
+/*router.all('add_charge/v:version/:screen', function (req, res) {
+  var version = req.params.version
+  var screen = req.params.screen
+  var next = ''
+  console.log(req.params.version)
+  console.log(req.params.screen)
+  if (screen =='03_charge_list_top') {
+    req.session.charge_type = req.body.charge_type
+    next = '04_doc_mand'
+  }
+  console.log('NEXT ' + 'add_charge/' + version + '/'+ next)
+  res.render('add_charge/' + version + '/'+ next,
+    {'title': '',
+      charge_type: ''
+    })
+})*/
+
+router.get('/add_charge/v4-2/start', function(req, res) {
+  res.render('/add_charge/v4-2/001_start', {'title': '',
+      charge_type: ''
+   })
+})
+
+router.get('/add_charge/v4-1/start', function(req, res) {
+  res.render('/add_charge/v4-1/1_start', {'title': '',
+      charge_type: ''
+   })
+})
+
+router.all('/add_charge/v4-1/:screen', function (req, res) {
+  var desc = ''
+  var next = ''
+  if (req.params.screen == 0) {
+    next = 10
+    desc = 'start'
+  }
+  if (req.params.screen == 10) {
+    next = 20
+    desc = 'sign_in'
+  } else if (req.params.screen == 20) {
+    next = 21
+    desc = 'home'
+  } else if (req.params.screen == 21) {
+    if (req.query.behalf_of == 'false') {
+      next = 30
+      desc = 'charge_list_top'
+    } else {
+      req.session.on_behalf_of = req.query.on_behalf_of
+      next = 25
+      desc = 'behalf_of'
+    }
+  } else if (req.params.screen == 25) { // ON BEHALF OF
+    req.session.destroy
+    next = 26
+    desc = 'org_results'
+  } else if (req.params.screen == 26) { // CHOOSE ON BEHALF OF
+    next = 30
+    desc = 'charge_list_top'
+  } else if (req.params.screen == 30) { // CHARGE TYPE LIST
+    next = 40
+    desc = 'doc_mand'
+    req.session.charge_type = req.body.charge_type
+  } else if (req.params.screen == 31) {
+    next = 32
+    desc = 'charge_search'
+  } else if (req.params.screen == 32) { // CHARGE LIST
+    next = 40
+    desc = 'doc_mand'
+    req.session.charge_type = req.body.charge_type
+  } else if (req.params.screen == 40) { // INSTRUMENT AND CREATION DATE
+    req.session.instrument = req.body.instrument
+    req.session.creation_date = req.body.doc_day + '/' + req.body.doc_month + '/' + req.body.doc_year
+    next = 50
+    desc = 'postcode'
+  } else if (req.params.screen == 50) {
+    next = 51
+    desc = 'postcode_results'
+    req.session.search_term = req.body.search_term
+  } else if (req.params.screen == 51) { // SELECT ADDRESS
+    req.session.address = req.query.address
+    next = 60
+    desc = 'map'
+  } else if (req.params.screen == 60) {
+    next = 70
+    desc = 'more_info'
+  } else if (req.params.screen == 70) { // MORE INFO (ABOUT THE LOCATION)
+    req.session.extent = req.body.extent
+    req.session.part_extent = req.body.part_extent
+    next = 80
+    desc = 'description'
+  } else if (req.params.screen == 80) { // DESCRIPTION SCREEN
+    next = 90
+    desc = 'additional_info'
+    req.session.description = req.body.description
+  } else if (req.params.screen == 90) { // ADDITIONAL INFO
+    req.session.more_info = req.body.more_information
+    req.session.reference = req.body.reference
+    req.session.planning_link = req.body.link
+    next = 100
+    desc = 'expiration'
+  } else if (req.params.screen == 100) { // EXPIRE
+    req.session.expiry_date = req.body.end_day + '/' + req.body.end_month + '/' + req.body.end_year
+    req.session.expiry_text = req.body.expire_text
+    next = 110
+    desc = 'check'
+  } else if (req.params.screen == 110) {
+    next = 120
+    desc = 'confirmation'
+  }
+  res.render('add_charge/v4-1/' + next + '_' + desc,
+    {'title': '',
+      on_behalf_of: req.session.on_behalf_of,
+      charge_type: req.session.charge_type,
+      instrument: req.session.instrument,
+      creation_date: req.session.creation_date,
+      search_term: req.session.search_term,
+      address: req.session.address,
+      extent: req.session.extent,
+      part_extent: req.session.part_extent,
+      description: req.session.description,
+      more_info: req.session.more_info,
+      reference: req.session.reference,
+      planning_link: req.session.planning_link,
+      expiry_date: req.session.expiry_date,
+      expiry_text: req.session.expiry_text
+    })
+})
+
 // Account management home
 router.get('/admin/sign_in', adminController.signInPage)
 router.post('/admin/sign_in', adminController.signInAuth)

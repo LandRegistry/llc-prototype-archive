@@ -15,12 +15,17 @@ Draw the extent
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">Draw the extent</h1>
-			<p>This map shows <span class="location"></span></p>
-			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<p>This map shows</p>
+			<p class="lede">{{ address }}</p>
+			<p class="form-hint">Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<br><br>
 			<div id="map">
 			</div>
-			<br>
-			<a class="button" href="07_more_info" role="button">Save and continue</a>
+			<form action="/add_charge/v4-1/60" method="POST" style="padding-bottom: 0">
+				<div class="form-group">
+					<input class="button" type="submit" value="Save and continue">
+				</div>
+			</form>
 		</div>
 	</div>
 </main>

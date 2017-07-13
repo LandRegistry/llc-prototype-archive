@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Check your application</h1>
+			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+			<form action="/add_charge/v4-1/110" method="GET">
+				<fieldset>
+					<div class="form-group">
+						<table class="check-your-answers">
+							<thead>
+								<tr>
+									<th colspan="2">
+									</th>
+									<th>
+									</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								{% if on_behalf_of %}
+									<tr>
+										<td>
+											On behalf of
+										</td>
+										<td>
+											 {{ on_behalf_of }}
+										</td>
+										<td class="change-answer">
+											<a class="edit" href="#">
+												Change <span class="visuallyhidden">On behalf of</span>
+											</a>
+										</td>
+									</tr>
+								{% endif %}
+								<tr>
+									<td>
+										Law
+									</td>
+									<td>
+										 {{ charge_type }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Law</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Document
+									</td>
+									<td>
+										{{ instrument }}
+										{% if creation_date %}
+											<br>{{ creation_date }}
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Document</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Location
+									</td>
+									<td>
+										{{ address }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Location</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Extent
+									</td>
+									<td>
+										{{ extent }}
+										{% if part_extent %}
+											<br>{{ part_extent }}
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Extent</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Description
+									</td>
+									<td>
+										{{ description }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Description</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Research
+									</td>
+									<td>
+										{{ more_info }}
+										<br>{{ reference }}
+										{% if planning_link %}
+											<br><a href="{{ planning_link }}">{{ planning_link }}</a>
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Research</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Expiry date
+									</td>
+									<td>
+										{{ expiry_date }}
+										<br>{{ expiry_text }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">expiry</span>
+										</a>
+									</td>
+								</tr>
+								<!--<tr>
+									<td>
+										Particulars on acquired land
+									</td>
+									<td>
+										<span class="particularsA">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Particulars on acquired land</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Particulars of relevant interest
+									</td>
+									<td>
+										<span class="particularsB">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Particulars of relevant interest</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Compensation
+									</td>
+									<td>
+										<span class="compensation">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Compensation</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Amount
+									</td>
+									<td>
+										<span class="amount">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Amount</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Rate of interest
+									</td>
+									<td>
+										<span class="interest">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Rate of interest</span>
+										</a>
+									</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<input class="button" type="submit" value="Continue">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

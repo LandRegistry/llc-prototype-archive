@@ -16,7 +16,7 @@ What is the law for this charge?
 		<div class="column-two-thirds">
 			<h1 class="heading-large">What is the law for this charge?</h1>
 			<div class="search-by-autocomplete">
-				<form action="/add_charge/v2-2/03_charge_search_results" method="POST">
+				<form action="/add_charge/v4-1/32" method="POST">
 					<div class="form-group">
 						<fieldset>
 							<legend class="visuallyhidden">What is the law for this charge?</legend>
@@ -27,7 +27,7 @@ What is the law for this charge?
 
 								{% for item in reply %}
 									<label for="radio-part-{{loop.index}}" class="block-label selection-button-radio">
-									  <input id="radio-part-{{loop.index}}" type="radio" name="housing-act" value="Part 1">
+									  <input id="radio-part-{{loop.index}}" type="radio" name="charge_type" value="{{ item[0] }}">
 										<span class="heading-small">{{ item[0] }}</span><br>
 										{{ item[1] }}
 										{{ item[2] }}
@@ -35,11 +35,12 @@ What is the law for this charge?
 								{% endfor %}
 
 							</div>
-
 						</fieldset>
-					<a class="button additional-information-button" href="04_doc_mand" role="button">Continue</a>
 					</div>
-					<p>If none of the laws, acts or sections apply then you must <a href="04_doc_mand_date">select an instrument</a></p>
+					<div class="form-group">
+                    	<input class="button" type="submit" value="Continue">
+                	</div>
+					<p>If none of the laws, acts or sections apply then you must <a href="40_doc_mand">select an instrument</a></p>
 				</form>
 			</div>
 		</div>

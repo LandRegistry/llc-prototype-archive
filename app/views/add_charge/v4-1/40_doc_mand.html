@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Which document made this charge?</h1>
+
+			<form action="/add_charge/v4-1/40" method="POST">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">Which document made this charge?</legend>
+						<div class="form-group-reason">
+							<label class="block-label selection-button-radio" for="reason-1">
+								<input id="reason-1" name="instrument" type="radio" value="Agreement">
+								Agreement
+							</label>
+							<label class="block-label selection-button-radio" for="reason-12">
+								<input id="reason-12" name="instrument" type="radio" value="Application">
+								Application
+							</label>
+							<label class="block-label selection-button-radio" for="reason-2">
+								<input id="reason-2" name="instrument" type="radio" value="Certificate">
+								Certificate
+							</label>
+							<label class="block-label selection-button-radio" for="reason-13">
+								<input id="reason-13" name="instrument" type="radio" value="Consent">
+								Consent
+							</label>
+							<label class="block-label selection-button-radio" for="reason-3">
+								<input id="reason-3" name="instrument" type="radio" value="Covenants">
+								Covenants
+							</label>
+							<label class="block-label selection-button-radio" for="reason-4">
+								<input id="reason-4" name="instrument" type="radio" value="Deed">
+								Deed
+							</label>
+							<label class="block-label selection-button-radio" for="reason-5">
+								<input id="reason-5" name="instrument" type="radio" value="Deed of modification">
+								Deed of modification
+							</label>
+							<label class="block-label selection-button-radio" for="reason-6">
+								<input id="reason-6" name="instrument" type="radio" value="notice">
+								Notice
+							</label>
+							<label class="block-label selection-button-radio" for="reason-7">
+								<input id="reason-7" name="instrument" type="radio" value="Order">
+								Order
+							</label>
+							<label class="block-label selection-button-radio" for="reason-8">
+								<input id="reason-8" name="instrument" type="radio" value="Resolution">
+								Resolution
+							</label>
+							<label class="block-label selection-button-radio" for="reason-9">
+								<input id="reason-9" name="instrument" type="radio" value="Scheme">
+								Scheme
+							</label>
+							<label class="block-label selection-button-radio" for="reason-10">
+								<input id="reason-10" name="instrument" type="radio" value="Transfer">
+								Transfer
+							</label>
+							<label class="block-label selection-button-radio" for="reason-11">
+								<input id="reason-11" name="instrument" type="radio" value="Undertaking">
+								Undertaking
+							</label>
+						</div>
+					</fieldset>
+
+					<h2 class="heading-medium">Date document created</h2>
+					<fieldset>
+						<legend class="hidden">Date document created</legend>
+						<span class="form-hint">For example, 31 3 2017</span>
+						<div class="form-date">
+							<div class="form-group form-group-day">
+								<label class="form-label" for="doc_day">Day</label>
+								<input class="form-control" id="doc_day" name="doc_day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+							</div>
+							<div class="form-group form-group-month">
+								<label class="form-label" for="doc_month">Month</label>
+								<input class="form-control" id="doc_month" name="doc_month" type="number" pattern="[0-9]*" min="0" max="12">
+							</div>
+							<div class="form-group form-group-year">
+								<label class="form-label" for="doc_year">Year</label>
+								<input class="form-control" id="doc_year" name="doc_year" type="number" pattern="[0-9]*" min="0" max="2017">
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Continue">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

@@ -15,7 +15,7 @@ Add more information about the location
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">Does the charge expire?</h1>
-			<form action="check.html" method="GET">
+			<form action="/add_charge/v4-1/100" method="POST">
 				<fieldset>
 					<div class="form-group">
 						<legend class="visually-hidden">Does the charge expire?</legend>
@@ -33,31 +33,32 @@ Add more information about the location
 							<div class="form-date">
 								<h2 class="heading-xsmall">On a specific day</h2>
 								<div class="form-group form-group-day">
-									<label class="form-label" for="endDay">Day</label>
-									<input class="form-control" id="endDay" name="endDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+									<label class="form-label" for="end_day">Day</label>
+									<input class="form-control" id="end_day" name="end_day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
 								</div>
 								<div class="form-group form-group-month">
-									<label class="form-label" for="endMonth">Month</label>
-									<input class="form-control" id="endMonth" name="endMonth" type="number" pattern="[0-9]*" min="0" max="12">
+									<label class="form-label" for="end_month">Month</label>
+									<input class="form-control" id="end_month" name="end_month" type="number" pattern="[0-9]*" min="0" max="12">
 								</div>
 								<div class="form-group form-group-year">
 									<label class="form-label" for="endYear">Year</label>
-									<input class="form-control" id="endYear" name="endYear" type="number" pattern="[0-9]*" min="0" max="2016">
+									<input class="form-control" id="end_year" name="end_year" type="number" pattern="[0-9]*" min="0">
 								</div>
 							</div><br><br><br><br>
 							<p class="form-block">or</p><br>
 							<div class="form-block">
-							<label class="form-label" for="expirationTerm" class="bold-xsmall">After a period of time</label>
+							<label class="form-label" for="expire_text" class="bold-xsmall">After a period of time</label>
 							<span class="form-hint">For example, 5 years after building works start</span>
-								<input class="form-control search-field" id="expirationTerm" name="expirationTerm" type="text" value="">
+								<input class="form-control search-field" id="expire_text" name="expire_text" type="text" value="">
 							</div>
 						</div>
 
 					</div>
 				</fieldset>
-				<p>
-					<a class="button expiration-button" href="10_check" role="button">Continue</a>
-				</p>
+				 <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+
 			</form>
 		</div>
 	</div>

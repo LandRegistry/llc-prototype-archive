@@ -15,7 +15,7 @@ Where do you want to add the charge?
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">Where do you want to add the charge?</h1>
-			<form action="map.html" method="GET" style="padding-bottom: 0">
+			<form action="/add_charge/v4-1/50" method="POST" style="padding-bottom: 0">
 				<div class="form-group">
 					<fieldset>
 						<legend class="visuallyhidden">Where do you want to add the charge?</legend>
@@ -34,43 +34,46 @@ Where do you want to add the charge?
 									<p>You will see a map showing this address on the next page. Use this map to start drawing the extent.</p>
 								</div>
 								<div class="form-group spacing-bottom-half">
-									<input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+									<input class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
 									<!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-									<a class="button" href="06_map" role="button">Search</a>
+									<input class="button" type="submit" value="Search">
 								</div>
 								<div class="form-group">
-									<p>No address for this charge? <a href="06_map">Start with the map and scroll to the location instead</a></p>
+									<p>No address for this charge? <a href="60_map?source=link">Start with the map and scroll to the location instead</a></p>
 								</div>
 								<div class="form-group">
-									<span class="heading-small">Upload a file</span><br>
+									<span class="heading-small">Do you have an extent saved on file?</span> 
+									<details>
 
+										<summary><span class="summary">Upload the file</span></summary>
 
+										<div class="panel panel-border-narrow">
 
-									<span>Accepted formats are:</span>
-									<ul class="list list-bullet">
-										<li>shapefile (.shp)</li>
-										<li>under 1MB</li>
-									</ul>
-
-									<label class="form-label" for="file-input">
-										Upload a file
-									</label>
-									<input type="file" id="file-input"><br><br>
-									<div class="form-group">
-										<a class="button shape-button" href="check-charge-boundary">Continue</a>
-									</div>
+											<span>Accepted formats are:</span>
+											<ul class="list list-bullet">
+												<li>shapefile (.shp)</li>
+												<li>under 1MB</li>
+											</ul>
+											
+											<label class="form-label" for="file-input">
+												Upload a file
+											</label>
+											<input type="file" id="file-input"><br><br>
+											<div class="form-group">
+												<a class="button shape-button" href="check-charge-boundary">Continue</a>
+											</div>
+										</div>
+									</fieldset>
 								</div>
-							</fieldset>
+							</form>
+
 						</div>
-					</form>
 
+					</details>
 				</div>
-
-			</details>
-		</div>
+			</div>
+		</fieldset>
 	</div>
-</fieldset>
-</div>
 </form>
 </div>
 </div>

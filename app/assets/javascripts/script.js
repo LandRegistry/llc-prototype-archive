@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// lick charge type to reveal legislation list
-	/*$(".control li a").click(function() {
+	$(".control li a").click(function() {
 		var charge = $(this).attr("href");
 		var chargeType = $(this).html();
 		sessionStorage.setItem("chargeType", chargeType);
@@ -28,9 +28,16 @@ $(document).ready(function() {
 		$("#global-header-bar").css("background-color", "#005ea5");
 	};
 
+	$(".charge_button").click(function() {
+
+
+		var chargeType = $(".charge_type").val();
+		sessionStorage.setItem("chargeType", chargeType);
+	});
+
 	$(".postcode_button").click(function() {
 		var postcode = $(".postcode_field").val();
-		sessionStorage.setItem("postcode", postcode);
+		sessionStorage.setItem("postcode", "BOOM");
 	});
 
 	// address
@@ -103,8 +110,8 @@ $(document).ready(function() {
 	$(".doc-day").html(docDay);
 	$(".doc-month").html(docMonth);
 	$(".doc-year").html(docYear);
-	/*$(".expiry").html(expiry);*/
-	/*$(".reference").html(reference);
+	$(".expiry").html(expiry);
+	$(".reference").html(reference);
 	$(".legislation").html(legislation);
 
 	// maintain_llc v1.1
@@ -326,7 +333,7 @@ $(document).ready(function() {
  
 
 
-  $(".maintainMapAddressItem").html(maintainMapAddressSelected)
+/*  $(".maintainMapAddressItem").html(maintainMapAddressSelected)
   // map stuff
   var geoserver = 'http://192.168.250.122:8080/geoserver'
   var longitude = -0.09;
@@ -541,7 +548,7 @@ function initmap() {
         draw = new ol.interaction.Draw({
           features: features,
           type: /** @type {ol.geom.GeometryType} */ (typeSelect)
-        });
+        /*});
 
             // Set current featureID to be the highest existing ID
             if (featureID == 0) {
@@ -605,7 +612,7 @@ function initmap() {
     /**
      * Handle change event.
      */
-     $('input[name="type"]').change(function() {
+/*     $('input[name="type"]').change(function() {
       typeSelect = $('input[name="type"]:checked').val();
       prevLabel = $('.active').not(document.getElementById('snap-to-label')).get(-1).id;
       $('input[name="' + this.name + '"]').prop("checked", false);
@@ -740,7 +747,7 @@ function initmap() {
  * JSONP WFS callback function.
  * @param {Object} response The response object.
  */
- window.loadFeatures = function(data) {
+/* window.loadFeatures = function(data) {
   wfsSource.addFeatures((new ol.format.GeoJSON()).readFeatures(data))
 };
 
