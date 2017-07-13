@@ -9,6 +9,7 @@ var S = require('string')
 var app = express()
 router.use(bodyParser.urlencoded({ extended: false }))
 const adminController = require('./admin-controller')
+const citizenController = require('./citizen-controller')
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -373,5 +374,13 @@ router.get('/maintain_llc/new_search_v1-1/map_new', function (req, res) {
 })
 
 /* v2 */
+
+// Citizen Service Routes
+router.get('/citizen-service/v1/search', citizenController.searchPage)
+router.post('/citizen-service/v1/search', citizenController.search)
+
+// router.get('/citizen-service/v1/search', function (req, res) {
+//   res.render('citizen-service/v1/search')
+// })
 
 module.exports = router
