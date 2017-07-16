@@ -73,6 +73,11 @@
     border-bottom: 1px solid #DEE0E2 !important;
   }
 
+  & .address-list li {
+    border-bottom: none !important;
+    margin-bottom: 1em;
+  }
+
   & .pager {
     margin-top: 1.25em;
     margin-bottom: 1.25em;

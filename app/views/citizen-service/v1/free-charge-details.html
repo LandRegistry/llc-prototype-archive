@@ -22,6 +22,11 @@
     <table class="check-your-answers-2">
       <tbody>
         <tr>
+          <td>Address</td>
+          <td class="bold-small"><span id="address-selected"></span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Description</td>
           <td class="bold-small">Single storey rear extension</td>
           <td></td>
@@ -99,5 +104,11 @@
 
 
 </main>
+<script>
+var addressRetrieved = sessionStorage.getItem('addressSelected');
+console.log(addressRetrieved);
+var textToChange = document.getElementById("address-selected");
+textToChange.textContent = addressRetrieved;
+</script>
 
 {% endblock %}

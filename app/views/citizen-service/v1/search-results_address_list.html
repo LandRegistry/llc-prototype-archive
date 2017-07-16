@@ -32,31 +32,26 @@
       </div>
     </div>
   </div>
-  <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-    <form action="search-results" method="GET">
-      <div class="form-group">
-        <fieldset>
-          <legend class="visuallyhidden">Where do you want to add the charge?</legend>
-          <div class="form-group">
-            <h1 class="heading-large">Search of the local land charges register</h1>
-            <label class="form-label" for="search-term">
-              <strong>Enter an address to start. You can also search by:
-               <ul class="list list-bullet">
-                <li>postcode</li>
-                <li>drawing an extent</li>
-              </ul></strong>
-            </label>
-            <div class="form-group spacing-bottom-half">
-              <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-              <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-              <!-- <a class="button" href="search-results" role="button">Search</a> -->
-              <input class="button" type="submit" value="Search">
-            </div>
-          </div>
-        </fieldset>
+<div id="search-panel" class="charge-list charge-list-maintain-v1-4">
+        <h1 class="heading-small">Search results for</h1>
+        <input class="form-control" id="searched_term" type="text" name="searched_term">
+        <input class="button" type="submit" value="Search">
+        <div class="results-block">
+        <h2 class="heading-small">Please select an address from the list below</h2>
+          <ol class="results-list address-list">
+            <li class="bold-small"><a href="free-charge-details">2 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">4 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">6 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">8 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">10 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">12 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">14 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">16 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">18 Okehampton Place, Exeter, EX4 1AY</a></li>
+            <li class="bold-small"><a href="free-charge-details">20 Okehampton Place, Exeter, EX4 1AY</a></li>
+          </ol>
+        </div>
       </div>
-    </form>
-  </div>
   <div class="panel-control close">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
@@ -91,37 +86,41 @@
       }
     });
 
-    $('.button').click(function() {
-      var searchTerm = $('#location').val();
-      sessionStorage.setItem('searchTerm', searchTerm);
+    var searchTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchTermRetrieved);
+    $("#searched_term").val(searchTermRetrieved);
+
+    $('.address-list li').click(function() {
+      var addressSelected = $(this).text();
+      sessionStorage.setItem('addressSelected', addressSelected);
     })
   });
-
 </script>
 
-{% endblock %} {% block body_end_additional %}
+{% endblock %} 
+
+{% block body_end_additional %}
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-  var map
+var map
 
-  require([
-    'esri/map',
-    'esri/dijit/LocateButton',
-    'dojo/domReady!'
-    ], function (
+require([
+  'esri/map',
+  'esri/dijit/LocateButton',
+  'dojo/domReady!'
+], function (
       Map, LocateButton
-      ) {
-      map = new Map('openStreetMap', {
-        center: [-10.500, 53.5341],
-        zoom: 6,
-        basemap: 'streets'
-      })
+    ) {
+  map = new Map('openStreetMap', {
+    center: [-3.539889, 50.718433],
+    zoom: 18,
+    basemap: 'streets'
+  })
 
-      geoLocate = new LocateButton({
-        map: map
-      }, 'LocateButton')
-      geoLocate.startup()
-    })
-
-  </script>
-  {% endblock %}
+  geoLocate = new LocateButton({
+    map: map
+  }, 'LocateButton')
+  geoLocate.startup()
+})
+</script>
+{% endblock %}
