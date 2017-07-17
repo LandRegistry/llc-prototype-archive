@@ -376,8 +376,8 @@ router.get('/maintain_llc/new_search_v1-1/map_new', function (req, res) {
 /* v2 */
 
 // Citizen Service Routes
-/*router.get('/citizen-service/v1/search', citizenController.searchPage)
-router.post('/citizen-service/v1/search', citizenController.search)*/
+/* router.get('/citizen-service/v1/search', citizenController.searchPage)
+router.post('/citizen-service/v1/search', citizenController.search) */
 
 router.get('/citizen-service/v1/search-results', function (req, res) {
   var citizenPostcode = req.query.location
@@ -387,9 +387,5 @@ router.get('/citizen-service/v1/search-results', function (req, res) {
     res.render('citizen-service/v1/search-results')
   }
 })
-
-// router.get('/citizen-service/v1/search', function (req, res) {
-//   res.render('citizen-service/v1/search')
-// })
 
 module.exports = router
