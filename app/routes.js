@@ -7,13 +7,14 @@ var url = require('url')
 var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
-router.use(bodyParser.urlencoded({ extended: false }))
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const debug = require('debug')('demo:router')
 var HashMap = require('hashmap')
-const payments = require('./payments')
 const adminController = require('./admin-controller')
 const citizenController = require('./citizen-controller')
+const payments = require('./payments')
+
+router.use(bodyParser.urlencoded({ extended: false }))
 
 var map = new HashMap()
 
@@ -401,28 +402,12 @@ router.get('/citizen-service/v1/pay-continue', (req, res, next) => {
   res.render('citizen-service/v1/pay-continue')
 })
 
-router.get('/citizen-service/v1/pay-continue/transaction/:reference', (req, res, next) => {
-  const reference = req.params[ 'reference' ]
-
-  const id = map.get(reference)
-  map.remove(reference)
-
-  debug('Lookup id %s=%s', reference, id)
-
-  payments.checkPaymentStatus(id, (result) => {
-    debug(JSON.stringify(result))
-
-    res.render('citizen-service/v1/paid-service/pay-confirmation', {
-      transaction: result})
-  })
-})
-
 router.post('/citizen-service/v1/pay-continue', urlencodedParser, (req, res, next) => {
-  const amount = req.body.amount = '16500'
-  const reference = req.body.reference = 'Official Local Land Search'
-  const description = req.body.description = 'Payment Offical Local Land Search'
+  req.body.amount = '16500'
+  req.body.reference = 'Official Local Land Search'
+  req.body.description = 'Payment Offical Local Land Search'
 
-  payments.sendRequstForPayment(amount, reference, description, (result) => {
+  payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
     debug('Initial request completed')
 
     debug('State : %s', result.status)
@@ -437,34 +422,5 @@ router.post('/citizen-service/v1/pay-continue', urlencodedParser, (req, res, nex
     res.redirect(result._links.next_url.href)
   })
 })
-
-// app.get('/citizen-service/v1/paid-service/pay-confirmation', function (req, res) {
-//   var options = {
-//     host: apiHost,
-//     port: 443,
-//     path: selfUrlHref,
-//     method: 'GET',
-//     headers: {
-//       'Authorization': 'Bearer ' + apiToken,
-//       'Content-Type': 'application/json'
-//     }
-//   }
-
-//   var req2 = https.request(options, function (res2) {
-//     res2.setEncoding('utf8')
-
-//     res2.on('data', function (responseBody) {
-//       var jsonResponseBody = JSON.parse(responseBody)
-
-//       var status = jsonResponseBody.state.status
-
-//       res.writeHead(200)
-//       res.render('citizen-service/v1/paid-service/pay-confirmation', {status: status})
-//       // res.end(status == 'success' ? 'Successful payment' : 'Some error occurred')
-//     })
-//   })
-
-//   req2.end()
-// })
 
 module.exports = router

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node start.js",
-    "install": "napa"
+    "install": "napa",
+    "test": "standard"
   },
   "dependencies": {
     "basic-auth": "^1.0.3",
