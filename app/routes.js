@@ -7,16 +7,11 @@ var url = require('url')
 var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const debug = require('debug')('demo:router')
-var HashMap = require('hashmap')
+router.use(bodyParser.urlencoded({ extended: false }))
 const adminController = require('./admin-controller')
 const citizenController = require('./citizen-controller')
 const payments = require('./payments')
-
-router.use(bodyParser.urlencoded({ extended: false }))
-
-var map = new HashMap()
+const debug = require('debug')('demo:routes')
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -402,7 +397,7 @@ router.get('/citizen-service/v1/pay-continue', (req, res, next) => {
   res.render('citizen-service/v1/pay-continue')
 })
 
-router.post('/citizen-service/v1/pay-continue', urlencodedParser, (req, res, next) => {
+router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
   req.body.amount = '16500'
   req.body.reference = 'Official Local Land Search'
   req.body.description = 'Payment Offical Local Land Search'
@@ -416,9 +411,6 @@ router.post('/citizen-service/v1/pay-continue', urlencodedParser, (req, res, nex
     // debug('URL: %s', result._links.next_url.href)
 
     console.log(result)
-
-    map.set(result.reference, result.payment_id)
-
     res.redirect(result._links.next_url.href)
   })
 })

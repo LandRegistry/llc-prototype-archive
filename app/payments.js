@@ -1,5 +1,6 @@
 const debug = require('debug')('demo:payments')
 const http = require('https')
+require('dotenv').config({ path: 'process.env' })
 
 module.exports = payments
 
