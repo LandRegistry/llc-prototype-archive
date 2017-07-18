@@ -5,7 +5,7 @@
 module.exports = {
 
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: "Register or update a local land charge",
+  serviceName: 'Register or update a local land charge',
 
   // Default port that prototype runs on
   port: '3010',
@@ -13,4 +13,4 @@ module.exports = {
   // Enable or disable password protection on production
   useAuth: 'true'
 
-};
+}
