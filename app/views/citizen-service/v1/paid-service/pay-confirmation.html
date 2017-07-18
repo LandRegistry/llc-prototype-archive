@@ -1,10 +1,4 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Confirmation
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Confirmation {% endblock %} {% block content %}
 
 <main id="content" role="main">
 	<!-- alpha banner -->
@@ -16,8 +10,15 @@ Confirmation
 		<div class="column-two-thirds">
 			<div class="govuk-box-highlight">
 				<h1 class="bold-large">Your payment was successful</h1>
+				<p> We will email you a receipt shortly</p>
+
+				<h2 class="heading-medium">Payment summary</h2>
+
+				<p> Reference number: <strong id="payment-reference">{{transaction.reference}}</strong></p>
+				<p> Payment for: <strong id="payment-description">{{transaction.description}}</strong> </p>
+				<p> Amount paid: <span id="amount">{{transaction.amount}}</span></p>
 			</div>
-			<p><a href="search-results">Return to local land search results</a></p>
+			<p><a class="button" href="search-results">Back to your local land search</a></p>
 		</div>
 	</div>
 </main>
