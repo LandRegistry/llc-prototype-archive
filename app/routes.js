@@ -408,7 +408,7 @@ router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
     debug('State : %s', result.status)
     debug('Payment id: %s', result.payment_id)
     debug('Reference: %s', result.reference)
-    // debug('URL: %s', result._links.next_url.href)
+    debug('URL: %s', result._links.next_url.href)
 
     console.log(result)
     res.redirect(result._links.next_url.href)
