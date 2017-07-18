@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+module.exports = function (grunt) {
   grunt.initConfig({
     // Clean
     clean: ['public', 'govuk_modules'],
@@ -7,7 +7,7 @@ module.exports = function(grunt){
     sass: {
       dev: {
         options: {
-          style: "expanded",
+          style: 'expanded',
           sourcemap: true,
           includePaths: [
             'govuk_modules/govuk_template/assets/stylesheets',
@@ -17,10 +17,10 @@ module.exports = function(grunt){
         },
         files: [{
           expand: true,
-          cwd: "app/assets/sass",
-          src: ["*.scss"],
-          dest: "public/stylesheets/",
-          ext: ".css"
+          cwd: 'app/assets/sass',
+          src: ['*.scss'],
+          dest: 'public/stylesheets/',
+          ext: '.css'
         }]
       }
     },
@@ -76,7 +76,7 @@ module.exports = function(grunt){
           src: ['**'],
           dest: 'app/assets/sass/'
         }]
-      },
+      }
     },
 
     // Watches assets and sass for changes
@@ -85,14 +85,14 @@ module.exports = function(grunt){
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false,
+          spawn: false
         }
       },
-      assets:{
+      assets: {
         files: ['app/assets/**/*', '!app/assets/sass/**'],
         tasks: ['copy:assets'],
         options: {
-          spawn: false,
+          spawn: false
         }
       }
     },
@@ -127,36 +127,33 @@ module.exports = function(grunt){
     'grunt-nodemon',
     'grunt-concurrent'
   ].forEach(function (task) {
-    grunt.loadNpmTasks(task);
-  });
+    grunt.loadNpmTasks(task)
+  })
 
   grunt.registerTask('generate-assets', [
     'clean',
     'copy',
     'sass'
-  ]);
+  ])
 
   grunt.registerTask('default', [
     'generate-assets',
     'concurrent:target'
-  ]);
+  ])
 
   grunt.registerTask(
     'test',
     'default',
     function () {
-      grunt.log.writeln('Test that the app runs');
+      grunt.log.writeln('Test that the app runs')
     }
-  );
+  )
 
-  grunt.event.on('watch', function(action, filepath, target) {
-
+  grunt.event.on('watch', function (action, filepath, target) {
     // just copy the asset that was changed, not all of them
 
-    if (target == "assets"){
-      grunt.config('copy.assets.files.0.src', filepath.replace("app/assets/",""));
+    if (target == 'assets') {
+      grunt.config('copy.assets.files.0.src', filepath.replace('app/assets/', ''))
     }
-
-  });
-
-};
+  })
+}

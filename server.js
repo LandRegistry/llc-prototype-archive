@@ -1,4 +1,3 @@
-  require('dotenv').config({ path: 'process.env' })
   var path = require('path'),
     express = require('express'),
     nunjucks = require('express-nunjucks'),
@@ -8,12 +7,12 @@
     basicAuth = require('basic-auth'),
     bodyParser = require('body-parser'),
     config = require(__dirname + '/app/config.js'),
-    port = (process.env.PORT || config.port),
-    utils = require(__dirname + '/lib/utils.js'),
-
+    utils = require(__dirname + '/lib/utils.js')
+  require('dotenv').config({ path: 'process.env' })
 // Grab environment variables specified in Procfile or as Heroku config vars
-    username = process.env.USERNAME,
+  var username = process.env.USERNAME,
     password = process.env.PASSWORD,
+    port = (process.env.PORT || config.port),
     env = process.env.NODE_ENV || 'development',
     useAuth = process.env.USE_AUTH || config.useAuth
 
