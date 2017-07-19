@@ -15,9 +15,13 @@
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.15.2",
+    "cfenv": "1.0.3",
     "consolidate": "0.x",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
     "dotenv": "^4.0.0",
     "express": "4.13.3",
+    "express-enforces-ssl": "^1.1.0",
     "express-nunjucks": "^0.9.3",
     "express-session": "^1.14.1",
     "express-writer": "0.0.4",
@@ -41,13 +45,9 @@
     "npm": "^3.10.6",
     "readdir": "0.0.6",
     "request": "^2.74.0",
+    "sanitize-html": "latest",
     "serve-favicon": "2.3.0",
-    "string": "^3.3.1",
-    "cfenv": "1.0.3",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express-enforces-ssl": "^1.1.0",
-    "sanitize-html": "latest"
+    "string": "^3.3.1"
   },
   "napa": {
     "govuk_template_jinja": "https://github.com/alphagov/govuk_template/releases/download/v0.16.0/jinja_govuk_template-0.16.0.tgz"

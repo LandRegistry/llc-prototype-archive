@@ -39,24 +39,24 @@
           <ol class="results-list">
             <li>
               <div class="search-result-header">
-                <h2 class="heading-small"><a href="#">Charge 1</a></h2>
+                <h2 class="heading-small"><a href="paid-charge-details">Charge 1</a></h2>
                 <span class="status bold-xsmall">Active</span>
               </div>
-              <p>22 Okehampton Pl<br>Exeter<br>EX4 1AY</p>
+              <p>22 Okehampton Pl<br> Exeter<br> EX4 1AY</p>
             </li>
             <li>
               <div class="search-result-header">
-                <h2 class="heading-small"><a href="#">Charge 2</a></h2>
+                <h2 class="heading-small"><a href="paid-charge-details">Charge 2</a></h2>
                 <span class="status bold-xsmall">Active</span>
               </div>
-              <p>26 Okehampton Pl<br>Exeter<br>EX4 1AY</p>
+              <p>26 Okehampton Pl<br> Exeter<br> EX4 1AY</p>
             </li>
             <li>
               <div class="search-result-header">
-                <h2 class="heading-small"><a href="#">Charge 2</a></h2>
+                <h2 class="heading-small"><a href="paid-charge-details">Charge 2</a></h2>
                 <span class="status bold-xsmall">Active</span>
               </div>
-              <p>27 Okehampton Pl<br>Exeter<br>EX4 1AY</p>
+              <p>27 Okehampton Pl<br> Exeter<br> EX4 1AY</p>
             </li>
           </ol>
         </div>
@@ -105,10 +105,18 @@
       }
     });
 
-    var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
-    console.log(searchedTermRetrieved);
-    $("#searched_term").val(searchedTermRetrieved);
-  });
+    var searchTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchTermRetrieved);
+    $("#searched_term").val(searchTermRetrieved);
+
+    $('.results-list li').click(function() {
+      var addressSelected = $(this).children('p').html()
+      var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
+      sessionStorage.setItem('addressSelected', ad);
+    })
+    
+  })
+    
 </script>
 
 {% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}

@@ -7,11 +7,14 @@ var url = require('url')
 var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
+var HashMap = require('hashmap')
 router.use(bodyParser.urlencoded({ extended: false }))
 const adminController = require('./admin-controller')
 const citizenController = require('./citizen-controller')
 const payments = require('./payments')
 const debug = require('debug')('demo:routes')
+
+var map = new HashMap()
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -397,6 +400,22 @@ router.get('/citizen-service/v1/pay-continue', (req, res, next) => {
   res.render('citizen-service/v1/pay-continue')
 })
 
+router.get('/citizen-service/v1/pay-confirmation', (req, res, next) => {
+  const reference = req.params[ 'reference' ]
+
+  const id = map.get(reference)
+  map.remove(reference)
+
+  debug('Lookup id %s=%s', reference, id)
+
+  payments.checkPaymentStatus(id, (result) => {
+    debug(JSON.stringify(result))
+
+    res.render('citizen-service/v1/pay-confirmation', {
+      transaction: result})
+  })
+})
+
 router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
   req.body.amount = '16500'
   req.body.reference = 'Official Local Land Search'
@@ -410,7 +429,8 @@ router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
     debug('Reference: %s', result.reference)
     debug('URL: %s', result._links.next_url.href)
 
-    console.log(result)
+    map.set(result.reference, result.payment_id)
+
     res.redirect(result._links.next_url.href)
   })
 })

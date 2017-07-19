@@ -9,7 +9,7 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<div class="govuk-box-highlight">
-				<h1 class="bold-large">Your payment was successful</h1>
+				<h1 class="bold-large">Your payment was {{transaction.status}}</h1>
 				<p> We will email you a receipt shortly</p>
 
 				<h2 class="heading-medium">Payment summary</h2>
@@ -18,7 +18,7 @@
 				<p> Payment for: <strong id="payment-description">{{transaction.description}}</strong> </p>
 				<p> Amount paid: <span id="amount">{{transaction.amount}}</span></p>
 			</div>
-			<p><a class="button" href="search-results">Back to your local land search</a></p>
+			<p><a class="button" href="paid-charge-details">Back to your local land search</a></p>
 		</div>
 	</div>
 </main>
