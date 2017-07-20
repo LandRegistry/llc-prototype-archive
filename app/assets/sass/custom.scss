@@ -100,14 +100,14 @@
 }
 
 .search-result-header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    & .status {
-      position: relative;
-      top: 1.3em;
-    }
+  & .status {
+    position: relative;
+    top: 1.3em;
   }
+}
 
 /* Panel open / close button */
 .panel-control {
@@ -183,6 +183,27 @@
 
 .action-links li {
   display: inline;
+}
+
+/* citizen service */
+
+.citizen-search-panel {
+  top: 105px !important;
+  height: calc(100vh - 107px) !important;
+}
+
+.panel-control-citizen {
+  top: 105px !important;
+}
+
+.llc1-free-details {
+  width: 100%;
+}
+
+.payment-info-box {
+  border-top: 10px solid #005ea5;
+  position: relative;
+  top: -150px;
 }
 
 /* LONs */
