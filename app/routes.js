@@ -417,7 +417,7 @@ router.get('/citizen-service/v1/pay-confirmation', (req, res, next) => {
 })
 
 router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
-  req.body.amount = '16500'
+  req.body.amount = '1500'
   req.body.reference = 'Official Local Land Search'
   req.body.description = 'Payment Offical Local Land Search'
 
