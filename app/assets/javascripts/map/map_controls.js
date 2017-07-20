@@ -13,7 +13,7 @@ MAP_CONTROLS.draw_controls = function () {
   container.appendChild(MAP_CONTROLS.polygon_button())
   container.appendChild(MAP_CONTROLS.point_button())
   container.appendChild(MAP_CONTROLS.line_button())
-  container.appendChild(MAP_CONTROLS.circle_button())
+  //container.appendChild(MAP_CONTROLS.circle_button())
   container.appendChild(MAP_CONTROLS.edit_button())
   container.appendChild(MAP_CONTROLS.copy_button())
   container.appendChild(MAP_CONTROLS.remove_button())
