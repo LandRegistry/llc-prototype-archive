@@ -22,7 +22,9 @@ Add more information about the location
 						<table class="check-your-answers">
 							<thead>
 								<tr>
-									<th colspan="2">
+									<th colspan="3">
+									</th>
+									<th>
 									</th>
 									<th>
 									</th>
@@ -43,6 +45,7 @@ Add more information about the location
 												Change <span class="visuallyhidden">On behalf of</span>
 											</a>
 										</td>
+
 									</tr>
 								{% endif %}
 								<tr>
@@ -96,6 +99,7 @@ Add more information about the location
 										{% if part_extent %}
 											<br>{{ part_extent }}
 										{% endif %}
+										<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="100%" height="auto">
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
@@ -218,10 +222,134 @@ Add more information about the location
 								</tr>-->
 							</tbody>
 						</table>
+
+
 					</div>
 				</fieldset>
+
+
 				<div class="form-group">
-					<input class="button" type="submit" value="Continue">
+					<details>
+						<summary><span class="summary">See how this charge will look on a Local land charge search result (LLC1)</span></summary>
+						  <div class="panel panel-border-narrow">
+							  <div class="form-group">
+								<table class="charge-preview">
+									<thead>
+										<!--<tr>
+											<th colspan="2">
+											</th>
+										</tr>-->
+									</thead>
+
+									<tbody>
+										<tr>
+											<td>
+												Location
+											</td>
+											<td>
+												{{ address }}
+												<br>
+												{{ extent }}
+												{% if part_extent %}
+													<br>{{ part_extent }}
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Description
+											</td>
+											<td>
+												{{ description }}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Legislation
+											</td>
+											<td>
+												 {{ charge_type }}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Creation date
+											</td>
+											<td>
+												{% if creation_date != '//' %}
+													{{ creation_date }}
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Source document
+											</td>
+											<td>
+												{{ instrument }}
+												{% if creation_date != '//' %}
+													<br>{{ creation_date }}
+												{% endif %}
+											</td>
+										</tr>
+
+										{% if on_behalf_of %}
+											<tr>
+												<td>
+													Originating authority
+												</td>
+												<td>
+													On behalf of
+													 {{ on_behalf_of }}
+												</td>
+											</tr>
+										{% endif %}
+										<tr>
+											<td>
+												Expiry date
+											</td>
+											<td>
+												{% if expiry_date != '//' %}
+													{{ expiry_date }}
+												{% endif %}
+												{% if expiry_text %}
+													{{ expiry_text }}
+												{% endif %}
+											</td>
+										</tr>
+
+										<tr>
+											<td colspan="2" class="heading-medium">Source document information</td>
+										</tr>
+
+										<tr>
+											<td>
+												Location
+											</td>
+											<td>
+												{{ more_info }}
+												{% if planning_link %}
+													<br><a href="{{ planning_link }}">{{ planning_link }}</a>
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Originating authority reference
+											</td>
+											<td>
+												{{ reference }}
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							  </div>
+					  </div>
+					</details>
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Register">
 				</div>
 			</form>
 		</div>

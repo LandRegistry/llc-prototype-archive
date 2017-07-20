@@ -621,12 +621,24 @@
   }
 }
 
+.charge-preview {
+  width: 600px;
+  position: relative;
+}
+
+.charge-preview td {
+  border: none;
+  vertical-align: top;
+    &:first-child {
+      width: 33%;
+    }
+}
+
 /* Check your answers table styles */
 .check-your-answers-2 {
   width: 960px;
   position: relative;
 }
-
 
 .check-your-answers-2 td {
   border: none;
