@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42635832-9a0a-4ba4-b12d-b2385e40a7fe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/v4-1/110_check.html" afterPath="$PROJECT_DIR$/app/views/add_charge/v4-1/110_check.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/sass/application.scss" afterPath="$PROJECT_DIR$/app/assets/sass/application.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_charge/index.html" afterPath="$PROJECT_DIR$/app/views/add_charge/index.html" />
     </list>
     <ignored path="llc-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +66,7 @@
       <file leaf-file-name="110_check.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/110_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5882354">
+            <state vertical-scroll-proportion="0.0">
               <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
               <folding />
             </state>
@@ -89,20 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="planning.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v2/planning.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.125">
+            <state vertical-scroll-proportion="0.0">
               <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="118" />
               <folding />
             </state>
@@ -112,7 +100,7 @@
       <file leaf-file-name="10_check.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3-1/10_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.916666">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -122,8 +110,18 @@
       <file leaf-file-name="10_check.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3/10_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3199482">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -132,17 +130,17 @@
       <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/sass/application.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.62963">
+            <state vertical-scroll-proportion="0.0">
               <caret line="657" column="0" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -152,7 +150,7 @@
       <file leaf-file-name="120_confirmation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/120_confirmation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
               <folding />
             </state>
@@ -220,11 +218,11 @@
         <option value="$PROJECT_DIR$/app/views/add_charge/v4-1/100_expiration.html" />
         <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v4-1/26_org_results.html" />
-        <option value="$PROJECT_DIR$/app/views/add_charge/index.html" />
         <option value="$PROJECT_DIR$/app/views/design_assets.html" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v4-1/111_charge_preview.html" />
         <option value="$PROJECT_DIR$/app/assets/sass/application.scss" />
         <option value="$PROJECT_DIR$/app/views/add_charge/v4-1/110_check.html" />
+        <option value="$PROJECT_DIR$/app/views/add_charge/index.html" />
       </list>
     </option>
   </component>
@@ -260,7 +258,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -402,6 +399,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -584,13 +582,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="23" width="1584" height="967" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29686502" sideWeight="0.82137626" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29686502" sideWeight="0.82137626" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34645116" sideWeight="0.17862372" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -626,6 +624,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/120_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/check-charge-boundary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -857,35 +871,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/100_expiration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="399" column="12" selection-start-line="399" selection-start-column="12" selection-end-line="399" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3-2/08_additional_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,13 +890,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0652447">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/sass/application.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.62963">
+        <state vertical-scroll-proportion="0.0">
           <caret line="657" column="0" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
           <folding />
         </state>
@@ -915,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3-1/10_check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.916666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -933,7 +921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3/10_check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
           <folding />
         </state>
@@ -941,7 +929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/maintain_llc/v2/planning.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="118" />
           <folding />
         </state>
@@ -955,18 +943,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/120_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="399" column="12" selection-start-line="399" selection-start-column="12" selection-end-line="399" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/110_check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5882354">
+        <state vertical-scroll-proportion="0.0">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v4-1/120_confirmation.html">
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/v3-2/08_additional_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -975,6 +979,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/add_charge/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3199482">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>
