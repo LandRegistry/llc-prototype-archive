@@ -312,6 +312,7 @@ function inArray (query, outerArray) {
   return matches
 }
 
+
 // shape upload routes
 router.get('/add_charge/v2-4/05_postcode', function (req, res) {
   var shape = req.query.shape
@@ -433,7 +434,7 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
     desc = 'postcode'
   } else if (req.params.screen == 50) {
     next = 51
-    desc = 'postcode_results'
+    desc = 'uprn_results'
     req.session.search_term = req.body.search_term
   } else if (req.params.screen == 51) { // SELECT ADDRESS
     req.session.address = req.query.address

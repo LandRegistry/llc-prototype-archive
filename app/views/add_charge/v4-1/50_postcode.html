@@ -155,7 +155,13 @@ Search for a charge
     });
 
     $("#postcodeSearchButton").click(function() {
-      $("#address-list").removeClass("hiddenList")
+      if ($("#search_term").val() === "EXT123456") {
+        $("#postcodeSearchButton").attr("href", "/add_charge/v4-1/50");
+      } else if ($("#search_term").val() === "EX4 1AY" || $("#search_term").val() === "ex4 1ay") {
+        $("#address-list").removeClass("hiddenList")
+      } else {
+        $("#postcodeSearchButton").attr("href", "/add_charge/v4-1/51");
+      }  
     });
 
     $("#address-list li a").click(function() {
