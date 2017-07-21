@@ -402,8 +402,8 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
     desc = 'home'
   } else if (req.params.screen == 21) {
     if (req.query.behalf_of == 'false') {
-      next = 30
-      desc = 'charge_list_top'
+      next = 40
+      desc = 'doc_mand'
     } else {
       next = 25
       desc = 'behalf_of'
@@ -414,8 +414,8 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
     desc = 'org_results'
   } else if (req.params.screen == 26) { // CHOOSE ON BEHALF OF
     req.session.on_behalf_of = req.query.on_behalf_of
-    next = 30
-    desc = 'charge_list_top'
+    next = 40
+    desc = 'doc_mand'
   } else if (req.params.screen == 30) { // CHARGE TYPE LIST
     next = 40
     desc = 'doc_mand'
@@ -440,6 +440,9 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
     req.session.address = req.query.address
     next = 60
     desc = 'map'
+  } else if (req.params.screen == 50) {
+    next = 60
+    desc = 'shapefile'
   } else if (req.params.screen == 60) {
     next = 70
     desc = 'more_info'
