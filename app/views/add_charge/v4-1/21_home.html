@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What do you want to do?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-medium">Local land charges</h1>
+			<div class="form-group">
+				<fieldset>
+					<legend class="visuallyhidden">Local land charges</legend>
+					<div class="form-group-welcome">
+						<ul class="list">
+							<li><a href="21?behalf_of=false">
+								Add a charge
+							</a></li>
+							<li><a href="21?behalf_of=true">
+								Add a charge for another organisation
+							</a></li>
+							<li><a href="#">
+								Find, update or cancel a charge
+							</a></li>
+						</ul>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+

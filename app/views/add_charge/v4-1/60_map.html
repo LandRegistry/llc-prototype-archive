@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Draw the extent
+{% endblock %}
+
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Draw the extent</h1>
+			<p>This map shows</p>
+			<p class="lede">{{ address }}</p>
+			<p class="form-hint">Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<br><br>
+			<div id="map">
+			</div>
+			<form action="/add_charge/v4-1/60" method="POST" style="padding-bottom: 0">
+				<div class="form-group">
+					<input class="button" type="submit" value="Save and continue">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+<script>
+</script>
+{% endblock %}
+
+{% block body_end_additional %}
+{% include "includes/map_scripts.html" %}
+<!-- Custom Map Styles -->
+<script src="/public/javascripts/map/add_charge/map_styles.js"></script>
+<!-- Submit geometries -->
+<script src="/public/javascripts/map/add_charge/save_geometries.js"></script>
+<script>
+var geometry = "{{ geometry }}";
+MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}

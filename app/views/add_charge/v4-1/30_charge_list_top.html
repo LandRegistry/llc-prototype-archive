@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What is the law for this charge?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What is the law for this charge?</h1>
+            <form action="/add_charge/v4-1/30" method="POST">
+				<div class="form-group">
+                  <fieldset>
+                    <legend class="visuallyhidden">What is the law for this charge?</legend>
+
+                    <label for="radio-part-1" class="block-label selection-button-radio">
+                      <input id="radio-part-1" type="radio" name="charge_type" value="Section 70 Town &amp; Country Planning Act 1990">
+                      <span class="heading-small">Section 70</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-2" class="block-label selection-button-radio">
+                      <input id="radio-part-2" type="radio" name="charge_type" value="Section 106 Town &amp; Country Planning Act 1990">
+                      <span class="heading-small">Section 106</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-3" class="block-label selection-button-radio">
+                      <input id="radio-part-3" type="radio" name="charge_type" value="Section 198 Town &amp; Country Planning Act 1990">
+                      <span class="heading-small">Section 198</span><br>
+                      Town &amp; Country Planning Act 1990
+                    </label>
+
+                    <label for="radio-part-4" class="block-label selection-button-radio">
+                      <input id="radio-part-4" type="radio" name="charge_type" value="Article 4 Town &amp; Country Planning Order 1995 (General Permitted Development)">
+                      <span class="heading-small">Article 4</span><br>
+                      Town &amp; Country Planning Order 1995<br>(General Permitted Development)
+                    </label>
+
+                    <label for="radio-part-5" class="block-label selection-button-radio">
+                      <input id="radio-part-5" type="radio" name="charge_type" value="Section 1 Planning Act 1990 (Listed Buildings &amp; Conservation Areas)">
+                      <span class="heading-small">Section 1</span><br>
+                      Planning Act 1990<br>
+                      (Listed Buildings &amp; Conservation Areas)
+                    </label>
+                  </fieldset>
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+              <br/><br/>
+              <p>Can't find the law you need? <a href="/add_charge/v4-1/31">Search all local land charge laws</a></p>
+            </form>
+        </div>
+	</div>
+</main>
+{% endblock %}

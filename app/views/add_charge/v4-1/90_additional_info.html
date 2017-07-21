@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add additional information about the charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Where should someone go to research this charge?</h1>
+
+			<span>
+				Who can answer questions about this charge?
+				<ul class="list list-bullet">
+					<li>name</li>
+					<li>phone number</li>
+					<li>email</li>
+					<li>address</li>
+				</ul>
+			</span>
+
+			<form action="/add_charge/v4-1/90" method="POST">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">How to find more information about the charge</legend>
+						<div class="form-group">
+							<textarea class="form-control form-control-3-4" name="more_information" id="textarea" rows="5"></textarea>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="reference">Reference</label>
+							<input class="form-control" id="reference" name="reference">
+						</div>
+					</fieldset>
+
+					<p>Do you have a link to a planning portal?</p>
+					<div class="form-group">
+						<label class="block-label selection-button-radio no" for="portalNo">
+							<input id="portalNo" name="portalLink" type="radio" value="no">
+							No
+						</label>
+						<label class="block-label selection-button-radio" for="portalYes" data-target="portalLink">
+							<input id="portalYes" name="portalLink" type="radio" value="yes">
+							Yes
+						</label>
+					</div>
+					<div class="js-hidden" id="portalLink">
+						<div class="form-group">
+							<label class="form-label" for="link">Link</label>
+							<input class="form-control" id="link" name="link">
+						</div>
+					</div>
+				</div>
+ 				<div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+			</form>
+
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

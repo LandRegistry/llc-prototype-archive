@@ -1,0 +1,361 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Check your application</h1>
+			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+			<form action="/add_charge/v4-1/110" method="GET">
+				<fieldset>
+					<div class="form-group">
+						<table class="check-your-answers">
+							<thead>
+								<tr>
+									<th colspan="3">
+									</th>
+									<th>
+									</th>
+									<th>
+									</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								{% if on_behalf_of %}
+									<tr>
+										<td>
+											On behalf of
+										</td>
+										<td>
+											 {{ on_behalf_of }}
+										</td>
+										<td class="change-answer">
+											<a class="edit" href="#">
+												Change <span class="visuallyhidden">On behalf of</span>
+											</a>
+										</td>
+
+									</tr>
+								{% endif %}
+								<tr>
+									<td>
+										Law
+									</td>
+									<td>
+										 {{ charge_type }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Law</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Document
+									</td>
+									<td>
+										{{ instrument }}
+										{% if creation_date != '//' %}
+											<br>{{ creation_date }}
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Document</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Location
+									</td>
+									<td>
+										{{ address }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Location</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Extent
+									</td>
+									<td>
+										{{ extent }}
+										{% if part_extent %}
+											<br>{{ part_extent }}
+										{% endif %}
+										<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="100%" height="auto">
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Extent</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Description
+									</td>
+									<td>
+										{{ description }}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Description</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Research
+									</td>
+									<td>
+										{{ more_info }}
+										<br>{{ reference }}
+										{% if planning_link %}
+											<br><a href="{{ planning_link }}">{{ planning_link }}</a>
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Research</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Expiry date
+									</td>
+									<td>
+										{% if expiry_date != '//' %}
+											{{ expiry_date }}
+										{% endif %}
+										{% if expiry_text %}
+											{{ expiry_text }}
+										{% endif %}
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">expiry</span>
+										</a>
+									</td>
+								</tr>
+								<!--<tr>
+									<td>
+										Particulars on acquired land
+									</td>
+									<td>
+										<span class="particularsA">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Particulars on acquired land</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Particulars of relevant interest
+									</td>
+									<td>
+										<span class="particularsB">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Particulars of relevant interest</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Compensation
+									</td>
+									<td>
+										<span class="compensation">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Compensation</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Amount
+									</td>
+									<td>
+										<span class="amount">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Amount</span>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Rate of interest
+									</td>
+									<td>
+										<span class="interest">Not applicable</span><br>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change <span class="visuallyhidden">Rate of interest</span>
+										</a>
+									</td>
+								</tr>-->
+							</tbody>
+						</table>
+
+
+					</div>
+				</fieldset>
+
+
+				<div class="form-group">
+					<details>
+						<summary><span class="summary">See how this charge will look on a Local land charge search result (LLC1)</span></summary>
+						  <div class="panel panel-border-narrow">
+							  <div class="form-group">
+								<table class="charge-preview">
+									<thead>
+										<!--<tr>
+											<th colspan="2">
+											</th>
+										</tr>-->
+									</thead>
+
+									<tbody>
+										<tr>
+											<td>
+												Location
+											</td>
+											<td>
+												{{ address }}
+												<br>
+												{{ extent }}
+												{% if part_extent %}
+													<br>{{ part_extent }}
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Description
+											</td>
+											<td>
+												{{ description }}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Legislation
+											</td>
+											<td>
+												 {{ charge_type }}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Creation date
+											</td>
+											<td>
+												{% if creation_date != '//' %}
+													{{ creation_date }}
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Source document
+											</td>
+											<td>
+												{{ instrument }}
+												{% if creation_date != '//' %}
+													<br>{{ creation_date }}
+												{% endif %}
+											</td>
+										</tr>
+
+										{% if on_behalf_of %}
+											<tr>
+												<td>
+													Originating authority
+												</td>
+												<td>
+													On behalf of
+													 {{ on_behalf_of }}
+												</td>
+											</tr>
+										{% endif %}
+										<tr>
+											<td>
+												Expiry date
+											</td>
+											<td>
+												{% if expiry_date != '//' %}
+													{{ expiry_date }}
+												{% endif %}
+												{% if expiry_text %}
+													{{ expiry_text }}
+												{% endif %}
+											</td>
+										</tr>
+
+										<tr>
+											<td colspan="2" class="heading-medium">Source document information</td>
+										</tr>
+
+										<tr>
+											<td>
+												Location
+											</td>
+											<td>
+												{{ more_info }}
+												{% if planning_link %}
+													<br><a href="{{ planning_link }}">{{ planning_link }}</a>
+												{% endif %}
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Originating authority reference
+											</td>
+											<td>
+												{{ reference }}
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							  </div>
+					  </div>
+					</details>
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

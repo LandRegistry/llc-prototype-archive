@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What does the charge do?</h1>
+
+			<form action="/add_charge/v4-1/80" method="POST">
+				<div class="form-group">
+					<fieldset class="inline">
+						<legend class="visuallyhidden">What does the charge do? </legend>
+						<p class="form-hint">For example, this charge gives approval for a two storey extension.</p>
+						<textarea class="form-control form-control-3-4" name="description" id="textarea" rows="5"></textarea>
+					</fieldset>
+				</div>
+				 <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

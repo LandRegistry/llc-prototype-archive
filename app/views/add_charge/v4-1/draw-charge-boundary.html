@@ -1,340 +1,128 @@
-$(document).ready(function() {
-	// lick charge type to reveal legislation list
-	$(".control li a").click(function() {
-		var charge = $(this).attr("href");
-		var chargeType = $(this).html();
-		sessionStorage.setItem("chargeType", chargeType);
-		$("#result_1").load("../v4-1/lists/" + charge);
-		return false;
-	});
+{% extends "layout.html" %}
 
-	$(".charge_label").click(function() {
-		var charge = $(this).children().val().toLowerCase();
-		if(charge == "miscellaneous") {
-			var charge__target = "misc";
-		} else if (charge == "listed building") {
-			var charge__target = "listed";
-		} else if (charge == "general financial") {
-			var charge__target = "general";
-		} else {
-			var charge__target = charge;
-		}
-		var chargeType = charge;
-		sessionStorage.setItem("chargeType", chargeType);
-		$(".charge_button").attr("href", charge__target);
-	});
+{% block page_title %}
+Draw the extent
+{% endblock %}
 
-	if($("#content").hasClass("v4")) {
-		$("#global-header-bar").css("background-color", "#005ea5");
-	};
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Draw the extent</h1>
+            <p>This map shows <span class="location"></span></p>
+			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<div>
+				<div class="container">
+					<div id="map-nav" class="form-group">
+						<div id="map"></div>
+						<div id="nav-buttons" class="ol-nav-buttons ol-control">
 
-	$(".charge_button").click(function() {
+							<div class="up-nav-button">
+								<button type="button" id="move-up" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true" title="Pan up" alt="Pan up"></span></button>
+							</div>
+							<div class="btn-group nav-buttons">
+								<button type="button" id="move-left" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true" title="Pan left" alt="Pan left"></span></button>
+								<button type="button" id="move-down" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true" title="Pan down" alt="Pan down"></span></button>
+								<button type="button" id="move-right" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true" title="Pan right" alt="Pan right"></span></button>
+							</div>
+						</div>
+						<div id="openlayersForm" class="form-inline custom-draw ol-control">
+							<div id="copy-from" class="btn-group" data-toggle="buttons">
+								<label id="copyLabel" class="btn btn-primary btn-sm disabled-btn" title="Copy from" alt="Copy from">
+									<input type="radio" name="type" id="copy" value="Copy" autocomplete="off" disabled="disabled"> <p class="map-button-label"><span id="copyIcon" class="glyphicon glyphicon-duplicate icon-size" aria-hidden="true" title="Copy from" alt="Copy from"></span></p><p class="map-button-label">Copy</p>
+								</label>
+							</div>
+							<div class="btn-group" data-toggle="buttons">
+								<label id="pointLabel" class="btn btn-primary btn-sm active" title="Draw a point" alt="Draw a point">
+									<input type="radio" name="type" id="point" value="Point" autocomplete="off" checked> <p class="map-button-label"><span class="glyphicon glyphicon-map-marker icon-size" aria-hidden="true" title="Draw a point" alt="Draw a point"></span></p><p class="map-button-label">Point</p>
+								</label>
+								<label id="linestringLabel" class="btn btn-primary btn-sm" title="Draw a line" alt="Draw a line">
+									<input type="radio" name="type" id="linestring" value="LineString" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-minus icon-size" aria-hidden="true" title="Draw a line" alt="Draw a line"></span></p><p class="map-button-label">Line</p>
+								</label>
+								<label id="polygonLabel" class="btn btn-primary btn-sm" title="Draw a polygon" alt="Draw a polygon">
+									<input type="radio" name="type" id="polygon" value="Polygon" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-unchecked icon-size" aria-hidden="true" title="Draw a polygon" alt="Draw a polygon"></span></p><p class="map-button-label">Polygon</p>
+								</label>
+								<label id="circleLabel" class="btn btn-primary btn-sm" title="Draw a circle" alt="Draw a circle">
+									<input type="radio" name="type" id="circle" value="Circle" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-record icon-size" aria-hidden="true" title="Draw a circle" alt="Draw a circle"></span></p><p class="map-button-label">Circle</p>
+								</label>
+							</div>
+							<div class="btn-group" data-toggle="buttons">
+								<label id="donutLabel" class="btn btn-primary btn-sm" title="Cut hole" alt="Cut hole">
+									<input type="radio" name="type" id="donut" value="Donut" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-scissors icon-size" aria-hidden="true" title="Cut hole" alt="Cut hole"></span></p><p class="map-button-label">Cut out</p>
+								</label>
+								<label id="mergeLabel" class="btn btn-primary btn-sm" title="Merge polygons" alt="Merge polygons">
+									<input type="radio" name="type" id="merge" value="Merge" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-plus icon-size" aria-hidden="true" title="Merge polygons" alt="Merge polygons"></span></p><p class="map-button-label">Merge all</p>
+								</label>
+								<label id="editLabel" class="btn btn-primary btn-sm" title="Edit mode" alt="Edit mode">
+									<input type="radio" name="type" id="edit" value="Edit" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-edit icon-size" aria-hidden="true" title="Edit mode" alt="Edit mode"></span></p><p class="map-button-label">Edit</p>
+								</label>
+							</div>
+							<div class="btn-group" data-toggle="buttons" title="Delete item" alt="Delete item">
+								<label id="removeLabel" class="btn btn-primary btn-sm">
+									<input type="radio" name="type" id="remove" value="Remove" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-remove icon-size" aria-hidden="true" title="Delete item" alt="Delete item"></span></p><p class="map-button-label">Remove</p>
+								</label>
+								<label id="clearLabel" class="btn btn-primary btn-sm" title="Delete all items" alt="Delete all items">
+									<input type="radio" name="type" id="clear" value="Clear" autocomplete="off"> <p class="map-button-label"><span class="glyphicon glyphicon-trash icon-size" aria-hidden="true" title="Delete all items" alt="Delete all items"></span></p><p class="map-button-label">Remove all</p>
+								</label>
+							</div>
+						</div>
 
+						<div id="snap-to" class="form-inline snap-to-toggle ol-control">
+							<div id="snapButton" class="btn-group" data-toggle="buttons" title="Snap-to is off" alt="Snap-to is off">
+								<label id="snap-to-label" class="btn btn-primary btn-sm disabled-btn">
+									<input type="checkbox" id="snap" value="on" autocomplete="off" disabled="disabled"> <p class="map-button-label">Snap-to</p><p class="map-button-label"><span id="snapIcon" class="glyphicon glyphicon-remove-circle icon-size" aria-hidden="true" title="Snap-to is off" alt="Snap-to is off"></span></p>
+								</label>
+							</div>
+						</div>
 
-		var chargeType = $(".charge_type").val();
-		sessionStorage.setItem("chargeType", chargeType);
-	});
+						<div id="ol-tool-tip" class="ol-control">Click to draw a point.</div>
 
-	$(".postcode_button").click(function() {
-		var postcode = $(".postcode_field").val();
-		sessionStorage.setItem("postcode", "BOOM");
-	});
+						<form onsubmit="lookupPostcode();return false">
+							<!--div id="postcode-search" class="form-inline postcode-search">
+								<div class="input-group">
+									<input type="text" id="postcode" class="form-control" placeholder="Postcode">
+									<span class="input-group-btn">
+										<input type="submit" value="Search" class="btn btn-default">
+									</span>
+								</div>
+								<div id="postcode-error"></div>
+							</div> -->
+						</form>
+					</div>
 
-	// address
-	// potscode search only
-	$(".list li a").click(function() {
-		var address = $(this).html();
-		sessionStorage.setItem("address", address);
-	});
+					<form data-disable="false" class="form-horizontal" action="" method="POST">
+						<div class="col-md-12 form-group">
+							<div id="geometry-input" class="form-group">
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="geometry" id="geometry" required value=""/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-3">
+									<!--<a class="btn btn-primary" href="">Back</a> -->
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<a class="button" href="07_more_info" role="button">Save and continue</a>
 
-	$(".description_button").click(function() {
-		var description = $("#description").val();
-		sessionStorage.setItem("description", description);
-	});
+              <p></p>
+			</div>
+		</div>
+	</div>
+</main>
 
-	$(".description_city").click(function() {
-		var origin = "city";
-		sessionStorage.setItem("origin", origin);
-	});
+<script>
+var locationSelected = sessionStorage.getItem("location")
 
-	$(".description_map").click(function() {
-		var origin = "map";
-		sessionStorage.setItem("origin", origin);
-	});
-
-	$(".description_street").click(function() {
-		var origin = "street";
-		sessionStorage.setItem("origin", origin);
-	});
-
-	$(".further_info_button").click(function() {
-		var furtherInfo = $("#further_info").val();
-		var reference = $("#reference").val();
-		sessionStorage.setItem("furtherInfo", furtherInfo);
-		sessionStorage.setItem("reference", reference);
-	});
-
-	$(".instrument_button").click(function() {
-		var instrumentSelected = $(".instrument_radio").val();
-		sessionStorage.setItem("instrumentSelected", instrumentSelected);
-	});
-
-	$(".dates_button").click(function() {
-		var docDayStart = $("#doc-day-start").val();
-		var docMonthStart = $("#doc-month-start").val();
-		var docYearStart = $("#doc-year-start").val();
-		sessionStorage.setItem("docDayStart", docDayStart);
-		sessionStorage.setItem("docMonthStart", docMonthStart);
-		sessionStorage.setItem("docYearStart", docYearStart);
-	});
-
-	$(".expiry_button").click(function() {
-		var expiryDate = $("#expiry-date-text").val();
-		sessionStorage.setItem("expiryDate", expiryDate);
-		var docDayEnd = $("#doc-day-end").val();
-		var docMonthEnd = $("#doc-month-end").val();
-		var docYearEnd = $("#doc-year-end").val();
-		sessionStorage.setItem("docDayEnd", docDayEnd);
-		sessionStorage.setItem("docMonthEnd", docMonthEnd);
-		sessionStorage.setItem("docYearEnd", docYearEnd);
-	});
-
-	$(".charge_type").html(chargeType);
-	$(".charge_type_v1-1").html(newChargeType);
-	$(".post_code").html(postcode);
-	$(".postcode_searched").val(postcode);
-	$(".address").html(address);
-	$(".description").html(description);
-	$(".further_info").html(furtherInfo);
-	$(".instrument_result").html(instrument);
-	$(".doc-day").html(docDay);
-	$(".doc-month").html(docMonth);
-	$(".doc-year").html(docYear);
-	$(".expiry").html(expiry);
-	$(".reference").html(reference);
-	$(".legislation").html(legislation);
-
-	// maintain_llc v1.1
-  $("#confirm-new-legislation").click(function() {
-    var newLegislation = $("#new-legislation").val()
-    sessionStorage.setItem("newLegislation", newLegislation)
-    var changeCheck = "legislation changed"
-    sessionStorage.setItem("changeCheck", changeCheck)
-  })
-
-  // horizontal carousel script
-  $(".control li").click(function() {
-    var charge = $(this).html().toLowerCase()
-    $(".result").load("lists/" + charge)
-    return false
-  });
-
-  $(".maintain-control li").click(function() {
-    var charge = $(this).html().toLowerCase()
-    $(".maintain-result").load("lists/" + charge)
-    return false
-  });
-
-  // sessionstorage stuff
-
-  // legislation
-  $(".autocomplete-search").click(function() {
-    var legislation = $("#legislation").val()
-    sessionStorage.setItem("legislation", legislation)
-  })
-
-  // location
-  $(".location-search").click(function() {
-    var location = $("#location").val()
-    sessionStorage.setItem("location", location)
-  })
-
-  // more information
-  $(".more-information-button").click(function() {
-    var moreInformation = $("#more-information").val()
-    sessionStorage.setItem("moreInformation", moreInformation)
-  })
-
-  // address
-  $(".additional-information-button").click(function() {
-
-    var address = $("#address").val()
-    sessionStorage.setItem("address", address)
-
-    var website = $("#website").val()
-    sessionStorage.setItem("website", website)
-
-    var phoneNumber = $("#phoneNumber").val()
-    sessionStorage.setItem("phoneNumber", phoneNumber)
-
-    var email = $("#email").val()
-    sessionStorage.setItem("email", email)
-
-    var reference = $("#reference").val()
-    sessionStorage.setItem("reference", reference)
-  })
-
-  // charge creation date
-  $(".creation-date-button").click(function() {
-    var startDay = $("#startDay").val()
-    sessionStorage.setItem("startDay", startDay)
-
-    var startMonth = $("#startMonth").val()
-    sessionStorage.setItem("startMonth", startMonth)
-    
-    var startYear = $("#startYear").val()
-    sessionStorage.setItem("startYear", startYear)
-  })
-
-  //expiry
-  $(".expiration-button").click(function() {
-    var endDay = $("#endDay").val()
-    sessionStorage.setItem("endDay", endDay)
-
-    var endMonth = $("#endMonth").val()
-    sessionStorage.setItem("endMonth", endMonth)
-    
-    var endYear = $("#endYear").val()
-    sessionStorage.setItem("endYear", endYear)
-
-    var expirationTerm = $("#expirationTerm").val()
-    sessionStorage.setItem("expirationTerm", expirationTerm)
-
-    if ($(".no").hasClass("selected")) {
-      var noExpire = "Charge doesn't expire"
-      sessionStorage.setItem("noExpire", noExpire)
-    }
-  })
-
-  // land compensation 6a stuff
-  $(".particularsA-button").click(function() {
-    var particularsA = $("#particularsA").val()
-    sessionStorage.setItem("particularsA", particularsA)
-  })
-
-  // land compendation 6b stuff
-  $(".particularsB-button").click(function() {
-    var particularsB = $("#particularsB").val()
-    sessionStorage.setItem("particularsB", particularsB)
-
-    var compensation = $("#compensation").val()
-    sessionStorage.setItem("compensation", compensation)
-  })
-
-  // specific financial stuff
-  $(".specific-financial-button").click(function() {
-    var amount = $("#amount").val()
-    sessionStorage.setItem("amount", amount)
-
-    var interest = $("#interest").click(function() {
-      var interest = $("#interest").val()
-      sessionStorage.setItem("interest", interest)
-    })
-  })
-
-  // reason
-  $(".reason-button").click(function() {
-    $(".selection-button-checkbox").each(function() {
-      if ($(this).hasClass("selected")) {
-        var reason = $(this).children("input").attr("value")
-        sessionStorage.setItem("reason", reason)
-      }
-    })
-  })
-  // maintain address storage
-  $(".maintain-map-search-button").click(function() {
-    var maintainMapAddress = $("#maintain-map-search").val()
-    sessionStorage.setItem("maintainMapAddress", maintainMapAddress)
-  })
-
-
-/*
-  // edit charge
-  $(".edit-charge").click(function() {
-    var editChargeType = $("#charge-type-text").html()
-    var editLegislation = $("#legislation-text").html()
-    var editLocation = $("#location-text").html()
-    var editLocationInformation = $("#location-information-text").html()
-    var editFurtherInformation = $("#further-information-text").html()
-    var editReference = $("#reference-text").html()
-    var editOa = $("#oa-text").html()
-    var editSource = $("#source-text").html()
-    var editDate = $("#date-text").html()
-    var editExpiry = $("#expiry-text").html()
-    /*var editRetainedLand = $("#retained-land-text").html()
-    var editParticularsLand = $("#particulars-land-text").html()
-    var editParticularsInterest = $("#particulars-interest-text").html()
-    var editCompensation = $("#compensation-text").html()
-    var editAmount = $("#amount-text").html()
-    var editInterest = $("#interest-text").html()*/
-
-    /*sessionStorage.setItem("editChargeType", editChargeType)
-    sessionStorage.setItem("editLegislation", editLegislation)
-    sessionStorage.setItem("editLocation", editLocation)
-    sessionStorage.setItem("editLocationInformation", editLocationInformation)
-    sessionStorage.setItem("editFurtherInformation", editFurtherInformation)
-    sessionStorage.setItem("editReference", editReference)
-    sessionStorage.setItem("editOa", editOa)
-    sessionStorage.setItem("editSource", editSource)
-    sessionStorage.setItem("editDate", editDate)
-    sessionStorage.setItem("editExpiry", editExpiry)
-    /*sessionStorage.setItem("editRetainedLand", editRetainedLand)
-    sessionStorage.setItem("editParticularsLand", editParticularsLand)
-    sessionStorage.setItem("editParticularsInterest", editParticularsInterest)
-    sessionStorage.setItem("editCompensation", editCompensation)
-    sessionStorage.setItem("editAmount", editAmount)
-    sessionStorage.setItem("editInterest", editInterest)*/
-  /*})
-
-  $("#edit-charge-type-field").val(editChargeTypeValue)
-  $("#edit-legislation-field").val(editLegislationValue)
-  $("#edit-location-field").val(editLocationValue)
-  $("#edit-location-information-field").val(editLocationInformationValue)
-  $("#edit-further-information-field").val(editFurtherInformationValue)
-  $("#edit-reference-field").val(editReferenceValue)
-  $("#edit-oa-field").val(editOaValue)
-  $("#edit-source-field").val(editSourceValue)
-  $("#edit-date-field").val(editDateValue)
-  $("#edit-expiry-field").val(editLExpiryValue)
-  /*$("#edit-retained-land-field").val(editRetainedLandValue)
-  $("#edit-particulars-land-field").val(editParticularsLandValue)
-  $("#edit-particulars-interest-field").val(editParticularsInterestValue)
-  $("#edit-compensation-field").val(editCompensationValue)
-  $("#edit-amount-field").val(editAmountValue)
-  $("#edit-interest-field").val(editInterestValue)*/
-
-
-
-
-  // replacing values
-  /*$(".legislation").html(legislationSelected)
-  $(".location").html(locationSelected)
-  $(".moreInformation").html(moreInformationSelected)
-  $(".address").html(addressSelected)
-  $(".website").html(websiteSelected)
-  $(".phoneNumber").html(phoneNumberSelected)
-  $(".email").html(emailSelected)
-  $(".reference").html(referenceSelected)
-  $(".startDay").html(startDaySelected)
-  $(".startMonth").html(startMonthSelected)
-  $(".startYear").html(startYearSelected)
-  $(".endDay").html(endDaySelected)
-  $(".endMonth").html(endMonthSelected)
-  $(".endYear").html(endYearSelected)
-  $(".expirationTerm").html(expirationTermSelected)
-  $(".noExpire").html(noExpireSelected)
-  $(".reason").html(reasonSelected)
-  $(".particularsA").html(particularsASelected)
-  $(".particularsB").html(particularsBSelected)
-  $(".compensation").html(compensationSelected)
-  $(".amount").html(amountSelected)
-  $(".interest").html(interestSelected)*/
-
- 
-
-
-/*  $(".maintainMapAddressItem").html(maintainMapAddressSelected)
-  // map stuff
+// map stuff
   var geoserver = 'http://192.168.250.122:8080/geoserver'
   var longitude = -0.09;
   var latitude = 51.505;
@@ -548,7 +336,7 @@ function initmap() {
         draw = new ol.interaction.Draw({
           features: features,
           type: /** @type {ol.geom.GeometryType} */ (typeSelect)
-        /*});
+        });
 
             // Set current featureID to be the highest existing ID
             if (featureID == 0) {
@@ -612,7 +400,7 @@ function initmap() {
     /**
      * Handle change event.
      */
-/*     $('input[name="type"]').change(function() {
+     $('input[name="type"]').change(function() {
       typeSelect = $('input[name="type"]:checked').val();
       prevLabel = $('.active').not(document.getElementById('snap-to-label')).get(-1).id;
       $('input[name="' + this.name + '"]').prop("checked", false);
@@ -747,7 +535,7 @@ function initmap() {
  * JSONP WFS callback function.
  * @param {Object} response The response object.
  */
-/* window.loadFeatures = function(data) {
+ window.loadFeatures = function(data) {
   wfsSource.addFeatures((new ol.format.GeoJSON()).readFeatures(data))
 };
 
@@ -1003,4 +791,9 @@ function panTo(x, y){
       }
     }
   }
-});
+</script>
+
+{% endblock %}
+
+
+

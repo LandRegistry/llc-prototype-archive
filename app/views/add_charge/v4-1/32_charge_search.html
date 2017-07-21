@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What is the law for this charge?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What is the law for this charge?</h1>
+			<div class="search-by-autocomplete">
+				<form action="/add_charge/v4-1/32" method="POST">
+					<div class="form-group">
+						<fieldset>
+							<legend class="visuallyhidden">What is the law for this charge?</legend>
+							<div class="form-group spacing-bottom-half">
+
+								<input class="form-control search-field" id="legislation" name="legislation" type="text" value="{{ value }}" style="width: 500px" autofocus="autofocus">
+								<input class="search-button submit location-search" type="submit" value="Search"><br><br>
+
+								{% for item in reply %}
+									<label for="radio-part-{{loop.index}}" class="block-label selection-button-radio">
+									  <input id="radio-part-{{loop.index}}" type="radio" name="charge_type" value="{{ item[0] }}">
+										<span class="heading-small">{{ item[0] }}</span><br>
+										{{ item[1] }}
+										{{ item[2] }}
+									</label>
+								{% endfor %}
+
+							</div>
+						</fieldset>
+					</div>
+					<div class="form-group">
+                    	<input class="button" type="submit" value="Continue">
+                	</div>
+					<p>If none of the laws, acts or sections apply then you must <a href="40_doc_mand">select an instrument</a></p>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		var legislationList = [
+		"Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)",
+		"Highways Act 1980 (various sections)",
+		"Localism Act 2011 (Part 5, Chapter 3): The Assets of Community Value (England) 2012 SI 2012 No. 2421……",
+		"New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)",
+		"Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010",
+		"Part 8 Regulation 66 Community Infrastructure Levy Regulations 2011",
+		"Part XI Highways Act 1980 (under code of 1875)",
+		"s.106 Town and Country Planning Act 1990",
+		"s.107 Building Act 1984",
+		"s.107(9) Housing Act 1996",
+		"s.11(1) Opencast Coal Act 1958",
+		"s.119 Housing Act 1996",
+		"s.156(a) Housing Act 1985",
+		"s.36(a) Housing Act 1985",
+		"s.17 Land Powers (Defence) Act 1958",
+		"s.172 Town and Country Planning Act 1990",
+		"s.178(1)(b) Town and Country Planning Act 1990",
+		"s.18 Clean Air Act 1993",
+		"s.18(8) Land Drainage Act 1991",
+		"s.198 Town and Country Planning Act 1990 (when confirmed)",
+		"s.201 Town and Country Planning Act 1990 (immediate effect)",
+		"s.207 Town and Country Planning Act 1990 (RE replacement)",
+		"s.208 Town and Country Planning Act 1990 (appeal)",
+		"s.209 Town and Country Planning Act 1990 (enter land)",
+		"s.2(4) Rights of Light Act 1959",
+		"s.278(8) Highways Act 1980",
+		"s.28 Wildlife and Countryside Act 1981",
+		"s.38 Highways Act 1980",
+		"s.42(1) Planning (Listed Buildings and Conservation Areas) Act 1990",
+		"s.43 Civil Aviation Act 1982",
+		"s.44 Civil Aviation Act 1982",
+		"s.45 Civil Aviation Act 1982",
+		"s.46(1) Civil Aviation Act 1982",
+		"s.52(2) Housing Grants Construction and Regeneration Act 1996",
+		"s.52(8) Land Compensation Act 1973",
+		"s.69(4) Planning (Listed Buildings and Conservation Areas) Act 1990",
+		"s.70 Town and Country Planning Act 1990 (as amended)",
+		"s.8 Coast Protection Act",
+		"s.8(4) Land Compensation Act 1973",
+		"s2 Planning (Listed Buildings and Conservation Areas) Act 1990",
+		"Town and Country Planning (General Permitted Development) Order 1995",
+		"Various",
+		"No specific statutory provision"
+		]
+		$( "#legislation" ).autocomplete({
+			source: legislationList
+		})
+	})
+</script>
+
+{% endblock %}
+
+

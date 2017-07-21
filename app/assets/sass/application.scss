@@ -611,6 +611,19 @@
   }
 }
 
+.charge-preview {
+  width: 600px;
+  position: relative;
+}
+
+.charge-preview td {
+  border: none;
+  vertical-align: top;
+    &:first-child {
+      width: 33%;
+    }
+}
+
 
 /* Check your answers table styles */
 
@@ -760,3 +773,4 @@ button.map-button.remove:focus {
   position: absolute;
   top: 140px;
 }
+
