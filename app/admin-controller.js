@@ -52,12 +52,11 @@ exports.confirmUserDetailsPage = (req, res) => {
 }
 
 exports.confirmationPage = (req, res) => {
-  res.render('admin/confirmation')
+  res.render('admin/add-confirmation')
 }
 
 exports.addedUser = (req, res) => {
-  var addMessage = 'User added'
-  res.render('admin/confirmation', {message: addMessage})
+  res.render('admin/add-confirmation')
 }
 
 exports.userPage = (req, res) => {
@@ -88,6 +87,5 @@ exports.updateUserConfirmPage = (req, res) => {
 }
 
 exports.updatedUser = (req, res) => {
-  var updateMessage = 'Changes saved'
-  res.render('admin/confirmation', {message: updateMessage})
+  res.render('admin/update-confirmation')
 }

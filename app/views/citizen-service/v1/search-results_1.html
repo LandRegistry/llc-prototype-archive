@@ -1,0 +1,143 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<!--<style>
+  .summary table, tr, td {
+    border-bottom: 0px solid !important;
+
+  }
+</style> -->
+<div class="map-page">
+  <script>
+    var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+  </script>
+  <!-- <main id="content" role="main"> -->
+  <!-- beta banner -->
+  <div class="phase-banner map-phase-banner">
+    <p><strong class="phase-tag">beta</strong></p>
+  </div>
+  <div class="container">
+    <div id="openStreetMap" class="map">
+      <div class="controls">
+        <div id="draw-controls" class="ol-control">
+          <button class="map-button polygon"></button>
+          <button class="map-button point"></button>
+          <button class="map-button line"></button>
+          <button class="map-button edit"></button>
+          <button class="map-button copy"></button>
+          <button class="map-button remove"></button>
+          <button class="map-button remove-all"></button>
+          <button class="map-button undo"></button>
+          <button id="snap-to-button"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+    <h1 class="heading-small">Search results for <span class="searchedTerm"></span></h1>
+    <!-- <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text"> -->
+    <input class="form-control" id="searched_term" type="text" name="searched_term">
+    <input class="button" type="submit" value="Search">
+    <div class="results-block">
+      <div class="pager">
+       <div class="pager-summary">Showing 2 charges</div>
+     </div>
+     <ol class="results-list">
+      <li>
+        <div class="search-result-header">
+          <h2 class="heading-small"><a href="free-charge-details">Charge 1</a></h2>
+          <span class="status bold-xsmall">Active</span>
+        </div>
+        <p>1 October 2008</p>
+      </li>
+      <li>
+        <div class="search-result-header">
+          <h2 class="heading-small"><a href="free-charge-details">Charge 2</a></h2>
+          <span class="status bold-xsmall">Cancelled</span>
+        </div>
+        <p>2 July 2000</p>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="panel-control close panel-control-citizen">
+  <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+  $(document).ready(function () {
+    var closePanel = function () {
+      $("#search-panel").animate({
+        "margin-left": "-1000px"
+      }, 100);
+      $(".panel-control").removeClass("close");
+      $(".panel-control").addClass("open-button");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+    }
+
+    var openPanel = function () {
+      $("#search-panel").animate({
+        "margin-left": "0"
+      }, 100);
+      $(".panel-control").removeClass("open-button");
+      $(".panel-control").addClass("close");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+    }
+
+    $(".panel-control").click(function () {
+      if ($(this).hasClass("close")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    if (searchedTermRetrieved === 'EX4 1AY' || searchedTermRetrieved === 'ex4 1ay') {
+      searchedTermRetrieved = sessionStorage.getItem("addressSelected");
+    }
+    console.log(searchedTermRetrieved);
+    $("#searched_term").val(searchedTermRetrieved);
+    $(".searchedTerm").text(searchedTermRetrieved);
+
+    $('.results-list li').click(function() {
+      var creationDate = $(this).children('p').html()
+      sessionStorage.setItem('creationDate', creationDate)
+    })
+  });
+
+  /*$('.results-list li').click(function() {
+    var addressSelected = $(this).children('p').html()
+    var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
+    sessionStorage.setItem('addressSelected', ad);
+  })*/
+</script>
+
+{% endblock %} 
+
+{% block body_end_additional %}
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+  var map
+
+  require([
+    'esri/map',
+    'esri/dijit/LocateButton',
+    'dojo/domReady!'
+    ], function (
+      Map, LocateButton
+      ) {
+      map = new Map('openStreetMap', {
+        center: [-3.539889, 50.718433],
+        zoom: 18,
+        basemap: 'streets'
+      })
+
+      geoLocate = new LocateButton({
+        map: map
+      }, 'LocateButton')
+      geoLocate.startup()
+    })
+  </script>
+  {% endblock %}

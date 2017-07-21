@@ -8,14 +8,20 @@
   },
   "scripts": {
     "start": "node start.js",
-    "install": "napa"
+    "install": "napa",
+    "test": "standard"
   },
   "dependencies": {
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.15.2",
+    "cfenv": "1.0.3",
     "consolidate": "0.x",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "dotenv": "^4.0.0",
     "express": "4.13.3",
+    "express-enforces-ssl": "^1.1.0",
     "express-nunjucks": "^0.9.3",
     "express-session": "^1.14.1",
     "express-writer": "0.0.4",
@@ -30,6 +36,7 @@
     "grunt-contrib-watch": "0.5.3",
     "grunt-nodemon": "0.4.0",
     "grunt-sass": "^1.1.0",
+    "hashmap": "^2.1.0",
     "hogan.js": "3.0.2",
     "install": "^0.8.1",
     "minimist": "0.0.8",
@@ -38,6 +45,7 @@
     "npm": "^3.10.6",
     "readdir": "0.0.6",
     "request": "^2.74.0",
+    "sanitize-html": "latest",
     "serve-favicon": "2.3.0",
     "string": "^3.3.1"
   },

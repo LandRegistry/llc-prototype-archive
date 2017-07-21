@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Address of the dominant building
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Address of the dominant building</h1>
+			<form action"#" method="GET">
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label" for="postcodeSearch">Postcode</label>
+						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch">
+					</div>
+					<div class="form-group">
+						<input type="button" class="button" value="Find address" id="postcodeFindButton">
+					</div>
+				</fieldset>
+			</form>
+			<div id="manualAddressToggle">
+				<p><a href="#">Enter address manually</a></p>
+			</div>
+			<div id="addressForm">
+				<form action="dominant-building-extent" method="GET">
+					<fieldset>
+						<div class="form-group">
+							<label class="form-label" for="street_1">Street</label>
+							<input class="form-control" id="street_1" type="text" name="street_1">
+						</div>
+						<div class="form-group">
+							<label class="form-label visually-hidden" for="street_2">Street</label>
+							<input class="form-control" id="street_2" type="text" name="street_2">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="town">Town</label>
+							<input class="form-control" id="town" type="text" name="town">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="county">County (optional)</label>
+							<input class="form-control" id="county" type="text" name="county">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="postcode">Postcode</label>
+							<input class="form-control form-control-1-4" id="postcode" type="text" name="postcode">
+						</div>
+						<p>Country<br>United Kingdom</p>
+						<div class="form-group">
+							<input type="submit" class="button" value="continue">
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+

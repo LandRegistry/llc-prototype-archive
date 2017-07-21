@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Local land charge {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} User added {% endblock %} {% block content %}
 <main id="content" role="main">
 	<!-- alpha banner -->
 	<div class="phase-banner">
@@ -9,9 +9,7 @@
 		<div class="grid-row">
 			<div class="column-two-thirds">
 				<div class="govuk-box-highlight">
-					{% if message %}
-					<h1 class="bold-large">{{message}}</h1>
-					{% endif %}
+					<h1 class="bold-large">User added</h1>
 				</div>
 				<p><a href="user">View added user</a></p>
 				<p><a href="search">Search a user</a></p>

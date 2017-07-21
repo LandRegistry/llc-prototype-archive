@@ -103,6 +103,7 @@ $(document).ready(function () {
   new GOVUK.SelectionButtons($blockLabels)
 
   $('.js-hidden').css('display', 'none')
+
   $('.js-hidden').attr('aria-hidden', 'true').hide()
   // Show and hide toggled content
   // Where .block-label uses the data-target attribute

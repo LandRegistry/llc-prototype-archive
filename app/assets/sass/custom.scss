@@ -3,18 +3,18 @@
 /* map stuff */
 #map { 
   height: calc(100vh - 135px);
-  width: 960px;
-  position: relative;
-  top: -2em;
+  width: 100%;
+  position: absolute;
+  /*top: -2em;*/
 }
 
 #map .ol-zoom .ol-zoom-out {
-  background:rgba(51,122,183,.8);
-  margin-top: 204px;
+  background:rgb(12, 96, 163);
+  margin-top: 4px;
 }
 
 #map .ol-zoom .ol-zoom-in {
-  background:rgba(51,122,183,.8);
+  background:rgb(12, 96, 163);
 }
 
 #map .ol-zoomslider {
@@ -23,11 +23,11 @@
 }
 
 #map .ol-zoomslider-thumb {
-  background:rgba(51,122,183,.8);
+  background:rgb(12, 96, 163);
 }
 
 #map .ol-mouse-position {
-  background: rgba(51,122,183,.8);
+  background: rgb(12, 96, 163);
   border-radius: 10px;
   border-color: grey;
   padding: 5px;
@@ -54,7 +54,7 @@
 .ol-zoom {
   position: absolute !important;
   left: 95vw !important;
-  background-color: #DEE0E2 !important;
+  background-color: transparent !important;
 }
 
 /* Search panel */
@@ -70,13 +70,12 @@
   top: 130px;
 
   & .results-list li {
-    border-bottom: 1px solid #DEE0E2;
+    border-bottom: 1px solid #DEE0E2 !important;
   }
 
-  & .status {
-    float: right;
-    position: relative;
-    top: -5.5em;
+  & .address-list li {
+    border-bottom: none !important;
+    margin-bottom: 1em;
   }
 
   & .pager {
@@ -97,6 +96,16 @@
 
   & .pager-controls {
     float: right;
+  }
+}
+
+.search-result-header {
+  display: flex;
+  justify-content: space-between;
+
+  & .status {
+    position: relative;
+    top: 1.3em;
   }
 }
 
@@ -132,6 +141,8 @@
   margin: 0 auto;
 }
 
+
+
 /* map controls */
 
 #map_controls {
@@ -162,3 +173,40 @@
     }
   }
 }
+
+/* action links */
+
+.action-links ul {
+  float: right;
+  margin-top: 1em;
+}
+
+.action-links li {
+  display: inline;
+}
+
+/* citizen service */
+
+.citizen-search-panel {
+  top: 105px !important;
+  height: calc(100vh - 107px) !important;
+}
+
+.panel-control-citizen {
+  top: 105px !important;
+}
+
+.llc1-free-details {
+  width: 100%;
+}
+
+.payment-info-box {
+  border-top: 10px solid #005ea5;
+  position: relative;
+  top: -150px;
+}
+
+/* LONs */
+/*#addressForm {
+  display: none;
+}*/

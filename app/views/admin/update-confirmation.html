@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block page_title %} User updated {% endblock %} {% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<form action="confirmation" method="POST">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="govuk-box-highlight">
+					<h1 class="bold-large">User updated</h1>
+				</div>
+				<p><a href="user">View updated user</a></p>
+				<p><a href="search">Search a user</a></p>
+				<p><a href="add-user-role">Add a user</a></p>
+			</div>
+		</div>
+		</div>
+	</form>
+</main>
+{% endblock %}

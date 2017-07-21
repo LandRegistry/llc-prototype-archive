@@ -1,20 +1,15 @@
 // Import GOV.UK elements, this will import the frontend toolkit and some base styles.
 // Take a look in _govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
-
 // Take a look at patterns.scss to see which files are imported.
 @import 'patterns';
-
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
 .unbranded {
-  background: $white;
-  // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+  background: $white; // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
   * {
     font-family: Arial !important;
-  }
-
-  // Remove GOV.UK footer styles
+  } // Remove GOV.UK footer styles
   #footer {
     border: 0;
     background: $white;
@@ -27,12 +22,10 @@
   margin-top: $gutter;
   border-top: 10px solid $govuk-blue;
   padding-top: 5px;
-
   .heading-medium {
     margin-top: 0.3em;
     margin-bottom: 0.5em
   }
-
   li {
     margin-bottom: 10px;
   }
@@ -45,16 +38,14 @@
 #global-header-bar {
   height: 10px;
   /*background-color: #66CC33;*/
-}
+} // Remove GOV.UK footer styles
 
- // Remove GOV.UK footer styles
-  /* #footer {
+/* #footer {
     border: 0;
     background: $white;
     }*/
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
 .highlighted-event {
   background-color: #28a197;
   color: #fff;
@@ -75,7 +66,6 @@
 }
 
 // This is where the new UI styles are
-
 .browse ul li a,
 .control ul li a,
 .result_1 ul li a {
@@ -128,16 +118,15 @@
   align-content: stretch;
   height: 300px;
 }
+
 // To stack horizontally, use .inline on parent, to sit block labels next to each other
 .inline .block-label {
   clear: none;
-
   @include media (tablet) {
     margin-bottom: 0;
     margin-right: $gutter;
   }
 }
-
 
 #global-header #logo img {
   background-color: white;
@@ -191,6 +180,7 @@
     top: 13px;
   }
 }
+
 .search-button,
 .search-button-map {
   background-size: 52.5px 35px;
@@ -208,20 +198,19 @@
 }
 
 // map stuff
-#map { 
+#map {
   height: calc(100vh - 135px);
-  width: 960px;
+  width: 100%;
   position: relative;
-  top: -2em;
+  /*top: -2em;*/
 }
 
 #map .ol-zoom .ol-zoom-out {
-  background:rgba(51,122,183,.8);
-//  margin-top: 204px;
+  background: rgba(51, 122, 183, .8); //  margin-top: 204px;
 }
 
 #map .ol-zoom .ol-zoom-in {
-  background:rgba(51,122,183,.8);
+  background: rgba(51, 122, 183, .8);
 }
 
 #map .ol-zoomslider {
@@ -230,11 +219,11 @@
 }
 
 #map .ol-zoomslider-thumb {
-  background:rgba(51,122,183,.8);
+  background: rgba(51, 122, 183, .8);
 }
 
 #map .ol-mouse-position {
-  background: rgba(51,122,183,.8);
+  background: rgba(51, 122, 183, .8);
   border-radius: 10px;
   border-color: grey;
   padding: 5px;
@@ -247,7 +236,7 @@
 }
 
 #map .ol-nav-buttons {
-  background:rgba(51,122,183,.3);
+  background: rgba(51, 122, 183, .3);
   top: auto;
   bottom: 0.5em;
   left: 0.5em;
@@ -256,6 +245,8 @@
 
 .ol-control {
   z-index: 10000;
+  padding: 6px !important;
+  background-color: transparent !important;
 }
 
 .ol-zoom {
@@ -264,7 +255,9 @@
   background-color: #DEE0E2 !important;
 }
 
+
 /* Search panel */
+
 #search-panel {
   width: 26vw;
   height: calc(100vh - 132px);
@@ -275,17 +268,9 @@
   position: absolute;
   overflow: auto;
   top: 130px;
-
   & .results-list li {
     border-bottom: 1px solid #DEE0E2;
   }
-
-  & .status {
-    float: right;
-    position: relative;
-    top: -5.5em;
-  }
-
   & .pager {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
@@ -293,7 +278,6 @@
   & .pager-items li {
     display: inline;
     margin: 0 5px;
-
     &:first-child {
       margin-left: 0;
     }
@@ -301,7 +285,6 @@
       margin-right: 0;
     }
   }
-
   & .pager-controls {
     float: right;
   }
@@ -332,18 +315,24 @@
   left: 0;
 }
 
+
 /****************/
+
+
 /* Map Controls */
+
 #draw-controls {
-  top: 2%;
-  right: 1%;
+  top: 1%;
+  right: 25%;
+  margin-right: 30px;
 }
 
 #draw-controls button {
   display: inline;
   height: auto;
   width: auto;
-  padding: 4px;
+  padding: 14px;
+  margin-right: 4px;
 }
 
 .control-title {
@@ -358,25 +347,25 @@
   border: 2px solid black;
 }
 
-.ol-control button.active {
-  background-color: rgba(0,60,136,1);
-}
-
+// .active {
+//   border: 1px solid $yellow;
+// }
 #snap-to {
-  bottom: 2%;
-  right: 1%;
+  top: 1%;
+  right: 25%;
 }
 
 #snap-to button {
   display: inline;
   height: auto;
   width: auto;
-  padding: 4px;
+  padding: 14px;
 }
 
-.disabled-btn button, .disabled-btn button:hover, .disabled-btn button:focus {
-  background-color: #999;
-  border-color: #999;
+.disabled-btn button,
+.disabled-btn button:hover,
+.disabled-btn button:focus {
+  border-color: $yellow;
 }
 
 #map-nav {
@@ -386,6 +375,8 @@
 .maintain-llc-map {
   min-height: 400px;
 }
+
+
 /****************/
 
 .postcode-search {
@@ -397,17 +388,17 @@
 }
 
 .postcode-search .btn {
-  background-color: rgba(51,122,183,.8);
+  background-color: rgba(51, 122, 183, .8);
   color: #fff;
 }
 
 .postcode-search .btn:hover {
-  background-color: rgba(51,122,183,.9);
+  background-color: rgba(51, 122, 183, .9);
 }
 
 #postcode-error {
   color: red;
-  background-color: rgba(255,255,255,.6);
+  background-color: rgba(255, 255, 255, .6);
 }
 
 .up-nav-button {
@@ -426,7 +417,7 @@
 }
 
 #ol-tool-tip {
-  background:rgba(51,122,183,.8);
+  background: rgba(51, 122, 183, .8);
   border-radius: 10px;
   border-color: grey;
   padding: 5px;
@@ -449,10 +440,12 @@
 // maintain llc stuff
 #maintain-map-search {
   border: 2px solid black;
-  width: 310px;
+  /*width: 310px;*/
+  width: 50% !important;
   display: inline !important;
   height: 38px;
 }
+
 
 /*.maintain-llc-map {
   /*width: 55% !important;
@@ -469,7 +462,7 @@
   }
 }*/
 
-.filter .form-group{
+.filter .form-group {
   background-color: #F8F8F8;
   width: 100%;
   padding: 0 1em;
@@ -494,7 +487,6 @@
   position: relative;
   top: 1em;
   padding-left: 300px;
-
   & a {
     position: relative;
     top: 0.4em;
@@ -537,15 +529,12 @@
 
 .charge-list-item {
   border-top: 1px solid #DEE0E2;
-
   & h3 {
     margin-top: 0.5em;
   }
-
   &:last-child {
     border-bottom: 1px solid #DEE0E2;
   }
-
   & a {
     cursor: pointer;
     text-decoration: underline;
@@ -571,7 +560,6 @@
 
 .charge-list-options a {
   display: inline;
-
   &:last-child {
     margin-left: 2em;
   }
@@ -581,6 +569,7 @@
   background-color: #F8F8F8;
 }
 
+
 /* Charge history table rules */
 
 .charge-history {
@@ -589,6 +578,7 @@
     vertical-align: top;
   }
 }
+
 
 /* map controls */
 
@@ -611,7 +601,7 @@
       margin: 0.3em;
       padding: 1em;
       height: 3em;
-      border: 1px solid rgba(78,78,78,0.3);
+      border: 1px solid rgba(78, 78, 78, 0.3);
       border-radius: 10px;
       background-color: #2b8cc4;
       color: white;
@@ -634,7 +624,9 @@
     }
 }
 
+
 /* Check your answers table styles */
+
 .check-your-answers-2 {
   width: 960px;
   position: relative;
@@ -643,9 +635,9 @@
 .check-your-answers-2 td {
   border: none;
   vertical-align: top;
-    &:first-child {
-      width: 33%;
-    }
+  &:first-child {
+    width: 33%;
+  }
 }
 
 .section-end td {
@@ -659,8 +651,126 @@
 .alert-success {
   border-color: $turquoise;
   background-color: mix(white, $turquoise, 90%);
-  }
+}
 
 .js-hidden {
   display: none;
 }
+
+.icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  float: left;
+  display: block;
+  /* This is required */
+}
+
+.map-button {
+  cursor: pointer;
+  &.circle {
+    background: url("../images/circle.png");
+    background-size: cover;
+  }
+  &.point {
+    background: url("../images/point.png");
+    background-size: cover;
+  }
+  &.line {
+    background: url("../images/line.png");
+    background-size: cover;
+  }
+  &.polygon {
+    background: url("../images/polygon.png");
+    background-size: cover;
+  }
+  &.edit {
+    background: url("../images/edit.png");
+    background-size: cover;
+  }
+  &.remove {
+    background: url("../images/remove.png");
+    background-size: cover;
+  }
+  &.undo {
+    background: url("../images/undo.png");
+    background-size: cover;
+  }
+  &.copy {
+    background: url("../images/copy.png");
+    background-size: cover;
+  }
+  &.remove-all {
+    background: url("../images/remove-all.png");
+    background-size: cover;
+  }
+}
+
+#snap-to-button {
+  cursor: pointer;
+  background: url("../images/snap-to.png");
+  background-size: cover;
+  &.active {
+    outline: 3px solid $yellow;
+  }
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+button#active-control {
+  outline: 3px solid $yellow;
+}
+
+button.map-button.polygon:focus,
+button.map-button.point:focus,
+button.map-button.line:focus,
+button.map-button.circle:focus,
+button.map-button.edit:focus,
+button.map-button.copy:focus,
+button.map-button.remove:focus {
+  outline: none;
+}
+
+#openStreetMap {
+  padding: 0px;
+  margin: 0px;
+  height: 600px;
+
+  & button.map-button.polygon:focus,
+  button.map-button.point:focus,
+  button.map-button.line:focus,
+  button.map-button.circle:focus,
+  button.map-button.edit:focus,
+  button.map-button.copy:focus,
+  button.map-button.remove:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+.esriSimpleSlider {
+  float: right !important;
+  margin-right: 20px;
+  margin-top: 20px;
+  position: sticky !important;
+  background-color: #0c60a3 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border: none !important;
+}
+
+.esriSimpleSliderIncrementButton:hover, .esriSimpleSliderIncrementButton:active,.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderDecrementButton:active {
+  background-color: #0c60a3 !important;
+}
+
+.controls div#draw-controls {
+  position: absolute;
+  top: 140px;
+}
+

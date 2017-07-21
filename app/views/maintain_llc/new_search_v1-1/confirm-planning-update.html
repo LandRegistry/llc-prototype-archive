@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Local land charge
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+	
+		<div class="column-two-thirds">
+			<p><a href="map_new">Back to search results</a></p>
+			<h1 class="heading-large">Confirm changes</h1>
+
+			<div class="panel panel-border-wide">
+				<p>
+					You have made the following changes, which have been highlighted in the table below:
+				</p>
+				<ul class="list-bullet list">
+					<li><a href="#">Change 1</a></li>
+					<li><a href="#">Change 2</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="column-full">
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="bold-small">HMLR-LLC-12871691</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Originating authority</td>
+						<td class="bold-small">Lincoln city council</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Registered on</td>
+						<td class="bold-small">3 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Updated on</td>
+						<td class="bold-small">4 May 2017</td>
+						<td></td>
+					</tr>
+					<tr class="section-end">
+						<td></td>
+						<td><a class="font-small" href="planning-history">View history</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr id="extentRow" class="section-end">
+						<td>Location description</td>
+						<td class="location-td"><span class="bold-small">22 Burton Road<br>
+							Lincoln<br>
+							LN1 3LB</span><br><br>
+							<a class="font-normal" href="edit-more-information">Update location description</a><br>
+							<a class="font-normal" href="edit-extent">Update extent</a>
+						</td>
+						<td><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr id="legislationRow">
+						<td>Law</td>
+						<td id="changedLegislation" class="bold-small">Town and Country Planning Act 1979 section 106</td>
+						<td><a href="edit-charge-type">Update law</a></td>
+					</tr>
+					<tr id="reasonRow">
+						<td>Source</td>
+						<td id="changedReason" class="bold-small">Agreement</td>
+						<td><a href="edit-source">Update source</a></td>
+					</tr>
+					<tr id="dateRow">
+						<td>Created on</td>
+						<td id="changedDate" class="bold-small">1 May 2017</td>
+						<td><a href="edit-date">Update created on</a></td>
+					</tr>
+					<tr id="expiryRow" class="section-end">
+						<td>Expiry</td>
+						<td id="changedExpiry" class="heading-small">5 years after the building works start</td>
+						<td><a href="edit-expiry">Update expiry</a></td>
+					</tr>
+					<tr id="furtherInformationRow">
+						<td>More information</td>
+						<td id="changedFurtherInformation" class="bold-small"><a class="bold-small" href="#">https://www.plymouth.gov.uk</a></td>
+						<td><a href="edit-further-information">Update more information</a></td>
+					</tr>
+					<tr id="referenceRow">
+						<td>Reference</td>
+						<td id="changedReference" class="bold-small">10/2867/11</td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<br><br>
+	<a class="button" href="change-confirm">Save changes</a><br><br>
+	<a href="http://localhost:3010/maintain_llc/v1-4/planning-update">Cancel changes</a>
+</main>
+<script>
+	var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
+	if (legislationChangedCheck === "true") {
+		document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
+	}
+	var reasonChangedCheck = sessionStorage.getItem("reasonChanged")
+	if (reasonChangedCheck === "true") {
+		document.getElementById("reasonRow").style.backgroundColor="#DEE0E2"
+	}
+	var referenceChangedCheck = sessionStorage.getItem("referenceChanged")
+	if (referenceChangedCheck === "true") {
+		document.getElementById("referenceRow").style.backgroundColor = "#DEE0E2"
+	}
+	var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
+	if (furtherInformationChangedCheck === "true") {
+		document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
+	}
+	var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
+	if (expiryChangedCheck === "true") {
+		document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
+	}
+	var dateChangedCheck = sessionStorage.getItem("dateChanged")
+	if (dateChangedCheck === "true") {
+		document.getElementById("dateRow").style.backgroundColor = "#DEE0E2"
+	}
+	var extentChangedCheck = sessionStorage.getItem("extentChanged")
+	if (extentChangedCheck === "true") {
+		document.getElementById("extentRow").style.backgroundColor = "#DEE0E2"
+	}
+
+</script>
+{% endblock %}
+
+

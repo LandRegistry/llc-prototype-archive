@@ -7,8 +7,14 @@ var url = require('url')
 var bodyParser = require('body-parser')
 var S = require('string')
 var app = express()
+var HashMap = require('hashmap')
 router.use(bodyParser.urlencoded({ extended: false }))
 const adminController = require('./admin-controller')
+const citizenController = require('./citizen-controller')
+const payments = require('./payments')
+const debug = require('debug')('demo:routes')
+
+var map = new HashMap()
 
 var legs = [
   'Ancient Monuments and ArchaeologicalAreas Act 1979 (as amended…): s.1(9), s.2(3), s.8(6), s.12, s.16(8), s.33(5)',
@@ -498,6 +504,71 @@ router.get('/admin/update-user', adminController.updatedUserPage)
 router.get('/admin/update-user-confirm', adminController.updateUserConfirmPage)
 router.post('/admin/update-user-confirm', adminController.updatedUser)
 
+// UPRN search
+router.get('/maintain_llc/new_search_v1-1/map_new', function (req, res) {
+  var uprn = req.query.searched_term
+  if (uprn === 'UPRN12345ABC') {
+    res.redirect('/maintain_llc/new_search_v1-1/map_uprn')
+  } else {
+    res.render('maintain_llc/new_search_v1-1/map_new')
+  }
+})
+
 /* v2 */
+
+// Citizen Service Routes
+/* router.get('/citizen-service/v1/search', citizenController.searchPage)
+router.post('/citizen-service/v1/search', citizenController.search) */
+
+router.get('/citizen-service/v1/search-results', function (req, res) {
+  var citizenPostcode = req.query.location
+  if (citizenPostcode === 'EX4 1AY' || citizenPostcode === 'ex4 1ay') {
+    res.redirect('/citizen-service/v1/search-results_address_list')
+  } else {
+    res.render('citizen-service/v1/search-results')
+  }
+})
+
+/**
+ * GOV.UK Pay routes
+ */
+router.get('/citizen-service/v1/pay-continue', (req, res, next) => {
+  res.render('citizen-service/v1/pay-continue')
+})
+
+router.get('/citizen-service/v1/pay-confirmation', (req, res, next) => {
+  const reference = req.params[ 'reference' ]
+
+  const id = map.get(reference)
+  map.remove(reference)
+
+  debug('Lookup id %s=%s', reference, id)
+
+  payments.checkPaymentStatus(id, (result) => {
+    debug(JSON.stringify(result))
+
+    res.render('citizen-service/v1/pay-confirmation', {
+      transaction: result})
+  })
+})
+
+router.post('/citizen-service/v1/pay-continue', (req, res, next) => {
+  req.body.amount = '1500'
+  req.body.reference = 'Official Local Land Search'
+  req.body.description = 'Local land charge official search'
+
+  payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
+    debug('Initial request completed')
+
+    debug('State : %s', result.status)
+    debug('Payment id: %s', result.payment_id)
+    debug('Reference: %s', result.reference)
+    debug('URL: %s', result._links.next_url.href)
+
+    map.set(result.reference, result.payment_id)
+
+    res.redirect(result._links.next_url.href)
+  })
+})
 
 module.exports = router

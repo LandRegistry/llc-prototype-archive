@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What do you want to do?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+		<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What do you want to do?</h1>
+			<form action="#" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">What do you want to do?</legend>
+						<div class="form-group-welcome">
+							<label class="block-label selection-button-radio" for="welcome-1">
+								<input id="welcome-1" name="welcome" type="radio" value="find a local land charge (llc)">
+								Search for a Local Land Charge (LLC)
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-2">
+								<input id="welcome-2" name="welcome" type="radio" value="add a new llc">
+								Add a new LLC
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-3">
+								<input id="welcome-3" name="welcome" type="radio" value="change a llc">
+								Change a LLC
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-4">
+								<input id="welcome-4" name="welcome" type="radio" value="cancel a llc">
+								Cancel a LLC
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-5">
+								<input id="welcome-5" name="welcome" type="radio" value="create LLC1">
+								Create LLC1
+							</label>
+							<label class="block-label selection-button-radio" for="welcome-6">
+								<input id="welcome-6" name="welcome" type="radio" value="Add a light obstruction notice (LON)">
+								Add a light obstruction notice (LON)
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<a class="button reason-button" href="search_place" role="button">Continue</a>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+
