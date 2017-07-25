@@ -13,50 +13,37 @@ Add more information about the location
 	</div>
 	<!-- main content starts -->
 	<div class="grid-row">
-		<div class="column-two-thirds">
+		<div class="column-full">
 			<h1 class="heading-large">Check your application</h1>
 			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 			<form action="/add_charge/v4-1/110" method="GET">
 				<fieldset>
 					<div class="form-group">
-						<table class="check-your-answers">
+						<table class="check-your-answers-2">
 							<thead>
-								<tr>
-									<th colspan="3">
-									</th>
-									<th>
-									</th>
-									<th>
-									</th>
-								</tr>
 							</thead>
 
 							<tbody>
-								{% if on_behalf_of %}
-									<tr>
-										<td>
-											On behalf of
-										</td>
-										<td>
-											 {{ on_behalf_of }}
-										</td>
-										<td class="change-answer">
-											<a class="edit" href="#">
-												Change <span class="visuallyhidden">On behalf of</span>
-											</a>
-										</td>
-
-									</tr>
-								{% endif %}
 								<tr>
 									<td>
-										Document
+										Name
 									</td>
 									<td>
-										{{ instrument }}
-										{% if creation_date != '//' %}
-											<br>{{ creation_date }}
-										{% endif %}
+										<span id="nameApplicant"></span>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change
+										</a>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										Address or UPRN
+									</td>
+									<td>
+										<span id="addressApplicant"></span>
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
@@ -66,10 +53,10 @@ Add more information about the location
 								</tr>
 								<tr>
 									<td>
-										Location
+										Dominant building address or UPRN
 									</td>
 									<td>
-										{{ address }}
+										<span id="addressDominant"></span>
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
@@ -82,64 +69,110 @@ Add more information about the location
 										Extent
 									</td>
 									<td>
-										{{ extent }}
-										{% if part_extent %}
-											<br>{{ part_extent }}
-										{% endif %}
-										<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="100%" height="auto">
+										<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="50%" height="auto">
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
-											Change <span class="visuallyhidden">Extent</span>
+											Change
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Description
+										Servient land height
 									</td>
 									<td>
-										{{ description }}
+										<span id="heightServient"></span>
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
-											Change <span class="visuallyhidden">Description</span>
+											Change
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Research
+										Covers all or part of extent
 									</td>
 									<td>
-										{{ more_info }}
-										<br>{{ reference }}
-										{% if planning_link %}
-											<br><a href="{{ planning_link }}">{{ planning_link }}</a>
-										{% endif %}
+										<span id="coversExtent"></span>
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
-											Change <span class="visuallyhidden">Research</span>
+											Change
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Expiry date
+										Interest in land
 									</td>
 									<td>
-										{% if expiry_date != '//' %}
-											{{ expiry_date }}
-										{% endif %}
-										{% if expiry_text %}
-											{{ expiry_text }}
-										{% endif %}
+										<span id="interestLand"></span>
 									</td>
 									<td class="change-answer">
 										<a class="edit" href="#">
-											Change <span class="visuallyhidden">expiry</span>
+											Change
 										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Temporary certificate issue date
+									</td>
+									<td>
+										<span id="tempIssueDate"></span>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Temporary certificate expiry date
+									</td>
+									<td>
+										<span id="tempExpiryDate"></span>
+									</td>
+									<td class="change-answer">
+										
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Def certificate issue date
+									</td>
+									<td>
+										<span id="defIssueDate"></span>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Def certificate expiry date
+									</td>
+									<td>
+										<span id="defIssueDate"></span>
+									</td>
+									<td class="change-answer">
+										
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Source document
+									</td>
+									<td>
+										<span id="tempIssueDate"></span>
+									</td>
+									<td class="change-answer">
+										
 									</td>
 								</tr>
 							</tbody>
@@ -153,8 +186,8 @@ Add more information about the location
 				<div class="form-group">
 					<details>
 						<summary><span class="summary">See how this charge will look on a Local land charge search result (LLC1)</span></summary>
-						  <div class="panel panel-border-narrow">
-							  <div class="form-group">
+						<div class="panel panel-border-narrow">
+							<div class="form-group">
 								<table class="charge-preview">
 									<thead>
 									</thead>
@@ -169,7 +202,7 @@ Add more information about the location
 												<br>
 												{{ extent }}
 												{% if part_extent %}
-													<br>{{ part_extent }}
+												<br>{{ part_extent }}
 												{% endif %}
 											</td>
 										</tr>
@@ -186,7 +219,7 @@ Add more information about the location
 												Legislation
 											</td>
 											<td>
-												 {{ charge_type }}
+												{{ charge_type }}
 											</td>
 										</tr>
 										<tr>
@@ -195,7 +228,7 @@ Add more information about the location
 											</td>
 											<td>
 												{% if creation_date != '//' %}
-													{{ creation_date }}
+												{{ creation_date }}
 												{% endif %}
 											</td>
 										</tr>
@@ -206,21 +239,21 @@ Add more information about the location
 											<td>
 												{{ instrument }}
 												{% if creation_date != '//' %}
-													<br>{{ creation_date }}
+												<br>{{ creation_date }}
 												{% endif %}
 											</td>
 										</tr>
 
 										{% if on_behalf_of %}
-											<tr>
-												<td>
-													Originating authority
-												</td>
-												<td>
-													On behalf of
-													 {{ on_behalf_of }}
-												</td>
-											</tr>
+										<tr>
+											<td>
+												Originating authority
+											</td>
+											<td>
+												On behalf of
+												{{ on_behalf_of }}
+											</td>
+										</tr>
 										{% endif %}
 										<tr>
 											<td>
@@ -228,10 +261,10 @@ Add more information about the location
 											</td>
 											<td>
 												{% if expiry_date != '//' %}
-													{{ expiry_date }}
+												{{ expiry_date }}
 												{% endif %}
 												{% if expiry_text %}
-													{{ expiry_text }}
+												{{ expiry_text }}
 												{% endif %}
 											</td>
 										</tr>
@@ -247,7 +280,7 @@ Add more information about the location
 											<td>
 												{{ more_info }}
 												{% if planning_link %}
-													<br><a href="{{ planning_link }}">{{ planning_link }}</a>
+												<br><a href="{{ planning_link }}">{{ planning_link }}</a>
 												{% endif %}
 											</td>
 										</tr>
@@ -262,8 +295,8 @@ Add more information about the location
 
 									</tbody>
 								</table>
-							  </div>
-					  </div>
+							</div>
+						</div>
 					</details>
 				</div>
 				<div class="form-group">
