@@ -16,7 +16,7 @@ Add more information about the location
 		<div class="column-full">
 			<h1 class="heading-large">Check your application</h1>
 			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-			<form action="/add_charge/v4-1/110" method="GET">
+			<form action="lon-add-confirmation" method="GET">
 				<fieldset>
 					<div class="form-group">
 						<table class="check-your-answers-2">
@@ -131,18 +131,7 @@ Add more information about the location
 								</tr>
 								<tr>
 									<td>
-										Temporary certificate expiry date
-									</td>
-									<td>
-										<span id="tempExpiryDate"></span>
-									</td>
-									<td class="change-answer">
-										
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Def certificate issue date
+										Definitive certificate issue date
 									</td>
 									<td>
 										<span id="defIssueDate"></span>
@@ -155,24 +144,41 @@ Add more information about the location
 								</tr>
 								<tr>
 									<td>
-										Def certificate expiry date
+										Source document
 									</td>
 									<td>
-										<span id="defIssueDate"></span>
+										<span id="sourceDocLink"></span>
 									</td>
 									<td class="change-answer">
-										
+										<a class="edit" href="#">
+											Change
+										</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Source document
+										Other documents
 									</td>
 									<td>
-										<span id="tempIssueDate"></span>
+										<span id="otherDocLink"></span>
 									</td>
 									<td class="change-answer">
-										
+										<a class="edit" href="#">
+											Change
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Address (documents filed)
+									</td>
+									<td>
+										<span id="addressDoc"></span>
+									</td>
+									<td class="change-answer">
+										<a class="edit" href="#">
+											Change
+										</a>
 									</td>
 								</tr>
 							</tbody>
