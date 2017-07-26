@@ -34,12 +34,27 @@ Who applied for this light obstruction notiece?
 					<div class="form-group">
 						<input type="button" class="button" value="Find address" id="postcodeFindButton">
 					</div>
+					<div id="addressList" class="form-group hiddenForm">
+						<label class="form-label" for="addressSelectBox">Please select an address</label>
+						<select class="form-control" id="addressSelectBox" name="addressSelectBox" onchange ="addressSelected()">
+							<option>1 Okehampton Place</option>
+							<option>2 Okehampton Place</option>
+							<option>3 Okehampton Place</option>
+							<option>4 Okehampton Place</option>
+							<option>5 Okehampton Place</option>
+							<option>6 Okehampton Place</option>
+							<option>7 Okehampton Place</option>
+							<option>8 Okehampton Place</option>
+							<option>9 Okehampton Place</option>
+							<option>10 Okehampton Place</option>
+						</select>
+					</div>
 				</fieldset>
 			</form>
-			<div id="manualAddressToggle">
-				<p><a href="#">Enter address manually</a></p>
+			<div>
+				<p><a id="manualToggleAddress" href="javascript:toggleVisibility();">Enter address manually</a></p>
 			</div>
-			<div id="addressForm">
+			<div id="addressForm" class="hiddenForm">
 				<form action="dominant-building" method="GET">
 					<fieldset>
 						<div class="form-group">
@@ -72,6 +87,23 @@ Who applied for this light obstruction notiece?
 		</div>
 	</div>
 </main>
+<script>
+
+	var postcodeFindButton = document.getElementById('postcodeFindButton');
+	postcodeFindButton.onclick = function() {
+		var toShow = document.getElementById('addressList');
+		toShow.classList.remove('hiddenForm');
+	}
+	var toggleVisibility = function() {
+		var toHide = document.getElementById('addressForm');
+		toHide.classList.remove('hiddenForm');
+	}
+
+	var addressSelected = function() {
+		
+	}
+
+</script>
 {% endblock %}
 
 
