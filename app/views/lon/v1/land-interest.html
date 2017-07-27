@@ -27,15 +27,15 @@ What interest do they have in this land?
 					<fieldset>
 						<legend class="visuallyhidden">What interest do they have in this land?</legend>
 						<div class="form-group">
-							<label class="block-label selection-button-radio" for="interest_1">
+							<label id="interest_1_label" class="block-label selection-button-radio" for="interest_1">
 								<input id="interest_1" name="interest" type="radio" value="Owner">
 								Owner
 							</label>
-							<label class="block-label selection-button-radio" for="interest_2">
+							<label id="interest_2_label" class="block-label selection-button-radio" for="interest_2">
 								<input id="interest_2" name="interest" type="radio" value="Tenant">
 								Tenant
 							</label>
-							<label class="block-label selection-button-radio" for="interest_3">
+							<label id="interest_3_label" class="block-label selection-button-radio" for="interest_3">
 								<input id="interest_3" name="interest" type="radio" value="Lender (has taken ownership of the property)">
 								Lender (has taken ownership of the property)
 							</label>
@@ -43,12 +43,26 @@ What interest do they have in this land?
 					</fieldset>
 				</div>
 				<div class="form-group">
-					<input class="button" type="submit" value="Continue">
+					<p><a id="landInterestContinue" class="button" href="dominant-building">Continue</a></p>
 				</div>
 			</form>
 		</div>
 	</div>
 </main>
+<script>
+document.getElementById('landInterestContinue').onclick = function() {
+	var interest_1_label = document.getElementById('interest_1_label');
+	var interest_2_label = document.getElementById('interest_2_label');
+	var interest_3_label = document.getElementById('interest_3_label');
+	if (interest_1_label.hasAttribute('selected')) {
+		var interest = document.getElementById('interest_1').value;
+	} else if (interest_2_label.hasAttribute('selected')) {
+		var interest = document.getElementByIs('interest_2').value;
+	} else if (interest_3_label.hasAttribute('selected')) {
+		var interest = document.getElementById('interest_3')
+	}
+}
+</script>
 {% endblock %}
 
 

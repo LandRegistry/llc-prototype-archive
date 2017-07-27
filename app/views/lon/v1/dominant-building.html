@@ -30,12 +30,27 @@ Address of the dominant building
 					<div class="form-group">
 						<input type="button" class="button" value="Find address" id="postcodeFindButton">
 					</div>
+					<div id="addressList" class="form-group hiddenForm">
+						<label class="form-label" for="addressSelectBox">Please select an address</label>
+						<select class="form-control" id="addressSelectBox" name="addressSelectBox" onchange ="addressSelected()">
+							<option value="1 Okehampton Place">1 Okehampton Place</option>
+							<option value="2 Okehampton Place">2 Okehampton Place</option>
+							<option value="3 Okehampton Place">3 Okehampton Place</option>
+							<option value="4 Okehampton Place">4 Okehampton Place</option>
+							<option value="5 Okehampton Place">5 Okehampton Place</option>
+							<option value="6 Okehampton Place">6 Okehampton Place</option>
+							<option value="7 Okehampton Place">7 Okehampton Place</option>
+							<option value="8 Okehampton Place">8 Okehampton Place</option>
+							<option value="9 Okehampton Place">9 Okehampton Place</option>
+							<option value="10 Okehampton Place">10 Okehampton Place</option>
+						</select>
+					</div>
 				</fieldset>
 			</form>
-			<div id="manualAddressToggle">
-				<p><a href="#">Enter address manually</a></p>
+			<div>
+				<p><a id="manualToggleAddress" href="javascript:toggleVisibility();">Enter address manually</a></p>
 			</div>
-			<div id="addressForm">
+			<div id="addressForm" class="hiddenForm">
 				<form action="dominant-building-extent" method="GET">
 					<fieldset>
 						<div class="form-group">
@@ -60,7 +75,7 @@ Address of the dominant building
 						</div>
 						<p>Country<br>United Kingdom</p>
 						<div class="form-group">
-							<input type="submit" class="button" value="Continue">
+							<p><a id="dominantContinue" class="button" href="dominant-building-extent">Continue</a></p>
 						</div>
 					</fieldset>
 				</form>
@@ -68,6 +83,41 @@ Address of the dominant building
 		</div>
 	</div>
 </main>
+<script>
+	var postcodeFindButton = document.getElementById('postcodeFindButton');
+	postcodeFindButton.onclick = function() {
+		var toShow = document.getElementById('addressList');
+		toShow.classList.remove('hiddenForm');
+	}
+	var toggleVisibility = function() {
+		var toHide = document.getElementById('addressForm');
+		toHide.classList.remove('hiddenForm');
+	}
+
+	var addressSelected = function() {
+		var toSelect = document.getElementById('addressSelectBox');
+		var selectedAddress = toSelect.value;
+		var toShow = document.getElementById('addressForm');
+		toShow.classList.remove('hiddenForm');
+		var streetName = document.getElementById('street_1');
+		var town = document.getElementById('town');
+		var postcode = document.getElementById('postcode');
+		streetName.value = selectedAddress;
+		town.value = 'Exeter';
+		postcode.value = 'EX4 1AY';
+	}
+
+	document.getElementById('dominantContinue').onclick = function() {
+		var street_1Dominant = document.getElementById('street_1').value;
+		var townDominant = document.getElementById('town').value;
+		var postcodeDominant = document.getElementById('postcode').value;
+		sessionStorage.setItem('street_1Dominant', street_1Dominant);
+		sessionStorage.setItem('townDominant', townDominant);
+		sessionStorage.setItem('postcodeDominant', postcodeDominant);
+	}
+
+
+</script>
 {% endblock %}
 
 
