@@ -1,12 +1,18 @@
 {% extends "layout.html" %} {% block page_title %} Confirm details {% endblock %} {% block content %}
 <main id="content">
   <!-- alpha banner -->
-  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} {% block breadcrumb %}{% import "includes/breadcrumb_examples.html"
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+  {% block breadcrumb %}{% import "includes/breadcrumb_examples.html"
   as breadcrumb %} {{ breadcrumb.backButton() }}{% endblock %}
-  <form action="update-user-confirm" method="POST">
+  <form action="add-user-confirm" method="POST">
     <div class="grid-row">
       <div class=" form-group column-full">
-          <h1 class="heading-large">Confirm details</h1>
+        <h1 class="heading-large">Confirm details</h1>
         <h1 class="heading-medium">Please confirm that the information below is correct</h1>
         <table>
           <tbody>
@@ -42,17 +48,18 @@
             <tr>
               <!-- row 6 -->
               <th scope="row">Status</th>
-              <td>Active</td>
+              <td>User invited</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
     <div class="form-group">
-      <a href="update-user">Change user details</a></p>
+      <a href="edit-user-role">Change user details</a></p>
     </div>
     <div class="form-group">
-      <input class="button" type="submit" value="Confirm and save changes">
+      <!--<a class="button" href="search" role="button">Confirm</a>-->
+      <input class="button" type="submit" value="Confirm and add user">
     </div>
   </form>
 </main>

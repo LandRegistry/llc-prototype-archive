@@ -1,13 +1,18 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-About the user
+Confirm details
 {% endblock %}
 
 {% block content %}
 <main id="content">
   	<!-- alpha banner -->
-  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
 	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
   {{ breadcrumb.backButton('', 'Account Management') }}
   {% endblock %}
@@ -34,27 +39,22 @@ About the user
           </tr>
           <tr> <!-- row 5 -->
             <th scope="row">Role</th>
-            {% if admin %}
-              <td>Land Registry Administrator</td>
-            {% else %}
-              <td>Originating Authority Administrator</td>
-            {% endif %}
+            <td>Land Registry Administrator</td>
           </tr>
           <tr> <!-- row 6 -->
             <th scope="row">Status</th>
-            <td>Active</td>
+            <td>Inactive</td>
           </tr>
         </tbody>
-      </table>
-      <br>
+      </table><br>
         
-        <p><a href="update-user">Change user details</a></p>
+        <p><a href="/admin/user/edit/details">Change user details</a></p>
         <br>
         
         
-        <p><a href="add-user-role">Add a new user</a></p>
+        <p><a href="/admin/user/add/role">Add a new user</a></p>
         
-        <p><a href="search">Search for another user</a></p>
+        <p><a href="/admin">Search for another user</a></p>
       </div>
     </div>
   </main>

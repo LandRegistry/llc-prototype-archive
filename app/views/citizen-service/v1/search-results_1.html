@@ -12,8 +12,11 @@
   </script>
   <!-- <main id="content" role="main"> -->
   <!-- beta banner -->
-  <div class="phase-banner map-phase-banner">
-    <p><strong class="phase-tag">beta</strong></p>
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
   </div>
   <div class="container">
     <div id="openStreetMap" class="map">
@@ -39,29 +42,29 @@
     <input class="button" type="submit" value="Search">
     <div class="results-block">
       <div class="pager">
-       <div class="pager-summary">Showing 2 charges</div>
-     </div>
-     <ol class="results-list">
-      <li>
-        <div class="search-result-header">
-          <h2 class="heading-small"><a href="free-charge-details">Charge 1</a></h2>
-          <span class="status bold-xsmall">Active</span>
-        </div>
-        <p>1 October 2008</p>
-      </li>
-      <li>
-        <div class="search-result-header">
-          <h2 class="heading-small"><a href="free-charge-details">Charge 2</a></h2>
-          <span class="status bold-xsmall">Cancelled</span>
-        </div>
-        <p>2 July 2000</p>
-      </li>
-    </ol>
+        <div class="pager-summary">Showing 2 charges</div>
+      </div>
+      <ol class="results-list">
+        <li>
+          <div class="search-result-header">
+            <h2 class="heading-small"><a href="free-charge-details">Charge 1</a></h2>
+            <span class="status bold-xsmall">Active</span>
+          </div>
+          <p>1 October 2008</p>
+        </li>
+        <li>
+          <div class="search-result-header">
+            <h2 class="heading-small"><a href="free-charge-details">Charge 2</a></h2>
+            <span class="status bold-xsmall">Cancelled</span>
+          </div>
+          <p>2 July 2000</p>
+        </li>
+      </ol>
+    </div>
   </div>
-</div>
-<div class="panel-control close panel-control-citizen">
-  <img src="{{ asset_path }}images/arrow_collapse.png">
-</div>
+  <div class="panel-control close panel-control-citizen">
+    <img src="{{ asset_path }}images/arrow_collapse.png">
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
@@ -101,7 +104,7 @@
     $("#searched_term").val(searchedTermRetrieved);
     $(".searchedTerm").text(searchedTermRetrieved);
 
-    $('.results-list li').click(function() {
+    $('.results-list li').click(function () {
       var creationDate = $(this).children('p').html()
       sessionStorage.setItem('creationDate', creationDate)
     })
@@ -112,11 +115,10 @@
     var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
     sessionStorage.setItem('addressSelected', ad);
   })*/
+
 </script>
 
-{% endblock %} 
-
-{% block body_end_additional %}
+{% endblock %} {% block body_end_additional %}
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
   var map
@@ -125,9 +127,9 @@
     'esri/map',
     'esri/dijit/LocateButton',
     'dojo/domReady!'
-    ], function (
-      Map, LocateButton
-      ) {
+  ], function (
+    Map, LocateButton
+  ) {
       map = new Map('openStreetMap', {
         center: [-3.539889, 50.718433],
         zoom: 18,
@@ -139,5 +141,5 @@
       }, 'LocateButton')
       geoLocate.startup()
     })
-  </script>
-  {% endblock %}
+</script>
+{% endblock %}

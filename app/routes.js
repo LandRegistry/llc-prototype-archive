@@ -9,7 +9,6 @@ var S = require('string')
 var app = express()
 var HashMap = require('hashmap')
 router.use(bodyParser.urlencoded({ extended: false }))
-const adminController = require('./admin-controller')
 const citizenController = require('./citizen-controller')
 const payments = require('./payments')
 const debug = require('debug')('demo:routes')
@@ -312,7 +311,6 @@ function inArray (query, outerArray) {
   return matches
 }
 
-
 // shape upload routes
 router.get('/add_charge/v2-4/05_postcode', function (req, res) {
   var shape = req.query.shape
@@ -358,7 +356,7 @@ router.get('add_charge/v4-1/03_charge_list_top', function (req, res) {
     })
 })
 
-/*router.all('add_charge/v:version/:screen', function (req, res) {
+/* router.all('add_charge/v:version/:screen', function (req, res) {
   var version = req.params.version
   var screen = req.params.screen
   var next = ''
@@ -373,18 +371,18 @@ router.get('add_charge/v4-1/03_charge_list_top', function (req, res) {
     {'title': '',
       charge_type: ''
     })
-})*/
+}) */
 
-router.get('/add_charge/v4-2/start', function(req, res) {
+router.get('/add_charge/v4-2/start', function (req, res) {
   res.render('/add_charge/v4-2/001_start', {'title': '',
-      charge_type: ''
-   })
+    charge_type: ''
+  })
 })
 
-router.get('/add_charge/v4-1/start', function(req, res) {
+router.get('/add_charge/v4-1/start', function (req, res) {
   res.render('/add_charge/v4-1/1_start', {'title': '',
-      charge_type: ''
-   })
+    charge_type: ''
+  })
 })
 
 router.all('/add_charge/v4-1/:screen', function (req, res) {
@@ -490,23 +488,25 @@ router.all('/add_charge/v4-1/:screen', function (req, res) {
 })
 
 // Account management home
-router.get('/admin/sign_in', adminController.signInPage)
-router.post('/admin/sign_in', adminController.signInAuth)
-router.get('/admin/search', adminController.searchPage)
-router.post('/admin/search', adminController.searchResults)
+const adminControllerV1 = require('./views/admin/v1/admin-controllerV1') // Create adminControllerV2 if you add another version
+
+router.get('/admin/v1/sign_in', adminControllerV1.signInPage)
+router.post('/admin/v1/sign_in', adminControllerV1.signInAuth)
+router.get('/admin/v1/search', adminControllerV1.searchPage)
+router.post('/admin/v1/search', adminControllerV1.searchResults)
 
 // Add user
-router.get('/admin/add-user-role', adminController.addedUserRolePage)
-router.get('/admin/add-user-details', adminController.addUserDetailsPage)
-router.post('/admin/add-user-details', adminController.confirmUserDetails)
-router.get('/admin/add-user-confirm', adminController.confirmUserDetailsPage)
-router.post('/admin/add-user-confirm', adminController.addedUser)
+router.get('/admin/v1/add-user-role', adminControllerV1.addedUserRolePage)
+router.get('/admin/v1/add-user-details', adminControllerV1.addUserDetailsPage)
+router.post('/admin/v1/add-user-details', adminControllerV1.confirmUserDetails)
+router.get('/admin/v1/add-user-confirm', adminControllerV1.confirmUserDetailsPage)
+router.post('/admin/v1/add-user-confirm', adminControllerV1.addedUser)
 
 // update user
-router.get('/admin/user', adminController.userPage)
-router.get('/admin/update-user', adminController.updatedUserPage)
-router.get('/admin/update-user-confirm', adminController.updateUserConfirmPage)
-router.post('/admin/update-user-confirm', adminController.updatedUser)
+router.get('/admin/v1/user', adminControllerV1.userPage)
+router.get('/admin/v1/update-user', adminControllerV1.updatedUserPage)
+router.get('/admin/v1/update-user-confirm', adminControllerV1.updateUserConfirmPage)
+router.post('/admin/v1/update-user-confirm', adminControllerV1.updatedUser)
 
 // UPRN search
 router.get('/maintain_llc/new_search_v1-1/map_new', function (req, res) {
