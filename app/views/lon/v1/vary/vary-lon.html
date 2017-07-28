@@ -306,7 +306,9 @@ Vary a LON
 		document.getElementById('extentDetail').textContent = 'All of the extent';
 	}
 
-	document.getElementById('interestInLand').textContent = interests;
+	if (interestUpdateds === 'true') {
+		document.getElementById('interestInLand').textContent = interests;
+	}
 	
 
 
