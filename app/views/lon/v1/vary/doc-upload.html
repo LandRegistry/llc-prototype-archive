@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Vary a LON
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Upload a new document</h1>
+			<form action="#" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">Upload a new document</legend>
+						<div class="form-group-welcome">
+							<label class="block-label selection-button-radio" for="doc_1">
+								<input id="doc_1" name="docUpload" type="radio" value="Definitive certificate">
+								Definitive certificate
+							</label>
+							<label class="block-label selection-button-radio" for="doc_2">
+								<input id="doc_2" name="docUpload" type="radio" value="Form B">
+								Form B
+							</label>
+							<label class="block-label selection-button-radio" for="doc_3">
+								<input id="doc_3" name="docUpload" type="radio" value="Court order">
+								Court order
+							</label>
+							<label class="block-label selection-button-radio" for="doc_4">
+								<input id="doc_4" name="docUpload" type="radio" value="I don't want to upload a new document">
+								I don't want to upload a new document
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<a class="button reason-button" href="vary-lon" role="button">Continue</a>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+

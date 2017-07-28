@@ -633,11 +633,9 @@
 }
 
 .check-your-answers-2 td {
-  /*border: none;*/
+  border: none;
   vertical-align: top;
-  &:first-child {
-    width: 33%;
-  }
+  width: 33%;
 }
 
 .section-end td {

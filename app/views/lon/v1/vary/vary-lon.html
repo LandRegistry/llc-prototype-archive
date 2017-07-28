@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Vary a LON
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<p><a href="map-results">Back to search results</a></p>
+			<h1 class="heading-large">Update charge details</h1>
+		</div>
+
+		<div class="column-full">
+			<!--<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="bold-small">HMLR-LLC-12871691</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="heading-medium">About this charge</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge type</td>
+						<td class="bold-small">Light obstruction notice (LON)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Law</td>
+						<td class="bold-small">Rights of Light Act 1959, section 2(4)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Registered on</td>
+						<td class="bold-small">3 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Updated on</td>
+						<td class="bold-small">4 May 2017</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table> -->
+
+			<h2 class="heading-medium">Person applying for this LON</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td class="bold-small">Jane Doe</td>
+						<td><a href="#">Change <span class="visuallyhidden">name</span></a></td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td class="bold-small" style="width: 33%">
+							2 Okehampton Place<br>
+							Exeter<br>
+							EX4 1AY
+						</td>
+						<td><a href="#">Change <span class="visuallyhidden">address of person applying</span></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="heading-medium">Dominant building (building losing access to light)</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Address</td>
+						<td class="bold-small">
+							4 Okehampton Place<br>
+							Exeter<br>
+							EX4 1AY
+						</td>
+						<td><a href="#">Change <span class="visuallyhidden">address of dominant building</span></a></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 class="heading-medium">Servient land development (development that will block the light)</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Height</td>
+						<td class="bold-small">Unlimited height</td>
+						<td><a href="#">Change <span class="visuallyhidden">height of servient land</span></a></td>
+					</tr>
+					<tr>
+						<td>Covers all or part of the extent</td>
+						<td class="bold-small">All of the extent</td>
+						<td><a href="#">Change <span class="visuallyhidden">extent information</span></a></td>
+					</tr>
+					<tr>
+						<td>Interest in land</td>
+						<td class="bold-small">Owner</td>
+						<td><a href="#">Change <span class="visuallyhidden">interest in land</span></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<!--<h2 class="heading-medium">Legal documents for this LON</h2>
+			<h3 class="heading-small">Temporary certificate</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Issue date</td>
+						<td class="bold-small">1 May 2016</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Expiry date</td>
+						<td class="bold-small">1 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Definitive certificate</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Issue date</td>
+						<td class="bold-small">1 June 2016</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Expiry date</td>
+						<td class="bold-small">1 June 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Colour plan</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Source document</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Other documents that support this LON</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table> -->
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Address (documents filed)</td>
+						<td class="bold-small">
+							24 Burton Road<br>
+							Exeter<br>
+							EX4 1AY
+						</td>
+						<td><a href="#">Change <span class="visuallyhidden">address where documents are filed</span></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<p><a href="confirm-changes" class="button">Submit changes</a></p>
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+
