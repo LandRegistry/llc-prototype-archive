@@ -27,11 +27,11 @@ What height is the servient structure?
 					<fieldset>
 						<legend class="visuallyhidden">What height is the servient structure?</legend>
 						<div class="form-group">
-							<label class="block-label selection-button-radio" for="structure_1">
+							<label id="structure_1_label" class="block-label selection-button-radio" for="structure_1">
 								<input id="structure_1" name="structure" type="radio" value="Unlimited height">
 								Unlimited height
 							</label>
-							<label class="block-label selection-button-radio" for="structure_2" data-target="heightPanel">
+							<label id="structure_2_label" class="block-label selection-button-radio" for="structure_2" data-target="heightPanel">
 								<input id="structure_2" name="structure" type="radio" value="I have measurements for the height">
 								I have measurements for the height
 							</label>
@@ -51,12 +51,30 @@ What height is the servient structure?
 					</fieldset>
 				</div>
 				<div class="form-group">
-					<p><a href="vary-lon" class="button">Continue</a></p>
+					<p><a id="heightContinue" href="vary-lon" class="button">Continue</a></p>
 				</div>
 			</form>
 		</div>
 	</div>
 </main>
+
+<script>
+document.getElementById('heightContinue').onclick = function() {
+	var structure_1 = document.getElementById('structure_1_label');
+	var structure_2 = document.getElementById('structure_2_label');
+	if (structure_1.classList.contains('selected')) {
+		sessionStorage.setItem('unlHeight', 'unlimited');
+		sessionStorage.setItem('measurement', '');
+		sessionStorage.setItem('height', '')
+	} else if (structure_2.classList.contains('selected')) {
+		var height= document.getElementById('height').value;
+		var measurement = document.getElementById('measurement').value;
+		sessionStorage.setItem('measurement', measurement);
+		sessionStorage.setItem('height', height);
+		sessionStorage.setItem('unlHeight', '');
+	}
+}
+</script>
 {% endblock %}
 
 

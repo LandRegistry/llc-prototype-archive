@@ -26,37 +26,37 @@ Vary a LON
 							</label>
 							<div id="defCert" class="panel panel-border-narrow js-hidden">
 								<div class="form-group">
-									<label class="form-label visually-hidden" for="tempUpload">Upload a file</label>
-									<input type="file" id="tempUpload">
+									<label class="form-label visually-hidden" for="defUpload">Upload a file</label>
+									<input type="file" id="defUpload">
 								</div>
 								<div class="formDate">
 									<h3 class="heading-small">Date of certificate</h3>
 									<div class="form-group form-group-day" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempStartDay">Day</label>
-										<input class="form-control" id="tempStartDay" name="tempStartDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+										<label class="form-label" for="defStartDay">Day</label>
+										<input class="form-control" id="defStartDay" name="defStartDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
 									</div>
 									<div class="form-group form-group-month" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempStartMonth">Month</label>
-										<input class="form-control" id="tempStartMonth" name="tempStartMonth" type="number" pattern="[0-9]*" min="0" max="12">
+										<label class="form-label" for="defStartMonth">Month</label>
+										<input class="form-control" id="defStartMonth" name="defStartMonth">
 									</div>
 									<div class="form-group form-group-year" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempStartYear">Year</label>
-										<input class="form-control" id="tempStartYear" name="tempStartYear" type="number" pattern="[0-9]*" min="0" max="2016">
+										<label class="form-label" for="defStartYear">Year</label>
+										<input class="form-control" id="defStartYear" name="defStartYear" type="number" pattern="[0-9]*" min="0" max="2016">
 									</div>
 								</div><br><br><br><br>
 								<div class="formDate" style="clear: all">
 									<h3 class="heading-small">Date of expiry</h3>
 									<div class="form-group form-group-day" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempEndDay">Day</label>
-										<input class="form-control" id="tempEndDay" name="tempEndDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+										<label class="form-label" for="defEndDay">Day</label>
+										<input class="form-control" id="defEndDay" name="defEndDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
 									</div>
 									<div class="form-group form-group-month" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempEndMonth">Month</label>
-										<input class="form-control" id="tempEndMonth" name="tempEndMonth" type="number" pattern="[0-9]*" min="0" max="12">
+										<label class="form-label" for="defEndMonth">Month</label>
+										<input class="form-control" id="defEndMonth" name="defEndMonth">
 									</div>
 									<div class="form-group form-group-year" style="float:left; width: 100px; margin-right: -30px;">
-										<label class="form-label" for="tempEndYear">Year</label>
-										<input class="form-control" id="tempEndYear" name="tempEndYear" type="number" pattern="[0-9]*" min="0" max="2016">
+										<label class="form-label" for="defEndYear">Year</label>
+										<input class="form-control" id="defEndYear" name="defEndYear" type="number" pattern="[0-9]*" min="0" max="2016">
 									</div>
 								</div>
 							</div>
@@ -101,6 +101,24 @@ Vary a LON
 		var doc_4 = document.getElementById('doc_4_label');
 		if (doc_1.classList.contains('selected')) {
 			sessionStorage.setItem('docUploaded', 'defCert');
+			var defStartDay = document.getElementById('defStartDay');
+			defStartDay = defStartDay.value;
+			var defStartMonth = document.getElementById('defStartMonth');
+			defStartMonth = defStartMonth.value;
+			var defStartYear = document.getElementById('defStartYear');
+			defStartYear = defStartYear.value;
+			var defEndDay = document.getElementById('defEndDay');
+			defEndDay = defEndDay.value;
+			var defEndMonth = document.getElementById('defEndMonth');
+			defEndMonth = defEndMonth.value;
+			var defEndYear = document.getElementById('defEndYear');
+			defEndYear = defEndYear.value;
+			sessionStorage.setItem('defStartDay', defStartDay);
+			sessionStorage.setItem('defStartMonth', defStartMonth);
+			sessionStorage.setItem('defStartYear', defStartYear);
+			sessionStorage.setItem('defEndDay', defEndDay);
+			sessionStorage.setItem('defEndMonth', defEndMonth);
+			sessionStorage.setItem('defEndYear', defEndYear);
 		} else if (doc_2.classList.contains('selected')) {
 			var docUploaded = 'formB';
 			sessionStorage.setItem('docUploaded', docUploaded);
