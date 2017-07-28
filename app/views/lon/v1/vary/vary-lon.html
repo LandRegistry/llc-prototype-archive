@@ -11,10 +11,15 @@ Vary a LON
 		<p><strong class="phase-tag">BETA</strong></p>
 	</div>
 	<!-- main content starts -->
-
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<p><a href="map-results">Back to search results</a></p>
+			<!--<p><a href="map-results">Back to search results</a></p> -->
 			<h1 class="heading-large">Update charge details</h1>
 		</div>
 
@@ -60,7 +65,7 @@ Vary a LON
 					<tr>
 						<td>Name</td>
 						<td class="bold-small">Jane Doe</td>
-						<td><a href="#">Change <span class="visuallyhidden">name</span></a></td>
+						<td><a href="vary-applicant">Change <span class="visuallyhidden">name</span></a></td>
 					</tr>
 					<tr>
 						<td>Address</td>
@@ -69,7 +74,7 @@ Vary a LON
 							Exeter<br>
 							EX4 1AY
 						</td>
-						<td><a href="#">Change <span class="visuallyhidden">address of person applying</span></a></td>
+						<td><a href="vary-applicant">Change <span class="visuallyhidden">address of person applying</span></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -83,7 +88,7 @@ Vary a LON
 							Exeter<br>
 							EX4 1AY
 						</td>
-						<td><a href="#">Change <span class="visuallyhidden">address of dominant building</span></a></td>
+						<td><a href="vary-dominant">Change <span class="visuallyhidden">address of dominant building</span></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -94,20 +99,45 @@ Vary a LON
 					<tr>
 						<td>Height</td>
 						<td class="bold-small">Unlimited height</td>
-						<td><a href="#">Change <span class="visuallyhidden">height of servient land</span></a></td>
+						<td><a href="vary-servient-structure">Change <span class="visuallyhidden">height of servient land</span></a></td>
 					</tr>
 					<tr>
 						<td>Covers all or part of the extent</td>
 						<td class="bold-small">All of the extent</td>
-						<td><a href="#">Change <span class="visuallyhidden">extent information</span></a></td>
+						<td><a href="vary-servient-structure-position">Change <span class="visuallyhidden">extent information</span></a></td>
 					</tr>
 					<tr>
 						<td>Interest in land</td>
 						<td class="bold-small">Owner</td>
-						<td><a href="#">Change <span class="visuallyhidden">interest in land</span></a></td>
+						<td><a href="vary-land-interest">Change <span class="visuallyhidden">interest in land</span></a></td>
 					</tr>
 				</tbody>
 			</table>
+
+			<div id="docList" class="hiddenForm">
+				<h2 class="heading-medium">Legal documents for this LON</h2>
+				<table class="check-your-answers-2">
+					<tbody>
+						<tr>
+							<td id="legalDoc" class="bold-small">Legal doc title</td>
+							<td></td>
+							<td><a href="#">Change</a></td>
+						</tr>
+						<div id="defCertFields" class="hiddenForm">
+							<tr>
+								<td>Issue date</td>
+								<td class="bold-small">1 May 2016</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Expiry date</td>
+								<td class="bold-small">1 May 2016</td>
+								<td></td>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+			</div>
 			<!--<h2 class="heading-medium">Legal documents for this LON</h2>
 			<h3 class="heading-small">Temporary certificate</h3>
 			<table class="check-your-answers-2">
@@ -189,7 +219,7 @@ Vary a LON
 					</tr>
 				</tbody>
 			</table> -->
-			<table class="check-your-answers-2">
+			<!--<table class="check-your-answers-2">
 				<tbody>
 					<tr>
 						<td>Address (documents filed)</td>
@@ -201,11 +231,30 @@ Vary a LON
 						<td><a href="#">Change <span class="visuallyhidden">address where documents are filed</span></a></td>
 					</tr>
 				</tbody>
-			</table>
+			</table> -->
+			<br>
 			<p><a href="confirm-changes" class="button">Submit changes</a></p>
+			<p><a href="lon">Cancel and go back to charge details</a></p>
 		</div>
 	</div>
 </main>
+
+<script>
+	var docName = sessionStorage.getItem('docUploaded');
+	console.log(docName);
+	if (docName === 'defCert') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('defCertFields').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Definitive certificate';
+	} else if (docName === 'formB') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Form B';
+	} else if (docName === 'courtOrder') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Court order';
+	}
+
+</script>
 {% endblock %}
 
 

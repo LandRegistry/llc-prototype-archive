@@ -20,30 +20,99 @@ Vary a LON
 					<fieldset>
 						<legend class="visuallyhidden">Upload a new document</legend>
 						<div class="form-group-welcome">
-							<label class="block-label selection-button-radio" for="doc_1">
+							<label id="doc_1_label" class="block-label selection-button-radio" for="doc_1" data-target="defCert">
 								<input id="doc_1" name="docUpload" type="radio" value="Definitive certificate">
 								Definitive certificate
 							</label>
-							<label class="block-label selection-button-radio" for="doc_2">
+							<div id="defCert" class="panel panel-border-narrow js-hidden">
+								<div class="form-group">
+									<label class="form-label visually-hidden" for="tempUpload">Upload a file</label>
+									<input type="file" id="tempUpload">
+								</div>
+								<div class="formDate">
+									<h3 class="heading-small">Date of certificate</h3>
+									<div class="form-group form-group-day" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempStartDay">Day</label>
+										<input class="form-control" id="tempStartDay" name="tempStartDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+									</div>
+									<div class="form-group form-group-month" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempStartMonth">Month</label>
+										<input class="form-control" id="tempStartMonth" name="tempStartMonth" type="number" pattern="[0-9]*" min="0" max="12">
+									</div>
+									<div class="form-group form-group-year" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempStartYear">Year</label>
+										<input class="form-control" id="tempStartYear" name="tempStartYear" type="number" pattern="[0-9]*" min="0" max="2016">
+									</div>
+								</div><br><br><br><br>
+								<div class="formDate" style="clear: all">
+									<h3 class="heading-small">Date of expiry</h3>
+									<div class="form-group form-group-day" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempEndDay">Day</label>
+										<input class="form-control" id="tempEndDay" name="tempEndDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+									</div>
+									<div class="form-group form-group-month" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempEndMonth">Month</label>
+										<input class="form-control" id="tempEndMonth" name="tempEndMonth" type="number" pattern="[0-9]*" min="0" max="12">
+									</div>
+									<div class="form-group form-group-year" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="tempEndYear">Year</label>
+										<input class="form-control" id="tempEndYear" name="tempEndYear" type="number" pattern="[0-9]*" min="0" max="2016">
+									</div>
+								</div>
+							</div>
+							<label id="doc_2_label" class="block-label selection-button-radio" for="doc_2" data-target="formB">
 								<input id="doc_2" name="docUpload" type="radio" value="Form B">
 								Form B
 							</label>
-							<label class="block-label selection-button-radio" for="doc_3">
+							<div id="formB" class="panel panel-border-narrow js-hidden">
+								<div class="form-group">
+									<label class="form-label visually-hidden" for="tempUpload">Upload a file</label>
+									<input type="file" id="tempUpload">
+								</div>
+							</div>
+							<label id="doc_3_label" class="block-label selection-button-radio" for="doc_3" data-target="courtOrder">
 								<input id="doc_3" name="docUpload" type="radio" value="Court order">
 								Court order
 							</label>
-							<label class="block-label selection-button-radio" for="doc_4">
+							<div id="courtOrder" class="panel panel-border-narrow js-hidden">
+								<div class="form-group">
+									<label class="form-label visually-hidden" for="tempUpload">Upload a file</label>
+									<input type="file" id="tempUpload">
+								</div>
+							</div>
+							<label id="doc_4_label" class="block-label selection-button-radio" for="doc_4">
 								<input id="doc_4" name="docUpload" type="radio" value="I don't want to upload a new document">
 								I don't want to upload a new document
 							</label>
 						</div>
 					</fieldset>
 				</div>
-				<a class="button reason-button" href="vary-lon" role="button">Continue</a>
+				<a id="docContinueButton" class="button" href="vary-lon" role="button">Continue</a>
 			</form>
 		</div>
 	</div>
 </main>
+
+<script>
+	document.getElementById('docContinueButton').onclick = function() {
+		var doc_1 = document.getElementById('doc_1_label');
+		var doc_2 = document.getElementById('doc_2_label');
+		var doc_3 = document.getElementById('doc_3_label');
+		var doc_4 = document.getElementById('doc_4_label');
+		if (doc_1.classList.contains('selected')) {
+			sessionStorage.setItem('docUploaded', 'defCert');
+		} else if (doc_2.classList.contains('selected')) {
+			var docUploaded = 'formB';
+			sessionStorage.setItem('docUploaded', docUploaded);
+		} else if (doc_3.classList.contains('selected')) {
+			var docUploaded = 'courtOrder';
+			sessionStorage.setItem('docUploaded', docUploaded);
+		} else if (doc_4.classList.contains('selected')) {
+			var docUploaded = 'noDoc';
+			sessionStorage.setItem('docUploaded', docUploaded);
+		} 
+	}
+</script>
 {% endblock %}
 
 
