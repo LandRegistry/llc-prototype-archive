@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Where do you want to add the charge?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Who are you adding the charge for?</h1>
+			<form action="26_org_results" method="GET" style="padding-bottom: 0">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">Who are you adding the charge for?</legend>
+						<div class="form-group">
+							<label class="form-label" for="org_search">
+								Enter an organisation name to search
+							</label>
+
+								<div class="form-group spacing-bottom-half">
+									<input class="form-control search-field" id="org_search" name="org_search" type="text" value="" autofocus="autofocus">
+									<input class="button" type="submit" value="Search">
+								</div>
+						</div>
+					</fieldset>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
+

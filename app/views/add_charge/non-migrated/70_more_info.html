@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Does the charge affect all or part of the extent?</h1>
+			<form action="/add_charge/v4-1/70" method="POST">
+				<legend class="visually-hidden">Does the charge affect all or part of the extent?</legend>
+					<div class="form-group">
+						<label class="block-label selection-button-radio" for="all">
+							<input id="all" name="extent" type="radio" value="All of the extent">
+							All of the extent
+						</label>
+						<label class="block-label selection-button-radio no" for="part" data-target="part-extent">
+							<input id="part" name="extent" type="radio" value="Part of the extent">
+							Part of the extent
+						</label>
+					</div>
+				<div class="js-hidden" id="part-extent">
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">Which part?</legend>
+							<label class="form-label" for="part_extent">
+								Which part of the extent is affected?
+							</label>
+							<textarea class="form-control form-control-3-4" name="part_extent" id="part_extent" rows="5"></textarea>
+						</fieldset>
+					</div>
+				</div>
+				 <div class="form-group">
+					<input class="button" type="submit" value="Continue">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
