@@ -1,9 +1,14 @@
-{% extends "layout_citizen.html" %} {% block page_title %} {% if serviceName %} {{ serviceName }} {% endif %} {% endblock %} {% block
-content %}
+{% extends "layout_citizen.html" %} {% block page_title %} {% if serviceName %} {{ serviceName }} {% endif %} {% endblock
+%} {% block content %}
 
 <main id="content" role="main">
 
-  {% include "includes/phase_banner_beta.html" %}
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -12,8 +17,8 @@ content %}
         Search request: see a list of local land charges on a property
       </h1>
 
-      <p>Get an official local land charges search result for any property in England, even if you don’t own it. Search
-        by address to find local land charges on or near a property.</p>
+      <p>Get an official local land charges search result for any property in England, even if you don’t own it. Search by address
+        to find local land charges on or near a property.</p>
 
       <div class="form-group">
         <div class="panel panel-border-narrow">

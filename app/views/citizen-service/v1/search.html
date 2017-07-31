@@ -12,8 +12,11 @@
   </script>
   <!-- <main id="content" role="main"> -->
   <!-- beta banner -->
-  <div class="phase-banner map-phase-banner">
-    <p><strong class="phase-tag">beta</strong></p>
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
   </div>
   <div class="container">
     <div id="openStreetMap" class="map">
@@ -91,7 +94,7 @@
       }
     });
 
-    $('.button').click(function() {
+    $('.button').click(function () {
       var searchTerm = $('#location').val();
       sessionStorage.setItem('searchTerm', searchTerm);
     })
@@ -108,9 +111,9 @@
     'esri/map',
     'esri/dijit/LocateButton',
     'dojo/domReady!'
-    ], function (
-      Map, LocateButton
-      ) {
+  ], function (
+    Map, LocateButton
+  ) {
       map = new Map('openStreetMap', {
         center: [-10.500, 53.5341],
         zoom: 6,
@@ -122,6 +125,5 @@
       }, 'LocateButton')
       geoLocate.startup()
     })
-
-  </script>
-  {% endblock %}
+</script>
+{% endblock %}

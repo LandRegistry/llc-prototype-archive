@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block page_title %} Thank you for your feedback {% endblock %} {% block content %}
+<main id="content" role="main">
+	{% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %}
+	<!-- main content starts -->
+	<form action="confirmation" method="POST">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="govuk-box-highlight">
+					<h1 class="bold-large">Thank you for your feedback</h1>
+				</div>
+				<a href="index">Back to home page</a>
+			</div>
+		</div>
+		</div>
+	</form>
+</main>
+{% endblock %}
