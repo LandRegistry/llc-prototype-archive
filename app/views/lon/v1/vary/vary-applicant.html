@@ -25,11 +25,11 @@ Who applied for this light obstruction notiece?
 				<fieldset>
 					<div class="form-group">
 						<label class="form-label" for="name">Name</label>
-						<input class="form-control" id="name" type="text" name="name">
+						<input class="form-control" id="name" type="text" name="name" value="Jane Doe">
 					</div>
 					<div class="form-group">
 						<label class="form-label" for="postcodeSearch">Postcode</label>
-						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch">
+						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch" value="EX4 1AY">
 					</div>
 					<div class="form-group">
 						<input type="button" class="button" value="Find address" id="postcodeFindButton">
@@ -79,7 +79,7 @@ Who applied for this light obstruction notiece?
 						</div>
 						<p>Country<br>United Kingdom</p>
 						<div class="form-group">
-							<p><a id="whoAppliedContinue" class="button" href="dominant-building">Continue</a></p>
+							<p><a id="whoAppliedContinue" class="button" href="vary-lon">Continue</a></p>
 						</div>
 					</fieldset>
 				</form>
@@ -121,6 +121,7 @@ Who applied for this light obstruction notiece?
 		sessionStorage.setItem('street_1Applied', street_1Applied);
 		sessionStorage.setItem('townApplied', townApplied);
 		sessionStorage.setItem('postcodeApplied', postcodeApplied);
+		sessionStorage.setItem('applicantUpdated', 'true');
 	}
 
 

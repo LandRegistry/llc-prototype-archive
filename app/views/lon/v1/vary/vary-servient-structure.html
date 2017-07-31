@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What height is the servient structure?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What height is the servient structure?</h1>
+			<p class="form-hint">This is the structure that is being built.</p>
+			<form action="servient-structure-position" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">What height is the servient structure?</legend>
+						<div class="form-group">
+							<label id="structure_1_label" class="block-label selection-button-radio" for="structure_1">
+								<input id="structure_1" name="structure" type="radio" value="Unlimited height">
+								Unlimited height
+							</label>
+							<label id="structure_2_label" class="block-label selection-button-radio" for="structure_2" data-target="heightPanel">
+								<input id="structure_2" name="structure" type="radio" value="I have measurements for the height">
+								I have measurements for the height
+							</label>
+							<div id="heightPanel" class="panel panel-border-narrow js-hidden">
+								<div>
+									<div class="form-group" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="height">Height</label>
+										<input class="form-control" id="height" name="height" type="number" pattern="[0-9]*" min="0">
+									</div>
+									<div class="form-group" style="float:left; width: 100px; margin-right: -30px;">
+										<label class="form-label" for="measurement">Measured in</label>
+										<input class="form-control" id="measurement" name="measurement" type="number" pattern="[0-9]*" min="0" max="12">
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<p><a id="heightContinue" href="vary-lon" class="button">Continue</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+<script>
+document.getElementById('heightContinue').onclick = function() {
+	var structure_1 = document.getElementById('structure_1_label');
+	var structure_2 = document.getElementById('structure_2_label');
+	if (structure_1.classList.contains('selected')) {
+		sessionStorage.setItem('unlHeight', 'unlimited');
+		sessionStorage.setItem('measurement', '');
+		sessionStorage.setItem('height', '')
+	} else if (structure_2.classList.contains('selected')) {
+		var height= document.getElementById('height').value;
+		var measurement = document.getElementById('measurement').value;
+		sessionStorage.setItem('measurement', measurement);
+		sessionStorage.setItem('height', height);
+		sessionStorage.setItem('unlHeight', '');
+	}
+}
+</script>
+{% endblock %}
+
+

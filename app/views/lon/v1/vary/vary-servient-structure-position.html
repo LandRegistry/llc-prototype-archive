@@ -26,11 +26,11 @@ Does the servient structure cover all of the extent?
 					<fieldset>
 						<legend class="visuallyhidden">Does the servient structure cover all of the extent?</legend>
 						<div class="form-group">
-							<label class="block-label selection-button-radio" for="position_1">
+							<label id="position_1_label" class="block-label selection-button-radio" for="position_1">
 								<input id="position_1" name="position" type="radio" value="All of the extent">
 								All of the extent
 							</label>
-							<label class="block-label selection-button-radio" for="position_2" data-target="detailPanel">
+							<label id="position_2_label" class="block-label selection-button-radio" for="position_2" data-target="detailPanel">
 								<input id="position_2" name="position" type="radio" value="Part of the extent">
 								Part of the extent
 							</label>
@@ -45,12 +45,28 @@ Does the servient structure cover all of the extent?
 					</fieldset>
 				</div>
 				<div class="form-group">
-					<input class="button" type="submit" value="Continue">
+					<p><a id="structurePositionContinue" href="vary-lon" class="button">Continue</a></p>
 				</div>
 			</form>
 		</div>
 	</div>
 </main>
+
+<script>
+document.getElementById('structurePositionContinue').onclick = function() {
+	var position_1 = document.getElementById('position_1_label');
+	var position_2 = document.getElementById('position_2_label');
+	if (position_1.classList.contains('selected')) {
+		sessionStorage.setItem('position', 'All of the extent');
+		sessionStorage.setItem('partExtentDetail', '')
+	} else if (position_2.classList.contains('selected')) {
+		var partExtentDetail = document.getElementById('partExtentDetail').value;
+		sessionStorage.setItem('partExtentDetail', partExtentDetail);
+		sessionStorage.setItem('position', '');
+	}
+}
+</script>
+
 {% endblock %}
 
 

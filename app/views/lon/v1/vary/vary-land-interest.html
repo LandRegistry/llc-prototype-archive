@@ -43,7 +43,7 @@ What interest do they have in this land?
 					</fieldset>
 				</div>
 				<div class="form-group">
-					<p><a id="landInterestContinue" class="button" href="dominant-building">Continue</a></p>
+					<p><a id="landInterestContinue" class="button" href="vary-lon">Continue</a></p>
 				</div>
 			</form>
 		</div>
@@ -54,13 +54,15 @@ document.getElementById('landInterestContinue').onclick = function() {
 	var interest_1_label = document.getElementById('interest_1_label');
 	var interest_2_label = document.getElementById('interest_2_label');
 	var interest_3_label = document.getElementById('interest_3_label');
-	if (interest_1_label.hasAttribute('selected')) {
+	if (interest_1_label.classList.contains('selected')) {
 		var interest = document.getElementById('interest_1').value;
-	} else if (interest_2_label.hasAttribute('selected')) {
-		var interest = document.getElementByIs('interest_2').value;
-	} else if (interest_3_label.hasAttribute('selected')) {
-		var interest = document.getElementById('interest_3')
+	} else if (interest_2_label.classList.contains('selected')) {
+		var interest = document.getElementById('interest_2').value;
+	} else if (interest_3_label.classList.contains('selected')) {
+		var interest = document.getElementById('interest_3').value;
 	}
+	sessionStorage.setItem('interest', interest);
+	sessionStorage.setItem('interestUpdated', 'true');
 }
 </script>
 {% endblock %}

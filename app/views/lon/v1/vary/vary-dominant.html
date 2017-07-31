@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Who applied for this light obstruction notiece?
+Address of the dominant building
 {% endblock %}
 
 {% block content %}
@@ -20,16 +20,12 @@ Who applied for this light obstruction notiece?
 	</div>
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-large">Who applied for this light obstruction notice?</h1>
+			<h1 class="heading-large">Address of the dominant building</h1>
 			<form action"#" method="GET">
 				<fieldset>
 					<div class="form-group">
-						<label class="form-label" for="name">Name</label>
-						<input class="form-control" id="name" type="text" name="name">
-					</div>
-					<div class="form-group">
 						<label class="form-label" for="postcodeSearch">Postcode</label>
-						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch">
+						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch" value="EX4 1AY">
 					</div>
 					<div class="form-group">
 						<input type="button" class="button" value="Find address" id="postcodeFindButton">
@@ -55,7 +51,7 @@ Who applied for this light obstruction notiece?
 				<p><a id="manualToggleAddress" href="javascript:toggleVisibility();">Enter address manually</a></p>
 			</div>
 			<div id="addressForm" class="hiddenForm">
-				<form action="dominant-building" method="GET">
+				<form action="dominant-building-extent" method="GET">
 					<fieldset>
 						<div class="form-group">
 							<label class="form-label" for="street_1">Street</label>
@@ -79,7 +75,7 @@ Who applied for this light obstruction notiece?
 						</div>
 						<p>Country<br>United Kingdom</p>
 						<div class="form-group">
-							<p><a id="whoAppliedContinue" class="button" href="dominant-building">Continue</a></p>
+							<p><a id="dominantContinue" class="button" href="draw-extent">Continue</a></p>
 						</div>
 					</fieldset>
 				</form>
@@ -89,7 +85,6 @@ Who applied for this light obstruction notiece?
 </main>
 <script>
 	var postcodeFindButton = document.getElementById('postcodeFindButton');
-
 	postcodeFindButton.onclick = function() {
 		var toShow = document.getElementById('addressList');
 		toShow.classList.remove('hiddenForm');
@@ -112,15 +107,14 @@ Who applied for this light obstruction notiece?
 		postcode.value = 'EX4 1AY';
 	}
 
-	document.getElementById('whoAppliedContinue').onclick = function() {
-		var nameApplied = document.getElementById('name').value;
-		var street_1Applied = document.getElementById('street_1').value;
-		var townApplied = document.getElementById('town').value;
-		var postcodeApplied = document.getElementById('postcode').value;
-		sessionStorage.setItem('nameApplied', nameApplied);
-		sessionStorage.setItem('street_1Applied', street_1Applied);
-		sessionStorage.setItem('townApplied', townApplied);
-		sessionStorage.setItem('postcodeApplied', postcodeApplied);
+	document.getElementById('dominantContinue').onclick = function() {
+		var street_1Dominant = document.getElementById('street_1').value;
+		var townDominant = document.getElementById('town').value;
+		var postcodeDominant = document.getElementById('postcode').value;
+		sessionStorage.setItem('street_1Dominant', street_1Dominant);
+		sessionStorage.setItem('townDominant', townDominant);
+		sessionStorage.setItem('postcodeDominant', postcodeDominant);
+		sessionStorage.setItem('dominantUpdated', 'true');
 	}
 
 
