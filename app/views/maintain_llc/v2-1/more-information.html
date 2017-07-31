@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Add more information about the location</h1>
+			<form action="confirm-changes" method="GET">
+				<fieldset class="inline">
+					<legend class="visuallyhidden">Is there any extra description about where the charge is or what it affects? </legend>
+
+					<div class="form-group">
+						<label class="form-label" for="more_information">
+							Is there anything else you want to tell us about the charge location?
+						</label>
+						<span class="form-hint">For example, the charge applies to the north wall of the football field.</span>
+						<textarea class="form-control" id="more-information" name="more_information" cols="50" rows="10" value=""></textarea>
+					</div>
+				</fieldset>
+				<a class="button more-information-button" href="confirm-changes" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
