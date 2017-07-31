@@ -1,6 +1,11 @@
 {% extends "layout.html" %} {% block page_title %} Update user details {% endblock %} {% block content%}
 <main id="content">
-  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
   {% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %} 
   {{ breadcrumb.backButton() }}{% endblock %}
   <div class="grid-row">

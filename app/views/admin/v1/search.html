@@ -1,22 +1,21 @@
-{% extends "layout.html" %} {% block page_title %} Search results {% endblock %} {% block content%}
+{% extends "layout.html" %} {% block page_title %} Search {% endblock %} {% block content%}
 <main id="content">
-  {% block phase_banner %}{% include "includes/phase_banner_beta.html" %}{% endblock %} 
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
 	{% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %}
   {{ breadcrumb.backButton() }}
   {% endblock %}
-
-  {% if message %}
-    <div class="panel panel-border-wide alert-success">
-      <p>{{message}}</p>
-    </div>
-	{% endif %}
 
 <form action="search" method="POST">
   <div class="grid-row">
     <div class="column-full">
       <div>
-        <h1 class="heading-large">Search results</h1>
-        <h2 class="heading-medium">You searched for HM Land Registry</h2>
+        <h1 class="heading-large">Account Management</h1>
+        <h2 class="heading-medium">Search by any combination of first name, surname or local authority name</h2>
         <br>
         <form class="form-inline" action="/admin/search-results" method="post" id="searchform">
           <div class="form-group">
@@ -38,7 +37,7 @@
     Local authority, e.g. Plymouth City Council
   </span>
 
-              <input class="form-control" id="search_user_org_id" name="search_user_org_id" type="search" value="HM Land Registry">
+              <input class="form-control" id="search_user_org_id" name="search_user_org_id" type="search">
             </fieldset>
           </div>
         </form>
@@ -48,29 +47,11 @@
         </div>
       </div>
       <br>
-      <div class="results-block">
-        <div class="inner-block">
-          <div class="result-count">
 
-            2 results found
+      <p>Or</p>
 
-            <ol class="results-list">
-              <li>
-                <h3 class="heading-medium">
-                  <a href="user">Jane Doe</a>
-                </h3>
-                <p>HM Land Registry</p>
-              </li>
-              <li>
-                <h3 class="heading-medium">
-                  <a href="user2">Joe Blogg</a>
-                </h3>
-                <p>HM Land Registry</p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
+      <p><a id="add-new-user" href="add-user-role">Add a new user</a></p>
+
     </div>
   </div>
 </form>

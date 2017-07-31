@@ -12,8 +12,11 @@
   </script>
   <!-- <main id="content" role="main"> -->
   <!-- beta banner -->
-  <div class="phase-banner map-phase-banner">
-    <p><strong class="phase-tag">beta</strong></p>
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
   </div>
   <div class="container">
     <div id="map-nav" class="maintain-map form-group">
@@ -83,6 +86,7 @@
     console.log(searchedTermRetrieved);
     $("#searched_term").val(searchedTermRetrieved);
   });
+
 </script>
 
 {% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
@@ -97,5 +101,6 @@
   var geometry =
     "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
   // MAP_HELPERS.zoom_map(geometry);
+
 </script>
 {% endblock %}

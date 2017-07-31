@@ -12,8 +12,11 @@
   </script>
   <!-- <main id="content" role="main"> -->
   <!-- beta banner -->
-  <div class="phase-banner map-phase-banner">
-    <p><strong class="phase-tag">beta</strong></p>
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
   </div>
   <div class="container">
     <div id="openStreetMap" class="map">
@@ -32,26 +35,26 @@
       </div>
     </div>
   </div>
-<div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <h1 class="heading-small">Search results for</h1>
-        <input class="form-control" id="searched_term" type="text" name="searched_term">
-        <input class="button" type="submit" value="Search">
-        <div class="results-block">
-        <h2 class="heading-small">Please select an address from the list below</h2>
-          <ol class="results-list address-list">
-            <li class="bold-small"><a href="search-results_1">2 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">4 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">6 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">8 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">10 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">12 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">14 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">16 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">18 Okehampton Place, Exeter, EX4 1AY</a></li>
-            <li class="bold-small"><a href="search-results_1">20 Okehampton Place, Exeter, EX4 1AY</a></li>
-          </ol>
-        </div>
-      </div>
+  <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+    <h1 class="heading-small">Search results for</h1>
+    <input class="form-control" id="searched_term" type="text" name="searched_term">
+    <input class="button" type="submit" value="Search">
+    <div class="results-block">
+      <h2 class="heading-small">Please select an address from the list below</h2>
+      <ol class="results-list address-list">
+        <li class="bold-small"><a href="search-results_1">2 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">4 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">6 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">8 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">10 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">12 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">14 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">16 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">18 Okehampton Place, Exeter, EX4 1AY</a></li>
+        <li class="bold-small"><a href="search-results_1">20 Okehampton Place, Exeter, EX4 1AY</a></li>
+      </ol>
+    </div>
+  </div>
   <div class="panel-control close">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
@@ -90,37 +93,37 @@
     console.log(searchTermRetrieved);
     $("#searched_term").val(searchTermRetrieved);
 
-    $('.address-list li').click(function() {
+    $('.address-list li').click(function () {
       var addressSelected = $(this).text();
       sessionStorage.setItem('addressSelected', addressSelected);
     })
   });
+
 </script>
 
-{% endblock %} 
-
-{% block body_end_additional %}
+{% endblock %} {% block body_end_additional %}
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-var map
+  var map
 
-require([
-  'esri/map',
-  'esri/dijit/LocateButton',
-  'dojo/domReady!'
-], function (
-      Map, LocateButton
-    ) {
-  map = new Map('openStreetMap', {
-    center: [-3.539889, 50.718433],
-    zoom: 18,
-    basemap: 'streets'
-  })
+  require([
+    'esri/map',
+    'esri/dijit/LocateButton',
+    'dojo/domReady!'
+  ], function (
+    Map, LocateButton
+  ) {
+      map = new Map('openStreetMap', {
+        center: [-3.539889, 50.718433],
+        zoom: 18,
+        basemap: 'streets'
+      })
 
-  geoLocate = new LocateButton({
-    map: map
-  }, 'LocateButton')
-  geoLocate.startup()
-})
+      geoLocate = new LocateButton({
+        map: map
+      }, 'LocateButton')
+      geoLocate.startup()
+    })
+
 </script>
 {% endblock %}
