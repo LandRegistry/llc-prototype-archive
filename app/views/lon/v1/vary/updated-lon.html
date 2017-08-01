@@ -192,11 +192,11 @@ Vary a LON
 				<tbody>
 					<tr>
 						<td id="legalDoc"></td>
-						<td></td>
+						<td><a href="#" id="linkToDoc"></a></td>
 						<td></td>
 					</tr>
 					<tr>
-						<td></td>
+						<td></a></td>
 						<td></td>
 						<td></td>
 					</tr>
@@ -306,8 +306,10 @@ Vary a LON
 		document.getElementById('defExpiryDate').textContent = defEndDays + ' ' + defEndMonths + ' ' + defEndYears;
 	} else if (docName === 'formB') {
 		document.getElementById('legalDoc').textContent = 'Form B';
+		document.getElementById('linkToDoc').textContent = 'Link to document';
 	} else if (docName === 'courtOrder') {
 		document.getElementById('legalDoc').textContent = 'Court order';
+		document.getElementById('linkToDoc').textContent = 'Link to document';
 	}
 
 </script>
