@@ -56,6 +56,7 @@ Does the servient structure cover all of the extent?
 document.getElementById('structurePositionContinue').onclick = function() {
 	var position_1 = document.getElementById('position_1_label');
 	var position_2 = document.getElementById('position_2_label');
+	sessionStorage.setItem('heightUpdated', 'true');
 	if (position_1.classList.contains('selected')) {
 		sessionStorage.setItem('position', 'All of the extent');
 		sessionStorage.setItem('partExtentDetail', '')

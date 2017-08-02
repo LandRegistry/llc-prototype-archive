@@ -32,7 +32,7 @@ Search for a charge
 			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
 			<form action="vary-lon" method="GET" style="padding-bottom: 0">
         <div class="form-group">
-          <input class="button" type="submit" value="Save and continue">
+          <input id="varyExtentButton" class="button" type="submit" value="Save and continue">
         </div>
       </form>
 		</div>
@@ -78,6 +78,10 @@ Search for a charge
         var townRetrieved = sessionStorage.getItem('townDominant');
         var postcodeRetrieved = sessionStorage.getItem('postcodeRetrieved');
         $('.location').text(streetRetrieved + ' ' + townRetrieved + ' ' + postcodeRetrieved);
+
+        $('#varyExtentButton').click(function() {
+          sessionStorage.setItem('extentVaried', 'true');
+        })
 
       });
     </script>

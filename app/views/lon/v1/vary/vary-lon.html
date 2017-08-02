@@ -60,7 +60,7 @@ Vary a LON
 			</table> -->
 
 			<h2 class="heading-medium">Person applying for this LON</h2>
-			<table class="check-your-answers-2">
+			<table id="applicantTable" class="check-your-answers-2">
 				<tbody>
 					<tr>
 						<td>Name</td>
@@ -81,7 +81,7 @@ Vary a LON
 			<h2 class="heading-medium">Dominant building (building losing access to light)</h2>
 			<table class="check-your-answers-2">
 				<tbody>
-					<tr>
+					<tr id="dominantAddress">
 						<td>Address</td>
 						<td class="bold-small">
 							<span id="street_1Dominant">4 Okehampton Place</span><br>
@@ -90,7 +90,7 @@ Vary a LON
 						</td>
 						<td><a href="vary-dominant">Update dominant address</a></td>
 					</tr>
-					<tr>
+					<tr id="dominantExtent">
 						<td>Extent</td>
 						<td style="text-align: right"><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto"></td>
 						<td><a href="draw-extent">Update extent</a></td>
@@ -101,17 +101,17 @@ Vary a LON
 			<h2 class="heading-medium">Servient land development (development that will block the light)</h2>
 			<table class="check-your-answers-2">
 				<tbody>
-					<tr>
+					<tr id="heightRow">
 						<td>Height</td>
 						<td id="structureHeight" class="bold-small">Unlimited height</td>
 						<td><a href="vary-servient-structure">Update height - planned development</a></td>
 					</tr>
-					<tr>
+					<tr id="positionRow">
 						<td>Covers all or part of the extent</td>
 						<td id="extentDetail" class="bold-small">All of the extent</td>
 						<td><a href="vary-servient-structure-position">Update extent - planned development</a></td>
 					</tr>
-					<tr>
+					<tr id="interestRow">
 						<td>Interest in land</td>
 						<td id="interestInLand" class="bold-small">Owner</td>
 						<td><a href="vary-land-interest">Update interest</a></td>
@@ -265,6 +265,10 @@ Vary a LON
 	var interests = sessionStorage.getItem('interest');
 	var applicantUpdateds = sessionStorage.getItem('applicantUpdated');
 	var dominantUpdateds = sessionStorage.getItem('dominantUpdated');
+	var extentVarieds = sessionStorage.getItem('extentVaried');
+	var interestUpdateds = sessionStorage.getItem('interestUpdated');
+	console.log(extentVarieds);
+
 	/*console.log(docName);
 	console.log(defStartDays);
 	console.log(defStartMonths);
@@ -281,38 +285,49 @@ Vary a LON
 	console.log(postcodeDominants);
 	console.log(heights);
 	console.log(measurements);
-	console.log(unlHeights);*/
+	console.log(unlHeights);
 	console.log(interests);
 	console.log(applicantUpdateds);
-	console.log(dominantUpdateds);
+	console.log(dominantUpdateds);*/
 
 	if (applicantUpdateds === 'true') {
 		document.getElementById('nameApplicant').textContent = nameApplieds;
 		document.getElementById('street_1Applicant').textContent = street_1Applieds;
 		document.getElementById('townApplicant').textContent = townApplieds;
 		document.getElementById('postcodeApplicant').textContent = postcodeApplieds;
+		document.getElementById('applicantTable').style.backgroundColor = '#DEE0E2';
 	}
 
 	if (dominantUpdateds === 'true') {
 		document.getElementById('street_1Dominant').textContent = street_1Dominants;
 		document.getElementById('townDominant').textContent = townDominants;
 		document.getElementById('postcodeDominant').textContent = postcodeDominants;
+		document.getElementById('dominantAddress').style.backgroundColor = '#DEE0E2';
 	}
+
+	if (extentVarieds === 'true') {
+		document.getElementById('dominantExtent').style.backgroundColor = '#DEE0E2';
+	} 
 
 	if (unlHeights === '') {
 		document.getElementById('structureHeight').textContent = heights + " " + measurements;
+		document.getElementById('heightRow').style.backgroundColor = '#DEE0E2';
 	} else {
 		document.getElementById('structureHeight').textContent = 'Unlimited height';
 	}
 
 	if (positions === '') {
 		document.getElementById('extentDetail').textContent = partExtentDetails;
+		document.getElementById('positionRow').style.backgroundColor = '#DEE0E2';
 	} else {
 		document.getElementById('extentDetail').textContent = 'All of the extent';
 	}
 
 	if (interestUpdateds === 'true') {
 		document.getElementById('interestInLand').textContent = interests;
+		document.getElementById('interestRow').style.backgroundColor = '#DEE0E2';
+	} else {
+		document.getElementById('interestInLand').textContent = 'Owner';
 	}
 	
 
