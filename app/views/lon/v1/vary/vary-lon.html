@@ -146,7 +146,7 @@ Vary a LON
 						</tr>
 						<tr id="defExpiry" class="hiddenForm">
 							<td>Expiry date</td>
-							<td id="defExpiryDate" class="bold-small">1 May 2016</td>
+							<td id="defExpiryDate" class="bold-small">[automatically calculated]</td>
 							<td></td>
 						</tr>
 					</tbody>
@@ -258,9 +258,9 @@ Vary a LON
 	var defStartDays = sessionStorage.getItem('defStartDay');
 	var defStartMonths = sessionStorage.getItem('defStartMonth');
 	var defStartYears = sessionStorage.getItem('defStartYear');
-	var defEndDays = sessionStorage.getItem('defEndDay');
+	/*var defEndDays = sessionStorage.getItem('defEndDay');
 	var defEndMonths = sessionStorage.getItem('defEndMonth');
-	var defEndYears = sessionStorage.getItem('defEndYear');
+	var defEndYears = sessionStorage.getItem('defEndYear');*/
 	var nameApplieds = sessionStorage.getItem('nameApplied');
 	var street_1Applieds = sessionStorage.getItem('street_1Applied');
 	var townApplieds = sessionStorage.getItem('townApplied');
@@ -356,13 +356,19 @@ Vary a LON
 		document.getElementById('defExpiry').classList.remove('hiddenForm');
 		document.getElementById('legalDoc').textContent = 'Definitive certificate';
 		document.getElementById('defIssueDate').textContent = defStartDays + ' ' + defStartMonths + ' ' + defStartYears;
-		document.getElementById('defExpiryDate').textContent = defEndDays + ' ' + defEndMonths + ' ' + defEndYears;
+		//document.getElementById('defExpiryDate').textContent = defEndDays + ' ' + defEndMonths + ' ' + defEndYears;
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} else if (docName === 'formB') {
 		document.getElementById('docList').classList.remove('hiddenForm');
 		document.getElementById('legalDoc').textContent = 'Form B';
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} else if (docName === 'courtOrder') {
 		document.getElementById('docList').classList.remove('hiddenForm');
 		document.getElementById('legalDoc').textContent = 'Court order';
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	}
 
 </script>
