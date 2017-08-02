@@ -1,0 +1,99 @@
+{% extends "layout_map.html" %}
+
+{% block page_title %}
+Draw an extent
+{% endblock %}
+
+{% block content %}
+
+
+<!-- alpha banner -->
+<div class="phase-banner map-phase-banner">
+  <p><strong class="phase-tag">BETA</strong></p>
+</div>
+<!-- main content starts -->
+<div id="map" style="width: 100%">
+  <!-- map goes in here -->
+</div>
+<div id="search-panel">
+  <h1 class="heading-medium">Search result for UPRN EXT123456</h1>
+
+  <div class="results-block">
+    <ol class="results-list uprn-result">
+      <li>
+        <p>14 Okehampton Place<br>Exeter<br>EX4 1AY</p>
+      </li>
+    </ol>
+  </div>  
+
+  <form action="/add_charge/v4-1/60" method="POST">
+    <div class="form-group">
+
+    	<div class="form-group">
+    		<div class="panel panel-border-narrow">
+    			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+    		</div>
+    	</div>
+
+      <a class="button" href="extent-affect">Save and Continue</a>
+      
+
+  </div>
+</form>
+</div>
+<div class="panel-control close">
+  <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    var closePanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "-1000px"
+      }, 100);
+      $(".panel-control").removeClass("close");
+      $(".panel-control").addClass("open-button");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+    }
+
+    var openPanel = function() {
+      $("#search-panel").animate({
+        "margin-left": "0"
+      }, 100);
+      $(".panel-control").removeClass("open-button");
+      $(".panel-control").addClass("close");
+      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+    }
+
+    $(".panel-control").click(function() {
+      if($(this).hasClass("close")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+
+    $("#map-search-button").click(function() {
+      var searchedTerm = $("#maintain-map-search").val();
+      sessionStorage.setItem("searchedTerm", searchedTerm);
+    })
+  });
+</script>
+
+{% endblock %}
+{% block body_end_additional %}
+{% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+  zoomslider = new ol.control.Zoom();
+  map.addControl(zoomslider);
+  var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+  MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}

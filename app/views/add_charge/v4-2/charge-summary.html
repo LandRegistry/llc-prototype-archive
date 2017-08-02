@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Check your answers before sending your application</h1>
+
+			<div class="panel panel-border-narrow">
+    			<p>The information on this page will be represented on a Local land charge search result (LLC1) so carefully check and make sure it is correct. </p>
+    		</div>
+
+			<table class="check-your-answers-2">
+				<caption class="heading-small"> </caption>
+				<thead>
+					<tr>
+						<th><span class="visuallyhidden">Qustion</span></th>
+						<th><span class="visuallyhidden">Answer</span></th>
+						<th><span class="visuallyhidden">Action</span></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>Type of charge</td>
+						<td class="heading-small">Planning - Conditional planning consent </td>
+						<td class="change-answer">
+							<a class="edit" href="planning">
+								Change <span class="visuallyhidden">type of charge</span>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Document created date <br>
+						<br> What does the charge do? <br>
+						<br>Does the charge expire?
+						</td>
+						<td class="heading-small">27 11 2016 <br>
+						<br> This charge gives approval for a two storey extension <br>
+						<br>No </td>
+						<td class="change-answer">
+							<a class="edit" href="about-the-charge">
+								Change <span class="visuallyhidden">created date, what does the charge do?, or does the charge expire?</span>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Location of charge and  extent </td>
+						<td class="heading-small">14 Okehampton Place, Exeter, EX4 1AY <br><br>
+
+						<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
+						 </td>
+						<td class="change-answer">
+							<a class="edit" href="draw-an-extent">
+								Change <span class="visuallyhidden">Location of charge and  extent</span>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Does the charge affect all or part of the extent? </td>
+						<td class="heading-small">The extent only apply to the north east of the land
+						</td>
+						<td class="change-answer">
+							<a class="edit" href="extent-affect">
+								Change <span class="visuallyhidden">Does the charge affect all or part of the extent?</span>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Where should someone go to research this charge?
+						</td>
+						<td class="heading-small">
+							<div>
+								<span>Paul Smith </span>
+								<div>
+									<span>+(44) 123456789	</span>
+								<br>
+									<span>Super Highway Head Office, Birmingham</span>
+								<br>
+									<span>Reference: TZ87U789/980 LR</span>
+								<br>
+									<a href="#">www.anylinkaddresshere.com</a>
+								</div>
+
+							</div>
+						</td>
+						
+						<td class="change-answer">
+							<a class="edit" href="research-charge">
+								Change <span class="visuallyhidden">where should someone go to research this charge ?</span>
+							</a>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+<hr>
+
+
+
+			<h2 class="heading-medium">Now send your application </h2>
+			<div class="panel panel-border-narrow">
+    			<p>By submitting this charge notification you are confirming that to the best of your knowledge, the details of property and extent are correct.</p>
+    		</div>
+
+
+				<div class="form-group">
+					<a href="charge-successful" class="button">Accept and register charge</a>
+				</div>
+
+				<div id="back">
+					<a href="type-of-charge" class="back-link">Back</a>
+				</div>
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

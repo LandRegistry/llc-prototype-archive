@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Planning
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Planning</h1>
+
+			
+			<form action="/add_charge/v4-1/70" method="POST">
+				<legend class="visually-hidden">Does the charge affect all or part of the extent?</legend>
+				<div class="form-group">
+					<label class="block-label selection-button-radio" for="1">
+						<input id="1" name="extent" type="radio" value="Conditional planning consent">
+						Conditional planning consent
+					</label>
+					<label class="block-label selection-button-radio" for="2">
+						<input id="2" name="extent" type="radio" value="ASection 106 agreement">
+						Section 106 agreement
+					</label>
+					<label class="block-label selection-button-radio" for="3">
+						<input id="3" name="extent" type="radio" value="Section 106 agreement">
+						Section 106 agreement
+					</label>
+					<label class="block-label selection-button-radio" for="4">
+						<input id="4" name="extent" type="radio" value="Article 4 direction">
+						Article 4 direction 
+					</label>
+					<label class="block-label selection-button-radio" for="5">
+						<input id="5" name="extent" type="radio" value="Tree preservation order (TPO)">
+						Tree preservation order (TPO)
+					</label>
+					<label class="block-label selection-button-radio" for="6">
+						<input id="6" name="extent" type="radio" value="Section 52 agreement">
+						Section 52 agreement
+					</label>
+					<label class="block-label selection-button-radio no" for="7" data-target="part-extent">
+						<input id="7" name="extent" type="radio" value="Other planning charge" aria-controls="part-extent">
+						Other planning charge
+					</label>
+				</div>
+
+				<div class="js-hidden panel panel-border-narrow" id="part-extent" aria-hidden="true" style="display: none;">
+
+					<div class="form-group">
+						<label class="form-label" for="select-box">Select legislation from the list</label>
+						<select class="form-control" id="select-box" name="select-box">
+							<option>Highways Act 1980 (various sections)</option>
+							<option>Localism Act 2011 (Part 5, Chapter 3): The Assets of Community Value (England) 2012 SI 2012 No. 242</option>
+							<option>New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)</option>
+							<option>Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010</option>
+							<option>Part XI Highways Act 1980 (under code of 1875)</option>
+							<option>s.106 Town and Country Planning Act 1990</option>
+							<option>s.107 Building Act 1984</option>
+							<option>s.107(9) Housing Act 1996</option>
+							<option>s.11(1) Opencast Coal Act 1958</option>
+						</select>
+					</div>
+
+					<p class="heading-extra-small">OR</p>
+
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">Planning description</legend>
+							<label class="form-label" for="planDesc">
+								Planning description
+							</label>
+							<textarea class="form-control form-control-3-4" name="planDesc" id="planDesc" rows="5"></textarea>
+						</fieldset>
+					</div>
+				</div>
+				<div class="form-group">
+				<a class="button" href="/add_charge/v4-2/about-the-charge" role="button">Continue</a>
+				
+				</div>
+			</form>
+
+
+			<div id="back">
+			<a href="type-of-charge" class="back-link">Back</a>
+			</div>
+
+		</div>
+
+
+		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+					<hr>
+				<h2 class="heading-medium">
+					Can't find the law you need?
+				</h2>
+
+					<ul role="navigation" class="list">
+						<li>
+							<a href="#">Search all local land charge laws</a>
+						</li>
+
+					</ul>
+
+			</aside>
+
+		</div>
+
+	</div>
+
+</main>
+{% endblock %}
+
+
+
