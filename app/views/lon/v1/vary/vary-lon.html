@@ -1,0 +1,377 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Vary a LON
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<!--<p><a href="map-results">Back to search results</a></p> -->
+			<h1 class="heading-large">Update charge details</h1>
+		</div>
+		<div id="thereIsChange" class="column-two-thirds hiddenForm">
+
+			<div class="panel panel-border-wide">
+				<p>
+					You have made the following changes, which have been highlighted in the table below:
+				</p>
+				<p>
+					<a href="#">Link to change</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="column-full">
+			<!--<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge ID</td>
+						<td class="bold-small">HMLR-LLC-12871691</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="heading-medium">About this charge</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Charge type</td>
+						<td class="bold-small">Light obstruction notice (LON)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Law</td>
+						<td class="bold-small">Rights of Light Act 1959, section 2(4)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Registered on</td>
+						<td class="bold-small">3 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Updated on</td>
+						<td class="bold-small">4 May 2017</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table> -->
+
+			<h2 class="heading-medium">Person applying for this LON</h2>
+			<table id="applicantTable" class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td class="bold-small"><span id="nameApplicant">Jane Doe</span></td>
+						<td><a href="vary-applicant">Update name</a></td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td class="bold-small" style="width: 33%">
+							<span id="street_1Applicant">2 Okehampton Place</span><br>
+							<span id="townApplicant">Exeter</span><br>
+							<span id="postcodeApplicant">EX4 1AY</span>
+						</td>
+						<td><a href="vary-applicant">Update address</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 class="heading-medium">Dominant building (building losing access to light)</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr id="dominantAddress">
+						<td>Address</td>
+						<td class="bold-small">
+							<span id="street_1Dominant">4 Okehampton Place</span><br>
+							<span id="townDominant">Exeter</span><br>
+							<span id="postcodeDominant">EX4 1AY</span>
+						</td>
+						<td><a href="vary-dominant">Update dominant address</a></td>
+					</tr>
+					<tr id="dominantExtent">
+						<td>Extent</td>
+						<td style="text-align: right"><img src="{{ asset_path }}images/maintain_llc_v1-4/extend.png" width="100%" height="auto"></td>
+						<td><a href="draw-extent">Update extent</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 class="heading-medium">Servient land development (development that will block the light)</h2>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr id="heightRow">
+						<td>Height</td>
+						<td id="structureHeight" class="bold-small">Unlimited height</td>
+						<td><a href="vary-servient-structure">Update height - planned development</a></td>
+					</tr>
+					<tr id="positionRow">
+						<td>Covers all or part of the extent</td>
+						<td id="extentDetail" class="bold-small">All of the extent</td>
+						<td><a href="vary-servient-structure-position">Update extent - planned development</a></td>
+					</tr>
+					<tr id="interestRow">
+						<td>Interest in land</td>
+						<td id="interestInLand" class="bold-small">Owner</td>
+						<td><a href="vary-land-interest">Update interest</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div id="docList" class="hiddenForm">
+				<h2 class="heading-medium">Legal documents for this LON</h2>
+				<table class="check-your-answers-2">
+					<tbody>
+						<tr>
+							<td id="legalDoc" class="bold-small">Legal doc title</td>
+							<td></td>
+							<td><a href="#">Update</a></td>
+						</tr>
+						<tr id="defIssue" class="hiddenForm">
+							<td>Issue date</td>
+							<td id="defIssueDate" class="bold-small">1 May 2016</td>
+							<td></td>
+						</tr>
+						<tr id="defExpiry" class="hiddenForm">
+							<td>Expiry date</td>
+							<td id="defExpiryDate" class="bold-small">[automatically calculated]</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--<h2 class="heading-medium">Legal documents for this LON</h2>
+			<h3 class="heading-small">Temporary certificate</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Issue date</td>
+						<td class="bold-small">1 May 2016</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Expiry date</td>
+						<td class="bold-small">1 May 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Definitive certificate</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Issue date</td>
+						<td class="bold-small">1 June 2016</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Expiry date</td>
+						<td class="bold-small">1 June 2017</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Colour plan</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Source document</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="heading-small">Other documents that support this LON</h3>
+			<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td><a href="https://www.documentlink.co.uk">Link to document</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table> -->
+			<!--<table class="check-your-answers-2">
+				<tbody>
+					<tr>
+						<td>Address (documents filed)</td>
+						<td class="bold-small">
+							24 Burton Road<br>
+							Exeter<br>
+							EX4 1AY
+						</td>
+						<td><a href="#">Change <span class="visuallyhidden">address where documents are filed</span></a></td>
+					</tr>
+				</tbody>
+			</table> -->
+			<br>
+			<p><a href="confirm-changes" class="button">Submit changes</a></p>
+			<p><a href="lon">Cancel and go back to charge details</a></p>
+		</div>
+	</div>
+</main>
+
+<script>
+	var docName = sessionStorage.getItem('docUploaded');
+	var defStartDays = sessionStorage.getItem('defStartDay');
+	var defStartMonths = sessionStorage.getItem('defStartMonth');
+	var defStartYears = sessionStorage.getItem('defStartYear');
+	/*var defEndDays = sessionStorage.getItem('defEndDay');
+	var defEndMonths = sessionStorage.getItem('defEndMonth');
+	var defEndYears = sessionStorage.getItem('defEndYear');*/
+	var nameApplieds = sessionStorage.getItem('nameApplied');
+	var street_1Applieds = sessionStorage.getItem('street_1Applied');
+	var townApplieds = sessionStorage.getItem('townApplied');
+	var postcodeApplieds = sessionStorage.getItem('postcodeApplied');
+	var street_1Dominants = sessionStorage.getItem('street_1Dominant');
+	var townDominants = sessionStorage.getItem('townDominant');
+	var postcodeDominants = sessionStorage.getItem('postcodeDominant');
+	var heights = sessionStorage.getItem('height');
+	var measurements = sessionStorage.getItem('measurement');
+	var unlHeights = sessionStorage.getItem('unlHeight');
+	var positions = sessionStorage.getItem('position');
+	var partExtentDetails = sessionStorage.getItem('partExtentDetail');
+	var interests = sessionStorage.getItem('interest');
+	var applicantUpdateds = sessionStorage.getItem('applicantUpdated');
+	var dominantUpdateds = sessionStorage.getItem('dominantUpdated');
+	var extentVarieds = sessionStorage.getItem('extentVaried');
+	var interestUpdateds = sessionStorage.getItem('interestUpdated');
+	console.log(extentVarieds);
+
+	/*console.log(docName);
+	console.log(defStartDays);
+	console.log(defStartMonths);
+	console.log(defStartYears);
+	console.log(defEndDays);
+	console.log(defEndMonths);
+	console.log(defEndYears);
+	console.log(nameApplieds);
+	console.log(street_1Applieds);
+	console.log(townApplieds);
+	console.log(postcodeApplieds);
+	console.log(street_1Dominants);
+	console.log(townDominants);
+	console.log(postcodeDominants);
+	console.log(heights);
+	console.log(measurements);
+	console.log(unlHeights);
+	console.log(interests);
+	console.log(applicantUpdateds);
+	console.log(dominantUpdateds);*/
+
+	if (applicantUpdateds === 'true') {
+		document.getElementById('nameApplicant').textContent = nameApplieds;
+		document.getElementById('street_1Applicant').textContent = street_1Applieds;
+		document.getElementById('townApplicant').textContent = townApplieds;
+		document.getElementById('postcodeApplicant').textContent = postcodeApplieds;
+		document.getElementById('applicantTable').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	}
+
+	if (dominantUpdateds === 'true') {
+		document.getElementById('street_1Dominant').textContent = street_1Dominants;
+		document.getElementById('townDominant').textContent = townDominants;
+		document.getElementById('postcodeDominant').textContent = postcodeDominants;
+		document.getElementById('dominantAddress').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	}
+
+	if (extentVarieds === 'true') {
+		document.getElementById('dominantExtent').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} 
+
+	if (unlHeights === '') {
+		document.getElementById('structureHeight').textContent = heights + " " + measurements;
+		document.getElementById('heightRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} else {
+		document.getElementById('structureHeight').textContent = 'Unlimited height';
+	}
+
+	if (positions === '') {
+		document.getElementById('extentDetail').textContent = partExtentDetails;
+		document.getElementById('positionRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} else {
+		document.getElementById('extentDetail').textContent = 'All of the extent';
+	}
+
+	if (interestUpdateds === 'true') {
+		document.getElementById('interestInLand').textContent = interests;
+		document.getElementById('interestRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} else {
+		document.getElementById('interestInLand').textContent = 'Owner';
+	}
+	
+
+
+	
+	if (docName === 'defCert') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('defIssue').classList.remove('hiddenForm');
+		document.getElementById('defExpiry').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Definitive certificate';
+		document.getElementById('defIssueDate').textContent = defStartDays + ' ' + defStartMonths + ' ' + defStartYears;
+		//document.getElementById('defExpiryDate').textContent = defEndDays + ' ' + defEndMonths + ' ' + defEndYears;
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} else if (docName === 'formB') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Form B';
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	} else if (docName === 'courtOrder') {
+		document.getElementById('docList').classList.remove('hiddenForm');
+		document.getElementById('legalDoc').textContent = 'Court order';
+		document.getElementById('docList').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
+	}
+
+</script>
+{% endblock %}
+
+

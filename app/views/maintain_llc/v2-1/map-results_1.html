@@ -1,0 +1,240 @@
+{% extends "layout_map.html" %}
+
+{% block page_title %}
+Search for a charge
+{% endblock %}
+
+{% block content %}
+
+<!--<style>
+  .summary table, tr, td {
+    border-bottom: 0px solid !important;
+
+  }
+</style> -->
+<div class="map-page">
+  <script>
+    var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+  </script>
+  <!-- <main id="content" role="main"> -->
+  <main id="content" role="main" style="padding:0px">
+   <div class="phase-banner-beta">
+    <p>
+     <strong class="phase-tag">BETA</strong>
+     <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+   </p>
+ </div>
+</main>
+<!-- main content starts -->
+      <!--<form action="#" method="GET">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">Enter postcode or charge ID to find a charge</legend>
+            <div class="form-group spacing-bottom-half">
+              <label class="form-label" for="legislation">Search again
+              </label>
+              <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text">
+              <input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value=""><br><br>
+            </div>
+          </fieldset>
+        </div>
+      </form> -->
+
+      <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+      <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+          <div id="map" class="maintain-llc-map"></div>
+        </div>
+      </div>
+
+      <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
+        <h1 class="heading-small">Search results for <span id="titleText"></span></h1>
+        <!-- <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text"> -->
+        <input class="form-control" id="searched_term" type="text" name="searched_term">
+        <input class="button" type="submit" value="Search">
+        <div class="results-block">
+          <div class="pager">
+            <div class="pager-controls">
+              <ul class="pager-items">
+                <li>1</li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+            </div>
+            <div class="pager-summary">Showing 1 &ndash; 10 of 100 charges</div>
+          </div>
+          <ol class="results-list">
+
+
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Planning</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>22 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Front extension to provide dining room</p>
+              <p><span class="bold-xsmall">Created on</span><br>22 June 2016</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Listed building</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>24 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Cafe and kitchen will be built on the lower ground floor of the castle.</p>
+              <p><span class="bold-xsmall">Created on</span><br>5 September 2014</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Tree preservation order</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>30 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>The oak tree can be found at the north side of the Lincoln Community Centre wall, north-east of the junction at nearby Harrow road.</p>
+              <p><span class="bold-xsmall">Created on</span><br>11 November 2011</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="/lon/v1/vary/lon">Light obstruction notice</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>2 Okehampton Place<br>Exeter<br>EX4 1AY</p>
+              <p><span class="bold-xsmall">Description</span><br>Front extension</p>
+              <p><span class="bold-xsmall">Created on</span><br>2 March 2011</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Planning</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>28 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Garage extension</p>
+              <p><span class="bold-xsmall">Created on</span><br>3 January 2010</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Planning</a></h2>
+                <span class="status bold-xsmall">Expired</span>
+              </div>
+              <p>32 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Front extension to provide dining room</p>
+              <p><span class="bold-xsmall">Created on</span><br>17 May 2009</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Light obstruction notice</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>34 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Front extension to provide dining room</p>
+              <p><span class="bold-xsmall">Created on</span><br>30 September 2008</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Planning</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>36 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Garage conversion</p>
+              <p><span class="bold-xsmall">Created on</span><br>1 April 2008</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Tree preservation order</a></h2>
+                <span class="status bold-xsmall">Active</span>
+              </div>
+              <p>36 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>The oak tree can be found at the north side of the Lincoln Community Centre wall, north-east of the junction at nearby Harrow road.</p>
+              <p><span class="bold-xsmall">Created on</span><br>3 February 2005</p>
+            </li>
+            <li class="individualResults">
+              <div class="search-result-header">
+                <h2 class="heading-small"><a href="planning">Planning</a></h2>
+                <span class="status bold-xsmall">Expired</span>
+              </div>
+              <p>38 Burton Road<br>Lincoln<br>LN1 3LB</p>
+              <p><span class="bold-xsmall">Description</span><br>Front extension to provide dining room</p>
+              <p><span class="bold-xsmall">Created on</span><br>11 August 2004</p>
+            </li>
+          </ol>
+        </div>
+        <div class="pager">
+
+          <div class="pager-controls">
+
+            <ul class="pager-items">
+              <li>1</li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+
+          </div>
+
+          <div class="pager-summary">Showing 1 &ndash; 10 of 100 charges</div>
+
+        </div>
+      </div>
+      <div class="panel-control close">
+        <img src="{{ asset_path }}images/arrow_collapse.png">
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script>
+      $(document).ready(function() {
+        var closePanel = function() {
+          $("#search-panel").animate({
+            "margin-left": "-1000px"
+          }, 100);
+          $(".panel-control").removeClass("close");
+          $(".panel-control").addClass("open-button");
+          $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
+
+        var openPanel = function() {
+          $("#search-panel").animate({
+            "margin-left": "0"
+          }, 100);
+          $(".panel-control").removeClass("open-button");
+          $(".panel-control").addClass("close");
+          $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
+
+        $(".panel-control").click(function() {
+          if($(this).hasClass("close")) {
+            closePanel();
+          } else {
+            openPanel();
+          }
+        });
+
+        var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
+        console.log(searchedTermRetrieved);
+        $("#searched_term").val(searchedTermRetrieved);
+
+      });
+    </script>
+
+    {% endblock %}
+
+    {% block body_end_additional %}
+    {% include "includes/map_scripts.html" %}
+    <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+    <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+    <script src="/public/javascripts/map/search/map_events.js"></script>
+    <script src="/public/javascripts/map/search/sample_data.js"></script>
+    <script src="/public/javascripts/map/search/search.js"></script>
+    <script>
+      map.getControls().clear();
+      zoomslider = new ol.control.Zoom();
+      map.addControl(zoomslider);
+      var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+      MAP_HELPERS.zoom_map(geometry);
+    </script>
+    {% endblock %}

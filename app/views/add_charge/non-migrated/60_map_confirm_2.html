@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Confirm your extent</h1>
+
+			<form action="70_more_info" method="GET">
+				<div class="form-group">
+					<img src="/public/images/map-confirm-2.png" width="50%">
+					<br><a href="60_map_2">Change</a>
+				</div>
+				 <div class="form-group">
+          	<input class="button" type="submit" value="Continue">
+          </div>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

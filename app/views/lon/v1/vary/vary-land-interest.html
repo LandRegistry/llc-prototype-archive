@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What interest do they have in this land?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What interest do they have in this land?</h1>
+			<p class="form-hint">This is the interest of the person or organisation applying for the light obstruction notice. Tell us how they own or use the land.</p>
+			<form action="upload-docs" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">What interest do they have in this land?</legend>
+						<div class="form-group">
+							<label id="interest_1_label" class="block-label selection-button-radio selected" for="interest_1">
+								<input id="interest_1" name="interest" type="radio" value="Owner">
+								Owner
+							</label>
+							<label id="interest_2_label" class="block-label selection-button-radio" for="interest_2">
+								<input id="interest_2" name="interest" type="radio" value="Tenant">
+								Tenant
+							</label>
+							<label id="interest_3_label" class="block-label selection-button-radio" for="interest_3">
+								<input id="interest_3" name="interest" type="radio" value="Lender (has taken ownership of the property)">
+								Lender (has taken ownership of the property)
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<p><a id="landInterestContinue" class="button" href="vary-lon">Continue</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+<script>
+document.getElementById('landInterestContinue').onclick = function() {
+	var interest_1_label = document.getElementById('interest_1_label');
+	var interest_2_label = document.getElementById('interest_2_label');
+	var interest_3_label = document.getElementById('interest_3_label');
+	if (interest_1_label.classList.contains('selected')) {
+		var interest = document.getElementById('interest_1').value;
+	} else if (interest_2_label.classList.contains('selected')) {
+		var interest = document.getElementById('interest_2').value;
+	} else if (interest_3_label.classList.contains('selected')) {
+		var interest = document.getElementById('interest_3').value;
+	}
+	sessionStorage.setItem('interest', interest);
+	sessionStorage.setItem('interestUpdated', 'true');
+}
+</script>
+{% endblock %}
+
+

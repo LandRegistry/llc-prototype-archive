@@ -216,7 +216,15 @@
   border-bottom: none !important;
 }
 
-/* LONs */
-/*#addressForm {
+/* LON */
+
+.hiddenForm,
+.hiddenListItem {
   display: none;
-}*/
+}
+
+/* hacks */
+// Cookie message appears in Firefox
+#global-cookie-message {
+  display: none !important;
+}

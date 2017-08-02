@@ -1,0 +1,147 @@
+{% extends "layout.html" %} {% block page_title %} Update user details {% endblock %} {% block content%}
+<main id="content">
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+  {% block breadcrumb %}{% import "includes/breadcrumb_examples.html" as breadcrumb %} 
+  {{ breadcrumb.backButton() }}{% endblock %}
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-large">Add user details</h1>
+      <form method="post" action="/admin/user/add/details">
+        <div class="form-group ">
+          <label class="form-label" for="first_name">First name</label>
+
+          <input class="form-control" id="first_name" name="first_name" type="text" value="Jane">
+        </div>
+        <div class="form-group ">
+          <label class="form-label" for="surname">Last name</label>
+
+          <input class="form-control" id="surname" name="surname" type="text" value="Doe">
+        </div>
+        <div class="form-group ">
+          <label class="form-label" for="email">Email</label>
+
+          <input class="form-control" id="email" name="email" type="text" value="jane.doe@landregistry.gov.uk">
+        </div>
+
+        {% if admin %}
+        <div class="form-group">
+          <label class="form-label" for="lr-organisation">Organisation</label>
+          <input class="form-control" id="lr-organisation" name="organisation" type="text" value="HM Land Registry" readonly="">
+        </div>
+        {% else %}
+        <div class="form-group ">
+          <label class="form-label" for="organisation">Organisation</label>
+
+          <select id="organisation" name="organisation" class="form-control">
+                
+                    <option value="City of Birmingham" >City of Birmingham</option>
+                
+                    <option value="City of Bristol" >City of Bristol</option>
+                
+                    <option value="City of Leeds" >City of Leeds</option>
+                
+                    <option value="City of Liverpool" >City of Liverpool</option>
+                
+                    <option value="City of London" >City of London</option>
+                
+                    <option value="City of Manchester" >City of Manchester</option>
+                
+                    <option value="City of Newcastle" >City of Newcastle</option>
+                
+                    <option value="City of Sheffield" >City of Sheffield</option>
+                
+                    <option value="City of Sunderland" >City of Sunderland</option>
+                
+              </select>
+        </div>
+        {% endif %} 
+        
+        {% if admin %}
+        <fieldset>
+          <legend class="visuallyhidden">Role</legend>
+          <h1 class="heading-medium">Role</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LR Users">
+                    <input id="LLC LR Users" type="radio"  name="user_role" value="LLC LR Users">
+                    Land registry user
+                    <span class="form-hint">
+                      Can add, change or delete other users.
+                    </span>
+                  </label>
+            <label class="block-label selection-button-radio" for="LLC LR Admins">
+                    <input id="LLC LR Admins" type="radio"  name="user_role" value="LLC LR Admins" checked>
+                    Land registry administrator
+                    <span class="form-hint">
+                      Can add, change or delete:
+                      <li>charges</li>
+                      <li>other users</li>
+                    </span>
+                  </label>
+          </div>
+        </fieldset>
+        {% else %}
+        <fieldset>
+          <legend class="visuallyhidden">Role</legend>
+          <h1 class="heading-medium">Role</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LA Admins">
+                  <input id="LLC LA Admins" type="radio"  name="user_role" value="LLC LA Admins">
+                  Originating Authority User
+                  <span class="form-hint">
+                    Can add, change or delete charges
+                  </span>
+                </label>
+            <label class="block-label selection-button-radio" for="LLC LA Users">
+                  <input id="LLC LA Users" type="radio"  name="user_role" value="LLC LA Users" checked>
+                  Originating Authority Administrator
+                  <span class="form-hint">
+                    Can add, change or delete:
+                    <li>charges</li>
+                    <li>other users</li>
+                  </span>
+                </label>
+          </div>
+        </fieldset>
+        {% endif %}
+
+        <fieldset>
+          <legend class="visuallyhidden">Status</legend>
+          <h1 class="heading-medium">Status</h1>
+          <div class="form-group ">
+            <label class="block-label selection-button-radio" for="LLC LA Admins active">
+                    <input id="LLC LR Users active" type="radio"  name="user_status" value="LLC LR Users" checked>
+                    Active
+                    <span class="form-hint">
+                      User has access to the register.
+                    </span>
+                  </label>
+            <label class="block-label selection-button-radio" for="LLC LA Users inactive">
+                    <input id="LLC LR Admins inactive" type="radio"  name="user_status" value="LLC LR Admins">
+                    Inactive
+                    <span class="form-hint">
+                      User is temporarily locked out or suspended.
+                    </span>
+                  </label>
+            <label class="block-label selection-button-radio" for="LLC LA Users archived">
+                    <input id="LLC LR Admins archived" type="radio"  name="user_status" value="LLC LR Admins">
+                    Archived
+                    <span class="form-hint">
+                      User no longer has access to their account.
+                    </span>
+                  </label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <a class="button" href="update-user-confirm" role="button">Update</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  </main>
+{% endblock %}

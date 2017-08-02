@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Address of the dominant building
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+	<div class="action-links">
+		<ul>
+			<li><a href="#">Account management</a> | </li>
+			<li><a href="#">Sign out</a></li>
+		</ul>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Address of the dominant building</h1>
+			<form action"#" method="GET">
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label" for="postcodeSearch">Postcode</label>
+						<input class="form-control form-control-1-4" id="postcodeSearch" type="text" name="postcodeSearch" value="EX4 1AY">
+					</div>
+					<div class="form-group">
+						<input type="button" class="button" value="Find address" id="postcodeFindButton">
+					</div>
+					<div id="addressList" class="form-group hiddenForm">
+						<label class="form-label" for="addressSelectBox">Please select an address</label>
+						<select class="form-control" id="addressSelectBox" name="addressSelectBox" onchange ="addressSelected()">
+							<option value="1 Okehampton Place">1 Okehampton Place</option>
+							<option value="2 Okehampton Place">2 Okehampton Place</option>
+							<option value="3 Okehampton Place">3 Okehampton Place</option>
+							<option value="4 Okehampton Place">4 Okehampton Place</option>
+							<option value="5 Okehampton Place">5 Okehampton Place</option>
+							<option value="6 Okehampton Place">6 Okehampton Place</option>
+							<option value="7 Okehampton Place">7 Okehampton Place</option>
+							<option value="8 Okehampton Place">8 Okehampton Place</option>
+							<option value="9 Okehampton Place">9 Okehampton Place</option>
+							<option value="10 Okehampton Place">10 Okehampton Place</option>
+						</select>
+					</div>
+				</fieldset>
+			</form>
+			<div>
+				<p><a id="manualToggleAddress" href="javascript:toggleVisibility();">Enter address manually</a></p>
+			</div>
+			<div id="addressForm" class="hiddenForm">
+				<form action="dominant-building-extent" method="GET">
+					<fieldset>
+						<div class="form-group">
+							<label class="form-label" for="street_1">Street</label>
+							<input class="form-control" id="street_1" type="text" name="street_1">
+						</div>
+						<div class="form-group">
+							<label class="form-label visually-hidden" for="street_2">Street</label>
+							<input class="form-control" id="street_2" type="text" name="street_2">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="town">Town</label>
+							<input class="form-control" id="town" type="text" name="town">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="county">County (optional)</label>
+							<input class="form-control" id="county" type="text" name="county">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="postcode">Postcode</label>
+							<input class="form-control form-control-1-4" id="postcode" type="text" name="postcode">
+						</div>
+						<p>Country<br>United Kingdom</p>
+						<div class="form-group">
+							<p><a id="dominantContinue" class="button" href="vary-lon">Continue</a></p>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<script>
+	var postcodeFindButton = document.getElementById('postcodeFindButton');
+	postcodeFindButton.onclick = function() {
+		var toShow = document.getElementById('addressList');
+		toShow.classList.remove('hiddenForm');
+	}
+	var toggleVisibility = function() {
+		var toHide = document.getElementById('addressForm');
+		toHide.classList.remove('hiddenForm');
+	}
+
+	var addressSelected = function() {
+		var toSelect = document.getElementById('addressSelectBox');
+		var selectedAddress = toSelect.value;
+		var toShow = document.getElementById('addressForm');
+		toShow.classList.remove('hiddenForm');
+		var streetName = document.getElementById('street_1');
+		var town = document.getElementById('town');
+		var postcode = document.getElementById('postcode');
+		streetName.value = selectedAddress;
+		town.value = 'Exeter';
+		postcode.value = 'EX4 1AY';
+	}
+
+	document.getElementById('dominantContinue').onclick = function() {
+		var street_1Dominant = document.getElementById('street_1').value;
+		var townDominant = document.getElementById('town').value;
+		var postcodeDominant = document.getElementById('postcode').value;
+		sessionStorage.setItem('street_1Dominant', street_1Dominant);
+		sessionStorage.setItem('townDominant', townDominant);
+		sessionStorage.setItem('postcodeDominant', postcodeDominant);
+		sessionStorage.setItem('dominantUpdated', 'true');
+	}
+
+
+</script>
+{% endblock %}
+
+

@@ -635,9 +635,7 @@
 .check-your-answers-2 td {
   border: none;
   vertical-align: top;
-  &:first-child {
-    width: 33%;
-  }
+  width: 33%;
 }
 
 .section-end td {
@@ -669,6 +667,17 @@
   /* This is required */
 }
 
+.icon-important {
+  background-image: url("/public/images/icon-important.png") !important;
+}
+
+.notice .icon {
+  position: relative;
+  left: 0;
+  top: 0%;
+  margin-top: 0px;
+}
+  
 .map-button {
   cursor: pointer;
   &.circle {
