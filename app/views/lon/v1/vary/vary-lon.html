@@ -22,6 +22,17 @@ Vary a LON
 			<!--<p><a href="map-results">Back to search results</a></p> -->
 			<h1 class="heading-large">Update charge details</h1>
 		</div>
+		<div id="thereIsChange" class="column-two-thirds hiddenForm">
+
+			<div class="panel panel-border-wide">
+				<p>
+					You have made the following changes, which have been highlighted in the table below:
+				</p>
+				<p>
+					<a href="#">Link to change</a>
+				</p>
+			</div>
+		</div>
 
 		<div class="column-full">
 			<!--<table class="check-your-answers-2">
@@ -296,6 +307,7 @@ Vary a LON
 		document.getElementById('townApplicant').textContent = townApplieds;
 		document.getElementById('postcodeApplicant').textContent = postcodeApplieds;
 		document.getElementById('applicantTable').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	}
 
 	if (dominantUpdateds === 'true') {
@@ -303,15 +315,18 @@ Vary a LON
 		document.getElementById('townDominant').textContent = townDominants;
 		document.getElementById('postcodeDominant').textContent = postcodeDominants;
 		document.getElementById('dominantAddress').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	}
 
 	if (extentVarieds === 'true') {
 		document.getElementById('dominantExtent').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} 
 
 	if (unlHeights === '') {
 		document.getElementById('structureHeight').textContent = heights + " " + measurements;
 		document.getElementById('heightRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} else {
 		document.getElementById('structureHeight').textContent = 'Unlimited height';
 	}
@@ -319,6 +334,7 @@ Vary a LON
 	if (positions === '') {
 		document.getElementById('extentDetail').textContent = partExtentDetails;
 		document.getElementById('positionRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} else {
 		document.getElementById('extentDetail').textContent = 'All of the extent';
 	}
@@ -326,6 +342,7 @@ Vary a LON
 	if (interestUpdateds === 'true') {
 		document.getElementById('interestInLand').textContent = interests;
 		document.getElementById('interestRow').style.backgroundColor = '#DEE0E2';
+		document.getElementById('thereIsChange').classList.remove('hiddenForm');
 	} else {
 		document.getElementById('interestInLand').textContent = 'Owner';
 	}
