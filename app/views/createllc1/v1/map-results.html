@@ -11,6 +11,7 @@
         var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
     </script>
     <!-- <main id="content" role="main"> -->
+    <!-- beta banner -->
     <main id="content" role="main" style="padding:0px">
         <div class="phase-banner-beta">
             <p>
@@ -19,21 +20,15 @@
             </p>
         </div>
     </main>
-    <!-- main content starts -->
-
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     <div class="container">
         <div id="map-nav" class="maintain-map form-group">
             <div id="map" class="maintain-llc-map"></div>
         </div>
     </div>
-
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-        <h1 class="heading-small">This map shows <span id="llc1Search"></span></h1>
-        <div class="results-block">
-            <p>Use the buttons on this map to draw the search extent.</p>
-            <p><a class="button" href="more-information">Continue</a></p>
-        </div>
+        <h1 class="heading-medium">This map shows <span id="createllc1Search"></span></h1>
+        <p>Use the buttons on this map to draw the search extent.</p>
+        <a href="more-information" class="button">Continue</a>
     </div>
     <div class="panel-control close">
         <img src="{{ asset_path }}images/arrow_collapse.png">
@@ -68,7 +63,6 @@
                 openPanel();
             }
         });
-
     });
 </script>
 
@@ -79,7 +73,6 @@
 <script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-    map.getControls().clear();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
