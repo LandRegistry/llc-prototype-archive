@@ -26,7 +26,7 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-        <h1 class="heading-medium">This map shows <span id="createllc1Search"></span></h1>
+        <h1 class="heading-medium">This map shows <span id="createllc1Search"></span>.</h1>
         <p>Use the buttons on this map to draw the search extent.</p>
         <a href="more-information" class="button">Continue</a>
     </div>
@@ -63,6 +63,10 @@
                 openPanel();
             }
         });
+
+        var searchedTerm = sessionStorage.getItem('searchedTerm');
+        console.log(searchedTerm);
+        $('#createllc1Search').text(searchedTerm);
     });
 </script>
 

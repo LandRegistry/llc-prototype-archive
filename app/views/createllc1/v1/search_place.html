@@ -18,10 +18,10 @@
             <fieldset>
                 <legend class="visuallyhidden">Enter postcode or charge ID to find a charge</legend>
                 <div class="form-group spacing-bottom-half">
-                    <label class="form-label" for="maintain-map-search">Search by postcode, address, UPRN, charge ID or title number
+                    <label class="form-label" for="llc1-map-search">Search by postcode, address, UPRN, charge ID or title number
                   </label>
-                    <input class="form-control" id="maintain-map-search" name="maintain-map-search" type="text" value="" autofocus="autofocus">
-                    <input id="map-search-button" class="button" type="submit" name="maintain-map-search" value="Search">
+                    <input class="form-control" id="llc1-map-search" name="llc1-map-search" type="text" value="" autofocus="autofocus">
+                    <input id="llc1-search-button" class="button" type="submit" name="llc1-map-search" value="Search">
 
                     <!--<input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value=""> -->
 
@@ -65,8 +65,8 @@
             }
         });
 
-        $("#map-search-button").click(function() {
-            var searchedTerm = $("#maintain-map-search").val();
+        $("#llc1-search-button").click(function() {
+            var searchedTerm = $("#llc1-map-search").val();
             sessionStorage.setItem("searchedTerm", searchedTerm);
         })
     });
