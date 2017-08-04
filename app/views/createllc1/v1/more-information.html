@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-full">
+            <h1 class="heading-large">More information about the location</h1>
+            <form action="confirm-changes" method="GET">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Postal address or description of the search extent</legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="more_information">
+							Postal address or description of the search extent.
+						</label>
+                        <textarea class="form-control" id="more-information-llc1" name="more_information" cols="50" rows="10" value=""></textarea>
+                    </div>
+                </fieldset>
+                <a class="button more-information-llc1-button" href="download" role="button">Create LLC1</a>
+
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
