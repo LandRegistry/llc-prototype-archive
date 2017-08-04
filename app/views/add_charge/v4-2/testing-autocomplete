@@ -97,7 +97,6 @@ Planning
 			</div>
 		</div>
 
-		<!-- NOTE: Custom CSS top margin needs to be -100px; to align this section -->
 		<div class="column-one-third payment-info-box">
 			<h2 class="heading-small">Can't find the law you need?</h2>
 			<ul role="navigation" class="list">

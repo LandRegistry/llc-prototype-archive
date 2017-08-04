@@ -16,17 +16,22 @@ Draw an extent
   <!-- map goes in here -->
 </div>
 <div id="search-panel">
-  <h1 class="heading-medium">Search result for UPRN EXT123456</h1>
 
-  <div class="results-block">
-    <ol class="results-list uprn-result">
-      <li>
-        <p>14 Okehampton Place<br>Exeter<br>EX4 1AY</p>
-      </li>
+<h1 class="heading-medium">Draw an extent</h1>
+  <div class="">
+      <p class="heading-small">Search result for UPRN EXT123456</p>
+      <ol class="results-list uprn-result">
+          <li>
+            <p>14 Okehampton Place<br>Exeter<br>EX4 1AY</p>
+        </li>
     </ol>
-  </div>  
+    
+</div>
+<div class="results-block">
 
-  <form action="/add_charge/v4-1/60" method="POST">
+</div>
+
+<form action="/add_charge/v4-1/60" method="POST">
     <div class="form-group">
 
     	<div class="form-group">
@@ -35,12 +40,21 @@ Draw an extent
     		</div>
     	</div>
 
-      <a class="button" href="extent-affect">Save and Continue</a>
-      
+      <a class="button" href="/add_charge/v4-2/extent-affect">Save and Continue</a>
+      <!-- /add_charge/v4-2/confirm-extent -->
 
   </div>
 </form>
+
+<div id="back">
+   <a href="search-property" class="back-link">Back</a>
 </div>
+
+</div>
+
+
+
+
 <div class="panel-control close">
   <img src="{{ asset_path }}images/arrow_collapse.png">
 </div>
@@ -52,34 +66,34 @@ Draw an extent
     var closePanel = function() {
       $("#search-panel").animate({
         "margin-left": "-1000px"
-      }, 100);
+    }, 100);
       $(".panel-control").removeClass("close");
       $(".panel-control").addClass("open-button");
       $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
-    }
+  }
 
-    var openPanel = function() {
+  var openPanel = function() {
       $("#search-panel").animate({
         "margin-left": "0"
-      }, 100);
+    }, 100);
       $(".panel-control").removeClass("open-button");
       $(".panel-control").addClass("close");
       $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
-    }
+  }
 
-    $(".panel-control").click(function() {
+  $(".panel-control").click(function() {
       if($(this).hasClass("close")) {
         closePanel();
-      } else {
+    } else {
         openPanel();
-      }
-    });
+    }
+});
 
-    $("#map-search-button").click(function() {
+  $("#map-search-button").click(function() {
       var searchedTerm = $("#maintain-map-search").val();
       sessionStorage.setItem("searchedTerm", searchedTerm);
-    })
-  });
+  })
+});
 </script>
 
 {% endblock %}

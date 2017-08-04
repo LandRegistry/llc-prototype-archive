@@ -1,0 +1,207 @@
+{% extends "layout_map.html" %}
+
+{% block page_title %}
+Where do you want to add the charge?
+{% endblock %}
+
+{% block content %}
+
+
+<!-- alpha banner -->
+<main id="content" role="main" style="padding:0px">
+ <div class="phase-banner-beta">
+  <p>
+   <strong class="phase-tag">BETA</strong>
+   <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+</p>
+</div>
+</main>
+<!-- main content starts -->
+<div id="map" style="width: 100%">
+ <!-- map goes in here -->
+</div>
+<div id="search-panel">
+ <h1 class="heading-medium">Where do you want to add the charge?</h1>
+ <form action="/add_charge/v4-1/50" method="POST">
+
+ <div class="form-group">
+      <label class="form-label" for="house_no">Enter an address to start
+        <span class="form-hint">You can search by: <br> 
+           <br>Postcode, Title number, Charge ID, Unique Property Reference Number (UPRN), and or Property address</span>
+      </label>
+      <input style="width: 70%;" class="form-control search-field" id="house_no" name="house_no" type="text" value="" autofocus="autofocus" >
+
+      <a id="" href="/add_charge/v4-2/draw-an-extent" class="button">Search</a>
+
+    </div>
+
+
+<!-- 
+  <p>You will see a map showing this address on the next page. Use this map to start drawing the extent.</p> -->
+
+ 
+
+ <ul id="address-list" class="list hiddenList">
+    <li><a href="/add_charge/v4-1/51?address=1 Clinton Street, Exeter {{ search_term }}">
+     1 Okehampton Place
+  </a></li>
+  <li><a href="51?address=3 Okehampton Place, Exeter {{ search_term }}">
+     3 Okehampton Place
+  </a></li>
+  <li><a href="51?address=5 Okehampton Place, Exeter {{ search_term }}">
+     5 Okehampton Place
+  </a></li>
+  <li><a href="51?address=7 Okehampton Place, Exeter {{ search_term }}">
+     7 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=9 Okehampton Place, Exeter {{ search_term }}">
+     9 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=11 Okehampton Place, Exeter {{ search_term }}">
+     11 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=13 Okehampton Place, Exeter {{ search_term }}">
+     13 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=15 Okehampton Place, Exeter {{ search_term }}">
+     15 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=17 Okehampton Place, Exeter {{ search_term }}">
+     17 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=19 Okehampton Place, Exeter {{ search_term }}">
+     19 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=21 Okehampton Place, Exeter {{ search_term }}">
+     21 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=23 Okehampton Place, Exeter {{ search_term }}">
+     23 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=25 Okehampton Place, Exeter {{ search_term }}">
+     25 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=27 Okehampton Place, Exeter {{ search_term }}">
+     27 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=29 Okehampton Place, Exeter {{ search_term }}">
+     29 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+  <li><a href="51?address=31 Okehampton Place, Exeter {{ search_term }}">
+     31 Okehampton Place, Exeter {{ search_term }}
+  </a></li>
+</ul>
+
+<p>No address for this charge? <br>
+
+ <a href="draw-an-extent">Start with the map and scroll to the location instead</a>  </p>
+
+<!--  <div class="form-group">
+   <span class="heading-small">Do you have an extent saved on file?</span> 
+   <details role="group">
+
+     <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Upload the file</span></summary>
+
+     <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+       <span>Accepted formats are:</span>
+       <ul class="list list-bullet">
+         <li>shapefile (.shp)</li>
+         <li>under 1MB</li>
+      </ul>
+
+      <label class="form-label" for="file-input">
+         Upload a file
+      </label>
+      <input type="file" id="file-input"><br><br>
+      <div class="form-group">
+         <a class="button shape-button" href="/add_charge/v4-1/52">Continue</a>
+      </div>
+   </div>
+</details>
+</div> -->
+
+      <div id="back">
+         <a href="date-document-created" class="back-link">Back</a>
+      </div>
+
+</div>
+
+</div>
+</form>
+</div>
+
+
+
+
+<div class="panel-control close">
+ <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+ $(document).ready(function() {
+  var closePanel = function() {
+   $("#search-panel").animate({
+    "margin-left": "-1000px"
+ }, 100);
+   $(".panel-control").removeClass("close");
+   $(".panel-control").addClass("open-button");
+   $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+}
+
+var openPanel = function() {
+   $("#search-panel").animate({
+    "margin-left": "0"
+ }, 100);
+   $(".panel-control").removeClass("open-button");
+   $(".panel-control").addClass("close");
+   $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+}
+
+$(".panel-control").click(function() {
+   if($(this).hasClass("close")) {
+    closePanel();
+ } else {
+    openPanel();
+ }
+});
+
+$("#postcodeSearchButton").click(function() {
+   if ($("#search_term").val() === "EXT123456") {
+    $("#postcodeSearchButton").attr("href", "/add_charge/v4-1/50");
+ } else if ($("#search_term").val() === "EX4 1AY" || $("#search_term").val() === "ex4 1ay") {
+    $("#address-list").removeClass("hiddenList")
+ } else {
+    $("#postcodeSearchButton").attr("href", "/add_charge/v4-1/51");
+ }  
+});
+
+$("#address-list li a").click(function() {
+   var location = $(this).html();
+   var postcodeSearched = $("#search_term").val();
+   sessionStorage.setItem("location", location);
+   sessionStorage.setItem("postcodeSearched", postcodeSearched);
+})
+
+
+});
+</script>
+
+{% endblock %}
+{% block body_end_additional %}
+{% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+ map.getControls().clear();
+ zoomslider = new ol.control.Zoom();
+ map.addControl(zoomslider);
+ var geometry = "{{ geometry }}";
+ MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}

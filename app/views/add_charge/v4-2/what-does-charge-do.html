@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+What does the charge do?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">What does the charge do?</h1>
+			<form action="05_postcode" method="GET">
+				<fieldset>
+					<legend class="visually-hidden form-label">Date document created</legend>
+
+					<label class="form-label" for="textarea">
+						<span class="form-hint">The charge imposes conditions on the land associated with a planning application </span>
+					</label>
+
+					<textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+				</fieldset>
+				<br>
+				<p>
+					<a class="button creation-date-button" href="does-charge-expire" role="button">Continue</a>
+				</p>
+			</form>
+
+
+			<div id="back">
+				<a href="draw-an-extent" class="back-link">Back</a>
+			</div>
+
+		</div>
+
+
+<!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+	</div>
+
+</main>
+{% endblock %}
+
+
+
