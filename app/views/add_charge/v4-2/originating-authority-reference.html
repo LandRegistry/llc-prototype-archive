@@ -1,0 +1,93 @@
+{% extends "layout.html" %} {% block page_title %} Originating autohity reference number for this charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Does this charge have a reference number?</h1>
+
+            <form action="document-link" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Does this charge have a reference number?</legend>
+
+                    <div class="form-group">
+
+                        <label id="yesRefLabel" class="block-label selection-button-radio" for="yesRef" data-target="referenceNumberForm">
+							<input id="yesRef" name="reference" type="radio" value="no" aria-controls="referenceNumberForm">
+							Yes
+                        </label>
+                        <div class="js-hidden panel panel-border-narrow" id="referenceNumberForm" aria-hidden="true" style="display: none;">
+
+                            <fieldset>
+                                <legend class="form-label-bold">Reference number</legend>
+                                <span class="form-hint">This is the reference number given by the originating authority for this charge</span>
+                                <input id="referenceNumber" class="form-control" type="text">
+
+                            </fieldset><br>
+
+                        </div>
+                        <label id="noRefLabel" class="block-label selection-button-radio no" for="noRef">
+							<input id="noRef" name="reference" type="radio" value="yes">
+							No
+						</label>
+                    </div>
+
+
+
+
+                </fieldset>
+
+            </form>
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <a id="referenceNumberButton" class="button" href="document-link" role="button">Continue</a>
+
+            </div>
+
+            <div id="back">
+                <a href="/add_charge/v4-2/originating-authority-details" class="back-link">Back</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+<script>
+    var referenceIsChanging = sessionStorage.getItem('referenceIsChanging');
+    if (referenceIsChanging === 'true') {
+        var referenceToChange = sessionStorage.getItem('referenceToChange');
+        document.getElementById('yesRefLabel').classList.add('selected');
+        document.getElementById('referenceNumber').value = referenceToChange;
+        document.getElementById('referenceNumberButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('referenceUpdated', 'true');
+    }
+
+    document.getElementById('referenceNumberButton').onclick = function() {
+        var yesRef = document.getElementById('yesRefLabel');
+        var noRef = document.getElementById('noRefLabel');
+        if (yesRef.classList.contains('selected')) {
+            sessionStorage.setItem('referenceExists', 'true');
+            var referenceNumber = document.getElementById('referenceNumber').value;
+            sessionStorage.setItem('referenceNumber', referenceNumber);
+        } else if (noRef.classList.contains('selected')) {
+            sessionStorage.setItem('referenceExists', 'false');
+        }
+    }
+</script>
+
+{% endblock %}

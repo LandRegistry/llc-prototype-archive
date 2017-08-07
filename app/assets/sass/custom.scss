@@ -1,230 +1,243 @@
 /* Custom CSS for mappting goes here */
 
+
 /* map stuff */
-#map { 
-  height: calc(100vh - 135px);
-  width: 100%;
-  position: absolute;
-  /*top: -2em;*/
+
+#map {
+    height: calc(100vh - 135px);
+    width: 100%;
+    position: absolute;
+    /*top: -2em;*/
 }
 
 #map .ol-zoom .ol-zoom-out {
-  background:rgb(12, 96, 163);
-  margin-top: 4px;
+    background: rgb(12, 96, 163);
+    margin-top: 4px;
 }
 
 #map .ol-zoom .ol-zoom-in {
-  background:rgb(12, 96, 163);
+    background: rgb(12, 96, 163);
 }
 
 #map .ol-zoomslider {
-  /*background-color: transparent;*/
-  top: 2.3em;
+    /*background-color: transparent;*/
+    top: 2.3em;
 }
 
 #map .ol-zoomslider-thumb {
-  background:rgb(12, 96, 163);
+    background: rgb(12, 96, 163);
 }
 
 #map .ol-mouse-position {
-  background: rgb(12, 96, 163);
-  border-radius: 10px;
-  border-color: grey;
-  padding: 5px;
-  font: 12px arial, bold;
-  color: white;
-  top: auto;
-  bottom: 0.5em;
-  left: 0.5em;
-  right: auto;
+    background: rgb(12, 96, 163);
+    border-radius: 10px;
+    border-color: grey;
+    padding: 5px;
+    font: 12px arial, bold;
+    color: white;
+    top: auto;
+    bottom: 0.5em;
+    left: 0.5em;
+    right: auto;
 }
 
 #map .ol-nav-buttons {
-  background:rgba(51,122,183,.3);
-  top: auto;
-  bottom: 0.5em;
-  left: 0.5em;
-  right: auto;
+    background: rgba(51, 122, 183, .3);
+    top: auto;
+    bottom: 0.5em;
+    left: 0.5em;
+    right: auto;
 }
 
 .ol-control {
-  z-index: 10000;
+    z-index: 10000;
 }
 
 .ol-zoom {
-  position: absolute !important;
-  left: 95vw !important;
-  background-color: transparent !important;
+    position: absolute !important;
+    left: 95vw !important;
+    background-color: transparent !important;
 }
 
+
 /* Search panel */
+
 #search-panel {
-  width: 26vw;
-  height: calc(100vh - 107px);
-  padding: 0 2vw;
-  z-index: 10000000000;
-  background-color: white;
-  box-shadow: 3px 3px 2px #DEE0E2;
-  position: absolute;
-  overflow: auto;
-  top: 105px !important;
-
-  & .results-list li {
-    border-bottom: 1px solid #DEE0E2 !important;
-  }
-
-  & .address-list li {
-    border-bottom: none !important;
-    margin-bottom: 1em;
-  }
-
-  & .pager {
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
-  }
-  & .pager-items li {
-    display: inline;
-    margin: 0 5px;
-
-    &:first-child {
-      margin-left: 0;
+    width: 26vw;
+    height: calc(100vh - 107px);
+    padding: 0 2vw;
+    z-index: 10000000000;
+    background-color: white;
+    box-shadow: 3px 3px 2px #DEE0E2;
+    position: absolute;
+    overflow: auto;
+    top: 105px !important;
+    & .results-list li {
+        border-bottom: 1px solid #DEE0E2 !important;
     }
-    &:last-child {
-      margin-right: 0;
+    & .address-list li {
+        border-bottom: none !important;
+        margin-bottom: 1em;
     }
-  }
-
-  & .pager-controls {
-    float: right;
-  }
+    & .pager {
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+    & .pager-items li {
+        display: inline;
+        margin: 0 5px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    & .pager-controls {
+        float: right;
+    }
 }
 
 .search-result-header {
-  display: flex;
-  justify-content: space-between;
-
-  & .status {
-    position: relative;
-    top: 1.3em;
-  }
+    display: flex;
+    justify-content: space-between;
+    & .status {
+        position: relative;
+        top: 1.3em;
+    }
 }
 
+
 /* Panel open / close button */
+
 .panel-control {
-  background-color: white;
-  height: 2em;
-  width: 2em;
-  position: absolute;
-  left: 30vw;
-  top: 105px;
-  box-sizing: border-box;
-  box-shadow: 3px 3px 2px #DEE0E2;
-  text-align: center;
-  z-index: 10000000;
-  & img {
-    margin: auto;
-    width: 75%;
-    height: auto;
-    vertical-align: center;
-    position: relative;
-    top: 0.25em;
-  }
+    background-color: white;
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    left: 30vw;
+    top: 105px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 2px #DEE0E2;
+    text-align: center;
+    z-index: 10000000;
+    & img {
+        margin: auto;
+        width: 75%;
+        height: auto;
+        vertical-align: center;
+        position: relative;
+        top: 0.25em;
+    }
 }
 
 .open-button {
-  left: 0;
-}
-/* map phase banner */
-.map-phase-banner p {
-  width: 960px;
-  display: block;
-  margin: 0 auto;
+    left: 0;
 }
 
+
+/* map phase banner */
+
+.map-phase-banner p {
+    width: 960px;
+    display: block;
+    margin: 0 auto;
+}
 
 
 /* map controls */
 
 #map_controls {
-  border: none;
-  /*text-align: right;*/
-  text-align: center;
-  & #type {
-    z-index: 10000000;
-    height: 3em;
-    line-height: 3em;
     border: none;
-    position: relative;
-    top: 3em;
-    right: 0;
-    background: none;
-    overflow: hidden !important;
-    & option {
-      display: inline;
-      margin: 0.3em;
-      padding: 1em;
-      height: 3em;
-      border: 1px solid rgba(78,78,78,0.3);
-      border-radius: 10px;
-      background-color: #2b8cc4;
-      color: white;
-      cursor: pointer;
-      font-size: 1.3em;
+    /*text-align: right;*/
+    text-align: center;
+    & #type {
+        z-index: 10000000;
+        height: 3em;
+        line-height: 3em;
+        border: none;
+        position: relative;
+        top: 3em;
+        right: 0;
+        background: none;
+        overflow: hidden !important;
+        & option {
+            display: inline;
+            margin: 0.3em;
+            padding: 1em;
+            height: 3em;
+            border: 1px solid rgba(78, 78, 78, 0.3);
+            border-radius: 10px;
+            background-color: #2b8cc4;
+            color: white;
+            cursor: pointer;
+            font-size: 1.3em;
+        }
     }
-  }
 }
+
 
 /* action links */
 
 .action-links ul {
-  float: right;
-  margin-top: 1em;
+    float: right;
+    margin-top: 1em;
 }
 
 .action-links li {
-  display: inline;
+    display: inline;
 }
+
 
 /* citizen service */
 
 .citizen-search-panel {
-  top: 105px !important;
-  height: calc(100vh - 107px) !important;
+    top: 105px !important;
+    height: calc(100vh - 107px) !important;
 }
 
 .panel-control-citizen {
-  top: 105px !important;
+    top: 105px !important;
 }
 
 .llc1-free-details {
-  width: 100%;
+    width: 100%;
 }
 
 .payment-info-box {
-  border-top: 10px solid #005ea5;
-  position: relative;
-  top: -150px;
+    border-top: 10px solid #005ea5;
+    position: relative;
+    top: -150px;
 }
+
 
 /* add charge */
 
 .hiddenList {
-  display: none;
+    display: none;
 }
 
 #search-panel .uprn-result li {
-  border-bottom: none !important;
+    border-bottom: none !important;
 }
+
 
 /* LON */
 
 .hiddenForm,
 .hiddenListItem {
-  display: none;
+    display: none;
 }
 
+
 /* hacks */
+
 // Cookie message appears in Firefox
 #global-cookie-message {
-  display: none !important;
+    display: none !important;
+}
+
+.check-your-answers td:first-child {
+    font-weight: bold;
+    width: 30%;
 }
