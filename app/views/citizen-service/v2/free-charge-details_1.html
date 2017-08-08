@@ -1,0 +1,95 @@
+{% extends "layout_citizen.html" %} {% block page_title %} {% if serviceName %} {{ serviceName }} {% endif %} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-xlarge">
+                Search of the local land charges register
+            </h1>
+        </div>
+
+
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2 llc1-free-details">
+                <tbody>
+                    <tr>
+                        <td>Address</td>
+                        <td class="bold-small"><span id="address-selected"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td class="bold-small">Single storey rear extension</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Legislation</td>
+                        <td class="bold-small">Town &amp; Country Planning Act 1990, section 106</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority</td>
+                        <td class="bold-small">Exeter City Council</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Created on</td>
+                        <td class="bold-small"><span id="creationDateText"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority reference</td>
+                        <td class="bold-small">PLY123</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>HM Land Registry reference</td>
+                        <td class="bold-small">LLC/EX38912714</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="column-one-third payment-info-box">
+            <h3 class="heading-small">Pay &pound;15 for an official search result which will include:</h3>
+            <ul class="list list-bullet font-xsmall">
+                <li>official LLC1 search result, guaranteed by HM Land Registry</li>
+                <li>link to source documents</li>
+                <li>charge extent</li>
+                <li>search history</li>
+                <li>option to add your brand logo to the result, next to the HM Land Registry logo</li>
+                <li>option to return to your search result at any time</li>
+                <li>option to download your result in different formats (PDF, JSON, CSV)</li>
+            </ul>
+            <a class="button" href="pay-continue">Pay now</a>
+        </div>
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;
+
+    var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;
+</script>
+
+{% endblock %}
