@@ -20,15 +20,15 @@
     </div>
     <div class="container">
         <div id="openStreetMap" class="map">
-            <div class="controls">
+            <!--<div class="controls">
                 <div id="draw-controls" class="ol-control">
                     <button class="map-button polygon"></button>
-                    <!-- <button class="map-button point"></button>
-          <button class="map-button line"></button> -->
+                    <button class="map-button point"></button>
+                    <button class="map-button line"></button>
                     <button class="map-button edit"></button>
-                    <!-- <button class="map-button copy"></button> -->
+                    <button class="map-button copy"></button>
                     <button class="map-button remove"></button>
-                    <!-- <button class="map-button remove-all"></button> -->
+                    <button class="map-button remove-all"></button>
                     <button class="map-button undo"></button>
                     <button id="snap-to-button"></button>
                 </div>
@@ -36,24 +36,22 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form action="search-results" method="GET">
+        <form action="free-charge-details" method="GET">
             <div class="form-group">
                 <fieldset>
                     <legend class="visuallyhidden">Where do you want to add the charge?</legend>
                     <div class="form-group">
                         <h1 class="heading-medium">Search of the local land charges register</h1>
                         <label class="form-label" for="search-term">
-              <strong>Enter an address to start. You can also search by:
-               <ul class="list list-bullet">
-                <li>postcode</li>
-                <li>drawing an extent</li>
-              </ul></strong>
+              <strong>Enter an address or postcose to start. You can also search by using the map.
+               </strong>
             </label>
                         <div class="form-group spacing-bottom-half">
                             <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
                             <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
                             <!-- <a class="button" href="search-results" role="button">Search</a> -->
-                            <input class="button" type="submit" value="Search">
+                            <a class="button citizenSearchButton" href="#">Search</a>
+                            <!--<input class="button" type="submit" value="Search"> -->
                         </div>
                     </div>
                 </fieldset>
@@ -97,6 +95,11 @@
         $('.button').click(function() {
             var searchTerm = $('#location').val();
             sessionStorage.setItem('searchTerm', searchTerm);
+            if (searchTerm === 'EX4 1AY') {
+                $('.citizenSearchButton').attr('href', 'search-results_address_list');
+            } else {
+                $('.citizenSearchButton').attr('href', 'free-charge-details');
+            }
         })
     });
 </script>

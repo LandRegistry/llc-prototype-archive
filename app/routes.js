@@ -553,14 +553,14 @@ router.get('/citizen-service/v1/search-results', function(req, res) {
     }
 })
 
-router.get('/citizen-service/v2/search-results', function(req, res) {
+/*router.get('/citizen-service/v2/search-results', function(req, res) {
     var citizenPostcode = req.query.location
     if (citizenPostcode === 'EX4 1AY' || citizenPostcode === 'ex4 1ay') {
         res.redirect('/citizen-service/v2/search-results_address_list')
     } else {
         res.render('citizen-service/v2/search-results')
     }
-})
+})*/
 
 /**
  * GOV.UK Pay routes
