@@ -1,0 +1,86 @@
+{% extends "layout_citizen.html" %} {% block page_title %} {% if serviceName %} {{ serviceName }} {% endif %} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Search of the local land charges register
+            </h1>
+            <h2 class="heading-medium">Search results for<br>
+                <span id="address-selected" class="heading-small"></span>
+            </h2>
+            <p>There are <span class="bold-small">15 charges</span> that affect the land of this property.<br></p>
+
+            <details>
+                <summary><span class="summary">View the charges</span></summary>
+                <div class="panel panel-border-narrow">
+                    <ul>
+                        <li><a href="#">Charge 1</a><br> 12 December 2012
+                        </li>
+                    </ul>
+                </div>
+            </details>
+            <br>
+            <div class="payPromo">
+                <h2 class="heading-small">Pay &pound;15 for an official search result which will include:</h2>
+                <ul class="list list-bullet font-xsmall">
+                    <li>official LLC1 search result, guaranteed by HM Land Registry</li>
+                    <li>link to source documents</li>
+                    <li>charge extent</li>
+                    <li>search history</li>
+                    <li>option to add your brand logo to the result, next to the HM Land Registry logo</li>
+                    <li>option to return to your search result at any time</li>
+                    <li>option to download your result in different formats (PDF, JSON, CSV, XML)</li>
+                </ul>
+            </div>
+            <h3 class="heading-medium">How to pay</h3>
+            <p>You’ll need a debit or credit card to use this service. Payment will be taken by GOV.UK Pay on HM Land Registry's behalf.</p>
+            <h2 class="heading-small">Fees</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Documents (each)</th>
+                        <th>Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Local land charge official search</td>
+                        <td>£15.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <form action="free-charge-details" method="POST">
+                <input class="button" type="submit" value="Pay Now">
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;
+
+    var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;
+</script>
+
+{% endblock %}
