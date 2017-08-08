@@ -154,6 +154,7 @@
     document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
     // location
     var locationRetrieved = sessionStorage.getItem('locationSelected');
+    console.log(locationRetrieved);
     if (locationRetrieved === null) {
         document.getElementById('location').textContent = 'Location not provided';
     } else {

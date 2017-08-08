@@ -107,6 +107,7 @@
     document.getElementById('confirmAddressButton').onclick = function() {
         var addressConfirmYes = document.getElementById('addressConfirmYes');
         var addressConfirmNo = document.getElementById('addressConfirmNo');
+        var locationSearched = document.getElementById('addressRetrieved').textContent;
         if (addressConfirmYes.classList.contains('selected')) {
             sessionStorage.setItem('locationSelected', locationSearched);
         } else if (addressConfirmNo.classList.contains('selected')) {
