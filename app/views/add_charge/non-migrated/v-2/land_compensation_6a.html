@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add particulars of nature / extent of works on acquired land
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Land compensation information</h1>
+			<form action="reason.html" method="GET">
+				<fieldset class="inline">
+					<legend class="visuallyhidden">Add particulars of nature / extent of works on acquired land </legend>
+
+					<div class="form-group">
+						<label class="form-label" for="particularsA">
+							Add particulars of nature / extent of works on acquired land
+						</label>
+
+						<textarea class="form-control" id="particularsA" name="particularsA" cols="50" rows="10" value=""></textarea>
+					</div>
+				</fieldset>
+				<a class="button particularsA-button" href="07_reason" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

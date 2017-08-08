@@ -1,7 +1,7 @@
 {% extends "layout_map.html" %}
 
 {% block page_title %}
-Draw the extent
+Search for a charge
 {% endblock %}
 
 {% block content %}
@@ -28,24 +28,16 @@ Draw the extent
 </main>
       <div class="container">
         <div id="map-nav" class="maintain-map form-group">
-          <div class="maintain-llc-map">
-            <img src="/public/images/map.png" width="100%" alt="map"></div>
+          <div class="maintain-llc-map"><img src="/public/images/map.png" width="100%" alt="map"></div>
         </div>
       </div>
       <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
 			<h1 class="heading-large">Draw the extent</h1>
 			<p>This map shows search for<span class="location bold"></span> {{ search_term }}</p>
-			<div class="panel panel-border-narrow">
-          <p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
-        </div>
-
-
-			<form action="60_map_confirm" method="GET" style="padding-bottom: 0">
+			<p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
+			<form action="60_map_confirm_2" method="GET" style="padding-bottom: 0">
         <div class="form-group">
-        <!-- <input class="button" type="submit" value="Save and continue"> -->
-
-        <a class="button" href="60_map_confirm_1">Save and continue</a>
-
+          <input class="button" type="submit" value="Save and continue">
         </div>
       </form>
 		</div>

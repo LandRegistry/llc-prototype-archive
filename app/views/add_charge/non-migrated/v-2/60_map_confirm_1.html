@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add more information about the location
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">You can’t add all of this extent</h1>
+
+			<div class="notice">
+				<span class="icon icon-important">
+					<span class="visually-hidden">Warning</span>
+				</span>
+				<strong class="bold-small">
+					This extent includes an authority that is not on this register yet.
+					<br> Delete this part of your extent. Then add the rest of the charge. 
+
+				</strong>
+			</div>
+
+
+
+
+		<br>
+			<table class="check-your-answers">
+				<caption class="heading-small visually-hidden">Location of charge extent </caption>
+				<thead>
+					<tr>
+						<th><span class="visuallyhidden">Qustion</span></th>
+						<th><span class="visuallyhidden">Answer</span></th>
+						<th><span class="visuallyhidden">Action</span></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>Location of charge and  extent </td>
+						<td >
+							<strong class="bold-small"> 14 Okehampton Place, Exeter, EX4 1AY </strong> 
+						<br>
+						<br>
+							<img src="/public/images/confirm.png" width="50%">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+<br><br>
+			<div class="form-group">
+					<a class="button" href="60_map_3_delete_part">Delete part of the extent </a>
+			</div>
+			<!-- <input class="button" type="submit" value="Go back and change the extent"> -->
+			
+			
+
+
+			<div class="form-group">
+					<details role="group">
+						<summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Why can’t I add all of this extent? </span></summary>
+						  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+							  <div class="form-group">
+								<p>We are moving charge records from local authorities to this online register.  This will be finished in 2025.
+</p>
+							  </div>
+					  </div>
+					</details>
+				</div>
+
+
+				<div class="form-group">
+					<details role="group">
+						<summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Timeline for moving local authorities to this register</span></summary>
+						  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+							  <div class="form-group">
+							  <ul class="list-bullet">
+							  	<li>Authorities moving in 2023</li>
+							  	<li>Authorities moving in 2022</li>
+							  	<li>Authorities moving in 2021</li>
+							  	<li>Authorities moving in 2020</li>
+							  	<li>Authorities moving in 2019</li>
+							  </ul>
+							
+							  </div>
+					  </div>
+					</details>
+				</div>
+
+			</div>
+
+		</div>
+	</main>
+
+	{% endblock %}
+
+

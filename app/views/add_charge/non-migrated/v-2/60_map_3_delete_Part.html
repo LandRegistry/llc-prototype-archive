@@ -1,7 +1,7 @@
 {% extends "layout_map.html" %}
 
 {% block page_title %}
-Draw the extent
+Change the extent
 {% endblock %}
 
 {% block content %}
@@ -28,26 +28,49 @@ Draw the extent
 </main>
       <div class="container">
         <div id="map-nav" class="maintain-map form-group">
-          <div class="maintain-llc-map">
-            <img src="/public/images/map.png" width="100%" alt="map"></div>
+          <div class="maintain-llc-map"><img src="/public/images/map_1_1.png" width="100%" alt="map"></div>
         </div>
       </div>
       <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-			<h1 class="heading-large">Draw the extent</h1>
-			<p>This map shows search for<span class="location bold"></span> {{ search_term }}</p>
-			<div class="panel panel-border-narrow">
+			<h1 class="heading-large">Delete part of the extent</h1>
+			
+
+      <div class="panel panel-border-narrow">
           <p>Use the buttons on this map to draw the charge extent. When you have finished, save your changes and continue.</p>
         </div>
 
 
-			<form action="60_map_confirm" method="GET" style="padding-bottom: 0">
+			
+			<form action="60_map_confirm_2" method="GET" style="padding-bottom: 0">
         <div class="form-group">
-        <!-- <input class="button" type="submit" value="Save and continue"> -->
-
-        <a class="button" href="60_map_confirm_1">Save and continue</a>
-
+          <input class="button" type="submit" value="Save new extent">
         </div>
       </form>
+
+<br>
+      <div class="form-group">
+          <details role="group">
+            <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Why do I have to delete part of this extent? </span></summary>
+              <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                <div class="form-group">
+                <p>We are moving charge records from local authorities to this online register.  This will be finished in 2025.</p>
+                </div>
+            </div>
+          </details>
+        </div>
+
+      <div class="form-group">
+          <details role="group">
+            <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Who to contact if you want to add the other part of this extent </span></summary>
+              <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                <div class="form-group">
+                <p>If you want to add the rest of this charge, contact [DYNAMIC TEXT].</p>
+                </div>
+            </div>
+          </details>
+        </div>
+
+
 		</div>
       <div class="panel-control close">
         <img src="{{ asset_path }}images/arrow_collapse.png">
