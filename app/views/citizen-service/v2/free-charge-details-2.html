@@ -11,59 +11,56 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">
-                Search results
+            <p><a href="payment-benefits" class="link-back">Back</a></p>
+            <h1 class="heading-xlarge">
+                Charge details
             </h1>
-            <h2 class="heading-medium">
-                <span id="address-selected" class="heading-medium"></span>
-            </h2>
-            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.<br></p>
-            <div class="payPromo">
-                <h2 class="heading-small">Pay &pound;15 for an official search result which will include:</h2>
-                <ul class="list list-bullet font-xsmall">
-                    <li>official LLC1 search result, guaranteed by HM Land Registry</li>
-                    <li>link to source documents</li>
-                    <li>charge extent</li>
-                    <li>search history</li>
-                    <li>option to add your brand logo to the result, next to the HM Land Registry logo</li>
-                    <li>option to return to your search result at any time</li>
-                    <li>option to download your result in different formats (PDF, JSON, CSV, XML)</li>
-                </ul>
-            </div>
-            <!--<h3 class="heading-medium">How to pay</h3>
-            <p>You’ll need a debit or credit card to use this service. Payment will be taken by GOV.UK Pay on HM Land Registry's behalf.</p>
-            <h2 class="heading-small">Fees</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Documents (each)</th>
-                        <th>Fee</th>
-                    </tr>
-                </thead>
+        </div>
+
+
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2 llc1-free-details">
                 <tbody>
                     <tr>
-                        <td>Local land charge official search</td>
-                        <td>£15.00</td>
+                        <td>Address</td>
+                        <td class="bold-small"><span id="address-selected"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td class="bold-small">Single storey rear extension</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Legislation</td>
+                        <td class="bold-small">Town &amp; Country Planning Act 1990, section 106</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority</td>
+                        <td class="bold-small">Exeter City Council</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Created on</td>
+                        <td class="bold-small">5 March 2010</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority reference</td>
+                        <td class="bold-small">PLY123</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>HM Land Registry reference</td>
+                        <td class="bold-small">LLC/EX38912714</td>
+                        <td></td>
                     </tr>
                 </tbody>
-            </table> -->
-            <br>
-            <form action="free-charge-details" method="POST">
-                <input class="button" type="submit" value="Pay Now">
-            </form>
-            <br>
-            <details>
-                <summary><span class="summary">View the charges</span></summary>
-                <div class="panel panel-border-narrow">
-                    <ul class="list">
-                        <li><a href="#">Charge 1</a> - 12 December 2012
-                        </li>
-                        <li><a href="#">Charge 2</a> - 5 March 2010
-                        </li>
-                    </ul>
-                </div>
-            </details>
+            </table>
         </div>
+
+
 
 
     </div>
@@ -75,15 +72,6 @@
 <script>
     var locationSearched = sessionStorage.getItem('searchTerm');
     document.getElementById('address-selected').textContent = locationSearched;
-    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
-    console.log(addressRetrieved);
-    var textToChange = document.getElementById("address-selected");
-    textToChange.textContent = addressRetrieved;*/
-
-    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
-    console.log(creationDateRetrieved);
-    var dateToChange = document.getElementById('creationDateText');
-    dateToChange.textContent = creationDateRetrieved;*/
 </script>
 
 {% endblock %}
