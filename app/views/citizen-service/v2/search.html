@@ -95,7 +95,7 @@
         $('.button').click(function() {
             var searchTerm = $('#location').val();
             sessionStorage.setItem('searchTerm', searchTerm);
-            if (searchTerm === 'EX4 1AY') {
+            if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
                 $('.citizenSearchButton').attr('href', 'search-results_address_list');
             } else {
                 $('.citizenSearchButton').attr('href', 'payment-benefits');
