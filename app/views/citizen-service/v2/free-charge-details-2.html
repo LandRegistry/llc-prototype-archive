@@ -11,14 +11,15 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
+            <p><a href="payment-benefits" class="link-back">Back</a></p>
             <h1 class="heading-xlarge">
-                Search of the local land charges register
+                Charge details
             </h1>
         </div>
 
 
         <div class="column-two-thirds">
-            <table class="check-your-answers-2 llc1-free-details">
+            <table class="check-your-answers-2">
                 <tbody>
                     <tr>
                         <td>Address</td>
@@ -42,12 +43,12 @@
                     </tr>
                     <tr>
                         <td>Created on</td>
-                        <td class="bold-small"><span id="creationDateText"></span></td>
+                        <td class="bold-small">5 March 2010</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Originating authority reference</td>
-                        <td class="bold-small">PLY123</td>
+                        <td class="bold-small">EXT123</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -59,19 +60,7 @@
             </table>
         </div>
 
-        <div class="column-one-third payment-info-box">
-            <h3 class="heading-small">Pay &pound;15 for an official search result which will include:</h3>
-            <ul class="list list-bullet font-xsmall">
-                <li>official LLC1 search result, guaranteed by HM Land Registry</li>
-                <li>link to source documents</li>
-                <li>charge extent</li>
-                <li>search history</li>
-                <li>option to add your brand logo to the result, next to the HM Land Registry logo</li>
-                <li>option to return to your search result at any time</li>
-                <li>option to download your result in different formats (PDF, JSON, CSV)</li>
-            </ul>
-            <a class="button" href="pay-continue">Pay now</a>
-        </div>
+
 
 
     </div>
@@ -81,15 +70,8 @@
 
 </main>
 <script>
-    var addressRetrieved = sessionStorage.getItem('addressSelected');
-    console.log(addressRetrieved);
-    var textToChange = document.getElementById("address-selected");
-    textToChange.textContent = addressRetrieved;
-
-    var creationDateRetrieved = sessionStorage.getItem('creationDate');
-    console.log(creationDateRetrieved);
-    var dateToChange = document.getElementById('creationDateText');
-    dateToChange.textContent = creationDateRetrieved;
+    var locationSearched = sessionStorage.getItem('searchTerm');
+    document.getElementById('address-selected').textContent = locationSearched;
 </script>
 
 {% endblock %}
