@@ -588,8 +588,8 @@ router.get('/citizen-service/v2/pay-confirmation', (req, res, next) => {
 
 router.post('/citizen-service/v2/free-charge-details', (req, res, next) => {
     req.body.amount = '1500'
-    req.body.reference = 'Official Local Land Search'
-    req.body.description = 'Local land charge official search'
+    req.body.reference = 'Official search result of local land charges'
+    req.body.description = 'Official search result of local land charges'
 
     payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
         debug('Initial request completed')
