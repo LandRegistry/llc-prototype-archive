@@ -11,18 +11,58 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-xlarge">
-                Download your search result
+
+            <h1 class="heading-large">
+                Download your official search result of local and charges
             </h1>
+            <p>Choose a format to download your official search result. Keep a copy for your records. You won't be able to download this result again, unless you have registered for an account with us.
+            </p>
         </div>
 
         <div class="column-two-thirds">
             <p>Choose a format to download your official search result. Keep a copy for your records. You won't be able to download another copy unless you have registered for an account with us.</p>
             <div class="form-group">
-                <a class="button" href="/public/documents/Offical-local-land-search-result.pdf" download>PDF</a>
-                <a class="button" href="">JSON</a>
-                <a class="button" href="">CSV</a>
-                <a class="button" href="">XML</a>
+                <a class="button" href="/public/documents/Offical-local-land-search-result.pdf" download>Downlod PDF</a>
+                <h2 class="heading-medium">Other formats</h2>
+                <table class="check-your-answers">
+                    <!--<thead>
+                        <tr>
+                            <th><span class="visuallyhidden">Formay</span></th>
+                            <th><span class="visuallyhidden">#</span></th>
+                            <th><span class="visuallyhidden">Download link</span></th>
+                        </tr>
+                    </thead> -->
+
+                    <tbody>
+                        <tr>
+                            <td class="bold-small">JSON</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">CSV</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">XML</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <p><a href="../search">Search again</a></p>
         </div>
