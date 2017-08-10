@@ -553,14 +553,14 @@ router.get('/citizen-service/v1/search-results', function(req, res) {
     }
 })
 
-/*router.get('/citizen-service/v2/search-results', function(req, res) {
-    var citizenPostcode = req.query.location
-    if (citizenPostcode === 'EX4 1AY' || citizenPostcode === 'ex4 1ay') {
+router.get('/citizen-service/v2/payment-benefits', function(req, res) {
+    var searchTerm = req.query.location
+    if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
         res.redirect('/citizen-service/v2/search-results_address_list')
     } else {
-        res.render('citizen-service/v2/search-results')
+        res.render('citizen-service/v2/payment-benefits')
     }
-})*/
+})
 
 /**
  * GOV.UK Pay routes

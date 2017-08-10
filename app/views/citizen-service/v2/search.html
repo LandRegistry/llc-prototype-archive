@@ -38,56 +38,52 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <!--form id="searchForm" method="GET" onsubmit="return actionChange();"> -->
-        <div class="form-group">
-            <!--  <fieldset> -->
-            <legend class="visuallyhidden">Where do you want to add the charge?</legend>
+        <form id="searchForm" method="GET" action="payment-benefits">
             <div class="form-group">
-                <h1 class="heading-medium">Enter a postcode or address</h1>
-                <label class="form-label" for="search-term">
-              
-            </label>
-                <div class="form-group spacing-bottom-half">
-                    <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                    <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-                    <!-- <a class="button" href="search-results" role="button">Search</a> -->
-                    <a class="button citizenSearchButton" href="#">Search</a>
-
-                </div>
-                <p>You can also browse to a place using the map.</p>
+                <fieldset>
+                    <legend class="visuallyhidden">Where do you want to add the charge?</legend>
+                    <div class="form-group">
+                        <h1 class="heading-medium">Enter a postcode or address</h1>
+                        <label class="form-label" for="search-term"></label>
+                        <div class="form-group spacing-bottom-half">
+                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+                            <!--<a class="button citizenSearchButton" href="#">Search</a> -->
+                            <input id="citizenSearchButton" value="Search" type="submit" class="button">
+                        </div>
+                        <p>You can also browse to a place using the map.</p>
+                    </div>
+                </fieldset>
             </div>
-            <!-- </fieldset> -->
-        </div>
-        <!-- </form> -->
+        </form>
     </div>
-    <div class="panel-control close panel-control-citizen">
-        <img src="{{ asset_path }}images/arrow_collapse.png">
+    <div class=" panel-control close panel-control-citizen ">
+        <img src="{{ asset_path }}images/arrow_collapse.png ">
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js "></script>
 <script>
     $(document).ready(function() {
         var closePanel = function() {
-            $("#search-panel").animate({
-                "margin-left": "-1000px"
+            $("#search-panel ").animate({
+                "margin-left ": "-1000px "
             }, 100);
-            $(".panel-control").removeClass("close");
-            $(".panel-control").addClass("open-button");
-            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+            $(".panel-control ").removeClass("close ");
+            $(".panel-control ").addClass("open-button ");
+            $(".panel-control img ").attr("src ", "{{ asset_path }}images/arrow_open.png ");
         }
 
         var openPanel = function() {
-            $("#search-panel").animate({
-                "margin-left": "0"
+            $("#search-panel ").animate({
+                "margin-left ": "0 "
             }, 100);
-            $(".panel-control").removeClass("open-button");
-            $(".panel-control").addClass("close");
-            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+            $(".panel-control ").removeClass("open-button ");
+            $(".panel-control ").addClass("close ");
+            $(".panel-control img ").attr("src ", "{{ asset_path }}images/arrow_collapse.png ");
         }
 
-        $(".panel-control").click(function() {
-            if ($(this).hasClass("close")) {
+        $(".panel-control ").click(function() {
+            if ($(this).hasClass("close ")) {
                 closePanel();
             } else {
                 openPanel();
@@ -103,7 +99,7 @@
                 $('.citizenSearchButton').attr('href', 'payment-benefits');
             }
         });
-        var actionChange = function() {
+        /*var actionChange = function() {
             var searchTerm = $('#location').val();
             sessionStorage.setItem('searchTerm', searchTerm);
             if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
@@ -111,14 +107,14 @@
             } else {
                 $('#searchForm').attr('action', 'payment-benefits');
             }
-        }
+        }*/
     });
 </script>
 <script>
 </script>
 
 {% endblock %} {% block body_end_additional %}
-<script src="/public/javascripts/map/search/search.js"></script>
+<script src="/public/javascripts/map/search/search.js "></script>
 <script>
     var map
 
