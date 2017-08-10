@@ -38,27 +38,27 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form action="" method="GET">
+        <!--form id="searchForm" method="GET" onsubmit="return actionChange();"> -->
+        <div class="form-group">
+            <!--  <fieldset> -->
+            <legend class="visuallyhidden">Where do you want to add the charge?</legend>
             <div class="form-group">
-                <fieldset>
-                    <legend class="visuallyhidden">Where do you want to add the charge?</legend>
-                    <div class="form-group">
-                        <h1 class="heading-medium">Enter a postcode or address</h1>
-                        <label class="form-label" for="search-term">
+                <h1 class="heading-medium">Enter a postcode or address</h1>
+                <label class="form-label" for="search-term">
               
             </label>
-                        <div class="form-group spacing-bottom-half">
-                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                            <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-                            <!-- <a class="button" href="search-results" role="button">Search</a> -->
-                            <a class="button citizenSearchButton" href="#">Search</a>
-                            <!--<input class="button" type="submit" value="Search"> -->
-                        </div>
-                        <p>You can also browse to a place using the map.</p>
-                    </div>
-                </fieldset>
+                <div class="form-group spacing-bottom-half">
+                    <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+                    <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
+                    <!-- <a class="button" href="search-results" role="button">Search</a> -->
+                    <a class="button citizenSearchButton" href="#">Search</a>
+
+                </div>
+                <p>You can also browse to a place using the map.</p>
             </div>
-        </form>
+            <!-- </fieldset> -->
+        </div>
+        <!-- </form> -->
     </div>
     <div class="panel-control close panel-control-citizen">
         <img src="{{ asset_path }}images/arrow_collapse.png">
@@ -102,8 +102,19 @@
             } else {
                 $('.citizenSearchButton').attr('href', 'payment-benefits');
             }
-        })
+        });
+        var actionChange = function() {
+            var searchTerm = $('#location').val();
+            sessionStorage.setItem('searchTerm', searchTerm);
+            if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
+                $('#searchForm').attr('action', 'search-results_address_list');
+            } else {
+                $('#searchForm').attr('action', 'payment-benefits');
+            }
+        }
     });
+</script>
+<script>
 </script>
 
 {% endblock %} {% block body_end_additional %}
