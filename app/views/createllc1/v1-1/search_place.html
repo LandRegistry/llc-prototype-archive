@@ -1,0 +1,88 @@
+{% extends "layout_map.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<main id="content" role="main" style="padding:0px">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+</main>
+<!-- main content starts -->
+<div id="map" style="width: 100%">
+    <!-- map goes in here -->
+</div>
+<div id="search-panel">
+    <h1 class="heading-medium">Enter a postcode, address, UPRN or title number</h1>
+    <form action="map-results" method="GET">
+        <div class="form-group">
+            <fieldset>
+                <legend class="visuallyhidden">Enter postcode or charge ID to find a charge</legend>
+                <div class="form-group spacing-bottom-half">
+                    <label class="form-label" for="llc1-map-search">
+                  </label>
+                    <input class="form-control" id="llc1-map-search" name="llc1-map-search" type="text" value="" autofocus="autofocus">
+                    <input id="llc1-search-button" class="button" type="submit" name="llc1-map-search" value="Search">
+
+                    <!--<input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value=""> -->
+
+                </div>
+            </fieldset>
+            <!--<p>You can also <a href="search_charge_id">find a charge by Charge ID</a></p> -->
+        </div>
+    </form>
+</div>
+<div class="panel-control close">
+    <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
+
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
+
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+        $("#llc1-search-button").click(function() {
+            var searchedTerm = $("#llc1-map-search").val();
+            sessionStorage.setItem("searchedTerm", searchedTerm);
+        })
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+    map.getControls().clear();
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}
