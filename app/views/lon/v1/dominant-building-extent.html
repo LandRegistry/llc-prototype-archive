@@ -1,10 +1,4 @@
-{% extends "layout_map.html" %}
-
-{% block page_title %}
-Draw an extent for the dominant building
-{% endblock %}
-
-{% block content %}
+{% extends "layout_map.html" %} {% block page_title %} Draw an extent for the dominant building {% endblock %} {% block content %}
 
 <!--<style>
   .summary table, tr, td {
@@ -13,90 +7,88 @@ Draw an extent for the dominant building
   }
 </style> -->
 <div class="map-page">
-  <script>
-    var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
-  </script>
-  <!-- <main id="content" role="main"> -->
-  <!-- beta banner -->
-  <div class="phase-banner map-phase-banner">
-    <p><strong class="phase-tag">beta</strong></p>
-  </div>
-  <div class="container">
-    <div id="map-nav" class="maintain-map form-group">
-      <div id="map" class="maintain-llc-map"></div>
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <!-- <main id="content" role="main"> -->
+    <!-- beta banner -->
+    <div class="phase-banner map-phase-banner">
+        <p><strong class="phase-tag">beta</strong></p>
     </div>
-  </div>
-  <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-   <h1 class="heading-medium">Draw the extent for the dominant building</h1>
-   <p>This is the building losing access to the light.</p>
-   <p>Use the buttons on this map to draw the extent.</p>
-   <p>You can also search again using a postcode or address.</p>
-   <form action="land-interest" method="GET">
-    <fieldset>
-      <div class="form-group">
-        <label class="form-label" for="newLonSearch">Potcode or address</label>
-        <input class="form-control" id="newLonSearch" type="text" name="newLonSearch">
-        <a class="button" href="#" role="button">Search</a>
-      </div>
-      <div class="form-group">
-        <input class="button" type="submit" value="Continue">
-      </div>
-    </fieldset>
-  </form>
-</div>
-<div class="panel-control close">
-  <img src="{{ asset_path }}images/arrow_collapse.png">
-</div>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" class="maintain-llc-map"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
+        <h1 class="heading-medium">Draw the extent for the dominant building</h1>
+        <p>This is the building losing access to the light.</p>
+        <p>Use the buttons on this map to draw the extent.</p>
+        <p>You can also search again using a postcode or address.</p>
+        <form action="land-interest" method="GET">
+            <fieldset>
+                <div class="form-group">
+                    <label class="form-label" for="newLonSearch">Potcode or address</label>
+                    <input class="form-control" id="newLonSearch" type="text" name="newLonSearch">
+                    <a class="button" href="#" role="button">Search</a>
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+                <p>You have added 0 extents (polygons, points or lines). A maximum of 500 extents may be added.</p>
+            </fieldset>
+        </form>
+    </div>
+    <div class="panel-control close">
+        <img src="{{ asset_path }}images/arrow_collapse.png">
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script>
-  $(document).ready(function() {
-    var closePanel = function() {
-      $("#search-panel").animate({
-        "margin-left": "-1000px"
-      }, 100);
-      $(".panel-control").removeClass("close");
-      $(".panel-control").addClass("open-button");
-      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
-    }
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
 
-    var openPanel = function() {
-      $("#search-panel").animate({
-        "margin-left": "0"
-      }, 100);
-      $(".panel-control").removeClass("open-button");
-      $(".panel-control").addClass("close");
-      $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
-    }
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
 
-    $(".panel-control").click(function() {
-      if($(this).hasClass("close")) {
-        closePanel();
-      } else {
-        openPanel();
-      }
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+        var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
+        console.log(searchedTermRetrieved);
+        $("#searched_term").val(searchedTermRetrieved);
     });
-
-    var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
-    console.log(searchedTermRetrieved);
-    $("#searched_term").val(searchedTermRetrieved);
-  });
 </script>
 
-{% endblock %}
-
-{% block body_end_additional %}
-{% include "includes/map_scripts.html" %}
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <script src="/public/javascripts/map/search/map_events.js"></script>
 <script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-  zoomslider = new ol.control.Zoom();
-  map.addControl(zoomslider);
-  var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-  MAP_HELPERS.zoom_map(geometry);
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
 </script>
 {% endblock %}
