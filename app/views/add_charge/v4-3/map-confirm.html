@@ -1,0 +1,76 @@
+{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm your extent</h1>
+
+            <div class="panel panel-border-wide">
+                <p>Please confirm that the address and extent information below is correct.</p>
+
+            </div>
+            <br>
+            <table class="check-your-answers">
+                <caption class="heading-small visually-hidden">Location of charge extent </caption>
+                <thead>
+                    <tr>
+                        <th><span class="visuallyhidden">Qustion</span></th>
+                        <th><span class="visuallyhidden">Answer</span></th>
+                        <th><span class="visuallyhidden">Action</span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Location of charge and extent </td>
+                        <td>
+                            <strong class="bold-small" id="location">  </strong>
+                            <br>
+                            <br>
+                            <img src="/public/images/confirm-updated.png" width="50%">
+                        </td>
+                        <td><a id="changeExtent" class="edit" href="60_map_3_delete_part">
+								Change <span class="visuallyhidden">Location of charge and extent</span>
+							</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="what-does-charge-do" method="GET">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    var addressToShow = sessionStorage.getItem('addressToSave');
+    console.log(addressToShow);
+    document.getElementById('location').textContent = addressToShow;
+</script>
+
+
+
+{% endblock %}
