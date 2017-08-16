@@ -1,11 +1,19 @@
 {% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 
-<!--<style>
-  .summary table, tr, td {
-    border-bottom: 0px solid !important;
-
+<style>
+  #draw-controls {
+      display: none;
+      top: 1%;
+      right: 25%;
+      margin-right: 30px;
   }
-</style> -->
+  #snap-to {
+    display: none;
+    top: 1%;
+    right: 25%;
+  }
+</style> 
+
 <div class="map-page">
   <script>
     var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
@@ -23,31 +31,25 @@
       <div id="map" class="maintain-llc-map"></div>
     </div>
   </div>
-  <div id="search-panel" class="charge-list charge-list-maintain-v1-4">
-    <form action="search" method="POST">
-      <div class="form-group">
-        <fieldset>
-          <legend class="visuallyhidden">Where do you want to add the charge?</legend>
-          <div class="form-group">
-            <h1 class="heading-large">Search of the local land charges register</h1>
-            <label class="form-label" for="search-term">
-								<strong>Enter an address to start. You can also search by:
-									<ul class="list list-bullet">
-                    <li>postcode</li>
-                    <li>drawing an extent</li>
-									</ul></strong>
-								</label>
-            <div class="form-group spacing-bottom-half">
-              <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-              <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-              <!-- <a class="button" href="search-results" role="button">Search</a> -->
-              <input class="button" type="submit" value="Search">
+    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+        <form id="searchForm" method="GET" action="payment-benefits">
+            <div class="form-group">
+                <fieldset>
+                    <legend class="visuallyhidden">Where do you want to add the charge?</legend>
+                    <div class="form-group">
+                        <h1 class="heading-medium">Enter a postcode or address</h1>
+                        <label class="form-label" for="search-term"></label>
+                        <div class="form-group spacing-bottom-half">
+                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+                            <!--<a class="button citizenSearchButton" href="#">Search</a> -->
+                            <input id="citizenSearchButton" value="Search" type="submit" class="button">
+                        </div>
+                        <p>You can also browse to a place using the map.</p>
+                    </div>
+                </fieldset>
             </div>
-          </div>
-        </fieldset>
-      </div>
-    </form>
-  </div>
+        </form>
+    </div>
   <div class="panel-control close">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
