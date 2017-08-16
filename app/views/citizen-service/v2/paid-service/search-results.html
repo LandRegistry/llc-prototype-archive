@@ -1,19 +1,11 @@
 {% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 
-<style>
-  #draw-controls {
-      display: none;
-      top: 1%;
-      right: 25%;
-      margin-right: 30px;
-  }
-  #snap-to {
-    display: none;
-    top: 1%;
-    right: 25%;
-  }
-</style> 
+<!--<style>
+  .summary table, tr, td {
+    border-bottom: 0px solid !important;
 
+  }
+</style> -->
 <div class="map-page">
   <script>
     var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
@@ -31,25 +23,15 @@
       <div id="map" class="maintain-llc-map"></div>
     </div>
   </div>
-    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form id="searchForm" method="GET" action="search-results">
-            <div class="form-group">
-                <fieldset>
-                    <legend class="visuallyhidden">Where do you want to add the charge?</legend>
-                    <div class="form-group">
-                        <h1 class="heading-medium">Enter a postcode or address</h1>
-                        <label class="form-label" for="search-term"></label>
-                        <div class="form-group spacing-bottom-half">
-                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                            <!--<a class="button citizenSearchButton" href="#">Search</a> -->
-                            <input id="citizenSearchButton" value="Search" type="submit" class="button">
-                        </div>
-                        <p>You can also browse to a place using the map.</p>
-                    </div>
-                </fieldset>
-            </div>
-        </form>
-    </div>
+  <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+      <h1 class="heading-medium">Draw the extent</h1>
+        <p>This map shows search for <span class="searchedTerm bold"></span></p>
+        <div class="panel panel-border-narrow">
+            <p>Use the buttons on this map to draw the search extent. When you have finished, click continue to see your search result.</p>
+      </div>
+          <a class="button" href="paid-charge-details">Continue</a>
+          <br><br><a href="search">Search again</a>
+  </div>
   <div class="panel-control close">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
@@ -84,20 +66,18 @@
       }
     });
 
-    $('.button').click(function() {
-      var searchTerm = $('#location').val();
-      sessionStorage.setItem('searchTerm', searchTerm);
-      if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
-          $('.citizenSearchButton').attr('href', 'search-results_address_list');
-      } else {
-          $('.citizenSearchButton').attr('href', 'payment-benefits');
-      }
-    });
+    var searchTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchTermRetrieved);
+    $("#searched_term").val(searchTermRetrieved);
+    $(".searchedTerm").text(searchTermRetrieved);
 
-    var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
-    console.log(searchedTermRetrieved);
-    $("#searched_term").val(searchedTermRetrieved);
-  });
+    $('.results-list li').click(function () {
+      var addressSelected = $(this).children('p').html()
+      var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
+      sessionStorage.setItem('addressSelected', ad);
+    })
+
+  })
 
 </script>
 
@@ -112,7 +92,7 @@
   map.addControl(zoomslider);
   var geometry =
     "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-  // MAP_HELPERS.zoom_map(geometry);
+  MAP_HELPERS.zoom_map(geometry);
 
 </script>
 {% endblock %}
