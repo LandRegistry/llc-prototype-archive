@@ -1,55 +1,41 @@
 {% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 
-<style>
-  #draw-controls {
-      display: none;
-      top: 1%;
-      right: 25%;
-      margin-right: 30px;
-  }
-  #snap-to {
-    display: none;
-    top: 1%;
-    right: 25%;
-  }
-</style> 
-
 <div class="map-page">
   <script>
     var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
   </script>
-    <main id="content" role="main" style="padding:0px">
-        <div class="phase-banner-beta">
-            <p>
-                <strong class="phase-tag">BETA</strong>
-                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
-            </p>
-        </div>
-    </main>
+  <main id="content" role="main" style="padding:0px">
+    <div class="phase-banner-beta">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+  </main>
   <div class="container">
     <div id="map-nav" class="maintain-map form-group">
       <div id="map" class="maintain-llc-map"></div>
     </div>
   </div>
-    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form id="searchForm" method="GET" action="search-results">
-            <div class="form-group">
-                <fieldset>
-                    <legend class="visuallyhidden">Where do you want to add the charge?</legend>
-                    <div class="form-group">
-                        <h1 class="heading-medium">Enter a postcode or address</h1>
-                        <label class="form-label" for="search-term"></label>
-                        <div class="form-group spacing-bottom-half">
-                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                            <!--<a class="button citizenSearchButton" href="#">Search</a> -->
-                            <input id="citizenSearchButton" value="Search" type="submit" class="button">
-                        </div>
-                        <p>You can also browse to a place using the map.</p>
-                    </div>
-                </fieldset>
-            </div>
-        </form>
-    </div>
+  <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+    <form id="searchForm" method="GET" action="paid-charge-details">
+      <div class="form-group">
+        <fieldset>
+          <legend class="visuallyhidden">Where do you want to search?</legend>
+          <div class="form-group">
+            <h1 class="heading-medium">Where do you want to search?/h1>
+              <label class="form-label" for="search-term"></label>
+              <div class="form-group spacing-bottom-half">
+                <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
+                <!--<a class="button citizenSearchButton" href="#">Search</a> -->
+                <input id="citizenSearchButton" value="Search" type="submit" class="button">
+              </div>
+              <p>You can also browse to a place using the map.</p>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
   <div class="panel-control close">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
@@ -84,13 +70,13 @@
       }
     });
 
-    $('.button').click(function() {
+    $('.button').click(function () {
       var searchTerm = $('#location').val();
       sessionStorage.setItem('searchTerm', searchTerm);
       if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
-          $('.citizenSearchButton').attr('href', 'search-results_address_list');
+        $('.citizenSearchButton').attr('href', 'search-results_address_list');
       } else {
-          $('.citizenSearchButton').attr('href', 'payment-benefits');
+        $('.citizenSearchButton').attr('href', 'payment-benefits');
       }
     });
 
@@ -112,7 +98,15 @@
   map.addControl(zoomslider);
   var geometry =
     "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-  // MAP_HELPERS.zoom_map(geometry);
+  MAP_HELPERS.zoom_map(geometry);
+
+  // hide tools that are not needed
+
+  $('.point').remove()
+  $('.line').remove()
+  $('.copy').remove()
+  $('.remove').remove()
+  $('#snap-to').remove()
 
 </script>
 {% endblock %}

@@ -19,20 +19,30 @@
         </div>
     </main>
   <div class="container">
-    <div id="map-nav" class="maintain-map form-group">
-      <div id="map" class="maintain-llc-map"></div>
+    <div id="openStreetMap" class="map">
+      <div class="controls">
+        <div id="draw-controls" class="ol-control">
+          <button class="map-button polygon"></button>
+          <button class="map-button edit"></button>
+          <!-- <button class="map-button copy"></button> -->
+          <!-- <button class="map-button remove"></button> -->
+          <button class="map-button remove-all"></button>
+          <button class="map-button undo"></button>
+          <!-- <button id="snap-to-button"></button> -->
+        </div>
+      </div>
     </div>
   </div>
   <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
       <h1 class="heading-medium">Draw the extent</h1>
-        <p>This map shows search for <span class="searchedTerm bold"></span></p>
+        <!-- <p>Browse to a place using the map <span class="searchedTerm bold"></span></p> -->
         <div class="panel panel-border-narrow">
             <p>Use the buttons on this map to draw the search extent. When you have finished, click continue to see your search result.</p>
       </div>
-          <a class="button" href="paid-charge-details">Continue</a>
-          <br><br><a href="search">Search again</a>
+          <a class="button" href="payment-benefits?location=Okehampton+Place">Continue</a>
+          <br><br><a href="search">Search using postcode or address</a>
   </div>
-  <div class="panel-control close">
+  <div class="panel-control close panel-control-citizen">
     <img src="{{ asset_path }}images/arrow_collapse.png">
   </div>
 </div>
@@ -66,33 +76,49 @@
       }
     });
 
-    var searchTermRetrieved = sessionStorage.getItem("searchTerm");
-    console.log(searchTermRetrieved);
-    $("#searched_term").val(searchTermRetrieved);
-    $(".searchedTerm").text(searchTermRetrieved);
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    if (searchedTermRetrieved === 'EX4 1AY' || searchedTermRetrieved === 'ex4 1ay') {
+      searchedTermRetrieved = sessionStorage.getItem("addressSelected");
+    }
+    console.log(searchedTermRetrieved);
+    $(".searchedTerm").text(searchedTermRetrieved);
 
     $('.results-list li').click(function () {
-      var addressSelected = $(this).children('p').html()
-      var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
-      sessionStorage.setItem('addressSelected', ad);
+      var creationDate = $(this).children('p').html()
+      sessionStorage.setItem('creationDate', creationDate)
     })
 
-  })
+  });
+  /*$('.results-list li').click(function() {
+    var addressSelected = $(this).children('p').html()
+    var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
+    sessionStorage.setItem('addressSelected', ad);
+  })*/
 
 </script>
 
-{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
-<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
-<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-<script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script>
+{% endblock %} {% block body_end_additional %}
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-  zoomslider = new ol.control.Zoom();
-  map.addControl(zoomslider);
-  var geometry =
-    "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-  MAP_HELPERS.zoom_map(geometry);
+  var map
 
+  require([
+    'esri/map',
+    'esri/dijit/LocateButton',
+    'dojo/domReady!'
+  ], function (
+    Map, LocateButton
+  ) {
+      map = new Map('openStreetMap', {
+        center: [-10.500, 53.5341],
+        zoom: 6,
+        basemap: 'streets'
+      })
+
+      geoLocate = new LocateButton({
+        map: map
+      }, 'LocateButton')
+      geoLocate.startup()
+    })
 </script>
 {% endblock %}
