@@ -10,21 +10,19 @@
   <script>
     var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
   </script>
-  <!-- <main id="content" role="main"> -->
-  <!-- beta banner -->
-  <div class="phase-banner-beta">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
   <div class="container">
     <div id="openStreetMap" class="map">
       <div class="controls">
         <div id="draw-controls" class="ol-control">
           <button class="map-button polygon"></button>
-          <button class="map-button point"></button>
-          <button class="map-button line"></button>
           <button class="map-button edit"></button>
           <button class="map-button copy"></button>
           <button class="map-button remove"></button>
@@ -36,104 +34,12 @@
     </div>
   </div>
   <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-    <h1 class="heading-small">Search results for <span class="searchedTerm"></span></h1>
-    <!-- <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text"> -->
-    <input class="form-control" id="searched_term" type="text" name="searched_term">
-    <input class="button" type="submit" value="Search">
-    <div class="results-block">
-      <div class="pager">
-        <div class="pager-controls">
-          <ul class="pager-items">
-            <li>1</li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-        </div>
-        <div class="pager-summary">Showing 1 &ndash; 10 of 15 charges</div>
+      <h1 class="heading-medium">Draw the extent</h1>
+        <p>This map shows search for <span class="searchedTerm bold"></span></p>
+        <div class="panel panel-border-narrow">
+            <p>Use the buttons on this map to draw the search extent. When you have finished, click continue to see your search result.</p>
       </div>
-      <ol class="results-list">
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 1</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>11 October 2008</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 2</a></h2>
-            <span class="status bold-xsmall">Cancelled</span>
-          </div>
-          <p>2 July 2007</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 3</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>15 January 2006</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 4</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>11 July 2005</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 5</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>5 February 2005</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 6</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>2 July 2004</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 7</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>17 March 2004</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 8</a></h2>
-            <span class="status bold-xsmall">Cancelled</span>
-          </div>
-          <p>11 March 2004</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 9</a></h2>
-            <span class="status bold-xsmall">Active</span>
-          </div>
-          <p>2 December 2003</p>
-        </li>
-        <li>
-          <div class="search-result-header">
-            <h2 class="heading-small"><a href="free-charge-details">Charge 10</a></h2>
-            <span class="status bold-xsmall">Cancelled</span>
-          </div>
-          <p>5 November 2003</p>
-        </li>
-      </ol>
-    </div>
-    <div class="pager">
-      <div class="pager-controls">
-        <ul class="pager-items">
-          <li>1</li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">Next</a></li>
-        </ul>
-      </div>
-      <div class="pager-summary">Showing 1 &ndash; 10 of 15 charges</div>
-    </div>
+          <a class="button" href="payment-benefits?location=Okehampton+Place">Continue</a>
   </div>
   <div class="panel-control close panel-control-citizen">
     <img src="{{ asset_path }}images/arrow_collapse.png">
@@ -174,7 +80,6 @@
       searchedTermRetrieved = sessionStorage.getItem("addressSelected");
     }
     console.log(searchedTermRetrieved);
-    $("#searched_term").val(searchedTermRetrieved);
     $(".searchedTerm").text(searchedTermRetrieved);
 
     $('.results-list li').click(function () {
@@ -183,7 +88,6 @@
     })
 
   });
-
   /*$('.results-list li').click(function() {
     var addressSelected = $(this).children('p').html()
     var ad = addressSelected.replace(new RegExp('<br>', 'g'), ',');
