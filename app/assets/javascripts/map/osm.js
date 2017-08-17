@@ -1,5 +1,5 @@
 var map = new ol.Map({
-  layers: [MAP_CONFIG.base_layer, GEOSERVER_CONFIG.boundaries_layer, MAP_CONFIG.draw_layer],
+  layers: [new ol.layer.Tile({source: new ol.source.OSM()}), MAP_CONFIG.draw_layer],
   target: 'map',
   controls: ol.control.defaults({attribution: false}).extend([
     MAP_CONFIG.draw_controls,

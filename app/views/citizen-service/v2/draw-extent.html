@@ -19,27 +19,22 @@
         </div>
     </main>
     <div class="container">
-        <div id="map" class="maintain-llc-map"></div>
+        <div id="map" class="map"></div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form action="draw-extent" method="GET">
+        <form action="search-results" method="GET">
             <div class="form-group">
                 <fieldset>
-                    <legend class="visuallyhidden">Where do you want to search?</legend>
+                    <legend class="visuallyhidden">Draw the extent</legend>
                     <div class="form-group">
-                        <h1 class="heading-medium">Where do you want to search?</h1>
-                        <label class="form-label" for="search-term">
-              <strong>Enter an address to start. You can also search by:
-               <ul class="list list-bullet">
-                <li>postcode</li>
-                <li>drawing an extent</li>
-              </ul></strong>
-            </label>
+                        <h1 class="heading-medium">Draw the extent</h1>
+                        <p>This map shows search for <span class="searchedTerm bold"></span></p>
+                            <div class="panel panel-border-narrow">
+                                <p>Use the buttons on this map to draw the search extent. When you have finished, save your changes and continue to see your search results.</p>
+                            </div>
                         <div class="form-group spacing-bottom-half">
-                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                            <!--<input class="search-button submit location-search" type="submit" value="Search"><br><br>-->
-                            <!-- <a class="button" href="search-results" role="button">Search</a> -->
-                            <input class="button" type="submit" value="Search">
+                            <input class="button" type="submit" value="Save and continue">
+                            <br><br><a href="search">Search again</a>
                         </div>
                     </div>
                 </fieldset>
@@ -80,10 +75,9 @@
             }
         });
 
-        $('.button').click(function () {
-            var searchTerm = $('#location').val();
-            sessionStorage.setItem('searchTerm', searchTerm);
-        })
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    $(".searchedTerm").text(searchedTermRetrieved);
+
     });
 
 </script>
@@ -98,8 +92,8 @@
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry =
-        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-//   MAP_HELPERS.zoom_map(geometry);
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000030, 92032.6375000030], [292328.61250000016, 92055.2125000001]]}";
+  MAP_HELPERS.zoom_map(geometry);
   // hide tools that are not needed
 
   $('.point').remove()

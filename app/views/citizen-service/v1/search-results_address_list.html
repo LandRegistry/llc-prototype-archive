@@ -101,29 +101,25 @@
 
 </script>
 
-{% endblock %} {% block body_end_additional %}
+{% endblock %} {% block body_end_additional %}{% include "includes/osm_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-  var map
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry =
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000030, 92032.6375000030], [292328.61250000016, 92055.2125000001]]}";
+  MAP_HELPERS.zoom_map(geometry);
+  // hide tools that are not needed
 
-  require([
-    'esri/map',
-    'esri/dijit/LocateButton',
-    'dojo/domReady!'
-  ], function (
-    Map, LocateButton
-  ) {
-      map = new Map('openStreetMap', {
-        center: [-3.539889, 50.718433],
-        zoom: 18,
-        basemap: 'streets'
-      })
-
-      geoLocate = new LocateButton({
-        map: map
-      }, 'LocateButton')
-      geoLocate.startup()
-    })
-
+  $('.point').remove()
+  $('.line').remove()
+  $('.copy').remove()
+  $('.remove').remove()
+  $('#snap-to').remove()
+  
 </script>
 {% endblock %}
