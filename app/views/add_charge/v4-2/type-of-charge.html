@@ -116,7 +116,7 @@
             document.getElementById('otherLabel').classList.add('selected');
         }
 
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'charge-summary');
+        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
         sessionStorage.setItem('chargeTypeUpdated', 'true');
     }
 
@@ -128,6 +128,11 @@
         var otherLabel = document.getElementById('otherLabel');
         if (financialLabel.classList.contains('selected')) {
             var chargeType = 'Financial';
+         
+        // financial journey radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/financial');
+
+
         } else if (planningLabel.classList.contains('selected')) {
             var chargeType = 'Planning';
         } else if (listedBuildingLabel.classList.contains('selected')) {
@@ -140,5 +145,7 @@
 
         sessionStorage.setItem('chargeType', chargeType);
     }
+
+
 </script>
 {% endblock %}
