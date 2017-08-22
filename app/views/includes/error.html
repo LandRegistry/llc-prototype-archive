@@ -1,0 +1,17 @@
+{% macro error(link='', linkText) %}
+<div class="error-summary hidden" role="alert" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+    There are errors on this page
+  </h2>
+
+  <ul class="error-summary-list">
+    {% if link %}
+    <li><a href="{{link}}">{{linkText}}</a></li>
+    {% else %}
+    <p>{{linkText}}</p>
+    {% endif %}
+  </ul>
+
+</div>
+{% endmacro %}

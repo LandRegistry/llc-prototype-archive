@@ -22,19 +22,20 @@
         <div id="map" class="map"></div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+      {% import "includes/error.html" as error %}
+      {{ error.error('Draw a shape around the place you zoomed into') }}
         <form action="search-results" method="GET">
             <div class="form-group">
                 <fieldset>
-                    <legend class="visuallyhidden">Draw the extent</legend>
+                    <legend class="visuallyhidden">Find the place on the map</legend>
                     <div class="form-group">
-                        <h1 class="heading-medium">Draw the extent</h1>
-                        <p>This map shows search for <span class="searchedTerm bold"></span></p>
-                            <div class="panel panel-border-narrow">
-                                <p>Use the buttons on this map to draw the search extent. When you have finished, save your changes and continue to see your search results.</p>
-                            </div>
+                        <h1 class="heading-medium">Find the place on the map</h1>
+                        <p>Zoom to the area where you want to search.</p>
+                        <p>Once you have found the place you need, draw a shape around the place.</p>
+                        <p>Your search results will show charges inside this shape.</p>
                         <div class="form-group spacing-bottom-half">
-                            <input class="button" type="submit" value="Save and continue">
-                            <br><br><a href="search">Search again</a>
+                            <input class="button" type="submit" value="Continue">
+                            <br><br><a href="postcode-search">Search by postcode, address or place name</a>
                         </div>
                     </div>
                 </fieldset>
@@ -75,8 +76,9 @@
             }
         });
 
-    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
-    $(".searchedTerm").text(searchedTermRetrieved);
+        $('.button').click(function () {
+        sessionStorage.setItem('searchTerm', '');
+        })
 
     });
 
@@ -93,7 +95,7 @@
     map.addControl(zoomslider);
     var geometry =
         "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000030, 92032.6375000030], [292328.61250000016, 92055.2125000001]]}";
-  MAP_HELPERS.zoom_map(geometry);
+//   MAP_HELPERS.zoom_map(geometry);
   // hide tools that are not needed
 
   $('.point').remove()
@@ -101,6 +103,13 @@
   $('.copy').remove()
   $('.remove').remove()
   $('#snap-to').remove()
+
+      $('.button').click(function (e) {
+        if (MAP_CONFIG.draw_source.getFeatures().length === 0) {
+            $('.error-summary').removeClass('hidden')
+            e.preventDefault()
+        }
+    })
   
 </script>
 {% endblock %}
