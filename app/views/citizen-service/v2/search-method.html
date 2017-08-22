@@ -10,10 +10,8 @@
       </div>
       {% import "includes/error.html" as error %}
       {{ error.error(link='#search-method-div', 'Select a search method') }}
-      <div class="form-group">
-         <h1 class="heading-large">How would you like to search?</h1>
-      </div>
       <div class="form-group" id="search-method-div">
+        <h1 class="heading-large">How would you like to search?</h1>
         <span class="error-message hidden">Select a search method</span>
         <label class="block-label selection-button-radio" for="postcode-address-place">
                 <input id="postcode-address-place" type="radio"  name="search-method" value="postcode-address-place">
