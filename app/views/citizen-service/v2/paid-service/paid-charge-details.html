@@ -15,6 +15,11 @@
                 Download your official search result of local land charges
 
             </h1>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-medium"></span>
+            </h2>
+            <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto">
+            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
             <p>Choose a format to download your official search result. Keep a copy for your records. You won't be able to download this result again, unless you have registered for an account with us.
             </p>
         </div>
@@ -63,9 +68,22 @@
                     </tbody>
                 </table>
             </div>
-            <p><a href="../search">Search again</a></p>
+            <p><a href="../search-method">Search again</a></p>
         </div>
     </div>
+    <script>
+    var locationSearched = sessionStorage.getItem('searchTerm');
+    document.getElementById('address-selected').textContent = locationSearched;
+    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;*/
+
+    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;*/
+</script>
 </main>
 
 {% endblock %}
