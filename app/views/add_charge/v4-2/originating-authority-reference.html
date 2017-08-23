@@ -1,4 +1,9 @@
-{% extends "layout.html" %} {% block page_title %} Originating autohity reference number for this charge {% endblock %} {% block content %}
+{% extends "layout.html" %} 
+{% block page_title %} 
+What is the reference number for this charge? 
+{% endblock %} 
+{% block content %}
+
 
 <main id="content" role="main">
     <!-- alpha banner -->
@@ -18,8 +23,8 @@
                     <div class="form-group">
 
                         <label id="yesRefLabel" class="block-label selection-button-radio" for="yesRef" data-target="referenceNumberForm">
-							<input id="yesRef" name="reference" type="radio" value="no" aria-controls="referenceNumberForm">
-							Yes
+                            <input id="yesRef" name="reference" type="radio" value="no" aria-controls="referenceNumberForm">
+                            Yes
                         </label>
                         <div class="js-hidden panel panel-border-narrow" id="referenceNumberForm" aria-hidden="true" style="display: none;">
 
@@ -32,25 +37,13 @@
 
                         </div>
                         <label id="noRefLabel" class="block-label selection-button-radio no" for="noRef">
-							<input id="noRef" name="reference" type="radio" value="yes">
-							No
-						</label>
+                            <input id="noRef" name="reference" type="radio" value="yes">
+                            No
+                        </label>
                     </div>
-
-
-
-
                 </fieldset>
 
             </form>
-
-
-
-
-
-
-
-
 
             <div class="form-group">
                 <a id="referenceNumberButton" class="button" href="document-link" role="button">Continue</a>
@@ -62,12 +55,11 @@
             </div>
 
         </div>
-
-
     </div>
 
 </main>
-<script>
+
+<!-- <script>
     var referenceIsChanging = sessionStorage.getItem('referenceIsChanging');
     if (referenceIsChanging === 'true') {
         var referenceToChange = sessionStorage.getItem('referenceToChange');
@@ -88,6 +80,6 @@
             sessionStorage.setItem('referenceExists', 'false');
         }
     }
-</script>
+</script> -->
 
 {% endblock %}

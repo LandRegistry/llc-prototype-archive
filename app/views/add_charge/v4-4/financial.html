@@ -1,0 +1,88 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+What type of financial charge?
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">What type of financial charge? </h1>
+            
+            <form action="document-link" method="GET">
+
+                <fieldset>
+                    <legend class="visually-hidden">What type of charge is this?</legend>
+
+                    <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                        <input id="landCompensation" name="specific-financial" type="radio" value="General financial charge ">
+                        General financial charge 
+                    </label>
+
+
+                    <label id="specificLabel" class="block-label selection-button-radio" for="specificCharge" data-target="SpecificFinancial-1">
+                        <input id="specificCharge" name="specific-financial" type="radio" value="Other" aria-controls="specificLabel">
+                        Specific financial charge
+                    </label>
+
+                    <!-- Yes there is general financial section start here -->
+                    <div class="js-hidden panel form-group panel-border-wide" id="SpecificFinancial-1" aria-hidden="true" style="display: none; margin-top: 20px;">
+                        <div class="form-group">  
+                            <fieldset>
+                             <legend class="heading-medium">Did this charge start as a "General financial" charge?</legend>
+                             <br>
+                             <ul>
+                                <li><a href="/add_charge/v4-2/specific-financial">Yes, it is related to a previous registered general charge </a></li>
+                                <br>
+                                <li><a href="#">No </a></li>
+                                <br>
+                                <li><a href="/add_charge/v4-2/specific-financial">
+                                    Don't know </a></li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>  
+
+                    <label id="dontknowLabel" class="block-label selection-button-radio" for="dontKnow-1" data-target="dontKnow">
+                        <input id="dontKnow-1" name="specific-financial" type="radio" value="Don't know" aria-controls="dontknowLabel">
+                        Don't know
+                    </label>
+
+                    <!-- Don't know section start here -->
+                    <div class="js-hidden form-group panel panel-border-wide" id="dontKnow" aria-hidden="true" style="display: none; margin-top: 20px;">
+                        <h2 class="heading-medium">Problems answering this question? </h2>
+
+                        <h3 class="heading-small">This is a general financial charge if: </h3>
+
+                        <ul class="font-xsmall list-bullet">
+                            <li>the local authority charges a fee for doing work on a property </li>
+                            <li>the authority does not know the cost of the work (yet) </li>
+                            <li>you don’t have information about a fee, for example ‘amount originally secured and rate of interest, if payable: £600 + Int. @ 20%’ </li>
+                        </ul>
+
+                        <h3 class="heading-small">This is a specific financial charge if: </h3>
+
+                        <ul class="font-xsmall list-bullet">
+                            <li>the local authority charges a fee for doing work on a property </li>
+                            <li>the authority knows the cost of the work </li>
+                            <li>•   you have information about a fee, for example ‘amount originally secured and rate of interest, if payable: £600 + Int. @ 20%’ </li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </form>
+            <br>
+            <p>
+                <a class="button" id="financialBtn" role="button" href="date-document-created">Continue</a>
+            </p>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
