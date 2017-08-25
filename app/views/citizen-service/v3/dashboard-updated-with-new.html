@@ -30,7 +30,13 @@
                     <tr>
                         <td>12 May 2017</td>
                         <td>12 August 2017</td>
-                        <td><a href="paid-service/view">View</a></td>
+                        <td><a href="paid-service/download">View</a></td>
+                        <td><a href="paid-service/refresh">Refresh</a></td>
+                    </tr>
+                    <tr>
+                        <td class="refresh-date"></td>
+                        <td>n/a</td>
+                        <td><a href="paid-service/download">View</a></td>
                         <td><a href="paid-service/refresh">Refresh</a></td>
                     </tr>
                 </tbody>
@@ -48,13 +54,54 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    $('.button').click(function(e) {
-        var radioValue = $('input[name="freeOrPaid"]:checked').val()
-        if (radioValue === 'paid') {
-            $("a.button").attr("href", "login")
-        } else if (radioValue === 'free') {
-            $("a.button").attr("href", "search-method")
-        }
-    })
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+
+    switch (month) {
+        case 1:
+            month = 'January';
+            break;
+        case 2:
+            month = 'February';
+            break;
+        case 3:
+            month = 'March';
+            break;
+        case 4:
+            month = 'April';
+            break;
+        case 5:
+            month = 'May';
+            break;
+        case 6:
+            month = 'June';
+            break;
+        case 7:
+            month = 'July';
+            break;
+        case 8:
+            month = 'August';
+            break;
+        case 9:
+            month = 'September';
+            break;
+        case 10:
+            month = 'October';
+            break;
+        case 11:
+            month = 'November';
+            break;
+        case 12:
+            month = 'December';
+            break;
+        default:
+            break;
+    }
+
+    var day = d.getDate();
+
+    var refreshDay = day + ' ' + month + ' ' + d.getFullYear();
+    $('.refresh-date').text(refreshDay);
 </script>
 {% endblock %}
