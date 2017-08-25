@@ -1,0 +1,50 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Log in to the service</h1>
+            <form action="dashboard" method="GET">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="visually-hidden">Log in to the service</legend>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" id="email" name="login" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" id="password" name="login" type="password">
+                        </div>
+                        <h3 class="heading-medium">Problems signing in?</h3>
+                        <ul class="list">
+                            <li><a href="#">I forgot my password</a></li>
+                            <li><a href="register">I need to register</a></li>
+                        </ul>
+                        <input class="button" type="submit" value="Log in">
+                    </fieldset>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    $('.button').click(function(e) {
+        var radioValue = $('input[name="freeOrPaid"]:checked').val()
+        if (radioValue === 'paid') {
+            $("a.button").attr("href", "login")
+        } else if (radioValue === 'free') {
+            $("a.button").attr("href", "search-method")
+        }
+    })
+</script>
+{% endblock %}

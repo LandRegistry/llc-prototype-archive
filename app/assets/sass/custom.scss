@@ -215,6 +215,38 @@
     padding-left: 1em;
 }
 
+.part-navigation ol {
+    padding: 0 30px;
+    & li {
+        list-style-type: decimal;
+        margin-bottom: 0.75em;
+    }
+}
+
+.search-fees td {
+    padding-left: 0.5em;
+    border: 1px solid #DEE0E2;
+}
+
+.search-fees thead td {
+    background-color: #BFC1C3;
+    font-weight: bold;
+}
+
+.search-fees tbody tr:nth-child(2n+2) {
+    background-color: #F8F8F8;
+}
+
+.login-box {
+    margin-top: 50px;
+    border-top: 10px solid #005EA5;
+}
+
+.sign-out {
+    margin-top: 25px;
+    text-align: right;
+}
+
 
 /* add charge */
 
