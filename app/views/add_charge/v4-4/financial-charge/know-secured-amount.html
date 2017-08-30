@@ -1,0 +1,113 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+Do you know exactly how much amount secured by the charge?
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">I know exactly how much amount secured by the charge? </h1>
+            
+            <form action="document-link" method="GET">
+
+                <fieldset>
+                    <legend class="visually-hidden">Do you know exactly how much amount secured by the charge? </legend>
+
+                    <label id="landCompensationLabel" class="block-label selection-button-radio" for="dontKnowAmount">
+                        <input id="dontKnowAmount" name="specific-financial" type="radio" value="No">
+                        No
+                    </label>
+
+
+                    <label id="specificLabel" class="block-label selection-button-radio" for="knowAmount" data-target="SpecificFinancial-1">
+                        <input id="knowAmount" name="specific-financial" type="radio" value="Other" aria-controls="specificLabel">
+                        Yes
+                    </label>
+
+                    <!-- Yes there is general financial section start here -->
+                    <div class="js-hidden panel form-group panel-border-wide" id="SpecificFinancial-1" aria-hidden="true" style="display: none; margin-top: 20px;">
+                        <div class="form-group">  
+                            <fieldset>
+                             <legend class="heading-medium">Did this charge start as a "General financial" charge?</legend>
+                             <br>
+                             <ul>
+                                <li><a href="/add_charge/v4-2/specific-financial">Yes, it is related to a previous registered general charge </a></li>
+                                <br>
+                                <li><a href="#">No </a></li>
+                                <br>
+                                <li><a href="/add_charge/v4-2/specific-financial">
+                                    Don't know </a></li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>  
+
+                </fieldset>
+            </form>
+            <br>
+            <p>
+                <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
+            </p>
+        </div>
+
+    </div>
+</main>
+<script>
+    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
+    console.log(chargeTypeIsChanging);
+    if (chargeTypeIsChanging === 'true') {
+        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
+        if (chargeTypeToChange === 'Planning') {
+            document.getElementById('planningLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Financial') {
+            document.getElementById('financialLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Listed Building') {
+            document.getElementById('listedBuildingLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Land Compensation') {
+            document.getElementById('landCompensationLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Other') {
+            document.getElementById('otherLabel').classList.add('selected');
+        }
+
+        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
+        sessionStorage.setItem('chargeTypeUpdated', 'true');
+    }
+
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var financialLabel = document.getElementById('financialLabel');
+        var planningLabel = document.getElementById('planningLabel');
+        var listedBuildingLabel = document.getElementById('listedBuildingLabel');
+        var landCompensationLabel = document.getElementById('landCompensationLabel');
+        var otherLabel = document.getElementById('otherLabel');
+        if (financialLabel.classList.contains('selected')) {
+            var chargeType = 'Financial';
+         
+        // financial journey radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
+        // If yes radio button clicked 
+            document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
+
+
+        } else if (planningLabel.classList.contains('selected')) {
+            var chargeType = 'Planning';
+        } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+        } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+        } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+        }
+
+        sessionStorage.setItem('chargeType', chargeType);
+    }
+
+</script>
+
+{% endblock %}

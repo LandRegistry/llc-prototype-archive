@@ -6,7 +6,8 @@
         <p><strong class="phase-tag">BETA</strong></p>
     </div>
     <!-- main content starts -->
-    <div class="grid-row">
+
+<div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Check your answers before registering this local land charge</h1>
 
@@ -22,46 +23,44 @@
                 <tbody>
                     <tr id="chargeTypeRow">
                         <td class="bold-small">Type of charge</td>
-                        <td id="chargeType"></td>
+                        <td id="chargeType">undefined</td>
                         <td class="change-answer">
                             <a id="changeChargeType" class="edit" href="type-of-charge">
-								Change <span class="visuallyhidden">type of charge</span>
-							</a>
+                                Change <span class="visuallyhidden">type of charge</span>
+                            </a>
                         </td>
                     </tr>
 
                     <tr id="docDateRow">
                         <td class="bold-small">Document valid from
                         </td>
-                        <td id="validFrom"></td>
+                        <td id="validFrom">  </td>
                         <td class="change-answer">
                             <a id="changeDocDate" class="edit" href="date-document-created">
-								Change <span class="visuallyhidden">Document valid from</span>
-							</a>
+                                Change <span class="visuallyhidden">Document valid from</span>
+                            </a>
                         </td>
                     </tr>
 
                     <tr id="locationRow">
                         <td class="bold-small">Location of charge </td>
-                        <td id="location">
-
-                        </td>
+                        <td id="location">Location not provided</td>
                         <td class="change-answer">
                             <a id="changeLocation" class="edit" href="address-confirm">
-								Change <span class="visuallyhidden">Location of charge</span>
-							</a>
+                                Change <span class="visuallyhidden">Location of charge</span>
+                            </a>
                         </td>
                     </tr>
                     <tr id="extentRow">
                         <td class="bold-small">Extent </td>
                         <td>
 
-                            <img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
+                            <img src="/public/images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
                         </td>
                         <td class="change-answer">
                             <a id="changeExtent" class="edit" href="draw-an-extent">
-								Change <span class="visuallyhidden">extent</span>
-							</a>
+                                Change <span class="visuallyhidden">extent</span>
+                            </a>
                         </td>
                     </tr>
 
@@ -69,11 +68,11 @@
                     <tr id="descriptionRow">
                         <td class="bold-small">Charge description
                         </td>
-                        <td id="description"></td>
+                        <td id="description">Information not provided</td>
                         <td class="change-answer">
                             <a id="changeDescription" class="edit" href="what-does-charge-do">
-								Change <span class="visuallyhidden">charge description</span>
-							</a>
+                                Change <span class="visuallyhidden">charge description</span>
+                            </a>
                         </td>
                     </tr>
 
@@ -84,20 +83,20 @@
                         <td id="expiry"></td>
                         <td class="change-answer">
                             <a id="changeExpiry" class="edit" href="does-charge-expire">
-								Change <span class="visuallyhidden">charge description</span>
-							</a>
+                                Change <span class="visuallyhidden">charge description</span>
+                            </a>
                         </td>
                     </tr>
 
 
                     <tr id="linkRow">
                         <td class="bold-small">Document links</td>
-                        <td id="links"></td>
+                        <td id="links">Link to document not provided</td>
 
                         <td class="change-answer">
                             <a id="changeLink" class="edit" href="document-link">
-								Change <span class="visuallyhidden">document links</span>
-							</a>
+                                Change <span class="visuallyhidden">document links</span>
+                            </a>
                         </td>
                     </tr>
 
@@ -108,14 +107,14 @@
 
                         <td class="change-answer">
                             <a id="changeContact" class="edit" href="who-can-answer-questions">
-								Change <span class="visuallyhidden">Who can answer question about this charge?</span>
-							</a>
+                                Change <span class="visuallyhidden">Who can answer question about this charge?</span>
+                            </a>
                         </td>
                     </tr>
 
                     <tr id="referenceRow">
                         <td class="bold-small">Reference number</td>
-                        <td id="reference"></td>
+                        <td id="reference">Reference not provided</td>
 
                         <td class="change-answer">
                             <a id="changeReference" class="edit" href="originating-authority-reference">
@@ -140,6 +139,7 @@
 
         </div>
     </div>
+    
 </main>
 
 <script>
