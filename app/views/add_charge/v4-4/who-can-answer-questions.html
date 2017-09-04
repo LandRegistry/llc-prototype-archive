@@ -59,7 +59,7 @@
     var financialCheck = sessionStorage.getItem('financial');
     if (amountSecuredCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
-    } else if (financialSecuredCheck === 'true') {
+    } else if (financialCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-financial');
     }
 
