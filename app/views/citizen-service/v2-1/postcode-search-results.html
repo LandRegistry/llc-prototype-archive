@@ -1,0 +1,56 @@
+{% extends "layout_citizen.html" %}{% block page_title %}Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- main content starts -->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Search results for <span id="address-selected"></span></h1>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <div class="form-group">
+            <div class="results-block">
+              <p>We found these places matching your search.</p>
+              <p>Click on the place you need.</p>
+              <ol class="results-list address-list">
+                <li><a href="search-results" class="address-list">2 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">3 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">4 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">6 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">8 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">10 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">12 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">14 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">16 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">18 Okehampton Place, Exeter, EX4 1AY</a></li>
+                <li><a href="search-results" class="address-list">20 Okehampton Place, Exeter, EX4 1AY</a></li>
+              </ol>
+              <br>
+              <p>Can't find the place you need? <a href="postcode-search">Search again</a> or <a href="map-search">zoom to a place on the map</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block body_end_additional %}
+<script>
+    var locationSearched = sessionStorage.getItem('searchedPlace');
+    document.getElementById('address-selected').textContent = locationSearched;
+
+    $('a.address-list').click(function () {
+      var searchTerm = $(this).text();
+      console.log(searchTerm)
+      sessionStorage.setItem('searchTerm', searchTerm);
+    })
+
+</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout_citizen.html" %}{% block page_title %}Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="phase-banner-beta">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  {% import "includes/error.html" as error %}
+  {{ error.error(link='#search', 'Enter a postcode, address or place name') }}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Enter a postcode, address or place name</h1>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <div class="form-group" id="search-field">
+            <fieldset>
+              <legend class="visuallyhidden">Enter a postcode, address or place name</legend>
+              <div class="form-group spacing-bottom-half">
+                <span class="error-message hidden">Search field can't be empty</span>
+                <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                <a class="button" href="postcode-search-results" role="button">Search</a>
+              </div>
+            </fieldset>
+            <p>Or you can <a href="map-search">zoom to a place on the map</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block body_end_additional %}
+<script>
+    $('.button').click(function (e) {
+      var searchTerm = $('#search').val();
+      if (searchTerm === ""){
+        e.preventDefault()
+        $('.error-summary').removeClass('hidden')
+        $('span.error-message').removeClass('hidden')
+        $('#search-field').addClass('form-group-error')
+        $('.search-field').addClass('form-control-error') //use this for text input fields
+      } else {
+        sessionStorage.setItem('searchedPlace', searchTerm);
+      }
+    })
+</script>
+{% endblock %}

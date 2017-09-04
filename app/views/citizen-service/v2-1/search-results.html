@@ -1,0 +1,122 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Search results
+            </h1>
+
+
+            <table class="check-your-answers">
+                <thead>
+                    <tr>
+                        <th><span class="visuallyhidden">Address</span></th>
+                        <th><span class="visuallyhidden">Extent</span></th>
+                        <th><span class="visuallyhidden">Change search</span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                    <tr id="extentRow">
+                        <td class="bold-small">
+                            <span id="address-selected" class="heading-small"></span> 
+                        </td>
+                        <td>
+                            <img src="{{ asset_path }}images/citizen-service/free.png" width="80%" height="auto">
+                        </td>
+                        <td class="change-answer">
+                            <a class="edit" href="search-method">Search again</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            
+            <div class="panel panel-border-wide">
+                <p class="bold-small">There are <span>2 charges</span> that affect the land of this property.</p>
+            </div>
+            <br>
+
+             <div class="panel panel-border-wide">
+                <p>An inspection of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR). Links to this information can be found at the bottom of this page. </p>
+            </div>
+            <br>
+
+
+          <!--   <div class="notice">
+                <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+                <strong class="bold-small">
+    An inspection of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR). Links to this information can be found at the bottom of this page. 
+  </strong>
+            </div> -->
+
+            <div class="payPromo">
+                <h2 class="heading-small">Pay &pound;15 for an official search result which will include:</h2>
+                <ul class="list list-bullet">
+                    <li>official search, guaranteed by HM Land Registry</li>
+                    <li>link to source documents</li>
+                    <li>charge extent</li>
+                    <li>for 6 months:
+                        <ul class="list list-bullet">
+                            <li>return to your search results at any time</li>
+                            <li>refresh your search for free</li>
+                            <li>download your results in different formats (PDF, JSON, CSV, XML)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <h3 class="heading-medium">How to pay</h3>
+            <p>You’ll need a debit or credit card to use this service. Payment will be taken by GOV.UK Pay on HM Land Registry's behalf.</p>
+
+            <br>
+            <a href="https://www.payments.service.gov.uk/card_details/d1mb6ohdp6gdujrjab7u3sh6vo" class="button">Pay now</a>
+
+            <!-- <h2 class="heading-medium">Free information about these charges</h2>
+            <p>Before you pay, you will see:</p>
+            <ul class="list list-bullet">
+                <li>charge description</li>
+                <li>registration date</li>
+                <li>charge reference</li>
+            </ul> -->
+            <h2 class="heading-medium">Free information about these charges</h2>
+            <ul class="list">
+                <li><a href="free-charge-details" class="bold-small">Charge 1</a><br> Charge created on 12 December 2012
+                </li>
+                <li><a href="free-charge-details-2" class="bold-small">Charge 2</a><br> Charge created on 5 March 2010
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+
+</main>
+<script>
+    var locationSearched = sessionStorage.getItem('searchTerm');
+    document.getElementById('address-selected').textContent = locationSearched;
+    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;*/
+
+    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;*/
+</script>
+
+{% endblock %}

@@ -15,47 +15,13 @@
                 Download your official search result of local land charges
 
             </h1>
-            <!-- Updated based on content changes - Muhammad
-
             <h2 class="heading-medium">
                 <span id="address-selected" class="heading-medium"></span>
             </h2>
-            <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto"><br>
-            <p><a href="edit-extent">Edit extent</a></p>
+            <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto">
             <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
             <p>Choose a format to download your official search result. Keep a copy for your records. You won't be able to download this result again, unless you have registered for an account with us.
-            </p> -->
-
-            <table class="check-your-answers">
-                <thead>
-                    <tr>
-                        <th><span class="visuallyhidden">Extent</span></th>
-                        <th><span class="visuallyhidden">Change search</span></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr id="extentRow">
-
-                        <td>
-                            <img src="{{ asset_path }}images/citizen-service/paid.png" width="270px" height="auto">
-                        </td>
-                        <td class="change-answer">
-                            <a class="edit" href="edit-extent">Edit extent</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-            
-            <div class="panel panel-border-wide">
-                <p class="bold-small">There are <span>2 charges</span> that affect the land of this property.</p>
-            </div>
-                <p>Choose a format to download your official search result. Keep a copy for your records. You won't be able to download this result again, unless you have registered for an account with us.
-                </p>
-            <br>
-
+            </p>
         </div>
 
         <div class="column-two-thirds">
@@ -102,23 +68,22 @@
                     </tbody>
                 </table>
             </div>
-            <p><a href="../dashboard-updated-with-new">Search again</a></p>
-            <p style="color:red">Is 'search again' right? Would it get confusing with searching for a property / land thingy from the previous page?</p>
+            <p><a href="../search-method">Search again</a></p>
         </div>
     </div>
     <script>
-        var locationSearched = sessionStorage.getItem('searchTerm');
-        document.getElementById('address-selected').textContent = locationSearched;
-        /*var addressRetrieved = sessionStorage.getItem('addressSelected');
-        console.log(addressRetrieved);
-        var textToChange = document.getElementById("address-selected");
-        textToChange.textContent = addressRetrieved;*/
+    var locationSearched = sessionStorage.getItem('searchTerm');
+    document.getElementById('address-selected').textContent = locationSearched;
+    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;*/
 
-        /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
-        console.log(creationDateRetrieved);
-        var dateToChange = document.getElementById('creationDateText');
-        dateToChange.textContent = creationDateRetrieved;*/
-    </script>
+    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;*/
+</script>
 </main>
 
 {% endblock %}
