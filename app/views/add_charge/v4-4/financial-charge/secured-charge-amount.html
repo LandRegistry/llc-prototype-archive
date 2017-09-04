@@ -1,8 +1,9 @@
 {% extends "layout.html" %} 
 {% block page_title %} 
-Do you know exactly how much amount secured by the charge?
+Do you know the amount secured for this financial charge?
 {% endblock %} 
 {% block content %}
+
 
 <main id="content" role="main">
     <!-- alpha banner -->
@@ -13,32 +14,28 @@ Do you know exactly how much amount secured by the charge?
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Do you know exactly how much amount secured by the charge? </h1>
-            
-            <form action="document-link" method="GET">
+            <h1 class="heading-large">Do you know the amount secured for this financial charge?</h1>
+            <form action="#">
 
                 <fieldset>
-                    <legend class="visually-hidden">Do you know exactly how much amount secured by the charge? </legend>
-
-                    <label id="landCompensationLabel" class="block-label selection-button-radio" for="dontKnowAmount">
-                        <input id="dontKnowAmount" name="specific-financial" type="radio" value="No">
-                        No
-                    </label>
-
-
-                    <label id="specificLabel" class="block-label selection-button-radio" for="knowAmount" data-target="SpecificFinancial-1">
-                        <input id="knowAmount" name="specific-financial" type="radio" value="Other" aria-controls="specificLabel">
-                        Yes
-                    </label>
-
+                    <legend class="visually-hidden">Do you know the amount secured for this financial charge?</legend>
+                    <div class="form-group">
+                        <label id="noAmount" class="block-label selection-button-radio" for="noSecuredAmount">
+                            <input id="noSecuredAmount" name="noSecuredAmountLegislation" type="radio" value="noSecuredAmount">
+                            No
+                        </label>
+                        <label id="yesAmount" class="block-label selection-button-radio" for="financial">
+                            <input id="financial" name="noSecuredAmountLegislation" type="radio" value="Financial">
+                            Yes
+                        </label>
+                    </div>
                 </fieldset>
-            </form>
-            <br>
-            <p>
-                <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
-            </p>
-        </div>
+                <p>
+                    <a class="button" id="securedBtn" role="button" href="date-document-created">Continue</a>
 
+                </p>
+            </form>
+        </div>
     </div>
 </main>
 <script>
@@ -46,48 +43,33 @@ Do you know exactly how much amount secured by the charge?
     console.log(chargeTypeIsChanging);
     if (chargeTypeIsChanging === 'true') {
         var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('planningLabel').classList.add('selected');
+        if (chargeTypeToChange === 'noSecuredAmount') {
+            document.getElementById('noAmount').classList.add('selected');
         } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
-        }
+            document.getElementById('yesAmount').classList.add('selected');
+        } 
 
-        document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
+        document.getElementById('securedBtn').setAttribute('href', 'date-document-created');
         sessionStorage.setItem('chargeTypeUpdated', 'true');
     }
-
-    document.getElementById('amountSecuredBtn').onclick = function() {
-        var financialLabel = document.getElementById('financialLabel');
-        var planningLabel = document.getElementById('planningLabel');
-        var listedBuildingLabel = document.getElementById('listedBuildingLabel');
-        var landCompensationLabel = document.getElementById('landCompensationLabel');
-        var otherLabel = document.getElementById('otherLabel');
-        if (financialLabel.classList.contains('selected')) {
+    document.getElementById('securedBtn').onclick = function() {
+        var yesAmount = document.getElementById('yesAmount');
+        var noAmount = document.getElementById('noAmount');
+        if (yesAmount.classList.contains('selected')) {
             var chargeType = 'Financial';
-         
+        // financial journey radio button clicked   
+        document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
 
-        // If yes radio button clicked 
-            document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
-
-
-        } else if (planningLabel.classList.contains('selected')) {
-            var chargeType = 'Planning';
-        } else if (listedBuildingLabel.classList.contains('selected')) {
-            var chargeType = 'Listed Building';
-        } else if (landCompensationLabel.classList.contains('selected')) {
-            var chargeType = 'Land Compensation';
-        } else if (otherLabel.classList.contains('selected')) {
-            var chargeType = 'Other';
-        }
-        sessionStorage.setItem('chargeType', chargeType);
+    } else if (noAmount.classList.contains('selected')) {
+        var chargeType = 'noSecuredAmount';
+    } else if (listedBuildingLabel.classList.contains('selected')) {
+        var chargeType = 'Listed Building';
+    } else if (landCompensationLabel.classList.contains('selected')) {
+        var chargeType = 'Land Compensation';
+    } else if (otherLabel.classList.contains('selected')) {
+        var chargeType = 'Other';
     }
-
+    sessionStorage.setItem('chargeType', chargeType);
+}
 </script>
-
 {% endblock %}

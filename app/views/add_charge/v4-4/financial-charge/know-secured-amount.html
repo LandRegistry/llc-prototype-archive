@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 {% block page_title %} 
-Do you know exactly how much amount secured by the charge?
+Amount paid in compensation
 {% endblock %} 
 {% block content %}
 
@@ -13,51 +13,75 @@ Do you know exactly how much amount secured by the charge?
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">I know exactly how much amount secured by the charge? </h1>
-            
+            <h1 class="heading-large">What amount has been secured? </h1>
+
+<br>
+            <div class="notice">
+                <span class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </span>
+                <strong class="bold-small">
+                    Is there is a ‘general’ version of this ‘specific’ financial charge? If there is, start by cancelling the general charge
+                    <span><!-- <a href="https://llc-prototypes.herokuapp.com/maintain_llc/v2-1/welcome">cancelling the general charge</a> --></span>.
+
+                </strong>
+            </div>
+            <br><br>
             <form action="document-link" method="GET">
 
                 <fieldset>
-                    <legend class="visually-hidden">Do you know exactly how much amount secured by the charge? </legend>
+                    <legend class="visually-hidden">Amount that will be secured</legend>
 
-                    <label id="landCompensationLabel" class="block-label selection-button-radio" for="dontKnowAmount">
-                        <input id="dontKnowAmount" name="specific-financial" type="radio" value="No">
-                        No
-                    </label>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="textarea">Amount that will be secured
+                            <span class="form-hint">For example, 100.50.  </span>
+                        </label>
+                        <input class="form-control form-control-1-4" type="text" name="">
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form-label-bold">Will interest be paid on this charge?</legend>
+
+                    <div class="form-group">
+
+                        <label id="noPaidLabel" class="block-label selection-button-radio" for="noPaid">
+                            <input id="noPaid" name="extent" type="radio" value="no"> No
+                        </label>
 
 
-                    <label id="specificLabel" class="block-label selection-button-radio" for="knowAmount" data-target="SpecificFinancial-1">
-                        <input id="knowAmount" name="specific-financial" type="radio" value="Other" aria-controls="specificLabel">
-                        Yes
-                    </label>
+                        <label id="yesPaidLabel" class="block-label selection-button-radio no" for="yesPaid" data-target="chargeExpires">
+                            <input id="yesPaid" name="extent" type="radio" value="yes" aria-controls="chargeExpires">
+                            Yes, interest is payable
+                        </label>
+                        <br>
+                        <div class="js-hidden panel panel-border-narrow" id="chargeExpires" aria-hidden="true" style="display: none;">
 
-                    <!-- Yes there is general financial section start here -->
-                    <div class="js-hidden panel form-group panel-border-wide" id="SpecificFinancial-1" aria-hidden="true" style="display: none; margin-top: 20px;">
-                        <div class="form-group">  
                             <fieldset>
-                             <legend class="heading-medium">Did this charge start as a "General financial" charge?</legend>
-                             <br>
-                             <ul>
-                                <li><a href="/add_charge/v4-2/specific-financial">Yes, it is related to a previous registered general charge </a></li>
-                                <br>
-                                <li><a href="#">No </a></li>
-                                <br>
-                                <li><a href="/add_charge/v4-2/specific-financial">
-                                    Don't know </a></li>
-                                </ul>
+                                <legend class="visually-hidden">What rate of interest?</legend>
+                                
+                                <div class="form-group">
+                                    <label class="form-label-bold" for="interestRate ">What rate of interest? 
+                                        <span class="form-hint">For example, 5% a year, or write 0.50 % instead of 1/2 equation, see "Interest rate definations help" section for more details. 
+                                        </span>
+                                    </label>
+                                    <input class="form-control form-control-1-4" id="interestRate" name="interestRate" type="text">
+                                </div>
+
                             </fieldset>
                         </div>
-                    </div>  
-
+                    </div>
                 </fieldset>
-            </form>
-            <br>
-            <p>
-                <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
-            </p>
-        </div>
-
+            </fieldset>
+        </form>
+        
+        <p>
+            <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
+        </p>
     </div>
+
+</div>
 </main>
 <script>
     var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
@@ -88,25 +112,25 @@ Do you know exactly how much amount secured by the charge?
         var otherLabel = document.getElementById('otherLabel');
         if (financialLabel.classList.contains('selected')) {
             var chargeType = 'Financial';
-         
+
         // financial journey radio button clicked   
-            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
+        document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
         // If yes radio button clicked 
-            document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
+        document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
 
 
-        } else if (planningLabel.classList.contains('selected')) {
-            var chargeType = 'Planning';
-        } else if (listedBuildingLabel.classList.contains('selected')) {
-            var chargeType = 'Listed Building';
-        } else if (landCompensationLabel.classList.contains('selected')) {
-            var chargeType = 'Land Compensation';
-        } else if (otherLabel.classList.contains('selected')) {
-            var chargeType = 'Other';
-        }
-
-        sessionStorage.setItem('chargeType', chargeType);
+    } else if (planningLabel.classList.contains('selected')) {
+        var chargeType = 'Planning';
+    } else if (listedBuildingLabel.classList.contains('selected')) {
+        var chargeType = 'Listed Building';
+    } else if (landCompensationLabel.classList.contains('selected')) {
+        var chargeType = 'Land Compensation';
+    } else if (otherLabel.classList.contains('selected')) {
+        var chargeType = 'Other';
     }
+
+    sessionStorage.setItem('chargeType', chargeType);
+}
 
 </script>
 

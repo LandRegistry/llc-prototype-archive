@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block page_title %} Who can answer question about this charge? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+<div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Which department can answer questions about this charge?</h1>
+
+            <fieldset>
+                <legend class="visually-hidden">Who can answer questions about this charge?</legend>
+
+                <!-- <div class="form-group">
+                    <label class="form-label" for="department">Department name</label>
+                    <input class="form-control form-control-3-4" id="department" type="text" name="department">
+                </div> -->
+
+                <div class="form-group">
+                    <label class="form-label" for="fullAddress">
+                        <span class="form-hint">For example: <br>      
+                        <ul class="list-bullet">
+                            <li>department name</li>
+                            <li>department address</li>
+                            <li>a link to any place where charge documents are kept online, for example a planning portal</li>
+                        </ul>
+                        </span>
+                    </label>
+                    <textarea class="form-control form-control-3-4" name="fullAddress" id="fullAddress" rows="8"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="chargeReference">Charge reference number 
+                    <span> (Optional)</span> 
+                    <span class="form-hint"> This is the reference used by this department when they want to find the charge record.</span>
+                    </label>
+                    <input class="form-control" id="chargeReference" type="text" name="chargeReference">
+                </div>
+
+            </fieldset>
+
+            <div class="form-group">
+                <a id="contactButton" class="button" href="charge-summary" role="button">Continue</a>
+            </div>
+
+            <div id="back">
+                <a href="/add_charge/v4-2/originating-authority-details" class="back-link">Back</a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script>
+    var contactIsChanging = sessionStorage.getItem('contactIsChanging');
+    if (contactIsChanging === 'true') {
+        var contactToChange = sessionStorage.getItem('contactToChange');
+        console.log(contactToChange);
+        document.getElementById('contactInfo').value = contactToChange;
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('contactUpdated', 'true');
+    }
+
+    document.getElementById('contactButton').onclick = function() {
+        var contactInfo = document.getElementById('contactInfo').value;
+        sessionStorage.setItem('contactInfo', contactInfo);
+    }
+</script>
+{% endblock %}
