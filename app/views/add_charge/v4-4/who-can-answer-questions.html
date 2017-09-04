@@ -55,6 +55,15 @@
 
 </main>
 <script>
+    var amountSecuredCheck = sessionStorage.getItem('amountSecured');
+    var financialCheck = sessionStorage.getItem('financial');
+    if (amountSecuredCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
+    } else if (financialCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-financial');
+    }
+
+
     var contactIsChanging = sessionStorage.getItem('contactIsChanging');
     if (contactIsChanging === 'true') {
         var contactToChange = sessionStorage.getItem('contactToChange');
