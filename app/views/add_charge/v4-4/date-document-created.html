@@ -2,8 +2,11 @@
 
 <main id="content" role="main">
     <!-- alpha banner -->
-    <div class="phase-banner">
-        <p><strong class="phase-tag">BETA</strong></p>
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
     </div>
     <!-- main content starts -->
 
@@ -22,27 +25,27 @@
                         <legend class="form-label-bold">Start date </legend>
                         <span class="form-hint">This is the date on your source document. 
                             <br> For example, 31 3 2017</span>
-                            <div class="form-date">
-                                <div class="form-group form-group-day">
-                                    <label class="form-label" for="startDay">Day</label>
-                                    <input class="form-control" id="startDay" name="startDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-                                </div>
-                                <div class="form-group form-group-month">
-                                    <label class="form-label" for="startMonth">Month</label>
-                                    <input class="form-control" id="startMonth" name="startMonth">
-                                </div>
-                                <div class="form-group form-group-year">
-                                    <label class="form-label" for="startYear">Year</label>
-                                    <input class="form-control" id="startYear" name="startYear" type="number" pattern="[0-9]*" min="0" max="2016">
-                                </div>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="startDay">Day</label>
+                                <input class="form-control" id="startDay" name="startDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="startMonth">Month</label>
+                                <input class="form-control" id="startMonth" name="startMonth">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="startYear">Year</label>
+                                <input class="form-control" id="startYear" name="startYear" type="number" pattern="[0-9]*" min="0" max="2016">
                             </div>
                         </div>
-                    </fieldset>
-                    <p>
-                        <a id="dateCreatedButton" class="button" href="search-property" role="button">Continue</a>
-                    </p>
-                </form>
-            </div>
+                    </div>
+                </fieldset>
+                <p>
+                    <a id="dateCreatedButton" class="button" href="search-property" role="button">Continue</a>
+                </p>
+            </form>
+        </div>
 
         <!-- 		<div class="column-third related-container">
 
@@ -77,43 +80,43 @@
         var startMonth = document.getElementById('startMonth').value;
         switch (startMonth) {
             case '1' || '01':
-            startMonth = 'January';
-            break;
+                startMonth = 'January';
+                break;
             case '2' || '02':
-            startMonth = 'February';
-            break;
+                startMonth = 'February';
+                break;
             case '3' || '03':
-            startMonth = 'March';
-            break;
+                startMonth = 'March';
+                break;
             case '4' || '04':
-            startMonth = 'April';
-            break;
+                startMonth = 'April';
+                break;
             case '5' || '05':
-            startMonth = 'May';
-            break;
+                startMonth = 'May';
+                break;
             case '6' || '06':
-            startMonth = 'June';
-            break;
+                startMonth = 'June';
+                break;
             case '7' || '07':
-            startMonth = 'July';
-            break;
+                startMonth = 'July';
+                break;
             case '8' || '08':
-            startMonth = 'August';
-            break;
+                startMonth = 'August';
+                break;
             case '9' || '09':
-            startMonth = 'September';
-            break;
+                startMonth = 'September';
+                break;
             case '10':
-            startMonth = 'October';
-            break;
+                startMonth = 'October';
+                break;
             case '11':
-            startMonth = 'November';
-            break;
+                startMonth = 'November';
+                break;
             case '12':
-            startMonth = 'December';
-            break;
+                startMonth = 'December';
+                break;
             default:
-            startMonth;
+                startMonth;
 
         }
         var startYear = document.getElementById('startYear').value;
