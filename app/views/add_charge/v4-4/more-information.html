@@ -9,61 +9,18 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Confirm address</h1>
+            <h1 class="heading-large">Address for this charge</h1>
 
-            <p>You searched for <span id="addressRetrieved" class="bold-small"></span></p>
-
-
-
-
-
-            <form action="how-to-find-address-on-foot" method="GET">
+            <form action="#" method="GET">
                 <fieldset>
-                    <h2 class="heading-medium">Is this address correct for the charge?</h2>
-                    <legend class="visually-hidden form-label">Is this address correct for the charge?</legend>
+                    <legend class="visually-hidden form-label">Address for this charge</legend>
 
-                    <div class="form-group">
+                    <label class="form-label" for="textarea">
+                            <span class="form-hint">If you don't have an address, describe how to find the charge, for example land to the north of the High Street.</span>
+                        </label>
 
-                        <label id="addressConfirmYes" class="block-label selection-button-radio" for="yesConfirm">
-							<input id="yesConfirm" name="address" type="radio" value="Yes">
-							Yes
-						</label>
-                        <label id="addressConfirmNo" class="block-label selection-button-radio no" for="noConfirm" data-target="addressDifferent">
-							<input id="noConfirm" name="address" type="radio" value="no" aria-controls="addressDifferent">
-							No
-						</label>
-                    </div>
+                    <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
                 </fieldset>
-                <div class="js-hidden panel panel-border-narrow" id="addressDifferent" aria-hidden="true" style="display: none;">
-
-
-                    <fieldset>
-                        <h3 class="heading-small">What is the address for this charge?</h3>
-                        <div class="form-group">
-                            <label class="form-label" for="street1">Street</label>
-                            <input class="form-control" id="street1" type="text" name="street1">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label visually-hidden" for="street2">Street</label>
-                            <input class="form-control" id="street2" type="text" name="street2">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="town">Town</label>
-                            <input class="form-control" id="town" type="text" name="town" value="Exeter">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="county">County (optional)</label>
-                            <input class="form-control" id="county" type="text" name="county">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="postcode">Postcode</label>
-                            <input class="form-control form-control-1-4" id="postcode" type="text" name="postcode" value="EX4 1AY">
-                        </div>
-                        <p>Country<br>United Kingdom</p>
-                    </fieldset>
-
-                </div>
-
 
                 <br>
                 <p>
@@ -90,7 +47,16 @@
         sessionStorage.setItem('locationUpdated', 'true');
     }
 
-    var locationRetrieved = sessionStorage.getItem('location');
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var moreInformation = document.getElementById('address').value;
+        sessionStorage.setItem('moreInformation', moreInformation);
+    }
+
+
+
+
+
+    /*var locationRetrieved = sessionStorage.getItem('location');
     var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
     var postcodeSelected = sessionStorage.getItem('postcodeSelected');
 
@@ -124,6 +90,6 @@
             var locationSelected = street1 + ' ' + street2 + ' ' + town + ' ' + county + ' ' + postcode;
             sessionStorage.setItem('locationSelected', locationSelected);
         }
-    }
+    }*/
 </script>
 {% endblock %}

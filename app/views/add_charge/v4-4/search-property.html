@@ -35,6 +35,7 @@
 
         <ul id="address-list" class="list hiddenList">
             <li><a href="draw-an-extent">
+<<<<<<< HEAD
                1 Okehampton Place, Exeter
            </a></li>
            <li><a href="draw-an-extent">
@@ -110,6 +111,80 @@
                  </label>
                  <input type="file" id="file-input"><br><br>
              </fieldset>
+=======
+     1 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     3 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     5 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     7 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     9 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     11 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     13 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     15 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     17 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     19 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     21 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     23 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     25 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     27 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     29 Okehampton Place, Exeter
+  </a></li>
+            <li><a href="draw-an-extent">
+     31 Okehampton Place, Exeter
+  </a></li>
+        </ul>
+
+        <p>No address for this charge? Start with the map and scroll to the location instead. Use the buttons on this map to draw the charge extent.
+        </p>
+        <p>You have added 0 extents (polygons, points or lines). A maximum of 500 extents may be added.</p>
+        <p><a href="more-information" class="button">Continue</a></p>
+
+        <!-- <div class="form-group">
+         <span class="heading-small">Do you have an extent saved on file?</span> 
+         <details role="group">
+
+           <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Upload the file</span></summary>
+
+           <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+             <span>Accepted formats are:</span>
+             <ul class="list list-bullet">
+               <li>shapefile (.shp)</li>
+               <li>under 1MB</li>
+             </ul>
+
+             <label class="form-label" for="file-input">
+               Upload a file
+             </label>
+             <input type="file" id="file-input"><br><br>
+>>>>>>> 329952bbec77b1f5bc94df8fa1b10ec21a6fde88
              <div class="form-group">
                  <a class="button shape-button" href="check-charge-boundary">Continue</a>
              </div>
@@ -183,13 +258,24 @@
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script>
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-    map.getControls().clear();
+    //map.getControls().clear();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry = "{{ geometry }}";
+    //var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
     MAP_HELPERS.zoom_map(geometry);
+</script>
+<script>
+    $('#address-list li a').click(function() {
+        var addressSearched = $(this).text();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list').addClass('hiddenList');
+        $('#search_term').val(addressSearched);
+        return false;
+    })
 </script>
 {% endblock %}
