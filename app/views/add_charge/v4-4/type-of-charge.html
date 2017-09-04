@@ -128,10 +128,9 @@
         var otherLabel = document.getElementById('otherLabel');
         if (financialLabel.classList.contains('selected')) {
             var chargeType = 'Financial';
-         
+
         // financial journey radio button clicked   
             document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
-
 
         } else if (planningLabel.classList.contains('selected')) {
             var chargeType = 'Planning';
@@ -139,6 +138,10 @@
             var chargeType = 'Listed Building';
         } else if (landCompensationLabel.classList.contains('selected')) {
             var chargeType = 'Land Compensation';
+
+        // LAND COMPENSATION journey radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'land-compensation/land-compensation');
+
         } else if (otherLabel.classList.contains('selected')) {
             var chargeType = 'Other';
         }
