@@ -16,18 +16,18 @@
                 <fieldset>
                     <legend class="visually-hidden">Do you know the amount secured for this financial charge?</legend>
                     <div class="form-group">
-                        <label id="noAmount" class="block-label selection-button-radio" for="noSecuredAmount">
-                            <input id="noSecuredAmount" name="noSecuredAmountLegislation" type="radio" value="noSecuredAmount">
+                        <label id="yesSecuredAmountLabel" class="block-label selection-button-radio" for="yesSecuredAmount">
+                                    <input id="yesSecuredAmount" name="securedAmount" type="radio" value="Yes">
+                                    Yes
+                                </label>
+                        <label id="noSecuredAmountLabel" class="block-label selection-button-radio" for="noSecuredAmount">
+                            <input id="noSecuredAmount" name="securedAmount" type="radio" value="No">
                             No
-                        </label>
-                        <label id="yesAmount" class="block-label selection-button-radio" for="financial">
-                            <input id="financial" name="noSecuredAmountLegislation" type="radio" value="Financial">
-                            Yes
                         </label>
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="securedBtn" role="button" href="date-document-created">Continue</a>
+                    <a class="button" id="securedBtn" role="button" href="">Continue</a>
 
                 </p>
             </form>
@@ -35,37 +35,15 @@
     </div>
 </main>
 <script>
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'noSecuredAmount') {
-            document.getElementById('noAmount').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('yesAmount').classList.add('selected');
-        }
-
-        document.getElementById('securedBtn').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
+    var yesAmount = document.getElementById('yesSecuredAmountLabel');
+    var noAmount = document.getElementById('noSecuredAmountLabel');
     document.getElementById('securedBtn').onclick = function() {
-        var yesAmount = document.getElementById('yesAmount');
-        var noAmount = document.getElementById('noAmount');
         if (yesAmount.classList.contains('selected')) {
-            var chargeType = 'Financial';
-            // financial journey radio button clicked   
             document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
-
         } else if (noAmount.classList.contains('selected')) {
-            var chargeType = 'noSecuredAmount';
-        } else if (listedBuildingLabel.classList.contains('selected')) {
-            var chargeType = 'Listed Building';
-        } else if (landCompensationLabel.classList.contains('selected')) {
-            var chargeType = 'Land Compensation';
-        } else if (otherLabel.classList.contains('selected')) {
-            var chargeType = 'Other';
+            document.getElementById('securedBtn').setAttribute('href', '../date-document-created');
         }
-        sessionStorage.setItem('chargeType', chargeType);
+        sessionStorage.setItem('financial', 'true');
     }
 </script>
 {% endblock %}
