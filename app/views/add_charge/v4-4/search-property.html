@@ -84,8 +84,10 @@
   </a></li>
         </ul>
 
-        <p>No address for this charge? Start with the map and scroll to the location instead
+        <p>No address for this charge? Start with the map and scroll to the location instead. Use the buttons on this map to draw the charge extent.
         </p>
+        <p>You have added 0 extents (polygons, points or lines). A maximum of 500 extents may be added.</p>
+        <p><a href="more-information" class="button">Continue</a></p>
 
         <!-- <div class="form-group">
          <span class="heading-small">Do you have an extent saved on file?</span> 
@@ -187,7 +189,7 @@
 <script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
-    map.getControls().clear();
+    //map.getControls().clear();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry = "{{ geometry }}";

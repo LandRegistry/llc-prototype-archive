@@ -1,8 +1,4 @@
-{% extends "layout.html" %} 
-{% block page_title %} 
-Do you know the amount secured for this financial charge?
-{% endblock %} 
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Do you know the amount secured for this financial charge? {% endblock %} {% block content %}
 
 
 <main id="content" role="main">
@@ -47,7 +43,7 @@ Do you know the amount secured for this financial charge?
             document.getElementById('noAmount').classList.add('selected');
         } else if (chargeTypeToChange === 'Financial') {
             document.getElementById('yesAmount').classList.add('selected');
-        } 
+        }
 
         document.getElementById('securedBtn').setAttribute('href', 'date-document-created');
         sessionStorage.setItem('chargeTypeUpdated', 'true');
@@ -57,19 +53,19 @@ Do you know the amount secured for this financial charge?
         var noAmount = document.getElementById('noAmount');
         if (yesAmount.classList.contains('selected')) {
             var chargeType = 'Financial';
-        // financial journey radio button clicked   
-        document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
+            // financial journey radio button clicked   
+            document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
 
-    } else if (noAmount.classList.contains('selected')) {
-        var chargeType = 'noSecuredAmount';
-    } else if (listedBuildingLabel.classList.contains('selected')) {
-        var chargeType = 'Listed Building';
-    } else if (landCompensationLabel.classList.contains('selected')) {
-        var chargeType = 'Land Compensation';
-    } else if (otherLabel.classList.contains('selected')) {
-        var chargeType = 'Other';
+        } else if (noAmount.classList.contains('selected')) {
+            var chargeType = 'noSecuredAmount';
+        } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+        } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+        } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+        }
+        sessionStorage.setItem('chargeType', chargeType);
     }
-    sessionStorage.setItem('chargeType', chargeType);
-}
 </script>
 {% endblock %}

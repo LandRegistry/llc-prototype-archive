@@ -7,7 +7,7 @@
     </div>
     <!-- main content starts -->
 
-<div class="grid-row">
+    <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Which department can answer questions about this charge?</h1>
 
@@ -29,7 +29,7 @@
                         </ul>
                         </span>
                     </label>
-                    <textarea class="form-control form-control-3-4" name="fullAddress" id="fullAddress" rows="8"></textarea>
+                    <textarea class="form-control form-control-3-4" name="department" id="department" rows="8"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -65,8 +65,16 @@
     }
 
     document.getElementById('contactButton').onclick = function() {
-        var contactInfo = document.getElementById('contactInfo').value;
-        sessionStorage.setItem('contactInfo', contactInfo);
+        var department = document.getElementById('department').value;
+        sessionStorage.setItem('department', department);
+
+        var reference = document.getElementById('chargeReference').value;
+        if (reference === '') {
+            sessionStorage.setItem('referenceExists', 'false');
+        } else {
+            sessionStorage.setItem('referenceExists', 'true');
+            sessionStorage.setItem('referenceNumber', reference);
+        }
     }
 </script>
 {% endblock %}
