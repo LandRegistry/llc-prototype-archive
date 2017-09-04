@@ -31,10 +31,10 @@
 						<input id="landCompensation" name="planningLegislation" type="radio" value="Land Compensation">
 						Land Compensation 
 					</label>
-                        <label id="otherLabel" class="block-label selection-button-radio" for="other" data-target="part-extent">
+                        <!-- <label id="otherLabel" class="block-label selection-button-radio" for="other" data-target="part-extent">
 						<input id="other" name="planningLegislation" type="radio" value="Other" aria-controls="part-extent">
 						Other
-						</label>
+						</label> -->
                     </div>
                 </fieldset>
 
@@ -128,8 +128,8 @@
         var otherLabel = document.getElementById('otherLabel');
         if (financialLabel.classList.contains('selected')) {
             var chargeType = 'Financial';
-         
-        // financial journey radio button clicked   
+
+            // financial journey radio button clicked   
             document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
 
 
@@ -145,7 +145,5 @@
 
         sessionStorage.setItem('chargeType', chargeType);
     }
-
-
 </script>
 {% endblock %}

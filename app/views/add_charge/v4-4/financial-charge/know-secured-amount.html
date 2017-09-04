@@ -1,8 +1,4 @@
-{% extends "layout.html" %} 
-{% block page_title %} 
-Amount paid in compensation
-{% endblock %} 
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Amount paid in compensation {% endblock %} {% block content %}
 
 <main id="content" role="main">
     <!-- alpha banner -->
@@ -15,13 +11,13 @@ Amount paid in compensation
         <div class="column-two-thirds">
             <h1 class="heading-large">What amount has been secured? </h1>
 
-<br>
+            <br>
             <div class="notice">
                 <span class="icon icon-important">
                     <span class="visually-hidden">Warning</span>
                 </span>
                 <strong class="bold-small">
-                    Is there is a ‘general’ version of this ‘specific’ financial charge? If there is, start by cancelling the general charge
+                    Is there a ‘general’ version of this ‘specific’ financial charge? If there is, start by cancelling the general charge
                     <span><!-- <a href="https://llc-prototypes.herokuapp.com/maintain_llc/v2-1/welcome">cancelling the general charge</a> --></span>.
 
                 </strong>
@@ -60,7 +56,7 @@ Amount paid in compensation
 
                             <fieldset>
                                 <legend class="visually-hidden">What rate of interest?</legend>
-                                
+
                                 <div class="form-group">
                                     <label class="form-label-bold" for="interestRate ">What rate of interest? 
                                         <span class="form-hint">For example, 5% a year, or write 0.50 % instead of 1/2 equation, see "Interest rate definations help" section for more details. 
@@ -73,15 +69,15 @@ Amount paid in compensation
                         </div>
                     </div>
                 </fieldset>
-            </fieldset>
-        </form>
-        
-        <p>
-            <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
-        </p>
-    </div>
+                </fieldset>
+            </form>
 
-</div>
+            <p>
+                <a class="button" id="amountSecuredBtn" role="button" href="date-document-created">Continue</a>
+            </p>
+        </div>
+
+    </div>
 </main>
 <script>
     var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
@@ -113,25 +109,24 @@ Amount paid in compensation
         if (financialLabel.classList.contains('selected')) {
             var chargeType = 'Financial';
 
-        // financial journey radio button clicked   
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
-        // If yes radio button clicked 
-        document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
+            // financial journey radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
+            // If yes radio button clicked 
+            document.getElementById('amountSecuredBtn').setAttribute('href', 'financial-charge/know-secured-amount');
 
 
-    } else if (planningLabel.classList.contains('selected')) {
-        var chargeType = 'Planning';
-    } else if (listedBuildingLabel.classList.contains('selected')) {
-        var chargeType = 'Listed Building';
-    } else if (landCompensationLabel.classList.contains('selected')) {
-        var chargeType = 'Land Compensation';
-    } else if (otherLabel.classList.contains('selected')) {
-        var chargeType = 'Other';
+        } else if (planningLabel.classList.contains('selected')) {
+            var chargeType = 'Planning';
+        } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+        } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+        } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+        }
+
+        sessionStorage.setItem('chargeType', chargeType);
     }
-
-    sessionStorage.setItem('chargeType', chargeType);
-}
-
 </script>
 
 {% endblock %}

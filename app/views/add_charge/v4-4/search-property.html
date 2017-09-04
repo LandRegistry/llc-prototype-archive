@@ -186,13 +186,24 @@
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script>
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
     //map.getControls().clear();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry = "{{ geometry }}";
+    //var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
     MAP_HELPERS.zoom_map(geometry);
+</script>
+<script>
+    $('#address-list li a').click(function() {
+        var addressSearched = $(this).text();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list').addClass('hiddenList');
+        $('#search_term').val(addressSearched);
+        return false;
+    })
 </script>
 {% endblock %}
