@@ -9,7 +9,7 @@
     </div>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Welcome Jane</h1>
+            <h1 id="dashboardHeader" class="heading-large">Welcome Jane</h1>
             <form action="dashboard" method="POST">
                 <div class="form-group">
                     <input class="button" type="submit" value="Start a paid search">
@@ -31,13 +31,8 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    $('.button').click(function(e) {
-        var radioValue = $('input[name="freeOrPaid"]:checked').val()
-        if (radioValue === 'paid') {
-            $("a.button").attr("href", "login")
-        } else if (radioValue === 'free') {
-            $("a.button").attr("href", "search-method")
-        }
-    })
+    var userNameRetrieved = sessionStorage.getItem('userName');
+    console.log(userNameRetrieved);
+    document.getElementById('dashboardHeader').textContent = 'Welcome ' + userNameRetrieved;
 </script>
 {% endblock %}

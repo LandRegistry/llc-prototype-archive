@@ -17,18 +17,30 @@
                         <label class="block-label selection-button-radio" for="paid">
                 <input id="paid" type="radio"  name="freeOrPaid" value="paid">
                 <span class="bold-small">Pay &pound;15 and create an account</span><br>
+                <p>You will get everything that is included in the free search, plus:</p>
                 <ul class="list list-bullet">
-                    <li>Unlimited downloads</li>
-                    <li>Refresh your result for free, before you exchanhe contracts</li>
-                    <li>Contact details for someone who can answer questions about local land charges</li>
-                    <li>Official search result</li>
+                    <li>official search, guaranteed by HM Land Registry</li>
+                    <li>link to documents that give more information about the charge</li>
+                    <li>local land charge boundary, showing where a charge starts and stops</li>
+                    <li>contact details for the local authority that can answer questions about this local land charge</li>
+                    <li>for 6 months:
+                        <ul class="list list-bullet">
+                            <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
+                            <li>return to your result</li>
+                            <li>download your results in different formats (PDF, JSON, CSV, XML)</li>
+                        </ul>
+                    </li>
                 </ul>
               </label>
                         <label class="block-label selection-button-radio" for="free">
             <input id="free" type="radio"  name="freeOrPaid" value="free">
                 <span class="bold-small">Free search</span><br>
+                <p>You will see:</p>
                 <ul class="list list-bullet">
-                    <li>Basic search result</li>
+                    <li>where the local land charge is</li>
+                    <li>what the charge does</li>
+                    <li>registration date, this is the date when the charge was officially registered</li>
+                    <li>contact details for the local authority that can answer questions about this local land charge</li>
                 </ul>
             </label>
 
@@ -36,7 +48,6 @@
                     <p><a class="button" href="" role="button">Continue</a></p>
                 </fieldset>
             </form>
-            <p style="color:red">This is the start page. We might need some more context here. Again the content here is dependent on the login decision.</p>
 
         </div>
         <div class="column-one-third">
@@ -57,7 +68,7 @@
     $('.button').click(function(e) {
         var radioValue = $('input[name="freeOrPaid"]:checked').val()
         if (radioValue === 'paid') {
-            $("a.button").attr("href", "login")
+            $("a.button").attr("href", "register")
         } else if (radioValue === 'free') {
             $("a.button").attr("href", "search-method")
         }
