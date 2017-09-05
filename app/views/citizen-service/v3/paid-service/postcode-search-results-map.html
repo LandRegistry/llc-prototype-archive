@@ -18,22 +18,15 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
         <form action="pay-now" method="GET">
             <div class="form-group">
                 <fieldset>
                     <legend class="visuallyhidden"></legend>
                     <div class="form-group">
-                        <h1 class="heading-medium">This map shows the boundary for <span id="postcodeSelected"></span></h1>
-                        <p>Check this boundary to confirm that this is the place you want to search for charges.</p>
-                        <p>You can also use the map buttons to:</p>
-                        <ul class="list list-bullet">
-                            <li>change this boundary</li>
-                            <li>add another boundary (if you want to search more than one location)</li>
-                        </ul>
-                        <div class="panel panel-border-wide">
-                            <p>Your search will only show charges in the boundary or boundaries you have drawn.</p>
-                        </div>
+                        <h1 class="heading-medium">Check and confirm the location</h1>
+                        <p>This map shows <span id="postcodeSelected"></span>.</p>
+                        <p>Check the map to confirm that this is where you want to search for charges.
+                        </p>
 
                         <div class="form-group spacing-bottom-half">
                             <input class="button" type="submit" value="Continue">
@@ -87,7 +80,7 @@
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <!-- <script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script> 
+<script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script> -->
 <script>
     zoomslider = new ol.control.Zoom();
