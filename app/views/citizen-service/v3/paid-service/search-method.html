@@ -1,0 +1,47 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="grid-row">
+        <form method="post" action="/admin/user/add/role" class="column-full">
+            <div class="phase-banner-beta">
+                <p>
+                    <strong class="phase-tag">BETA</strong>
+                    <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+                </p>
+            </div>
+            {% import "includes/error.html" as error %} {{ error.error(link='#search-method-div', 'Select a search method') }}
+            <div class="form-group" id="search-method-div">
+                <h1 class="heading-large">How would you like to search?</h1>
+                <span class="error-message hidden">Select a search method</span>
+                <label class="block-label selection-button-radio" for="postcode-address-place">
+                <input id="postcode-address-place" type="radio"  name="search-method" value="postcode-address-place">
+                Postcode, address or place name
+              </label>
+                <label class="block-label selection-button-radio" for="map-selection">
+                <input id="map-selection" type="radio"  name="search-method" value="map-selection">
+                Zoom to a place on the map
+              </label>
+            </div>
+            <a class="button" href="" role="button">Continue</a>
+        </form>
+    </div>
+    </div>
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    $('.button').click(function(e) {
+        var radioValue = $('input[name="search-method"]:checked').val()
+        if (radioValue === 'postcode-address-place') {
+            $("a.button").attr("href", "postcode-search")
+        } else if (radioValue === 'map-selection') {
+            $("a.button").attr("href", "search")
+        } else {
+            e.preventDefault()
+            $('.error-summary').removeClass('hidden')
+            $('span.error-message').removeClass('hidden')
+            $('#search-method-div').addClass('form-group-error')
+                //$('#caseref').addClass('form-control-error') //use this for text input fields
+        }
+    })
+</script>
+{% endblock %}

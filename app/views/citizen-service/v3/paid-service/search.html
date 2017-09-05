@@ -18,21 +18,20 @@
         </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-        <form id="searchForm" method="GET" action="paid-charge-details">
+        {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
+        <form action="view-new-from-map" method="GET">
             <div class="form-group">
                 <fieldset>
-                    <legend class="visuallyhidden">Search</legend>
+                    <legend class="visuallyhidden">Zoom to a place on the map</legend>
                     <div class="form-group">
-                        <h1 class="heading-medium">Search</h1>
-                        <label class="form-label" for="search-term"></label>
+                        <h1 class="heading-medium">Zoom to a place on the map</h1>
+                        <p>Use the '+' and '-' buttons to find the place you want to search.</p>
+                        <p>Once you have found the place you need, draw a shape around it.</p>
+                        <p>Your search results will show charges inside this shape.</p>
                         <div class="form-group spacing-bottom-half">
-                            <input class="form-control search-field" id="location" name="location" type="text" value="" autofocus="autofocus">
-                            <!--<a class="button citizenSearchButton" href="#">Search</a> -->
-                            <input id="citizenSearchButton" value="Search" type="submit" class="button">
+                            <input class="button" type="submit" value="Continue">
+                            <br><br><a href="postcode-search">Search by postcode, address or place name</a>
                         </div>
-                        <p>If you are happy with the extent, click continue to download your results.</p>
-                        <a href="download" class="button">Continue</a><br><br>
-                        <p style="color:red">We need to rethink the content here. This is the first time they will be searching.</p>
                     </div>
                 </fieldset>
             </div>
@@ -92,7 +91,7 @@
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script>
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
     zoomslider = new ol.control.Zoom();
