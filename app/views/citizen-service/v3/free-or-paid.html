@@ -20,9 +20,8 @@
                 <p>You will get everything that is included in the free search, plus:</p>
                 <ul class="list list-bullet">
                     <li>official search, guaranteed by HM Land Registry</li>
-                    <li>link to documents that give more information about the charge</li>
                     <li>local land charge boundary, showing where a charge starts and stops</li>
-                    <li>contact details for the local authority that can answer questions about this local land charge</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
                     <li>for 6 months:
                         <ul class="list list-bullet">
                             <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
@@ -68,7 +67,7 @@
     $('.button').click(function(e) {
         var radioValue = $('input[name="freeOrPaid"]:checked').val()
         if (radioValue === 'paid') {
-            $("a.button").attr("href", "register")
+            $("a.button").attr("href", "login")
         } else if (radioValue === 'free') {
             $("a.button").attr("href", "search-method")
         }

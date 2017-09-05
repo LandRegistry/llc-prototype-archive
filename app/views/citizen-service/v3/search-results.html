@@ -34,9 +34,8 @@
                 <h2 class="heading-small">Pay &pound;15 for an official search result and you will get everything that is included in the free search, plus:</h2>
                 <ul class="list list-bullet">
                     <li>official search, guaranteed by HM Land Registry</li>
-                    <li>link to documents that give more information about the charge</li>
                     <li>local land charge boundary, showing where a charge starts and stops</li>
-                    <li>contact details for the local authority that can answer questions about this local land charge</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
                     <li>for 6 months:
                         <ul class="list list-bullet">
                             <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
@@ -64,7 +63,7 @@
                 </tbody>
             </table> -->
             <br>
-            <a href="register" class="button">Pay now</a>
+            <a href="login" class="button">Start a paid search</a>
 
 
             <!-- <h2 class="heading-medium">Free information about these charges</h2>
@@ -76,9 +75,9 @@
             </ul> -->
             <h2 class="heading-medium">Free information about these charges</h2>
             <ul class="list">
-                <li><a href="free-charge-details" class="bold-small">Charge 1</a><br> Charge created on 12 December 2012
+                <li><a href="free-charge-details" class="bold-small">Local land charge 1</a><br> Charge created on 12 December 2012
                 </li>
-                <li><a href="free-charge-details-2" class="bold-small">Charge 2</a><br> Charge created on 5 March 2010
+                <li><a href="free-charge-details-2" class="bold-small">Local land charge 2</a><br> Charge created on 5 March 2010
                 </li>
             </ul>
         </div>
@@ -94,6 +93,7 @@
 </main>
 <script>
     var locationSearched = sessionStorage.getItem('searchTerm');
+    console.log(locationSearched);
     document.getElementById('address-selected').textContent = locationSearched;
     /*var addressRetrieved = sessionStorage.getItem('addressSelected');
     console.log(addressRetrieved);

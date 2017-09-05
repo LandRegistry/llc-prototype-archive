@@ -605,8 +605,8 @@ router.post('/citizen-service/v2/free-charge-details', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v3/dashboard', (req, res, next) => {
-    res.render('citizen-service/v3/dashboard')
+router.get('/citizen-service/v3/paid-service/pay-now', (req, res, next) => {
+    res.render('citizen-service/v3/paid-service/pay-now')
 })
 
 router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
@@ -626,7 +626,7 @@ router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
     })
 })
 
-router.post('/citizen-service/v3/dashboard', (req, res, next) => {
+router.post('/citizen-service/v3/paid-service/pay-now', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'

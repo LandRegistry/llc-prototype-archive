@@ -14,9 +14,9 @@
                 <p><a href="free-or-paid">Sign out</a></p>
             </aside>
             <h1 class="heading-large">Welcome Jane</h1>
-            <form action="dashboard" method="POST">
+            <form action="paid-service/search-method" method="GET">
                 <div class="form-group">
-                    <input class="button" type="submit" value="Pay now (£15 search)">
+                    <input class="button" type="submit" value="Start a paid search">
                 </div>
             </form>
             <a href="search-method">Start a free search</a>
@@ -49,15 +49,4 @@
     </div>
 
 </main>
-{% endblock %} {% block body_end_additional %}
-<script>
-    $('.button').click(function(e) {
-        var radioValue = $('input[name="freeOrPaid"]:checked').val()
-        if (radioValue === 'paid') {
-            $("a.button").attr("href", "login")
-        } else if (radioValue === 'free') {
-            $("a.button").attr("href", "search-method")
-        }
-    })
-</script>
-{% endblock %}
+{% endblock %} {% block body_end_additional %} {% endblock %}

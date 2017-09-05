@@ -22,40 +22,17 @@
         <div id="map" class="map"></div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-
-        <h1 class="heading-medium">Heading</h1>
-
-
-
-
-
-        <form action="pay-now" method="GET">
+        {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
+        <form action="search-results" method="GET">
             <div class="form-group">
-                <legend class="visuallyhidden">Enter a postcode, address, UPRN or title number</legend>
-
-                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
-
-                <a id="placeSearchButton" href="#" class="button">Search</a>
-
+                <fieldset>
+                    <div class="form-group">
+                        <h1 class="heading-medium">This map shows <span id="postcodeSelected"></span></h1>
+                    </div>
+                    <p>You can use the map buttons to create a boundary of the land or property you would like to search.</p>
+                    <p><a href="search-results" class="button">Continue</a></p>
+                </fieldset>
             </div>
-
-            <p><a href="search-results" id="mapButton" class="button">Continue</a></p>
-
-            <!--<div class="form-group">
-                      <fieldset>
-                          <legend class="visuallyhidden">Zoom to a place on the map</legend>
-                          <div class="form-group">
-                              <h1 class="heading-medium">Zoom to a place on the map</h1>
-                              <p>Use the '+' and '-' buttons to find the place you want to search.</p>
-                              <p>Once you have found the place you need, draw a shape around it.</p>
-                              <p>Your search results will show charges inside this shape.</p>
-                              <div class="form-group spacing-bottom-half">
-                                  <input class="button" type="submit" value="Continue">
-                                  <br><br><a href="postcode-search">Search by postcode, address or place name</a>
-                              </div>
-                          </div>
-                      </fieldset>
-                  </div> -->
         </form>
     </div>
     <div class="panel-control close panel-control-citizen">
@@ -92,6 +69,10 @@
             }
         });
 
+        $('.button').click(function() {
+            sessionStorage.setItem('searchTerm', '');
+        })
+
     });
 </script>
 
@@ -99,14 +80,14 @@
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <script src="/public/javascripts/map/search/map_events.js"></script>
-<!--<script src="/public/javascripts/map/search/sample_data.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
 <script src="/public/javascripts/map/search/search.js"></script>
 <script>
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry =
-        "{{geometry}}";
-    //   MAP_HELPERS.zoom_map(geometry);
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
     // hide tools that are not needed
 
     /*$('.point').remove()
@@ -114,19 +95,15 @@
     $('.copy').remove()
     $('.remove').remove()
     $('#snap-to').remove()*/
-</script>
-<script>
-    $('#placeSearchButton').click(function() {
-        var placeSearched = $('#search_term').val();
-        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-        MAP_HELPERS.zoom_map(geometry);
-        $('#search_term').val(addressSearched);
-        return false;
-    });
 
-    $('#mapButton').click(function() {
-        var searchTerm = $('#search_term').val();
-        sessionStorage.setItem('searchTerm', searchTerm);
+    $('.button').click(function(e) {
+        if (MAP_CONFIG.draw_source.getFeatures().length === 0) {
+            $('.error-summary').removeClass('hidden')
+            e.preventDefault()
+        }
     });
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchedTermRetrieved);
+    $("#postcodeSelected").text(searchedTermRetrieved);
 </script>
 {% endblock %}
