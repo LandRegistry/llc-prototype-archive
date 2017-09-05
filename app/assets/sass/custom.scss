@@ -243,8 +243,12 @@
 }
 
 .sign-out {
-    margin-top: 25px;
     text-align: right;
+    margin-bottom: -25px;
+}
+
+.dashboard td {
+    vertical-align: top;
 }
 
 
