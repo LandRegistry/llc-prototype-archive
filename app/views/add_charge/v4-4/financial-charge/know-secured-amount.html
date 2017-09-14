@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Amount paid in compensation {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Amount agreed for this charge {% endblock %} {% block content %}
 
 <main id="content" role="main">
     <!-- alpha banner -->
@@ -12,26 +12,35 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">What amount has been secured? </h1>
+            <h1 class="heading-large">Amount agreed for this charge </h1>
 
             <br>
             <div class="notice">
                 <span class="icon icon-important">
                     <span class="visually-hidden">Warning</span>
                 </span>
-                <strong class="bold-small">
-                    Is there a ‘general’ version of this ‘specific’ financial charge? If there is, start by cancelling the general charge.
+                <strong class="bold-small">If there is a ‘general’ version of this financial charge, start by cancelling the general charge.
 
                 </strong>
             </div>
-            <br><br>
+
+            <!-- <div class="panel panel-border-narrow">
+                <p>
+                    If there is a ‘general’ version of this financial charge, start by cancelling the general charge.
+                </p>
+
+            </div> -->
+
+            <br>
+            <br>
             <form action="document-link" method="GET">
 
                 <fieldset>
-                    <legend class="visually-hidden">Amount that will be secured</legend>
+                    <legend class="visually-hidden">Amount agreed for this charge
+                    </legend>
 
                     <div class="form-group">
-                        <label class="form-label-bold" for="textarea">Amount that will be secured
+                        <label class="form-label" for="textarea">Amount that will be secured
                             <span class="form-hint">For example, &pound;100.50.  </span>
                         </label>
                         <input class="form-control form-control-1-4" type="text" name="amount" id="amount">
@@ -40,7 +49,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend class="form-label-bold">Will interest be paid on the amount secured?</legend>
+                    <legend class="form-label">Will interest be paid on the amount?</legend>
 
                     <div class="form-group">
                         <label id="yesInterestLabel" class="block-label selection-button-radio" for="yesInterest" data-target="interestAmount">
