@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Date document created {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} When was the charge created? {% endblock %} {% block content %}
 
 <main id="content" role="main">
     <!-- alpha banner -->
@@ -12,7 +12,9 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">When is this charge valid from?</h1>
+            <!-- <h1 class="heading-large">When is this charge valid from?</h1> -->
+            <h1 class="heading-large">When was the charge created?</h1>
+            
             <form action="05_postcode" method="GET">
                 <fieldset>
                     <div class="form-group">
@@ -22,9 +24,9 @@
                             <li>the legal document was created</li>
                             <li>the charge is protected by law</li>
                         </ul> -->
-                        <legend class="form-label-bold">Start date </legend>
+                        <legend class="form-label-bold visually-hidden">Start date </legend>
                         <span class="form-hint">This is the date on your source document. 
-                            <br> For example, 31 3 2017</span>
+                            <br><span>For example, 31 3 2017</span> </span>
                         <div class="form-date">
                             <div class="form-group form-group-day">
                                 <label class="form-label" for="startDay">Day</label>
