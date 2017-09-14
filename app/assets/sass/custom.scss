@@ -249,6 +249,27 @@
 
 .dashboard td {
     vertical-align: top;
+    width: 20%;
+}
+
+.dashboard tr {
+    cursor: pointer;
+    &:hover {
+        background-color: #F8F8F8;
+    }
+}
+
+.hidden-accordion-content {
+    display: none;
+}
+
+.accordion-child-1 td,
+.accordion-child-3 td {
+    border-bottom: none;
+}
+
+.accordion-parent-2 td {
+    border-top: 1px solid #bfc1c3;
 }
 
 

@@ -1,0 +1,106 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <aside class="sign-out">
+                <p><a href="free-or-paid">Sign out</a></p>
+            </aside>
+            <h1 class="heading-large">Welcome Jane</h1>
+            <form action="paid-service/search-method" method="GET">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Pay now (£15 search)">
+                </div>
+            </form>
+            <a href="search-method">Start a free search</a>
+            <h2 class="heading-medium">Previous searches</h2>
+            <table class="dashboard">
+                <thead>
+                    <tr>
+                        <td class="bold-small">Reference</td>
+                        <td class="bold-small">Date of search</td>
+                        <td class="bold-small">Date of last refresh</td>
+                        <td></td>
+                        <td class="bold-small numberOfSearches">Number of refreshes</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="accordion-parent-1">
+                        <td>LLC1/1234ABC-09</td>
+                        <td class="refresh-date-parent">12 May 2017<br>
+                            <a href="paid-service/view-existing-1">View</a>
+                        </td>
+                        <td>n/a
+                        </td>
+                        <td><a href="paid-service/refresh-1">Refresh</a></td>
+                        <td class="numberOfSearches">0</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+
+    switch (month) {
+        case 1:
+            month = 'January';
+            break;
+        case 2:
+            month = 'February';
+            break;
+        case 3:
+            month = 'March';
+            break;
+        case 4:
+            month = 'April';
+            break;
+        case 5:
+            month = 'May';
+            break;
+        case 6:
+            month = 'June';
+            break;
+        case 7:
+            month = 'July';
+            break;
+        case 8:
+            month = 'August';
+            break;
+        case 9:
+            month = 'September';
+            break;
+        case 10:
+            month = 'October';
+            break;
+        case 11:
+            month = 'November';
+            break;
+        case 12:
+            month = 'December';
+            break;
+        default:
+            break;
+    }
+
+    var day = d.getDate();
+
+    var createDay = day + ' ' + month + ' ' + d.getFullYear();
+    $('.refresh-date-parent').text(createDay).append('<br><a href="paid-service/view-existing-4">View</a>');
+</script>
+{% endblock %}
