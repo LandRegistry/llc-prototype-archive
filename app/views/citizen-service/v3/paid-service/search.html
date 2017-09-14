@@ -19,8 +19,31 @@
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
         {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
-        <form action="view-new-from-map" method="GET">
+        <h1 class="heading-medium">Search for a place or landmark</h1>
+
+
+
+
+
+        <form action="pay-now" method="GET">
             <div class="form-group">
+                <legend class="visuallyhidden">Search for a place or landmark </legend>
+                <p><span class="form-hint">Or use the ‘+’ and ‘-‘ buttons to zoom around the map.</span></p>
+
+
+                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+                <a id="placeSearchButton" href="#" class="button">Search</a>
+
+            </div>
+
+
+
+            <p>Use map buttons to draw a boundary of your search.</p>
+
+            <p><a href="pay-now" id="mapButton" class="button">Continue</a></p>
+
+            <!--<div class="form-group">
                 <fieldset>
                     <legend class="visuallyhidden">Zoom to a place on the map</legend>
                     <div class="form-group">
@@ -34,7 +57,7 @@
                         </div>
                     </div>
                 </fieldset>
-            </div>
+            </div> -->
         </form>
     </div>
     <div class="panel-control close">
@@ -71,41 +94,41 @@
             }
         });
 
-        $('.button').click(function() {
-            var searchTerm = $('#location').val();
-            sessionStorage.setItem('searchTerm', searchTerm);
-            if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
-                $('.citizenSearchButton').attr('href', 'search-results_address_list');
-            } else {
-                $('.citizenSearchButton').attr('href', 'payment-benefits');
-            }
-        });
-
-        var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
-        console.log(searchedTermRetrieved);
-        $("#searched_term").val(searchedTermRetrieved);
     });
 </script>
 
 {% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-<script src="/public/javascripts/map/search/map_events.js"></script>
-<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
-<script src="/public/javascripts/map/search/search.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script> 
+<script src="/public/javascripts/map/search/search.js"></script> -->
 <script>
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
-    var geometry =
-        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    var geometry = "{{ geometry }}";
     MAP_HELPERS.zoom_map(geometry);
 
     // hide tools that are not needed
 
-    $('.point').remove()
+    /*$('.point').remove()
     $('.line').remove()
     $('.copy').remove()
     $('.remove').remove()
-    $('#snap-to').remove()
+    $('#snap-to').remove()*/
+</script>
+<script>
+    $('#placeSearchButton').click(function() {
+        var placeSearched = $('#search_term').val();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#search_term').val(addressSearched);
+        return false;
+    });
+
+    $('#mapButton').click(function() {
+        var searchTerm = $('#search_term').val();
+        sessionStorage.setItem('searchTerm', searchTerm);
+    });
 </script>
 {% endblock %}

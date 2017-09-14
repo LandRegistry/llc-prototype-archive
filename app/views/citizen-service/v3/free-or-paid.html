@@ -20,9 +20,8 @@
                 <p>You will get everything that is included in the free search, plus:</p>
                 <ul class="list list-bullet">
                     <li>official search, guaranteed by HM Land Registry</li>
-                    <li>link to documents that give more information about the charge</li>
                     <li>local land charge boundary, showing where a charge starts and stops</li>
-                    <li>contact details for the local authority that can answer questions about this local land charge</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
                     <li>for 6 months:
                         <ul class="list list-bullet">
                             <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
@@ -40,7 +39,7 @@
                     <li>where the local land charge is</li>
                     <li>what the charge does</li>
                     <li>registration date, this is the date when the charge was officially registered</li>
-                    <li>contact details for the local authority that can answer questions about this local land charge</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
                 </ul>
             </label>
 
@@ -53,7 +52,7 @@
         <div class="column-one-third">
             <aside class="login-box">
                 <h2 class="heading-small">Existing users</h2>
-                <p><a href="login">Log in</a></p>
+                <p><a href="login">Sign in</a></p>
                 <h2 class="heading-small">New users</h2>
                 <p><a href="register">Register</a></p>
             </aside>
@@ -68,7 +67,7 @@
     $('.button').click(function(e) {
         var radioValue = $('input[name="freeOrPaid"]:checked').val()
         if (radioValue === 'paid') {
-            $("a.button").attr("href", "register")
+            $("a.button").attr("href", "login")
         } else if (radioValue === 'free') {
             $("a.button").attr("href", "search-method")
         }

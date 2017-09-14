@@ -19,9 +19,9 @@
                 <span class="icon icon-important">
                     <span class="visually-hidden">Warning</span>
                 </span>
+
                 <strong class="bold-small">If there is a ‘general’ version of this financial charge, start by cancelling the general charge.
 
-                </strong>
             </div>
 
             <!-- <div class="panel panel-border-narrow">
@@ -36,12 +36,12 @@
             <form action="document-link" method="GET">
 
                 <fieldset>
+
                     <legend class="visually-hidden">Amount agreed for this charge
                     </legend>
 
                     <div class="form-group">
-                        <label class="form-label" for="textarea">Amount that will be secured
-                            <span class="form-hint">For example, &pound;100.50.  </span>
+                        <label class="form-label-bold" for="textarea"><span class="form-hint">For example, &pound;100.50.</span>
                         </label>
                         <input class="form-control form-control-1-4" type="text" name="amount" id="amount">
 
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label id="yesInterestLabel" class="block-label selection-button-radio" for="yesInterest" data-target="interestAmount">
                                     <input id="yesInterest" name="interest" type="radio" value="yes" aria-controls="interestAmount">
-                                    Yes, interest is payable
+                                    Yes
                                 </label>
                         <div class="js-hidden panel panel-border-narrow" id="interestAmount" aria-hidden="true" style="display: none;">
 
@@ -62,7 +62,7 @@
                                 <legend class="visually-hidden">What rate of interest?</legend>
 
                                 <div class="form-group">
-                                    <label class="form-label-bold" for="interestRate ">What rate of interest? 
+                                    <label class="form-label-bold" for="interestRate ">Rate of interest
                                         <span class="form-hint">For example, 5% per year.</span>
                                     </label>
                                     <input class="form-control form-control-1-4" id="interestRate" name="interestRate" type="text">

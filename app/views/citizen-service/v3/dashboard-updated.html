@@ -8,41 +8,41 @@
         </p>
     </div>
     <div class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-full">
+            <aside class="sign-out">
+                <p><a href="free-or-paid">Sign out</a></p>
+            </aside>
             <h1 class="heading-large">Welcome Jane</h1>
-            <form action="dashboard" method="POST">
+            <form action="paid-service/search-method" method="GET">
                 <div class="form-group">
                     <input class="button" type="submit" value="Pay now (£15 search)">
                 </div>
             </form>
             <a href="search-method">Start a free search</a>
             <h2 class="heading-medium">Previous searches</h2>
-            <table>
+            <table class="dashboard">
                 <thead>
                     <tr>
-                        <td class="bold-small">Original search date</td>
-                        <td class="bold-small">Most recent refresh</td>
-                        <td></td>
+                        <td class=" bold-small ">Search reference</td>
+                        <td class="bold-small ">Original search date</td>
+                        <td class="bold-small ">Most recent refresh date</td>
                         <td></td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12 May 2017</td>
-                        <td class="refresh-date">12 August 2017</td>
-                        <td><a href="paid-service/view">View</a></td>
+                        <td>LLC1/1234ABC-09</td>
+                        <td>12 May 2017<br>
+                            <a href="paid-service/view-existing ">View</a>
+                        </td>
+                        <td class="refresh-date">12 August 2017<br>
+                            <a href="paid-service/view-existing">View</a>
+                        </td>
                         <td><a href="paid-service/refresh">Refresh</a></td>
                     </tr>
                 </tbody>
             </table>
-            <p style="color:red">Table is updated with today's date after a refresh.</p>
         </div>
-        <div class="column-one-third">
-            <aside class="sign-out">
-                <p><a href="free-or-paid">Sign out</a></p>
-            </aside>
-        </div>
-
 
     </div>
 
@@ -97,6 +97,6 @@
     var day = d.getDate();
 
     var refreshDay = day + ' ' + month + ' ' + d.getFullYear();
-    $('.refresh-date').text(refreshDay);
+    $('.refresh-date').text(refreshDay).append('<br><a href="paid-service/view-existing">View</a>');
 </script>
 {% endblock %}

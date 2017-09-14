@@ -1,318 +1,194 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Add more information about the location
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Add more information about the location {% endblock %} {% block content %}
 
 <main id="content" role="main">
-	<!-- alpha banner -->
-	<div class="phase-banner">
-		<p><strong class="phase-tag">BETA</strong></p>
-	</div>
-	<!-- main content starts -->
-	<div class="grid-row">
-		<div class="column-full">
-			<h1 class="heading-large">Check your application</h1>
-			<p class="text">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-			<form action="lon-add-confirmation" method="GET">
-				<fieldset>
-					<div class="form-group">
-						<table class="check-your-answers-2">
-							<thead>
-							</thead>
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Check your answers before registering this local land charge</h1>
+            <form action="lon-add-confirmation" method="GET">
+                <fieldset>
+                    <div class="form-group">
+                        <table class="check-your-answers">
+                            <thead>
+                            </thead>
 
-							<tbody>
-								<tr>
-									<td>
-										Name
-									</td>
-									<td>
-										<span id="nameApplicant"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Name
+                                    </td>
+                                    <td>
+                                        <span id="nameApplicant"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
+                                    </td>
 
-								</tr>
-								<tr>
-									<td>
-										Address or UPRN
-									</td>
-									<td>
-										<span id="addressApplicant"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Address or UPRN
+                                    </td>
+                                    <td>
+                                        <span id="addressApplicant"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change <span class="visuallyhidden">Document</span>
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Dominant building address or UPRN
-									</td>
-									<td>
-										<span id="addressDominant"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Dominant building address or UPRN
+                                    </td>
+                                    <td>
+                                        <span id="addressDominant"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change <span class="visuallyhidden">Location</span>
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Extent
-									</td>
-									<td>
-										<img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="50%" height="auto">
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Extent
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="50%" height="auto">
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Servient land height
-									</td>
-									<td>
-										<span id="heightServient"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Servient land height
+                                    </td>
+                                    <td>
+                                        <span id="heightServient"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Covers all or part of extent
-									</td>
-									<td>
-										<span id="coversExtent"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Covers all or part of extent
+                                    </td>
+                                    <td>
+                                        <span id="coversExtent"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Interest in land
-									</td>
-									<td>
-										<span id="interestLand"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Interest in land
+                                    </td>
+                                    <td>
+                                        <span id="interestLand"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Temporary certificate issue date
-									</td>
-									<td>
-										<span id="tempIssueDate"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Temporary certificate issue date
+                                    </td>
+                                    <td>
+                                        <span id="tempIssueDate"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Definitive certificate issue date
-									</td>
-									<td>
-										<span id="defIssueDate"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Definitive certificate issue date
+                                    </td>
+                                    <td>
+                                        <span id="defIssueDate"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Source document
-									</td>
-									<td>
-										<span id="sourceDocLink"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Source document
+                                    </td>
+                                    <td>
+                                        <span id="sourceDocLink"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Other documents
-									</td>
-									<td>
-										<span id="otherDocLink"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Other documents
+                                    </td>
+                                    <td>
+                                        <span id="otherDocLink"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Address (documents filed)
-									</td>
-									<td>
-										<span id="addressDoc"></span>
-									</td>
-									<td class="change-answer">
-										<a class="edit" href="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Address (documents filed)
+                                    </td>
+                                    <td>
+                                        <span id="addressDoc"></span>
+                                    </td>
+                                    <td class="change-answer">
+                                        <a class="edit" href="#">
 											Change
 										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
-					</div>
-				</fieldset>
+                    </div>
+                </fieldset>
+                <h2 class="heading-medium">Now register your local land charge </h2>
+                <p>By submitting these charge details you are confirming that to the best of your knowledge, all the details of property and extent are correct.</p>
 
-
-				<div class="form-group">
-					<details>
-						<summary><span class="summary">See how this charge will look on a Local land charge search result (LLC1)</span></summary>
-						<div class="panel panel-border-narrow">
-							<div class="form-group">
-								<table class="charge-preview">
-									<thead>
-									</thead>
-
-									<tbody>
-										<tr>
-											<td>
-												Location
-											</td>
-											<td>
-												{{ address }}
-												<br>
-												{{ extent }}
-												{% if part_extent %}
-												<br>{{ part_extent }}
-												{% endif %}
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Description
-											</td>
-											<td>
-												{{ description }}
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Legislation
-											</td>
-											<td>
-												{{ charge_type }}
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Creation date
-											</td>
-											<td>
-												{% if creation_date != '//' %}
-												{{ creation_date }}
-												{% endif %}
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Source document
-											</td>
-											<td>
-												{{ instrument }}
-												{% if creation_date != '//' %}
-												<br>{{ creation_date }}
-												{% endif %}
-											</td>
-										</tr>
-
-										{% if on_behalf_of %}
-										<tr>
-											<td>
-												Originating authority
-											</td>
-											<td>
-												On behalf of
-												{{ on_behalf_of }}
-											</td>
-										</tr>
-										{% endif %}
-										<tr>
-											<td>
-												Expiry date
-											</td>
-											<td>
-												{% if expiry_date != '//' %}
-												{{ expiry_date }}
-												{% endif %}
-												{% if expiry_text %}
-												{{ expiry_text }}
-												{% endif %}
-											</td>
-										</tr>
-
-										<tr>
-											<td colspan="2" class="heading-medium">Source document information</td>
-										</tr>
-
-										<tr>
-											<td>
-												Location
-											</td>
-											<td>
-												{{ more_info }}
-												{% if planning_link %}
-												<br><a href="{{ planning_link }}">{{ planning_link }}</a>
-												{% endif %}
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Originating authority reference
-											</td>
-											<td>
-												{{ reference }}
-											</td>
-										</tr>
-
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</details>
-				</div>
-				<div class="form-group">
-					<input class="button" type="submit" value="Register">
-				</div>
-			</form>
-		</div>
-	</div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Register charge">
+                </div>
+            </form>
+        </div>
+    </div>
 </main>
 
 {% endblock %}
-
-

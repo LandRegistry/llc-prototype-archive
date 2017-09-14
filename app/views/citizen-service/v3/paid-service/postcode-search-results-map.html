@@ -1,11 +1,5 @@
 {% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 
-<!--<style>
-  .summary table, tr, td {
-    border-bottom: 0px solid !important;
-
-  }
-</style> -->
 <div class="map-page">
     <script>
         var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
@@ -19,48 +13,30 @@
         </div>
     </main>
     <div class="container">
-        <div id="map" class="map"></div>
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" class="maintain-llc-map"></div>
+        </div>
     </div>
     <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
-
-        <h1 class="heading-medium">Search for a place or landmark</h1>
-
-
-
-
-
         <form action="pay-now" method="GET">
             <div class="form-group">
-                <legend class="visuallyhidden">Search for a place or landmark</legend>
-                <p><span class="form-hint">Or use the ‘+’ and ‘-‘ buttons to zoom around the map.</span></p>
+                <fieldset>
+                    <legend class="visuallyhidden"></legend>
+                    <div class="form-group">
+                        <h1 class="heading-medium">Check and confirm the location</h1>
+                        <p>This map shows <span id="postcodeSelected"></span>.</p>
+                        <p>Check the map to confirm that this is where you want to search for charges.
+                        </p>
 
-                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
-
-                <a id="placeSearchButton" href="#" class="button">Search</a>
-
+                        <div class="form-group spacing-bottom-half">
+                            <input class="button" type="submit" value="Continue">
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            <p>Use map buttons to draw a boundary of your search.</p>
-
-            <p><a href="search-results" id="mapButton" class="button">Continue</a></p>
-
-            <!--<div class="form-group">
-                      <fieldset>
-                          <legend class="visuallyhidden">Zoom to a place on the map</legend>
-                          <div class="form-group">
-                              <h1 class="heading-medium">Zoom to a place on the map</h1>
-                              <p>Use the '+' and '-' buttons to find the place you want to search.</p>
-                              <p>Once you have found the place you need, draw a shape around it.</p>
-                              <p>Your search results will show charges inside this shape.</p>
-                              <div class="form-group spacing-bottom-half">
-                                  <input class="button" type="submit" value="Continue">
-                                  <br><br><a href="postcode-search">Search by postcode, address or place name</a>
-                              </div>
-                          </div>
-                      </fieldset>
-                  </div> -->
         </form>
     </div>
-    <div class="panel-control close panel-control-citizen">
+    <div class="panel-control close">
         <img src="{{ asset_path }}images/arrow_collapse.png">
     </div>
 </div>
@@ -94,10 +70,13 @@
             }
         });
 
+        var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+        console.log(searchedTermRetrieved);
+        $("#postcodeSelected").text(searchedTermRetrieved);
     });
 </script>
 
-{% endblock %} {% block body_end_additional %}{% include "includes/osm_scripts.html" %}
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
 <!-- <script src="/public/javascripts/map/search/map_events.js"></script>
@@ -107,8 +86,9 @@
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry =
-        "{{geometry}}";
-    //   MAP_HELPERS.zoom_map(geometry);
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
+
     // hide tools that are not needed
 
     /*$('.point').remove()
@@ -116,19 +96,5 @@
     $('.copy').remove()
     $('.remove').remove()
     $('#snap-to').remove()*/
-</script>
-<script>
-    $('#placeSearchButton').click(function() {
-        var placeSearched = $('#search_term').val();
-        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-        MAP_HELPERS.zoom_map(geometry);
-        $('#search_term').val(addressSearched);
-        return false;
-    });
-
-    $('#mapButton').click(function() {
-        var searchTerm = $('#search_term').val();
-        sessionStorage.setItem('searchTerm', searchTerm);
-    });
 </script>
 {% endblock %}

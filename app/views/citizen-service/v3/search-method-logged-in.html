@@ -11,20 +11,31 @@
             </div>
             {% import "includes/error.html" as error %} {{ error.error(link='#search-method-div', 'Select a search method') }}
             <div class="form-group" id="search-method-div">
-                <h1 class="heading-large">How would you like to search?</h1>
-                <span class="error-message hidden">Select a search method</span>
-                <label class="block-label selection-button-radio" for="postcode-address-place">
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        <h1 class="heading-large">How would you like to search?</h1>
+                        <span class="error-message hidden">Select a search method</span>
+                        <label class="block-label selection-button-radio" for="postcode-address-place">
                 <input id="postcode-address-place" type="radio"  name="search-method" value="postcode-address-place">
-                Postcode or address
+                Postcode, address or place name
               </label>
-                <label class="block-label selection-button-radio" for="map-selection">
+                        <label class="block-label selection-button-radio" for="map-selection">
                 <input id="map-selection" type="radio"  name="search-method" value="map-selection">
                 Zoom to a place on the map
               </label>
+                    </div>
+
+                    <div class="column-one-third">
+                        <aside class="sign-out">
+                            <p><a href="free-or-paid">Sign out</a></p>
+                        </aside>
+                    </div>
+
+                </div>
+
             </div>
             <a class="button" href="" role="button">Continue</a>
         </form>
-    </div>
     </div>
 </main>
 {% endblock %} {% block body_end_additional %}
@@ -32,7 +43,7 @@
     $('.button').click(function(e) {
         var radioValue = $('input[name="search-method"]:checked').val()
         if (radioValue === 'postcode-address-place') {
-            $("a.button").attr("href", "postcode-search")
+            $("a.button").attr("href", "postcode-search-logged-in")
         } else if (radioValue === 'map-selection') {
             $("a.button").attr("href", "map-search")
         } else {

@@ -21,11 +21,12 @@
         <div class="form-group">
             <legend class="visuallyhidden">Enter a postcode, address, UPRN or title number</legend>
 
-            <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+            <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="ex11 2ed" autofocus="autofocus">
 
             <a id="postcodeSearchButton" href="draw-an-extent" class="button">Search</a>
 
         </div>
+        <p class="font-medium">0 results found</p>
 
 
         <!-- 
@@ -84,35 +85,13 @@
   </a></li>
         </ul>
 
-        <!-- <p>No address for this charge? Start with the map and scroll to the location instead. Use the buttons on this map to draw the charge extent. 
-        </p> -->
-
-        <!-- New updated contents -->
-        <p>No address for this charge? 
-        <br>
-        Use the buttons on the map to find the place you need, then draw the extent.
+        <p>No address for this charge? Start with the map and scroll to the location instead. Use the buttons on this map to draw the charge extent.
         </p>
-
-        <div class="panel panel-border-narrow">
-            <p>You have added 
-                <strong class="bold-small"><span> 0 </span> </strong>        
-                (polygons, points or lines) out of 500 possible extents.  
-            </p>
+        <p>You have added 0 extents (polygons, points or lines). A maximum of 500 extents may be added.</p>
+        <p><a href="more-information" class="button disabled continueButton">Continue</a></p>
+        <div id="back">
+            <a href="#" class="back-link">Back</a>
         </div>
-
-        <!-- <div class="panel panel-border-narrow">
-            <p>You have added <strong> 0 extents </strong> (polygons, points or lines). A maximum of <strong> 500 extents </strong> may be added.</p>
-        </div> -->
-        <p>
-
-        <a href="more-information" class="button disabled continueButton">Continue</a></p>
-
-        <!-- <ul class="list">
-            <li><span>Do you have an extent saved on file?</span> <br>
-                <a href="upload-shape-file" >Upload the file</a>.
-            </li>
-            <li><a href="planning-update">Go back </a></li>  </li>
-        </ul> -->
 
         <!-- <div class="form-group">
          <span class="heading-small">Do you have an extent saved on file?</span> 
@@ -138,6 +117,10 @@
            </div>
          </details>
        </div> -->
+
+
+
+
 
     </form>
 </div>
