@@ -42,11 +42,11 @@ draw_layer_styles = {
         }),
         2: new ol.style.Style({
             stroke: new ol.style.Stroke({
-                color: [255,0,0,0.4],
+                color: [255, 0, 0, 0.4],
                 width: 2
             }),
             fill: new ol.style.Fill({
-                color: [255,0,0,0.2]
+                color: [255, 0, 0, 0.2]
             }),
             image: new ol.style.Circle({
                 radius: 5,
@@ -70,6 +70,6 @@ draw_layer_styles = {
                     color: '#0658e5'
                 })
             })
-       })
+        })
     }
 }
