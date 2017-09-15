@@ -9,7 +9,6 @@
         </p>
     </div>
     <!-- main content starts -->
-
     <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Check your answers before registering this local land charge</h1>
@@ -26,7 +25,11 @@
                 <tbody>
                     <tr id="chargeTypeRow">
                         <td class="bold-small">Type</td>
+
                         <td id="chargeType">undefined</td>
+
+                        <td id="chargeType">Financial</td>
+
                         <td class="change-answer">
                             <a id="changeChargeType" class="edit" href="type-of-charge">
                                 Change <span class="visuallyhidden">type of charge</span>
@@ -40,8 +43,8 @@
                         <td id="amountSecured"></td>
                         <td class="change-answer">
                             <a id="changeAmountSecured" class="edit" href="financial-charge/secured-charge-amount">
-                                    Change <span class="visuallyhidden">amount secured</span>
-                                </a>
+                                Change <span class="visuallyhidden">amount secured</span>
+                            </a>
                         </td>
                     </tr>
                     <tr id="interestRow">
@@ -50,15 +53,17 @@
                         <td id="interestValue"></td>
                         <td class="change-answer">
                             <a id="changeInterest" class="edit" href="financial-charge/know-secured-amount">
-                                        Change <span class="visuallyhidden">interest</span>
-                                    </a>
+                                Change <span class="visuallyhidden">interest</span>
+                            </a>
                         </td>
                     </tr>
 
                     <tr id="docDateRow">
-                        <td class="bold-small">Charge valid from
+
+                        <td class="bold-small">Created on
+
                         </td>
-                        <td id="validFrom"> </td>
+                        <td id="validFrom">  </td>
                         <td class="change-answer">
                             <a id="changeDocDate" class="edit" href="date-document-created">
                                 Change <span class="visuallyhidden">Document valid from</span>
@@ -76,7 +81,7 @@
                         </td>
                     </tr>
                     <tr id="extentRow">
-                        <td class="bold-small">Charge extent </td>
+                        <td class="bold-small">Extent </td>
                         <td>
 
                             <img src="/public/images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
@@ -127,7 +132,11 @@
 
                     <tr id="contactRow">
                         <td class="bold-small">Department</td>
+
                         <td id="department"></td>
+
+                        <td id="department">Department name not provided</td>
+
 
                         <td class="change-answer">
                             <a id="changeContact" class="edit" href="who-can-answer-questions">
@@ -151,10 +160,9 @@
             </table>
 
 
-
             <h2 class="heading-medium">Now register your local land charge </h2>
-            <p>By submitting these charge details you are confirming that to the best of your knowledge, all the details of property and extent are correct.</p>
 
+            <p>By adding this charge, you are confirming that this information is correct. </p>
 
 
             <div class="form-group">
