@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <p>
-                    <a class="button" id="typeOfChargeButton" role="button" href="date-document-created">Continue</a>
+                    <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
 
                 </p>
             </form>
@@ -138,10 +138,18 @@
 
         } else if (planningLabel.classList.contains('selected')) {
             var chargeType = 'Planning';
+
+            // Planning radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'planning-conditions');
+
         } else if (listedBuildingLabel.classList.contains('selected')) {
             var chargeType = 'Listed Building';
         } else if (landCompensationLabel.classList.contains('selected')) {
             var chargeType = 'Land Compensation';
+
+            // Land compensation journey radio button clicked   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'land-compensation');
+
         } else if (otherLabel.classList.contains('selected')) {
             var chargeType = 'Other';
         }
@@ -149,4 +157,5 @@
         sessionStorage.setItem('chargeType', chargeType);
     }
 </script>
+
 {% endblock %}
