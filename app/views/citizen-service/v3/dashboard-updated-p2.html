@@ -7,7 +7,6 @@
             <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
         </p>
     </div>
-
     <div class="grid-row">
         <div class="column-full">
             <aside class="sign-out">
@@ -16,7 +15,7 @@
             <h1 class="heading-large">Welcome Jane</h1>
             <form action="paid-service/search-method" method="GET">
                 <div class="form-group">
-                    <input class="button" type="submit" value="Start a paid search">
+                    <input class="button" type="submit" value="Pay now (£15 search)">
                 </div>
             </form>
             <a href="search-method">Start a free search</a>
@@ -36,10 +35,10 @@
                     <tr class="accordion-parent-1">
                         <td>LLC1/1234ABC-09</td>
                         <td>12 May 2017<br>
-                            <a href="paid-service/view-existing-1">View</a>
+                            <a href="paid-service/view-existing">View</a>
                         </td>
                         <td>18 September 2017<br>
-                            <a href="paid-service/view-existing-1">View</a>
+                            <a href="paid-service/view-existing">View</a>
                         </td>
                         <td><a href="paid-service/refresh-1">Refresh</a></td>
                         <td class="numberOfSearches">3</td>
@@ -48,7 +47,7 @@
                     <tr class="accordion-child-1 hidden-accordion-content">
                         <td>LLC1/1234ABC-10</td>
                         <td>18 September 2017</td>
-                        <td><a href="paid-service/view-existing-1">View</a></td>
+                        <td><a href="#">View</a></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -56,7 +55,7 @@
                     <tr class="accordion-child-1 hidden-accordion-content">
                         <td>LLC1/1234ABC-11</td>
                         <td>10 August 2017</td>
-                        <td><a href="paid-service/view-existing-1">View</a></td>
+                        <td><a href="#">View</a></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -64,21 +63,29 @@
                     <tr class="accordion-child-1 hidden-accordion-content">
                         <td>LLC1/1234ABC-12</td>
                         <td>8 July 2017</td>
-                        <td><a href="paid-service/view-existing-1">View</a></td>
+                        <td><a href="#">View</a></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="accordion-parent-2">
                         <td>LLC1/5678DEF-01</td>
-                        <td>12 May 2017<br>
-                            <a href="paid-service/view-existing-2">View</a>
+                        <td class="refresh-date-parent">12 May 2017<br>
+                            <a href="paid-service/view-existing">View</a>
                         </td>
                         <td>12 August 2017<br>
-                            <a href="paid-service/view-existing-2">View</a>
+                            <a href="paid-service/view-existing">View</a>
                         </td>
                         <td><a href="paid-service/refresh-2">Refresh</a></td>
-                        <td class="numberOfSearches">0</td>
+                        <td class="numberOfSearches">1</td>
+                        <td class="accordionIcon-2"><img src="{{asset_path}}images/icons-plus.png"></td>
+                    </tr>
+                    <tr class="accordion-child-2 hidden-accordion-content">
+                        <td>LLC1/5678DEF-11</td>
+                        <td class="refresh-date-child">18 September 2017</td>
+                        <td><a href="#">View</a></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                     </tr>
                     <tr class="accordion-parent-3">
@@ -105,8 +112,95 @@
             </table>
         </div>
 
-
     </div>
 
 </main>
-{% endblock %} {% block body_end_additional %} {% endblock %}
+{% endblock %} {% block body_end_additional %}
+<script>
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+
+    switch (month) {
+        case 1:
+            month = 'January';
+            break;
+        case 2:
+            month = 'February';
+            break;
+        case 3:
+            month = 'March';
+            break;
+        case 4:
+            month = 'April';
+            break;
+        case 5:
+            month = 'May';
+            break;
+        case 6:
+            month = 'June';
+            break;
+        case 7:
+            month = 'July';
+            break;
+        case 8:
+            month = 'August';
+            break;
+        case 9:
+            month = 'September';
+            break;
+        case 10:
+            month = 'October';
+            break;
+        case 11:
+            month = 'November';
+            break;
+        case 12:
+            month = 'December';
+            break;
+        default:
+            break;
+    }
+
+    var day = d.getDate();
+
+    var refreshDay = day + ' ' + month + ' ' + d.getFullYear();
+    $('.refresh-date-child').text(refreshDay);
+    $('.refresh-date-parent').text(refreshDay).append('<br><a href="paid-service/view-existing">View</a>');
+</script>
+<script>
+    $('.accordionIcon-1').click(function() {
+        if ($('.accordion-child-1').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-1').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-1').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+    $('.accordionIcon-2').click(function() {
+        if ($('.accordion-child-2').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-2').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-2').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+    $('.accordionIcon-3').click(function() {
+        if ($('.accordion-child-3').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-3').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-3').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+</script>
+{% endblock %}
