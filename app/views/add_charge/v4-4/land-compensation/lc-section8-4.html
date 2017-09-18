@@ -1,0 +1,115 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+Do you have an address for the land sold to the authority?
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+  <!-- alpha banner -->
+  <div class="phase-banner">
+    <p><strong class="phase-tag">BETA</strong></p>
+  </div>
+  <!-- main content starts -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Section 8(4)</span>
+        Land sold to the authority
+      </h1>
+
+      <form action="document-link" method="GET">
+        <fieldset>
+          <legend class="visually-hidden form-label">Do you have an address for the land sold to the authority?</legend>
+
+              <div class="form-group">
+                <label class="form-label" for="retainedLand">
+                  <span class="form-label">Describe the land sold </span> 
+
+                  <span class="form-hint">For example, land on the north side of Smith Street was sold to the authority.
+
+                  </span>
+                </label>
+                <textarea id="retainedLand" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+              </div>
+
+               <div class="form-group">
+                <label class="form-label" for="retainedLand">
+                  <span class="form-label">What work will the authority do on this land? </span> 
+
+                  <span class="form-hint">For example, land sold for the construction of a bypass.
+                  </span>
+                </label>
+                <textarea id="retainedLand" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+              </div>
+
+        </fieldset>
+
+      </form>
+      <p>
+        <a class="button" id="landCompensationBtn" role="button" href="search-property">Continue</a>
+
+      </p>
+
+      <p id="back">
+        <a href="land-compensation" class="back-link">Back</a>
+      </p>
+
+    </div>
+
+  </div>
+</main>
+
+<script>
+    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
+    console.log(chargeTypeIsChanging);
+    if (chargeTypeIsChanging === 'true') {
+        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
+        if (chargeTypeToChange === 'Planning') {
+            document.getElementById('section84Label').classList.add('selected');
+        } else if (chargeTypeToChange === 'Financial') {
+            document.getElementById('financialLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Listed Building') {
+            document.getElementById('listedBuildingLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Land Compensation') {
+            document.getElementById('landCompensationLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Other') {
+            document.getElementById('otherLabel').classList.add('selected');
+        }
+
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('chargeTypeUpdated', 'true');
+    }
+
+    document.getElementById('landCompensationBtn').onclick = function() {
+  
+        var section84Label = document.getElementById('section84Label');
+        var listedBuildingLabel = document.getElementById('listedBuildingLabel');
+        var landCompensationLabel = document.getElementById('landCompensationLabel');
+        var otherLabel = document.getElementById('otherLabel');
+        if (financialLabel.classList.contains('selected')) {
+            var chargeType = 'Financial';
+
+            // financial journey radio button clicked   
+            document.getElementById('landCompensationBtn').setAttribute('href', 'financial-charge/secured-charge-amount');
+
+
+        } else if (section84Label.classList.contains('selected')) {
+            var chargeType = 'Planning';
+        } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+        } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+
+            // Land compensation journey radio button clicked   
+            document.getElementById('landCompensationBtn').setAttribute('href', 'land-compensation');
+
+        } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+        }
+
+        sessionStorage.setItem('chargeType', chargeType);
+    }
+</script>
+
+{% endblock %}
