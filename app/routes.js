@@ -726,7 +726,7 @@ router.post('/citizen-service/v3-1/paid-service/pay-now', (req, res, next) => {
 })
 
 router.get('/citizen-service/v3-1/login-from-free', (req, res, next) => {
-    res.render('citizen-service/v3/login-from-free')
+    res.render('citizen-service/v3-1/login-from-free')
 })
 
 router.get('/citizen-service/v3-1/pay-confirmation', (req, res, next) => {
