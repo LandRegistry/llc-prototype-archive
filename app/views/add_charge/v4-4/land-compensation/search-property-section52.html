@@ -15,15 +15,15 @@
     <!-- map goes in here -->
 </div>
 <div id="search-panel">
-    <h1 class="heading-medium">Enter a postcode or address for the land kept by the landowner</h1>
+    <h1 class="heading-medium">Enter a postcode, address, UPRN or title number</h1>
     <form action="draw-an-extent" method="POST">
 
         <div class="form-group">
-            <legend class="visuallyhidden">Enter a postcode, address or Unique Property Reference Number (UPRN) for the land kept by the landowner</legend>
+            <legend class="visuallyhidden">Enter a postcode, address, UPRN or title number</legend>
 
             <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
 
-            <a id="postcodeSearchButton" href="draw-an-extent" class="button">Search</a>
+            <a id="postcodeSearchButton" href="draw-an-extent-section52" class="button">Search</a>
 
         </div>
 
@@ -88,8 +88,9 @@
         </p> -->
 
         <!-- New updated contents -->
-        <p>Once the map has zoomed to this location, draw an extent around this land.
-            </p>
+        <p>No address for this charge?
+            <br> Use the buttons on the map to find the place you need, then draw the extent.
+        </p>
 
         <div class="panel panel-border-narrow">
             <p>You have added
@@ -104,9 +105,37 @@
 
             <a href="more-information" class="button disabled continueButton">Continue</a></p>
 
-            <p>No address for this charge?
-            <br> Use the buttons on the map to find the place you need, then draw the extent.
-        </p>
+        <!-- <ul class="list">
+            <li><span>Do you have an extent saved on file?</span> <br>
+                <a href="upload-shape-file" >Upload the file</a>.
+            </li>
+            <li><a href="planning-update">Go back </a></li>  </li>
+        </ul> -->
+
+        <!-- <div class="form-group">
+         <span class="heading-small">Do you have an extent saved on file?</span> 
+         <details role="group">
+
+           <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Upload the file</span></summary>
+
+           <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+             <span>Accepted formats are:</span>
+             <ul class="list list-bullet">
+               <li>shapefile (.shp)</li>
+               <li>under 1MB</li>
+             </ul>
+
+             <label class="form-label" for="file-input">
+               Upload a file
+             </label>
+             <input type="file" id="file-input"><br><br>
+             <div class="form-group">
+               <a class="button shape-button" href="/add_charge/v4-1/52">Continue</a>
+             </div>
+           </div>
+         </details>
+       </div> -->
 
     </form>
 </div>
@@ -157,7 +186,7 @@
                 $('#postcodeSearchButton').removeAttr('href');
                 $("#address-list").removeClass("hiddenList")
             } else {
-                $("#postcodeSearchButton").attr("href", "draw-an-extent");
+                $("#postcodeSearchButton").attr("href", "draw-an-extent-section52");
             }
         });
 
