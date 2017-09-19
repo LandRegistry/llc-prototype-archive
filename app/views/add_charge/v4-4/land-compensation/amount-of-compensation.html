@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 {% block page_title %} 
-Enter Section 52(8) details
+What is the amount of compensation?
 {% endblock %} 
 {% block content %}
 
@@ -15,51 +15,67 @@ Enter Section 52(8) details
     <div class="column-two-thirds">
       <h1 class="heading-large">
         <!-- <span class="heading-secondary">Section 52(8)</span> -->
-        How is the land owned? 
+        What is the amount of compensation?
       </h1>
 
       <form action="document-link" method="GET">
         <fieldset>
-          <legend class="visually-hidden form-label">How is the land owned? </legend>
+          <legend class="visually-hidden form-label">What is the amount of compensation? </legend>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="compensation-amount">
+              Amount
+            </label>
+            <span class="bold-small">£ </span>
+            <input class="form-control form-control-1-4" type="text" name="amount" id="compensation-amount">
+
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend class="form-label-bold">Is this the:</legend>
+          <br>
 
           <div class="form-group">
 
-            <label id="freehold-label" class="block-label selection-button-radio" for="freehold">
-              <input id="freehold" name="extent" type="radio" value="no"> Freehold
+            <label id="total-amount-label" class="block-label selection-button-radio" for="total-amount">
+              <input id="total-amount" name="extent" type="radio" value="no"> agreed amount
             </label>
 
-            <label id="leasehold-label" class="block-label selection-button-radio" for="leasehold">
-              <input id="leasehold" name="extent" type="radio" value="no"> Leasehold
+            <label id="estimated-label" class="block-label selection-button-radio" for="estimated">
+              <input id="estimated" name="extent" type="radio" value="no"> estimated amount
             </label>
 
+            <!-- <label id="advance-label" class="block-label selection-button-radio" for="advance">
+            <input id="advance" name="extent" type="radio" value="no"> Advance payment (part of the total)
+            </label> -->
 
-            <label id="yesExpiryLabel" class="block-label selection-button-radio no" for="yesExpiry" data-target="chargeExpires">
-              <input id="yesExpiry" name="extent" type="radio" value="yes" aria-controls="chargeExpires">
-              Something else
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend class="visually-hidden form-label">Is there anything else you can tell us about the amount of compensation? (optional) </legend>
+
+          <div class="form-group">
+            <label class="form-label bold-small" for="anything-label">
+              
+              <span class="bold-small">Is there anything else you can tell us about the amount of compensation?</span> (optional)
+              
+              <span class="form-hint"> For example, ‘this total does not include surveyor’s fees’.</span>
             </label>
+            
+            <textarea class="form-control form-control-3-4" name="anything" id="anything" rows="5"></textarea>
 
-            <div class="js-hidden panel panel-border-narrow" id="chargeExpires" aria-hidden="true" style="display: none;">
-
-              <fieldset>
-                    <legend class="visually-hidden form-label">Describe something else</legend>
-
-                    <label class="form-label" for="textarea">Describe how the land is owned </label>
-
-                    <textarea class="form-control form-control-3-4" name="textarea" id="whatDoesChargeDo" rows="5"></textarea>
-                    <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
-                </fieldset>
-
-              <br>
-
-            </div>
-
+            <p><span class="form-hint">Answer must be shorter than 500 characters (about 80 words)</span></p>
 
           </div>
         </fieldset>
 
       </form>
       <p>
-        <a class="button" id="landCompensationBtn" role="button" href="amount-of-compensation">Continue</a>
+        <a class="button" id="landCompensationBtn" role="button" href="what-does-charge-do-section52journey">Continue</a>
 
       </p>
 
