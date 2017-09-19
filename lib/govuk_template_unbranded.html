@@ -1,17 +1,30 @@
 {% block top_of_page %}{% endblock %}
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="{{ html_lang|default('en') }}"><![endif]-->
-<!--[if gt IE 8]><!--><html class="unbranded" lang="{{ html_lang|default('en') }}"><!--<![endif]-->
-  <head>
+<!--[if gt IE 8]><!-->
+<html class="unbranded" lang="{{ html_lang|default('en') }}">
+<!--<![endif]-->
+
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
     <title>{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}</title>
 
     <script type="text/javascript">
-      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+        (function() {
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var d = document,
+                    c = "appendChild",
+                    a = d.createElement("style");
+                a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));
+                d.getElementsByTagName("head")[0][c](a);
+            }
+        })();
     </script>
 
-    <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link href="{{ asset_path }}stylesheets/govuk-template.css?0.16.0" media="screen" rel="stylesheet" type="text/css" />
+    <!--<![endif]-->
     <!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="{{ asset_path }}stylesheets/govuk-template-ie7.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="{{ asset_path }}stylesheets/govuk-template-ie8.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -31,7 +44,7 @@
     </script>
     <![endif]-->
     <!--[if gte IE 9]><!-->
-      <link href="{{ asset_path }}stylesheets/fonts.css?0.16.0" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset_path }}stylesheets/fonts.css?0.16.0" media="all" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
 
 
@@ -51,20 +64,20 @@
     <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.16.0">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.16.0">
+    <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.16.0"> {% block head %}{% endblock %}
+</head>
 
-    {% block head %}{% endblock %}
-  </head>
-
-  <body class="{% block body_classes %}{% endblock %}">
-    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<body class="{% block body_classes %}{% endblock %}">
+    <script type="text/javascript">
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
 
     {% block body_start %}{% endblock %}
 
     <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">{{ skip_link_message|default('Skip to main content') }}</a>
-      </div>
+        <div>
+            <a href="#content" class="skiplink">{{ skip_link_message|default('Skip to main content') }}</a>
+        </div>
     </div>
 
     <!--<div id="global-cookie-message">
@@ -80,9 +93,7 @@
     <!--end header-->
 
 
-    {% block after_header %}{% endblock %}
-
-    {% block content %}{% endblock %}
+    {% block after_header %}{% endblock %} {% block content %}{% endblock %}
 
     <footer class="group js-footer" id="footer" role="contentinfo">
     </footer>
@@ -94,5 +105,6 @@
     <script src="{{ asset_path }}javascripts/govuk-template.js?0.16.0" type="text/javascript"></script>
 
     {% block body_end %}{% endblock %}
-  </body>
+</body>
+
 </html>
