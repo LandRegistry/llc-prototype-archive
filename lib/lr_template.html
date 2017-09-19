@@ -1,17 +1,30 @@
 {% block top_of_page %}{% endblock %}
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="{{ html_lang|default('en') }}"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="{{ html_lang|default('en') }}"><!--<![endif]-->
-  <head>
+<!--[if gt IE 8]><!-->
+<html lang="{{ html_lang|default('en') }}">
+<!--<![endif]-->
+
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
     <title>{% block page_title %}Land Registry{% endblock %}</title>
 
     <script type="text/javascript">
-      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+        (function() {
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var d = document,
+                    c = "appendChild",
+                    a = d.createElement("style");
+                a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));
+                d.getElementsByTagName("head")[0][c](a);
+            }
+        })();
     </script>
 
-    <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link href="{{ asset_path }}stylesheets/govuk-template.css?0.16.0" media="screen" rel="stylesheet" type="text/css" />
+    <!--<![endif]-->
     <!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="{{ asset_path }}stylesheets/govuk-template-ie7.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="{{ asset_path }}stylesheets/govuk-template-ie8.css?0.16.0" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -31,7 +44,7 @@
     </script>
     <![endif]-->
     <!--[if gte IE 9]><!-->
-      <link href="{{ asset_path }}stylesheets/fonts.css?0.16.0" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset_path }}stylesheets/fonts.css?0.16.0" media="all" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
 
 
@@ -51,20 +64,20 @@
     <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.16.0">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.16.0">
+    <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.16.0"> {% block head %}{% endblock %}
+</head>
 
-    {% block head %}{% endblock %}
-  </head>
-
-  <body class="{% block body_classes %}{% endblock %}">
-    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<body class="{% block body_classes %}{% endblock %}">
+    <script type="text/javascript">
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
 
     {% block body_start %}{% endblock %}
 
     <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">{{ skip_link_message|default('Skip to main content') }}</a>
-      </div>
+        <div>
+            <a href="#content" class="skiplink">{{ skip_link_message|default('Skip to main content') }}</a>
+        </div>
     </div>
 
     <!--<div id="global-cookie-message">
@@ -74,21 +87,21 @@
     </div> -->
     <!--end global-cookie-message-->
 
-    
+
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
-      <div class="header-wrapper">
-        <div class="header-global">
-          <div class="header-logo">
-            <a href="{{ homepage_url|default('/') }}" title="" id="logo" class="content">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <div class="header-logo">
+                    <a href="{{ homepage_url|default('/') }}" title="" id="logo" class="content">
             Land Registry</a>
-          </div>
-          {% block inside_header %}{% endblock %}
+                </div>
+                {% block inside_header %}{% endblock %}
+            </div>
+            {% block proposition_header %}{% endblock %}
         </div>
-        {% block proposition_header %}{% endblock %}
-      </div>
     </header>
     <!--end header-->
-    
+
 
     {% block after_header %}{% endblock %}
 
@@ -100,7 +113,19 @@
     <div id="global-app-error" class="app-error hidden"></div>
 
     <script src="{{ asset_path }}javascripts/govuk-template.js?0.16.0" type="text/javascript"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106782774-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments)
+        };
+        gtag(‘js’, new Date());
+
+        gtag(‘config’, ‘UA - 106782774 - 1’);
+    </script>
     {% block body_end %}{% endblock %}
-  </body>
+</body>
+
 </html>
