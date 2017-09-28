@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Where should someone go to research this charge?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner">
+		<p><strong class="phase-tag">BETA</strong></p>
+	</div>
+	<!-- main content starts -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Where should someone go to research this charge?</h1>
+
+			
+
+			<h2 class="form-label-bold">Who can answer questions about this charge? </h2>
+
+			<fieldset>
+				<legend class="visually-hidden form-label">Who can answer questions about this charge?</legend>
+
+				<label class="form-label" for="textarea">
+					<span class="form-hint">For example, person's name, phone number,
+email, and or address </span>
+				</label>
+
+				<textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+			</fieldset>
+
+			<br><br>
+
+			<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">Reference</legend>
+							<label class="form-label" for="period2">
+								Reference
+							</label>
+							<input class="form-control" id="period2" type="text" name="full-name-f2">
+						</fieldset>
+					</div>
+
+			<br><br>
+
+			<h2 class="form-label-bold">Do you have a link to a planning portal? </h2>
+
+			<fieldset>
+				<legend class="visually-hidden form-label">Do you have a link to a planning portal? </legend>
+
+				<div class="form-group">
+
+					<label class="block-label selection-button-radio" for="1">
+						<input id="1" name="extent" type="radio" value="no">
+						No
+					</label>
+					<label class="block-label selection-button-radio no" for="2" data-target="part-extent">
+						<input id="2" name="extent" type="radio" value="yes" aria-controls="part-extent">
+						Yes
+					</label>
+				</div>
+
+				<div class="js-hidden panel panel-border-narrow" id="part-extent" aria-hidden="true" style="display: none;">
+
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">Link address</legend>
+							<label class="form-label" for="period1">
+								Link address
+							</label>
+							<input class="form-control" id="period1" type="text" name="full-name-f1">
+						</fieldset>
+					</div>
+				</div>
+				<div class="form-group">
+					<a class="button" href="/add_charge/v4-2/charge-summary" role="button">Continue</a>
+					
+				</div>
+
+
+
+				<div id="back">
+					<a href="extent-affect" class="back-link">Back</a>
+				</div>
+
+			</div>
+
+
+<!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+	</div>
+
+</main>
+{% endblock %}
+
+
+

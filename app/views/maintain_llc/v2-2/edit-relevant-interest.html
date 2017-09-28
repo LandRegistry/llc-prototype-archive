@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add particulars of nature / extent of works on acquired land
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Land compensation information</h1>
+			<form action="confirm-changes" method="GET">
+				<fieldset class="inline">
+					<legend class="visuallyhidden">Particulars of relevant interest in land</legend>
+
+					<div class="form-group">
+						<label class="form-label" for="particularsB">
+							Particulars of relevant interest in land
+						</label>
+
+						<textarea class="form-control" id="particularsB" name="particularsB" cols="50" rows="10" value=""></textarea>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="compensation">
+							Compensation paid for acquired land
+						</label>
+						<span class="form-hint">20000.00</span>
+						<input class="form-control" id="compensation" name="compensation" type="text" value=""></input>
+					</div>
+				</fieldset>
+				<a class="button particularsB-button" href="confirm-changes" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+
