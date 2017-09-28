@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Search for a charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- alpha banner -->
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">Find charges by map</h1>
+              <p></p>
+              <ul class="list list-bullet">
+                <li></li>
+                <li></li>
+              </ul>
+        </div>
+    </div>
+
+    <div class="grid-row">
+		<div class="column-two-thirds">
+          <form action="map-results" method="GET">
+            <div class="form-group">
+              <fieldset>
+                <legend class="visuallyhidden">Enter postcode or charge ID to find a charge</legend>
+                <div class="form-group spacing-bottom-half">
+                  <label class="form-label" for="legislation">
+                  </label>
+                  <input class="form-control search-field" id="maintain-map-search" name="maintain-map-search" type="text" value="" autofocus="autofocus">
+                  <input class="search-button submit maintain-map-search-button" type="submit" name="maintain-map-search" value=""><br><br>
+                </div>
+              </fieldset>
+
+            </div>
+          </form>
+        </div>
+    </div>
+
+    <div id="map">
+    </div>
+    <p>You can also <a href="search_place">search by address, postcode or Unique Property Reference Number (UPRN)</a></p>
+    <p>Or you can <a href="search_charge_id">find a charge by Charge ID</a></p>
+
+    <a class="button" href="map-results" role="button">Find charges</a>
+</main>
+{% endblock %}
+
+{% block body_end_additional %}
+{% include "includes/map_scripts.html" %}
+<script>
+var geometry = "{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[289271.8965749566,86964.19601306657],[289271.8965749566,96855.00479850252],[297579.1996423088,96855.00479850252],[297579.1996423088,86964.19601306657],[289271.8965749566,86964.19601306657]]]}";
+MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}

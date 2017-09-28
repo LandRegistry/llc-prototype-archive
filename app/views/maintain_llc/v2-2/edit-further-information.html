@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Edit additional information about the charge
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large">Additional information</h1>
+			<h2 class="heading-medium">How to find more information about the charge:</h2>
+			<p>For example:</p>
+			<ul class="list-bullet list">
+				<li>contact details for someone who can answer questions</li>
+				<li>address of a building where documents are filed</li>
+				<li>website, for example a link to your planning portal</li>
+			</ul>
+			<form action="confirm-planning-update" method="GET">
+				<div class="form-group">
+					<fieldset>
+						<legend class="visuallyhidden">How to find more information about the charge</legend>
+						<div class="form-group">
+							<textarea class="form-control other-info-change" name="additional-info" cols="50" rows="10"></textarea>				
+						</div>
+						<div class="form-group">
+						<h2 class="heading-medium">Reference (legal document that created the charge)</h2>
+						<label class="form-label" for="reference">For example, 'Tree Preservation Order XXX123456'</label>
+						<input id="reference" class="form-control" name="reference" type="text">
+						</div>
+					</fieldset>
+				</div>
+				<a class="button additional-information-button" id="confirm-further-information" href="confirm-planning-update" role="button">Continue</a>
+
+			</form>
+		</div>
+	</div>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+	$("#reference").on("input", function() {
+		var referenceChanged = "true"
+		sessionStorage.setItem("referenceChanged", referenceChanged)
+	})
+
+	$(".other-info-change").on("input", function() {
+		var furtherInformationChanged = "true"
+		sessionStorage.setItem("furtherInformationChanged", furtherInformationChanged)
+	})
+
+</script>
+
+{% endblock %}
+
+
