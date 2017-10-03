@@ -263,5 +263,70 @@ var example_local_land_charges = [{
             "type": "FeatureCollection"
         },
         "type": "Planning"
+    },
+    {
+        "cancelled": false,
+        "display_id": "LR-XYZ12349",
+        "geometry": {
+            "features": [{
+                "geometry": {
+                    "coordinates": [
+                        [
+                            [291250.4, 92049.65],
+                            [291254.5, 92044.55],
+                            [291258.0, 92040.25],
+                            [291262.81, 92034.2],
+                            [291264.0, 92032.7],
+                            [291267.9, 92035.65],
+                            [291266.71, 92037.15],
+                            [291262.0, 92043.1],
+                            [291258.25, 92047.5],
+                            [291254.35, 92052.6],
+                            [291250.4, 92049.65]
+                        ]
+                    ],
+                    "type": "Polygon"
+                },
+                "properties": {
+                    "id": 1498736521343
+                },
+                "type": "Feature"
+            }],
+            "type": "FeatureCollection"
+        },
+        "type": "Planning"
+    },
+    {
+        "cancelled": false,
+        "display_id": "LR-XYZ12350",
+        "geometry": {
+            "features": [{
+                "geometry": {
+                    "coordinates": [
+                        [
+                            [291254.35, 92052.6],
+                            [291258.25, 92047.5],
+                            [291262.0, 92043.1],
+                            [291266.71, 92037.15],
+                            [291267.9, 92035.65],
+                            [291271.95, 92038.65],
+                            [291270.74, 92040.21],
+                            [291266.1, 92046.15],
+                            [291263.82, 92049.07],
+                            [291262.5, 92050.75],
+                            [291258.55, 92055.9],
+                            [291254.35, 92052.6]
+                        ]
+                    ],
+                    "type": "Polygon"
+                },
+                "properties": {
+                    "id": 1498736521344
+                },
+                "type": "Feature"
+            }],
+            "type": "FeatureCollection"
+        },
+        "type": "Planning"
     }
 ];
