@@ -1,10 +1,4 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-Update extent
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Update extent {% endblock %} {% block content %}
 
 <!-- alpha banner -->
 <div class="phase-banner map-phase-banner">
@@ -21,18 +15,18 @@ Update extent
     <div class="results-block">
 
         <div class="panel panel-border-narrow">
-            <p>You have uploaded 
-                <strong class="bold-small"><span> 27 </span> </strong>        
-                extent(s) out of 500 possible extents.<!--  from
+            <p>You have uploaded
+                <strong class="bold-small"><span> 27 </span> </strong> extent(s) out of 500 possible extents.
+                <!--  from
                 <strong class="bold-small"><span> 0 </span> </strong> file(s). -->
             </p>
         </div>
 
-        <p> This extent is shown on the map. Use the map buttons if you need to change this extent. 
+        <p> This extent is shown on the map. Use the map buttons if you need to change this extent.
         </p>
     </div>
 
-      <a class="button" id="confirm-extent-change" href="confirm-planning-update" role="button">Save changes</a>
+    <a class="button" id="confirm-extent-change" href="confirm-planning-update" role="button">Save changes</a>
 
     <br>
     <br>
@@ -40,9 +34,10 @@ Update extent
     <ul class="list">
         <!-- <li><a href="upload-shape-file-yes">Upload the file</a></li> -->
         <li><span>Do you have an extent saved on file?</span> <br>
-            <a href="upload-shape-file" >Upload the file</a>.
+            <a href="upload-shape-file">Upload the file</a>.
         </li>
-        <li><a href="planning-update">Go back </a></li>  </li>
+        <li><a href="planning-update">Go back </a></li>
+        </li>
     </ul>
 
 </div>
@@ -103,14 +98,12 @@ Update extent
     });
 </script>
 
-{% endblock %} 
-{% block body_end_additional %} 
-{% include "includes/map_scripts.html" %}
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-<script src="/public/javascripts/map/search/map_events.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
 <script src="/public/javascripts/map/search/sample_data.js"></script>
-<script src="/public/javascripts/map/search/search.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script> -->
 <script>
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
@@ -121,13 +114,11 @@ Update extent
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-  $(document).ready(function() {
-    $("#confirm-extent-change").click(function() {
-      var extentChanged = "true"
-      sessionStorage.setItem("extentChanged", extentChanged)
+    $(document).ready(function() {
+        $("#confirm-extent-change").click(function() {
+            var extentChanged = "true"
+            sessionStorage.setItem("extentChanged", extentChanged)
+        })
     })
-  })
 </script>
 {% endblock %}
-
-  
