@@ -33,27 +33,26 @@
     <div class="results-block">
 
         <div class="panel panel-border-narrow">
-            <p>You have uploaded 
-                <strong class="bold-small"><span> 43 </span> </strong>        
-                extent(s) out of 500 possible extents from
+            <p>You have uploaded
+                <strong class="bold-small"><span> 43 </span> </strong> extent(s) out of 500 possible extents from
                 <strong class="bold-small"><span> 2 </span> </strong> file(s).
             </p>
         </div>
 
-        <p> This extent is shown on the map. Use the map buttons if you need to change this extent. 
+        <p> This extent is shown on the map. Use the map buttons if you need to change this extent.
         </p>
     </div>
 
     <a id="extentContinue" class="button" href="more-information">Save and confirm extent</a>
 
-    <br>    <br>
+    <br> <br>
 
     <ul class="list">
         <li><a href="upload-shape-file-yes">Upload another file</a></li>
-        <li><a href="search-property">Start again</a></li>           
+        <li><a href="search-property">Start again</a></li>
     </ul>
 
-            <!--     <div class="form-group">
+    <!--     <div class="form-group">
 
                    <details role="group">
 
@@ -70,74 +69,74 @@
                 </details>
             </div> -->
 
-        </div>
+</div>
 
-        <div class="panel-control close">
-            <img src="{{ asset_path }}images/arrow_collapse.png">
-        </div>
+<div class="panel-control close">
+    <img src="{{ asset_path }}images/arrow_collapse.png">
+</div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-        <script>
-            $(document).ready(function() {
-                var closePanel = function() {
-                    $("#search-panel").animate({
-                        "margin-left": "-1000px"
-                    }, 100);
-                    $(".panel-control").removeClass("close");
-                    $(".panel-control").addClass("open-button");
-                    $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
-                }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
 
-                var openPanel = function() {
-                    $("#search-panel").animate({
-                        "margin-left": "0"
-                    }, 100);
-                    $(".panel-control").removeClass("open-button");
-                    $(".panel-control").addClass("close");
-                    $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
-                }
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
 
-                $(".panel-control").click(function() {
-                    if ($(this).hasClass("close")) {
-                        closePanel();
-                    } else {
-                        openPanel();
-                    }
-                });
-
-
-                var postcodeSelected = sessionStorage.getItem('postcodeSelected');
-                console.log(postcodeSelected);
-                if (postcodeSelected !== null) {
-                    $('#searchedTermRetrieved').text(postcodeSelected);
-                } else {
-                    var locationRetrieved = sessionStorage.getItem('location');
-                    var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
-                    $('#searchedTermRetrieved').text(locationRetrieved + ' ' + postcodeRetrieved);
-                };
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
 
 
-                var extentIsChanging = sessionStorage.getItem('extentIsChanging');
-                if (extentIsChanging === 'true') {
-                    sessionStorage.setItem('extendUpdated', 'true');
-                    $('#extentContinue').attr('href', 'charge-summary');
-                };
+        var postcodeSelected = sessionStorage.getItem('postcodeSelected');
+        console.log(postcodeSelected);
+        if (postcodeSelected !== null) {
+            $('#searchedTermRetrieved').text(postcodeSelected);
+        } else {
+            var locationRetrieved = sessionStorage.getItem('location');
+            var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
+            $('#searchedTermRetrieved').text(locationRetrieved + ' ' + postcodeRetrieved);
+        };
 
 
-            });
-        </script>
+        var extentIsChanging = sessionStorage.getItem('extentIsChanging');
+        if (extentIsChanging === 'true') {
+            sessionStorage.setItem('extendUpdated', 'true');
+            $('#extentContinue').attr('href', 'charge-summary');
+        };
 
-        {% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
-        <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
-        <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-        <script src="/public/javascripts/map/search/map_events.js"></script>
+
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
         <script src="/public/javascripts/map/search/sample_data.js"></script>
-        <script src="/public/javascripts/map/search/search.js"></script>
-        <script>
-            zoomslider = new ol.control.Zoom();
-            map.addControl(zoomslider);
-            var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-            MAP_HELPERS.zoom_map(geometry);
-        </script>
-        {% endblock %}
+        <script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
+</script>
+{% endblock %}
