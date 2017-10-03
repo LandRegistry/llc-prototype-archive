@@ -34,7 +34,7 @@
 
         <div class="panel panel-border-narrow">
             <p>You have uploaded
-                <strong class="bold-small"><span> 27 </span> </strong> extent(s) out of 500 possible extents from
+                <strong class="bold-small"><span> 6 </span> </strong> extent(s) out of 500 possible extents from
                 <strong class="bold-small"><span> 1 </span> </strong> file(s).
             </p>
         </div>
@@ -44,7 +44,7 @@
     </div>
 
 
-    <a id="extentContinue" class="button" href="what-does-charge-do">Save and confirm extent</a>
+    <a id="extentContinue" class="button" href="more-information">Save and confirm extent</a>
 
     <br>
     <br>
@@ -133,9 +133,10 @@
 {% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
 <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
 <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
 <script src="/public/javascripts/map/search/sample_data.js"></script>
-<script src="/public/javascripts/map/search/search.js"></script> -->
+<script src="/public/javascripts/map/search/search.js"></script>
+
 <script>
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
