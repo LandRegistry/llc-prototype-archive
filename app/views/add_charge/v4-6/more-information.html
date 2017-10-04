@@ -1,0 +1,130 @@
+{% extends "layout.html" %} {% block page_title %} Address confirm {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm the address</h1>
+            <p>You selected <span class="bold-small">11 Okehampton Place, Exeter EX4 1AY</span>. Is this correct address for this charge?</p>
+
+            <form action="does-charge-expire" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Confirm your address</legend>
+
+                    <div class="form-group">
+                        <label id="yesConfirmLabel" class="block-label selection-button-radio" for="yesConfirm">
+                              <input id="yesConfirm" name="confirmAddress" type="radio" value="Yes, the address is correect">
+                              Yes, the address is correct
+                          </label>
+
+                        <label id="noConfirmLabel" class="block-label selection-button-radio" for="noConfirm" data-target="editAddress">
+                              <input id="noConfirm" name="confirmAddress" type="radio" value="Yes and I also have supplementary information">
+                              Yes and I also have supplementary information
+                          </label>
+                        <div class="panel panel-border-narrow js-hidden" id="editAddress">
+                            <div class="form-group">
+                                <label class="form-label" for="addressLineOne">Address Line 1</label>
+                                <input class="form-control" name="addressLineOne" type="text" id="addressLineOne">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="addressLineTwo">Address Line 2</label>
+                                <input class="form-control" name="addressLineTwo" type="text" id="addressLineTwo">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="addressLineThree">Address Line 3</label>
+                                <input class="form-control" name="addressLineThree" type="text" id="addressLineThree">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="town">Town</label>
+                                <input class="form-control" name="town" type="text" id="town">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="county">County (optional)</label>
+                                <input class="form-control" name="county" type="text" id="county">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="postcode">Postcode</label>
+                                <input class="form-control" name="postcode" type="text" id="postcode">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <p>
+                    <a id="confirmAddressButton " class="button " href="does-charge-expire " role="button ">Continue</a>
+                </p>
+            </form>
+
+
+
+            <div id="back ">
+                <a href="# " class="back-link ">Back</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+<script>
+    var locationIsChanging = sessionStorage.getItem('locationIsChanging');
+    if (locationIsChanging === 'true') {
+        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('locationUpdated', 'true');
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var moreInformation = document.getElementById('address').value;
+        sessionStorage.setItem('moreInformation', moreInformation);
+    }
+
+
+
+
+
+    /*var locationRetrieved = sessionStorage.getItem('location');
+    var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
+    var postcodeSelected = sessionStorage.getItem('postcodeSelected');
+
+    if (postcodeSelected !== null) {
+        document.getElementById('addressRetrieved').textContent = postcodeSelected;
+    } else if (postcodeRetrieved === null) {
+        document.getElementById('addressRetrieved').textContent = '3 Okehampton Place, Exeter EX4 1AY';
+    } else {
+        var locationSearched = locationRetrieved + ' ' + postcodeRetrieved;
+        document.getElementById('addressRetrieved').textContent = locationSearched;
+    }
+
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var addressConfirmYes = document.getElementById('addressConfirmYes');
+        var addressConfirmNo = document.getElementById('addressConfirmNo');
+        var locationSearched = document.getElementById('addressRetrieved').textContent;
+        if (addressConfirmYes.classList.contains('selected')) {
+            sessionStorage.setItem('locationSelected', locationSearched);
+        } else if (addressConfirmNo.classList.contains('selected')) {
+            var street1 = document.getElementById('street1');
+            street1 = street1.value;
+            var street2 = document.getElementById('street2');
+            street2 = street2.value;
+            var town = document.getElementById('town');
+            town = town.value;
+            var county = document.getElementById('county');
+            county = county.value;
+            var postcode = document.getElementById('postcode');
+            postcode = postcode.value.toUpperCase();
+            var locationSelected = street1 + ' ' + street2 + ' ' + town + ' ' + county + ' ' + postcode;
+            sessionStorage.setItem('locationSelected', locationSelected);
+        }
+    }*/
+</script>
+{% endblock %}
