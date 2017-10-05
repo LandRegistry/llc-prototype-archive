@@ -12,65 +12,67 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Confirm the address</h1>
-            <p>You selected <span class="bold-small">11 Okehampton Place, Exeter EX4 1AY</span>. Is this correct address for this charge?</p>
+            <h1 class="heading-large">Address for this charge</h1>
+            <p>You are adding a charge in <span class="bold-small" id="addressSelected">11 Okehampton Place </span><span class="bold-small">Exeter, EX4 1AY</span>.</p>
+            <details>
 
+                <summary><span class="summary">Not the correct address?</span></summary>
+
+                <div class="panel panel-border-narrow">
+                    <h2 class="heading-small">Enter the correct address details</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="addressLineOne">Address Line 1</label>
+                        <input class="form-control" name="addressLineOne" type="text" id="addressLineOne">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="addressLineTwo">Address Line 2</label>
+                        <input class="form-control" name="addressLineTwo" type="text" id="addressLineTwo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="addressLineThree">Address Line 3</label>
+                        <input class="form-control" name="addressLineThree" type="text" id="addressLineThree">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="town">Town</label>
+                        <input class="form-control" name="town" type="text" id="town">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="county">County (optional)</label>
+                        <input class="form-control" name="county" type="text" id="county">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="postcode">Postcode</label>
+                        <input class="form-control" name="postcode" type="text" id="postcode">
+                    </div>
+
+                </div>
+
+            </details>
+
+            <h2 class="heading-medium">Describe the location (optional)</h2>
             <form action="does-charge-expire" method="GET">
                 <fieldset>
-                    <legend class="visually-hidden form-label">Confirm your address</legend>
+                    <legend class="visually-hidden form-label">Describe the location</legend>
 
                     <div class="form-group">
-                        <label id="yesConfirmLabel" class="block-label selection-button-radio" for="yesConfirm">
-                              <input id="yesConfirm" name="confirmAddress" type="radio" value="Yes, the address is correect">
-                              Yes, the address is correct
-                          </label>
+                        <label class="form-label" for="textarea">
+                                    <span class="form-hint">If you don't have an address, describe how to find the charge, for example land to the north of the High Street.</span>
+                                </label>
 
-                        <label id="noConfirmLabel" class="block-label selection-button-radio" for="noConfirm" data-target="editAddress">
-                              <input id="noConfirm" name="confirmAddress" type="radio" value="Yes and I also have supplementary information">
-                              Yes and I also have supplementary information
-                          </label>
-                        <label id="somethingLabel" class="block-label selection-button-radio" for="something">
-                                <input id="something" name="confirmAddress" type="radio" value="No, ">
-                                Yes and I also have supplementary information
-                            </label>
-                        <div class="panel panel-border-narrow js-hidden" id="editAddress">
-                            <div class="form-group">
-                                <label class="form-label" for="addressLineOne">Address Line 1</label>
-                                <input class="form-control" name="addressLineOne" type="text" id="addressLineOne">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="addressLineTwo">Address Line 2</label>
-                                <input class="form-control" name="addressLineTwo" type="text" id="addressLineTwo">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="addressLineThree">Address Line 3</label>
-                                <input class="form-control" name="addressLineThree" type="text" id="addressLineThree">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="town">Town</label>
-                                <input class="form-control" name="town" type="text" id="town">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="county">County (optional)</label>
-                                <input class="form-control" name="county" type="text" id="county">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="postcode">Postcode</label>
-                                <input class="form-control" name="postcode" type="text" id="postcode">
-                            </div>
-                        </div>
+                        <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
+                        <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
                     </div>
                 </fieldset>
 
-                <p>
-                    <a id="confirmAddressButton " class="button " href="does-charge-expire " role="button ">Continue</a>
-                </p>
+
+                <p><a id="confirmAddressButton " class="button " href="does-charge-expire " role="button ">Continue</a></p>
+
             </form>
 
 
 
             <div id="back ">
-                <a href="# " class="back-link ">Back</a>
+                <p><a href="# " class="back-link ">Back</a></p>
             </div>
 
         </div>
@@ -86,13 +88,14 @@
         sessionStorage.setItem('locationUpdated', 'true');
     }
 
-    document.getElementById('confirmAddressButton').onclick = function() {
+    var addressSelected = sessionStorage.getItem('location');
+    console.log('addressSelected');
+    document.getElementById('addressSelected').textContent = addressSelected;
+
+    /*document.getElementById('confirmAddressButton').onclick = function() {
         var moreInformation = document.getElementById('address').value;
         sessionStorage.setItem('moreInformation', moreInformation);
-    }
-
-
-
+    }*/
 
 
     /*var locationRetrieved = sessionStorage.getItem('location');
