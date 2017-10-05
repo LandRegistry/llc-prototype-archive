@@ -19,44 +19,59 @@
                 <summary><span class="summary">Not the correct address?</span></summary>
 
                 <div class="panel panel-border-narrow">
+
                     <h2 class="heading-small">Enter the correct address details</h2>
+                    <form action="#">
+                        <fieldset>
+                            <div class="form-group">
+                                <label id="noAddressLabel" class="block-label selection-button-checkbox" for="noAddress">
+                                    <input name="noAddress" type="checkbox" id="noAddress">
+                                    There is no address for this charge
+                                    </label>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br>
                     <div class="form-group">
                         <label class="form-label" for="addressLineOne">Address Line 1</label>
-                        <input class="form-control" name="addressLineOne" type="text" id="addressLineOne">
+                        <input class="form-control addressField" name="addressLineOne" type="text" id="addressLineOne">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="addressLineTwo">Address Line 2</label>
-                        <input class="form-control" name="addressLineTwo" type="text" id="addressLineTwo">
+                        <input class="form-control addressField" name="addressLineTwo" type="text" id="addressLineTwo">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="addressLineThree">Address Line 3</label>
-                        <input class="form-control" name="addressLineThree" type="text" id="addressLineThree">
+                        <input class="form-control addressField" name="addressLineThree" type="text" id="addressLineThree">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="town">Town</label>
-                        <input class="form-control" name="town" type="text" id="town" value="Exeter">
+                        <input class="form-control addressField" name="town" type="text" id="town" value="Exeter">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="county">County (optional)</label>
-                        <input class="form-control" name="county" type="text" id="county">
+                        <input class="form-control addressField" name="county" type="text" id="county">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="postcode">Postcode</label>
-                        <input class="form-control" name="postcode" type="text" id="postcode" value="EX4 1AY">
+                        <input class="form-control addressField" name="postcode" type="text" id="postcode" value="EX4 1AY">
                     </div>
 
                 </div>
 
             </details>
+            <br>
 
-            <h2 class="heading-medium">Describe the location (optional)</h2>
+
+            <p class="heading-small">Describe the location (optional)</p>
             <form action="does-charge-expire" method="GET">
                 <fieldset>
                     <legend class="visually-hidden form-label">Describe the location</legend>
+                    <span class="form-hint">If the charge doesn't have an address, you must provide a description.</span>
 
                     <div class="form-group">
                         <label class="form-label" for="textarea">
-                                    <span class="form-hint">If you don't have an address, describe how to find the charge, for example land to the north of the High Street.</span>
+                                    
                                 </label>
 
                         <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
@@ -89,9 +104,17 @@
     }
 
     var addressSelected = sessionStorage.getItem('location');
-    console.log('addressSelected');
     document.getElementById('addressSelected').textContent = addressSelected;
     document.getElementById('addressLineOne').value = addressSelected;
+
+    var noAddressSelected = document.getElementById('noAddressLabel');
+    noAddressSelected.onclick = function() {
+        var addressFields = document.getElementsByClassName('addressField');
+        for (var i = 0; i < addressFields.length; i++) {
+            addressFields[i].setAttribute('disabled', true);
+            addressFields[i].style.color = '#6F777B';
+        }
+    }
 
 
 
