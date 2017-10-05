@@ -69,7 +69,7 @@
         </div> -->
         <p>
 
-            <a href="more-information" class="button disabled continueButton">Continue</a></p>
+            <a href="more-information_2" class="button disabled continueButton">Continue</a></p>
 
 
         <p> Do you have an extent saved on file? <a href="upload-shape-file">Upload the file </a></p>
@@ -157,6 +157,7 @@
         });
 
         $("#address-list li a").click(function() {
+            $('.continueButton').attr('href', 'more-information');
             var location = $(this).html();
             var postcodeSearched = $("#search_term").val();
             sessionStorage.setItem("location", location);
