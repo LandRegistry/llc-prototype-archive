@@ -13,7 +13,7 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Address for this charge</h1>
-            <p>You are adding a charge in <span class="bold-small" id="addressSelected">11 Okehampton Place </span><span class="bold-small">Exeter, EX4 1AY</span>.</p>
+            <p>You are adding a charge in <span class="bold-small" id="addressSelected">11 Okehampton Place </span><span class="bold-small">, Exeter, EX4 1AY</span>.</p>
             <details>
 
                 <summary><span class="summary">Not the correct address?</span></summary>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="town">Town</label>
-                        <input class="form-control" name="town" type="text" id="town">
+                        <input class="form-control" name="town" type="text" id="town" value="Exeter">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="county">County (optional)</label>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="postcode">Postcode</label>
-                        <input class="form-control" name="postcode" type="text" id="postcode">
+                        <input class="form-control" name="postcode" type="text" id="postcode" value="EX4 1AY">
                     </div>
 
                 </div>
@@ -91,6 +91,9 @@
     var addressSelected = sessionStorage.getItem('location');
     console.log('addressSelected');
     document.getElementById('addressSelected').textContent = addressSelected;
+    document.getElementById('addressLineOne').value = addressSelected;
+
+
 
     /*document.getElementById('confirmAddressButton').onclick = function() {
         var moreInformation = document.getElementById('address').value;

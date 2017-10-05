@@ -37,54 +37,22 @@
 
 
         <ul id="address-list" class="list hiddenList">
-            <li><a href="draw-an-extent">
-     1 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     3 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     5 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     7 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     9 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     11 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     13 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     15 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     17 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     19 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     21 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     23 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     25 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     27 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     29 Okehampton Place, Exeter
-  </a></li>
-            <li><a href="draw-an-extent">
-     31 Okehampton Place, Exeter
-  </a></li>
+            <li><a href="draw-an-extent">1 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">3 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">5 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">7 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">9 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">11 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">13 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">15 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">17 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">19 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">21 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">23 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">25 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">27 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">29 Okehampton Place</a></li>
+            <li><a href="draw-an-extent">31 Okehampton Place</a></li>
         </ul>
 
         <p>No address for this charge? Start with the map and scroll to the location instead. Use the buttons on this map to draw the charge extent.
@@ -211,7 +179,7 @@
     map.addControl(zoomslider);
     var geometry = "{{ geometry }}";
     //var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-    // MAP_HELPERS.zoom_map(geometry);
+    MAP_HELPERS.zoom_map(geometry);
 </script>
 <script>
     $('#address-list li a').click(function() {
