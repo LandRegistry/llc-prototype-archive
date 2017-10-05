@@ -20,7 +20,7 @@
 
                 <div class="panel panel-border-narrow">
 
-                    <h2 class="heading-small">Enter the correct address details</h2>
+                    <h2 class="heading-medium">Enter the correct address details</h2>
                     <form action="#">
                         <fieldset>
                             <div class="form-group">
@@ -109,10 +109,16 @@
 
     var noAddressSelected = document.getElementById('noAddressLabel');
     noAddressSelected.onclick = function() {
-        var addressFields = document.getElementsByClassName('addressField');
-        for (var i = 0; i < addressFields.length; i++) {
-            addressFields[i].setAttribute('disabled', true);
-            addressFields[i].style.color = '#6F777B';
+        if (noAddressSelected.classList.contains('selected')) {
+            var addressFields = document.getElementsByClassName('addressField');
+            for (var i = 0; i < addressFields.length; i++) {
+                addressFields[i].setAttribute('disabled', false);
+            }
+        } else {
+            var addressFields = document.getElementsByClassName('addressField');
+            for (var i = 0; i < addressFields.length; i++) {
+                addressFields[i].setAttribute('disabled', true);
+            }
         }
     }
 
