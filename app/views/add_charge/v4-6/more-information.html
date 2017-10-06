@@ -33,27 +33,27 @@
                     </form>
                     <br>
                     <div class="form-group">
-                        <label class="form-label" for="addressLineOne">Address Line 1</label>
+                        <label class="form-label addressField" for="addressLineOne">Address Line 1</label>
                         <input class="form-control addressField" name="addressLineOne" type="text" id="addressLineOne">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="addressLineTwo">Address Line 2</label>
+                        <label class="form-label addressField" for="addressLineTwo">Address Line 2</label>
                         <input class="form-control addressField" name="addressLineTwo" type="text" id="addressLineTwo">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="addressLineThree">Address Line 3</label>
+                        <label class="form-label addressField" for="addressLineThree">Address Line 3</label>
                         <input class="form-control addressField" name="addressLineThree" type="text" id="addressLineThree">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="town">Town</label>
+                        <label class="form-label addressField" for="town">Town</label>
                         <input class="form-control addressField" name="town" type="text" id="town" value="Exeter">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="county">County (optional)</label>
+                        <label class="form-label addressField" for="county">County (optional)</label>
                         <input class="form-control addressField" name="county" type="text" id="county">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="postcode">Postcode</label>
+                        <label class="form-label addressField" for="postcode">Postcode</label>
                         <input class="form-control addressField" name="postcode" type="text" id="postcode" value="EX4 1AY">
                     </div>
 
@@ -107,17 +107,16 @@
     document.getElementById('addressSelected').textContent = addressSelected;
     document.getElementById('addressLineOne').value = addressSelected;
 
-    var noAddressSelected = document.getElementById('noAddressLabel');
-    noAddressSelected.onclick = function() {
-        if (noAddressSelected.classList.contains('selected')) {
-            var addressFields = document.getElementsByClassName('addressField');
+    var noAddressLabel = document.getElementById('noAddressLabel');
+    noAddressLabel.onclick = function() {
+        var addressFields = document.getElementsByClassName('addressField');
+        if (this.classList.contains('selected')) {
             for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].setAttribute('disabled', false);
+                addressFields[i].classList.add('hiddenList');
             }
         } else {
-            var addressFields = document.getElementsByClassName('addressField');
             for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].setAttribute('disabled', true);
+                addressFields[i].classList.remove('hiddenList');
             }
         }
     }
