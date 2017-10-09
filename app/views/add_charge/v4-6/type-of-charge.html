@@ -49,35 +49,7 @@ What category of charge is this?
                      </label>
                </div>
             </fieldset>
-            <!--           <div class="js-hidden panel panel-border-narrow" id="part-extent" aria-hidden="true" style="display: none;">
-               <div class="form-group">
-                   <label class="form-label" for="select-box">Select legislation from the list</label>
-                   <select class="form-control" id="select-box" name="select-box">
-               <option>Highways Act 1980 (various sections)</option>
-               <option>Localism Act 2011 (Part 5, Chapter 3): The Assets of Community Value (England) 2012 SI 2012 No. 242</option>
-               <option>New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)</option>
-               <option>Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010</option>
-               <option>Part XI Highways Act 1980 (under code of 1875)</option>
-               <option>s.106 Town and Country Planning Act 1990</option>
-               <option>s.107 Building Act 1984</option>
-               <option>s.107(9) Housing Act 1996</option>
-               <option>s.11(1) Opencast Coal Act 1958</option>
-               </select>
-               </div>
-               
-               <p class="heading-extra-small">OR</p>
-               
-               
-               <div class="form-group">
-                   <fieldset class="inline">
-                       <legend class="visuallyhidden">Planning description</legend>
-                       <label class="form-label" for="planDesc">
-               
-                       </label>
-                       <textarea class="form-control form-control-3-4" name="planDesc" id="planDesc" rows="5"></textarea>
-                   </fieldset>
-               </div>
-               </div> -->
+
             <p>
                <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
             </p>
@@ -150,21 +122,14 @@ What category of charge is this?
            var chargeType = 'Planning';
    
            // Planning radio button clicked - display   
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'planning/planning-conditions');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'planning-conditions');
->>>>>>> working
    
        } else if (listedBuildingLabel.classList.contains('selected')) {
            var chargeType = 'Listed Building';
    
            // Listed building radio button clicked  
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
->>>>>>> working
+
            
        } else if (landCompensationLabel.classList.contains('selected')) {
            var chargeType = 'Land Compensation';
@@ -176,11 +141,8 @@ What category of charge is this?
            var chargeType = 'Housing';
    
            // Housing radio button clicked    
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
->>>>>>> working
+
    
        } else if (lonLabel.classList.contains('selected')) {
            var chargeType = 'Light Obstruction Notice';
@@ -188,13 +150,8 @@ What category of charge is this?
        } else if (otherLabel.classList.contains('selected')) {
            var chargeType = 'Other';
    
-<<<<<<< HEAD
-           // Something Else radio button clicked    
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
-=======
            // Other radio button clicked    
            document.getElementById('typeOfChargeButton').setAttribute('href', 'more-charges');
->>>>>>> working
        }
    
        sessionStorage.setItem('chargeType', chargeType);
