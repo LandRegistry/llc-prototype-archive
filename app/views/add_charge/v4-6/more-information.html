@@ -74,10 +74,10 @@
                                     
                                 </label>
 
-                        <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
+                        <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
                         <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
                     </div>
-                    <p><a id="confirmAddressButton " class="button " href="does-charge-expire " role="button">Continue</a></p>
+                    <p><a id="confirmAddressButton" class="button " href="does-charge-expire" role="button">Continue</a></p>
                 </fieldset>
 
 
@@ -108,6 +108,11 @@
     document.getElementById('addressSelected').textContent = addressSelected;
     document.getElementById('addressLineOne').value = addressSelected;
 
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var locationDescription = document.getElementById('locationDescription').value;
+        sessionStorage.setItem('locationDescription', locationDescription);
+    }
+
     var noAddressLabel = document.getElementById('noAddressLabel');
     noAddressLabel.onclick = function() {
         var addressFields = document.getElementsByClassName('addressField');
@@ -121,6 +126,44 @@
             }
         }
     }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        if (noAddressLabel.classList.contains('selected')) {
+            sessionStorage.setItem('noAddress', 'There is no address for this charge');
+        }
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var locationDescription = document.getElementById('locationDescription').value;
+        sessionStorage.setItem('locationDescription', locationDescription);
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var addressLineOne = document.getElementById('addressLineOne').value;
+        var addressLineTwo = document.getElementById('addressLineTwo').value;
+        var addressLineThree = document.getElementById('addressLineThree').value;
+        var town = document.getElementById('town').value;
+        var county = document.getElementById('county').value;
+        var postcode = document.getElementById('postcode').value;
+
+        var newAddress = addressLineOne + ' ' + addressLineTwo + ' ' + addressLineThree + ' ' + town + ' ' + county + ' ' + postcode;
+
+        sessionStorage.setItem('newAddress', newAddress);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

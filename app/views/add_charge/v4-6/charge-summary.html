@@ -49,9 +49,18 @@
                         <td class="bold-small">Address</td>
                         <td id="location">Location not provided</td>
                         <td class="change-answer">
-                            <a id="changeLocation" class="edit" href="search-property">
+                            <a id="changeLocation" class="edit" href="more-information">
                                 Change <span class="visuallyhidden">Location of charge</span>
                             </a>
+                        </td>
+                    </tr>
+                    <tr id="locationDescriptionRow">
+                        <td class="bold-small">Location description</td>
+                        <td id="locationDescription">Location not provided</td>
+                        <td class="change-answer">
+                            <a id="changeLocationDescription" class="edit" href="more-information">
+                                    Change <span class="visuallyhidden">Location of charge</span>
+                                </a>
                         </td>
                     </tr>
                     <tr id="extentRow">
@@ -149,6 +158,9 @@
 </main>
 
 <script>
+    var newAddressRetrieved = sessionStorage.getItem('newAddress');
+    console.log(newAddressRetrieved);
+
     // charge type
     var chargeTypeRetrieved = sessionStorage.getItem('chargeType');
     document.getElementById('chargeType').textContent = chargeTypeRetrieved;
@@ -159,11 +171,21 @@
     var startYearRetrieved = sessionStorage.getItem('startYear');
     document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
     // location
-    var locationRetrieved = sessionStorage.getItem('moreInformation');
+    var locationRetrieved = sessionStorage.getItem('newAddress');
+    var noAddressCheck = sessionStorage.getItem('noAddress');
     if (locationRetrieved === null || locationRetrieved === '') {
         document.getElementById('location').textContent = 'Location not provided';
+    } else if (noAddressCheck === 'There is no address for this charge') {
+        document.getElementById('location').textContent = noAddressCheck;
     } else {
         document.getElementById('location').textContent = locationRetrieved;
+    }
+    // location description
+    var locationDescriptionRetrieved = sessionStorage.getItem('locationDescription');
+    if (locationDescriptionRetrieved === null || locationDescriptionRetrieved === '') {
+        document.getElementById('locationDescription').textContent = 'Location description not provided';
+    } else {
+        document.getElementById('locationDescription').textContent = locationDescriptionRetrieved;
     }
     // description
     var chargeDescription = sessionStorage.getItem('whatDoesChargeDo');

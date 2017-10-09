@@ -81,6 +81,10 @@
 
 </main>
 <script>
+    var newAddressRetrieved = sessionStorage.getItem('newAddress');
+    console.log(newAddressRetrieved);
+
+
     var expiryIsChanging = sessionStorage.getItem('expiryIsChanging');
     if (expiryIsChanging === 'true') {
         var expireDayToChange = sessionStorage.getItem('expireDayToChange');
