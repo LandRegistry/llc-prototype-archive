@@ -34,20 +34,20 @@
                                 </div>
                                 <p id="manualAddressLink"><a href="#">Enter address manually</a></p>
                                 <div class="form-group hiddenList" id="addressList">
-                                    <div class="results-block">
+                                    <div class="results-block" id="address-list">
                                         <p>Click on the place you need.</p>
-                                        <ol class="results-list address-list">
-                                            <li><a href="does-charge-expire" class="address-list">2 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">3 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">4 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">6 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">8 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">10 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">12 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">14 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">16 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">18 Okehampton Place</a></li>
-                                            <li><a href="does-charge-expire" class="address-list">20 Okehampton Place</a></li>
+                                        <ol class="results-list">
+                                            <li><a href="#" class="address-list">2 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">3 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">4 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">6 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">8 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">10 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">12 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">14 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">16 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">18 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">20 Okehampton Place</a></li>
                                         </ol>
 
                                         <br>
@@ -80,7 +80,6 @@
                                         <label class="form-label" for="postcode">Postcode</label>
                                         <input class="form-control" name="postcode" type="text" id="postcode">
                                     </div>
-                                    <p><a href="does-charge-expire" class="button">Continue</a></p>
                                 </div>
 
                             </div>
@@ -97,7 +96,7 @@
                                         
                             </label>
 
-                            <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
+                            <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
                             <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
                         </div>
 
@@ -107,7 +106,7 @@
 
 
 
-                        <p><a href="#" class="button">Continue</a></p>
+                        <p><a id="confirmAddressButton" href="does-charge-expire" class="button">Continue</a></p>
                     </fieldset>
 
                 </div>
@@ -135,5 +134,36 @@
         document.getElementById('postcodeSearch').classList.add('hiddenList');
         return false;
     };
+
+    var addressList = document.querySelectorAll('.address-list');
+    for (var i = 0; i < addressList.length; i++) {
+        addressList[i].onclick = function() {
+            document.getElementById('manualAddressEntry').classList.remove('hiddenList');
+            document.getElementById('address-list').classList.add('hiddenList');
+            var addressLineOne = this.text;
+            document.getElementById('addressLineOne').value = addressLineOne;
+            document.getElementById('town').value = 'Exeter';
+            document.getElementById('postcode').value = 'EX4 1AY';
+            return false;
+        }
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var addressLineOne = document.getElementById('addressLineOne').value;
+        var addressLineTwo = document.getElementById('addressLineTwo').value;
+        var addressLineThree = document.getElementById('addressLineThree').value;
+        var town = document.getElementById('town').value;
+        var county = document.getElementById('county').value;
+        var postcode = document.getElementById('postcode').value;
+
+        var newAddress = addressLineOne + ' ' + addressLineTwo + ' ' + addressLineThree + ' ' + town + ' ' + county + ' ' + postcode;
+
+        sessionStorage.setItem('newAddress', newAddress);
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var locationDescription = document.getElementById('locationDescription').value;
+        sessionStorage.setItem('locationDescription', locationDescription);
+    }
 </script>
 {% endblock %}
