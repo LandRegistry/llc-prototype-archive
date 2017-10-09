@@ -98,12 +98,11 @@ More charge categories
            // financial journey radio button clicked   
            // document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
    
-   
        } else if (planningLabel.classList.contains('selected')) {
            var chargeType = 'Planning';
    
            // Planning radio button clicked - display   
-           document.getElementById('typeOfChargeButton').setAttribute('href', 'Contact-HMLR');
+           document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
    
        } else if (listedBuildingLabel.classList.contains('selected')) {
            var chargeType = 'Listed Building';
@@ -130,7 +129,7 @@ More charge categories
            var chargeType = 'Other';
    
            // Something Else radio button clicked    
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
+           document.getElementById('typeOfChargeButton').setAttribute('href', 'Contact-HMLR');
        }
    
        sessionStorage.setItem('chargeType', chargeType);
