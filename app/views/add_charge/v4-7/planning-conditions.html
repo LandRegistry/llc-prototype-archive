@@ -1,5 +1,5 @@
 {% extends "layout.html" %} {% block page_title %} 
-What category of charge is this?
+Planning
 {% endblock %} 
 {% block content %}
 <main id="content" role="main">
@@ -13,96 +13,61 @@ What category of charge is this?
    <!-- main content starts -->
    <div class="grid-row">
       <div class="column-two-thirds">
-         <h1 class="heading-large">What category of charge is this?</h1>
+         <h1 class="heading-large">Planning</h1>
          <form action="#">
             <fieldset>
-               <legend class="visually-hidden">What type of charge is this?</legend>
+               <legend class="visually-hidden">Planning</legend>
                <div class="form-group">
-                  <label id="planningLabel" class="block-label selection-button-radio" for="planning">
-                  <input id="planning" name="planningLegislation" type="radio" value="Planning">
-                  Planning
-                  </label>
                   <label id="financialLabel" class="block-label selection-button-radio" for="financial">
-                  <input id="financial" name="planningLegislation" type="radio" value="Financial">
-                  Financial
+                  <input id="financial" name="planningLegislation" type="radio" value="Article 4 direction">
+                  Change a development
                   </label>
                   <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
-                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Listed Building">
-                  Listed Building
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Breach of conditions">
+                  Breach of conditions
                   </label>
                   <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
-                  <input id="landCompensation" name="planningLegislation" type="radio" value="Land Compensation">
-                  Land Compensation 
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Conservation area">
+                  Conservation area
                   </label>
-
-                  <label id="housingLabel" class="block-label selection-button-radio" for="housing">
-                     <input id="housing" name="planningLegislation" type="radio" value="Housing">
-                     Housing 
-                     </label>
-                  <label id="lonLabel" class="block-label selection-button-radio" for="lon">
-                     <input id="lon" name="planningLegislation" type="radio" value="Light Obstruction Notice (LON)">
-                     Light Obstruction Notice (LON) 
-                     </label>
-                  <label id="otherLabel" class="block-label selection-button-radio" for="other" data-target="part-extent">
-                     <input id="other" name="planningLegislation" type="radio" value="Other" aria-controls="part-extent">
-                     Other
-                     </label>
+                  <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Conditional planning consent">
+                  Conditional planning consent
+                  </label>
+                  <label id="enforcementLabel" class="block-label selection-button-radio" for="enforcementNotice">
+                  <input id="enforcementNotice" name="planningLegislation" type="radio" value="Enforcement notice">
+                  Enforcement notice
+                  </label>
+                  <label id="noPermitLabel" class="block-label selection-button-radio" for="noPermit">
+                  <input id="noPermit" name="planningLegislation" type="radio" value="No permitted development">
+                  No permitted development
+                  </label>
+                  <label id="planningNoticeLabel" class="block-label selection-button-radio" for="planningNotice">
+                  <input id="planningNotice" name="planningLegislation" type="radio" value="Planning notices">
+                  Planning notices
+                  </label>
+                  <label id="planningAgreeLabel" class="block-label selection-button-radio" for="planningAgree">
+                  <input id="planningAgree" name="planningLegislation" type="radio" value="Planning agreement">
+                  Planning agreement
+                  </label>
+                  <label id="tpoLabel" class="block-label selection-button-radio" for="treeOrder">
+                  <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
+                  Tree preservation order (TPO)
+                  </label>
+                  <label id="planningLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
                </div>
             </fieldset>
-            <!--           <div class="js-hidden panel panel-border-narrow" id="part-extent" aria-hidden="true" style="display: none;">
-               <div class="form-group">
-                   <label class="form-label" for="select-box">Select legislation from the list</label>
-                   <select class="form-control" id="select-box" name="select-box">
-               <option>Highways Act 1980 (various sections)</option>
-               <option>Localism Act 2011 (Part 5, Chapter 3): The Assets of Community Value (England) 2012 SI 2012 No. 242</option>
-               <option>New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)</option>
-               <option>Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010</option>
-               <option>Part XI Highways Act 1980 (under code of 1875)</option>
-               <option>s.106 Town and Country Planning Act 1990</option>
-               <option>s.107 Building Act 1984</option>
-               <option>s.107(9) Housing Act 1996</option>
-               <option>s.11(1) Opencast Coal Act 1958</option>
-               </select>
-               </div>
-               
-               <p class="heading-extra-small">OR</p>
-               
-               
-               <div class="form-group">
-                   <fieldset class="inline">
-                       <legend class="visuallyhidden">Planning description</legend>
-                       <label class="form-label" for="planDesc">
-               
-                       </label>
-                       <textarea class="form-control form-control-3-4" name="planDesc" id="planDesc" rows="5"></textarea>
-                   </fieldset>
-               </div>
-               </div> -->
             <p>
                <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
             </p>
             <p id="back">
-               <a href="start-llc" class="back-link">Back</a>
+               <a href="#" class="back-link">Back</a>
             </p>
          </form>
       </div>
-      <!--<div class="column-third related-container">
-         <aside class="govuk-related-items" role="complementary">
-             <hr>
-             <h2 class="heading-medium">
-                 Can't find the law you need?
-             </h2>
-         
-             <ul role="navigation" class="list">
-                 <li>
-                     <a href="#">Search all local land charge laws</a>
-                 </li>
-         
-             </ul>
-         
-         </aside>
-         
-         </div> -->
    </div>
 </main>
 <script>
@@ -150,21 +115,13 @@ What category of charge is this?
            var chargeType = 'Planning';
    
            // Planning radio button clicked - display   
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'planning/planning-conditions');
-=======
-           document.getElementById('typeOfChargeButton').setAttribute('href', 'planning-conditions');
->>>>>>> working
+           document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
    
        } else if (listedBuildingLabel.classList.contains('selected')) {
            var chargeType = 'Listed Building';
    
            // Listed building radio button clicked  
-<<<<<<< HEAD
            // document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
-=======
-           document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
->>>>>>> working
            
        } else if (landCompensationLabel.classList.contains('selected')) {
            var chargeType = 'Land Compensation';
@@ -176,11 +133,7 @@ What category of charge is this?
            var chargeType = 'Housing';
    
            // Housing radio button clicked    
-<<<<<<< HEAD
            // document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
-=======
-           document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
->>>>>>> working
    
        } else if (lonLabel.classList.contains('selected')) {
            var chargeType = 'Light Obstruction Notice';
@@ -188,13 +141,8 @@ What category of charge is this?
        } else if (otherLabel.classList.contains('selected')) {
            var chargeType = 'Other';
    
-<<<<<<< HEAD
            // Something Else radio button clicked    
            // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
-=======
-           // Other radio button clicked    
-           document.getElementById('typeOfChargeButton').setAttribute('href', 'more-charges');
->>>>>>> working
        }
    
        sessionStorage.setItem('chargeType', chargeType);

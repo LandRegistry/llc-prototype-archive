@@ -34,7 +34,6 @@ What category of charge is this?
                   <input id="landCompensation" name="planningLegislation" type="radio" value="Land Compensation">
                   Land Compensation 
                   </label>
-
                   <label id="housingLabel" class="block-label selection-button-radio" for="housing">
                      <input id="housing" name="planningLegislation" type="radio" value="Housing">
                      Housing 
@@ -150,21 +149,13 @@ What category of charge is this?
            var chargeType = 'Planning';
    
            // Planning radio button clicked - display   
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'planning/planning-conditions');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'planning-conditions');
->>>>>>> working
    
        } else if (listedBuildingLabel.classList.contains('selected')) {
            var chargeType = 'Listed Building';
    
            // Listed building radio button clicked  
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
->>>>>>> working
            
        } else if (landCompensationLabel.classList.contains('selected')) {
            var chargeType = 'Land Compensation';
@@ -176,11 +167,7 @@ What category of charge is this?
            var chargeType = 'Housing';
    
            // Housing radio button clicked    
-<<<<<<< HEAD
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
-=======
            document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
->>>>>>> working
    
        } else if (lonLabel.classList.contains('selected')) {
            var chargeType = 'Light Obstruction Notice';
@@ -188,13 +175,8 @@ What category of charge is this?
        } else if (otherLabel.classList.contains('selected')) {
            var chargeType = 'Other';
    
-<<<<<<< HEAD
-           // Something Else radio button clicked    
-           // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
-=======
            // Other radio button clicked    
            document.getElementById('typeOfChargeButton').setAttribute('href', 'more-charges');
->>>>>>> working
        }
    
        sessionStorage.setItem('chargeType', chargeType);

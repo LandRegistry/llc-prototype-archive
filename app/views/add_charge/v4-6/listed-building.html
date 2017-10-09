@@ -1,0 +1,132 @@
+{% extends "layout.html" %} {% block page_title %} 
+Listed Building
+{% endblock %} 
+{% block content %}
+<main id="content" role="main">
+   <!-- alpha banner -->
+   <div class="phase-banner-beta">
+      <p>
+         <strong class="phase-tag">BETA</strong>
+         <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+      </p>
+   </div>
+   <!-- main content starts -->
+   <div class="grid-row">
+      <div class="column-two-thirds">
+         <h1 class="heading-large">Listed Building</h1>
+         <form action="#">
+            <fieldset>
+               <legend class="visually-hidden">Listed Building</legend>
+               <div class="form-group">
+                  <label id="financialLabel" class="block-label selection-button-radio" for="financial">
+                  <input id="financial" name="planningLegislation" type="radio" value="Listed building">
+                  Listed building
+                  </label>
+                  <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Conditional planning consent">
+                  Conditional planning consent
+                  </label>
+                  <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Enforcement notice">
+                  Enforcement notice
+                  </label>
+                  <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Repairs notice">
+                  Repairs notice
+                  </label>
+                  
+                  <label id="planningLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
+               </div>
+            </fieldset>
+            <p>
+               <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
+            </p>
+            <p id="back">
+               <a href="#" class="back-link">Back</a>
+            </p>
+         </form>
+      </div>
+   </div>
+</main>
+<script>
+   var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
+   console.log(chargeTypeIsChanging);
+   if (chargeTypeIsChanging === 'true') {
+       var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
+       if (chargeTypeToChange === 'Planning') {
+           document.getElementById('planningLabel').classList.add('selected');
+       } else if (chargeTypeToChange === 'Financial') {
+           document.getElementById('financialLabel').classList.add('selected');
+       } else if (chargeTypeToChange === 'Listed Building') {
+           document.getElementById('listedBuildingLabel').classList.add('selected');
+       } else if (chargeTypeToChange === 'Land Compensation') {
+           document.getElementById('landCompensationLabel').classList.add('selected');
+       } else if (chargeTypeToChange === 'Housing') {
+           document.getElementById('housingLabel').classList.add('selected');
+       } else if (chargeTypeToChange === 'Light Obstruction Notice') {
+           document.getElementById('lonLabel').classList.add('selected');
+       } 
+   
+         else if (chargeTypeToChange === 'Other') {
+           document.getElementById('otherLabel').classList.add('selected');
+       }
+   
+       document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
+       sessionStorage.setItem('chargeTypeUpdated', 'true');
+   }
+   
+   document.getElementById('typeOfChargeButton').onclick = function() {
+       var financialLabel = document.getElementById('financialLabel');
+       var planningLabel = document.getElementById('planningLabel');
+       var listedBuildingLabel = document.getElementById('listedBuildingLabel');
+       var landCompensationLabel = document.getElementById('landCompensationLabel');
+       var housingLabel = document.getElementById('housingLabel');
+       var otherLabel = document.getElementById('otherLabel');
+       if (financialLabel.classList.contains('selected')) {
+           var chargeType = 'Financial';
+   
+           // financial journey radio button clicked   
+           // document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
+   
+   
+       } else if (planningLabel.classList.contains('selected')) {
+           var chargeType = 'Planning';
+   
+           // Planning radio button clicked - display   
+           document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
+   
+       } else if (listedBuildingLabel.classList.contains('selected')) {
+           var chargeType = 'Listed Building';
+   
+           // Listed building radio button clicked  
+           // document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
+           
+       } else if (landCompensationLabel.classList.contains('selected')) {
+           var chargeType = 'Land Compensation';
+   
+           // Land compensation radio button clicked    
+           // document.getElementById('typeOfChargeButton').setAttribute('href', 'land-compensation');
+   
+       } else if (housingLabel.classList.contains('selected')) {
+           var chargeType = 'Housing';
+   
+           // Housing radio button clicked    
+           // document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
+   
+       } else if (lonLabel.classList.contains('selected')) {
+           var chargeType = 'Light Obstruction Notice';
+   
+       } else if (otherLabel.classList.contains('selected')) {
+           var chargeType = 'Other';
+   
+           // Something Else radio button clicked    
+           // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
+       }
+   
+       sessionStorage.setItem('chargeType', chargeType);
+   }
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block page_title %} Do you know the amount secured for this financial charge? {% endblock %} {% block content %}
+
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Do you know the amount secured for this financial charge?</h1>
+            <form action="#">
+
+                <fieldset>
+                    <legend class="visually-hidden">Do you know the amount secured for this financial charge?</legend>
+                    <div class="form-group">
+                        <label id="yesSecuredAmountLabel" class="block-label selection-button-radio" for="yesSecuredAmount">
+                            <input id="yesSecuredAmount" name="securedAmount" type="radio" value="Yes">
+                            Yes
+                        </label>
+                        <label id="noSecuredAmountLabel" class="block-label selection-button-radio" for="noSecuredAmount">
+                            <input id="noSecuredAmount" name="securedAmount" type="radio" value="No">
+                            No
+                        </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="securedBtn" role="button" href="">Continue</a>
+
+                </p>
+                <p id="back">
+                  <a href="/add_charge/v4-4/type-of-charge" class="back-link">Back</a>
+              </p>
+          </form>
+      </div>
+  </div>
+</main>
+<script>
+    var yesAmount = document.getElementById('yesSecuredAmountLabel');
+    var noAmount = document.getElementById('noSecuredAmountLabel');
+    document.getElementById('securedBtn').onclick = function() {
+        sessionStorage.setItem('financial', 'true');
+        if (yesAmount.classList.contains('selected')) {
+            document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
+        } else if (noAmount.classList.contains('selected')) {
+            document.getElementById('securedBtn').setAttribute('href', '../what-does-charge-do');
+        }
+    }
+</script>
+{% endblock %}

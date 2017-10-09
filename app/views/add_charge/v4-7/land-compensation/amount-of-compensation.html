@@ -1,0 +1,143 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+What is the amount of compensation?
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+  <!-- alpha banner -->
+  <div class="phase-banner">
+    <p><strong class="phase-tag">BETA</strong></p>
+  </div>
+  <!-- main content starts -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        <!-- <span class="heading-secondary">Section 52(8)</span> -->
+        What is the amount of compensation?
+      </h1>
+
+      <form action="document-link" method="GET">
+        <fieldset>
+          <legend class="visually-hidden form-label">What is the amount of compensation? </legend>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="compensation-amount">
+              Amount
+            </label>
+            <span class="bold-small">£ </span>
+            <input class="form-control form-control-1-4" type="text" name="amount" id="compensation-amount">
+
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend class="form-label-bold">Is this the:</legend>
+          <br>
+
+          <div class="form-group">
+
+            <label id="total-amount-label" class="block-label selection-button-radio" for="total-amount">
+              <input id="total-amount" name="extent" type="radio" value="no"> agreed amount
+            </label>
+
+            <label id="estimated-label" class="block-label selection-button-radio" for="estimated">
+              <input id="estimated" name="extent" type="radio" value="no"> estimated amount
+            </label>
+
+            <!-- <label id="advance-label" class="block-label selection-button-radio" for="advance">
+            <input id="advance" name="extent" type="radio" value="no"> Advance payment (part of the total)
+            </label> -->
+
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend class="visually-hidden form-label">Is there anything else you can tell us about the amount of compensation? (optional) </legend>
+
+          <div class="form-group">
+            <label class="form-label bold-small" for="anything-label">
+              
+              <span class="bold-small">Is there anything else you can tell us about the amount of compensation?</span> (optional)
+              
+              <span class="form-hint"> For example, ‘this total does not include surveyor’s fees’.</span>
+            </label>
+            
+            <textarea class="form-control form-control-3-4" name="anything" id="anything" rows="5"></textarea>
+
+            <p><span class="form-hint">Answer must be shorter than 500 characters (about 80 words)</span></p>
+
+          </div>
+        </fieldset>
+
+      </form>
+      <p>
+        <a class="button" id="landCompensationBtn" role="button" href="what-does-charge-do-section52journey">Continue</a>
+
+      </p>
+
+      <p id="back">
+        <a href="lc-section52-8" class="back-link">Back</a>
+      </p>
+
+    </div>
+
+  </div>
+</main>
+
+<script>
+  var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
+  console.log(chargeTypeIsChanging);
+  if (chargeTypeIsChanging === 'true') {
+    var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
+    if (chargeTypeToChange === 'Planning') {
+      document.getElementById('section84Label').classList.add('selected');
+    } else if (chargeTypeToChange === 'Financial') {
+      document.getElementById('financialLabel').classList.add('selected');
+    } else if (chargeTypeToChange === 'Listed Building') {
+      document.getElementById('listedBuildingLabel').classList.add('selected');
+    } else if (chargeTypeToChange === 'Land Compensation') {
+      document.getElementById('landCompensationLabel').classList.add('selected');
+    } else if (chargeTypeToChange === 'Other') {
+      document.getElementById('otherLabel').classList.add('selected');
+    }
+
+    document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary');
+    sessionStorage.setItem('chargeTypeUpdated', 'true');
+  }
+
+  document.getElementById('landCompensationBtn').onclick = function() {
+
+    var section84Label = document.getElementById('section84Label');
+    var listedBuildingLabel = document.getElementById('listedBuildingLabel');
+    var landCompensationLabel = document.getElementById('landCompensationLabel');
+    var otherLabel = document.getElementById('otherLabel');
+    if (financialLabel.classList.contains('selected')) {
+      var chargeType = 'Financial';
+
+            // financial journey radio button clicked   
+            document.getElementById('landCompensationBtn').setAttribute('href', 'financial-charge/secured-charge-amount');
+
+
+          } else if (section84Label.classList.contains('selected')) {
+            var chargeType = 'Planning';
+          } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+          } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+
+            // Land compensation journey radio button clicked   
+            document.getElementById('landCompensationBtn').setAttribute('href', 'land-compensation');
+
+          } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+          }
+
+          sessionStorage.setItem('chargeType', chargeType);
+        }
+      </script>
+
+      {% endblock %}

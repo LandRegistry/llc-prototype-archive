@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block page_title %} Does the charge affect all or part of the extent? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Describe how to find charge on foot</h1>
+
+
+
+
+
+            <form action="does-charge-expire" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Describe how to find charge on foot</legend>
+
+                    <label class="form-label" for="textarea">
+						<span class="form-hint">Thr land to the north of Hadrian's Wall</span>
+					</label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="howToFindCharge" rows="5"></textarea>
+                </fieldset>
+                <br>
+                <p>
+                    <a id="howToFindChargeButton" class="button" href="what-does-charge-do" role="button">Continue</a>
+                </p>
+            </form>
+
+
+
+            <div id="back">
+                <a href="#" class="back-link">Back</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+<script>
+    document.getElementById('howToFindChargeButton').onclick = function() {
+        var howToFindCharge = document.getElementById('howToFindCharge').value;
+        sessionStorage.setItem('howToFindCharge', howToFindCharge);
+    }
+</script>
+{% endblock %}
