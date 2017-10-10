@@ -1,0 +1,105 @@
+{% extends "layout.html" %} {% block page_title %} Amount agreed for this charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Amount agreed for this charge </h1>
+
+
+            <!-- <div class="panel panel-border-narrow">
+                <p>
+                    If there is a ‘general’ version of this financial charge, start by cancelling the general charge.
+                </p>
+
+            </div> -->
+            <form action="document-link" method="GET">
+
+                <fieldset>
+
+                    <legend class="visually-hidden">Amount agreed for this charge
+                    </legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="textarea">
+                            Amount that will be secured 
+                            <span class="form-hint">For example, £100.50.</span>
+                        </label>
+                        <span class="bold-small">£ </span>
+                        <input class="form-control form-control-1-4" type="text" name="amount" id="amount">
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form-label">Will interest be paid on the amount?</legend>
+
+                    <div class="form-group">
+                        <label id="yesInterestLabel" class="block-label selection-button-radio form-label" for="yesInterest" data-target="interestAmount">
+                            <input id="yesInterest" name="interest" type="radio" value="yes" aria-controls="interestAmount">
+                            Yes
+                        </label>
+                        <div class="js-hidden panel panel-border-narrow" id="interestAmount" aria-hidden="true" style="display: none;">
+
+                            <fieldset>
+                                <legend class="visually-hidden">Rate of interest?</legend>
+
+                                <div class="form-group">
+
+                                    <label class="form-label" for="interestRate ">
+                                        Rate of interest
+
+                                        <span class="form-hint">For example, 5% per year.</span>
+                                    </label>
+                                    <input class="form-control form-control-1-4" id="interestRate" name="interestRate" type="text"><span class="bold-small"> % </span>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+                        <label id="noInterestLabel" class="block-label selection-button-radio form-label" for="noInterest">
+                            <input id="noInterest" name="interest" type="radio" value="no">
+                            No
+                        </label>
+
+                        <br>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p>
+                <a class="button" id="amountSecuredBtn" role="button" href="../what-does-charge-do">Continue</a>
+            </p>
+            <p id="back">
+                <a href="secured-charge-amount" class="back-link">Back</a>
+            </p>
+            </strong>
+        </div>
+
+    </div>
+</main>
+<script>
+    document.getElementById('amountSecuredBtn').onclick = function() {
+        var amount = document.getElementById('amount').value;
+        sessionStorage.setItem('amount', amount);
+        var yesInterest = document.getElementById('yesInterestLabel');
+        var noInterest = document.getElementById('noInterestLabel');
+        if (yesInterest.classList.contains('selected')) {
+            var interestRate = document.getElementById('interestRate').value;
+            sessionStorage.setItem('interestRate', interestRate);
+        } else if (noInterest.classList.contains('selected')) {
+            sessionStorage.setItem('interestRate', 'Interest will not be paid on the amount secured');
+        }
+        sessionStorage.setItem('amountSecured', 'true');
+    }
+</script>
+
+{% endblock %}

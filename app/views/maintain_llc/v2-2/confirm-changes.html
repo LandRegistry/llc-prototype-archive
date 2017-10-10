@@ -1,0 +1,266 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Confirm your changes
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="phase-banner-beta">
+		<p>
+			<strong class="phase-tag">BETA</strong>
+			<span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+		</p>
+	</div>
+	<!-- main content starts -->
+	<div class="grid-row">
+		<div class="column-full">
+			<p><a href="map-results">Back to search results</a></p>
+			<h1 class="heading-large">Charge ID LR-ABC12345</h1>
+			<img src="{{ asset_path }}images/address_1.png" width="100%" height="auto">
+			<div class="grid-row">
+				<div class="column-two-thirds">
+					<p class="text">Please check below that your changes are correct. If you are happy with the changes, click the "Confirm" button at the bottom of the table.</p>
+					<p class="form-hint">Your recent changes are highlighted below.</p>
+				</div>
+			</div>
+			<table class="charge-details">
+
+				<thead>
+					<tr>
+						<th colspan="2">
+						</th>
+						<th>
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							Charge type
+						</td>
+						<td>
+							<span id="charge-type-text">Specific financial</span><br>
+						</td>
+						<td class="change-answer">
+							
+						</td>
+					</tr>
+					<tr id="legislationRow">
+						<td>
+							Legislation
+						</td>
+						<td>
+							<span id="legislation-text">s.107 Building Act 1984</span>
+						</td>
+						<td class="change-answer">
+							<a class="edit-charge" id="edit-legislation" href="edit-charge-type">
+								Change <span class="visuallyhidden">Legislation</span>
+							</a>
+						</td>
+					</tr>
+					<tr id="moreInformationRow">
+						<td>
+							Location<br><br><br>
+						</td>
+						<td>
+							<adress><span id="location-text">29 Exeter Road Plymouth PL6 1AA</span></address><br><br>
+								<span id="location-information-text">Area behind the property</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-location" href="edit-location">
+									Change <span class="visuallyhidden">Location</span><br><br><br>
+								</a>
+							</td>
+						</tr>
+						<tr id="furtherInformationRow">
+							<td>
+								Further information<br><br>
+								Reference
+							</td>
+							<td>
+								<a href="http://www.plymouth.gov.uk/"><span id="further-information-text">http://www.plymouth.gov.uk</span></a><br><br>
+								<span id="reference-text">ABC1234</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-further-information" href="edit-further-information">
+									Change <span class="visuallyhidden">Further information and reference</span>
+								</a><br><br><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Originating authority
+							</td>
+							<td>
+								<span id="oa-text">Plymouth City Council</span>
+							</td>
+							<td class="change-answer">
+								
+							</td>
+						</tr>
+						<tr id="noticeRow">
+							<td>
+								Source of charge<br><br>
+								Start date
+							</td>
+							<td>
+								<span id="source-text">Notice</span><br><br>
+								<span id="date-text">20 December 2000</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-source" href="edit-notice">
+									Change <span class="visuallyhidden">Source of charge and start date</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Date of registration
+							</td>
+							<td>
+								20 December 2000
+							</td>
+							<td class="change-answer">
+
+							</td>
+						</tr>
+						<tr id="expiryRow">
+							<td>
+								Expiry
+							</td>
+							<td>
+								<span id="expiry-text">Not available</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-expiry" href="edit-expiry">
+									Change <span class="visuallyhidden">Expiry</span>
+								</a>
+							</td>
+						</tr>
+						<!-- <tr>
+							<td>
+								Retained land description
+							</td>
+							<td>
+								<span id="retained-land-text">Not available</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-retained-land" href="edit-retained-land">
+									Change <span class="visuallyhidden">Retained land description</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Particulars of acquired land
+							</td>
+							<td>
+								<span id="particulars-land-text">Not available</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-particulars-land" href="edit-particulars-land">
+									Change <span class="visuallyhidden">Particulars of acquired land</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Particulars of relevant interest
+							</td>
+							<td>
+								<span id="particulars-interest-text">Not available</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-particulars-interest" href="edit-relevant-interest">
+									Change <span class="visuallyhidden">Particulars of relevant interest</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Compensation
+							</td>
+							<td>
+								£<span id="compensation-text">20,000.00</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-compensation" href="edit-relevant-interest">
+									Change <span class="visuallyhidden">Compensation</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Amount
+							</td>
+							<td>
+								£<span id="amount-text">20,000.00</span>
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-amount" href="edit-amount">
+									Change <span class="visuallyhidden">Amount</span>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Rate of interest
+							</td>
+							<td>
+								<span id="interest-text">2</span>%
+							</td>
+							<td class="change-answer">
+								<a class="edit-charge" id="edit-interest" href="edit-amount">
+									Change <span class="visuallyhidden">Rate of interest</span>
+								</a>
+							</td>
+						</tr> -->
+
+					</tbody>
+				</table>
+				<br><br>
+				<p><a href="confirmation-page" class="button">Confirm</a></p>
+			</div>
+		</div>
+	</main>
+	<!-- <script>
+		var toHighlight = sessionStorage.getItem("newLegislation")
+		var changeChecked = sessionStorage.getItem("changeCheck")
+		var test = document.getElementById("legislation-text")
+		test.innerHTML = toHighlight
+		console.log(changeChecked)
+
+		if(changeChecked === "legislation changed") {
+			document.getElementById("legislationRow").className += " toHighlight"
+		}
+	</script> -->
+	<script>
+		var legislationChangedCheck = sessionStorage.getItem("legislationChanged")
+		if (legislationChangedCheck === "true") {
+			document.getElementById("legislationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var moreInformationChangedCheck = sessionStorage.getItem("moreInformationChanged")
+		if (moreInformationChangedCheck === "true") {
+			document.getElementById("moreInformationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var furtherInformationChangedCheck = sessionStorage.getItem("furtherInformationChanged")
+		if (furtherInformationChangedCheck === "true") {
+			document.getElementById("furtherInformationRow").style.backgroundColor = "#DEE0E2"
+		}
+		var noticeChangedCheck = sessionStorage.getItem("noticeChanged")
+		if (noticeChangedCheck === "true") {
+			document.getElementById("noticeRow").style.backgroundColor = "#DEE0E2"
+		}
+		var expiryChangedCheck = sessionStorage.getItem("expiryChanged")
+		if (expiryChangedCheck === "true") {
+			document.getElementById("expiryRow").style.backgroundColor = "#DEE0E2"
+		}
+
+	</script>
+
+	{% endblock %}
+
+

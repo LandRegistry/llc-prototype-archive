@@ -1,0 +1,98 @@
+{% extends "layout.html" %} {% block page_title %} Address confirm {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Address for this charge</h1>
+
+            <form action="#" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Address for this charge</legend>
+
+                    <label class="form-label" for="textarea">
+                            <span class="form-hint">If you don't have an address, describe how to find the charge, for example land to the north of the High Street.</span>
+                        </label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="address" rows="5"></textarea>
+                    <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                </fieldset>
+
+                <p>
+                    <a id="confirmAddressButton" class="button" href="does-charge-expire" role="button">Continue</a>
+                </p>
+            </form>
+
+
+
+            <div id="back">
+                <a href="#" class="back-link">Back</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+<script>
+    var locationIsChanging = sessionStorage.getItem('locationIsChanging');
+    if (locationIsChanging === 'true') {
+        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('locationUpdated', 'true');
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var moreInformation = document.getElementById('address').value;
+        sessionStorage.setItem('moreInformation', moreInformation);
+    }
+
+
+
+
+
+    /*var locationRetrieved = sessionStorage.getItem('location');
+    var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
+    var postcodeSelected = sessionStorage.getItem('postcodeSelected');
+
+    if (postcodeSelected !== null) {
+        document.getElementById('addressRetrieved').textContent = postcodeSelected;
+    } else if (postcodeRetrieved === null) {
+        document.getElementById('addressRetrieved').textContent = '3 Okehampton Place, Exeter EX4 1AY';
+    } else {
+        var locationSearched = locationRetrieved + ' ' + postcodeRetrieved;
+        document.getElementById('addressRetrieved').textContent = locationSearched;
+    }
+
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var addressConfirmYes = document.getElementById('addressConfirmYes');
+        var addressConfirmNo = document.getElementById('addressConfirmNo');
+        var locationSearched = document.getElementById('addressRetrieved').textContent;
+        if (addressConfirmYes.classList.contains('selected')) {
+            sessionStorage.setItem('locationSelected', locationSearched);
+        } else if (addressConfirmNo.classList.contains('selected')) {
+            var street1 = document.getElementById('street1');
+            street1 = street1.value;
+            var street2 = document.getElementById('street2');
+            street2 = street2.value;
+            var town = document.getElementById('town');
+            town = town.value;
+            var county = document.getElementById('county');
+            county = county.value;
+            var postcode = document.getElementById('postcode');
+            postcode = postcode.value.toUpperCase();
+            var locationSelected = street1 + ' ' + street2 + ' ' + town + ' ' + county + ' ' + postcode;
+            sessionStorage.setItem('locationSelected', locationSelected);
+        }
+    }*/
+</script>
+{% endblock %}

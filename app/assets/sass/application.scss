@@ -170,14 +170,11 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .search-button {
         line-height: 34px;
-    }
-    .autocomplete-search,
-    .maintain-map-search-button {
         position: relative;
         top: 11px;
     }
     .maintain-map-search-button {
-        top: 13px;
+        top: 12px;
     }
 }
 
@@ -194,6 +191,7 @@
     background: #0b0c0c url("../images/search-button.png") no-repeat 2px 50%;
     border: 0;
     position: relative;
+    bottom: 2px;
     right: 4px;
 }
 

@@ -1,3 +1,8 @@
+var SEARCH_PAGE = {}
+var CAN_VIEW = null
+var CAN_EDIT = null
+    // var $SCRIPT_ROOT
+
 $(function() {
     // Feature Edited Event
     $("#edit-button").on('edit:toggled', function() {
@@ -22,21 +27,21 @@ $(function() {
                 if (SEARCH_PAGE.current_selected_feature != null) {
                     var disp_id = SEARCH_PAGE.current_selected_feature.getProperties().display_id;
                     LOCAL_LAND_CHARGES_LAYER.set_map_style_by_disp_id(SEARCH_PAGE.llc_features.getArray(),
-                            disp_id, llc_layer_styles.standard_style);
+                        disp_id, llc_layer_styles.standard_style);
                     $("#" + disp_id).removeAttr('style');
                 }
 
                 SEARCH_PAGE.current_selected_feature = feature;
                 LOCAL_LAND_CHARGES_LAYER.set_map_style_by_disp_id(SEARCH_PAGE.llc_features.getArray(),
-                        feature_disp_id, llc_layer_styles.selected_style);
-               
+                    feature_disp_id, llc_layer_styles.selected_style);
+
                 if (SEARCH_PAGE.current_row != feature_disp_id) {
                     var container = $("#llc-results");
                     SEARCH_PAGE.current_row = feature_disp_id;
 
                     container.scrollTop(0);
                     container.animate({
-                       scrollTop: $("#" + feature_disp_id).offset().top - container.offset().top
+                        scrollTop: $("#" + feature_disp_id).offset().top - container.offset().top
                     });
                 }
 
@@ -46,12 +51,12 @@ $(function() {
             return true
         })
 
-        if(!hit) {
+        if (!hit) {
             if (SEARCH_PAGE.current_selected_feature != null) {
                 var feature = SEARCH_PAGE.current_selected_feature
                 var feature_disp_id = feature.getProperties().display_id;
                 LOCAL_LAND_CHARGES_LAYER.set_map_style_by_disp_id(SEARCH_PAGE.llc_features.getArray(),
-                        feature_disp_id, llc_layer_styles.standard_style);
+                    feature_disp_id, llc_layer_styles.standard_style);
                 $("#" + feature_disp_id).removeAttr('style');
                 SEARCH_PAGE.current_selected_feature = null
             }
@@ -66,18 +71,18 @@ $(function() {
             SEARCH_PAGE.get_llc_in_bbox();
         } else {
             SEARCH_PAGE.llc_source.clear();
-            $("#llc-results").html('');
+            $(".results-block").html('');
             $(".result-count").html("No land charges in viewable area");
         }
     });
 
     // Map Draw Feature Added
-    MAP_CONFIG.draw_features.on('add', function (event) {
-       LOCAL_LAND_CHARGES_LAYER.filter_local_land_charges();
+    MAP_CONFIG.draw_features.on('add', function(event) {
+        LOCAL_LAND_CHARGES_LAYER.filter_local_land_charges();
     })
 
     // Map Draw Feature Removed
-    MAP_CONFIG.draw_features.on('remove', function (event) {
+    MAP_CONFIG.draw_features.on('remove', function(event) {
         LOCAL_LAND_CHARGES_LAYER.filter_local_land_charges();
     })
 });

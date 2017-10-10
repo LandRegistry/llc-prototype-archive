@@ -44,7 +44,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="textarea">
-                        Amount that will be secured 
+                            Amount that will be secured 
                             <span class="form-hint">For example, £100.50.</span>
                         </label>
                         <span class="bold-small">£ </span>
@@ -58,9 +58,9 @@
 
                     <div class="form-group">
                         <label id="yesInterestLabel" class="block-label selection-button-radio form-label" for="yesInterest" data-target="interestAmount">
-                                    <input id="yesInterest" name="interest" type="radio" value="yes" aria-controls="interestAmount">
-                                    Yes
-                                </label>
+                            <input id="yesInterest" name="interest" type="radio" value="yes" aria-controls="interestAmount">
+                            Yes
+                        </label>
                         <div class="js-hidden panel panel-border-narrow" id="interestAmount" aria-hidden="true" style="display: none;">
 
                             <fieldset>
@@ -69,7 +69,7 @@
                                 <div class="form-group">
 
                                     <label class="form-label" for="interestRate ">
-                                    Rate of interest
+                                        Rate of interest
 
                                         <span class="form-hint">For example, 5% per year.</span>
                                     </label>
@@ -80,9 +80,9 @@
                         </div>
 
                         <label id="noInterestLabel" class="block-label selection-button-radio form-label" for="noInterest">
-                                <input id="noInterest" name="interest" type="radio" value="no">
-                                No
-                            </label>
+                            <input id="noInterest" name="interest" type="radio" value="no">
+                            No
+                        </label>
 
                         <br>
                     </div>
@@ -92,9 +92,12 @@
             <p>
                 <a class="button" id="amountSecuredBtn" role="button" href="../what-does-charge-do">Continue</a>
             </p>
-        </strong></div>
+            <p id="back">
+              <a href="secured-charge-amount" class="back-link">Back</a>
+          </p>
+      </strong></div>
 
-    </div>
+  </div>
 </main>
 <script>
     document.getElementById('amountSecuredBtn').onclick = function() {
