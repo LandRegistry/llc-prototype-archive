@@ -61,10 +61,22 @@
 <script>
     var amountSecuredCheck = sessionStorage.getItem('amountSecured');
     var financialCheck = sessionStorage.getItem('financial');
+    var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
+    var housingCheck = sessionStorage.getItem('housing');
+    var otherCheck = sessionStorage.getItem('other');
+    var amoundLandCompCheck = sessionStorage.getItem('landCompAmount');
     if (amountSecuredCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
     } else if (financialCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-financial');
+    } else if (listedBuildingCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+    } else if (housingCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+    } else if (otherCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+    } else if (amoundLandCompCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-land-comp-with-amount');
     }
 
 
