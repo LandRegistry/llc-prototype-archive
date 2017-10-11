@@ -1,0 +1,77 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p><a href="search-results" class="link-back">Back</a></p>
+            <h1 class="heading-xlarge">
+                Charge details
+            </h1>
+        </div>
+
+
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2">
+                <tbody>
+                    <tr>
+                        <td>Address</td>
+                        <td class="bold-small"><span id="address-selected"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td class="bold-small">Land to the north of the garage</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Legislation</td>
+                        <td class="bold-small">Town &amp; Country Planning Act 1990, section 106</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority</td>
+                        <td class="bold-small">Exeter City Council</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Created on</td>
+                        <td class="bold-small">12 December 2012</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority reference</td>
+                        <td class="bold-small">EXT456</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>HM Land Registry reference</td>
+                        <td class="bold-small">LLC/EX38912714</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var locationSearched = sessionStorage.getItem('searchTerm');
+    document.getElementById('address-selected').textContent = locationSearched;
+</script>
+
+{% endblock %}

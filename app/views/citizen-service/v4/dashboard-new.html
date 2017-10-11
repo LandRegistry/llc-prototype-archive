@@ -1,0 +1,36 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <aside class="sign-out">
+                <p><a href="free-or-paid">Sign out</a></p>
+            </aside>
+            <h1 id="dashboardHeader" class="heading-large">Welcome Jane</h1>
+            <form action="paid-service/search-method" method="GET">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Pay now (£15 search)">
+                </div>
+            </form>
+            <a href="search-method">Start a free search</a>
+            <h2 class="heading-medium">Previous searches</h2>
+            <p>No searches to display from the last 6 months</p>
+        </div>
+
+
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    var userNameRetrieved = sessionStorage.getItem('userName');
+    console.log(userNameRetrieved);
+    document.getElementById('dashboardHeader').textContent = 'Welcome ' + userNameRetrieved;
+</script>
+{% endblock %}
