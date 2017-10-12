@@ -67,7 +67,7 @@
             </p>
 
             <div class="resultsList hiddenList">
-                <h2 class="heading-medium">9 charges in this area</h2>
+                <h2 class="heading-medium">9 charges in <span class="placeSelected"></span>, Exeter EX4 1AY</h2>
                 <div id="filter" class="accordionItem">
                     <h3 class="heading-small"><a href="#" class="accordionHeader accordionHeaderFilter">Filter this map by</a> <span class="accordionControl accordionControlFilter"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
 
@@ -165,27 +165,33 @@
     $('.addressList a').click(function() {
         $('.addressList').addClass('hiddenList');
         $('.initialInstructionText').addClass('hiddenList');
-        $('.postSearchText').removeClass('hiddenList');
-        $('.continueButton').removeClass('hiddenList');
+        /*$('.postSearchText').removeClass('hiddenList');
+        $('.continueButton').removeClass('hiddenList');*/
         var placeSelected = $(this).html();
         $('.placeSelected').text(placeSelected);
         sessionStorage.setItem('placeSelected', placeSelected);
         var placeSearched = $('#search_term').val();
         var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
         MAP_HELPERS.zoom_map(geometry);
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
         return false;
+
     })
 
-    $('button').click(function() {
+    /*$('button').click(function() {
         $('.continueButton').removeClass('disabled');
         $('.continueButton').removeClass('hiddenList');
         var clickedButton = $(this);
         $(clikedButton).click(function() {
             $(this).attr('id', '');
         });
-    });
+    });*/
 
-    $('.continueButton').click(function() {
+    /*$('.continueButton').click(function() {
         $(this).addClass('hiddenList');
         $('.postSearchText').addClass('hiddenList');
         $('.resultsList').removeClass('hiddenList');
@@ -193,7 +199,7 @@
             'position': 'relative',
             'bottom': '1.5em'
         });
-    });
+    });*/
 
     $('.accordionHeaderFilter').click(function() {
         if ($('.accordionHiddenContent').hasClass('hiddenList')) {
