@@ -337,3 +337,32 @@
 .accordionItem p span {
     margin-right: 1em;
 }
+
+.download-panel {
+    border-left-color: #DF3034;
+    background-color: rgba(223, 48, 52, 0.1) !important;
+}
+
+.dashboardHeader {
+    border-bottom: 1px solid #BFC1C3;
+    padding-bottom: 0.1em;
+}
+
+.dashboardHeader span {
+    padding: 0 20px 1px 20px;
+}
+
+.tabHeader {
+    background-color: #DEE0E2;
+    margin-right: 0.2em;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.activeTabHeader {
+    background-color: white;
+    border-top: 1px solid #BFC1C3;
+    border-left: 1px solid #BFC1C3;
+    border-right: 1px solid #BFC1C3;
+    border-bottom: none;
+}

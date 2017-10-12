@@ -10,18 +10,14 @@
 
     <div class="grid-row">
         <div class="column-full">
-            <aside class="sign-out">
-                <p><a href="free-or-paid">Sign out</a></p>
-            </aside>
-            <h1 class="heading-large">Welcome Jane du</h1>
-            <form action="paid-service/search-method" method="GET">
+            <h1 class="heading-large">Welcome Jane Doe</h1>
+            <form action="search" method="GET">
                 <div class="form-group">
-                    <input class="button" type="submit" value="Start a paid search">
+                    <input class="button" type="submit" value="Start now">
                 </div>
             </form>
-            <p><a href="search-method">Start a free search</a></p>
-            <h2 class="heading-medium">Previous searches</h2>
-            <table class="dashboard">
+            <h2 class="heading-medium dashboardHeader"><span class="tabHeader active activeTabHeader">Active searches</span><span class="tabHeader expired">Expired searches</span></h2>
+            <table class="dashboard activeDashboard">
                 <thead>
                     <tr>
                         <td class="bold-small">Reference</td>
@@ -89,7 +85,8 @@
                         <td>24 April 2016<br>
                             <!-- <a href="paid-service/view-existing-3">View</a> -->
                         </td>
-                        <td><!-- <a href="paid-service/refresh-3">Refresh</a> --></td>
+                        <td>
+                            <!-- <a href="paid-service/refresh-3">Refresh</a> --></td>
                         <td class="numberOfSearches">3</td>
                         <td class="accordionIcon-3"><img src="{{asset_path}}images/icons-plus.png"></td>
                     </tr>
@@ -100,6 +97,30 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="dashboard expiredDashboard hiddenList">
+                <thead>
+                    <tr>
+                        <td class="bold-small">Reference</td>
+                        <td class="bold-small">Date of search</td>
+                        <td class="bold-small">Expired</td>
+                        <td class="bold-small">Restore</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LLC1/1234ABC-09</td>
+                        <td>12 May 2017</td>
+                        <td>18 September 2017</td>
+                        <td><a href="#">Review and pay</a></td>
+                    </tr>
+                    <tr>
+                        <td>LLC1/1234ABC-09</td>
+                        <td>12 May 2017</td>
+                        <td>18 September 2017</td>
+                        <td><a href="#">Review and pay</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -130,6 +151,18 @@
             $('.accordion-child-3').addClass('hidden-accordion-content');
             $(this).children('img').attr('src', '/public/images/icons-plus.png');
             $(this).parent().css('background-color', 'white');
+        }
+    });
+
+    $('.tabHeader').click(function() {
+        $('.tabHeader').removeClass('activeTabHeader');
+        $(this).addClass('activeTabHeader');
+        if ($(this).hasClass('expired')) {
+            $('.activeDashboard').addClass('hiddenList');
+            $('.expiredDashboard').removeClass('hiddenList');
+        } else if ($(this).hasClass('active')) {
+            $('.expiredDashboard').addClass('hiddenList');
+            $('.activeDashboard').removeClass('hiddenList');
         }
     });
 </script>
