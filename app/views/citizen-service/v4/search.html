@@ -69,32 +69,33 @@
             <div class="resultsList hiddenList">
                 <h2 class="heading-medium">9 charges in this area</h2>
                 <div id="filter" class="accordionItem">
-                    <h3 class="heading-small"><a href="#" class="accordionHeader">Filter this map by</a> <span class="accordionControl"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#" class="accordionHeader accordionHeaderFilter">Filter this map by</a> <span class="accordionControl accordionControlFilter"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
 
-
-                    <p><span><a href="#">Select all</a></span> <span><a href="#">Deselect all</a></span></p>
-                    <form>
-                        <div>
-                            <input type="checkbox" id="planningNotices" name="filter" value="Planning notices (15)" checked>
-                            <label for="planningNotices">Planning notices (3)</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="financial" name="filter" value="Financial (7)" checked>
-                            <label for="financial">Financial (2)</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="lon" name="filter" value="Light obstruction notices (2)" checked>
-                            <label for="lon">Light obstruction notices (2)</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="conservationAreas" name="filter" value="Conservation areas (1)">
-                            <label for="conservationAreas">Conservation areas (1)</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="smokeControlOrders" name="filter" value="Smoke control orders (1)">
-                            <label for="smokeControlOrders">Smoke control orders (1)</label>
-                        </div>
-                    </form>
+                    <div class="accordionHiddenContent">
+                        <p><span><a href="#">Select all</a></span> <span><a href="#">Deselect all</a></span></p>
+                        <form>
+                            <div>
+                                <input type="checkbox" id="planningNotices" name="filter" value="Planning notices (15)" checked>
+                                <label for="planningNotices">Planning notices (3)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="financial" name="filter" value="Financial (7)" checked>
+                                <label for="financial">Financial (2)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lon" name="filter" value="Light obstruction notices (2)" checked>
+                                <label for="lon">Light obstruction notices (2)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="conservationAreas" name="filter" value="Conservation areas (1)">
+                                <label for="conservationAreas">Conservation areas (1)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="smokeControlOrders" name="filter" value="Smoke control orders (1)">
+                                <label for="smokeControlOrders">Smoke control orders (1)</label>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div id="planningNoticesBox" class="accordionItem">
                     <h3 class="heading-small"><a href="search-results" class="accordionHeaderPlanning accordionHeader">Planning notices (3)</a>
@@ -194,24 +195,24 @@
         });
     });
 
-    $('.accordionHeaderPlanning').click(function() {
+    $('.accordionHeaderFilter').click(function() {
         if ($('.accordionHiddenContent').hasClass('hiddenList')) {
             $('.accordionHiddenContent').removeClass('hiddenList');
-            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-minus.png');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-minus.png');
         } else {
             $('.accordionHiddenContent').addClass('hiddenList');
-            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-plus.png');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-plus.png');
         }
 
     });
 
-    $('.accordionControlPlanning').click(function() {
+    $('.accordionControlFilter').click(function() {
         if ($('.accordionHiddenContent').hasClass('hiddenList')) {
             $('.accordionHiddenContent').removeClass('hiddenList');
-            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-minus.png');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-minus.png');
         } else {
             $('.accordionHiddenContent').addClass('hiddenList');
-            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-plus.png');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-plus.png');
         }
     })
 
