@@ -1,4 +1,4 @@
-{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 <main id="content" role="main">
 
     <div class="phase-banner-beta">
@@ -15,21 +15,25 @@
                 Download your official search result of local land charges
 
             </h1>
+            <div class="notice">
+                <i class="icon icon-important">
+        <span class="visually-hidden">Your search has been refreshed</span>
+      </i>
+                <strong class="bold-small" style="line-height:35px">
+        Your search has been refreshed
+      </strong>
+            </div>
             <h2 class="heading-medium">
-                <span id="address-selected" class="heading-medium">10 Okehampton Place, Exeter EX4 1AY</span>
+                <span id="address-selected" class="heading-medium">3 Okehampton Place, Exeter, EX4 1AY</span>
             </h2>
             <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto">
-            <p>There are <span class="bold-small">3 charges</span> that affect the land of this property.</p>
+            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
             <p>Choose a format to download your official search result. Keep a copy for your records.</p>
-
-
         </div>
 
-
         <div class="column-two-thirds">
-            <br>
             <div class="form-group">
-                <a class="button" href="/public/documents/Offical-local-land-search-result.pdf" download>Download PDF</a><br><br>
+                <a class="button" href="/public/documents/Offical-local-land-search-result.pdf" download>Download PDF</a>
                 <h2 class="heading-medium">Other formats</h2>
                 <table class="check-your-answers">
                     <!--<thead>
@@ -71,11 +75,10 @@
                     </tbody>
                 </table>
             </div>
-            <p><a href="search">Start a new search</a></p>
-            <p><a href="dashboard-new">Go to your dashboard</a></p>
+            <p><a href="../dashboard-updated-p3">Search again</a></p>
         </div>
     </div>
-    <script>
+    <!--<script>
         var locationSearched = sessionStorage.getItem('searchTerm');
         document.getElementById('address-selected').textContent = locationSearched;
         /*var addressRetrieved = sessionStorage.getItem('addressSelected');
@@ -87,7 +90,7 @@
         console.log(creationDateRetrieved);
         var dateToChange = document.getElementById('creationDateText');
         dateToChange.textContent = creationDateRetrieved;*/
-    </script>
+    </script> -->
 </main>
 
 {% endblock %}
