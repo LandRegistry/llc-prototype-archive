@@ -64,6 +64,7 @@
 
 #search-panel {
     width: 26vw;
+    box-sizing: border-box;
     height: calc(100vh - 107px);
     padding: 0 2vw;
     z-index: 10000000000;
@@ -323,5 +324,16 @@
 
 .accordionControl {
     position: absolute;
-    right: 25%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.accordionItem {
+    /*border: 1px solid #0b0c0c;*/
+    margin-bottom: 1em;
+    padding: 0 1em 0.5em 1em;
+}
+
+.accordionItem p span {
+    margin-right: 1em;
 }

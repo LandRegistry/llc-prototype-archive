@@ -69,7 +69,7 @@
             <div class="resultsList hiddenList">
                 <h2 class="heading-medium">28 charges in this area</h2>
                 <div id="filter" class="accordionItem">
-                    <h3 class="heading-small">Filter this map by <span class="accordionControl"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Filter this map by</a> <span class="accordionControl"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
 
 
                     <p><span><a href="#">Select all</a></span> <span><a href="#">Deselect all</a></span></p>
@@ -97,19 +97,34 @@
                     </form>
                 </div>
                 <div id="planningNoticesBox" class="accordionItem">
-                    <h3 class="heading-small">Planning notices (15) <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span></h3>
+                    <h3 class="heading-small"><a href="search-results" class="accordionHeaderPlanning accordionHeader">Planning notices (3)</a>
+                        <!-- <span class="accordionControlPlanning accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                    <!-- <div class="accordionHiddenContent hiddenList">
+                        <ul>
+                            <li>
+                                <a href="search-results">Local land charge 1</a><br> Charge created on 12 December 2012
+                            </li>
+                            <li>
+                                <a href="search-results">Local land charge 1</a><br> Charge created on 5 March 2010
+                            </li>
+                        </ul>
+                    </div> -->
                 </div>
                 <div id="financialBox" class="accordionItem">
-                    <h3 class="heading-small">Financial (7) <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Financial (2)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
                 </div>
                 <div id="lonBox" class="accordionItem">
-                    <h3 class="heading-small">Light obstruction notices (2) <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Light obstruction notices (2)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
                 </div>
                 <div id="conservationAreaBox" class="accordionItem">
-                    <h3 class="heading-small">Conservation areas (1) <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Conservation areas (1)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
                 </div>
                 <div id="smokeControlOrderBox" class="accordionItem">
-                    <h3 class="heading-small">Smoke control orders (1) <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span></h3>
+                    <h3 class="heading-small"><a href="#">Smoke control orders (1)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
                 </div>
             </div>
 
@@ -153,6 +168,7 @@
         $('.continueButton').removeClass('hiddenList');
         var placeSelected = $(this).html();
         $('.placeSelected').text(placeSelected);
+        sessionStorage.setItem('placeSelected', placeSelected);
         var placeSearched = $('#search_term').val();
         var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
         MAP_HELPERS.zoom_map(geometry);
@@ -177,6 +193,54 @@
             'bottom': '1.5em'
         });
     });
+
+    $('.accordionHeaderPlanning').click(function() {
+        if ($('.accordionHiddenContent').hasClass('hiddenList')) {
+            $('.accordionHiddenContent').removeClass('hiddenList');
+            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-minus.png');
+        } else {
+            $('.accordionHiddenContent').addClass('hiddenList');
+            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-plus.png');
+        }
+
+    });
+
+    $('.accordionControlPlanning').click(function() {
+        if ($('.accordionHiddenContent').hasClass('hiddenList')) {
+            $('.accordionHiddenContent').removeClass('hiddenList');
+            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-minus.png');
+        } else {
+            $('.accordionHiddenContent').addClass('hiddenList');
+            $('.accordionControlPlanning').children('img').attr('src', '/public/images/icons-plus.png');
+        }
+    })
+
+
+
+
+
+    /*$('.accordionIcon-1').click(function() {
+        if ($('.accordion-child-1').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-1').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-1').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+    $('.accordionIcon-3').click(function() {
+        if ($('.accordion-child-3').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-3').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-3').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });*/
 
     $('#mapButton').click(function() {
         var searchTerm = $('#search_term').val();

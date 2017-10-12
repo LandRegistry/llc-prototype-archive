@@ -18,68 +18,42 @@
                 <span id="address-selected" class="heading-medium"></span>
             </h2>
             <img src="{{ asset_path }}images/citizen-service/free.png" width="50%" height="auto">
-            <br><a href="search-method">Search again</a>
+            <br><a href="search">Search again</a>
             <br><br>
-            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
-            <div class="notice">
-                <i class="icon icon-important">
-    <span class="visually-hidden">Warning</span>
-  </i>
-                <strong class="bold-small">
-    An inspection of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR). Links to this information can be found at the bottom of this page. 
-  </strong>
-            </div><br>
-
-            <div class="payPromo">
-                <h2 class="heading-small">Pay &pound;15 for an official search result and you will get everything that is included in the free search, plus:</h2>
-                <ul class="list list-bullet">
-                    <li>official search, guaranteed by HM Land Registry</li>
-                    <li>local land charge boundary, showing where a charge starts and stops</li>
-                    <li>contact details for the authority that can answer questions about this local land charge</li>
-                    <li>for 6 months:
-                        <ul class="list list-bullet">
-                            <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
-                            <li>return to your result </li>
-                            <li>download your results in different formats (PDF, JSON, CSV, XML)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <h3 class="heading-medium">How to pay</h3>
-            <p>You’ll need a debit or credit card to use this service. Payment will be taken by GOV.UK Pay on HM Land Registry's behalf.</p>
-            <!-- <h2 class="heading-small">Fees</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Documents (each)</th>
-                        <th>Fee</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Local land charge official search</td>
-                        <td>£15.00</td>
-                    </tr>
-                </tbody>
-            </table> -->
-            <br>
-            <a href="login" class="button">Start a paid search</a>
-
-
-            <!-- <h2 class="heading-medium">Free information about these charges</h2>
-            <p>Before you pay, you will see:</p>
-            <ul class="list list-bullet">
-                <li>charge description</li>
-                <li>registration date</li>
-                <li>charge reference</li>
-            </ul> -->
-            <h2 class="heading-medium">Free information about these charges</h2>
+            <p>There are <span class="bold-small">3 planning notices</span> that affect the land of this property.</p>
             <ul class="list">
                 <li><a href="free-charge-details" class="bold-small">Local land charge 1</a><br> Charge created on 12 December 2012
                 </li>
                 <li><a href="free-charge-details-2" class="bold-small">Local land charge 2</a><br> Charge created on 5 March 2010
                 </li>
+                <li><a href="free-charge-details-3" class="bold-small">Local land charge 3</a><br> Charge created on 20 April 2002
+                </li>
             </ul>
+            <br>
+
+            <div class="payPromo">
+                <h2 class="heading-small">Pay &pound;15 and you will get everything that is included in the free search, plus:</h2>
+                <ul class="list list-bullet">
+                    <li>Local land charge boundary, showing where a charge starts and stops</li>
+                    <li>Contact details for authority that can answer questions about this local land charge</li>
+                    <li>Secure and tamperproof document</li>
+                </ul>
+                <h2 class="heading-small">Create a free account and for 6 months you will also get:</h2>
+                <ul class="list list-bullet">
+                    <li>Cloud storage for your searches</li>
+                    <li>Search result archive</li>
+                    <li>See active and expired searches at-a-glance</li>
+                    <li>Unlimited downloads</li>
+                    <li>Unlimited refreshes</li>
+                    <li>Download in PDF, JSON, CSV, XML</li>
+                </ul>
+            </div>
+            <br>
+            <form action="search-results" method="POST">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Pay now">
+                </div>
+            </form>
         </div>
 
 
