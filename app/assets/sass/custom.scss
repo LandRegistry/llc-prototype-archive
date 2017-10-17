@@ -370,3 +370,18 @@
 .payPromo:hover {
     border-color: #2B8CC4;
 }
+
+.search-button {
+    background-size: 52.5px 35px;
+    background-position: 115% 50%;
+    box-sizing: border-box;
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -5000px;
+    background: #0b0c0c url(../images/search-button.png) no-repeat 2px 50%;
+    border: 0;
+    position: relative;
+    right: 4px;
+}
