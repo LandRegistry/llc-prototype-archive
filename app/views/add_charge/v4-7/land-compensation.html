@@ -56,26 +56,27 @@
             </div> -->
             <h1 class="heading-large">Land compensation </h1>
 
-
             <form action="#">
                 <fieldset>
                     <legend class="form-label-bold">Do you know the amount of compensation?</legend>
-                    <br>
+                    <!-- <br>
                     <div class="panel panel-border-wide">
                         <p>This is compensation paid by an authority to a landowner, when the authority does public works on the landowner's property.</p>
-                    </div>
+                    </div> -->
 
                     <br>
                     <div class="form-group">
                         <!-- Add class form-group-error when error occurs on the page -->
                         <label id="amountKnownLabel" class="block-label selection-button-radio form-label" for="amountKnown">
                      <input id="amountKnown" name="land-compensation" type="radio" value="I know the amount of compensation">
-                     I know the amount of compensation
+                     Yes
+                     <!-- I know the amount of compensation -->
                      <!-- <span class="error-message"> Choose one option   </span> -->
                   </label>
                         <label id="amountNotKnownLabel" class="block-label selection-button-radio form-label" for="amountNotKnown">
                      <input id="amountNotKnown" name="land-compensation" type="radio" value="I do not know the amount of compensation">
-                    I do not know the amount of compensation
+                    No
+                    <!-- I do not know the amount of compensation -->
                      <!-- <span class="error-message"> Choose one option  </span> -->
                   </label>
                     </div>
@@ -112,11 +113,11 @@
         var amountNotKnownLabel = document.getElementById('amountNotKnownLabel');
 
         if (amountKnownLabel.classList.contains('selected')) {
-            // Section8(4) journey radio button clicked   
-            document.getElementById('land-compensation-btn').setAttribute('href', 'land-compensation/land-ownership');
+            // Section 52(8) journey radio button clicked   
+            document.getElementById('land-compensation-btn').setAttribute('href', 'land-compensation/amount-of-compensation');
 
         } else if (amountNotKnownLabel.classList.contains('selected')) {
-            // Section 52(8) journey radio button clicked   
+            // Section8(4) journey radio button clicked   
             document.getElementById('land-compensation-btn').setAttribute('href', 'land-compensation/lc-section8-4');
 
         }
