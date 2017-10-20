@@ -814,7 +814,7 @@ router.get('/citizen-service/v4-1/search-results', (req, res, next) => {
     res.render('citizen-service/v4-1/search-results')
 })
 
-router.get('/citizen-service/v4-1/pay-confirmation', (req, res, next) => {
+router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -825,7 +825,7 @@ router.get('/citizen-service/v4-1/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4-1/pay-confirmation', {
+        res.render('citizen-service/v4-1/pay-successul', {
             transaction: result
         })
     })
@@ -854,7 +854,7 @@ router.get('/citizen-service/v4-1/search-results-from-map', (req, res, next) => 
     res.render('citizen-service/v4-1/search-results-from-map')
 })
 
-router.get('/citizen-service/v4-1/pay-confirmation', (req, res, next) => {
+router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -865,7 +865,7 @@ router.get('/citizen-service/v4-1/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4-1/pay-confirmation', {
+        res.render('citizen-service/v4-1/pay-successful', {
             transaction: result
         })
     })
