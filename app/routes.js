@@ -825,7 +825,7 @@ router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4-1/pay-successul', {
+        res.render('citizen-service/v4-1/pay-successful', {
             transaction: result
         })
     })
