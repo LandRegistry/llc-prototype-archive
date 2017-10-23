@@ -59,16 +59,16 @@
 
 </main>
 <script>
-    var amountSecuredCheck = sessionStorage.getItem('amountSecured');
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
     var financialCheck = sessionStorage.getItem('financial');
     var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
     var housingCheck = sessionStorage.getItem('housing');
     var otherCheck = sessionStorage.getItem('other');
     var amoundLandCompCheck = sessionStorage.getItem('landCompAmount');
-    if (amountSecuredCheck === 'true') {
+    if (amountKnownCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
-    } else if (financialCheck === 'true') {
-        document.getElementById('contactButton').setAttribute('href', 'charge-summary-financial');
+    } else if (amountKnownCheck === 'false') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-not-known');
     } else if (listedBuildingCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary');
     } else if (housingCheck === 'true') {

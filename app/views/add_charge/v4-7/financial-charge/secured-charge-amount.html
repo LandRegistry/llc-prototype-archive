@@ -34,21 +34,22 @@
 
                 </p>
                 <p id="back">
-                  <a href="/add_charge/v4-4/type-of-charge" class="back-link">Back</a>
-              </p>
-          </form>
-      </div>
-  </div>
+                    <a href="/add_charge/v4-4/type-of-charge" class="back-link">Back</a>
+                </p>
+            </form>
+        </div>
+    </div>
 </main>
 <script>
     var yesAmount = document.getElementById('yesSecuredAmountLabel');
     var noAmount = document.getElementById('noSecuredAmountLabel');
     document.getElementById('securedBtn').onclick = function() {
-        sessionStorage.setItem('financial', 'true');
         if (yesAmount.classList.contains('selected')) {
+            sessionStorage.setItem('amountKnown', 'true');
             document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
         } else if (noAmount.classList.contains('selected')) {
             document.getElementById('securedBtn').setAttribute('href', '../what-does-charge-do');
+            sessionStorage.setItem('amountKnown', 'false');
         }
     }
 </script>
