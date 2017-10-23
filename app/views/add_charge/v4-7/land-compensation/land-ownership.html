@@ -28,7 +28,7 @@
               <input id="leasehold" name="ownership" type="radio" value="no"> Leasehold
             </label>
 
-            <label id="somethingElseLabel" class="block-label selection-button-radio no" for="somethingElse" data-target="somethingElseForm">
+                        <label id="somethingElseLabel" class="block-label selection-button-radio no" for="somethingElse" data-target="somethingElseForm">
               <input id="somethingElse" name="ownership" type="radio" value="yes" aria-controls="somethingElseForm">
               Other
             </label>
@@ -67,6 +67,14 @@
         var freehold = document.getElementById('freehold-label');
         var leasehold = document.getElementById('leasehold-label');
         var somethingElse = document.getElementById('somethingElse');
+        var somethingElseField = document.getElementById('somethingElseField').value;
+        if (freehold.classList.contains('selected')) {
+            sessionStorage.setItem('ownershipType', 'Freehold');
+        } else if (leasehold.classList.contains('selected')) {
+            sessionStorage.setItem('ownershipType', 'Leasehold');
+        } else if (somethingElse.classList.contains('sekected')) {
+            sessionStorage.setItem('ownershipType', somethingElseField);
+        }
     }
 </script>
 

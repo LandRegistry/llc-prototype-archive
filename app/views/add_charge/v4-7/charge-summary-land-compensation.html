@@ -34,58 +34,25 @@
                             </a>
                         </td>
                     </tr>
-
-                    <tr id="landCompRow1">
-                        <td class="bold-small">Amount of compensation
-                        </td>
-                        <td id="amountComp">Not known</td>
-                        <td class="change-answer">
-                            <a id="changeAmountComp" class="edit" href="financial-charge/secured-charge-amount">
-                                Change <span class="visuallyhidden">amount of compensation</span>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr id="landCompRow2">
-                        <td class="bold-small">Type of compensation
-                        </td>
-                        <td id="typeOfAmount">Not known</td>
-                        <td class="change-answer">
-                            <a id="changeAmountType" class="edit" href="financial-charge/secured-charge-amount">
-                                    Change <span class="visuallyhidden">type of compensation</span>
-                                </a>
-                        </td>
-                    </tr>
-                    <tr id="landCompRow3">
-                        <td class="bold-small">Other information about compensation
-                        </td>
-                        <td id="otherInformation">Not provided</td>
-                        <td class="change-answer">
-                            <a id="changeOtherInformationAmount" class="edit" href="financial-charge/secured-charge-amount">
-                                        Change <span class="visuallyhidden">other information anout amount of compensation</span>
-                                    </a>
-                        </td>
-                    </tr>
-
-                    <tr id="landCompRow4">
-                        <td class="bold-small">Ownership
-                        </td>
-                        <td id="ownershipType">Not known</td>
-                        <td class="change-answer">
-                            <a id="changeOwnershipType" class="edit" href="financial-charge/secured-charge-amount">
-                                            Change <span class="visuallyhidden">ownership</span>
-                                        </a>
-                        </td>
-                    </tr>
-
                     <tr id="descriptionRow">
                         <td class="bold-small">Other information
                         </td>
                         <td id="description">Information not provided</td>
                         <td class="change-answer">
                             <a id="changeDescription" class="edit" href="what-does-charge-do">
-                                        Change <span class="visuallyhidden">charge description</span>
-                                    </a>
+                                    Change <span class="visuallyhidden">charge description</span>
+                                </a>
+                        </td>
+                    </tr>
+
+                    <tr id="financialRow">
+                        <td class="bold-small">Amount secured
+                        </td>
+                        <td id="amountSecured">Not known</td>
+                        <td class="change-answer">
+                            <a id="changeAmountSecured" class="edit" href="financial-charge/secured-charge-amount">
+                                Change <span class="visuallyhidden">amount secured</span>
+                            </a>
                         </td>
                     </tr>
 
@@ -194,16 +161,12 @@
     console.log(landCompAmountGivenCheck);
     var landCompAmountCheck = sessionStorage.getItem('landCompAmount');
     console.log(landCompAmountCheck);
-    document.getElementById('amountComp').textContent = landCompAmountCheck;
     var amountTypeCheck = sessionStorage.getItem('amountType');
     console.log(amountTypeCheck);
-    document.getElementById('typeOfAmount').textContent = amountTypeCheck;
     var otherLandCompInfoCheck = sessionStorage.getItem('otherLandCompInfo');
     console.log(otherLandCompInfoCheck);
-    document.getElementById('otherInformation').textContent = otherLandCompInfoCheck;
     var ownershipTypeCheck = sessionStorage.getItem('ownershipType');
     console.log(ownershipTypeCheck);
-    document.getElementById('ownershipType').textContent = ownershipTypeCheck;
     // charge type
     var chargeTypeRetrieved = sessionStorage.getItem('chargeType');
     document.getElementById('chargeType').textContent = chargeTypeRetrieved;

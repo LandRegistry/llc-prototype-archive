@@ -68,13 +68,13 @@
                     <div class="form-group">
                         <!-- Add class form-group-error when error occurs on the page -->
                         <label id="amountKnownLabel" class="block-label selection-button-radio form-label" for="amountKnown">
-                     <input id="amountKnown" name="land-compensation" type="radio" value="I know the amount of compensation">
+                     <input id="amountKnown" name="land-compensation" type="radio" value="Yes">
                      Yes
                      <!-- I know the amount of compensation -->
                      <!-- <span class="error-message"> Choose one option   </span> -->
                   </label>
                         <label id="amountNotKnownLabel" class="block-label selection-button-radio form-label" for="amountNotKnown">
-                     <input id="amountNotKnown" name="land-compensation" type="radio" value="I do not know the amount of compensation">
+                     <input id="amountNotKnown" name="land-compensation" type="radio" value="No">
                     No
                     <!-- I do not know the amount of compensation -->
                      <!-- <span class="error-message"> Choose one option  </span> -->
@@ -92,37 +92,17 @@
     </div>
 </main>
 <script>
-    var landCompensation = sessionStorage.getItem('landCompensation');
-    console.log(landCompensation);
-    if (landCompensation === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Section8(4)') {
-            document.getElementById('section84Label').classList.add('selected');
-        } else if (chargeTypeToChange === 'Section 52(8)') {
-            document.getElementById('section52Label').classList.add('selected');
-        }
-
-        document.getElementById('land-compensation-btn').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
-
     document.getElementById('land-compensation-btn').onclick = function() {
         var amountKnownLabel = document.getElementById('amountKnownLabel');
-
-
         var amountNotKnownLabel = document.getElementById('amountNotKnownLabel');
-
         if (amountKnownLabel.classList.contains('selected')) {
-            // Section 52(8) journey radio button clicked   
+            sessionStorage.setItem('landCompAmountKnown', 'yes');
             document.getElementById('land-compensation-btn').setAttribute('href', 'land-compensation/amount-of-compensation');
-
         } else if (amountNotKnownLabel.classList.contains('selected')) {
-            // Section8(4) journey radio button clicked   
+            sessionStorage.setItem('landCompAmountKnown', 'no');
             document.getElementById('land-compensation-btn').setAttribute('href', 'land-compensation/lc-section8-4');
 
         }
-
-        sessionStorage.setItem('chargeType', chargeType);
     }
 </script>
 {% endblock %}

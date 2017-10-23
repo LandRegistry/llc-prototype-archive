@@ -36,45 +36,24 @@
                     </tr>
 
                     <tr id="landCompRow1">
-                        <td class="bold-small">Amount of compensation
+                        <td class="bold-small">Description of land sold
                         </td>
-                        <td id="amountComp">Not known</td>
+                        <td id="descriptionOfLand">Not known</td>
                         <td class="change-answer">
                             <a id="changeAmountComp" class="edit" href="financial-charge/secured-charge-amount">
-                                Change <span class="visuallyhidden">amount of compensation</span>
+                                Change <span class="visuallyhidden">description of land sold</span>
                             </a>
                         </td>
                     </tr>
 
                     <tr id="landCompRow2">
-                        <td class="bold-small">Type of compensation
+                        <td class="bold-small">Work to be done
                         </td>
-                        <td id="typeOfAmount">Not known</td>
+                        <td id="workToBeDone">Not known</td>
                         <td class="change-answer">
                             <a id="changeAmountType" class="edit" href="financial-charge/secured-charge-amount">
-                                    Change <span class="visuallyhidden">type of compensation</span>
+                                    Change <span class="visuallyhidden">work to be done</span>
                                 </a>
-                        </td>
-                    </tr>
-                    <tr id="landCompRow3">
-                        <td class="bold-small">Other information about compensation
-                        </td>
-                        <td id="otherInformation">Not provided</td>
-                        <td class="change-answer">
-                            <a id="changeOtherInformationAmount" class="edit" href="financial-charge/secured-charge-amount">
-                                        Change <span class="visuallyhidden">other information anout amount of compensation</span>
-                                    </a>
-                        </td>
-                    </tr>
-
-                    <tr id="landCompRow4">
-                        <td class="bold-small">Ownership
-                        </td>
-                        <td id="ownershipType">Not known</td>
-                        <td class="change-answer">
-                            <a id="changeOwnershipType" class="edit" href="financial-charge/secured-charge-amount">
-                                            Change <span class="visuallyhidden">ownership</span>
-                                        </a>
                         </td>
                     </tr>
 
@@ -190,20 +169,12 @@
 </main>
 
 <script>
-    var landCompAmountGivenCheck = sessionStorage.getItem('landCompAmountGiven');
-    console.log(landCompAmountGivenCheck);
-    var landCompAmountCheck = sessionStorage.getItem('landCompAmount');
-    console.log(landCompAmountCheck);
-    document.getElementById('amountComp').textContent = landCompAmountCheck;
-    var amountTypeCheck = sessionStorage.getItem('amountType');
-    console.log(amountTypeCheck);
-    document.getElementById('typeOfAmount').textContent = amountTypeCheck;
-    var otherLandCompInfoCheck = sessionStorage.getItem('otherLandCompInfo');
-    console.log(otherLandCompInfoCheck);
-    document.getElementById('otherInformation').textContent = otherLandCompInfoCheck;
-    var ownershipTypeCheck = sessionStorage.getItem('ownershipType');
-    console.log(ownershipTypeCheck);
-    document.getElementById('ownershipType').textContent = ownershipTypeCheck;
+    var descriptionOfLandCheck = sessionStorage.getItem('descriptionOfLand');
+    console.log(descriptionOfLandCheck);
+    document.getElementById('descriptionOfLand').textContent = descriptionOfLandCheck;
+    var workToBeDoneCheck = sessionStorage.getItem('workToBeDone');
+    console.log(workToBeDoneCheck);
+    document.getElementById('workToBeDone').textContent = workToBeDoneCheck;
     // charge type
     var chargeTypeRetrieved = sessionStorage.getItem('chargeType');
     document.getElementById('chargeType').textContent = chargeTypeRetrieved;

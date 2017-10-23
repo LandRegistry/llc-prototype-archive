@@ -50,6 +50,8 @@
         } else if (noAmount.classList.contains('selected')) {
             document.getElementById('securedBtn').setAttribute('href', '../what-does-charge-do');
             sessionStorage.setItem('amountKnown', 'false');
+        } else {
+            sessionStorage.setItem('amountKnown', 'noAnswer');
         }
     }
 </script>

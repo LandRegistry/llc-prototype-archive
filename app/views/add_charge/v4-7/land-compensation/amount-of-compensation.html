@@ -37,11 +37,11 @@
 
                     <div class="form-group">
 
-                        <label id="total-amount-label" class="block-label selection-button-radio" for="total-amount">
+                        <label id="totalAmountLabel" class="block-label selection-button-radio" for="total-amount">
                           <input id="total-amount" name="extent" type="radio" value="no"> agreed amount
                         </label>
 
-                        <label id="estimated-label" class="block-label selection-button-radio" for="estimated">
+                        <label id="estimatedAmountLabel" class="block-label selection-button-radio" for="estimated">
                           <input id="estimated" name="extent" type="radio" value="no"> estimated amount
                         </label>
 
@@ -51,7 +51,7 @@
 
                     </div>
                 </fieldset>
-                
+
                 <br>
 
                 <fieldset>
@@ -86,6 +86,8 @@
 </main>
 
 <script>
+    var amountCompCheck = sessionStorage.getItem('landCompAmountKnown');
+    console.log(amountCompCheck);
     var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
     console.log(chargeTypeIsChanging);
     if (chargeTypeIsChanging === 'true') {
@@ -107,7 +109,18 @@
     }
 
     document.getElementById('amountLandCompensationBtn').onclick = function() {
-        sessionStorage.setItem('landCompAmount', 'true');
+        sessionStorage.setItem('landCompAmountGiven', 'true');
+        var landCompAmount = document.getElementById('compensation-amount').value;
+        sessionStorage.setItem('landCompAmount', landCompAmount);
+        var totalAmountLabel = document.getElementById('totalAmountLabel');
+        var estimatedAmountLabel = document.getElementById('estimatedAmountLabel');
+        if (totalAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Agreed amount');
+        } else if (estimatedAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Estimated amount');
+        }
+        var otherLandCompInfo = document.getElementById('anything').value;
+        sessionStorage.setItem('otherLandCompInfo', otherLandCompInfo);
     }
 </script>
 
