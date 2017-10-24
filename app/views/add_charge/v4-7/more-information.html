@@ -52,7 +52,7 @@
 
             </details>
             <br>
-            <a class="button">Continue</a>
+            <a href="does-charge-expire" class="button">Continue</a>
             <br><br>
 
 
@@ -71,10 +71,10 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                                                                                        if (locationIsChanging === 'true') {
-                                                                                            document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                                                                                            sessionStorage.setItem('locationUpdated', 'true');
-                                                                                        }*/
+                                                                                                if (locationIsChanging === 'true') {
+                                                                                                    document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                    sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                }*/
 
 
     var addressLineOneToFill = sessionStorage.getItem('location');
@@ -92,51 +92,9 @@
             var newAddress = this.textContent;
             document.getElementById('addressSelected').textContent = newAddress;
             document.getElementById('address-list').classList.add('hiddenList');
+            sessionStorage.setItem('location', newAddress);
             return false;
         }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var description = document.getElementById('description').value;
-        sessionStorage.setItem('description', description);
-    }
-
-    var noAddressLabel = document.getElementById('noAddressLabel');
-    noAddressLabel.onclick = function() {
-        var addressFields = document.getElementsByClassName('addressField');
-        if (this.classList.contains('selected')) {
-            for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].classList.add('hiddenList');
-            }
-        } else {
-            for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].classList.remove('hiddenList');
-            }
-        }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        if (noAddressLabel.classList.contains('selected')) {
-            sessionStorage.setItem('noAddress', 'There is no address for this charge');
-        }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var addressLineOne = document.getElementById('addressLineOne').value;
-        var addressLineTwo = document.getElementById('addressLineTwo').value;
-        var addressLineThree = document.getElementById('addressLineThree').value;
-        var town = document.getElementById('town').value;
-        var county = document.getElementById('county').value;
-        var postcode = document.getElementById('postcode').value;
-
-        var newAddress = addressLineOne + ' ' + addressLineTwo + ' ' + addressLineThree + ' ' + town + ' ' + county + ' ' + postcode;
-
-        sessionStorage.setItem('newAddress', newAddress);
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var locationDescription = document.getElementById('locationDescription').value;
-        sessionStorage.setItem('locationDescription', locationDescription);
     }
 </script>
 {% endblock %}
