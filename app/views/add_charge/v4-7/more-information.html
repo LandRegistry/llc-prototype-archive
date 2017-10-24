@@ -108,9 +108,9 @@
                                     </ol>
 
                                     <br>
-                                    <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
-                                </div>
 
+                                </div>
+                                <p class="hiddenList" id="newAddress"></p>
                             </div>
                             <p>Or</p>
                             <div class="form-group">
@@ -149,10 +149,10 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                                                                                                                                                                                                                                    if (locationIsChanging === 'true') {
-                                                                                                                                                                                                                                        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                                                                                                                                                                                                                                        sessionStorage.setItem('locationUpdated', 'true');
-                                                                                                                                                                                                                                    }*/
+                                                                                                                                                                                                                                                            if (locationIsChanging === 'true') {
+                                                                                                                                                                                                                                                                document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                                                                                                                                                                                sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                                                                                                                                                                            }*/
 
 
     var addressLineOneToFill = sessionStorage.getItem('location');
@@ -169,6 +169,8 @@
         addressList[i].onclick = function() {
             var newAddress = this.textContent;
             document.getElementById('addressSelected').textContent = newAddress;
+            document.getElementById('newAddress').classList.remove('hiddenList');
+            document.getElementById('newAddress').textContent = newAddress + ' Exeter EX4 1AY';
             document.getElementById('address-list').classList.add('hiddenList');
             sessionStorage.setItem('location', newAddress);
             return false;
