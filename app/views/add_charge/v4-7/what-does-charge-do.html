@@ -58,6 +58,8 @@
 </main>
 
 <script>
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
+    console.log(amountKnownCheck);
     var descriptionIsChanging = sessionStorage.getItem('descriptionIsChanging');
     if (descriptionIsChanging === 'true') {
         var descriptionToChange = sessionStorage.getItem('descriptionToChange');

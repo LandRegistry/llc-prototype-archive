@@ -24,7 +24,7 @@
 
                 <tbody>
                     <tr id="chargeTypeRow">
-                        <td class="bold-small">Type</td>
+                        <td class="bold-small">Category</td>
 
                         <td id="chargeType">undefined</td>
 
@@ -32,6 +32,16 @@
                             <a id="changeChargeType" class="edit" href="type-of-charge">
                                 Change <span class="visuallyhidden">type of charge</span>
                             </a>
+                        </td>
+                    </tr>
+                    <tr id="descriptionRow">
+                        <td class="bold-small">Other information
+                        </td>
+                        <td id="description">Information not provided</td>
+                        <td class="change-answer">
+                            <a id="changeDescription" class="edit" href="what-does-charge-do">
+                                    Change <span class="visuallyhidden">charge description</span>
+                                </a>
                         </td>
                     </tr>
 
@@ -61,7 +71,7 @@
                         <td class="bold-small">Created on
 
                         </td>
-                        <td id="validFrom">  </td>
+                        <td id="validFrom"> </td>
                         <td class="change-answer">
                             <a id="changeDocDate" class="edit" href="date-document-created">
                                 Change <span class="visuallyhidden">Document valid from</span>
@@ -90,19 +100,6 @@
                             </a>
                         </td>
                     </tr>
-
-
-                    <tr id="descriptionRow">
-                        <td class="bold-small">Other information
-                        </td>
-                        <td id="description">Information not provided</td>
-                        <td class="change-answer">
-                            <a id="changeDescription" class="edit" href="what-does-charge-do">
-                                Change <span class="visuallyhidden">charge description</span>
-                            </a>
-                        </td>
-                    </tr>
-
 
                     <tr id="expiryRow">
                         <td class="bold-small">Expiry date
@@ -224,11 +221,11 @@
 
     // amount secured 
     var amountSecuredRetrieved = sessionStorage.getItem('amount');
-    document.getElementById('amountSecured').textContent = amountSecuredRetrieved;
+    document.getElementById('amountSecured').textContent = '£' + amountSecuredRetrieved;
 
     // interest
     var interestRetrieved = sessionStorage.getItem('interestRate');
-    document.getElementById('interestValue').textContent = interestRetrieved;
+    document.getElementById('interestValue').textContent = interestRetrieved + '%';
 
     /* CHANGE RULES */
     // charge type

@@ -98,19 +98,19 @@
 
 </main>
 <script>
-    var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-    if (locationIsChanging === 'true') {
-        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-        sessionStorage.setItem('locationUpdated', 'true');
-    }
+    /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
+                if (locationIsChanging === 'true') {
+                    document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                    sessionStorage.setItem('locationUpdated', 'true');
+                }*/
 
-    var addressSelected = sessionStorage.getItem('location');
-    document.getElementById('addressSelected').textContent = addressSelected;
-    document.getElementById('addressLineOne').value = addressSelected;
+    var addressLineOneToFill = sessionStorage.getItem('location');
+    document.getElementById('addressLineOne').value = addressLineOneToFill;
+    document.getElementById('addressSelected').textContent = addressLineOneToFill;
 
     document.getElementById('confirmAddressButton').onclick = function() {
-        var locationDescription = document.getElementById('locationDescription').value;
-        sessionStorage.setItem('locationDescription', locationDescription);
+        var description = document.getElementById('description').value;
+        sessionStorage.setItem('description', description);
     }
 
     var noAddressLabel = document.getElementById('noAddressLabel');
@@ -134,11 +134,6 @@
     }
 
     document.getElementById('confirmAddressButton').onclick = function() {
-        var locationDescription = document.getElementById('locationDescription').value;
-        sessionStorage.setItem('locationDescription', locationDescription);
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
         var addressLineOne = document.getElementById('addressLineOne').value;
         var addressLineTwo = document.getElementById('addressLineTwo').value;
         var addressLineThree = document.getElementById('addressLineThree').value;
@@ -151,62 +146,9 @@
         sessionStorage.setItem('newAddress', newAddress);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*document.getElementById('confirmAddressButton').onclick = function() {
-        var moreInformation = document.getElementById('address').value;
-        sessionStorage.setItem('moreInformation', moreInformation);
-    }*/
-
-
-    /*var locationRetrieved = sessionStorage.getItem('location');
-    var postcodeRetrieved = sessionStorage.getItem('postcodeSearched');
-    var postcodeSelected = sessionStorage.getItem('postcodeSelected');
-
-    if (postcodeSelected !== null) {
-        document.getElementById('addressRetrieved').textContent = postcodeSelected;
-    } else if (postcodeRetrieved === null) {
-        document.getElementById('addressRetrieved').textContent = '3 Okehampton Place, Exeter EX4 1AY';
-    } else {
-        var locationSearched = locationRetrieved + ' ' + postcodeRetrieved;
-        document.getElementById('addressRetrieved').textContent = locationSearched;
-    }
-
-
     document.getElementById('confirmAddressButton').onclick = function() {
-        var addressConfirmYes = document.getElementById('addressConfirmYes');
-        var addressConfirmNo = document.getElementById('addressConfirmNo');
-        var locationSearched = document.getElementById('addressRetrieved').textContent;
-        if (addressConfirmYes.classList.contains('selected')) {
-            sessionStorage.setItem('locationSelected', locationSearched);
-        } else if (addressConfirmNo.classList.contains('selected')) {
-            var street1 = document.getElementById('street1');
-            street1 = street1.value;
-            var street2 = document.getElementById('street2');
-            street2 = street2.value;
-            var town = document.getElementById('town');
-            town = town.value;
-            var county = document.getElementById('county');
-            county = county.value;
-            var postcode = document.getElementById('postcode');
-            postcode = postcode.value.toUpperCase();
-            var locationSelected = street1 + ' ' + street2 + ' ' + town + ' ' + county + ' ' + postcode;
-            sessionStorage.setItem('locationSelected', locationSelected);
-        }
-    }*/
+        var locationDescription = document.getElementById('locationDescription').value;
+        sessionStorage.setItem('locationDescription', locationDescription);
+    }
 </script>
 {% endblock %}

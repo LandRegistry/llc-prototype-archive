@@ -1,0 +1,81 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p><a href="search-results" class="link-back">Back</a></p>
+            <h1 class="heading-large">
+                Charge details
+            </h1>
+        </div>
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2">
+                <tbody>
+                    <tr>
+                        <td>Category</td>
+                        <td class="bold-small">Planning notice</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td class="bold-small"><span id="address-selected"></span>, Exeter EX4 1AY</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Other information</td>
+                        <td class="bold-small">Single storey rear extension</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority</td>
+                        <td class="bold-small">Exeter City Council</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Created on</td>
+                        <td class="bold-small">12 December 2012</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Registration date</td>
+                        <td class="bold-small">12 December 2012</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Originating authority reference</td>
+                        <td class="bold-small">EXT123</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>HM Land Registry reference</td>
+                        <td class="bold-small">LLC/EX38912122</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var placeSearched = sessionStorage.getItem('placeSelected');
+    console.log(placeSearched);
+    document.getElementById('address-selected').textContent = placeSearched;
+</script>
+
+{% endblock %}

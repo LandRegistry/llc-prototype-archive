@@ -1,0 +1,118 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                View local land charges
+            </h1>
+            <p>Use this service to search for legal rights and restrictions (local land charges) on land or property.</p>
+            <div class="panel panel-border-wide">
+                <p>An inspection of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR).</p>
+                <p>The official search, the search of local land charges guaranteed by HM Land Registry, does not include planning and development applications, building controls, or information about road development schemes near to your property. Ask your
+                    conveyancer for a CON 29 search to get this information.</p>
+            </div>
+            <p>By starting a search you agree to our <a href="#">terms and conditions</a>.</p>
+            <p><a class="button button-start" href="search" role="button" id="start">Accept and start</a></p>
+            <br>
+            <table class="search-fees">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Free</td>
+                        <td>&pound;15</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Where the local charge is</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>What the charge does</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Registration date, this is the date when the charge was officially registered</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Contact details for the local authority that can answer questions about this local land charge</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Guaranteed by HM Land Registry</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Link to documents that that give more information about the charge</td>
+                        <td></td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Local charge boundary, showing where a charge starts and stops</td>
+                        <td></td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Refresh your search to make sure no new local land charges have been added before you exchange contracts</td>
+                        <td></td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Create a free account and for 6 months you will also get:
+                            <ul class="list list-bullet">
+                                <li>Cloud storage for your searches</li>
+                                <li>Search result archive</li>
+                                <li>See active and expired searches</li>
+                                <li>Unlimited downloads</li>
+                                <li>Unlimited refreshes</li>
+                                <li>Download in PDF, JSON, CSV, XML</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Documents are:
+                            <ul class="list list-bullet">
+                                <li>secure (tamperproof)</li>
+                                <li>digitally signed by HM Land Registry</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td style="text-align:center; color:green">&#10004;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+        <div class="column-one-third">
+            <aside class="login-box">
+                <h2 class="heading-small">Existing users</h2>
+                <p><a href="login">Sign in</a></p>
+                <h2 class="heading-small">New users</h2>
+                <p><a href="register">Register</a></p>
+            </aside>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

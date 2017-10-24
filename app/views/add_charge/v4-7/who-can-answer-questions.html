@@ -59,14 +59,20 @@
 
 </main>
 <script>
-    var amountSecuredCheck = sessionStorage.getItem('amountSecured');
-    var financialCheck = sessionStorage.getItem('financial');
-    if (amountSecuredCheck === 'true') {
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
+    var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
+    var amoundLandCompCheck = sessionStorage.getItem('landCompAmountKnown');
+    if (amountKnownCheck === 'true') {
         document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
-    } else if (financialCheck === 'true') {
-        document.getElementById('contactButton').setAttribute('href', 'charge-summary-financial');
+    } else if (amountKnownCheck === 'false') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-not-known');
+    } else if (amountKnownCheck === 'noAnswer') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+    } else if (amoundLandCompCheck === 'yes') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-land-comp-with-amount');
+    } else if (amoundLandCompCheck === 'no') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-land-comp-no-amount');
     }
-
 
     var contactIsChanging = sessionStorage.getItem('contactIsChanging');
     if (contactIsChanging === 'true') {

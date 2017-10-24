@@ -25,11 +25,22 @@
 
                 <tbody>
                     <tr id="chargeTypeRow">
-                        <td class="bold-small">Type</td>
+                        <td class="bold-small">Category</td>
                         <td id="chargeType">undefined</td>
                         <td class="change-answer">
                             <a id="changeChargeType" class="edit" href="type-of-charge">
                                 Change <span class="visuallyhidden">type of charge</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr id="descriptionRow">
+                        <td class="bold-small">Other information
+                        </td>
+                        <td id="description">Information not provided</td>
+                        <td class="change-answer">
+                            <a id="changeDescription" class="edit" href="what-does-charge-do">
+                                Change <span class="visuallyhidden">charge description</span>
                             </a>
                         </td>
                     </tr>
@@ -75,19 +86,6 @@
                             </a>
                         </td>
                     </tr>
-
-
-                    <tr id="descriptionRow">
-                        <td class="bold-small">Other information
-                        </td>
-                        <td id="description">Information not provided</td>
-                        <td class="change-answer">
-                            <a id="changeDescription" class="edit" href="what-does-charge-do">
-                                Change <span class="visuallyhidden">charge description</span>
-                            </a>
-                        </td>
-                    </tr>
-
 
                     <tr id="expiryRow">
                         <td class="bold-small">Expiry date
@@ -158,9 +156,6 @@
 </main>
 
 <script>
-    var newAddressRetrieved = sessionStorage.getItem('newAddress');
-    console.log(newAddressRetrieved);
-
     // charge type
     var chargeTypeRetrieved = sessionStorage.getItem('chargeType');
     document.getElementById('chargeType').textContent = chargeTypeRetrieved;
@@ -171,15 +166,17 @@
     var startYearRetrieved = sessionStorage.getItem('startYear');
     document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
     // location
-    var locationRetrieved = sessionStorage.getItem('newAddress');
-    var noAddressCheck = sessionStorage.getItem('noAddress');
-    if (locationRetrieved === null || locationRetrieved === '') {
+    var locationRetrieved = sessionStorage.getItem('location');
+    console.log(locationRetrieved);
+    /*var noAddressCheck = sessionStorage.getItem('noAddress');*/
+    /*if (locationRetrieved === null || locationRetrieved === '') {
         document.getElementById('location').textContent = 'Location not provided';
     } else if (noAddressCheck === 'There is no address for this charge') {
         document.getElementById('location').textContent = noAddressCheck;
     } else {
         document.getElementById('location').textContent = locationRetrieved;
-    }
+    }*/
+    document.getElementById('location').textContent = locationRetrieved + ', Exeter EX4 1AY';
     // location description
     var locationDescriptionRetrieved = sessionStorage.getItem('locationDescription');
     if (locationDescriptionRetrieved === null || locationDescriptionRetrieved === '') {

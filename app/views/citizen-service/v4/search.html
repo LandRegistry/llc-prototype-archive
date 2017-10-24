@@ -1,0 +1,265 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" class="maintain-llc-map"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list">
+        <h1 class="heading-medium">Search by postcode</h1>
+
+
+
+
+
+        <form action="#" method="GET">
+            <div class="form-group searchGroup">
+                <legend class="visuallyhidden">Search by postcode</legend>
+
+                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+                <a id="placeSearchButton" href="#" class="button">Search</a>
+
+            </div>
+            <div class="hiddenList addressList">
+                <h2 class="heading-small">Choose an address from the list</h2>
+                <ul>
+                    <li><a href="#">1 Clinton Street</a></li>
+                    <li><a href="#">3 Clinton Street</a></li>
+                    <li><a href="#">5 Clinton Street</a></li>
+                    <li><a href="#">7 Clinton Street</a></li>
+                    <li><a href="#">9 Clinton Street</a></li>
+                    <li><a href="#">11 Clinton Street</a></li>
+                    <li><a href="#">13 Clinton Street</a></li>
+                    <li><a href="#">15 Clinton Street</a></li>
+                    <li><a href="#">17 Clinton Street</a></li>
+                    <li><a href="#">19 Clinton Street</a></li>
+                    <li><a href="#">21 Clinton Street</a></li>
+                    <li><a href="#">23 Clinton Street</a></li>
+                    <li><a href="#">25 Clinton Street</a></li>
+                    <li><a href="#">27 Clinton Street</a></li>
+                    <li><a href="#">28 Clinton Street</a></li>
+                </ul>
+            </div>
+
+
+
+
+            <p class="initialInstructionText">Or zoom to the area using the map.</p>
+
+            <div class="postSearchText hiddenList">
+                <h2 class="heading-small">This is the map for <span class="placeSelected"></span>, Exeter EX4 1AX</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+                <p>You will see a list of charges in this area.</p>
+
+            </div>
+            <p>
+                <a href="#" class="button disabled continueButton hiddenList">Search in this area</a>
+            </p>
+
+            <div class="resultsList hiddenList">
+                <h2 class="heading-medium">8 charges in <span class="placeSelected"></span>, Exeter EX4 1AX</h2>
+                <div id="filter" class="accordionItem">
+                    <h3 class="heading-small"><a href="#" class="accordionHeader accordionHeaderFilter">Filter this map by</a> <span class="accordionControl accordionControlFilter"><img src="{{asset_path}}images/icons-minus.png"></span></h3>
+
+                    <div class="accordionHiddenContent">
+                        <p><span><a href="#">Select all</a></span> <span><a href="#">Deselect all</a></span></p>
+                        <form>
+                            <div>
+                                <input type="checkbox" id="planningNotices" name="filter" value="Planning notices (15)" checked>
+                                <label for="planningNotices">Planning notices (2)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="financial" name="filter" value="Financial (7)" checked>
+                                <label for="financial">Financial (2)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lon" name="filter" value="Light obstruction notices (2)" checked>
+                                <label for="lon">Light obstruction notices (2)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="conservationAreas" name="filter" value="Conservation areas (1)">
+                                <label for="conservationAreas">Conservation areas (1)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="smokeControlOrders" name="filter" value="Smoke control orders (1)">
+                                <label for="smokeControlOrders">Smoke control orders (1)</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="planningNoticesBox" class="accordionItem">
+                    <h3 class="heading-small"><a href="search-results" class="accordionHeaderPlanning accordionHeader">Planning notices (2)</a>
+                        <!-- <span class="accordionControlPlanning accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                    <!-- <div class="accordionHiddenContent hiddenList">
+                        <ul>
+                            <li>
+                                <a href="search-results">Local land charge 1</a><br> Charge created on 12 December 2012
+                            </li>
+                            <li>
+                                <a href="search-results">Local land charge 1</a><br> Charge created on 5 March 2010
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div id="financialBox" class="accordionItem">
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Financial (2)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                </div>
+                <div id="lonBox" class="accordionItem">
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Light obstruction notices (2)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                </div>
+                <div id="conservationAreaBox" class="accordionItem">
+                    <h3 class="heading-small"><a href="#" class="accordionHeader">Conservation areas (1)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                </div>
+                <div id="smokeControlOrderBox" class="accordionItem">
+                    <h3 class="heading-small"><a href="#">Smoke control orders (1)</a>
+                        <!--  <span class="accordionControl"><img src="{{asset_path}}images/icons-plus.png"></span> --></h3>
+                </div>
+            </div>
+
+
+
+
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<!-- <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/search.js"></script> -->
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
+
+    // hide tools that are not needed
+
+    $('.point').remove();
+    $('.line').remove();
+    $('.copy').remove();
+    $('.remove').remove();
+    $('#snap-to').remove()
+</script>
+<script>
+    $('#placeSearchButton').click(function() {
+        $('.addressList').removeClass('hiddenList');
+    });
+
+    $('.addressList a').click(function() {
+        $('.addressList').addClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        /*$('.postSearchText').removeClass('hiddenList');
+        $('.continueButton').removeClass('hiddenList');*/
+        var placeSelected = $(this).html();
+        $('.placeSelected').text(placeSelected);
+        sessionStorage.setItem('placeSelected', placeSelected);
+        var placeSearched = $('#search_term').val();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
+        return false;
+
+    })
+
+    /*$('button').click(function() {
+        $('.continueButton').removeClass('disabled');
+        $('.continueButton').removeClass('hiddenList');
+        var clickedButton = $(this);
+        $(clikedButton).click(function() {
+            $(this).attr('id', '');
+        });
+    });*/
+
+    /*$('.continueButton').click(function() {
+        $(this).addClass('hiddenList');
+        $('.postSearchText').addClass('hiddenList');
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
+    });*/
+
+    $('.accordionHeaderFilter').click(function() {
+        if ($('.accordionHiddenContent').hasClass('hiddenList')) {
+            $('.accordionHiddenContent').removeClass('hiddenList');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-minus.png');
+        } else {
+            $('.accordionHiddenContent').addClass('hiddenList');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-plus.png');
+        }
+
+    });
+
+    $('.accordionControlFilter').click(function() {
+        if ($('.accordionHiddenContent').hasClass('hiddenList')) {
+            $('.accordionHiddenContent').removeClass('hiddenList');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-minus.png');
+        } else {
+            $('.accordionHiddenContent').addClass('hiddenList');
+            $('.accordionControlFilter').children('img').attr('src', '/public/images/icons-plus.png');
+        }
+    })
+
+
+
+
+
+    /*$('.accordionIcon-1').click(function() {
+        if ($('.accordion-child-1').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-1').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-1').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+    $('.accordionIcon-3').click(function() {
+        if ($('.accordion-child-3').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-3').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-3').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });*/
+
+    $('#mapButton').click(function() {
+        var searchTerm = $('#search_term').val();
+        sessionStorage.setItem('searchTerm', searchTerm);
+    });
+</script>
+{% endblock %}

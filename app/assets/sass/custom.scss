@@ -64,6 +64,7 @@
 
 #search-panel {
     width: 26vw;
+    box-sizing: border-box;
     height: calc(100vh - 107px);
     padding: 0 2vw;
     z-index: 10000000000;
@@ -319,4 +320,68 @@
 
 .form-control-error {
     border: 4px solid #b10e1e;
+}
+
+.accordionControl {
+    position: absolute;
+    right: 10%;
+    cursor: pointer;
+}
+
+.accordionItem {
+    /*border: 1px solid #0b0c0c;*/
+    margin-bottom: 1em;
+    padding: 0 1em 0.5em 1em;
+}
+
+.accordionItem p span {
+    margin-right: 1em;
+}
+
+.download-panel {
+    border-left-color: #DF3034;
+    background-color: rgba(223, 48, 52, 0.1) !important;
+}
+
+.dashboardHeader {
+    border-bottom: 1px solid #BFC1C3;
+    padding-bottom: 0.1em;
+}
+
+.dashboardHeader span {
+    padding: 0 20px 1px 20px;
+}
+
+.tabHeader {
+    background-color: #DEE0E2;
+    margin-right: 0.2em;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.activeTabHeader {
+    background-color: white;
+    border-top: 1px solid #BFC1C3;
+    border-left: 1px solid #BFC1C3;
+    border-right: 1px solid #BFC1C3;
+    border-bottom: none;
+}
+
+.payPromo:hover {
+    border-color: #2B8CC4;
+}
+
+.search-button {
+    background-size: 52.5px 35px;
+    background-position: 115% 50%;
+    box-sizing: border-box;
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -5000px;
+    background: #0b0c0c url(../images/search-button.png) no-repeat 2px 50%;
+    border: 0;
+    position: relative;
+    right: 4px;
 }
