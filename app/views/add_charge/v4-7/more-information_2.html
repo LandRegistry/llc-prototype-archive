@@ -84,22 +84,25 @@
 
                             </div>
 
-                            <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress">
+                            <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress" data-target="noAddressEntry">
                                 <input id="noAddress" name="address" type="radio" value="no">No
                             </label>
+                            <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
+                                <div class="form-group">
+                                    <h2 class="heading-medium">Describe the location</h2>
+                                    <span class="form-hint">For example, land to the north of the bypass.</span>
+                                    <label class="form-label" for="textarea">
+                                                
+                                    </label>
+
+                                    <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                                    <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                                </div>
+                            </div>
 
 
                         </div>
-                        <div class="form-group">
-                            <h2 class="heading-medium">Describe the location</h2>
-                            <span class="form-hint">For example, land to the north of the bypass.</span>
-                            <label class="form-label" for="textarea">
-                                        
-                            </label>
 
-                            <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
-                            <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
-                        </div>
 
 
 
