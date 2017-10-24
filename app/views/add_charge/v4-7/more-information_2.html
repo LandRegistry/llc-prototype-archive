@@ -32,7 +32,9 @@
                                     <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
                                     <a id="findPostcode" class="button" href="#" role="button">Find</a>
                                 </div>
-                                <p id="manualAddressLink"><a href="#">Enter address manually</a></p>
+                                <p id="manualAddressLink">
+                                    <a href="#"></a>
+                                </p>
                                 <div class="form-group hiddenList" id="addressList">
                                     <div class="results-block" id="address-list">
                                         <p>Click on the place you need.</p>
@@ -53,53 +55,35 @@
                                         <br>
                                         <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
                                     </div>
+                                    <div id="manualAddressEntry" class="hiddenList">
+                                        <p id="selectedAddress"></p>
+                                        <p>Not the right address? <a href="more-information_2">Search again</a></p>
+                                    </div>
 
-                                </div>
-                                <div id="manualAddressEntry" class="hiddenList">
-                                    <div class="form-group">
-                                        <label class="form-label" for="addressLineOne">Address Line 1</label>
-                                        <input class="form-control" name="addressLineOne" type="text" id="addressLineOne">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="addressLineTwo">Address Line 2</label>
-                                        <input class="form-control" name="addressLineTwo" type="text" id="addressLineTwo">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="addressLineThree">Address Line 3</label>
-                                        <input class="form-control" name="addressLineThree" type="text" id="addressLineThree">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="town">Town</label>
-                                        <input class="form-control" name="town" type="text" id="town">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="county">County (optional)</label>
-                                        <input class="form-control" name="county" type="text" id="county">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="postcode">Postcode</label>
-                                        <input class="form-control" name="postcode" type="text" id="postcode">
-                                    </div>
                                 </div>
 
                             </div>
 
-                            <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress">
+                            <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress" data-target="noAddressEntry">
                                 <input id="noAddress" name="address" type="radio" value="no">No
                             </label>
+                            <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
+                                <div class="form-group">
+                                    <h2 class="heading-medium">Describe the location</h2>
+                                    <span class="form-hint">For example, land to the north of the bypass.</span>
+                                    <label class="form-label" for="textarea">
+                                                
+                                    </label>
+
+                                    <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                                    <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                                </div>
+                            </div>
+
 
 
                         </div>
-                        <div class="form-group">
-                            <h2 class="heading-medium">Describe the location</h2>
-                            <span class="form-hint">For example, land to the north of the bypass.</span>
-                            <label class="form-label" for="textarea">
-                                        
-                            </label>
 
-                            <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
-                            <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
-                        </div>
 
 
 
@@ -142,24 +126,10 @@
             document.getElementById('manualAddressEntry').classList.remove('hiddenList');
             document.getElementById('address-list').classList.add('hiddenList');
             var addressLineOne = this.text;
-            document.getElementById('addressLineOne').value = addressLineOne;
-            document.getElementById('town').value = 'Exeter';
-            document.getElementById('postcode').value = 'EX4 1AY';
+            document.getElementById('selectedAddress').textContent = addressLineOne + ' Exeter EX4 1AY';
+            sessionStorage.setItem('location', addressLineOne);
             return false;
         }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var addressLineOne = document.getElementById('addressLineOne').value;
-        var addressLineTwo = document.getElementById('addressLineTwo').value;
-        var addressLineThree = document.getElementById('addressLineThree').value;
-        var town = document.getElementById('town').value;
-        var county = document.getElementById('county').value;
-        var postcode = document.getElementById('postcode').value;
-
-        var newAddress = addressLineOne + ' ' + addressLineTwo + ' ' + addressLineThree + ' ' + town + ' ' + county + ' ' + postcode;
-
-        sessionStorage.setItem('newAddress', newAddress);
     }
 
     document.getElementById('confirmAddressButton').onclick = function() {

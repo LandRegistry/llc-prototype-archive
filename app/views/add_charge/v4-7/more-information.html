@@ -20,70 +20,42 @@
 
                 <div class="panel panel-border-narrow">
 
-                    <h2 class="heading-medium">Enter the correct location details</h2>
-                    <form action="#">
-                        <fieldset>
-                            <div class="form-group">
-                                <label id="noAddressLabel" class="block-label selection-button-checkbox" for="noAddress">
-                                    <input name="noAddress" type="checkbox" id="noAddress">
-                                    There is no address for this charge
-                                    </label>
-                            </div>
-                        </fieldset>
-                    </form>
-                    <br>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="addressLineOne">Address Line 1</label>
-                        <input class="form-control addressField" name="addressLineOne" type="text" id="addressLineOne">
+                    <div class="form-group" id="postcodeSearch">
+                        <h2 class="heading-small">Enter a postcode</h2>
+                        <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                        <a id="findPostcode" class="button" href="#" role="button">Find</a>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="addressLineTwo">Address Line 2</label>
-                        <input class="form-control addressField" name="addressLineTwo" type="text" id="addressLineTwo">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="addressLineThree">Address Line 3</label>
-                        <input class="form-control addressField" name="addressLineThree" type="text" id="addressLineThree">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="town">Town</label>
-                        <input class="form-control addressField" name="town" type="text" id="town" value="Exeter">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="county">County (optional)</label>
-                        <input class="form-control addressField" name="county" type="text" id="county">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label addressField" for="postcode">Postcode</label>
-                        <input class="form-control addressField" name="postcode" type="text" id="postcode" value="EX4 1AY">
+                    <div class="form-group hiddenList" id="addressList">
+                        <div class="results-block" id="address-list">
+                            <p>Click on the place you need.</p>
+                            <ol class="results-list">
+                                <li><a href="#" class="address-list">2 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">3 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">4 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">6 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">8 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">10 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">12 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">14 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">16 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">18 Okehampton Place</a></li>
+                                <li><a href="#" class="address-list">20 Okehampton Place</a></li>
+                            </ol>
+
+                            <br>
+                            <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
+                        </div>
+
                     </div>
 
                 </div>
 
             </details>
             <br>
+            <a href="does-charge-expire" class="button">Continue</a>
+            <br><br>
 
 
-            <h2 class="heading-medium">Describe the location (optional)</h2>
-            <form action="does-charge-expire" method="GET">
-                <fieldset>
-                    <legend class="visually-hidden form-label">Describe the location</legend>
-                    <span class="form-hint">For example, land to the north of the bypass.</span>
-
-                    <div class="form-group">
-                        <label class="form-label" for="textarea">
-                                    
-                                </label>
-
-                        <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
-                        <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
-                    </div>
-                    <p><a id="confirmAddressButton" class="button " href="does-charge-expire" role="button">Continue</a></p>
-                </fieldset>
-
-
-
-
-            </form>
 
 
 
@@ -99,56 +71,30 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                    if (locationIsChanging === 'true') {
-                        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                        sessionStorage.setItem('locationUpdated', 'true');
-                    }*/
+                                                                                                if (locationIsChanging === 'true') {
+                                                                                                    document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                    sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                }*/
+
 
     var addressLineOneToFill = sessionStorage.getItem('location');
-    document.getElementById('addressLineOne').value = addressLineOneToFill;
     document.getElementById('addressSelected').textContent = addressLineOneToFill;
 
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var description = document.getElementById('description').value;
-        sessionStorage.setItem('description', description);
-    }
+    document.getElementById('findPostcode').onclick = function() {
+        document.getElementById('addressList').classList.remove('hiddenList');
+        document.getElementById('manualAddressLink').classList.add('hiddenList');
+        return false;
+    };
 
-    var noAddressLabel = document.getElementById('noAddressLabel');
-    noAddressLabel.onclick = function() {
-        var addressFields = document.getElementsByClassName('addressField');
-        if (this.classList.contains('selected')) {
-            for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].classList.add('hiddenList');
-            }
-        } else {
-            for (var i = 0; i < addressFields.length; i++) {
-                addressFields[i].classList.remove('hiddenList');
-            }
+    var addressList = document.querySelectorAll('.address-list');
+    for (var i = 0; i < addressList.length; i++) {
+        addressList[i].onclick = function() {
+            var newAddress = this.textContent;
+            document.getElementById('addressSelected').textContent = newAddress;
+            document.getElementById('address-list').classList.add('hiddenList');
+            sessionStorage.setItem('location', newAddress);
+            return false;
         }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        if (noAddressLabel.classList.contains('selected')) {
-            sessionStorage.setItem('noAddress', 'There is no address for this charge');
-        }
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var addressLineOne = document.getElementById('addressLineOne').value;
-        var addressLineTwo = document.getElementById('addressLineTwo').value;
-        var addressLineThree = document.getElementById('addressLineThree').value;
-        var town = document.getElementById('town').value;
-        var county = document.getElementById('county').value;
-        var postcode = document.getElementById('postcode').value;
-
-        var newAddress = addressLineOne + ' ' + addressLineTwo + ' ' + addressLineThree + ' ' + town + ' ' + county + ' ' + postcode;
-
-        sessionStorage.setItem('newAddress', newAddress);
-    }
-
-    document.getElementById('confirmAddressButton').onclick = function() {
-        var locationDescription = document.getElementById('locationDescription').value;
-        sessionStorage.setItem('locationDescription', locationDescription);
     }
 </script>
 {% endblock %}
