@@ -43,7 +43,6 @@
                                     <a id="findPostcode" class="button" href="#" role="button">Find</a>
                                 </div>
                                 <p id="manualAddressLink">
-                                    <a href="#"></a>
                                 </p>
                                 <div class="form-group hiddenList" id="addressList">
                                     <div class="results-block" id="address-list">
@@ -122,14 +121,6 @@
         return false;
     };
 
-    document.getElementById('manualAddressLink').onclick = function() {
-        document.getElementById('search').value = '';
-        document.getElementById('manualAddressEntry').classList.remove('hiddenList');
-        document.getElementById('manualAddressLink').classList.add('hiddenList');
-        document.getElementById('postcodeSearch').classList.add('hiddenList');
-        return false;
-    };
-
     var addressList = document.querySelectorAll('.address-list');
     for (var i = 0; i < addressList.length; i++) {
         addressList[i].onclick = function() {
@@ -143,8 +134,16 @@
     }
 
     document.getElementById('confirmAddressButton').onclick = function() {
-        var locationDescription = document.getElementById('locationDescription').value;
-        sessionStorage.setItem('locationDescription', locationDescription);
+        var yesAddress = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var address = document.getElementById('selectedAddress')
+        if (yesAddress.classList.contains('selected')) {
+            var location = address.textContent;
+            sessionStorage.setItem('location', location);
+        } else if (noAddress.classList.contains('selected')) {
+            var location = document.getElementById('locationDescription').value;
+            sessionStorage.setItem('location', location);
+        }
     }
 </script>
 {% endblock %}

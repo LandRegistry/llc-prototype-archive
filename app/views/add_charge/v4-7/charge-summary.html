@@ -65,15 +65,6 @@
                             </a>
                         </td>
                     </tr>
-                    <tr id="locationDescriptionRow">
-                        <td class="bold-small">Location description</td>
-                        <td id="locationDescription">Location not provided</td>
-                        <td class="change-answer">
-                            <a id="changeLocationDescription" class="edit" href="more-information">
-                                    Change <span class="visuallyhidden">Location of charge</span>
-                                </a>
-                        </td>
-                    </tr>
                     <tr id="extentRow">
                         <td class="bold-small">Charge extent </td>
                         <td>
@@ -168,21 +159,10 @@
     // location
     var locationRetrieved = sessionStorage.getItem('location');
     console.log(locationRetrieved);
-    /*var noAddressCheck = sessionStorage.getItem('noAddress');*/
-    /*if (locationRetrieved === null || locationRetrieved === '') {
+    if (locationRetrieved === null || locationRetrieved === '') {
         document.getElementById('location').textContent = 'Location not provided';
-    } else if (noAddressCheck === 'There is no address for this charge') {
-        document.getElementById('location').textContent = noAddressCheck;
     } else {
         document.getElementById('location').textContent = locationRetrieved;
-    }*/
-    document.getElementById('location').textContent = locationRetrieved + ', Exeter EX4 1AY';
-    // location description
-    var locationDescriptionRetrieved = sessionStorage.getItem('locationDescription');
-    if (locationDescriptionRetrieved === null || locationDescriptionRetrieved === '') {
-        document.getElementById('locationDescription').textContent = 'Location description not provided';
-    } else {
-        document.getElementById('locationDescription').textContent = locationDescriptionRetrieved;
     }
     // description
     var chargeDescription = sessionStorage.getItem('whatDoesChargeDo');

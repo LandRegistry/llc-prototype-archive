@@ -56,16 +56,6 @@
                                 </a>
                         </td>
                     </tr>
-                    <tr id="landCompRow3">
-                        <td class="bold-small">Other information about compensation
-                        </td>
-                        <td id="otherInformation">Not provided</td>
-                        <td class="change-answer">
-                            <a id="changeOtherInformationAmount" class="edit" href="financial-charge/secured-charge-amount">
-                                        Change <span class="visuallyhidden">other information anout amount of compensation</span>
-                                    </a>
-                        </td>
-                    </tr>
 
                     <tr id="landCompRow4">
                         <td class="bold-small">Ownership
@@ -198,9 +188,6 @@
     var amountTypeCheck = sessionStorage.getItem('amountType');
     console.log(amountTypeCheck);
     document.getElementById('typeOfAmount').textContent = amountTypeCheck;
-    var otherLandCompInfoCheck = sessionStorage.getItem('otherLandCompInfo');
-    console.log(otherLandCompInfoCheck);
-    document.getElementById('otherInformation').textContent = otherLandCompInfoCheck;
     var ownershipTypeCheck = sessionStorage.getItem('ownershipType');
     console.log(ownershipTypeCheck);
     document.getElementById('ownershipType').textContent = ownershipTypeCheck;
@@ -214,7 +201,8 @@
     var startYearRetrieved = sessionStorage.getItem('startYear');
     document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
     // location
-    var locationRetrieved = sessionStorage.getItem('moreInformation');
+    var locationRetrieved = sessionStorage.getItem('location');
+    console.log(locationRetrieved);
     if (locationRetrieved === null || locationRetrieved === '') {
         document.getElementById('location').textContent = 'Location not provided';
     } else {

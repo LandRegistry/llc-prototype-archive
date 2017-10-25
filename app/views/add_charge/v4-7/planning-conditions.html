@@ -51,7 +51,7 @@
                   <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
                   Tree preservation order (TPO)
                   </label>
-                        <label id="planningLabel" class="block-label selection-button-radio" for="planning">
+                        <label id="planningNoLabel" class="block-label selection-button-radio" for="planning">
                   <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
                   I don't know the charge category
                   </label>
@@ -68,79 +68,12 @@
     </div>
 </main>
 <script>
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('planningLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Housing') {
-            document.getElementById('housingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Light Obstruction Notice') {
-            document.getElementById('lonLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
-        }
-
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
-
-    /*document.getElementById('typeOfChargeButton').onclick = function() {
-        var financialLabel = document.getElementById('financialLabel');
-        var planningLabel = document.getElementById('planningLabel');
-        var listedBuildingLabel = document.getElementById('listedBuildingLabel');
-        var landCompensationLabel = document.getElementById('landCompensationLabel');
-        var housingLabel = document.getElementById('housingLabel');
-        var otherLabel = document.getElementById('otherLabel');
-        if (financialLabel.classList.contains('selected')) {
-            var chargeType = 'Financial';
-
-            // financial journey radio button clicked   
-            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
-
-
-        } else if (planningLabel.classList.contains('selected')) {
-            var chargeType = 'Planning';
-
-            // Planning radio button clicked - display   
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var notKnown = document.getElementById('planningNoLabel');
+        if (notKnown.classList.contains('selected')) {
+            sessionStorage.setItem('returnLink', 'planning-conditions');
             document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
-
-        } else if (listedBuildingLabel.classList.contains('selected')) {
-            var chargeType = 'Listed Building';
-
-            // Listed building radio button clicked  
-            // document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
-
-        } else if (landCompensationLabel.classList.contains('selected')) {
-            var chargeType = 'Land Compensation';
-
-            // Land compensation radio button clicked    
-            document.getElementById('typeOfChargeButton').setAttribute('href', 'land-compensation');
-
-        } else if (housingLabel.classList.contains('selected')) {
-            var chargeType = 'Housing';
-
-            // Housing radio button clicked    
-            // document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
-
-        } else if (lonLabel.classList.contains('selected')) {
-            var chargeType = 'Light Obstruction Notice';
-
-        } else if (otherLabel.classList.contains('selected')) {
-            var chargeType = 'Other';
-
-            // Something Else radio button clicked    
-            // document.getElementById('typeOfChargeButton').setAttribute('href', 'something-else');
         }
-
-        sessionStorage.setItem('chargeType', chargeType);
-    }*/
+    }
 </script>
 {% endblock %}

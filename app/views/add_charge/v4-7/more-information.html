@@ -130,7 +130,7 @@
                     </div>
                 </fieldset>
             </form>
-            <a href="does-charge-expire" class="button">Continue</a>
+            <a href="does-charge-expire" id="moreInformationButton" class="button">Continue</a>
             <br><br>
 
 
@@ -149,10 +149,10 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                                                                                                                                                                                                                                                            if (locationIsChanging === 'true') {
-                                                                                                                                                                                                                                                                document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                                                                                                                                                                                                                                                                sessionStorage.setItem('locationUpdated', 'true');
-                                                                                                                                                                                                                                                            }*/
+                                                                                                                                                                                                                                                                                                        if (locationIsChanging === 'true') {
+                                                                                                                                                                                                                                                                                                            document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                                                                                                                                                                                                                            sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                                                                                                                                                                                                                        }*/
 
 
     var addressLineOneToFill = sessionStorage.getItem('location');
@@ -172,8 +172,25 @@
             document.getElementById('newAddress').classList.remove('hiddenList');
             document.getElementById('newAddress').textContent = newAddress + ' Exeter EX4 1AY';
             document.getElementById('address-list').classList.add('hiddenList');
-            sessionStorage.setItem('location', newAddress);
             return false;
+        }
+    }
+
+    document.getElementById('moreInformationButton').onclick = function() {
+        var yesAddress = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var address = document.getElementById('addressSelected').textContent;
+        address = address + ' Exeter EX4 1AY';
+        if (yesAddress.classList.contains('selected')) {
+            sessionStorage.setItem('location', address);
+        } else if (noAddress.classList.contains('selected')) {
+            var locationDescription = document.getElementById('locationDescription').value;
+            var address = document.getElementById('newAddress').textContent;
+            if (locationDescription !== '') {
+                sessionStorage.setItem('location', locationDescription);
+            } else {
+                sessionStorage.setItem('location', address);
+            }
         }
     }
 </script>

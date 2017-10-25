@@ -39,7 +39,7 @@
                   <input id="reApprovalHmo" name="planningLegislation" type="radio" value="Re-approval under HMO">
                   Re-approval under HMO
                   </label>
-                        <label id="planningLabel" class="block-label selection-button-radio" for="planning">
+                        <label id="housingNoLabel" class="block-label selection-button-radio" for="planning">
                   <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
                   I don't know the charge category
                   </label>
@@ -56,32 +56,13 @@
     </div>
 </main>
 <script>
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('planningLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Housing') {
-            document.getElementById('housingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Light Obstruction Notice') {
-            document.getElementById('lonLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
-        }
-
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
-
     document.getElementById('housingButton').onclick = function() {
         sessionStorage.setItem('housing', 'true');
+        var notKnown = document.getElementById('housingNoLabel');
+        if (notKnown.classList.contains('selected')) {
+            sessionStorage.setItem('returnLink', 'housing');
+            document.getElementById('housingButton').setAttribute('href', 'contact-HMLR');
+        }
     }
 </script>
 {% endblock %}
