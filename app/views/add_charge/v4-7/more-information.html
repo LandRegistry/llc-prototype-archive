@@ -14,7 +14,7 @@
         <div class="column-two-thirds">
             <h1 class="heading-large">Location for this charge</h1>
             <p>You are adding a charge in <span class="bold-small" id="addressSelected">11 Okehampton Place </span><span class="bold-small">, Exeter, EX4 1AY</span>.</p>
-            <details>
+            <!-- <details>
 
                 <summary><span class="summary">Not the correct location?</span></summary>
 
@@ -51,8 +51,86 @@
                 </div>
 
             </details>
-            <br>
-            <a href="does-charge-expire" class="button">Continue</a>
+            <div class="form-group">
+                <h2 class="heading-medium">Describe the location (optional)</h2>
+                <span class="form-hint">For example, land to the north of the bypass.</span>
+                <label class="form-label" for="textarea">
+                                
+                    </label>
+
+                <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+            </div> -->
+            <form action="#">
+                <fieldset>
+                    <div class="form-group">
+                        <h2 class="heading-medium">Do you want to add a charge in this address?</h2>
+                        <div class="notice">
+                            <i class="icon icon-important">
+                                  <span class="visually-hidden">Warning</span>
+                                </i>
+                            <strong class="bold-small" style="line-height:2em">
+                                    This is the actual address of the local land charge you are adding
+                                </strong>
+                        </div>
+                        <br>
+
+                        <label id="yesAddressLabel" class="block-label selection-button-radio" for="yesAddress">
+                        <input id="yesAddress" name="address" type="radio" value="yes">
+                                            Yes
+                    </label>
+
+                        <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress" data-target="noAddressEntry">
+                        <input id="noAddress" name="address" type="radio" value="no">No
+                    </label>
+                        <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
+                            <div class="form-group" id="postcodeSearch">
+                                <h2 class="heading-small">Enter a postcode for the address you want to add the charge to</h2>
+                                <p><span class="form-hint">Search for the exact address you want to add the charge to</span></p>
+                                <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                                <a id="findPostcode" class="button" href="#" role="button">Find</a>
+                            </div>
+                            <div class="form-group hiddenList" id="addressList">
+                                <div class="results-block" id="address-list">
+                                    <p>Click on the place you need.</p>
+                                    <ol class="results-list">
+                                        <li><a href="#" class="address-list">2 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">3 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">4 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">6 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">8 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">10 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">12 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">14 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">16 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">18 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">20 Okehampton Place</a></li>
+                                    </ol>
+
+                                    <br>
+
+                                </div>
+                                <p class="hiddenList" id="newAddress"></p>
+                            </div>
+                            <p>Or</p>
+                            <div class="form-group">
+                                <h2 class="heading-medium">If there is no exact address describe the location</h2>
+                                <span class="form-hint">For example, land to the north of the bypass.</span>
+                                <label class="form-label" for="textarea">
+                                        
+                            </label>
+
+                                <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                                <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </fieldset>
+            </form>
+            <a href="does-charge-expire" id="moreInformationButton" class="button">Continue</a>
             <br><br>
 
 
@@ -71,10 +149,10 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                                                                                                if (locationIsChanging === 'true') {
-                                                                                                    document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                                                                                                    sessionStorage.setItem('locationUpdated', 'true');
-                                                                                                }*/
+                                                                                                                                                                                                                                                                                                        if (locationIsChanging === 'true') {
+                                                                                                                                                                                                                                                                                                            document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                                                                                                                                                                                                                            sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                                                                                                                                                                                                                        }*/
 
 
     var addressLineOneToFill = sessionStorage.getItem('location');
@@ -91,9 +169,28 @@
         addressList[i].onclick = function() {
             var newAddress = this.textContent;
             document.getElementById('addressSelected').textContent = newAddress;
+            document.getElementById('newAddress').classList.remove('hiddenList');
+            document.getElementById('newAddress').textContent = newAddress + ' Exeter EX4 1AY';
             document.getElementById('address-list').classList.add('hiddenList');
-            sessionStorage.setItem('location', newAddress);
             return false;
+        }
+    }
+
+    document.getElementById('moreInformationButton').onclick = function() {
+        var yesAddress = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var address = document.getElementById('addressSelected').textContent;
+        address = address + ' Exeter EX4 1AY';
+        if (yesAddress.classList.contains('selected')) {
+            sessionStorage.setItem('location', address);
+        } else if (noAddress.classList.contains('selected')) {
+            var locationDescription = document.getElementById('locationDescription').value;
+            var address = document.getElementById('newAddress').textContent;
+            if (locationDescription !== '') {
+                sessionStorage.setItem('location', locationDescription);
+            } else {
+                sessionStorage.setItem('location', address);
+            }
         }
     }
 </script>

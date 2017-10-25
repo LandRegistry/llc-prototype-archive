@@ -185,7 +185,8 @@
     var startYearRetrieved = sessionStorage.getItem('startYear');
     document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
     // location
-    var locationRetrieved = sessionStorage.getItem('moreInformation');
+    var locationRetrieved = sessionStorage.getItem('location');
+    console.log(locationRetrieved);
     if (locationRetrieved === null || locationRetrieved === '') {
         document.getElementById('location').textContent = 'Location not provided';
     } else {

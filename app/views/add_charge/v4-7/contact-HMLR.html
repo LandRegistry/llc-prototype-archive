@@ -1,45 +1,51 @@
 {% extends "layout.html" %} {% block page_title %} Contact HM Land Registry{% endblock %} {% block content %}
 <main id="content" role="main">
-   <!-- alpha banner -->
-   <div class="phase-banner-beta">
-      <p>
-         <strong class="phase-tag">BETA</strong>
-         <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
-      </p>
-   </div>
-   <!-- main content starts -->
-   <div class="grid-row">
-      <div class="column-two-thirds">
-         <h1 class="heading-large">Contact HM Land Registry</h1>
-         <br>            
-         <div class="notice">
-            <span class="icon icon-important">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Contact HM Land Registry</h1>
+            <br>
+            <div class="notice">
+                <span class="icon icon-important">
             <span class="visually-hidden">Warning</span>
-            </span>
-            <strong class="bold-small">
+                </span>
+                <strong class="bold-small">
             You can't add a charge unless you know the category.
             </strong>
-         </div>
-         <br>
-         <div class="panel panel-border-wide">
-            <p>Email HM Land Registry to get a category for this charge: 
-               <strong class="bold-small">LocalLandCharges@landregistry.gov.uk</strong>.
-            </p>
-         </div>
-         <br>
-         <div id="back ">
-            <p><a href="planning-conditions" class="back-link ">Back</a></p>
-         </div>
-         <br>
-         <details>
-            <summary><span class="summary">Why can't I add this charge without a category?</span></summary>
-            <div class="panel panel-border-narrow">
-               <p>If someone takes a dispute to court that involves this charge, they will need to know what category of charge it is.</p>
-               <p>The category tells us the type of legal right or restriction on land. Without this information, we don't know what the charge does or which law makes it actionable in a court of law.</p>
-               
             </div>
-         </details>
-      </div>
-   </div>
+            <br>
+            <div class="panel panel-border-wide">
+                <p>Email HM Land Registry to get a category for this charge:
+                    <strong class="bold-small">LocalLandCharges@landregistry.gov.uk</strong>.
+                </p>
+            </div>
+            <br>
+            <div id="back ">
+                <p><a href="#" id="backLink" class="back-link ">Back</a></p>
+            </div>
+            <br>
+            <details>
+                <summary><span class="summary">Why can't I add this charge without a category?</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>If someone takes a dispute to court that involves this charge, they will need to know what category of charge it is.</p>
+                    <p>The category tells us the type of legal right or restriction on land. Without this information, we don't know what the charge does or which law makes it actionable in a court of law.</p>
+
+                </div>
+            </details>
+        </div>
+    </div>
 </main>
+<script>
+    document.getElementById('backLink').onclick = function() {
+        var returnLinkRetrieved = sessionStorage.getItem('returnLink');
+        this.setAttribute('href', returnLinkRetrieved);
+    }
+</script>
 {% endblock %}
