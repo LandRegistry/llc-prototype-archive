@@ -64,14 +64,12 @@
             <form action="#">
                 <fieldset>
                     <div class="form-group">
-                        <h2 class="heading-medium">Do you want to add a charge in this address?</h2>
+                        <h2 class="heading-small">Is this the address you were looking for?</h2>
                         <div class="notice">
                             <i class="icon icon-important">
                                   <span class="visually-hidden">Warning</span>
                                 </i>
-                            <strong class="bold-small" style="line-height:2em">
-                                    This is the actual address of the local land charge you are adding
-                                </strong>
+                            <strong class="bold-small">Choose 'no' if this is not an address or you don't have an address for this charge.</strong>
                         </div>
                         <br>
 
@@ -85,8 +83,8 @@
                     </label>
                         <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
                             <div class="form-group" id="postcodeSearch">
-                                <h2 class="heading-small">Enter a postcode for the address you want to add the charge to</h2>
-                                <p><span class="form-hint">Search for the exact address you want to add the charge to</span></p>
+                                <h2 class="heading-small">Enter a new postcode</h2>
+                                <span class="form-hint">Wrong address? Enter a new postcode below to change it.</span>
                                 <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
                                 <a id="findPostcode" class="button" href="#" role="button">Find</a>
                             </div>
@@ -114,8 +112,8 @@
                             </div>
                             <p>Or</p>
                             <div class="form-group">
-                                <h2 class="heading-medium">If there is no exact address describe the location</h2>
-                                <span class="form-hint">For example, land to the north of the bypass.</span>
+                                <h2 class="heading-small">Describe how to find the charge without an address</h2>
+                                <span class="form-hint">No address for this charge? Describe how to find the charge instead. For example, 'land to the north of the bypass'.</span>
                                 <label class="form-label" for="textarea">
                                         
                             </label>
@@ -149,10 +147,10 @@
 </main>
 <script>
     /*var locationIsChanging = sessionStorage.getItem('locationIsChanging');
-                                                                                                                                                                                                                                                                                                        if (locationIsChanging === 'true') {
-                                                                                                                                                                                                                                                                                                            document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
-                                                                                                                                                                                                                                                                                                            sessionStorage.setItem('locationUpdated', 'true');
-                                                                                                                                                                                                                                                                                                        }*/
+                                                                                                                                                                                                                                                                                                                                                            if (locationIsChanging === 'true') {
+                                                                                                                                                                                                                                                                                                                                                                document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary');
+                                                                                                                                                                                                                                                                                                                                                                sessionStorage.setItem('locationUpdated', 'true');
+                                                                                                                                                                                                                                                                                                                                                            }*/
 
 
     var addressLineOneToFill = sessionStorage.getItem('location');
