@@ -19,7 +19,7 @@
                     <fieldset>
                         <legend class="visuallyhidden">Location for this charge</legend>
                         <div class="form-group">
-                            <h2 class="heading-medium">Is there an address for this charge?</h2>
+                            <h2 class="heading-small">Is there an address for this charge?</h2>
 
                             <label id="yesAddressLabel" class="block-label selection-button-radio" for="yesAddress" data-target="addressEntry">
                                 <input id="yesAddress" name="address" type="radio" value="yes" aria-controls="addressEntry">
@@ -28,15 +28,13 @@
                             <div class="js-hidden panel panel-border-narrow" id="addressEntry" aria-hidden="true" style="display: none;">
 
                                 <div class="form-group" id="postcodeSearch">
-                                    <h2 class="heading-medium">Enter a postcode for the address you want to add the charge to</h2>
-                                    <p><span class="form-hint">Search for the exact address you want to add the charge to</span></p>
+                                    <h2 class="heading-small">Enter a postcode</h2>
                                     <div class="notice">
                                         <i class="icon icon-important">
                                                   <span class="visually-hidden">Warning</span>
                                                 </i>
-                                        <strong class="bold-small" style="line-height:2em">
-                                                    This is the actual address of the local land charge you are adding
-                                                </strong>
+                                        <strong class="bold-small">
+                                                    Choose no if this is not the address or you don't have an address for this charge</strong>
                                     </div>
                                     <br>
                                     <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
@@ -78,8 +76,8 @@
                             </label>
                             <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
                                 <div class="form-group">
-                                    <h2 class="heading-medium">If there is no exact address describe the location</h2>
-                                    <span class="form-hint">For example, land to the north of the bypass.</span>
+                                    <h2 class="heading-small">Describe how to find the charge without an address</h2>
+                                    <span class="form-hint">No address for this charge? Describe how to find the charge instead. For example, 'land to the north of the bypass'.</span>
                                     <label class="form-label" for="textarea">
                                                 
                                     </label>
