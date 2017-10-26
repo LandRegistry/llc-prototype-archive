@@ -1,0 +1,105 @@
+{% extends "layout.html" %} {% block page_title %} What is the amount of compensation? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p id="back">
+                <a href="lc-section52-8" class="back-link">Back</a>
+            </p>
+            <h1 class="heading-large">
+                Compensation
+            </h1>
+
+            <form action="../what-does-charge-do" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">What is the amount of compensation? </legend>
+
+                    <div class="form-group">
+                        <label class="form-label-bold" for="compensation-amount">
+                          What is the amount of compensation?
+                          <span class="form-hint">For example, 100,000</span>
+
+                        </label>
+                        <span class="bold-small">£ </span>
+                        <input class="form-control form-control-1-4" type="text" name="amount" id="compensation-amount">
+
+                    </div>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                    <legend class="form-label-bold">Is this the:</legend>
+
+                    <div class="form-group">
+
+                        <label id="totalAmountLabel" class="block-label selection-button-radio" for="total-amount">
+                          <input id="total-amount" name="extent" type="radio" value="no"> agreed amount
+                        </label>
+
+                        <label id="estimatedAmountLabel" class="block-label selection-button-radio" for="estimated">
+                          <input id="estimated" name="extent" type="radio" value="no"> estimated amount
+                        </label>
+
+                        <!-- <label id="advance-label" class="block-label selection-button-radio" for="advance">
+                        <input id="advance" name="extent" type="radio" value="no"> Advance payment (part of the total)
+                        </label> -->
+
+                    </div>
+                </fieldset>
+            </form>
+            <p>
+                <a class="button" id="amountLandCompensationBtn" role="button" href="../land-compensation/land-ownership">Continue</a>
+            </p>
+
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    var amountCompCheck = sessionStorage.getItem('landCompAmountKnown');
+    console.log(amountCompCheck);
+    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
+    console.log(chargeTypeIsChanging);
+    if (chargeTypeIsChanging === 'true') {
+        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
+        if (chargeTypeToChange === 'Planning') {
+            document.getElementById('section84Label').classList.add('selected');
+        } else if (chargeTypeToChange === 'Financial') {
+            document.getElementById('financialLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Listed Building') {
+            document.getElementById('listedBuildingLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Land Compensation') {
+            document.getElementById('landCompensationLabel').classList.add('selected');
+        } else if (chargeTypeToChange === 'Other') {
+            document.getElementById('otherLabel').classList.add('selected');
+        }
+
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('chargeTypeUpdated', 'true');
+    }
+
+    document.getElementById('amountLandCompensationBtn').onclick = function() {
+        sessionStorage.setItem('landCompAmountGiven', 'true');
+        var landCompAmount = document.getElementById('compensation-amount').value;
+        sessionStorage.setItem('landCompAmount', landCompAmount);
+        var totalAmountLabel = document.getElementById('totalAmountLabel');
+        var estimatedAmountLabel = document.getElementById('estimatedAmountLabel');
+        if (totalAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Agreed amount');
+        } else if (estimatedAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Estimated amount');
+        }
+        var otherLandCompInfo = document.getElementById('anything').value;
+        sessionStorage.setItem('otherLandCompInfo', otherLandCompInfo);
+    }
+</script>
+
+{% endblock %}

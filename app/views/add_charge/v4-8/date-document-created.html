@@ -1,0 +1,133 @@
+{% extends "layout.html" %} {% block page_title %} When was the charge created? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div id="back">
+                <a href="#" class="back-link">Back</a>
+            </div>
+            <h1 class="heading-large">Creation date</h1>
+
+            <form action="05_postcode" method="GET">
+                <h2 class="heading-medium">What is the date on your source document?</h2>
+                <fieldset>
+                    <div class="form-group">
+                        <!--<p>This is the date when:</p>
+                        <ul class="list list-bullet">
+                            <li>the decision was made to create the charge</li>
+                            <li>the legal document was created</li>
+                            <li>the charge is protected by law</li>
+                        </ul> -->
+                        <legend class="form-label-bold visually-hidden">Start date </legend>
+                        <span class="form-hint">For example, 31 03 2017</span>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="startDay">Day</label>
+                                <input class="form-control" id="startDay" name="startDay" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="startMonth">Month</label>
+                                <input class="form-control" id="startMonth" name="startMonth">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="startYear">Year</label>
+                                <input class="form-control" id="startYear" name="startYear" type="number" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <p>
+                    <a id="dateCreatedButton" class="button" href="search-property" role="button">Continue</a>
+                </p>
+
+            </form>
+        </div>
+
+        <!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+    </div>
+
+</main>
+<script>
+    var docDateIsChanging = sessionStorage.getItem('docDateIsChanging');
+    console.log(docDateIsChanging);
+    if (docDateIsChanging === 'true') {
+        var startDayToChange = sessionStorage.getItem('startDayToChange');
+        var startMonthToChange = sessionStorage.getItem('startMonthToChange');
+        var startYearToChange = sessionStorage.getItem('startYearToChange');
+        document.getElementById('startDay').value = startDayToChange;
+        document.getElementById('startMonth').value = startMonthToChange;
+        document.getElementById('startYear').value = startYearToChange;
+        document.getElementById('dateCreatedButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('dateDocUpdated', 'true');
+    }
+
+
+    document.getElementById('dateCreatedButton').onclick = function() {
+        var startDay = document.getElementById('startDay').value;
+        var startMonth = document.getElementById('startMonth').value;
+        switch (startMonth) {
+            case '1' || '01':
+                startMonth = 'January';
+                break;
+            case '2' || '02':
+                startMonth = 'February';
+                break;
+            case '3' || '03':
+                startMonth = 'March';
+                break;
+            case '4' || '04':
+                startMonth = 'April';
+                break;
+            case '5' || '05':
+                startMonth = 'May';
+                break;
+            case '6' || '06':
+                startMonth = 'June';
+                break;
+            case '7' || '07':
+                startMonth = 'July';
+                break;
+            case '8' || '08':
+                startMonth = 'August';
+                break;
+            case '9' || '09':
+                startMonth = 'September';
+                break;
+            case '10':
+                startMonth = 'October';
+                break;
+            case '11':
+                startMonth = 'November';
+                break;
+            case '12':
+                startMonth = 'December';
+                break;
+            default:
+                startMonth;
+
+        }
+        var startYear = document.getElementById('startYear').value;
+        sessionStorage.setItem('startDay', startDay);
+        sessionStorage.setItem('startMonth', startMonth);
+        sessionStorage.setItem('startYear', startYear);
+    }
+</script>
+{% endblock %}

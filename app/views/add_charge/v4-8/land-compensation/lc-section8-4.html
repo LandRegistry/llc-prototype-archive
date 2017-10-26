@@ -1,0 +1,70 @@
+{% extends "layout.html" %} {% block page_title %} Do you have an address for the land sold to the authority? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                <!-- <span class="heading-secondary">Section 8(4)</span> -->
+                Land sold to the authority
+            </h1>
+
+            <form action="document-link" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Do you have an address for the land sold to the authority?</legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="retainedLand">
+                  <span class="form-label-bold">Describe the land sold </span> 
+
+                  <span class="form-hint">For example, land on the north side of Smith Street.
+
+                  </span>
+                </label>
+                        <textarea id="landDescription" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+                        <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label-bold" for="retainedLand">
+                  <span class="form-label-bold">What work will the authority do on this land? </span>
+
+                  <span class="form-hint">For example, for the construction of a bypass.
+                  </span>
+                </label>
+                        <textarea id="workToBeDone" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+                        <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                    </div>
+
+                </fieldset>
+
+            </form>
+            <p>
+                <a class="button" id="landCompensationBtn" role="button" href="../what-does-charge-do">Continue</a>
+
+            </p>
+
+            <p id="back">
+                <a href="/add_charge/v4-4/land-compensation" class="back-link">Back</a>
+            </p>
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.getElementById('landCompensationBtn').onclick = function() {
+        var descriptionOfLandSold = document.getElementById('landDescription').value;
+        var workToBeDone = document.getElementById('workToBeDone').value;
+        sessionStorage.setItem('descriptionOfLand', descriptionOfLandSold);
+        sessionStorage.setItem('workToBeDone', workToBeDone);
+    }
+</script>
+
+{% endblock %}

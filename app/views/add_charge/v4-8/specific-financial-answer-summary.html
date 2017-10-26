@@ -1,0 +1,111 @@
+{% extends "layout.html" %} 
+{% block page_title %} 
+Check your answers before sending your application 
+{% endblock %} 
+{% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-full">
+            <h1 class="heading-large">Check your answers </h1>
+
+            <div class="panel panel-border-wide">
+             <p class="form-label-bold">You are about to cancel the general financial charge to create a specific financial charge, please check your answers.</p> 
+            </div>
+
+            <table class="check-your-answers">
+                <thead>
+                    <tr>
+                        <th><span class="visuallyhidden">Qustion</span></th>
+                        <th><span class="visuallyhidden">Answer</span></th>
+                        <th><span class="visuallyhidden">Change link</span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr id="chargeTypeRow">
+                        <td>Type of charge</td>
+                        <td id="chargeType">Financial specific charge</td>
+                        <td class="change-answer">
+                            <a id="changeChargeType" class="edit" href="#">
+								Change <span class="visuallyhidden">type of charge</span>
+							</a>
+                        </td>
+                    </tr>
+                    <tr id="docDateRow">
+                        <td>Amount that will be paid
+                        </td>
+                        <td id="validFrom"><span class="font-bold">£</span> 23,505.00</td>
+                        <td class="change-answer">
+                            <a id="changeInterest" class="edit" href="#">
+								Change <span class="visuallyhidden">Amount paid</span>
+							</a>
+                        </td>
+                    </tr>
+                    <tr id="interestRow">
+                       <td>Interest paid</td>
+                        <td id="validFrom">4.5%</td>
+                        <td class="change-answer">
+                            <a id="changeDocDate" class="edit" href="#">
+                                Change <span class="visuallyhidden">Amount that will be paid</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr id="locationRow">
+                        <td>Location of charge </td>
+                        <td id="location">
+                            22 Okehampton Place,
+                            Exeter, EX4 1AY
+
+                        </td>
+                        <td class="change-answer">
+                            <a id="changeLocation" class="edit" href="#">
+								Change <span class="visuallyhidden">Location of charge</span>
+							</a>
+                        </td>
+                    </tr>
+                    <tr id="extentRow">
+                        <td>Extent </td>
+                        <td>
+
+                            <img src="{{ asset_path }}images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
+                        </td>
+                        <td class="change-answer">
+                            <a id="changeExtent" class="edit" href="#">
+								Change <span class="visuallyhidden">extent</span>
+							</a>
+                        </td>
+                    </tr>
+
+                    <tr id="referenceRow">
+                        <td>Reference number</td>
+                        <td id="reference">10/2867/11   </td>
+
+                        <td class="change-answer">
+                            <a id="changeReference" class="edit" href="originating-authority-reference">
+								Change <span class="visuallyhidden">reference number</span>
+							</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <h2 class="heading-medium">Now register your local land charge </h2>
+            <p>By submitting this charge notification you are confirming that to the best of your knowledge, the details of property and extent are correct.</p>
+
+<!-- there is another version of success message name "charge-successful" -->
+            <div class="form-group">
+                <a href="charge-successful" class="button">Accept and register charge</a>
+            </div>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

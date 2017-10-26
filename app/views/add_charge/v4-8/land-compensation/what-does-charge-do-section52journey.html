@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block page_title %} What does the charge do? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Do you have any other information about this charge?</h1>
+            <form action="does-charge-expire" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Do you have any other information about this charge?</legend>
+
+                    <label class="form-label" for="textarea">
+						<span class="form-hint">For example:
+                            <ul class="list list-bullet">
+                                <li>gives permission for an extension to be built at the side of the property</li>
+                                <li>stops an oak tree in the corner of the garden from being cut down</li>
+                                <li>asks landowner to pay local authority for work done on the landowner's property</li>
+                            </ul>
+                        </span>
+					</label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="whatDoesChargeDo" rows="5"></textarea>
+                    <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                </fieldset>
+                <p>
+                    <a id="whatDoesChargeDoButton" class="button" href="date-document-created-Section52-Journey" role="button">Continue</a>
+                </p>
+            </form>
+
+
+            <div id="back">
+                <a href="draw-an-extent" class="back-link">Back</a>
+            </div>
+
+        </div>
+
+
+        <!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+    </div>
+
+</main>
+
+<script>
+    var descriptionIsChanging = sessionStorage.getItem('descriptionIsChanging');
+    if (descriptionIsChanging === 'true') {
+        var descriptionToChange = sessionStorage.getItem('descriptionToChange');
+        document.getElementById('whatDoesChargeDo').textContent = descriptionToChange;
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('descriptionUpdated', 'true');
+    };
+
+    document.getElementById('whatDoesChargeDoButton').onclick = function() {
+        var whatDoesChargeDo = document.getElementById('whatDoesChargeDo').value;
+        sessionStorage.setItem('whatDoesChargeDo', whatDoesChargeDo);
+    }
+</script>
+{% endblock %}

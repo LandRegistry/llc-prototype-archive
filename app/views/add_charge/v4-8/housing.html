@@ -1,0 +1,70 @@
+{% extends "layout.html" %} {% block page_title %} Housing {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p id="back">
+                <a href="#" class="back-link">Back</a>
+            </p>
+            <h1 class="heading-large">Charge type</h1>
+            <form action="#">
+                <h2 class="heading-medium">Choose a housing charge</h2>
+                <fieldset>
+                    <legend class="visually-hidden">Housing</legend>
+                    <div class="form-group">
+                        <label id="financialLabel" class="block-label selection-button-radio" for="financial">
+                  <input id="financial" name="planningLegislation" type="radio" value="Approval under house in multiple occupation (HMO)">
+                  Approval under house in multiple occupation (HMO)
+                  </label>
+                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Grant">
+                  Grant
+                  </label>
+                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Interim certificate under HMO">
+                  Interim certificate under HMO
+                  </label>
+                        <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Notice of works or repairs">
+                  Notice of works or repairs
+                  </label>
+                        <label id="reApprovalLabel" class="block-label selection-button-radio" for="reApproval">
+                  <input id="reApproval" name="planningLegislation" type="radio" value="Re-approval of grant">
+                  Re-approval of grant
+                  </label>
+                        <label id="reApprovalHmoLabel" class="block-label selection-button-radio" for="reApprovalHmo">
+                  <input id="reApprovalHmo" name="planningLegislation" type="radio" value="Re-approval under HMO">
+                  Re-approval under HMO
+                  </label>
+                        <label id="housingNoLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
+                  I don't know the charge type
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="housingButton" role="button" href="what-does-charge-do">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('housingButton').onclick = function() {
+        sessionStorage.setItem('housing', 'true');
+        var notKnown = document.getElementById('housingNoLabel');
+        if (notKnown.classList.contains('selected')) {
+            sessionStorage.setItem('returnLink', 'housing');
+            document.getElementById('housingButton').setAttribute('href', 'contact-HMLR');
+        }
+    }
+</script>
+{% endblock %}
