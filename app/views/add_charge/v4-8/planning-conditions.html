@@ -8,47 +8,46 @@
         </p>
     </div>
     <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Planning</h1>
     <div class="grid-row">
 
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="#" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Charge types</h1>
+
             <form action="#">
-                <h2 class="heading-medium">Choose a planning charge</h2>
+                <h2 class="heading-medium">Choose a category</h2>
                 <fieldset>
-                    <legend class="visually-hidden">Planning</legend>
+                    <legend class="visually-hidden">Choose a category</legend>
                     <div class="form-group">
                         <label id="changeDevelopmentLabel" class="block-label selection-button-radio" for="changeDevelopment">
                   <input id="changeDevelopment" name="planningLegislation" type="radio" value="Article 4 direction">
                   Change a development
                   </label>
-                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                        <label id="breachOfConditionsLabel" class="block-label selection-button-radio" for="listedBuilding">
                   <input id="listedBuilding" name="planningLegislation" type="radio" value="Breach of conditions">
                   Breach of conditions
                   </label>
-                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                        <label id="conservationAreaLabel" class="block-label selection-button-radio" for="landCompensation">
                   <input id="landCompensation" name="planningLegislation" type="radio" value="Conservation area">
                   Conservation area
                   </label>
-                        <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                        <label id="conditionalPlanningConsentLabel" class="block-label selection-button-radio" for="conditionPlanning">
                   <input id="conditionPlanning" name="planningLegislation" type="radio" value="Conditional planning consent">
                   Conditional planning consent
                   </label>
-                        <label id="enforcementLabel" class="block-label selection-button-radio" for="enforcementNotice">
+                        <label id="enforcementNoticeLabel" class="block-label selection-button-radio" for="enforcementNotice">
                   <input id="enforcementNotice" name="planningLegislation" type="radio" value="Enforcement notice">
                   Enforcement notice
                   </label>
-                        <label id="noPermitLabel" class="block-label selection-button-radio" for="noPermit">
+                        <label id="noPermittedDevelopmentLabel" class="block-label selection-button-radio" for="noPermit">
                   <input id="noPermit" name="planningLegislation" type="radio" value="No permitted development">
                   No permitted development
                   </label>
-                        <label id="planningNoticeLabel" class="block-label selection-button-radio" for="planningNotice">
+                        <label id="planningNoticesLabel" class="block-label selection-button-radio" for="planningNotice">
                   <input id="planningNotice" name="planningLegislation" type="radio" value="Planning notices">
                   Planning notices
                   </label>
-                        <label id="planningAgreeLabel" class="block-label selection-button-radio" for="planningAgree">
+                        <label id="planningAgreementLabel" class="block-label selection-button-radio" for="planningAgree">
                   <input id="planningAgree" name="planningLegislation" type="radio" value="Planning agreement">
                   Planning agreement
                   </label>
@@ -56,14 +55,14 @@
                   <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
                   Tree preservation order (TPO)
                   </label>
-                        <label id="planningNoLabel" class="block-label selection-button-radio" for="planning">
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="planning">
                   <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
-                  I don't know the charge type
+                  I don't know the charge category
                   </label>
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
+                    <a class="button" id="subcategoryButton" role="button" href="date-document-created">Continue</a>
                 </p>
 
             </form>
@@ -71,11 +70,38 @@
     </div>
 </main>
 <script>
-    document.getElementById('typeOfChargeButton').onclick = function() {
-        var notKnown = document.getElementById('planningNoLabel');
-        if (notKnown.classList.contains('selected')) {
-            sessionStorage.setItem('returnLink', 'planning-conditions');
-            document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
+    document.getElementById('subcategoryButton').onclick = function() {
+        var changeDevelopment = document.getElementById('changeDevelopmentLabel');
+        var breachOfConditions = document.getElementById('breachOfConditionsLabel');
+        var conservationArea = document.getElementById('conservationAreaLabel');
+        var conditionalPlanningConsent = document.getElementById('conditionalPlanningConsentLabel');
+        var enforcementNotice = document.getElementById('enforcementNoticeLabel');
+        var noPermittedDevelopment = document.getElementById('noPermittedDevelopmentLabel');
+        var planningNotices = document.getElementById('planningNoticesLabel');
+        var planningAgreement = document.getElementById('planningAgreementLabel');
+        var tpo = document.getElementById('tpoLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (changeDevelopment.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Change a development');
+        } else if (breachOfConditions.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Breach of conditions');
+        } else if (conservationArea.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conservation area');
+        } else if (conditionalPlanningConsent.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
+        } else if (enforcementNotice.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
+        } else if (noPermittedDevelopment.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'No permitted development');
+        } else if (planningNotices.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
+        } else if (planningAgreement.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Planning Agreement');
+        } else if (tpo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
         }
     }
 </script>

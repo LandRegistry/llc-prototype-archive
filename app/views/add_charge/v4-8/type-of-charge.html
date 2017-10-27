@@ -8,17 +8,20 @@
         </p>
     </div>
     <!-- main content starts -->
+    <a href="start-llc" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Charge category</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="start-llc" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Charge category</h1>
+
+
 
             <form action="#">
-                <h2 class="heading-medium">What category of charge is this?</h2>
+
                 <fieldset>
-                    <legend class="visually-hidden">What type of charge is this?</legend>
+
+                    <legend>
+                        <h2 class="heading-medium">What category of charge is this?</h2>
+                    </legend>
                     <div class="form-group">
                         <label id="planningLabel" class="block-label selection-button-radio" for="planning">
                   <input id="planning" name="planningLegislation" type="radio" value="Planning">
@@ -40,94 +43,53 @@
                      <input id="housing" name="planningLegislation" type="radio" value="Housing">
                      Housing 
                      </label>
-                        <label id="lonLabel" class="block-label selection-button-radio" for="lon">
-                     <input id="lon" name="planningLegislation" type="radio" value="Light Obstruction Notice (LON)">
-                     Light obstruction notice (LON) 
-                     </label>
                         <label id="otherLabel" class="block-label selection-button-radio" for="other" data-target="part-extent">
                      <input id="other" name="planningLegislation" type="radio" value="Other" aria-controls="part-extent">
                      Other
                      </label>
                     </div>
                 </fieldset>
-                <!--           <div class="js-hidden panel panel-border-narrow" id="part-extent" aria-hidden="true" style="display: none;">
-               <div class="form-group">
-                   <label class="form-label" for="select-box">Select legislation from the list</label>
-                   <select class="form-control" id="select-box" name="select-box">
-               <option>Highways Act 1980 (various sections)</option>
-               <option>Localism Act 2011 (Part 5, Chapter 3): The Assets of Community Value (England) 2012 SI 2012 No. 242</option>
-               <option>New Towns Act 1981: Order by Secretary of State - s.10 or s.11 (CPO by a Development Corporation)</option>
-               <option>Part 8 Regulation 66 Community Infrastructure Levy Regulations 2010</option>
-               <option>Part XI Highways Act 1980 (under code of 1875)</option>
-               <option>s.106 Town and Country Planning Act 1990</option>
-               <option>s.107 Building Act 1984</option>
-               <option>s.107(9) Housing Act 1996</option>
-               <option>s.11(1) Opencast Coal Act 1958</option>
-               </select>
-               </div>
-               
-               <p class="heading-extra-small">OR</p>
-               
-               
-               <div class="form-group">
-                   <fieldset class="inline">
-                       <legend class="visuallyhidden">Planning description</legend>
-                       <label class="form-label" for="planDesc">
-               
-                       </label>
-                       <textarea class="form-control form-control-3-4" name="planDesc" id="planDesc" rows="5"></textarea>
-                   </fieldset>
-               </div>
-               </div> -->
                 <p>
-                    <a class="button" id="typeOfChargeButton" role="button" href="what-does-charge-do">Continue</a>
+                    <a class="button" id="typeOfChargeButton" role="button" href="#">Continue</a>
                 </p>
 
             </form>
         </div>
-        <!--<div class="column-third related-container">
-         <aside class="govuk-related-items" role="complementary">
-             <hr>
-             <h2 class="heading-medium">
-                 Can't find the law you need?
-             </h2>
-         
-             <ul role="navigation" class="list">
-                 <li>
-                     <a href="#">Search all local land charge laws</a>
-                 </li>
-         
-             </ul>
-         
-         </aside>
-         
-         </div> -->
+
     </div>
 </main>
 <script>
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('planningLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Housing') {
-            document.getElementById('housingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Light Obstruction Notice') {
-            document.getElementById('lonLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var planningCategory = document.getElementById('planningLabel');
+        var financialCategory = document.getElementById('financialLabel');
+        var listedBuildingCategory = document.getElementById('listedBuildingLabel');
+        var landCompensationCategory = document.getElementById('landCompensationLabel');
+        var housingCategory = document.getElementById('housingLabel');
+        var otherCategory = document.getElementById('otherLabel');
+        var categoryButton = this;
+        // planning clicked
+        if (planningCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Planning');
+            categoryButton.setAttribute('href', 'planning-conditions');
+        } else if (financialCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Financial');
+            categoryButton.setAttribute('href', 'financial-charge/secured-charge-amount');
+        } else if (listedBuildingCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Listed building');
+            categoryButton.setAttribute('href', 'listed-building');
+        } else if (landCompensationCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Land compensation');
+            categoryButton.setAttribute('href', 'land-compensation');
+        } else if (housingCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Housing');
+            categoryButton.setAttribute('href', 'housing');
+        } else if (otherCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Other');
+            categoryButton.setAttribute('href', 'more-charges');
         }
-
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
     }
+</script>
+<!--<script>
 
     document.getElementById('typeOfChargeButton').onclick = function() {
         var financialLabel = document.getElementById('financialLabel');
@@ -136,13 +98,10 @@
         var landCompensationLabel = document.getElementById('landCompensationLabel');
         var housingLabel = document.getElementById('housingLabel');
         var otherLabel = document.getElementById('otherLabel');
+        // financial journey radio button clicked 
         if (financialLabel.classList.contains('selected')) {
-            var chargeType = 'Financial';
-
-            // financial journey radio button clicked   
+            var chargeType = 'Financial';  
             document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
-
-
         } else if (planningLabel.classList.contains('selected')) {
             var chargeType = 'Planning';
 
@@ -180,5 +139,5 @@
 
         sessionStorage.setItem('chargeType', chargeType);
     }
-</script>
+</script> -->
 {% endblock %}

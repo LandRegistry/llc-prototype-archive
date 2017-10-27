@@ -9,13 +9,13 @@
         </p>
     </div>
     <!-- main content starts -->
-
+    <a href="secured-charge-amount" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Amount and interest</h1>
     <div class="grid-row">
+
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="secured-charge-amount" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Amount and interest</h1>
+
+
 
 
             <!-- <div class="panel panel-border-narrow">
@@ -28,13 +28,16 @@
 
                 <fieldset>
 
-                    <legend class="visually-hidden">Amount agreed for this charge
-                    </legend>
+
 
                     <div class="form-group">
+                        <legend>
+                            <h2 class="heading-medium">Amount that will be secured</h2>
+                        </legend>
+                        <span class="form-hint">For example, 100.50</span>
                         <label class="form-label" for="textarea">
-                            Amount that will be secured 
-                            <span class="form-hint">For example, 100.50</span>
+                             
+                            
                         </label>
                         <span class="bold-small">£ </span>
                         <input class="form-control form-control-1-4" type="text" name="amount" id="amount">
@@ -43,7 +46,9 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend class="form-label">Will interest be paid on the amount?</legend>
+                    <legend>
+                        <h2 class="heading-medium">Will interest be paid on the amount?</h2>
+                    </legend>
 
                     <div class="form-group">
                         <label id="yesInterestLabel" class="block-label selection-button-radio form-label" for="yesInterest" data-target="interestAmount">
@@ -57,7 +62,7 @@
 
                                 <div class="form-group">
 
-                                    <label class="form-label" for="interestRate ">
+                                    <label class="form-label-bold" for="interestRate ">
                                         Rate of interest
 
                                         <span class="form-hint">For example, 5, 5.1 or 5.11</span>
@@ -79,7 +84,7 @@
             </form>
 
             <p>
-                <a class="button" id="amountSecuredBtn" role="button" href="../what-does-charge-do">Continue</a>
+                <a class="button" id="amountSecuredBtn" role="button" href="../date-document-created">Continue</a>
             </p>
 
 
@@ -99,7 +104,6 @@
         } else if (noInterest.classList.contains('selected')) {
             sessionStorage.setItem('interestRate', 'Interest will not be paid on the amount secured');
         }
-        sessionStorage.setItem('amountSecured', 'true');
     }
 </script>
 

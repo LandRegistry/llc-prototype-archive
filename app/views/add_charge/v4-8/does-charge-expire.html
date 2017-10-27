@@ -9,17 +9,16 @@
         </p>
     </div>
     <!-- main content starts -->
-
+    <a href="more-information" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Charge expiry date</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <div id="back">
-                <a href="what-does-charge-do" class="back-link">Back</a>
-            </div>
-            <h1 class="heading-large">Charge expiry date</h1>
-            <form action="05_postcode" method="GET">
-                <h2 class="heading-medium">Does the charge expire?</h2>
+
+            <form action="#">
                 <fieldset>
-                    <legend class="visually-hidden form-label">Does the charge expire?</legend>
+                    <legend>
+                        <h2 class="heading-medium">Does the charge expire?</h2>
+                    </legend>
 
                     <div class="form-group">
 
@@ -31,7 +30,7 @@
 
                             <fieldset>
                                 <legend class="form-label-bold"></legend>
-                                <span class="form-hint">For example, 31 03 2017</span>
+                                <span class="form-hint">For example, 31 3 2017</span>
                                 <div class="form-date">
                                     <div class="form-group form-group-day">
                                         <label class="form-label" for="doc_day2">Day</label>
@@ -107,7 +106,7 @@
         var noExpiry = document.getElementById('noExpiryLabel');
         var yesExpiry = document.getElementById('yesExpiryLabel');
         if (noExpiry.classList.contains('selected')) {
-            sessionStorage.setItem('chargeExpires', 'false');
+            sessionStorage.setItem('chargeExpires', 'Charge does not expire');
         } else if (yesExpiry.classList.contains('selected')) {
             var docDay2 = document.getElementById('doc_day2').value;
             var docMonth2 = document.getElementById('doc_month2').value;
@@ -158,6 +157,10 @@
             sessionStorage.setItem('docMonth2', docMonth2);
             sessionStorage.setItem('docYear2', docYear2);
         }
+        var testdocDay2 = sessionStorage.getItem('docDay2');
+        var testdocMonth2 = sessionStorage.getItem('docMonth2');
+        var testdocYear2 = sessionStorage.getItem('docYear2');
+        var testExpires = sessionStorage.getItem('chargeExpires');
     }
 </script>
 {% endblock %}

@@ -2,28 +2,30 @@
 
 <main id="content" role="main">
     <!-- alpha banner -->
-    <div class="phase-banner">
-        <p><strong class="phase-tag">BETA</strong></p>
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
     </div>
     <!-- main content starts -->
-
+    <a href="../land-compensation" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">
+        Compensation
+    </h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="lc-section52-8" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">
-                Compensation
-            </h1>
+
 
             <form action="../what-does-charge-do" method="GET">
                 <fieldset>
-                    <legend class="visually-hidden form-label">What is the amount of compensation? </legend>
-
+                    <legend>
+                        <h2 class="heading-medium">What is the amount of compensation?</h2>
+                    </legend>
+                    <span class="form-hint">For example, 100,000</span>
                     <div class="form-group">
                         <label class="form-label-bold" for="compensation-amount">
-                          What is the amount of compensation?
-                          <span class="form-hint">For example, 100,000</span>
+                          
 
                         </label>
                         <span class="bold-small">£ </span>
@@ -31,10 +33,11 @@
 
                     </div>
                 </fieldset>
-                <br>
 
                 <fieldset>
-                    <legend class="form-label-bold">Is this the:</legend>
+                    <legend>
+                        <h2 class="heading-medium">Is this the:</h2>
+                    </legend>
 
                     <div class="form-group">
 
@@ -64,28 +67,6 @@
 </main>
 
 <script>
-    var amountCompCheck = sessionStorage.getItem('landCompAmountKnown');
-    console.log(amountCompCheck);
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('section84Label').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
-        }
-
-        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
-
     document.getElementById('amountLandCompensationBtn').onclick = function() {
         sessionStorage.setItem('landCompAmountGiven', 'true');
         var landCompAmount = document.getElementById('compensation-amount').value;

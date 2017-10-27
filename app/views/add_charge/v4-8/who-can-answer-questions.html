@@ -9,16 +9,16 @@
         </p>
     </div>
     <!-- main content starts -->
-
+    <a href="does-charge-expire" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Source information</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <div id="back">
-                <a href="what-does-charge-do" class="back-link">Back</a>
-            </div>
-            <h1 class="heading-large">Source information</h1>
-            <h2 class="heading-medium">Where can you find the legal documents that created this charge?</h2>
+
+
             <fieldset>
-                <legend class="visually-hidden">Where can you find the legal documents that created this charge?</legend>
+                <legend>
+                    <h2 class="heading-medium">Where can you find the legal documents that created this charge?</h2>
+                </legend>
 
                 <!-- <div class="form-group">
                     <label class="form-label" for="department">Department name</label>
@@ -36,16 +36,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label bold-medium" for="chargeReference"><span class="bold-medium">Charge reference number</span> (optional)
+                    <label class="form-label" for="chargeReference"><span class="bold-medium">Charge reference number</span> (optional)
                     <span class="form-hint"> This is the reference used by your department when they want to find this charge.</span>
                     </label>
-                    <input class="form-control" id="chargeReference" type="text" name="chargeReference">
+                    <input class="form-control" id="authorityReference" type="text" name="chargeReference">
                 </div>
 
             </fieldset>
 
             <div class="form-group">
-                <a id="contactButton" class="button" href="charge-summary" role="button">Continue</a>
+                <a id="sourceButton" class="button" href="what-does-charge-do-new" role="button">Continue</a>
             </div>
 
             <!-- <div id="back">
@@ -57,6 +57,22 @@
 
 </main>
 <script>
+    document.getElementById('sourceButton').onclick = function() {
+        var departmentLinks = document.getElementById('department').value;
+        var authorityReference = document.getElementById('authorityReference').value;
+        if (departmentLinks !== '') {
+            sessionStorage.setItem('departmentLinks', departmentLinks);
+        } else {
+            sessionStorage.setItem('departmentLinks', 'Not provided');
+        }
+        if (authorityReference !== '') {
+            sessionStorage.setItem('authorityReference', authorityReference);
+        } else {
+            sessionStorage.setItem('authorityReference', 'Not provided');
+        }
+    }
+</script>
+<!--<script>
     var amountKnownCheck = sessionStorage.getItem('amountKnown');
     var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
     var amoundLandCompCheck = sessionStorage.getItem('landCompAmountKnown');
@@ -93,5 +109,5 @@
             sessionStorage.setItem('referenceNumber', reference);
         }
     }
-</script>
+</script> -->
 {% endblock %}

@@ -8,49 +8,50 @@
         </p>
     </div>
     <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Other charges</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="#" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Charge type</h1>
+
             <form action="#">
-                <h2 class="heading-medium">Choose another charge</h2>
+
                 <fieldset>
-                    <legend class="visually-hidden">More charge categories</legend>
+                    <legend>
+                        <h2 class="heading-medium">Choose a category</h2>
+                    </legend>
                     <div class="form-group">
-                        <label id="financialLabel" class="block-label selection-button-radio" for="financial">
-                  <input id="financial" name="planningLegislation" type="radio" value="Ancient monuments">
+                        <label id="ancientMonumentsLabel" class="block-label selection-button-radio" for="ancientMonuments">
+                  <input id="ancientMonuments" name="other" type="radio" value="Ancient monuments">
                   Ancient monuments
                   </label>
-                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
-                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Assets of community value">
+                        <label id="assetsLabel" class="block-label selection-button-radio" for="assets">
+                  <input id="assets" name="other" type="radio" value="Assets of community value">
                   Assets of community value
                   </label>
-                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
-                  <input id="landCompensation" name="planningLegislation" type="radio" value="Compulsory purchase order">
+                        <label id="cpoLabel" class="block-label selection-button-radio" for="cpo">
+                  <input id="cpo" name="other" type="radio" value="Compulsory purchase order">
                   Compulsory purchase order
                   </label>
-                        <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
-                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Section 278 agreement">
+                        <label id="improveHighwayLabel" class="block-label selection-button-radio" for="improveHighway">
+                  <input id="improveHighway" name="other" type="radio" value="Section 278 agreement">
                   Improve a highway
                   </label>
-                        <label id="enforcementLabel" class="block-label selection-button-radio" for="enforcementNotice">
-                  <input id="enforcementNotice" name="planningLegislation" type="radio" value="Smoke control order">
+                        <label id="scoLabel" class="block-label selection-button-radio" for="sco">
+                  <input id="sco" name="other" type="radio" value="Smoke control order">
                   Smoke control order
                   </label>
-                        <label id="noPermitLabel" class="block-label selection-button-radio" for="noPermit">
-                  <input id="noPermit" name="planningLegislation" type="radio" value="Site of Special Scientific Interest (SSSI)">
+                        <label id="sssiLabel" class="block-label selection-button-radio" for="sssi">
+                  <input id="sssi" name="other" type="radio" value="Site of Special Scientific Interest (SSSI)">
                   Site of special scientific Interest (SSSI)
                   </label>
-                        <label id="planningLabel" class="block-label selection-button-radio" for="planning">
-                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
-                  I don't know the charge type
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
+                  <input id="dunno" name="other" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
                   </label>
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="otherButton" role="button" href="what-does-charge-do">Continue</a>
+                    <a class="button" id="otherButton" role="button" href="date-document-created">Continue</a>
                 </p>
 
             </form>
@@ -58,32 +59,30 @@
     </div>
 </main>
 <script>
-    var chargeTypeIsChanging = sessionStorage.getItem('chargeTypeIsChanging');
-    console.log(chargeTypeIsChanging);
-    if (chargeTypeIsChanging === 'true') {
-        var chargeTypeToChange = sessionStorage.getItem('chargeTypeToChange');
-        if (chargeTypeToChange === 'Planning') {
-            document.getElementById('planningLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Financial') {
-            document.getElementById('financialLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Listed Building') {
-            document.getElementById('listedBuildingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Land Compensation') {
-            document.getElementById('landCompensationLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Housing') {
-            document.getElementById('housingLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Light Obstruction Notice') {
-            document.getElementById('lonLabel').classList.add('selected');
-        } else if (chargeTypeToChange === 'Other') {
-            document.getElementById('otherLabel').classList.add('selected');
-        }
-
-        document.getElementById('typeOfChargeButton').setAttribute('href', 'date-document-created');
-        sessionStorage.setItem('chargeTypeUpdated', 'true');
-    }
-
     document.getElementById('otherButton').onclick = function() {
-        sessionStorage.setItem('other', 'true');
+        var ancientMonuments = document.getElementById('ancientMonumentsLabel');
+        var assets = document.getElementById('assetsLabel');
+        var cpo = document.getElementById('cpoLabel');
+        var improveHighway = document.getElementById('improveHighwayLabel');
+        var sco = document.getElementById('scoLabel');
+        var sssi = document.getElementById('sssiLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (ancientMonuments.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Ancient Monuments');
+        } else if (assets.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Assets of community value');
+        } else if (cpo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Compulsory purchase order');
+        } else if (improveHighway.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Improve a highway');
+        } else if (sco.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
+        } else if (sssi.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Site of special scientific Interest (SSSI)');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
+        }
     }
 </script>
 {% endblock %}

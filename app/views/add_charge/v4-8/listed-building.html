@@ -8,42 +8,42 @@
         </p>
     </div>
     <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Listed building</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="#" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Charge type</h1>
             <form action="#">
-                <h2 class="heading-medium">Choose a listed building charge</h2>
+
                 <fieldset>
-                    <legend class="visually-hidden">Listed Building</legend>
+                    <legend>
+                        <h2 class="heading-medium">Choose a category</h2>
+                    </legend>
                     <div class="form-group">
-                        <label id="financialLabel" class="block-label selection-button-radio" for="financial">
-                  <input id="financial" name="planningLegislation" type="radio" value="Listed building">
+                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="listedBuilding" type="radio" value="Listed building">
                   Listed building
                   </label>
-                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
-                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Conditional planning consent">
+                        <label id="conditionalPlanningLabel" class="block-label selection-button-radio" for="conditionalPlanning">
+                  <input id="conditionalPlanning" name="listedBuilding" type="radio" value="Conditional planning consent">
                   Conditional planning consent
                   </label>
-                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
-                  <input id="landCompensation" name="planningLegislation" type="radio" value="Enforcement notice">
+                        <label id="enforcementNoticeLabel" class="block-label selection-button-radio" for="enforcementNotice">
+                  <input id="enforcementNotice" name="listedBuilding" type="radio" value="Enforcement notice">
                   Enforcement notice
                   </label>
-                        <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
-                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Repairs notice">
+                        <label id="repairsNoticeLabel" class="block-label selection-button-radio" for="repairsNotice">
+                  <input id="repairsNotice" name="listedBuilding" type="radio" value="Repairs notice">
                   Repairs notice
                   </label>
 
-                        <label id="listedNoLabel" class="block-label selection-button-radio" for="planning">
-                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
-                  I don't know the charge type
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
+                  <input id="dunno" name="listedBuilding" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
                   </label>
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="listedBuildingButton" role="button" href="what-does-charge-do">Continue</a>
+                    <a class="button" id="listedBuildingButton" role="button" href="date-document-created">Continue</a>
                 </p>
 
             </form>
@@ -52,14 +52,26 @@
 </main>
 <script>
     document.getElementById('listedBuildingButton').onclick = function() {
-        sessionStorage.setItem('listedBuilding', 'true');
-        sessionStorage.setItem('amountKnown', '');
-    }
-    document.getElementById('listedBuildingButton').onclick = function() {
-        var notKnown = document.getElementById('listedNoLabel');
-        if (notKnown.classList.contains('selected')) {
-            sessionStorage.setItem('returnLink', 'listed-building');
-            document.getElementById('listedBuildingButton').setAttribute('href', 'contact-HMLR');
+        var listedBuilding = document.getElementById('listedBuildingLabel');
+        var conditionalPlanning = document.getElementById('conditionalPlanningLabel');
+        var enforcementNotice = document.getElementById('enforcementNoticeLabel');
+        var repairsNotice = document.getElementById('repairsNoticeLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (listedBuilding.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Listed building');
+        } else if (conditionalPlanning.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
+        } else if (enforcementNotice.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
+        } else if (conditionalPlanningConsent.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
+        } else if (enforcementNotice.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
+        } else if (repairsNotice.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Repairs notice');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
         }
     }
 </script>

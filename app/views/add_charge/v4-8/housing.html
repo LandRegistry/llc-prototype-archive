@@ -8,49 +8,50 @@
         </p>
     </div>
     <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Housing</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <p id="back">
-                <a href="#" class="back-link">Back</a>
-            </p>
-            <h1 class="heading-large">Charge type</h1>
+
             <form action="#">
-                <h2 class="heading-medium">Choose a housing charge</h2>
+
                 <fieldset>
-                    <legend class="visually-hidden">Housing</legend>
+                    <legend>
+                        <h2 class="heading-medium">Choose a category</h2>
+                    </legend>
                     <div class="form-group">
-                        <label id="financialLabel" class="block-label selection-button-radio" for="financial">
-                  <input id="financial" name="planningLegislation" type="radio" value="Approval under house in multiple occupation (HMO)">
+                        <label id="approvalLabel" class="block-label selection-button-radio" for="approval">
+                  <input id="approval" name="housing" type="radio" value="Approval under house in multiple occupation (HMO)">
                   Approval under house in multiple occupation (HMO)
                   </label>
-                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
-                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Grant">
+                        <label id="grantLabel" class="block-label selection-button-radio" for="grant">
+                  <input id="grant" name="housing" type="radio" value="Grant">
                   Grant
                   </label>
-                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
-                  <input id="landCompensation" name="planningLegislation" type="radio" value="Interim certificate under HMO">
+                        <label id="interimCertificateLabel" class="block-label selection-button-radio" for="interimCertificate">
+                  <input id="interimCertificate" name="housing" type="radio" value="Interim certificate under HMO">
                   Interim certificate under HMO
                   </label>
-                        <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
-                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Notice of works or repairs">
+                        <label id="noticeOfWorksLabel" class="block-label selection-button-radio" for="noticeOfWorks">
+                  <input id="noticeOfWorks" name="housing" type="radio" value="Notice of works or repairs">
                   Notice of works or repairs
                   </label>
                         <label id="reApprovalLabel" class="block-label selection-button-radio" for="reApproval">
-                  <input id="reApproval" name="planningLegislation" type="radio" value="Re-approval of grant">
+                  <input id="reApproval" name="housing" type="radio" value="Re-approval of grant">
                   Re-approval of grant
                   </label>
                         <label id="reApprovalHmoLabel" class="block-label selection-button-radio" for="reApprovalHmo">
-                  <input id="reApprovalHmo" name="planningLegislation" type="radio" value="Re-approval under HMO">
+                  <input id="reApprovalHmo" name="housing" type="radio" value="Re-approval under HMO">
                   Re-approval under HMO
                   </label>
-                        <label id="housingNoLabel" class="block-label selection-button-radio" for="planning">
-                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
-                  I don't know the charge type
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
+                  <input id="dunno" name="housing" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
                   </label>
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="housingButton" role="button" href="what-does-charge-do">Continue</a>
+                    <a class="button" id="housingButton" role="button" href="date-document-created">Continue</a>
                 </p>
 
             </form>
@@ -59,11 +60,28 @@
 </main>
 <script>
     document.getElementById('housingButton').onclick = function() {
-        sessionStorage.setItem('housing', 'true');
-        var notKnown = document.getElementById('housingNoLabel');
-        if (notKnown.classList.contains('selected')) {
-            sessionStorage.setItem('returnLink', 'housing');
-            document.getElementById('housingButton').setAttribute('href', 'contact-HMLR');
+        var approval = document.getElementById('approvalLabel');
+        var grant = document.getElementById('grantLabel');
+        var interimCertificate = document.getElementById('interimCertificateLabel');
+        var noticeOfWorks = document.getElementById('noticeOfWorksLabel');
+        var reApproval = document.getElementById('reApprovalLabel');
+        var reApprovalHmo = document.getElementById('reApprovalHmoLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (approval.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Approval under house in multiple occupation (HMO)');
+        } else if (grant.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Grant');
+        } else if (interimCertificate.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Interim certificate under HMO');
+        } else if (noticeOfWorks.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Notice of works or repairs');
+        } else if (reApproval.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Re-approval of grant');
+        } else if (reApprovalHmo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Re-approval under HMO');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
         }
     }
 </script>

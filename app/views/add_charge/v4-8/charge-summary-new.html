@@ -1,0 +1,284 @@
+{% extends "layout.html" %} {% block page_title %} Check your answers before sending your application {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="what-does-the-charge-do" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Check your answers</h1>
+    <div class=" grid-row">
+        <div class="column-two-thirds">
+
+            <table class="check-your-answers">
+
+                <tbody>
+                    <!-- CHARGE CATEGORY ROW -->
+                    <tr id="chargeCategoryRow">
+                        <td class="bold-small">Charge category</td>
+                        <td id="chargeCategory"></td>
+                        <td class="change-answer">
+                        </td>
+                    </tr>
+
+                    <!-- CHARGE SUBCATEGORY ROW -->
+                    <tr id="chargeSubcategoryRow">
+                        <td class="bold-small"><span id="categoryName"></span> category</td>
+                        <td id="chargeSubcategory"></td>
+                        <td class="change-answer">
+                        </td>
+                    </tr>
+
+                    <!-- FINANCIAL AMOUNT ROW -->
+                    <tr id="financialAmountRow" class="hiddenList ">
+                        <td class="bold-small">Amount</td>
+                        <td id="financialAmount"></td>
+                        <td class="change-answer">
+                            <a id="financialAmountChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">financial amount</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- FINANCIAL INTEREST ROW -->
+                    <tr id="financialInterestRow" class="hiddenList">
+                        <td class="bold-small">Interest rate</td>
+                        <td id="financialInterest"></td>
+                        <td class="change-answer">
+                            <a id="financialInterestChange" class="edit" href="#">
+                                    Change <span class="visuallyhidden">financial interest</span>
+                                </a>
+                        </td>
+                    </tr>
+
+                    <!-- LAND COMPENSATION AMOUNT ROW -->
+                    <tr id="landCompensationAmountRow" class="hiddenList">
+                        <td class="bold-small">Land compensation amount</td>
+                        <td id="landCompensationAmount"></td>
+                        <td class="change-answer">
+                            <a id="landCompensationAmountChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">land compensation amount</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- LAND COMPENSATION TYPE AMOUNT ROW -->
+                    <tr id="typeAmountRow" class="hiddenList">
+                        <td class="bold-small">Land compensation amount type</td>
+                        <td id="typeAmount"></td>
+                        <td class="change-answer">
+                            <a id="typeAmountChange" class="edit" href="#">
+                                    Change <span class="visuallyhidden">land compensation amount</span>
+                                </a>
+                        </td>
+                    </tr>
+
+                    <!-- INTEREST IN LAND ROW -->
+                    <tr id="interestInLandRow" class="hiddenList">
+                        <td class="bold-small">Interest in land</td>
+                        <td id="interestInLand"></td>
+                        <td class="change-answer">
+                            <a id="interestInLandChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">financial interest in land</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- LAND DESCRIPTION ROW -->
+                    <tr id="landDescriptionRow" class="hiddenList">
+                        <td class="bold-small">Land description</td>
+                        <td id="landDescription"></td>
+                        <td class="change-answer">
+                            <a id="landDescriptionChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">land description</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- WORK TO BE DONE ROW -->
+                    <tr id="workToBeDoneRow" class="hiddenList">
+                        <td class="bold-small">Work to be done</td>
+                        <td id="workToBeDone"></td>
+                        <td class="change-answer">
+                            <a id="workToBeDoneChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">work to be done</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- CREATION DATE ROW -->
+                    <tr id="creationDateRow">
+                        <td class="bold-small">Creation date</td>
+                        <td id="creationDate"></td>
+                        <td class="change-answer">
+                            <a id="creationDateChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">creation date</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- EXTENT ROW -->
+                    <tr id="extentRow">
+                        <td class="bold-small">Extent</td>
+                        <td id="extent"></td>
+                        <td class="change-answer">
+                            <a id="extentChange" class="edit" href="#">
+                                    Change <span class="visuallyhidden">extent</span>
+                                </a>
+                        </td>
+                    </tr>
+
+                    <!-- WHERE TO FIND THE CHARGE -->
+                    <tr id="whereToFindTheChargeRow">
+                        <td class="bold-small">Where to find the charge</td>
+                        <td id="whereToFindTheCharge"></td>
+                        <td class="change-answer">
+                            <a id="whereToFindTheChargeChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">where to find the charge</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--CHARGE EXPIRY DATE ROW -->
+                    <tr id="chargeExpiryDateRow">
+                        <td class="bold-small">Charge expiry date</td>
+                        <td id="chargeExpiryDate"></td>
+                        <td class="change-answer">
+                            <a id="chargeExpiryDateChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">charge expiry date</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--SOURCE INFORMATION ROW -->
+                    <tr id="sourceInformationRow">
+                        <td class="bold-small">Source information</td>
+                        <td id="sourceInformation"></td>
+                        <td class="change-answer">
+                            <a id="sourceInformationChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">source information</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--AUTHORITY REFERENCE ROW -->
+                    <tr id="authorityReferenceRow">
+                        <td class="bold-small">Authority reference</td>
+                        <td id="authorityReference"></td>
+                        <td class="change-answer">
+                            <a id="authorityReferenceChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">authority reference</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--CHARGE DESCRIPTION ROW -->
+                    <tr id="chargeDescriptionRow">
+                        <td class="bold-small">Charge description</td>
+                        <td id="chargeDescription"></td>
+                        <td class="change-answer">
+                            <a id="chargeDescriptionChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">charge description</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <h2 class="heading-medium">Now add your local land charge </h2>
+            <p>By adding this charge, you are confirming that this information is correct.</p>
+
+
+
+            <div class="form-group">
+                <a href="charge-successful" class="button">Add charge</a>
+            </div>
+
+
+        </div>
+    </div>
+
+</main>
+
+<script>
+    // return charge type
+    var chargeCategoryReturned = sessionStorage.getItem('chargeCategory');
+    console.log(chargeCategoryReturned);
+
+    // return uncommon items
+    // Financial
+    if (chargeCategoryReturned === 'Financial') {
+        document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
+        document.getElementById('financialAmountRow').classList.remove('hiddenList');
+        var financialAmountCheck = sessionStorage.getItem('amountKnown');
+        var amount = sessionStorage.getItem('amount');
+        var interestRate = sessionStorage.getItem('interestRate');
+        if (financialAmountCheck === 'Amount not known') {
+            document.getElementById('financialAmount').textContent = financialAmountCheck;
+        } else {
+            document.getElementById('financialInterestRow').classList.remove('hiddenList');
+            document.getElementById('financialAmount').textContent = '£' + amount;
+        }
+        document.getElementById('financialInterest').textContent = interestRate + '%';
+        // Land compensation
+    } else if (chargeCategoryReturned === 'Land compensation') {
+        document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
+        document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
+        var landCompensationAmountCheck = sessionStorage.getItem('landCompAmountKnown');
+        if (landCompensationAmountCheck === 'Not known') {
+            document.getElementById('landCompensationAmount').textContent = landCompensationAmountCheck;
+        } else {
+            var landCompAmount = sessionStorage.getItem('landCompAmount');
+            document.getElementById('landCompensationAmount').textContent = landCompAmount;
+        }
+    }
+
+
+    // return stored items for common fields
+
+    /*var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
+    console.log(chargeSubcategoryReturned);*/
+    var startDayReturned = sessionStorage.getItem('startDay');
+    console.log(startDayReturned);
+    var startMonthReturned = sessionStorage.getItem('startMonth');
+    console.log(startMonthReturned);
+    var startYearReturned = sessionStorage.getItem('startYear');
+    console.log(startYearReturned);
+    var chargeLocationReturned = sessionStorage.getItem('chargeLocation');
+    console.log(chargeLocationReturned);
+    var docDay2Returned = sessionStorage.getItem('docDay2');
+    console.log(docDay2Returned);
+    var docMonth2Returned = sessionStorage.getItem('docMonth2');
+    console.log(docMonth2Returned);
+    var docYear2Returned = sessionStorage.getItem('docYear2');
+    console.log(docYear2Returned);
+    var chargeExpiresReturned = sessionStorage.getItem('chargeExpires');
+    console.log(chargeExpiresReturned);
+    var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
+    console.log(chargeSubcategoryReturned);
+    var departmentLinksReturned = sessionStorage.getItem('departmentLinks');
+    console.log(departmentLinksReturned);
+    var authorityReferenceReturned = sessionStorage.getItem('authorityReference');
+    console.log(authorityReferenceReturned);
+    var chargeDescriptionReturned = sessionStorage.getItem('chargeDescription');
+    console.log(chargeDescriptionReturned);
+
+    // populate relevant fields
+    document.getElementById('chargeCategory').textContent = chargeCategoryReturned;
+    document.getElementById('categoryName').textContent = chargeCategoryReturned;
+    document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
+    document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
+    document.getElementById('creationDate').textContent = startDayReturned + ' ' + startMonthReturned + ' ' + startYearReturned;
+    document.getElementById('whereToFindTheCharge').textContent = chargeLocationReturned;
+    document.getElementById('chargeExpiryDate').textContent = docDay2Returned + ' ' + docMonth2Returned + ' ' + docYear2Returned;
+    document.getElementById('sourceInformation').textContent = departmentLinksReturned;
+    document.getElementById('authorityReference').textContent = authorityReferenceReturned;
+    document.getElementById('chargeDescription').textContent = chargeDescriptionReturned;
+</script>
+{% endblock %}
