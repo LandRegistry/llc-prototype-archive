@@ -1,0 +1,113 @@
+{% extends "layout.html" %} {% block page_title %} Who can answer question about this charge? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="does-charge-expire" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Source information</h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <fieldset>
+                <legend>
+                    <h2 class="heading-medium">Where can you find more information about this charge?</h2>
+                </legend>
+
+                <!-- <div class="form-group">
+                    <label class="form-label" for="department">Department name</label>
+                    <input class="form-control form-control-3-4" id="department" type="text" name="department">
+                </div> -->
+
+                <div class="form-group">
+                    <label class="form-label" for="fullAddress">
+
+                        <span class="form-hint">This can be a department name and address and/or a link to a place where charge documents are kept online, for example a planning portal.
+                        </span>
+                    </label>
+                    <textarea class="form-control form-control-3-4" name="department" id="department" rows="8"></textarea>
+                    <p><span class="form-hint">Answer must be shorter than 500 characters (about 80 words)</span></p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="chargeReference"><span class="bold-medium">Charge reference number</span> (optional)
+                    <span class="form-hint"> This is the reference used by your department when they want to find this charge.</span>
+                    </label>
+                    <input class="form-control" id="authorityReference" type="text" name="chargeReference">
+                </div>
+
+            </fieldset>
+
+            <div class="form-group">
+                <a id="sourceButton" class="button" href="what-does-charge-do-new" role="button">Continue</a>
+            </div>
+
+            <!-- <div id="back">
+                <a href="/add_charge/v4-2/originating-authority-details" class="back-link">Back</a>
+            </div> -->
+        </div>
+
+    </div>
+
+</main>
+<script>
+    document.getElementById('sourceButton').onclick = function() {
+        var departmentLinks = document.getElementById('department').value;
+        var authorityReference = document.getElementById('authorityReference').value;
+        if (departmentLinks !== '') {
+            sessionStorage.setItem('departmentLinks', departmentLinks);
+        } else {
+            sessionStorage.setItem('departmentLinks', 'Not provided');
+        }
+        if (authorityReference !== '') {
+            sessionStorage.setItem('authorityReference', authorityReference);
+        } else {
+            sessionStorage.setItem('authorityReference', 'Not provided');
+        }
+    }
+</script>
+<!--<script>
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
+    var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
+    var amoundLandCompCheck = sessionStorage.getItem('landCompAmountKnown');
+    if (amountKnownCheck === 'true') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-known');
+    } else if (amountKnownCheck === 'false') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-amount-secured-not-known');
+    } else if (amountKnownCheck === 'noAnswer') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+    } else if (amoundLandCompCheck === 'yes') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-land-comp-with-amount');
+    } else if (amoundLandCompCheck === 'no') {
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary-land-comp-no-amount');
+    }
+
+    var contactIsChanging = sessionStorage.getItem('contactIsChanging');
+    if (contactIsChanging === 'true') {
+        var contactToChange = sessionStorage.getItem('contactToChange');
+        console.log(contactToChange);
+        document.getElementById('contactInfo').value = contactToChange;
+        document.getElementById('contactButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('contactUpdated', 'true');
+    }
+
+    document.getElementById('contactButton').onclick = function() {
+        var department = document.getElementById('department').value;
+        sessionStorage.setItem('department', department);
+
+        var reference = document.getElementById('chargeReference').value;
+        if (reference === '') {
+            sessionStorage.setItem('referenceExists', 'false');
+        } else {
+            sessionStorage.setItem('referenceExists', 'true');
+            sessionStorage.setItem('referenceNumber', reference);
+        }
+    }
+</script> -->
+{% endblock %}

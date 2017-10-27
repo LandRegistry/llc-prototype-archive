@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block page_title %} What does the charge do? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="who-can-answer-questions" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">Add any other information about this charge</h1>
+
+            <form action="does-charge-expire" method="GET">
+
+                <fieldset>
+                    <legend class="visually-hidden">
+                        Add any other information about this charge
+                    </legend>
+
+
+                    <label class="form-label" for="textarea">
+						<span class="form-hint">This can be anything that will help someone researching this charge on a search result
+                        </span>
+					</label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="chargeDescription" rows="5"></textarea>
+                    <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                </fieldset>
+                <p>
+                    <a id="chargeDescriptionButton" class="button" href="charge-summary-new" role="button">Continue</a>
+                </p>
+            </form>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</main>
+
+<script>
+    document.getElementById('chargeDescriptionButton').onclick = function() {
+        var chargeDescription = document.getElementById('chargeDescription').value;
+        if (chargeDescription !== '') {
+            sessionStorage.setItem('chargeDescription', chargeDescription);
+        } else {
+            sessionStorage.setItem('chargeDescription', 'Not provided');
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %} {% block page_title %} Enter Section 52(8) details {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="amount-of-compensation" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">
+                How is the land owned?
+            </h1>
+
+            <form action="document-link" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden">How is the land owned?
+
+                    </legend>
+
+                    <div class="form-group">
+
+                        <label id="freehold-label" class="block-label selection-button-radio" for="freehold">
+              <input id="freehold" name="ownership" type="radio" value="no"> Freehold
+            </label>
+
+                        <label id="leasehold-label" class="block-label selection-button-radio" for="leasehold">
+              <input id="leasehold" name="ownership" type="radio" value="no"> Leasehold
+            </label>
+
+                        <label id="somethingElseLabel" class="block-label selection-button-radio no" for="somethingElse" data-target="somethingElseForm">
+              <input id="somethingElse" name="ownership" type="radio" value="yes" aria-controls="somethingElseForm">
+              Other
+            </label>
+                        <div class="js-hidden panel panel-border-narrow" id="somethingElseForm" aria-hidden="true" style="display: none;">
+
+                            <fieldset>
+                                <legend class="visually-hidden form-label">Other
+                                </legend>
+
+                                <label class="form-label-bold" for="textarea">Describe how the land is owned </label>
+
+                                <textarea class="form-control form-control-3-4" name="textarea" id="somethingElseField" rows="5"></textarea>
+                                <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                            </fieldset>
+                            <br>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </form>
+            <p>
+                <a class="button" id="landCompensationBtn" role="button" href="date-document-created">Continue</a>
+            </p>
+
+
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.getElementById('landCompensationBtn').onclick = function() {
+        var freehold = document.getElementById('freehold-label');
+        var leasehold = document.getElementById('leasehold-label');
+        var somethingElse = document.getElementById('somethingElse');
+        var somethingElseField = document.getElementById('somethingElseField').value;
+        if (freehold.classList.contains('selected')) {
+            sessionStorage.setItem('ownershipType', 'Freehold');
+        } else if (leasehold.classList.contains('selected')) {
+            sessionStorage.setItem('ownershipType', 'Leasehold');
+        } else if (somethingElse.classList.contains('selected')) {
+            sessionStorage.setItem('ownershipType', somethingElseField);
+        }
+    }
+</script>
+
+{% endblock %}

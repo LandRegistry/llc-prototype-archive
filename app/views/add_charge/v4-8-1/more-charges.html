@@ -1,0 +1,88 @@
+{% extends "layout.html" %} {% block page_title %} More charge categories {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Other charges</h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="#">
+
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Choose a category</h2>
+                    </legend>
+                    <div class="form-group">
+                        <label id="ancientMonumentsLabel" class="block-label selection-button-radio" for="ancientMonuments">
+                  <input id="ancientMonuments" name="other" type="radio" value="Ancient monuments">
+                  Ancient monuments
+                  </label>
+                        <label id="assetsLabel" class="block-label selection-button-radio" for="assets">
+                  <input id="assets" name="other" type="radio" value="Assets of community value">
+                  Assets of community value
+                  </label>
+                        <label id="cpoLabel" class="block-label selection-button-radio" for="cpo">
+                  <input id="cpo" name="other" type="radio" value="Compulsory purchase order">
+                  Compulsory purchase order
+                  </label>
+                        <label id="improveHighwayLabel" class="block-label selection-button-radio" for="improveHighway">
+                  <input id="improveHighway" name="other" type="radio" value="Section 278 agreement">
+                  Improve a highway
+                  </label>
+                        <label id="scoLabel" class="block-label selection-button-radio" for="sco">
+                  <input id="sco" name="other" type="radio" value="Smoke control order">
+                  Smoke control order
+                  </label>
+                        <label id="sssiLabel" class="block-label selection-button-radio" for="sssi">
+                  <input id="sssi" name="other" type="radio" value="Site of Special Scientific Interest (SSSI)">
+                  Site of special scientific Interest (SSSI)
+                  </label>
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
+                  <input id="dunno" name="other" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="otherButton" role="button" href="date-document-created">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('otherButton').onclick = function() {
+        var ancientMonuments = document.getElementById('ancientMonumentsLabel');
+        var assets = document.getElementById('assetsLabel');
+        var cpo = document.getElementById('cpoLabel');
+        var improveHighway = document.getElementById('improveHighwayLabel');
+        var sco = document.getElementById('scoLabel');
+        var sssi = document.getElementById('sssiLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (ancientMonuments.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Ancient Monuments');
+        } else if (assets.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Assets of community value');
+        } else if (cpo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Compulsory purchase order');
+        } else if (improveHighway.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Improve a highway');
+        } else if (sco.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
+        } else if (sssi.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Site of special scientific Interest (SSSI)');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
+        }
+    }
+</script>
+{% endblock %}
