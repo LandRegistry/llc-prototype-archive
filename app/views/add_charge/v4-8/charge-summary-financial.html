@@ -1,0 +1,311 @@
+{% extends "layout.html" %} {% block page_title %} Check your answers before sending your application {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Check your answers</h1>
+
+            <table class="check-your-answers">
+                <thead>
+                    <tr>
+                        <th><span class="visuallyhidden">Qustion</span></th>
+                        <th><span class="visuallyhidden">Answer</span></th>
+                        <th><span class="visuallyhidden">Change link</span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr id="chargeTypeRow">
+                        <td class="bold-small">Type</td>
+                        <td id="chargeType">undefined</td>
+                        <td class="change-answer">
+                            <a id="changeChargeType" class="edit" href="type-of-charge">
+                                Change <span class="visuallyhidden">type of charge</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- <tr id="financialRow">
+                        <td class="bold-small">Amount secured
+                        </td>
+                        <td id="amountSecured">Amount secured not provided</td>
+                        <td class="change-answer">
+                            <a id="changeAmountSecured" class="edit" href="financial-charge/secured-charge-amount">
+                                    Change <span class="visuallyhidden">amount secured</span>
+                                </a>
+                        </td>
+                    </tr> -->
+
+                    <tr id="docDateRow">
+                        <td class="bold-small">Charge valid from
+                        </td>
+                        <td id="validFrom"> </td>
+                        <td class="change-answer">
+                            <a id="changeDocDate" class="edit" href="date-document-created">
+                                Change <span class="visuallyhidden">Document valid from</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr id="locationRow">
+                        <td class="bold-small">Address</td>
+                        <td id="location">Location not provided</td>
+                        <td class="change-answer">
+                            <a id="changeLocation" class="edit" href="search-property">
+                                Change <span class="visuallyhidden">Location of charge</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="extentRow">
+                        <td class="bold-small">Charge extent </td>
+                        <td>
+
+                            <img src="/public/images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px">
+                        </td>
+                        <td class="change-answer">
+                            <a id="changeExtent" class="edit" href="draw-an-extent">
+                                Change <span class="visuallyhidden">extent</span>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    <tr id="descriptionRow">
+                        <td class="bold-small">Other information
+                        </td>
+                        <td id="description">Information not provided</td>
+                        <td class="change-answer">
+                            <a id="changeDescription" class="edit" href="what-does-charge-do">
+                                Change <span class="visuallyhidden">charge description</span>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    <tr id="expiryRow">
+                        <td class="bold-small">Expiry date
+                        </td>
+                        <td id="expiry"></td>
+                        <td class="change-answer">
+                            <a id="changeExpiry" class="edit" href="does-charge-expire">
+                                Change <span class="visuallyhidden">charge description</span>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    <!-- <tr id="linkRow">
+                        <td class="bold-small">Document links</td>
+                        <td id="links">Link to document not provided</td>
+
+                        <td class="change-answer">
+                            <a id="changeLink" class="edit" href="document-link">
+                                Change <span class="visuallyhidden">document links</span>
+                            </a>
+                        </td>
+                    </tr> -->
+
+
+                    <tr id="contactRow">
+                        <td class="bold-small">Department</td>
+                        <td id="department"></td>
+
+                        <td class="change-answer">
+                            <a id="changeContact" class="edit" href="who-can-answer-questions">
+                                Change <span class="visuallyhidden">Which department can answer questions about this charge?</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr id="referenceRow">
+                        <td class="bold-small">Reference number</td>
+                        <td id="reference">Reference not provided</td>
+
+                        <td class="change-answer">
+                            <a id="changeReference" class="edit" href="originating-authority-reference">
+                                Change <span class="visuallyhidden">reference number</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+            <h2 class="heading-medium">Now add your local land charge </h2>
+            <p>By adding this charge, you are confirming that this information is correct.</p>
+
+
+
+            <div class="form-group">
+                <a href="charge-successful" class="button">Add charge</a>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<script>
+    // charge type
+    var chargeTypeRetrieved = sessionStorage.getItem('chargeType');
+    document.getElementById('chargeType').textContent = chargeTypeRetrieved;
+    // document date
+    var startDayRetrieved = sessionStorage.getItem('startDay');
+    //console.log(startDayRetrieved);
+    var startMonthRetrieved = sessionStorage.getItem('startMonth');
+    var startYearRetrieved = sessionStorage.getItem('startYear');
+    document.getElementById('validFrom').textContent = startDayRetrieved + ' ' + startMonthRetrieved + ' ' + startYearRetrieved;
+    // location
+    var locationRetrieved = sessionStorage.getItem('location');
+    console.log(locationRetrieved);
+    if (locationRetrieved === null || locationRetrieved === '') {
+        document.getElementById('location').textContent = 'Location not provided';
+    } else {
+        document.getElementById('location').textContent = locationRetrieved;
+    }
+    // description
+    var chargeDescription = sessionStorage.getItem('whatDoesChargeDo');
+    if (chargeDescription === '' || chargeDescription === ' ') {
+        document.getElementById('description').textContent = 'Information not provided';
+    } else {
+        document.getElementById('description').textContent = chargeDescription;
+    }
+    // expiry
+    var chargeExpires = sessionStorage.getItem('chargeExpires');
+    if (chargeExpires === 'true') {
+        var expireDay = sessionStorage.getItem('docDay2');
+        var expireMonth = sessionStorage.getItem('docMonth2');
+        var expireYear = sessionStorage.getItem('docYear2');
+        document.getElementById('expiry').textContent = expireDay + ' ' + expireMonth + ' ' + expireYear;
+    } else if (chargeExpires === 'false') {
+        document.getElementById('expiry').textContent = 'Charge does not expire';
+    }
+    // department
+    var departmentRetrieved = sessionStorage.getItem('department');
+    if (departmentRetrieved === null || departmentRetrieved === '') {
+        document.getElementById('department').textContent = 'Department name not provided';
+    } else {
+        document.getElementById('department').textContent = departmentRetrieved;
+    }
+
+
+    // reference
+    var referenceExists = sessionStorage.getItem('referenceExists');
+    //console.log(referenceExists);
+    if (referenceExists === 'false' || referenceExists === null) {
+        document.getElementById('reference').textContent = 'Reference not provided';
+    } else if (referenceExists === 'true') {
+        var referenceNumbers = sessionStorage.getItem('referenceNumber');
+        document.getElementById('reference').textContent = referenceNumbers;
+    }
+
+    /* CHANGE RULES */
+    // charge type
+    document.getElementById('changeChargeType').onclick = function() {
+        sessionStorage.setItem('chargeTypeIsChanging', 'true');
+        var chargeTypeToChange = document.getElementById('chargeType').textContent;
+        sessionStorage.setItem('chargeTypeToChange', chargeTypeToChange);
+    };
+    // document date 
+    document.getElementById('changeDocDate').onclick = function() {
+        sessionStorage.setItem('docDateIsChanging', 'true');
+        var startDayToChange = startDayRetrieved;
+        var startMonthToChange = startMonthRetrieved;
+        var startYearToChange = startYearRetrieved;
+        sessionStorage.setItem('startDayToChange', startDayToChange);
+        sessionStorage.setItem('startMonthToChange', startMonthToChange);
+        sessionStorage.setItem('startYearToChange', startYearToChange);
+    };
+    // location
+    document.getElementById('changeLocation').onclick = function() {
+        sessionStorage.setItem('locationIsChanging', 'true');
+        sessionStorage.setItem('locationToChange', locationRetrieved);
+    };
+    // extent
+    document.getElementById('changeExtent').onclick = function() {
+        sessionStorage.setItem('extentIsChanging', 'true');
+    };
+    // description
+    document.getElementById('changeDescription').onclick = function() {
+        sessionStorage.setItem('descriptionIsChanging', 'true');
+        var descriptionToChange = document.getElementById('description').textContent;
+        sessionStorage.setItem('descriptionToChange', descriptionToChange);
+    };
+
+    // expiry
+    document.getElementById('changeExpiry').onclick = function() {
+        sessionStorage.setItem('expiryIsChanging', 'true');
+        var expireDayToChange = expireDay;
+        var expireMonthToChange = expireMonth;
+        var expireYearToChange = expireYear;
+        sessionStorage.setItem('expireDayToChange', expireDayToChange);
+        sessionStorage.setItem('expireMonthToChange', expireMonthToChange);
+        sessionStorage.setItem('expireYearToChange', expireYearToChange);
+    };
+    // reference
+    document.getElementById('changeReference').onclick = function() {
+        sessionStorage.setItem('referenceIsChanging', 'true');
+        var referenceToChange = document.getElementById('reference').textContent;
+        sessionStorage.setItem('referenceToChange', referenceToChange);
+    };
+    // contact
+    document.getElementById('changeContact').onclick = function() {
+        sessionStorage.setItem('contactIsChanging', 'true');
+        var contactToChange = document.getElementById('source').textContent;
+        sessionStorage.setItem('contactToChange', contactToChange);
+    };
+
+    /* Line highlights */
+    // charge type
+    var chargeTypeUpdated = sessionStorage.getItem('chargeTypeUpdated');
+    if (chargeTypeUpdated === 'true') {
+        document.getElementById('chargeTypeRow').style.backgroundColor = '#BFC1C3';
+    };
+    // document date
+    var docDateUpdated = sessionStorage.getItem('docDateUpdated');
+    if (docDateUpdated === 'true') {
+        document.getElementById('docDateRow').style.backgroundColor = '#BFC1C3';
+    };
+    // extent
+    var extentUpdated = sessionStorage.getItem('extentUpdated');
+    if (extentUpdated === 'true') {
+        document.getElementById('extentRow').style.backgroundColor = '#BFC1C3';
+    };
+    // location
+    var locationUpdated = sessionStorage.getItem('locationUpdated');
+    if (locationUpdated === 'true') {
+        document.getElementById('locationRow').style.backgroundColor = '#BFC1C3';
+    };
+    // description
+    var descriptionUpdated = sessionStorage.getItem('descriptionUpdated');
+    if (descriptionUpdated === 'true') {
+        document.getElementById('descriptionRow').style.backgroundColor = '#BFC1C3';
+    };
+    // expiry
+    var expiryUpdated = sessionStorage.getItem('expiryUpdated');
+    if (expiryUpdated === 'true') {
+        document.getElementById('expiryRow').style.backgroundColor = '#BFC1C3';
+    };
+    // reference
+    var referenceUpdated = sessionStorage.getItem('referenceUpdated');
+    if (referenceUpdated === 'true') {
+        document.getElementById('referenceRow').style.backgroundColor = '#BFC1C3';
+    };
+    // contact
+    var contactUpdated = sessionStorage.getItem('contactUpdated');
+    if (contactUpdated === 'true') {
+        document.getElementById('contactRow').style.backgroundColor = '#BFC1C3';
+    }
+</script>
+{% endblock %}

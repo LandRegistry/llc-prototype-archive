@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block page_title %} Planning {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">
+        <spanPlanning</h1>
+            <div class="grid-row">
+
+                <div class="column-two-thirds">
+
+                    <form action="#">
+                        <h2 class="heading-medium">Choose a category</h2>
+                        <fieldset>
+                            <legend class="visually-hidden">Choose a category</legend>
+                            <div class="form-group">
+                                <label id="changeDevelopmentLabel" class="block-label selection-button-radio" for="changeDevelopment">
+                  <input id="changeDevelopment" name="planningLegislation" type="radio" value="Article 4 direction">
+                  Change a development
+                  </label>
+                                <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Breach of conditions">
+                  Breach of conditions
+                  </label>
+                                <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Conservation area">
+                  Conservation area
+                  </label>
+                                <label id="conditionsLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Conditional planning consent">
+                  Conditional planning consent
+                  </label>
+                                <label id="enforcementLabel" class="block-label selection-button-radio" for="enforcementNotice">
+                  <input id="enforcementNotice" name="planningLegislation" type="radio" value="Enforcement notice">
+                  Enforcement notice
+                  </label>
+                                <label id="noPermitLabel" class="block-label selection-button-radio" for="noPermit">
+                  <input id="noPermit" name="planningLegislation" type="radio" value="No permitted development">
+                  No permitted development
+                  </label>
+                                <label id="planningNoticeLabel" class="block-label selection-button-radio" for="planningNotice">
+                  <input id="planningNotice" name="planningLegislation" type="radio" value="Planning notices">
+                  Planning notices
+                  </label>
+                                <label id="planningAgreeLabel" class="block-label selection-button-radio" for="planningAgree">
+                  <input id="planningAgree" name="planningLegislation" type="radio" value="Planning agreement">
+                  Planning agreement
+                  </label>
+                                <label id="tpoLabel" class="block-label selection-button-radio" for="treeOrder">
+                  <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
+                  Tree preservation order (TPO)
+                  </label>
+                                <label id="planningNoLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
+                            </div>
+                        </fieldset>
+                        <p>
+                            <a class="button" id="typeOfChargeButton" role="button" href="date-document-created">Continue</a>
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+</main>
+<script>
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var notKnown = document.getElementById('planningNoLabel');
+        if (notKnown.classList.contains('selected')) {
+            sessionStorage.setItem('returnLink', 'planning-conditions');
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'contact-HMLR');
+        }
+    }
+</script>
+{% endblock %}

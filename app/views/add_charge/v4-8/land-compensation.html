@@ -1,0 +1,104 @@
+{% extends "layout.html" %} {% block page_title %} Land compensation {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+    <!--   <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">Land compensation </h1>
+      
+        <form action="document-link" method="GET">
+          <fieldset>
+            <legend class="visually-hidden form-label">Select land compensation law </legend>
+      
+            <div class="form-group">
+      
+              <label id="section84Label" class="block-label selection-button-radio" for="yesRef" data-target="referenceNumberForm1">
+                <input id="yesRef" name="reference" type="radio" value="no" aria-controls="referenceNumberForm1">
+                Section 8(4)
+              </label>
+      
+              <label id="section52Label" class="block-label selection-button-radio no" for="noRef" data-target="referenceNumberForm2">
+                <input id="noRef" name="reference" type="radio" value="yes">
+                Section 52(8)
+              </label>
+            </div>
+      
+          </fieldset>
+      
+        </form>
+        <p>
+          <a class="button" id="landCompensationBtn" role="button" href="date-document-created">Continue</a>
+      
+        </p>
+      
+        <p id="back">
+          <a href="type-of-charge" class="back-link">Back</a>
+        </p>
+      
+      </div>
+      
+      </div> -->
+    <a href="start-llc" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Land compensation </h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <!-- <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+              There are errors on this page
+            </h1>
+            
+            <p>You must choose one option to continue  </p>
+            
+            <ul class="error-summary-list">
+              <li><a href="#section84Label">Choose one option </a></li>
+            </ul>
+            </div> -->
+
+
+            <form action="#">
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Do you know the amount of compensation?</h2>
+                    </legend>
+                    <div class="form-group">
+                        <!-- Add class form-group-error when error occurs on the page -->
+                        <label id="amountKnownLabel" class="block-label selection-button-radio form-label" for="amountKnown">
+                     <input id="amountKnown" name="land-compensation" type="radio" value="Yes">
+                     Yes
+                     <!-- I know the amount of compensation -->
+                     <!-- <span class="error-message"> Choose one option   </span> -->
+                  </label>
+                        <label id="amountNotKnownLabel" class="block-label selection-button-radio form-label" for="amountNotKnown">
+                     <input id="amountNotKnown" name="land-compensation" type="radio" value="No">
+                    No
+                    <!-- I do not know the amount of compensation -->
+                     <!-- <span class="error-message"> Choose one option  </span> -->
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="landCompButton" role="button" href="what-does-charge-do">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('landCompButton').onclick = function() {
+        var amountKnownLabel = document.getElementById('amountKnownLabel');
+        var amountNotKnownLabel = document.getElementById('amountNotKnownLabel');
+        if (amountKnownLabel.classList.contains('selected')) {
+            sessionStorage.setItem('landCompAmountKnown', 'yes');
+            document.getElementById('landCompButton').setAttribute('href', 'land-compensation/amount-of-compensation');
+        } else if (amountNotKnownLabel.classList.contains('selected')) {
+            sessionStorage.setItem('landCompAmountKnown', 'Not known');
+            document.getElementById('landCompButton').setAttribute('href', 'land-compensation/lc-section8-4');
+
+        }
+    }
+</script>
+{% endblock %}

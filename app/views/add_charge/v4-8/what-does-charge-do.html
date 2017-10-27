@@ -1,0 +1,106 @@
+{% extends "layout.html" %} {% block page_title %} What does the charge do? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="who-can-answer-questions" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Describe the charge</h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="does-charge-expire" method="GET">
+
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Add any other information about this charge</h2>
+                    </legend>
+
+
+                    <label class="form-label" for="textarea">
+						<span class="form-hint">This can be anything that will help someone researching this charge on a search result
+                        </span>
+					</label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="whatDoesChargeDo" rows="5"></textarea>
+                    <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                </fieldset>
+                <p>
+                    <a id="whatDoesChargeDoButton" class="button" href="charge-summary" role="button">Continue</a>
+                </p>
+            </form>
+
+
+
+
+        </div>
+
+
+        <!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+    </div>
+
+</main>
+
+<script>
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
+    console.log(amountKnownCheck);
+
+
+    document.getElementById('whatDoesChargeDoButton').onclick = function() {
+        var whatDoesChargeDo = document.getElementById('whatDoesChargeDo').value;
+        sessionStorage.setItem('whatDoesChargeDo', whatDoesChargeDo);
+    }
+
+
+    var amountKnownCheck = sessionStorage.getItem('amountKnown');
+    var listedBuildingCheck = sessionStorage.getItem('listedBuilding');
+    var amoundLandCompCheck = sessionStorage.getItem('landCompAmountKnown');
+    if (amountKnownCheck === 'true') {
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary-amount-secured-known');
+    } else if (amountKnownCheck === 'false') {
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary-amount-secured-not-known');
+    } else if (amountKnownCheck === 'noAnswer') {
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary');
+    } else if (amoundLandCompCheck === 'yes') {
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary-land-comp-with-amount');
+    } else if (amoundLandCompCheck === 'no') {
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary-land-comp-no-amount');
+    }
+
+    var contactIsChanging = sessionStorage.getItem('contactIsChanging');
+    if (contactIsChanging === 'true') {
+        var contactToChange = sessionStorage.getItem('contactToChange');
+        console.log(contactToChange);
+        document.getElementById('contactInfo').value = contactToChange;
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('contactUpdated', 'true');
+    }
+
+    document.getElementById('whatDoesChargeDoButton').onclick = function() {
+        var department = document.getElementById('department').value;
+        sessionStorage.setItem('department', department);
+
+        var reference = document.getElementById('chargeReference').value;
+        if (reference === '') {
+            sessionStorage.setItem('referenceExists', 'false');
+        } else {
+            sessionStorage.setItem('referenceExists', 'true');
+            sessionStorage.setItem('referenceNumber', reference);
+        }
+    }
+</script>
+{% endblock %}

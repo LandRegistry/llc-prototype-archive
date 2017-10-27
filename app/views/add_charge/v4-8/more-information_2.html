@@ -9,17 +9,19 @@
         </p>
     </div>
     <!-- main content starts -->
-
+    <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">Where to find the charge</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Location for this charge</h1>
             <form action="#">
 
                 <div class="form-group" id="search-field">
                     <fieldset>
-                        <legend class="visuallyhidden">Location for this charge</legend>
+                        <legend>
+                            <h2 class="heading-medium">Is this the charge address?</h2>
+                        </legend>
                         <div class="form-group">
-                            <h2 class="heading-small">Is there an address for this charge?</h2>
+
 
                             <label id="yesAddressLabel" class="block-label selection-button-radio" for="yesAddress" data-target="addressEntry">
                                 <input id="yesAddress" name="address" type="radio" value="yes" aria-controls="addressEntry">
@@ -29,14 +31,7 @@
 
                                 <div class="form-group" id="postcodeSearch">
                                     <h2 class="heading-small">Enter a postcode</h2>
-                                    <div class="notice">
-                                        <i class="icon icon-important">
-                                                  <span class="visually-hidden">Warning</span>
-                                                </i>
-                                        <strong class="bold-small">
-                                                    Choose no if this is not the address or you don't have an address for this charge</strong>
-                                    </div>
-                                    <br>
+                                    <span class="form-hint">Wrong address? Enter a new postcode below to change it.</span>
                                     <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
                                     <a id="findPostcode" class="button" href="#" role="button">Find</a>
                                 </div>

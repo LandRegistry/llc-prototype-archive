@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block page_title %} What does the charge do? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Describe what the charge does</h1>
+            <form action="does-charge-expire" method="GET">
+                <fieldset>
+                    <legend class="visually-hidden form-label">Describe what the charge does</legend>
+
+                    <label class="form-label" for="textarea">
+						<span class="form-hint">The charge imposes conditions on the land associated with a planning application </span>
+					</label>
+
+                    <textarea class="form-control form-control-3-4" name="textarea" id="whatDoesChargeDo" rows="5"></textarea>
+                </fieldset>
+                <br>
+                <p>
+                    <a id="whatDoesChargeDoButton" class="button" href="does-charge-expire" role="button">Continue</a>
+                </p>
+            </form>
+
+
+            <div id="back">
+                <a href="draw-an-extent" class="back-link">Back</a>
+            </div>
+
+        </div>
+
+
+        <!-- 		<div class="column-third related-container">
+
+			<aside class="govuk-related-items" role="complementary">
+				<hr>
+
+
+			</aside>
+
+		</div> -->
+
+    </div>
+
+</main>
+
+<script>
+    var descriptionIsChanging = sessionStorage.getItem('descriptionIsChanging');
+    if (descriptionIsChanging === 'true') {
+        var descriptionToChange = sessionStorage.getItem('descriptionToChange');
+        document.getElementById('whatDoesChargeDo').textContent = descriptionToChange;
+        document.getElementById('whatDoesChargeDoButton').setAttribute('href', 'charge-summary');
+        sessionStorage.setItem('descriptionUpdated', 'true');
+    };
+
+    document.getElementById('whatDoesChargeDoButton').onclick = function() {
+        var whatDoesChargeDo = document.getElementById('whatDoesChargeDo').value;
+        sessionStorage.setItem('whatDoesChargeDo', whatDoesChargeDo);
+    }
+</script>
+{% endblock %}
