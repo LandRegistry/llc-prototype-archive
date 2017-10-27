@@ -10,7 +10,7 @@
     </div>
     <!-- main content starts -->
     <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
-    <h1 class="heading-large" style="margin-top:20px">Where to find the charge</h1>
+    <h1 class="heading-large" style="margin-top:20px">Location for this charge</h1>
     <div class="grid-row">
         <div class="column-two-thirds">
             <form action="#">
@@ -18,7 +18,7 @@
                 <div class="form-group" id="search-field">
                     <fieldset>
                         <legend>
-                            <h2 class="heading-medium">Is this the charge address?</h2>
+                            <h2 class="heading-medium">Is there an address for this charge?</h2>
                         </legend>
                         <div class="form-group">
 
@@ -35,8 +35,6 @@
                                     <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
                                     <a id="findPostcode" class="button" href="#" role="button">Find</a>
                                 </div>
-                                <p id="manualAddressLink">
-                                </p>
                                 <div class="form-group hiddenList" id="addressList">
                                     <div class="results-block" id="address-list">
                                         <p>Click on the place you need.</p>
@@ -99,7 +97,6 @@
 <script>
     document.getElementById('findPostcode').onclick = function() {
         document.getElementById('addressList').classList.remove('hiddenList');
-        document.getElementById('manualAddressLink').classList.add('hiddenList');
         return false;
     };
 
@@ -116,6 +113,26 @@
     }
 
     document.getElementById('confirmAddressButton').onclick = function() {
+        var addressExists = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var newAddress = document.getElementById('selectedAddress').textContent;
+        if (addressExists.classList.contains('selected')) {
+            sessionStorage.setItem('chargeLocation', newAddress);
+        } else if (noAddress.classList.contains('selected')) {
+            var chargeLocation = document.getElementById('locationDescription').value;
+            sessionStorage.setItem('chargeLocation', chargeLocation);
+        }
+
+    }
+
+
+
+
+
+
+
+
+    /*document.getElementById('confirmAddressButton').onclick = function() {
         var yesAddress = document.getElementById('yesAddressLabel');
         var noAddress = document.getElementById('noAddressLabel');
         var address = document.getElementById('selectedAddress')
@@ -126,6 +143,6 @@
             var location = document.getElementById('locationDescription').value;
             sessionStorage.setItem('location', location);
         }
-    }
+    }*/
 </script>
 {% endblock %}

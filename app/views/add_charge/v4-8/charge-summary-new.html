@@ -9,7 +9,7 @@
         </p>
     </div>
     <!-- main content starts -->
-    <a href="what-does-the-charge-do" class="link-back" style="margin-bottom:0">Back</a>
+    <a href="what-does-charge-do-new" class="link-back" style="margin-bottom:0">Back</a>
     <h1 class="heading-large" style="margin-top:20px;">Check your answers</h1>
     <div class=" grid-row">
         <div class="column-two-thirds">
@@ -124,7 +124,7 @@
                     <!-- EXTENT ROW -->
                     <tr id="extentRow">
                         <td class="bold-small">Extent</td>
-                        <td id="extent"></td>
+                        <td id="extent"><img src="/public/images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px"></td>
                         <td class="change-answer">
                             <a id="extentChange" class="edit" href="#">
                                     Change <span class="visuallyhidden">extent</span>
@@ -209,7 +209,7 @@
 <script>
     // return charge type
     var chargeCategoryReturned = sessionStorage.getItem('chargeCategory');
-    console.log(chargeCategoryReturned);
+    // console.log(chargeCategoryReturned);
 
     // return uncommon items
     // Financial
@@ -231,11 +231,23 @@
         document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
         document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
         var landCompensationAmountCheck = sessionStorage.getItem('landCompAmountKnown');
-        if (landCompensationAmountCheck === 'Not known') {
+        if (landCompensationAmountCheck === 'Amount not known') {
             document.getElementById('landCompensationAmount').textContent = landCompensationAmountCheck;
+            var descriptionOfLand = sessionStorage.getItem('descriptionOfLand');
+            var workToBeDone = sessionStorage.getItem('workToBeDone');
+            document.getElementById('landDescriptionRow').classList.remove('hiddenList');
+            document.getElementById('workToBeDoneRow').classList.remove('hiddenList');
+            document.getElementById('landDescription').textContent = descriptionOfLand;
+            document.getElementById('workToBeDone').textContent = workToBeDone;
         } else {
             var landCompAmount = sessionStorage.getItem('landCompAmount');
-            document.getElementById('landCompensationAmount').textContent = landCompAmount;
+            var landCompAmountType = sessionStorage.getItem('amountType');
+            var interestInLand = sessionStorage.getItem('ownershipType');
+            document.getElementById('landCompensationAmount').textContent = '£' + landCompAmount;
+            document.getElementById('typeAmountRow').classList.remove('hiddenList');
+            document.getElementById('typeAmount').textContent = landCompAmountType;
+            document.getElementById('interestInLandRow').classList.remove('hiddenList');
+            document.getElementById('interestInLand').textContent = interestInLand;
         }
     }
 
@@ -245,29 +257,29 @@
     /*var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
     console.log(chargeSubcategoryReturned);*/
     var startDayReturned = sessionStorage.getItem('startDay');
-    console.log(startDayReturned);
+    // console.log(startDayReturned);
     var startMonthReturned = sessionStorage.getItem('startMonth');
-    console.log(startMonthReturned);
+    // console.log(startMonthReturned);
     var startYearReturned = sessionStorage.getItem('startYear');
-    console.log(startYearReturned);
+    // console.log(startYearReturned);
     var chargeLocationReturned = sessionStorage.getItem('chargeLocation');
     console.log(chargeLocationReturned);
     var docDay2Returned = sessionStorage.getItem('docDay2');
-    console.log(docDay2Returned);
+    // console.log(docDay2Returned);
     var docMonth2Returned = sessionStorage.getItem('docMonth2');
-    console.log(docMonth2Returned);
+    // console.log(docMonth2Returned);
     var docYear2Returned = sessionStorage.getItem('docYear2');
-    console.log(docYear2Returned);
+    // console.log(docYear2Returned);
     var chargeExpiresReturned = sessionStorage.getItem('chargeExpires');
-    console.log(chargeExpiresReturned);
+    // console.log(chargeExpiresReturned);
     var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
-    console.log(chargeSubcategoryReturned);
+    // console.log(chargeSubcategoryReturned);
     var departmentLinksReturned = sessionStorage.getItem('departmentLinks');
-    console.log(departmentLinksReturned);
+    // console.log(departmentLinksReturned);
     var authorityReferenceReturned = sessionStorage.getItem('authorityReference');
-    console.log(authorityReferenceReturned);
+    // console.log(authorityReferenceReturned);
     var chargeDescriptionReturned = sessionStorage.getItem('chargeDescription');
-    console.log(chargeDescriptionReturned);
+    // console.log(chargeDescriptionReturned);
 
     // populate relevant fields
     document.getElementById('chargeCategory').textContent = chargeCategoryReturned;
