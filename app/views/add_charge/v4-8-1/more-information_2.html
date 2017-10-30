@@ -57,7 +57,7 @@
                                         <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
                                     </div>
                                     <div id="manualAddressEntry" class="hiddenList">
-                                        <p id="selectedAddress"></p>
+                                        <p><span id="selectedAddress"></span>, Exeter EX4 1AY</p>
                                         <p>Not the right location? <a href="more-information_2">Search again</a></p>
                                     </div>
 
@@ -107,7 +107,7 @@
             document.getElementById('manualAddressEntry').classList.remove('hiddenList');
             document.getElementById('address-list').classList.add('hiddenList');
             var addressLineOne = this.text;
-            document.getElementById('selectedAddress').textContent = addressLineOne + ' Exeter EX4 1AY';
+            document.getElementById('selectedAddress').textContent = addressLineOne;
             sessionStorage.setItem('location', addressLineOne);
             return false;
         }
@@ -122,6 +122,7 @@
         } else if (noAddress.classList.contains('selected')) {
             var chargeLocation = document.getElementById('locationDescription').value;
             sessionStorage.setItem('chargeLocation', chargeLocation);
+            sessionStorage.setItem('locationDescriptionExists', 'true');
         }
 
     }

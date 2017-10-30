@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <legend>
-                            <h2 class="heading-medium">Amount that will be secured</h2>
+                            <h2 class="heading-medium">Amount originally secured</h2>
                         </legend>
                         <span class="form-hint">For example, 100.50</span>
                         <label class="form-label" for="textarea">
@@ -77,6 +77,10 @@
                             <input id="noInterest" name="interest" type="radio" value="no">
                             No
                         </label>
+                        <label id="mayBePayableLabel" class="block-label selection-button-radio form-label" for="mayBePayable">
+                            <input id="mayBePayable" name="interest" type="radio" value="Interest may be payable">
+                            Interest may be payable
+                        </label>
 
                         <br>
                     </div>
@@ -98,11 +102,14 @@
         sessionStorage.setItem('amount', amount);
         var yesInterest = document.getElementById('yesInterestLabel');
         var noInterest = document.getElementById('noInterestLabel');
+        var interestMayBePayable = document.getElementById('mayBePayableLabel');
         if (yesInterest.classList.contains('selected')) {
             var interestRate = document.getElementById('interestRate').value;
             sessionStorage.setItem('interestRate', interestRate);
         } else if (noInterest.classList.contains('selected')) {
             sessionStorage.setItem('interestRate', 'Interest will not be paid on the amount secured');
+        } else if (interestMayBePayable.classList.contains('selected')) {
+            sessionStorage.setItem('interestRate', 'Interest may be payable');
         }
     }
 </script>

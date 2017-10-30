@@ -133,10 +133,11 @@
                         </td>
                     </tr>
 
-                    <!-- WHERE TO FIND THE CHARGE -->
-                    <tr id="whereToFindTheChargeRow">
-                        <td class="bold-small">Charge location</td>
-                        <td id="whereToFindTheCharge"></td>
+                    <!-- IF ADDRESS EXISTS -->
+                    <tr id="whereToFindTheChargeRow" class="hiddenList">
+                        <td class="bold-small">Location</td>
+                        <td id><span id="whereToFindTheCharge"></span><br> Exeter
+                            <br>EX4 1AY</td>
                         <td class="change-answer">
                             <a id="whereToFindTheChargeChange" class="edit" href="#">
                                 Change <span class="visuallyhidden">where to find the charge</span>
@@ -144,9 +145,20 @@
                         </td>
                     </tr>
 
+                    <!-- IF LOCATION DESCRIPTION EXISTS -->
+                    <tr id="locationDescriptionRow" class="hiddenList">
+                        <td class="bold-small">Location</td>
+                        <td id="locationDescription"></td>
+                        <td class="change-answer">
+                            <a id="locationDescriptionChange" class="edit" href="#">
+                                Change <span class="visuallyhidden">where to find the charge</span>
+                            </a>
+                        </td>
+                    </tr>
+
                     <!--CHARGE EXPIRY DATE ROW -->
                     <tr id="chargeExpiryDateRow">
-                        <td class="bold-small">Charge expiry date</td>
+                        <td class="bold-small">Expiry date</td>
                         <td id="chargeExpiryDate"></td>
                         <td class="change-answer">
                             <a id="chargeExpiryDateChange" class="edit" href="#">
@@ -179,7 +191,7 @@
 
                     <!--CHARGE DESCRIPTION ROW -->
                     <tr id="chargeDescriptionRow">
-                        <td class="bold-small">Charge description</td>
+                        <td class="bold-small">Description</td>
                         <td id="chargeDescription"></td>
                         <td class="change-answer">
                             <a id="chargeDescriptionChange" class="edit" href="#">
@@ -226,7 +238,12 @@
             document.getElementById('financialInterestRow').classList.remove('hiddenList');
             document.getElementById('financialAmount').textContent = '£' + amount;
         }
-        document.getElementById('financialInterest').textContent = interestRate + '%';
+        if (interestRate === 'Interest may be payable' || interestRate === 'Interest will not be paid on the amount secured') {
+            document.getElementById('financialInterest').textContent = interestRate;
+        } else {
+            document.getElementById('financialInterest').textContent = interestRate + '%';
+        }
+
         // Land compensation
     } else if (chargeCategoryReturned === 'Land compensation') {
         document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
@@ -264,15 +281,19 @@
     var startYearReturned = sessionStorage.getItem('startYear');
     // console.log(startYearReturned);
     var chargeLocationReturned = sessionStorage.getItem('chargeLocation');
-    console.log(chargeLocationReturned);
-    var docDay2Returned = sessionStorage.getItem('docDay2');
-    // console.log(docDay2Returned);
-    var docMonth2Returned = sessionStorage.getItem('docMonth2');
-    // console.log(docMonth2Returned);
-    var docYear2Returned = sessionStorage.getItem('docYear2');
-    // console.log(docYear2Returned);
+    // console.log(chargeLocationReturned);
+    var locationDescriptionExists = sessionStorage.getItem('locationDescriptionExists');
+    // console.log('locationDescriptionExists');
     var chargeExpiresReturned = sessionStorage.getItem('chargeExpires');
     // console.log(chargeExpiresReturned);
+    if (chargeExpiresReturned !== 'Charge does not expire') {
+        var docDay2Returned = sessionStorage.getItem('docDay2');
+        // console.log(docDay2Returned);
+        var docMonth2Returned = sessionStorage.getItem('docMonth2');
+        // console.log(docMonth2Returned);
+        var docYear2Returned = sessionStorage.getItem('docYear2');
+        // console.log(docYear2Returned);
+    }
     var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
     // console.log(chargeSubcategoryReturned);
     var departmentLinksReturned = sessionStorage.getItem('departmentLinks');
@@ -288,8 +309,18 @@
     document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
     document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
     document.getElementById('creationDate').textContent = startDayReturned + ' ' + startMonthReturned + ' ' + startYearReturned;
-    document.getElementById('whereToFindTheCharge').textContent = chargeLocationReturned;
-    document.getElementById('chargeExpiryDate').textContent = docDay2Returned + ' ' + docMonth2Returned + ' ' + docYear2Returned;
+    if (locationDescriptionExists === 'true') {
+        document.getElementById('locationDescriptionRow').classList.remove('hiddenList');
+        document.getElementById('locationDescription').textContent = chargeLocationReturned;
+    } else {
+        document.getElementById('whereToFindTheChargeRow').classList.remove('hiddenList');
+        document.getElementById('whereToFindTheCharge').textContent = chargeLocationReturned;
+    }
+    if (chargeExpiresReturned !== 'Charge does not expire') {
+        document.getElementById('chargeExpiryDate').textContent = docDay2Returned + ' ' + docMonth2Returned + ' ' + docYear2Returned;
+    } else {
+        document.getElementById('chargeExpiryDate').textContent = chargeExpiresReturned;
+    }
     document.getElementById('sourceInformation').textContent = departmentLinksReturned;
     document.getElementById('authorityReference').textContent = authorityReferenceReturned;
     document.getElementById('chargeDescription').textContent = chargeDescriptionReturned;

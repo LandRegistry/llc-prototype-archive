@@ -83,25 +83,19 @@
 
 </main>
 <script>
-    var locationCheck = sessionStorage.getItem('location');
-    console.log(locationCheck);
-    var locationDescriptionRetrieved = sessionStorage.getItem('locationDescription');
-    console.log(locationDescriptionRetrieved);
-
-
-    var expiryIsChanging = sessionStorage.getItem('expiryIsChanging');
-    if (expiryIsChanging === 'true') {
-        var expireDayToChange = sessionStorage.getItem('expireDayToChange');
-        var expireMonthToChange = sessionStorage.getItem('expireMonthToChange');
-        console.log(expireMonthToChange);
-        var expireYearToChange = sessionStorage.getItem('expireYearToChange');
-        document.getElementById('yesExpiryLabel').classList.add('selected');
-        document.getElementById('doc_day2').value = expireDayToChange;
-        document.getElementById('doc_month2').value = expireMonthToChange;
-        document.getElementById('doc_year2').value = expireYearToChange;
-        document.getElementById('expiryButton').setAttribute('href', 'charge-summary');
-        sessionStorage.setItem('expiryUpdated', 'true');
-    }
+    /*var expiryIsChanging = sessionStorage.getItem('expiryIsChanging');
+                                        if (expiryIsChanging === 'true') {
+                                            var expireDayToChange = sessionStorage.getItem('expireDayToChange');
+                                            var expireMonthToChange = sessionStorage.getItem('expireMonthToChange');
+                                            console.log(expireMonthToChange);
+                                            var expireYearToChange = sessionStorage.getItem('expireYearToChange');
+                                            document.getElementById('yesExpiryLabel').classList.add('selected');
+                                            document.getElementById('doc_day2').value = expireDayToChange;
+                                            document.getElementById('doc_month2').value = expireMonthToChange;
+                                            document.getElementById('doc_year2').value = expireYearToChange;
+                                            document.getElementById('expiryButton').setAttribute('href', 'charge-summary');
+                                            sessionStorage.setItem('expiryUpdated', 'true');
+                                        }*/
 
     document.getElementById('expiryButton').onclick = function() {
         var noExpiry = document.getElementById('noExpiryLabel');
@@ -159,9 +153,13 @@
             sessionStorage.setItem('docYear2', docYear2);
         }
         var testdocDay2 = sessionStorage.getItem('docDay2');
+        console.log(testdocDay2);
         var testdocMonth2 = sessionStorage.getItem('docMonth2');
+        console.log(testdocMonth2);
         var testdocYear2 = sessionStorage.getItem('docYear2');
+        console.log(testdocYear2);
         var testExpires = sessionStorage.getItem('chargeExpires');
+        console.log(testExpires);
     }
 </script>
 {% endblock %}

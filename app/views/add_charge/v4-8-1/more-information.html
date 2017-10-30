@@ -59,7 +59,7 @@
                                     <br>
 
                                 </div>
-                                <p class="hiddenList" id="newAddress"></p>
+                                <p class="hiddenList" id="newAddress"><span id="newAddressToSave"></span> Exeter EX4 1AY</p>
                             </div>
 
 
@@ -108,7 +108,7 @@
             var newAddress = this.textContent;
             document.getElementById('addressSelected').textContent = newAddress;
             document.getElementById('newAddress').classList.remove('hiddenList');
-            document.getElementById('newAddress').textContent = newAddress + ' Exeter EX4 1AY';
+            document.getElementById('newAddressToSave').textContent = newAddress;
             document.getElementById('address-list').classList.add('hiddenList');
         }
     }
@@ -117,15 +117,16 @@
         var correctAddress = document.getElementById('yesAddressLabel');
         var updatedAddress = document.getElementById('newAddressLabel');
         var justDescription = document.getElementById('justDescriptionLabel');
-        var newAddress = document.getElementById('newAddress').textContent;
+        var newAddressToSave = document.getElementById('newAddressToSave').textContent;
         if (correctAddress.classList.contains('selected')) {
             var chargeLocation = document.getElementById('addressSelected').textContent;
             sessionStorage.setItem('chargeLocation', chargeLocation);
         } else if (updatedAddress.classList.contains('selected')) {
-            sessionStorage.setItem('chargeLocation', newAddress);
+            sessionStorage.setItem('chargeLocation', newAddressToSave);
         } else if (justDescription.classList.contains('selected')) {
             var chargeLocation = document.getElementById('locationDescription').value;
             sessionStorage.setItem('chargeLocation', chargeLocation);
+            sessionStorage.setItem('locationDescriptionExists', 'true');
         }
     }
 </script>
