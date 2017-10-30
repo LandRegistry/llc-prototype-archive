@@ -44,6 +44,8 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
+    var test = sessionStorage.getItem('register');
+    console.log(test);
     document.getElementById('registerButton').onclick = function() {
         var userName = document.getElementById('name').value;
         sessionStorage.setItem('userName', userName);

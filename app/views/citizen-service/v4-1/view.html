@@ -22,7 +22,7 @@
             <p>There are <span class="bold-small">6 charges</span> that affect the land of this property.</p>
             <div class="panel panel-border-wide download-panel">
                 <p>
-                    Download your results now. Unless you <a href="login-searched" class="bold-small">sign-in</a> or <a href="register-from-search" class="bold-small">register</a>, you will lose it once you leave this page.</p>
+                    Download your results now. Unless you <a href="login-searched" class="bold-small">sign-in</a> or <a href="register-from-search" id="register" class="bold-small">register</a>, you will lose it once you leave this page.</p>
                 <p>Open a free account and for 6 months you will get:</p>
                 <ul class="list list-bullet">
                     <li>cloud storage for your searches</li>
@@ -89,15 +89,10 @@
     <script>
         var locationSearched = sessionStorage.getItem('searchTerm');
         document.getElementById('address-selected').textContent = locationSearched;
-        /*var addressRetrieved = sessionStorage.getItem('addressSelected');
-        console.log(addressRetrieved);
-        var textToChange = document.getElementById("address-selected");
-        textToChange.textContent = addressRetrieved;*/
 
-        /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
-        console.log(creationDateRetrieved);
-        var dateToChange = document.getElementById('creationDateText');
-        dateToChange.textContent = creationDateRetrieved;*/
+        document.getElementById('register').onclick = function() {
+            sessionStorage.setItem('register', 'true');
+        }
     </script>
 </main>
 

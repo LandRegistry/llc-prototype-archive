@@ -72,21 +72,17 @@
                 </table>
             </div>
             <p><a href="search-by-postcode">Start a new search</a></p>
-            <p><a href="dashboard-new">Go to your dashboard</a></p>
+            <p><a href="dashboard-new" id="dashboardLink">Go to your dashboard</a></p>
         </div>
     </div>
     <script>
         var locationSearched = sessionStorage.getItem('searchTerm');
         document.getElementById('address-selected').textContent = locationSearched;
-        /*var addressRetrieved = sessionStorage.getItem('addressSelected');
-        console.log(addressRetrieved);
-        var textToChange = document.getElementById("address-selected");
-        textToChange.textContent = addressRetrieved;*/
 
-        /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
-        console.log(creationDateRetrieved);
-        var dateToChange = document.getElementById('creationDateText');
-        dateToChange.textContent = creationDateRetrieved;*/
+        var registerCheck = sessionStorage.getItem('register');
+        if (registerCheck === 'true') {
+            document.getElementById('dashboardLink').setAttribute('href', 'dashboard-first-time');
+        }
     </script>
 </main>
 
