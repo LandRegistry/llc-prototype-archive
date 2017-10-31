@@ -29,7 +29,7 @@
         <div class="column-two-thirds">
             <br>
             <div class="form-group">
-                <a class="button" href="/public/documents/Offical-local-land-search-result_2.pdf" download>Download PDF</a><br><br>
+                <a class="button" href="/public/documents/Offical-local-land-search-result_4.pdf" download>Download PDF</a><br><br>
                 <h2 class="heading-medium">Other formats</h2>
                 <table class="check-your-answers">
                     <!--<thead>
@@ -43,27 +43,27 @@
                     <tbody>
                         <tr>
                             <td class="bold-small">JSON</td>
-                            <td id="chargeType"></td>
-                            <td class="change-answer">
-                                <a class="edit" href="#">
+                            <td></td>
+                            <td>
+                                <a class="download" href="#">
 								Download
 							</a>
                             </td>
                         </tr>
                         <tr>
                             <td class="bold-small">CSV</td>
-                            <td id="chargeType"></td>
-                            <td class="change-answer">
-                                <a class="edit" href="#">
+                            <td></td>
+                            <td>
+                                <a class="download" href="#">
 								Download
 							</a>
                             </td>
                         </tr>
                         <tr>
                             <td class="bold-small">XML</td>
-                            <td id="chargeType"></td>
-                            <td class="change-answer">
-                                <a class="edit" href="#">
+                            <td></td>
+                            <td>
+                                <a class="download" href="#">
 								Download
 							</a>
                             </td>
@@ -71,22 +71,18 @@
                     </tbody>
                 </table>
             </div>
-            <p><a href="search">Start a new search</a></p>
-            <p><a href="dashboard-new">Go to your dashboard</a></p>
+            <p><a href="search-by-postcode">Start a new search</a></p>
+            <p><a href="dashboard-new" id="dashboardLink">Go to your dashboard</a></p>
         </div>
     </div>
     <script>
         var locationSearched = sessionStorage.getItem('searchTerm');
         document.getElementById('address-selected').textContent = locationSearched;
-        /*var addressRetrieved = sessionStorage.getItem('addressSelected');
-        console.log(addressRetrieved);
-        var textToChange = document.getElementById("address-selected");
-        textToChange.textContent = addressRetrieved;*/
 
-        /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
-        console.log(creationDateRetrieved);
-        var dateToChange = document.getElementById('creationDateText');
-        dateToChange.textContent = creationDateRetrieved;*/
+        var registerCheck = sessionStorage.getItem('register');
+        if (registerCheck === 'true') {
+            document.getElementById('dashboardLink').setAttribute('href', 'dashboard-first-time');
+        }
     </script>
 </main>
 

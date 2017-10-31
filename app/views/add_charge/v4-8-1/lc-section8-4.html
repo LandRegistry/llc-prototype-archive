@@ -40,7 +40,7 @@
                         <textarea id="workToBeDone" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
                         <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
                         <p>
-                            <a class="button" id="landCompensationBtn" role="button" href="../date-document-created">Continue</a>
+                            <a class="button" id="landCompensationBtn" role="button" href="date-document-created">Continue</a>
 
                         </p>
                     </div>
@@ -57,6 +57,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('landCompensationBtn').onclick = function() {
         var descriptionOfLandSold = document.getElementById('landDescription').value;
         var workToBeDone = document.getElementById('workToBeDone').value;

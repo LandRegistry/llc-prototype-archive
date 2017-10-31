@@ -10,15 +10,16 @@
     </div>
     <!-- main content starts -->
     <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
-    <h1 class="heading-large" style="margin-top:20px">Location for this charge</h1>
+
     <div class="grid-row">
         <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">Is there an address for this charge?</h1>
             <form action="#">
 
                 <div class="form-group" id="search-field">
                     <fieldset>
-                        <legend>
-                            <h2 class="heading-medium">Is there an address for this charge?</h2>
+                        <legend class="visually-hidden">Is there an address for this charge?
+
                         </legend>
                         <div class="form-group">
 
@@ -31,7 +32,7 @@
 
                                 <div class="form-group" id="postcodeSearch">
                                     <h2 class="heading-small">Enter a postcode</h2>
-                                    <span class="form-hint">Wrong address? Enter a new postcode below to change it.</span>
+
                                     <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
                                     <a id="findPostcode" class="button" href="#" role="button">Find</a>
                                 </div>
@@ -56,7 +57,7 @@
                                         <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
                                     </div>
                                     <div id="manualAddressEntry" class="hiddenList">
-                                        <p id="selectedAddress"></p>
+                                        <p><span id="selectedAddress"></span>, Exeter EX4 1AY</p>
                                         <p>Not the right location? <a href="more-information_2">Search again</a></p>
                                     </div>
 
@@ -70,7 +71,7 @@
                             <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
                                 <div class="form-group">
                                     <h2 class="heading-small">Describe how to find the charge without an address</h2>
-                                    <span class="form-hint">No address for this charge? Describe how to find the charge instead. For example, 'land to the north of the bypass'.</span>
+                                    <span class="form-hint">For example, 'land to the north of the bypass'.</span>
                                     <label class="form-label" for="textarea">
                                                 
                                     </label>
@@ -95,6 +96,10 @@
 
 </main>
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('findPostcode').onclick = function() {
         document.getElementById('addressList').classList.remove('hiddenList');
         return false;
@@ -106,7 +111,7 @@
             document.getElementById('manualAddressEntry').classList.remove('hiddenList');
             document.getElementById('address-list').classList.add('hiddenList');
             var addressLineOne = this.text;
-            document.getElementById('selectedAddress').textContent = addressLineOne + ' Exeter EX4 1AY';
+            document.getElementById('selectedAddress').textContent = addressLineOne;
             sessionStorage.setItem('location', addressLineOne);
             return false;
         }
@@ -121,6 +126,7 @@
         } else if (noAddress.classList.contains('selected')) {
             var chargeLocation = document.getElementById('locationDescription').value;
             sessionStorage.setItem('chargeLocation', chargeLocation);
+            sessionStorage.setItem('locationDescriptionExists', 'true');
         }
 
     }

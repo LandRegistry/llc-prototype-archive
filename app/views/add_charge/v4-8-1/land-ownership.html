@@ -10,16 +10,17 @@
     </div>
     <!-- main content starts -->
     <a href="amount-of-compensation" class="link-back" style="margin-bottom:0">Back</a>
-    <h1 class="heading-large" style="margin-top:20px">
-        Land ownership
-    </h1>
+
     <div class="grid-row">
         <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">
+                How is the land owned?
+            </h1>
 
             <form action="document-link" method="GET">
                 <fieldset>
-                    <legend>
-                        <h2 class="heading-medium">How is the land owned?</h2>
+                    <legend class="visually-hidden">How is the land owned?
+
                     </legend>
 
                     <div class="form-group">
@@ -54,7 +55,7 @@
 
             </form>
             <p>
-                <a class="button" id="landCompensationBtn" role="button" href="../date-document-created">Continue</a>
+                <a class="button" id="landCompensationBtn" role="button" href="date-document-created">Continue</a>
             </p>
 
 
@@ -65,6 +66,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('landCompensationBtn').onclick = function() {
         var freehold = document.getElementById('freehold-label');
         var leasehold = document.getElementById('leasehold-label');

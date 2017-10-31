@@ -11,17 +11,17 @@
     </div>
     <!-- main content starts -->
     <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
-    <h1 class="heading-large" style="margin-top:20px">Amount secured</h1>
+
     <div class="grid-row">
         <div class="column-two-thirds">
-
+            <h1 class="heading-large" style="margin-top:20px">Do you know the amount secured for this financial charge?</h1>
 
 
             <form action="#">
 
                 <fieldset>
-                    <legend>
-                        <h2 class="heading-medium">Do you know the amount secured for this financial charge?</h2>
+                    <legend class="visually-hidden">Do you know the amount secured for this financial charge?
+
                     </legend>
                     <div class="form-group">
                         <label id="yesSecuredAmountLabel" class="block-label selection-button-radio" for="yesSecuredAmount">
@@ -51,7 +51,7 @@
             sessionStorage.setItem('amountKnown', 'true');
             document.getElementById('securedBtn').setAttribute('href', 'know-secured-amount');
         } else if (noAmount.classList.contains('selected')) {
-            document.getElementById('securedBtn').setAttribute('href', '../date-document-created');
+            document.getElementById('securedBtn').setAttribute('href', 'date-document-created');
             sessionStorage.setItem('amountKnown', 'Amount not known');
         } else {
             sessionStorage.setItem('amountKnown', 'noAnswer');

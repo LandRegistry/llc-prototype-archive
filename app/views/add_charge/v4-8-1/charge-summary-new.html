@@ -10,16 +10,17 @@
     </div>
     <!-- main content starts -->
     <a href="what-does-charge-do-new" class="link-back" style="margin-bottom:0">Back</a>
-    <h1 class="heading-large" style="margin-top:20px;">Check your answers</h1>
+
     <div class=" grid-row">
         <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px;">Check your answers</h1>
 
             <table class="check-your-answers">
 
                 <tbody>
                     <!-- CHARGE CATEGORY ROW -->
                     <tr id="chargeCategoryRow">
-                        <td class="bold-small">Charge category</td>
+                        <td class="bold-small">Category</td>
                         <td id="chargeCategory"></td>
                         <td class="change-answer">
                         </td>
@@ -38,7 +39,7 @@
                         <td class="bold-small">Amount</td>
                         <td id="financialAmount"></td>
                         <td class="change-answer">
-                            <a id="financialAmountChange" class="edit" href="#">
+                            <a id="financialAmountChange" class="edit" href="secured-charge-amount">
                                 Change <span class="visuallyhidden">financial amount</span>
                             </a>
                         </td>
@@ -49,7 +50,7 @@
                         <td class="bold-small">Interest rate</td>
                         <td id="financialInterest"></td>
                         <td class="change-answer">
-                            <a id="financialInterestChange" class="edit" href="#">
+                            <a id="financialInterestChange" class="edit" href="know-secured-amount">
                                     Change <span class="visuallyhidden">financial interest</span>
                                 </a>
                         </td>
@@ -60,7 +61,7 @@
                         <td class="bold-small">Land compensation amount</td>
                         <td id="landCompensationAmount"></td>
                         <td class="change-answer">
-                            <a id="landCompensationAmountChange" class="edit" href="#">
+                            <a id="landCompensationAmountChange" class="edit" href="land-compensation">
                                 Change <span class="visuallyhidden">land compensation amount</span>
                             </a>
                         </td>
@@ -71,7 +72,7 @@
                         <td class="bold-small">Land compensation amount type</td>
                         <td id="typeAmount"></td>
                         <td class="change-answer">
-                            <a id="typeAmountChange" class="edit" href="#">
+                            <a id="typeAmountChange" class="edit" href="amount-of-compensation">
                                     Change <span class="visuallyhidden">land compensation amount</span>
                                 </a>
                         </td>
@@ -82,7 +83,7 @@
                         <td class="bold-small">Interest in land</td>
                         <td id="interestInLand"></td>
                         <td class="change-answer">
-                            <a id="interestInLandChange" class="edit" href="#">
+                            <a id="interestInLandChange" class="edit" href="land-ownership">
                                 Change <span class="visuallyhidden">financial interest in land</span>
                             </a>
                         </td>
@@ -93,7 +94,7 @@
                         <td class="bold-small">Land description</td>
                         <td id="landDescription"></td>
                         <td class="change-answer">
-                            <a id="landDescriptionChange" class="edit" href="#">
+                            <a id="landDescriptionChange" class="edit" href="lc-section8-4">
                                 Change <span class="visuallyhidden">land description</span>
                             </a>
                         </td>
@@ -104,7 +105,7 @@
                         <td class="bold-small">Work to be done</td>
                         <td id="workToBeDone"></td>
                         <td class="change-answer">
-                            <a id="workToBeDoneChange" class="edit" href="#">
+                            <a id="workToBeDoneChange" class="edit" href="lc-section8-4">
                                 Change <span class="visuallyhidden">work to be done</span>
                             </a>
                         </td>
@@ -115,7 +116,7 @@
                         <td class="bold-small">Creation date</td>
                         <td id="creationDate"></td>
                         <td class="change-answer">
-                            <a id="creationDateChange" class="edit" href="#">
+                            <a id="creationDateChange" class="edit" href="date-document-created">
                                 Change <span class="visuallyhidden">creation date</span>
                             </a>
                         </td>
@@ -126,18 +127,30 @@
                         <td class="bold-small">Extent</td>
                         <td id="extent"><img src="/public/images/maintain_llc_v1-4/address_1_thumb.png" width="150px" height="150px"></td>
                         <td class="change-answer">
-                            <a id="extentChange" class="edit" href="#">
+                            <a id="extentChange" class="edit" href="search-property">
                                     Change <span class="visuallyhidden">extent</span>
                                 </a>
                         </td>
                     </tr>
 
-                    <!-- WHERE TO FIND THE CHARGE -->
-                    <tr id="whereToFindTheChargeRow">
-                        <td class="bold-small">Charge location</td>
-                        <td id="whereToFindTheCharge"></td>
+                    <!-- IF ADDRESS EXISTS -->
+                    <tr id="whereToFindTheChargeRow" class="hiddenList">
+                        <td class="bold-small">Location</td>
+                        <td id><span id="whereToFindTheCharge"></span><br> Exeter
+                            <br>EX4 1AY</td>
                         <td class="change-answer">
-                            <a id="whereToFindTheChargeChange" class="edit" href="#">
+                            <a id="whereToFindTheChargeChange" class="edit" href="more-information_2">
+                                Change <span class="visuallyhidden">where to find the charge</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- IF LOCATION DESCRIPTION EXISTS -->
+                    <tr id="locationDescriptionRow" class="hiddenList">
+                        <td class="bold-small">Location</td>
+                        <td id="locationDescription"></td>
+                        <td class="change-answer">
+                            <a id="locationDescriptionChange" class="edit" href="more-ingormation_2">
                                 Change <span class="visuallyhidden">where to find the charge</span>
                             </a>
                         </td>
@@ -145,10 +158,10 @@
 
                     <!--CHARGE EXPIRY DATE ROW -->
                     <tr id="chargeExpiryDateRow">
-                        <td class="bold-small">Charge expiry date</td>
+                        <td class="bold-small">Expiry date</td>
                         <td id="chargeExpiryDate"></td>
                         <td class="change-answer">
-                            <a id="chargeExpiryDateChange" class="edit" href="#">
+                            <a id="chargeExpiryDateChange" class="edit" href="does-charge-expire">
                                 Change <span class="visuallyhidden">charge expiry date</span>
                             </a>
                         </td>
@@ -159,7 +172,7 @@
                         <td class="bold-small">Source information</td>
                         <td id="sourceInformation"></td>
                         <td class="change-answer">
-                            <a id="sourceInformationChange" class="edit" href="#">
+                            <a id="sourceInformationChange" class="edit" href="who-can-answer-questions">
                                 Change <span class="visuallyhidden">source information</span>
                             </a>
                         </td>
@@ -170,7 +183,7 @@
                         <td class="bold-small">Authority reference</td>
                         <td id="authorityReference"></td>
                         <td class="change-answer">
-                            <a id="authorityReferenceChange" class="edit" href="#">
+                            <a id="authorityReferenceChange" class="edit" href="who-can-answer-questions">
                                 Change <span class="visuallyhidden">authority reference</span>
                             </a>
                         </td>
@@ -178,10 +191,10 @@
 
                     <!--CHARGE DESCRIPTION ROW -->
                     <tr id="chargeDescriptionRow">
-                        <td class="bold-small">Charge description</td>
+                        <td class="bold-small">Description</td>
                         <td id="chargeDescription"></td>
                         <td class="change-answer">
-                            <a id="chargeDescriptionChange" class="edit" href="#">
+                            <a id="chargeDescriptionChange" class="edit" href="what-does-charge-do">
                                 Change <span class="visuallyhidden">charge description</span>
                             </a>
                         </td>
@@ -207,6 +220,14 @@
 </main>
 
 <script>
+    var edit = document.querySelectorAll('.edit');
+    for (var i = 0; i < edit.length; i++) {
+        edit[i].onclick = function() {
+            var editLink = this.getAttribute('href');
+            sessionStorage.setItem('editing', 'true');
+            sessionStorage.setItem('editLink', editLink);
+        }
+    }
     // return charge type
     var chargeCategoryReturned = sessionStorage.getItem('chargeCategory');
     // console.log(chargeCategoryReturned);
@@ -225,11 +246,15 @@
             document.getElementById('financialInterestRow').classList.remove('hiddenList');
             document.getElementById('financialAmount').textContent = '£' + amount;
         }
-        document.getElementById('financialInterest').textContent = interestRate + '%';
+        if (interestRate === 'Interest may be payable' || interestRate === 'Interest will not be paid on the amount secured') {
+            document.getElementById('financialInterest').textContent = interestRate;
+        } else {
+            document.getElementById('financialInterest').textContent = interestRate + '%';
+        }
+
         // Land compensation
     } else if (chargeCategoryReturned === 'Land compensation') {
         document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
-        document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
         var landCompensationAmountCheck = sessionStorage.getItem('landCompAmountKnown');
         if (landCompensationAmountCheck === 'Amount not known') {
             document.getElementById('landCompensationAmount').textContent = landCompensationAmountCheck;
@@ -240,6 +265,7 @@
             document.getElementById('landDescription').textContent = descriptionOfLand;
             document.getElementById('workToBeDone').textContent = workToBeDone;
         } else {
+            document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
             var landCompAmount = sessionStorage.getItem('landCompAmount');
             var landCompAmountType = sessionStorage.getItem('amountType');
             var interestInLand = sessionStorage.getItem('ownershipType');
@@ -263,15 +289,19 @@
     var startYearReturned = sessionStorage.getItem('startYear');
     // console.log(startYearReturned);
     var chargeLocationReturned = sessionStorage.getItem('chargeLocation');
-    console.log(chargeLocationReturned);
-    var docDay2Returned = sessionStorage.getItem('docDay2');
-    // console.log(docDay2Returned);
-    var docMonth2Returned = sessionStorage.getItem('docMonth2');
-    // console.log(docMonth2Returned);
-    var docYear2Returned = sessionStorage.getItem('docYear2');
-    // console.log(docYear2Returned);
+    // console.log(chargeLocationReturned);
+    var locationDescriptionExists = sessionStorage.getItem('locationDescriptionExists');
+    // console.log('locationDescriptionExists');
     var chargeExpiresReturned = sessionStorage.getItem('chargeExpires');
     // console.log(chargeExpiresReturned);
+    if (chargeExpiresReturned !== 'Charge does not expire') {
+        var docDay2Returned = sessionStorage.getItem('docDay2');
+        // console.log(docDay2Returned);
+        var docMonth2Returned = sessionStorage.getItem('docMonth2');
+        // console.log(docMonth2Returned);
+        var docYear2Returned = sessionStorage.getItem('docYear2');
+        // console.log(docYear2Returned);
+    }
     var chargeSubcategoryReturned = sessionStorage.getItem('chargeSubcategory');
     // console.log(chargeSubcategoryReturned);
     var departmentLinksReturned = sessionStorage.getItem('departmentLinks');
@@ -287,8 +317,18 @@
     document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
     document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
     document.getElementById('creationDate').textContent = startDayReturned + ' ' + startMonthReturned + ' ' + startYearReturned;
-    document.getElementById('whereToFindTheCharge').textContent = chargeLocationReturned;
-    document.getElementById('chargeExpiryDate').textContent = docDay2Returned + ' ' + docMonth2Returned + ' ' + docYear2Returned;
+    if (locationDescriptionExists === 'true') {
+        document.getElementById('locationDescriptionRow').classList.remove('hiddenList');
+        document.getElementById('locationDescription').textContent = chargeLocationReturned;
+    } else {
+        document.getElementById('whereToFindTheChargeRow').classList.remove('hiddenList');
+        document.getElementById('whereToFindTheCharge').textContent = chargeLocationReturned;
+    }
+    if (chargeExpiresReturned !== 'Charge does not expire') {
+        document.getElementById('chargeExpiryDate').textContent = docDay2Returned + ' ' + docMonth2Returned + ' ' + docYear2Returned;
+    } else {
+        document.getElementById('chargeExpiryDate').textContent = chargeExpiresReturned;
+    }
     document.getElementById('sourceInformation').textContent = departmentLinksReturned;
     document.getElementById('authorityReference').textContent = authorityReferenceReturned;
     document.getElementById('chargeDescription').textContent = chargeDescriptionReturned;

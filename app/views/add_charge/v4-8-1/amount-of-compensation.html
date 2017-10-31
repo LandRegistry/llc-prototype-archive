@@ -22,7 +22,7 @@
                     <legend>
                         <h2 class="heading-medium">What is the amount of compensation?</h2>
                     </legend>
-                    <span class="form-hint">For example, 100,000</span>
+                    <span class="form-hint">For example, 100000</span>
                     <div class="form-group">
                         <label class="form-label-bold" for="compensation-amount">
                           
@@ -57,7 +57,7 @@
                 </fieldset>
             </form>
             <p>
-                <a class="button" id="amountLandCompensationBtn" role="button" href="../land-compensation/land-ownership">Continue</a>
+                <a class="button" id="amountLandCompensationBtn" role="button" href="land-ownership">Continue</a>
             </p>
 
 
@@ -67,6 +67,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('amountLandCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('amountLandCompensationBtn').onclick = function() {
         sessionStorage.setItem('landCompAmountGiven', 'true');
         var landCompAmount = document.getElementById('compensation-amount').value;
