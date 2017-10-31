@@ -255,7 +255,6 @@
         // Land compensation
     } else if (chargeCategoryReturned === 'Land compensation') {
         document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
-        document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
         var landCompensationAmountCheck = sessionStorage.getItem('landCompAmountKnown');
         if (landCompensationAmountCheck === 'Amount not known') {
             document.getElementById('landCompensationAmount').textContent = landCompensationAmountCheck;
@@ -266,6 +265,7 @@
             document.getElementById('landDescription').textContent = descriptionOfLand;
             document.getElementById('workToBeDone').textContent = workToBeDone;
         } else {
+            document.getElementById('landCompensationAmountRow').classList.remove('hiddenList');
             var landCompAmount = sessionStorage.getItem('landCompAmount');
             var landCompAmountType = sessionStorage.getItem('amountType');
             var interestInLand = sessionStorage.getItem('ownershipType');
