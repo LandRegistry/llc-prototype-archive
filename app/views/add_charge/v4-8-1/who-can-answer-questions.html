@@ -57,6 +57,10 @@
 
 </main>
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('sourceButton').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('sourceButton').onclick = function() {
         var departmentLinks = document.getElementById('department').value;
         var authorityReference = document.getElementById('authorityReference').value;

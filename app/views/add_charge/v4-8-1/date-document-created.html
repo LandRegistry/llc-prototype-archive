@@ -61,17 +61,9 @@
 
 </main>
 <script>
-    var docDateIsChanging = sessionStorage.getItem('docDateIsChanging');
-    console.log(docDateIsChanging);
-    if (docDateIsChanging === 'true') {
-        var startDayToChange = sessionStorage.getItem('startDayToChange');
-        var startMonthToChange = sessionStorage.getItem('startMonthToChange');
-        var startYearToChange = sessionStorage.getItem('startYearToChange');
-        document.getElementById('startDay').value = startDayToChange;
-        document.getElementById('startMonth').value = startMonthToChange;
-        document.getElementById('startYear').value = startYearToChange;
-        document.getElementById('dateCreatedButton').setAttribute('href', 'charge-summary');
-        sessionStorage.setItem('dateDocUpdated', 'true');
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('dateCreatedButton').setAttribute('href', 'charge-summary-new');
     }
 
 

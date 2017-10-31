@@ -97,6 +97,10 @@
     </div>
 </main>
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('amountSecuredBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('amountSecuredBtn').onclick = function() {
         var amount = document.getElementById('amount').value;
         sessionStorage.setItem('amount', amount);

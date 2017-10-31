@@ -84,18 +84,23 @@
 </main>
 <script>
     /*var expiryIsChanging = sessionStorage.getItem('expiryIsChanging');
-                                        if (expiryIsChanging === 'true') {
-                                            var expireDayToChange = sessionStorage.getItem('expireDayToChange');
-                                            var expireMonthToChange = sessionStorage.getItem('expireMonthToChange');
-                                            console.log(expireMonthToChange);
-                                            var expireYearToChange = sessionStorage.getItem('expireYearToChange');
-                                            document.getElementById('yesExpiryLabel').classList.add('selected');
-                                            document.getElementById('doc_day2').value = expireDayToChange;
-                                            document.getElementById('doc_month2').value = expireMonthToChange;
-                                            document.getElementById('doc_year2').value = expireYearToChange;
-                                            document.getElementById('expiryButton').setAttribute('href', 'charge-summary');
-                                            sessionStorage.setItem('expiryUpdated', 'true');
-                                        }*/
+                                                if (expiryIsChanging === 'true') {
+                                                    var expireDayToChange = sessionStorage.getItem('expireDayToChange');
+                                                    var expireMonthToChange = sessionStorage.getItem('expireMonthToChange');
+                                                    console.log(expireMonthToChange);
+                                                    var expireYearToChange = sessionStorage.getItem('expireYearToChange');
+                                                    document.getElementById('yesExpiryLabel').classList.add('selected');
+                                                    document.getElementById('doc_day2').value = expireDayToChange;
+                                                    document.getElementById('doc_month2').value = expireMonthToChange;
+                                                    document.getElementById('doc_year2').value = expireYearToChange;
+                                                    document.getElementById('expiryButton').setAttribute('href', 'charge-summary');
+                                                    sessionStorage.setItem('expiryUpdated', 'true');
+                                                }*/
+
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('expiryButton').setAttribute('href', 'charge-summary-new');
+    }
 
     document.getElementById('expiryButton').onclick = function() {
         var noExpiry = document.getElementById('noExpiryLabel');

@@ -66,6 +66,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('landCompensationBtn').onclick = function() {
         var freehold = document.getElementById('freehold-label');
         var leasehold = document.getElementById('leasehold-label');

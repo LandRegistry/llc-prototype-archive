@@ -49,6 +49,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('chargeDescriptionButton').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('chargeDescriptionButton').onclick = function() {
         var chargeDescription = document.getElementById('chargeDescription').value;
         if (chargeDescription !== '') {

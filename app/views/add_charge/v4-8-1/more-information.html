@@ -94,6 +94,10 @@
 
 </main>
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('moreInformationButton').setAttribute('href', 'charge-summary-new');
+    }
     var addressLineOneToFill = sessionStorage.getItem('location');
     document.getElementById('addressSelected').textContent = addressLineOneToFill;
 

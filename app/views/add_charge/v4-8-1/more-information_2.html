@@ -96,6 +96,10 @@
 
 </main>
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('findPostcode').onclick = function() {
         document.getElementById('addressList').classList.remove('hiddenList');
         return false;

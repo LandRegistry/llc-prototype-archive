@@ -67,6 +67,10 @@
 </main>
 
 <script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('amountLandCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
     document.getElementById('amountLandCompensationBtn').onclick = function() {
         sessionStorage.setItem('landCompAmountGiven', 'true');
         var landCompAmount = document.getElementById('compensation-amount').value;
