@@ -26,7 +26,7 @@
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td class="bold-small"><span id="address-selected"></span>, Exeter EX4 1AY</td>
+                        <td class="bold-small"><span id="address-selected">3 Clinton Street, Exeter, EX4 1AX</span></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -73,7 +73,7 @@
 
 </main>
 <script>
-    var placeSearched = sessionStorage.getItem('placeSelected');
+    var placeSearched = sessionStorage.getItem('addressSelected');
     console.log(placeSearched);
     document.getElementById('address-selected').textContent = placeSearched;
 </script>
