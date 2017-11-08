@@ -60,18 +60,13 @@
 <script src="/public/javascripts/map/search/sample_data.js"></script>
 <script src="/public/javascripts/map/search/search.js"></script> -->
 <script>
+    $('.point').remove();
+    $('.line').remove();
+    $('.remove').remove();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
     var geometry = "{{ geometry }}";
     MAP_HELPERS.zoom_map(geometry);
-
-    // hide tools that are not needed
-
-    $('.point').remove();
-    $('.line').remove();
-    $('.copy').remove();
-    $('.remove').remove();
-    $('#snap-to').remove()
 </script>
 <script>
     $('#placeSearchButton').click(function() {
