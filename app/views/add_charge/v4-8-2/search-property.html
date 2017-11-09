@@ -17,7 +17,7 @@
 <div id="search-panel">
     <a href="date-document-created" class="link-back" style="margin-bottom:0">Back</a>
     <h1 class="heading-medium" style="margin-top:1em">Enter a postcode</h1>
-    <form action="draw-an-extent" method="POST">
+    <form>
 
         <div class="form-group">
             <legend class="visuallyhidden">Enter a postcode</legend>
@@ -111,7 +111,15 @@
                 openPanel();
             }
         });
+        $("#search_term").keydown(function(e) {
+            var keycode = e.which;
+            if (keycode == 13) {
+                $('#postcodeSearchButton').removeAttr('href');
+                $("#address-list").removeClass("hiddenList")
+                return false;
+            }
 
+        });
         $("#postcodeSearchButton").click(function() {
             if ($("#search_term").val() === "EXT123456") {
                 $("#postcodeSearchButton").attr("href", "address-confirm");
