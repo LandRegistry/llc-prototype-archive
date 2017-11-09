@@ -1,0 +1,137 @@
+{% extends "layout.html" %} {% block page_title %} Address confirm {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">Is this the charge address?</h1>
+
+            <p><span class="bold-small" id="addressSelected">11 Okehampton Place </span><span class="bold-small">, Exeter, EX4 1AY</span>.</p>
+
+            <form action="#">
+                <fieldset>
+                    <div class="form-group">
+
+
+                        <legend class="visually-hidden">Is this the charge address?
+
+                        </legend>
+                        <label id="yesAddressLabel" class="block-label selection-button-radio" for="yesAddress">
+                        <input id="yesAddress" name="address" type="radio" value="yes">
+                                            Yes
+                    </label>
+
+                        <label id="newAddressLabel" class="block-label selection-button-radio" for="newAddressField" data-target="newAddressEntry">
+                        <input id="newAddressField" name="address" type="radio" value="no">No, this is not the address
+                    </label>
+                        <div class="js-hidden panel panel-border-narrow" id="newAddressEntry" aria-hidden="true" style="display: none;">
+                            <div class="form-group" id="postcodeSearch">
+                                <h2 class="heading-small">Enter a new postcode</h2>
+                                <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                                <a id="findPostcode" class="button" href="#" role="button">Find</a>
+                            </div>
+                            <div class="form-group hiddenList" id="addressList">
+                                <div class="results-block" id="address-list">
+                                    <p>Click on the place you need.</p>
+                                    <ol class="results-list">
+                                        <li><a href="#" class="address-list">2 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">3 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">4 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">6 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">8 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">10 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">12 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">14 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">16 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">18 Okehampton Place</a></li>
+                                        <li><a href="#" class="address-list">20 Okehampton Place</a></li>
+                                    </ol>
+
+                                    <br>
+
+                                </div>
+                                <p class="hiddenList" id="newAddress"><span id="newAddressToSave"></span> Exeter EX4 1AY</p>
+                            </div>
+
+
+                        </div>
+                        <label id="justDescriptionLabel" class="block-label selection-button-radio" for="justDescription" data-target="justDescriptionBox">
+                                <input id="justDescription" name="address" type="radio" value="no">I do not have an address
+                            </label>
+                        <div class="js-hidden panel panel-border-narrow" id="justDescriptionBox" aria-hidden="true" style="display: none;">
+                            <div class="form-group">
+                                <h2 class="heading-small">Describe how to find the charge without an address</h2>
+                                <span class="form-hint">For example, 'land to the north of the bypass'.</span>
+                                <label class="form-label" for="textarea">
+                                                    
+                                        </label>
+
+                                <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                                <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </fieldset>
+            </form>
+            <a href="does-charge-expire" id="moreInformationButton" class="button">Continue</a>
+
+        </div>
+
+
+    </div>
+
+</main>
+<script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('moreInformationButton').setAttribute('href', 'charge-summary-new');
+    }
+    var addressLineOneToFill = sessionStorage.getItem('location');
+    document.getElementById('addressSelected').textContent = addressLineOneToFill;
+
+    document.getElementById('findPostcode').onclick = function() {
+        document.getElementById('addressList').classList.remove('hiddenList');
+        return false;
+    };
+
+    var addressList = document.querySelectorAll('.address-list');
+    for (var i = 0; i < addressList.length; i++) {
+        addressList[i].onclick = function() {
+            var newAddress = this.textContent;
+            document.getElementById('addressSelected').textContent = newAddress;
+            document.getElementById('newAddress').classList.remove('hiddenList');
+            document.getElementById('newAddressToSave').textContent = newAddress;
+            document.getElementById('address-list').classList.add('hiddenList');
+        }
+    }
+
+    document.getElementById('moreInformationButton').onclick = function() {
+        var correctAddress = document.getElementById('yesAddressLabel');
+        var updatedAddress = document.getElementById('newAddressLabel');
+        var justDescription = document.getElementById('justDescriptionLabel');
+        var newAddressToSave = document.getElementById('newAddressToSave').textContent;
+        if (correctAddress.classList.contains('selected')) {
+            var chargeLocation = document.getElementById('addressSelected').textContent;
+            sessionStorage.setItem('chargeLocation', chargeLocation);
+        } else if (updatedAddress.classList.contains('selected')) {
+            sessionStorage.setItem('chargeLocation', newAddressToSave);
+        } else if (justDescription.classList.contains('selected')) {
+            var chargeLocation = document.getElementById('locationDescription').value;
+            sessionStorage.setItem('chargeLocation', chargeLocation);
+            sessionStorage.setItem('locationDescriptionExists', 'true');
+        }
+    }
+</script>
+{% endblock %}
