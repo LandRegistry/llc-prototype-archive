@@ -40,9 +40,9 @@
                   <input id="enforcementNotice" name="planningLegislation" type="radio" value="Enforcement notice">
                   Enforcement notice
                   </label>
-                        <label id="noPermittedDevelopmentLabel" class="block-label selection-button-radio" for="noPermit">
-                  <input id="noPermit" name="planningLegislation" type="radio" value="No permitted development">
-                  No permitted development
+                        <label id="article4Label" class="block-label selection-button-radio" for="article4">
+                  <input id="article4" name="planningLegislation" type="radio" value="No permitted development">
+                  Article 4
                   </label>
                         <label id="planningNoticesLabel" class="block-label selection-button-radio" for="planningNotice">
                   <input id="planningNotice" name="planningLegislation" type="radio" value="Planning notices">
@@ -56,6 +56,10 @@
                   <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
                   Tree preservation order (TPO)
                   </label>
+                        <label id="listedPlanningLabel" class="block-label selection-button-radio" for="listedPlanning">
+                    <input id="listedPlanning" name="planningLegislation" type="radio" value="Listed building conditional planning consent">
+                    Listed building conditional planning consent
+                    </label>
                         <label id="dunnoLabel" class="block-label selection-button-radio" for="planning">
                   <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
                   I don't know the charge category
@@ -77,10 +81,11 @@
         var conservationArea = document.getElementById('conservationAreaLabel');
         var conditionalPlanningConsent = document.getElementById('conditionalPlanningConsentLabel');
         var enforcementNotice = document.getElementById('enforcementNoticeLabel');
-        var noPermittedDevelopment = document.getElementById('noPermittedDevelopmentLabel');
+        var article4Development = document.getElementById('article4Label');
         var planningNotices = document.getElementById('planningNoticesLabel');
         var planningAgreement = document.getElementById('planningAgreementLabel');
         var tpo = document.getElementById('tpoLabel');
+        var listedPlanning = document.getElementById('listedPlanningLabel');
         var dunno = document.getElementById('dunnoLabel');
         var subcategoryButton = this;
         if (changeDevelopment.classList.contains('selected')) {
@@ -93,14 +98,16 @@
             sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
-        } else if (noPermittedDevelopment.classList.contains('selected')) {
-            sessionStorage.setItem('chargeSubcategory', 'No permitted development');
+        } else if (article4.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Article 4');
         } else if (planningNotices.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
         } else if (planningAgreement.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planning Agreement');
         } else if (tpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
+        } else if (listedPlanning.classList.contains('selected')) {
+            sessionStorage.setItem('listedPlanning', 'Listed building conditional planning consent');
         } else if (dunno.classList.contains('selected')) {
             subcategoryButton.setAttribute('href', 'contact-HMLR');
         }

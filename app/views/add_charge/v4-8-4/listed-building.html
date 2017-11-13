@@ -23,10 +23,6 @@
                   <input id="listedBuilding" name="listedBuilding" type="radio" value="Listed building">
                   Listed building
                   </label>
-                        <label id="conditionalPlanningLabel" class="block-label selection-button-radio" for="conditionalPlanning">
-                  <input id="conditionalPlanning" name="listedBuilding" type="radio" value="Conditional planning consent">
-                  Conditional planning consent
-                  </label>
                         <label id="enforcementNoticeLabel" class="block-label selection-button-radio" for="enforcementNotice">
                   <input id="enforcementNotice" name="listedBuilding" type="radio" value="Enforcement notice">
                   Enforcement notice
@@ -53,15 +49,12 @@
 <script>
     document.getElementById('listedBuildingButton').onclick = function() {
         var listedBuilding = document.getElementById('listedBuildingLabel');
-        var conditionalPlanning = document.getElementById('conditionalPlanningLabel');
         var enforcementNotice = document.getElementById('enforcementNoticeLabel');
         var repairsNotice = document.getElementById('repairsNoticeLabel');
         var dunno = document.getElementById('dunnoLabel');
         var subcategoryButton = this;
         if (listedBuilding.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Listed building');
-        } else if (conditionalPlanning.classList.contains('selected')) {
-            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
         } else if (conditionalPlanningConsent.classList.contains('selected')) {
