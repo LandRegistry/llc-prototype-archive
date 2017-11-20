@@ -389,3 +389,32 @@
     position: relative;
     right: 4px;
 }
+
+
+/* map legend */
+
+#legend {
+    position: absolute;
+    top: 4em;
+    right: 0;
+    z-index: 10000000000 !important;
+}
+
+#legend p {
+    position: fixed;
+    right: 13vw;
+}
+
+#legend ul {
+    box-shadow: 2px 2px 1px #BFC1C3;
+    width: 15vw;
+    background-color: white;
+    position: relative;
+    top: 1.8em;
+    padding: 1em;
+    font-size: 0.85em;
+}
+
+#legend li {
+    margin-bottom: 0.5em;
+}

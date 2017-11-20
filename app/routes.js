@@ -541,35 +541,35 @@ router.get('/maintain_llc/new_search_v1-1/map_new', function(req, res) {
 /* v2 */
 
 // Citizen Service Routes
-/* router.get('/citizen-service/v1/search', citizenController.searchPage)
-router.post('/citizen-service/v1/search', citizenController.search) */
+/* router.get('/search-llc/v1/search', citizenController.searchPage)
+router.post('/search-llc/v1/search', citizenController.search) */
 
-router.get('/citizen-service/v1/search-results', function(req, res) {
+router.get('/search-llc/v1/search-results', function(req, res) {
     var citizenPostcode = req.query.location
     if (citizenPostcode === 'EX4 1AY' || citizenPostcode === 'ex4 1ay') {
-        res.redirect('/citizen-service/v1/search-results_address_list')
+        res.redirect('/search-llc/v1/search-results_address_list')
     } else {
-        res.render('citizen-service/v1/search-results')
+        res.render('search-llc/v1/search-results')
     }
 })
 
-router.get('/citizen-service/v2/payment-benefits', function(req, res) {
+router.get('/search-llc/v2/payment-benefits', function(req, res) {
     var searchTerm = req.query.location
     if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
-        res.redirect('/citizen-service/v2/search-results_address_list')
+        res.redirect('/search-llc/v2/search-results_address_list')
     } else {
-        res.render('citizen-service/v2/payment-benefits')
+        res.render('search-llc/v2/payment-benefits')
     }
 })
 
 /**
  * GOV.UK Pay routes
  */
-router.get('/citizen-service/v2/free-charge-details', (req, res, next) => {
-    res.render('citizen-service/v2/free-charge-details')
+router.get('/search-llc/v2/free-charge-details', (req, res, next) => {
+    res.render('search-llc/v2/free-charge-details')
 })
 
-router.get('/citizen-service/v2/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v2/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -580,13 +580,13 @@ router.get('/citizen-service/v2/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v2/pay-confirmation', {
+        res.render('search-llc/v2/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v2/free-charge-details', (req, res, next) => {
+router.post('/search-llc/v2/free-charge-details', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -605,11 +605,11 @@ router.post('/citizen-service/v2/free-charge-details', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v3/paid-service/pay-now', (req, res, next) => {
-    res.render('citizen-service/v3/paid-service/pay-now')
+router.get('/search-llc/v3/paid-service/pay-now', (req, res, next) => {
+    res.render('search-llc/v3/paid-service/pay-now')
 })
 
-router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v3/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -620,13 +620,13 @@ router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v3/pay-confirmation', {
+        res.render('search-llc/v3/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v3/paid-service/pay-now', (req, res, next) => {
+router.post('/search-llc/v3/paid-service/pay-now', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -645,11 +645,11 @@ router.post('/citizen-service/v3/paid-service/pay-now', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v3/login-from-free', (req, res, next) => {
-    res.render('citizen-service/v3/login-from-free')
+router.get('/search-llc/v3/login-from-free', (req, res, next) => {
+    res.render('search-llc/v3/login-from-free')
 })
 
-router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v3/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -660,13 +660,13 @@ router.get('/citizen-service/v3/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v3/pay-confirmation', {
+        res.render('search-llc/v3/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v3/login-from-free', (req, res, next) => {
+router.post('/search-llc/v3/login-from-free', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -685,11 +685,11 @@ router.post('/citizen-service/v3/login-from-free', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v3-1/paid-service/pay-now', (req, res, next) => {
-    res.render('citizen-service/v3-1/paid-service/pay-now')
+router.get('/search-llc/v3-1/paid-service/pay-now', (req, res, next) => {
+    res.render('search-llc/v3-1/paid-service/pay-now')
 })
 
-router.get('/citizen-service/v3-1/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v3-1/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -700,13 +700,13 @@ router.get('/citizen-service/v3-1/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v3-1/pay-confirmation', {
+        res.render('search-llc/v3-1/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v3-1/paid-service/pay-now', (req, res, next) => {
+router.post('/search-llc/v3-1/paid-service/pay-now', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -725,11 +725,11 @@ router.post('/citizen-service/v3-1/paid-service/pay-now', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v3-1/login-from-free', (req, res, next) => {
-    res.render('citizen-service/v3-1/login-from-free')
+router.get('/search-llc/v3-1/login-from-free', (req, res, next) => {
+    res.render('search-llc/v3-1/login-from-free')
 })
 
-router.get('/citizen-service/v3-1/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v3-1/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -740,13 +740,13 @@ router.get('/citizen-service/v3-1/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v3-1/pay-confirmation', {
+        res.render('search-llc/v3-1/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v3-1/login-from-free', (req, res, next) => {
+router.post('/search-llc/v3-1/login-from-free', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -770,11 +770,11 @@ router.post('/citizen-service/v3-1/login-from-free', (req, res, next) => {
 
 
 
-router.get('/citizen-service/v4/search-results', (req, res, next) => {
-    res.render('citizen-service/v4/search-results')
+router.get('/search-llc/v4/search-results', (req, res, next) => {
+    res.render('search-llc/v4/search-results')
 })
 
-router.get('/citizen-service/v4/pay-confirmation', (req, res, next) => {
+router.get('/search-llc/v4/pay-confirmation', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -785,13 +785,13 @@ router.get('/citizen-service/v4/pay-confirmation', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4/pay-confirmation', {
+        res.render('search-llc/v4/pay-confirmation', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v4/search-results', (req, res, next) => {
+router.post('/search-llc/v4/search-results', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -810,11 +810,11 @@ router.post('/citizen-service/v4/search-results', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v4-1/search-results', (req, res, next) => {
-    res.render('citizen-service/v4-1/search-results')
+router.get('/search-llc/v4-1/search-results', (req, res, next) => {
+    res.render('search-llc/v4-1/search-results')
 })
 
-router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
+router.get('/search-llc/v4-1/pay-successful', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -825,13 +825,13 @@ router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4-1/pay-successful', {
+        res.render('search-llc/v4-1/pay-successful', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v4-1/search-results', (req, res, next) => {
+router.post('/search-llc/v4-1/search-results', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
@@ -850,11 +850,11 @@ router.post('/citizen-service/v4-1/search-results', (req, res, next) => {
     })
 })
 
-router.get('/citizen-service/v4-1/search-results-from-map', (req, res, next) => {
-    res.render('citizen-service/v4-1/search-results-from-map')
+router.get('/search-llc/v4-1/search-results-from-map', (req, res, next) => {
+    res.render('search-llc/v4-1/search-results-from-map')
 })
 
-router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
+router.get('/search-llc/v4-1/pay-successful', (req, res, next) => {
     const reference = req.params['reference']
 
     const id = map.get(reference)
@@ -865,13 +865,13 @@ router.get('/citizen-service/v4-1/pay-successful', (req, res, next) => {
     payments.checkPaymentStatus(id, (result) => {
         debug(JSON.stringify(result))
 
-        res.render('citizen-service/v4-1/pay-successful', {
+        res.render('search-llc/v4-1/pay-successful', {
             transaction: result
         })
     })
 })
 
-router.post('/citizen-service/v4-1/search-results-from-map', (req, res, next) => {
+router.post('/search-llc/v4-1/search-results-from-map', (req, res, next) => {
     req.body.amount = '1500'
     req.body.reference = 'Official search result of local land charges'
     req.body.description = 'Official search result of local land charges'
