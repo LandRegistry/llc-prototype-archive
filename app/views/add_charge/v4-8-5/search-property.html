@@ -10,21 +10,21 @@
         </p>
     </div>
     <div id="legend">
-        <p><a href="#">Legend</a></p>
-        <ul>
-            <li><span></span> = Charge outline</li>
-            <li><span></span> = Search extent</li>
-            <li><span></span> = Edit extent</li>
-            <li><span></span> = Delete extent</li>
-            <li><span><img src="/public/images/polygon.png" style="height:1em"></span> = Draw polygon</li>
-            <li><span><img src="/public/images/point.png" style="height:1em"></span> = Draw point</li>
-            <li><span><img src="/public/images/line.png" style="height:1em"></span> = Draw line</li>
-            <li><span><img src="/public/images/edit.png" style="height:1em"></span> = Edit feature</li>
-            <li><span><img src="/public/images/copy.png" style="height:1em"></span> = Duplicate</li>
-            <li><span><img src="/public/images/remove.png" style="height:1em"></span> = Remove last</li>
-            <li><span><img src="/public/images/remove-all.png" style="height:1em"></span> = Remove all</li>
-            <li><span><img src="/public/images/undo.png" style="height:1em"></span> = Undo last action</li>
-            <li><span><img src="/public/images/snap-to.png" style="height:1em"></span> = Span to</li>
+        <p><a href="#" class="collapse">Legend</a></p>
+        <ul class="hiddenList">
+            <li><span><img src="/public/images/charge-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Charge extent</li>
+            <li><span><img src="/public/images/search-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Search extent</li>
+            <li><span><img src="/public/images/edit-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Editable search extent</li>
+            <li><span><img src="/public/images/delete-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Deletable charge extent extent</li>
+            <li><span><img src="/public/images/polygon.png" style="height:1.1em"></span> = Draw polygon</li>
+            <li><span><img src="/public/images/point.png" style="height:1.1em"></span> = Draw point</li>
+            <li><span><img src="/public/images/line.png" style="height:1.1em"></span> = Draw line</li>
+            <li><span><img src="/public/images/edit.png" style="height:1.1em"></span> = Edit feature</li>
+            <li><span><img src="/public/images/copy.png" style="height:1.1em"></span> = Duplicate</li>
+            <li><span><img src="/public/images/remove.png" style="height:1.1em"></span> = Remove last</li>
+            <li><span><img src="/public/images/remove-all.png" style="height:1.1em"></span> = Remove all</li>
+            <li><span><img src="/public/images/undo.png" style="height:1.1em"></span> = Undo last action</li>
+            <li><span><img src="/public/images/snap-to.png" style="height:1.1em"></span> = Follow line on map</li>
 
         </ul>
     </div>
@@ -158,7 +158,23 @@
             var postcodeSearched = $("#search_term").val();
             sessionStorage.setItem("location", location);
             sessionStorage.setItem("postcodeSearched", postcodeSearched);
-        })
+        });
+
+        $('#legend a').on('click', function() {
+            if ($(this).hasClass('collapse')) {
+                $('#legend ul').removeClass('hiddenList');
+                $(this).removeClass('collapse');
+                $(this).addClass('open');
+                return false;
+            } else if ($(this).hasClass('open')) {
+                $('#legend ul').addClass('hiddenList');
+                $(this).removeClass('open');
+                $(this).addClass('collapse');
+                return false;
+            }
+
+            return false;
+        });
 
 
     });

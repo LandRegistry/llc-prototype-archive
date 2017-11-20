@@ -401,7 +401,8 @@
 }
 
 #legend p {
-    padding-left: 1em;
+    position: fixed;
+    right: 13vw;
 }
 
 #legend ul {
@@ -409,6 +410,11 @@
     width: 15vw;
     background-color: white;
     position: relative;
-    top: -1.1em;
+    top: 1.8em;
     padding: 1em;
+    font-size: 0.85em;
+}
+
+#legend li {
+    margin-bottom: 0.5em;
 }
