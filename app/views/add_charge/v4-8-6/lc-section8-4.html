@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block page_title %} Do you have an address for the land sold to the authority? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+    <!-- main content starts -->
+    <a href="../land-compensation" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">
+        Land sold to the authority
+    </h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <form action="document-link" method="GET">
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Describe the land sold</h2>
+                    </legend>
+
+                    <div class="form-group">
+                        <label class="form-label" for="retainedLand">
+
+                  <span class="form-hint">For example, land on the north side of Smith Street.
+
+                  </span>
+                </label>
+                        <textarea id="landDescription" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+                        <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+
+                        <legend>
+                            <h2 class="heading-medium">What work will the authority do on this land?</h2>
+                        </legend>
+                        <label class="form-label-bold" for="retainedLand">
+                      <span class="form-hint">For example, for the construction of a bypass.
+                      </span>
+                    </label>
+                        <textarea id="workToBeDone" class="form-control form-control-3-4" name="textarea" rows="5"></textarea>
+                        <p><span class="form-hint">Answer must be shorter than 400 characters (about 60 words)</span></p>
+                        <p>
+                            <a class="button" id="landCompensationBtn" role="button" href="date-document-created">Continue</a>
+
+                        </p>
+                    </div>
+
+
+
+                </fieldset>
+
+            </form>
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('landCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
+    document.getElementById('landCompensationBtn').onclick = function() {
+        var descriptionOfLandSold = document.getElementById('landDescription').value;
+        var workToBeDone = document.getElementById('workToBeDone').value;
+        sessionStorage.setItem('descriptionOfLand', descriptionOfLandSold);
+        sessionStorage.setItem('workToBeDone', workToBeDone);
+    }
+</script>
+
+{% endblock %}
