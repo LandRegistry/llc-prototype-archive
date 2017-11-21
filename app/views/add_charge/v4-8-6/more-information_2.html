@@ -1,0 +1,154 @@
+{% extends "layout.html" %} {% block page_title %} Address confirm {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">Is there an address for this charge?</h1>
+            <form action="#">
+
+                <div class="form-group" id="search-field">
+                    <fieldset>
+                        <legend class="visually-hidden">Is there an address for this charge?
+
+                        </legend>
+                        <div class="form-group">
+
+
+                            <label id="yesAddressLabel" class="block-label selection-button-radio" for="yesAddress" data-target="addressEntry">
+                                <input id="yesAddress" name="address" type="radio" value="yes" aria-controls="addressEntry">
+                                                    Yes
+                            </label>
+                            <div class="js-hidden panel panel-border-narrow" id="addressEntry" aria-hidden="true" style="display: none;">
+
+                                <div class="form-group" id="postcodeSearch">
+                                    <h2 class="heading-small">Enter a postcode</h2>
+
+                                    <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                                    <a id="findPostcode" class="button" href="#" role="button">Find</a>
+                                </div>
+                                <div class="form-group hiddenList" id="addressList">
+                                    <div class="results-block" id="address-list">
+                                        <p>Click on the place you need.</p>
+                                        <ol class="results-list">
+                                            <li><a href="#" class="address-list">2 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">3 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">4 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">6 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">8 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">10 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">12 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">14 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">16 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">18 Okehampton Place</a></li>
+                                            <li><a href="#" class="address-list">20 Okehampton Place</a></li>
+                                        </ol>
+
+                                        <br>
+                                        <p>Can't find the place you need? <a href="search-property">Zoom to a place on the map</a></p>
+                                    </div>
+                                    <div id="manualAddressEntry" class="hiddenList">
+                                        <p><span id="selectedAddress"></span>, Exeter EX4 1AY</p>
+                                        <p>Not the right location? <a href="more-information_2">Search again</a></p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <label id="noAddressLabel" class="block-label selection-button-radio" for="noAddress" data-target="noAddressEntry">
+                                <input id="noAddress" name="address" type="radio" value="no">No
+                            </label>
+                            <div class="js-hidden panel panel-border-narrow" id="noAddressEntry" aria-hidden="true" style="display: none;">
+                                <div class="form-group">
+                                    <h2 class="heading-small">Describe how to find the charge without an address</h2>
+                                    <span class="form-hint">For example, 'land to the north of the bypass'.</span>
+                                    <label class="form-label" for="textarea">
+                                                
+                                    </label>
+
+                                    <textarea class="form-control form-control-3-4" name="textarea" id="locationDescription" rows="5"></textarea>
+                                    <p><span class="form-hint">Answer must be shorter than 1000 characters (about 160 words)</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <p><a id="confirmAddressButton" href="does-charge-expire" class="button">Continue</a></p>
+                    </fieldset>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+</main>
+<script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('confirmAddressButton').setAttribute('href', 'charge-summary-new');
+    }
+    document.getElementById('findPostcode').onclick = function() {
+        document.getElementById('addressList').classList.remove('hiddenList');
+        return false;
+    };
+
+    var addressList = document.querySelectorAll('.address-list');
+    for (var i = 0; i < addressList.length; i++) {
+        addressList[i].onclick = function() {
+            document.getElementById('manualAddressEntry').classList.remove('hiddenList');
+            document.getElementById('address-list').classList.add('hiddenList');
+            var addressLineOne = this.text;
+            document.getElementById('selectedAddress').textContent = addressLineOne;
+            sessionStorage.setItem('location', addressLineOne);
+            return false;
+        }
+    }
+
+    document.getElementById('confirmAddressButton').onclick = function() {
+        var addressExists = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var newAddress = document.getElementById('selectedAddress').textContent;
+        if (addressExists.classList.contains('selected')) {
+            sessionStorage.setItem('chargeLocation', newAddress);
+        } else if (noAddress.classList.contains('selected')) {
+            var chargeLocation = document.getElementById('locationDescription').value;
+            sessionStorage.setItem('chargeLocation', chargeLocation);
+            sessionStorage.setItem('locationDescriptionExists', 'true');
+        }
+
+    }
+
+
+
+
+
+
+
+
+    /*document.getElementById('confirmAddressButton').onclick = function() {
+        var yesAddress = document.getElementById('yesAddressLabel');
+        var noAddress = document.getElementById('noAddressLabel');
+        var address = document.getElementById('selectedAddress')
+        if (yesAddress.classList.contains('selected')) {
+            var location = address.textContent;
+            sessionStorage.setItem('location', location);
+        } else if (noAddress.classList.contains('selected')) {
+            var location = document.getElementById('locationDescription').value;
+            sessionStorage.setItem('location', location);
+        }
+    }*/
+</script>
+{% endblock %}
