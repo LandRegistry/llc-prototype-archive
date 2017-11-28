@@ -1,0 +1,86 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p><a href="search-results" class="link-back">Back</a></p>
+            <h1 class="heading-large">
+                Charge details
+            </h1>
+        </div>
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2">
+                <tbody>
+                    <tr>
+                        <td class="bold-small">Category</td>
+                        <td>Financial</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Amount</td>
+                        <td>£312.60</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Interest rate</td>
+                        <td>Interest may be payable</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Location</td>
+                        <td><span id="address-selected">3 Clinton Street, Exeter, EX4 1AX</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Originating authority</td>
+                        <td>Exeter City Council</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Creation date</td>
+                        <td>22 March 1965</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Registration date</td>
+                        <td>22 March 1965</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Authority reference</td>
+                        <td>JVQ870V67</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">HM Land Registry reference</td>
+                        <td>LLC-1PIK</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var placeSearched = sessionStorage.getItem('addressSelected');
+    console.log(placeSearched);
+    document.getElementById('address-selected').textContent = placeSearched;
+</script>
+
+{% endblock %}

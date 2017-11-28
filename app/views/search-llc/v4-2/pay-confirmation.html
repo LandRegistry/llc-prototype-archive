@@ -1,0 +1,29 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Confirmation {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">Payment successful</h1>
+                <p> We will email you a receipt shortly</p>
+
+                <h2 class="heading-medium">Summary</h2>
+
+                <p> Reference number: <strong id="payment-reference">LLC/EX38912714</strong></p>
+                <p> Payment for: <strong id="payment-description">Official search result of local land charges</strong> </p>
+                <p> Amount paid: <span id="amount">£15.00</span></p>
+            </div>
+
+            <p><a class="button" href="view">Continue to your search</a></p>
+        </div>
+    </div>
+</main>
+{% endblock %}
