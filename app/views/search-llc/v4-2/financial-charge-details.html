@@ -85,7 +85,11 @@
 <script>
     var placeSearched = sessionStorage.getItem('addressSelected');
     console.log(placeSearched);
-    document.getElementById('address-selected').textContent = placeSearched;
+    if (placeSearched === null) {
+        document.getElementById('address-selected').textContent = "3 Clinton Street, Exeter, EX4 1AX";
+    } else {
+        document.getElementById('address-selected').textContent = placeSearched;
+    }
 </script>
 
 {% endblock %}

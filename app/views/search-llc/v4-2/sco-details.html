@@ -70,7 +70,11 @@
 <script>
     var placeSearched = sessionStorage.getItem('addressSelected');
     console.log(placeSearched);
-    document.getElementById('address-selected').textContent = placeSearched;
+    if (placeSearched === null) {
+        document.getElementById('address-selected').textContent = "City of Exeter";
+    } else {
+        document.getElementById('address-selected').textContent = placeSearched;
+    }
 </script>
 
 {% endblock %}
