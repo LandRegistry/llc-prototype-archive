@@ -1,5 +1,12 @@
 {% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
-
+<style>
+    @-moz-document url-prefix() {
+        .search-button {
+            position: relative;
+            top: -5px;
+        }
+    }
+</style>
 <div class="map-page">
     <script>
         var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
@@ -40,11 +47,11 @@
         <h1 class="heading-small">Search by postcode</h1>
         <form action="#" method="GET">
             <div class="form-group searchGroup">
-                <legend class="visuallyhidden">Find by postcode</legend>
 
                 <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
 
-                <button id="placeSearchButton" class="search-button" style="top: 12px; left: -11px;"></button>
+                <!--<button id="placeSearchButton" class="search-button" style="top: 12px; left: -11px;"></button> -->
+                <button id="placeSearchButton" class="search-button"></button>
                 <!--<a id="placeSearchButton" href="#" class="button">Find</a> -->
 
             </div>
