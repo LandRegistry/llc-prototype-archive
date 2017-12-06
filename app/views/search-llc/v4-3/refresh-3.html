@@ -1,0 +1,96 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">
+                Download your official search result of local land charges
+
+            </h1>
+            <div class="notice">
+                <i class="icon icon-important">
+        <span class="visually-hidden">Your search has been refreshed</span>
+      </i>
+                <strong class="bold-small" style="line-height:35px">
+        Your search has been refreshed
+      </strong>
+            </div>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-medium">3 Okehampton Place, Exeter, EX4 1AY</span>
+            </h2>
+            <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto">
+            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
+            <p>Choose a format to download your official search result. Keep a copy for your records.</p>
+        </div>
+
+        <div class="column-two-thirds">
+            <div class="form-group">
+                <a class="button" href="/public/documents/Offical-local-land-search-result.pdf" download>Download PDF</a>
+                <h2 class="heading-medium">Other formats</h2>
+                <table class="check-your-answers">
+                    <!--<thead>
+                        <tr>
+                            <th><span class="visuallyhidden">Formay</span></th>
+                            <th><span class="visuallyhidden">#</span></th>
+                            <th><span class="visuallyhidden">Download link</span></th>
+                        </tr>
+                    </thead> -->
+
+                    <tbody>
+                        <tr>
+                            <td class="bold-small">JSON</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">CSV</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">XML</td>
+                            <td id="chargeType"></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><a href="../dashboard-updated-p3">Search again</a></p>
+        </div>
+    </div>
+    <!--<script>
+        var locationSearched = sessionStorage.getItem('searchTerm');
+        document.getElementById('address-selected').textContent = locationSearched;
+        /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+        console.log(addressRetrieved);
+        var textToChange = document.getElementById("address-selected");
+        textToChange.textContent = addressRetrieved;*/
+
+        /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+        console.log(creationDateRetrieved);
+        var dateToChange = document.getElementById('creationDateText');
+        dateToChange.textContent = creationDateRetrieved;*/
+    </script> -->
+</main>
+
+{% endblock %}

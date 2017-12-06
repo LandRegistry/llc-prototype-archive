@@ -1,0 +1,134 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" class="maintain-llc-map"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+        {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
+        <h1 class="heading-medium">Search for a place or landmark</h1>
+
+
+
+
+
+        <form action="pay-now" method="GET">
+            <div class="form-group">
+                <legend class="visuallyhidden">Search for a place or landmark </legend>
+                <p><span class="form-hint">Or use the ‘+’ and ‘-‘ buttons to zoom around the map.</span></p>
+
+
+                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+                <a id="placeSearchButton" href="#" class="button">Search</a>
+
+            </div>
+
+
+
+            <p>Use map buttons to draw a boundary of your search.</p>
+
+            <p><a href="pay-now" id="mapButton" class="button">Continue</a></p>
+
+            <!--<div class="form-group">
+                <fieldset>
+                    <legend class="visuallyhidden">Zoom to a place on the map</legend>
+                    <div class="form-group">
+                        <h1 class="heading-medium">Zoom to a place on the map</h1>
+                        <p>Use the '+' and '-' buttons to find the place you want to search.</p>
+                        <p>Once you have found the place you need, draw a shape around it.</p>
+                        <p>Your search results will show charges inside this shape.</p>
+                        <div class="form-group spacing-bottom-half">
+                            <input class="button" type="submit" value="Continue">
+                            <br><br><a href="postcode-search">Search by postcode, address or place name</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </div> -->
+        </form>
+    </div>
+    <div class="panel-control close">
+        <img src="{{ asset_path }}images/arrow_collapse.png">
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
+
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
+
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script> 
+<script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
+
+    // hide tools that are not needed
+
+    /*$('.point').remove()
+    $('.line').remove()
+    $('.copy').remove()
+    $('.remove').remove()
+    $('#snap-to').remove()*/
+</script>
+<script>
+    $('#placeSearchButton').click(function() {
+        var placeSearched = $('#search_term').val();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#search_term').val(addressSearched);
+        return false;
+    });
+
+    $('#mapButton').click(function() {
+        var searchTerm = $('#search_term').val();
+        sessionStorage.setItem('searchTerm', searchTerm);
+    });
+</script>
+{% endblock %}
