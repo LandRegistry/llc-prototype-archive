@@ -27,7 +27,7 @@
                             <li><a href="#">I forgot my password</a></li>
                             <li><a href="register">I need to register</a></li>
                         </ul>
-                        <input class="button" type="submit" value="Log in">
+                        <input class="button" id="loginButton" type="submit" value="Log in">
                     </fieldset>
                 </div>
             </form>
@@ -38,13 +38,8 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    $('.button').click(function(e) {
-        var radioValue = $('input[name="freeOrPaid"]:checked').val()
-        if (radioValue === 'paid') {
-            $("a.button").attr("href", "login")
-        } else if (radioValue === 'free') {
-            $("a.button").attr("href", "search-method")
-        }
-    })
+    document.getElementById('loginButton').onclick = function() {
+        sessionStorage.setItem('loggedIn', 'true');
+    }
 </script>
 {% endblock %}

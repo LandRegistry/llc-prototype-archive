@@ -264,16 +264,3 @@ function openLayersPlacesLookup(searchQuery) {
 function goBack() {
     window.history.back()
 }
-
-// Login for search service 
-
-$(document).ready(function() {
-    var loginCheck = sessionStorage.getItem('loggedIn');
-    if (loginCheck === 'true') {
-        $('notLoggedIn').addClass('hiddenList');
-        $('loggedIn').removeClass('hiddenList');
-    } else if (loginCheck !== 'true') {
-        $('notLoggedIn').removeClass('hiddenList');
-        $('loggedIn').addClass('hiddenList');
-    }
-})
