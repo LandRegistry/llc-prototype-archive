@@ -427,4 +427,7 @@
     &:first-child {
         margin-right: 1em;
     }
+    &.notLoggedIn {
+        margin-right: 0 !important;
+    }
 }
