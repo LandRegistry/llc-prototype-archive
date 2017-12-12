@@ -422,7 +422,9 @@
 
 /* Login links for search service */
 
-
-/*#login-links li {
+#login-links li {
     display: inline;
-}*/
+    &:first-child {
+        margin-right: 1em;
+    }
+}

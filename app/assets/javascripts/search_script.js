@@ -1,7 +1,16 @@
 var loggedInCheck = sessionStorage.getItem('loggedIn');
 if (loggedInCheck === 'true') {
-    // append sign out link
+    $('.notLoggedIn').remove();
+    $('#login-links').append(
+        '<li class="loggedIn" style="color:white; list-style-type:none; font-weight: 700">Jane Doe</li>' +
+        '<li class="loggedIn signOut"><a href="start" style="font-size:16px; text-decoration:none; color:white; font-weight: 700">Sign out</a></li>'
+    );
     console.log('Logged in');
-} else if (loggedInCheck !== 'true') {
-    // append sign in link
+} else if (loggedInCheck === 'false' || loggedInCheck === null) {
+    $('.loggedIn').remove();
+    $('#login-links').append('<li class="notLoggedIn"><a href="login" style="font-size:16px; text-decoration:none; color:white; font-weight: 700">Sign in</a></li>');
 }
+
+$('.signOut').on('click', function() {
+    sessionStorage.setItem('loggedIn', 'false');
+})
