@@ -8,7 +8,9 @@ if (loggedInCheck === 'true') {
     console.log('Logged in');
 } else if (loggedInCheck === 'false' || loggedInCheck === null) {
     $('.loggedIn').remove();
-    $('#login-links').append('<li class="notLoggedIn"><a href="login" style="font-size:16px; text-decoration:none; color:white; font-weight: 700">Sign in</a></li>');
+    $('#login-links').append(
+        '<li class="notLoggedIn"><a href="register" style="font-size:16px; text-decoration:none; color:white; font-weight: 700">Register</a></li>' +
+        '<li class="notLoggedIn"><a href="login" style="font-size:16px; text-decoration:none; color:white; font-weight: 700">Sign in</a></li>');
 }
 
 $('.signOut').on('click', function() {
