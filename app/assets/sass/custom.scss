@@ -396,19 +396,19 @@
 #legend {
     position: absolute;
     top: 4em;
-    right: 0;
+    right: 0.5em;
     z-index: 10000000000 !important;
 }
 
 #legend p {
     position: fixed;
-    right: 13vw;
+    right: 12vw;
 }
 
 #legend ul {
     box-shadow: 2px 2px 1px #BFC1C3;
     width: 15vw;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     position: relative;
     top: 1.8em;
     padding: 1em;
@@ -417,4 +417,20 @@
 
 #legend li {
     margin-bottom: 0.5em;
+}
+
+
+/* Login links for search service */
+
+#login-links li {
+    display: inline;
+    &:first-child {
+        margin-right: 1em;
+    }
+    & a {
+        font-size: 16px;
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+    }
 }

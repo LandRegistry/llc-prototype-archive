@@ -1,0 +1,108 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<!--<style>
+  .summary table, tr, td {
+    border-bottom: 0px solid !important;
+
+  }
+</style> -->
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">ALPHA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map" class="map"></div>
+    </div>
+    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+        {% import "includes/error.html" as error %} {{ error.error('Draw a shape around the place you zoomed into') }}
+        <form action="search-results" method="GET">
+            <div class="form-group">
+                <fieldset>
+                    <div class="form-group">
+                        <h1 class="heading-medium">This map shows <span id="postcodeSelected"></span></h1>
+                    </div>
+                    <p>Use the map buttons to draw the boundary of your search.</p>
+                    <p><a href="search-results" class="button">Continue</a></p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <div class="panel-control close panel-control-citizen">
+        <img src="{{ asset_path }}images/arrow_collapse.png">
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
+
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
+
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+
+
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %}{% include "includes/osm_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/map-styles.js"></script>
+<!--<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry =
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
+    // hide tools that are not needed
+
+    /*$('.point').remove()
+    $('.line').remove()
+    $('.copy').remove()
+    $('.remove').remove()
+    $('#snap-to').remove()*/
+
+    /*$('.button').click(function(e) {
+        if (MAP_CONFIG.draw_source.getFeatures().length === 0) {
+            $('.error-summary').removeClass('hidden')
+            e.preventDefault()
+        }
+    });*/
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchedTermRetrieved);
+    $("#postcodeSelected").text(searchedTermRetrieved);
+</script>
+{% endblock %}

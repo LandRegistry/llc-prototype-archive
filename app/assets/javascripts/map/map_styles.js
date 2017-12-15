@@ -17,7 +17,7 @@ draw_layer_styles = {
             stroke: new ol.style.Stroke({
                 color: '#0658e5',
                 width: 2,
-                lineDash: [1, 5]
+                /*lineDash: [1, 5]*/
             }),
             image: new ol.style.Circle({
                 radius: 5,

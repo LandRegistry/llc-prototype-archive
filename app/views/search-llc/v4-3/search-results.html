@@ -1,0 +1,115 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Search results
+            </h1>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-small"></span>
+            </h2>
+            <img src="{{ asset_path }}images/citizen-service/search-extent-new.png" width="50%" height="auto">
+            <br>
+            <p>Not the right address? <a href="search-by-postcode">Search again</a> or <a href="search">zoom to a place on the map</a>.</p>
+            <p>There are <span class="bold-small">8 local land charges</span> that affect the land you searched.</p>
+            <h3 class="chargeCategory heading-medium">Planning</h3>
+            <ul class="list">
+                <li><a href="free-charge-details" class="bold-small">Planning charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">28 May 2011</span></span>
+                </li>
+                <li><a href="free-charge-details-2" class="bold-small">Planning charge 2</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">11 February 1993</span></span>
+                </li>
+                <!-- <li><a href="free-charge-details-3" class="bold-small">Local land charge 3</a><br> Charge creation date is 20 April 2002
+                </li> -->
+            </ul>
+            <h3 class="chargeCategory heading-medium">Land compensation</h3>
+            <ul class="list">
+                <li><a href="landcomp-charge-details" class="bold-small">Land compensation charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">10 August 1983</span></span>
+                </li>
+                <li><a href="landcomp-charge-details-2" class="bold-small">Land compensation charge 2</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">27 April 2017</span></span>
+                </li>
+                <!-- <li><a href="free-charge-details-3" class="bold-small">Local land charge 3</a><br> Charge creation date is 20 April 2002
+                </li> -->
+            </ul>
+            <h3 class="chargeCategory heading-medium">Financial</h3>
+            <ul class="list">
+                <li><a href="financial-charge-details" class="bold-small">Financial charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">22 March 2016</span></span>
+                </li>
+                <li><a href="financial-charge-details-2" class="bold-small">Financial charge 2</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">22 March 1965</span></span>
+                </li>
+                <!-- <li><a href="free-charge-details-3" class="bold-small">Local land charge 3</a><br> Charge created on 20 April 2002
+                </li> -->
+            </ul>
+            <h3 class="chargeCategory heading-medium">Light obstruction notice</h3>
+            <ul class="list">
+                <li><a href="lon-details" class="bold-small">Light obstruction notice 1</a><br><span class="font-xsmall">Charge registration date is <span class="bold-xsmall">3 October 2017</span></span>
+                </li>
+            </ul>
+            <h3 class="chargeCategory heading-medium">Other</h3>
+            <ul class="list">
+                <li>
+                    <a href="sco-details" class="bold-small">Other charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">28 May 1961</span></span>
+                </li>
+            </ul>
+            <br>
+
+            <div class="payPromo">
+                <h2 class="heading-small">Pay &pound;15 and you will get everything that is included in the free search, plus:</h2>
+                <ul class="list list-bullet">
+                    <li>Local land charge boundary, showing where a charge starts and stops</li>
+                    <li>Contact details for authority that can answer questions about this local land charge</li>
+                    <li>Secure and tamperproof document</li>
+                </ul>
+                <h2 class="heading-small">Create a free account and for 6 months you will also get:</h2>
+                <ul class="list list-bullet">
+                    <li>Cloud storage for your searches</li>
+                    <li>Search result archive</li>
+                    <li>See active and expired searches</li>
+                </ul>
+                <h2 class="heading-small">For 6 months each search will have:</h2>
+                <ul class="list list-bullet">
+                    <li>Unlimited downloads</li>
+                    <li>Unlimited refreshes</li>
+                    <li>Download in PDF, JSON, CSV, XML</li>
+                </ul>
+            </div>
+            <br>
+            <form action="search-results" method="POST">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Pay now">
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</main>
+<script>
+    var addressSelected = sessionStorage.getItem('addressSelected');
+    document.getElementById('address-selected').textContent = addressSelected;
+    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;*/
+
+    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;*/
+</script>
+
+{% endblock %}
