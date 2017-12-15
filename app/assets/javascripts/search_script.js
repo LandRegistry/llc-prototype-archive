@@ -9,6 +9,7 @@ if (loggedInCheck === 'true') {
         '<li class="loggedIn signOut"><a href="start">Sign out</a></li>'
     );
     console.log('Logged in');
+    $('#payContinueButton').attr('href', 'view-logged-in');
 } else if (loggedInCheck === 'false' || loggedInCheck === null) {
     $('.loggedIn').remove();
     $('#login-links').append(
