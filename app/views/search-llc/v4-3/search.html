@@ -19,18 +19,22 @@
             </p>
         </div>
         <div id="legend">
-            <p><a href="#" class="collapse">Legend</a></p>
-            <ul class="hiddenList">
+            <p><a href="#" class="open">Legend</a></p>
+            <ul>
+                <li><span><img src="/public/images/non-mig.png" style="height:1.1em;"></span> = Non-migrated area</li>
+                <li><span><img src="/public/images/other-auth.png" style="height:1.1em"></span> = Other authority</li>
+                <li><span><img src="/public/images/boundary.png" style="height:1.1em; border:1px solid rgba(100,100,100,0.3)"></span> = Boundary between authorities</li>
                 <li><span><img src="/public/images/charge-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Charge extent</li>
                 <!--<li><span><img src="/public/images/search-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Search extent</li> -->
-                <li><span><img src="/public/images/edit-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Editable charge extent</li>
+                <!-- <li><span><img src="/public/images/edit-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Editable charge extent</li> -->
                 <!-- <li><span><img src="/public/images/delete-extent.png" style="width:1.5em; height: 0.2em; vertical-align: center;position:relative; top: -0.3em;"></span> = Deletable charge extent extent</li> -->
+                <li><span class="bold-xsmall">Map tools</span></li>
                 <li><span><img src="/public/images/polygon.png" style="height:1.1em"></span> = Draw polygon</li>
-                <li><span><img src="/public/images/point.png" style="height:1.1em"></span> = Draw point</li>
-                <li><span><img src="/public/images/line.png" style="height:1.1em"></span> = Draw line</li>
+                <!--<li><span><img src="/public/images/point.png" style="height:1.1em"></span> = Draw point</li>
+                <li><span><img src="/public/images/line.png" style="height:1.1em"></span> = Draw line</li> -->
                 <li><span><img src="/public/images/edit.png" style="height:1.1em"></span> = Edit feature</li>
                 <li><span><img src="/public/images/copy.png" style="height:1.1em"></span> = Duplicate</li>
-                <li><span><img src="/public/images/remove.png" style="height:1.1em"></span> = Remove last</li>
+                <!-- <li><span><img src="/public/images/remove.png" style="height:1.1em"></span> = Remove last</li> -->
                 <li><span><img src="/public/images/remove-all.png" style="height:1.1em"></span> = Remove all</li>
                 <li><span><img src="/public/images/undo.png" style="height:1.1em"></span> = Undo last action</li>
                 <li><span><img src="/public/images/snap-to.png" style="height:1.1em"></span> = Follow line on map</li>
@@ -140,6 +144,7 @@
             'bottom': '1.5em'
         });
     });*/
+
     $('#legend a').on('click', function() {
         if ($(this).hasClass('collapse')) {
             $('#legend ul').removeClass('hiddenList');
