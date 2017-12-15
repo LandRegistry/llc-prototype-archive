@@ -19,8 +19,9 @@
             </p>
         </div>
         <div id="legend">
-            <p><a href="#" class="open">Legend</a></p>
+            <p><a href="#" class="open">Legend <span class="triangle" style="color: #005ea5">&#9662;</span></a></p>
             <ul>
+                <!--<li class="bold-xsmall" style="text-align: right"><a href="#" class="closeLegend">Close</a></li> -->
                 <li><span><img src="/public/images/non-mig.png" style="height:1.1em;"></span> = Non-migrated area</li>
                 <li><span><img src="/public/images/other-auth.png" style="height:1.1em"></span> = Other authority</li>
                 <li><span><img src="/public/images/boundary.png" style="height:1.1em; border:1px solid rgba(100,100,100,0.3)"></span> = Boundary between authorities</li>
@@ -150,11 +151,13 @@
             $('#legend ul').removeClass('hiddenList');
             $(this).removeClass('collapse');
             $(this).addClass('open');
+            $('.triangle').text('\u25BE');
             return false;
         } else if ($(this).hasClass('open')) {
             $('#legend ul').addClass('hiddenList');
             $(this).removeClass('open');
             $(this).addClass('collapse');
+            $('.triangle').text('\u25B8');
             return false;
         }
 
