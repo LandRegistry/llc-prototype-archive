@@ -1,70 +1,70 @@
 {% extends "layout.html" %} {% block page_title %} Feedback {% endblock %} {% block content%}
 <main id="content">
-  <div class="grid-row">
-    <form method="post" action="/admin/user/add/role" class="column-full">
-      <div class="phase-banner-beta">
-        <p>
-          <strong class="phase-tag">BETA</strong>
-          <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
-        </p>
-      </div>
-      <div class="form-group">
-        <h1 class="heading-large">Feedback</h1>
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <legend>
-            <h1 class="heading-medium">
-              Was there a problem with the service?
-            </h1>
-          </legend>
+    <div class="grid-row">
+        <form method="post" action="/admin/user/add/role" class="column-full">
+            <div class="phase-banner-beta">
+                <p>
+                    <strong class="phase-tag">BETA</strong>
+                    <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
+                </p>
+            </div>
+            <div class="form-group">
+                <h1 class="heading-large" style="margin-bottom:-1em">Feedback</h1>
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <legend>
+                        <h1 class="heading-medium">
+                            Was there a problem with the service?
+                        </h1>
+                    </legend>
 
-          <label class="block-label selection-button-radio" for="radio-1" data-target="describe-the-problem">
+                    <label class="block-label selection-button-radio" for="radio-1" data-target="describe-the-problem">
             <input id="radio-1" type="radio" name="radio-group" value="Yes">Yes
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="describe-the-problem">
-            <label class="form-label" for="textarea">
+                    <div class="panel panel-border-narrow js-hidden" id="describe-the-problem">
+                        <label class="form-label" for="textarea">
               Describe the problem
             </label>
-            <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
-          </div>
+                        <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+                    </div>
 
-          <label class="block-label selection-button-radio" for="radio-2" data-target="how-do-you-feel-about-the-service">
+                    <label class="block-label selection-button-radio" for="radio-2" data-target="how-do-you-feel-about-the-service">
             <input id="radio-2" type="radio" name="radio-group" value="Yes">No
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="how-do-you-feel-about-the-service">
-            <label class="form-label" for="textarea">
+                    <div class="panel panel-border-narrow js-hidden" id="how-do-you-feel-about-the-service">
+                        <label class="form-label" for="textarea">
               How did you feel about the service?
             </label>
-            <label class="block-label selection-button-radio" for="radio-very-satisfied">
+                        <label class="block-label selection-button-radio" for="radio-very-satisfied">
               <input id="radio-very-satisfied" type="radio" name="how-do-you-feel-about-the-service" value="Very satisfied">Very satisfied 
             </label>
-            <label class="block-label selection-button-radio" for="radio-satisfied">
+                        <label class="block-label selection-button-radio" for="radio-satisfied">
               <input id="radio-satisfied" type="radio" name="how-do-you-feel-about-the-service" value="Satisfied">Satisfied
             </label>
-            <label class="block-label selection-button-radio" for="radio-neither-satisfied-nor-dissatisfied">
+                        <label class="block-label selection-button-radio" for="radio-neither-satisfied-nor-dissatisfied">
               <input id="radio-radio-neither-satisfied-nor-dissatisfied" type="radio" name="how-do-you-feel-about-the-service" value="Neither satisfied nor dissatisfied">Neither satisfied nor dissatisfied
             </label>
-            <label class="block-label selection-button-radio" for="radio-dissatisfied">
+                        <label class="block-label selection-button-radio" for="radio-dissatisfied">
               <input id="radio-dissatisfied" type="radio" name="how-do-you-feel-about-the-service" value="Dissatisfied">Dissatisfied
             </label>
-            <label class="block-label selection-button-radio" for="radio-very-dissatisfied">
+                        <label class="block-label selection-button-radio" for="radio-very-dissatisfied">
               <input id="radio-very-dissatisfied" type="radio" name="how-do-you-feel-about-the-service" value="Very dissatisfied">Very dissatisfied
             </label>
-          </div>
+                    </div>
 
-        </fieldset>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="textarea">
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="textarea">
           How can we improve?
         </label>
-        <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
-      </div>
+                <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+            </div>
 
-      <a class="button" href="feedback-confirmation" role="button">Send feedback</a>
-    </form>
-  </div>
-  </div>
+            <a class="button" href="feedback-confirmation" role="button">Send feedback</a>
+        </form>
+    </div>
+    </div>
 </main>
 {% endblock %} Thank you for your feedback
