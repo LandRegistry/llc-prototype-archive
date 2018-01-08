@@ -19,9 +19,10 @@
                         <fieldset>
                             <div class="form-group spacing-bottom-half">
                                 <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
-                                <a class="postcodeButton button" href="#" role="button">Search</a>
+                                <!--<a class="postcodeButton button" href="#" role="button">Search</a> -->
+                                <button id="placeSearchButton" class="search-button"></button>
                             </div>
-                            <div class="hiddenList resultsList">
+                            <div class="hiddenList resultsList" style="margin-bottom:1em">
                                 <p>Select an address</p>
                                 <ol class="address-list">
                                     <li><a href="search-results" class="address-list-item">1 Clinton Street, Exeter, EX4 1AX</a></li>
@@ -58,7 +59,7 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    $('.postcodeButton').on('click', function() {
+    $('.search-button').on('click', function() {
         $('.resultsList').removeClass('hiddenList');
     });
     $('.address-list a').on('click', function() {
