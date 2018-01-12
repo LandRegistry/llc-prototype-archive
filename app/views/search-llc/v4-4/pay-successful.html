@@ -1,0 +1,63 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Your payment was successful
+            </h1>
+            <p class="bold-small">Your reference number is<br><span class="bold-large">LC12345</span></p>
+            <p>We have sent you a receipt by email.</p>
+
+            <table class="charge-history">
+
+                <thead>
+                    <tr>
+                        <th class="bold-small">
+                            Amount
+                        </th>
+                        <th class="bold-small">
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            &pound;15
+                        </td>
+                        <td>
+                            Official search result of local land charges
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <br>
+            <p>You can download your search result on the next page.</p>
+
+            <a href="view" id="payContinueButton" class="button continueButton">Continue to search result</a>
+
+            <!-- <form action="view">
+                <input class="button continueButton" type="submit" value="Continue to search result">
+            </form> -->
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+
+{% endblock %}{% block body_end_additional %} {% endblock %}

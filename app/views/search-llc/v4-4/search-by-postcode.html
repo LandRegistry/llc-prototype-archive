@@ -1,0 +1,70 @@
+{% extends "layout_citizen_regular.html" %}{% block page_title %}Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    {% import "includes/error.html" as error %} {{ error.error(link='#search', 'Enter a postcode, address or place name') }}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Enter a postcode</h1>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="form-group" id="search-field">
+                        <fieldset>
+                            <div class="form-group spacing-bottom-half">
+                                <input class="form-control search-field" id="search" name="search" type="text" autofocus="autofocus" value="">
+                                <!--<a class="postcodeButton button" href="#" role="button">Search</a> -->
+                                <button id="placeSearchButton" class="search-button"></button>
+                            </div>
+                            <div class="hiddenList resultsList" style="margin-bottom:1em">
+                                <p>Select an address</p>
+                                <ol class="address-list">
+                                    <li><a href="search-results" class="address-list-item">1 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">2 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">3 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">4 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">5 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">6 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">7 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">8 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">9 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">10 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">11 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">12 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">13 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">14 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">15 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">16 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">17 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">18 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">19 Clinton Street, Exeter, EX4 1AX</a></li>
+                                    <li><a href="search-results" class="address-list-item">20 Clinton Street, Exeter, EX4 1AX</a></li>
+                                </ol>
+                            </div>
+                        </fieldset>
+                        <p>Or you can <a href="search">zoom to a place on the map</a></p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    $('.search-button').on('click', function() {
+        $('.resultsList').removeClass('hiddenList');
+    });
+    $('.address-list a').on('click', function() {
+        var addressSelected = $(this).text();
+        sessionStorage.setItem('addressSelected', addressSelected);
+    });
+</script>
+{% endblock %}
