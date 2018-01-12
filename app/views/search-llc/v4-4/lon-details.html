@@ -1,0 +1,110 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p><a href="search-results" class="link-back">Back</a></p>
+            <h1 class="heading-large">
+                Charge details
+            </h1>
+        </div>
+        <div class="column-two-thirds">
+            <table class="check-your-answers-2">
+                <tbody>
+                    <tr>
+                        <td class="bold-small">Location (dominant building)</td>
+                        <td><span id="address-selected">3 Clinton Street, Exeter, EX4 1AX</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Category</td>
+                        <td>Light obstrcution notice</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Date (temporary certificate)</td>
+                        <td>1 October 2017</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Expiry (temporary certificate)</td>
+                        <td>1 April 2018</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Applicant name</td>
+                        <td>John Harris Property Development</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Applicant address</td>
+                        <td>1 High Street Exeter</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Interest in land</td>
+                        <td>Freehold owner</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Height of servient land development</td>
+                        <td>32 metres</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Covers all or part of the extent</td>
+                        <td>All of the extent</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Registration date</td>
+                        <td>3 October 2017</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Authority reference</td>
+                        <td>JBC144/B17</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">Originating authority</td>
+                        <td>HM Land Registry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="bold-small">HM Land Registry reference</td>
+                        <td>LLC-1LRF</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</main>
+<script>
+    var placeSearched = sessionStorage.getItem('addressSelected');
+    console.log(placeSearched);
+    if (placeSearched === null) {
+        document.getElementById('address-selected').textContent = "3 Clinton Street, Exeter, EX4 1AX";
+    } else {
+        document.getElementById('address-selected').textContent = placeSearched;
+    }
+</script>
+
+{% endblock %}

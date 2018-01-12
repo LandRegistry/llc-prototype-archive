@@ -1,0 +1,76 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form method="post" action="#" class="column-full">
+                <fieldset>
+                    <div class="form-group">
+                        <h1 class="heading-large">What do you want to do?</h1>
+                        <label class="block-label selection-button-radio" for="paid">
+                <input id="paid" type="radio"  name="freeOrPaid" value="paid">
+                <span class="bold-small">Pay &pound;15 and create an account</span><br>
+                <p>You will get everything that is included in the free search, plus:</p>
+                <ul class="list list-bullet">
+                    <li>official search, guaranteed by HM Land Registry</li>
+                    <li>local land charge boundary, showing where a charge starts and stops</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
+                    <li>for 6 months:
+                        <ul class="list list-bullet">
+                            <li>refresh your search to make sure no new local land charges have been added before you exchange contracts</li>
+                            <li>return to your result</li>
+                            <li>download your results in different formats (PDF, JSON, CSV, XML)</li>
+                        </ul>
+                    </li>
+                </ul>
+              </label>
+                        <label class="block-label selection-button-radio" for="free">
+            <input id="free" type="radio"  name="freeOrPaid" value="free">
+                <span class="bold-small">Free search</span><br>
+                <p>You will see:</p>
+                <ul class="list list-bullet">
+                    <li>where the local land charge is</li>
+                    <li>what the charge does</li>
+                    <li>registration date, this is the date when the charge was officially registered</li>
+                    <li>contact details for the authority that can answer questions about this local land charge</li>
+                </ul>
+            </label>
+
+                    </div>
+                    <p><a class="button" href="" role="button">Continue</a></p>
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="column-one-third">
+            <aside class="login-box">
+                <h2 class="heading-small">Existing users</h2>
+                <p><a href="login">Sign in</a></p>
+                <h2 class="heading-small">New users</h2>
+                <p><a href="register">Register</a></p>
+            </aside>
+        </div>
+
+
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    $('.button').click(function(e) {
+        var radioValue = $('input[name="freeOrPaid"]:checked').val()
+        if (radioValue === 'paid') {
+            $("a.button").attr("href", "login")
+        } else if (radioValue === 'free') {
+            $("a.button").attr("href", "search-method")
+        }
+    })
+</script>
+{% endblock %}
