@@ -434,3 +434,22 @@
         font-weight: 700;
     }
 }
+
+@media all and (max-width: 640px) {
+    #search-panel {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+    #legend {
+        display: none;
+    }
+    #map {
+        position: relative;
+        top: 100px;
+    }
+    .ol-zoom {
+        position: absolute;
+        right: 1em !important;
+    }
+}
