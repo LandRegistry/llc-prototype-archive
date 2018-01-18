@@ -10,28 +10,28 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Create an account</h1>
-            <form action="view-logged-in" method="GET">
+            <form action="thank-you" method="GET">
                 <div class="form-group">
                     <fieldset>
                         <legend class="visually-hidden">Register</legend>
                         <div class="form-group">
-                            <label class="form-label" for="name">Full name</label>
-                            <input class="form-control" id="name" name="register" type="text">
+                            <label class="form-label" for="lastName">First name</label>
+                            <input class="form-control" id="firstName" name="register" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">Last name</label>
+                            <input class="form-control" id="lastName" name="register" type="text">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">Email</label>
                             <input class="form-control" id="email" name="register" type="email">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
-                            <input class="form-control" id="password" name="register" type="password">
+                            <label class="form-label" for="emailConfirmation">Confirm email</label>
+                            <input class="form-control" id="emailConfirmation" name="register" type="email">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="confirmPassword">Confirm password</label>
-                            <input class="form-control" id="confirmPassword" name="register" type="password">
-                        </div>
-                        <div class="form-group">
-                            <input id="registerButton" class="button" type="submit" value="Register">
+                            <input id="registerButton" class="button" type="submit" value="Submit">
                         </div>
                         <p>Already registered? <a href="login">Sign in now</a></p>
                     </fieldset>
@@ -44,8 +44,6 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    var test = sessionStorage.getItem('register');
-    console.log(test);
     document.getElementById('registerButton').onclick = function() {
         var userName = document.getElementById('name').value;
         sessionStorage.setItem('userName', userName);
