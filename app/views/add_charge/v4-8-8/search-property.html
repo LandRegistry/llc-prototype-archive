@@ -39,7 +39,7 @@
 
 
         <ul id="address-list-for-postcode" class="list hiddenList">
-            <p><a href="#" class="closeMenu" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
+            <p><a href="#" class="closeMenu hiddenList" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
             <li><a href="draw-an-extent" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
             <li><a href="draw-an-extent" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
             <li><a href="draw-an-extent" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
@@ -67,18 +67,17 @@
         </ul>
 
         <div class="originalText">
-            <p>Or use the map controls to find the location you are looking for and draw an extent around the area you want to search.
+            <p>Use the buttons on this map to draw the charge extent.
             </p>
         </div>
         <div class="newText hiddenList">
             <p class="bold-small">This is the map for <span class="selectedAddress"></span></p>
+            <p>Use the buttons on this map to draw the charge extent.</p>
             <div class="panel panel-border-narrow">
                 <p>You have added<strong class="bold-small"><span> 0 </span> </strong> (polygons, points or lines) out of 500 possible extents.</p>
             </div>
-            <p>Check your extent. Make sure that this is the place you want to search for charges. If this is correct, continue. If it isn't, use the map buttons to edit your extent.</p>
-            <p>
 
-                <a href="more-information_2" class="button continueButton">Continue</a></p>
+            <p><a href="more-information_2" class="button continueButton hiddenList">Continue</a></p>
         </div>
 
         <!--<div class="panel panel-border-narrow">
@@ -146,6 +145,7 @@
         $('.selectedOption1').on('click', function() {
             $('#address-list-for-street').addClass('hiddenList');
             $('#address-list-for-postcode').removeClass('hiddenList');
+            $('.closeMenu').removeClass('hiddenList');
             return false;
         });
 
@@ -205,7 +205,7 @@
         return false;
     });
     $('button').click(function() {
-        $('.continueButton').removeClass('disabled');
+        $('.continueButton').removeClass('hiddenList');
         var clickedButton = $(this);
         $(clikedButton).click(function() {
             $(this).attr('id', '');
