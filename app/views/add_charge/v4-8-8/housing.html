@@ -1,0 +1,88 @@
+{% extends "layout.html" %} {% block page_title %} Housing {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px;">Choose a housing category</h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <form action="#">
+
+                <fieldset>
+                    <legend class="visually-hidden">
+                        Choose a category
+                    </legend>
+                    <div class="form-group">
+                        <label id="approvalLabel" class="block-label selection-button-radio" for="approval">
+                  <input id="approval" name="housing" type="radio" value="Approval under house in multiple occupation (HMO)">
+                  Approval under house in multiple occupation (HMO)
+                  </label>
+                        <label id="grantLabel" class="block-label selection-button-radio" for="grant">
+                  <input id="grant" name="housing" type="radio" value="Grant">
+                  Grant
+                  </label>
+                        <label id="interimCertificateLabel" class="block-label selection-button-radio" for="interimCertificate">
+                  <input id="interimCertificate" name="housing" type="radio" value="Interim certificate under HMO">
+                  Interim certificate under HMO
+                  </label>
+                        <label id="noticeOfWorksLabel" class="block-label selection-button-radio" for="noticeOfWorks">
+                  <input id="noticeOfWorks" name="housing" type="radio" value="Notice of works or repairs">
+                  Notice of works or repairs
+                  </label>
+                        <label id="reApprovalLabel" class="block-label selection-button-radio" for="reApproval">
+                  <input id="reApproval" name="housing" type="radio" value="Re-approval of grant">
+                  Re-approval of grant
+                  </label>
+                        <label id="reApprovalHmoLabel" class="block-label selection-button-radio" for="reApprovalHmo">
+                  <input id="reApprovalHmo" name="housing" type="radio" value="Re-approval under HMO">
+                  Re-approval under HMO
+                  </label>
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
+                  <input id="dunno" name="housing" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="housingButton" role="button" href="date-document-created">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('housingButton').onclick = function() {
+        var approval = document.getElementById('approvalLabel');
+        var grant = document.getElementById('grantLabel');
+        var interimCertificate = document.getElementById('interimCertificateLabel');
+        var noticeOfWorks = document.getElementById('noticeOfWorksLabel');
+        var reApproval = document.getElementById('reApprovalLabel');
+        var reApprovalHmo = document.getElementById('reApprovalHmoLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (approval.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Approval under house in multiple occupation (HMO)');
+        } else if (grant.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Grant');
+        } else if (interimCertificate.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Interim certificate under HMO');
+        } else if (noticeOfWorks.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Notice of works or repairs');
+        } else if (reApproval.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Re-approval of grant');
+        } else if (reApprovalHmo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Re-approval under HMO');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
+        }
+    }
+</script>
+{% endblock %}
