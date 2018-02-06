@@ -1,0 +1,137 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<style>
+    @-moz-document url-prefix() {
+        .search-button {
+            position: relative;
+            top: -5px;
+        }
+    }
+</style>
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" style="width:100%;"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list">
+        <h1 class="heading-small">Enter a location</h1>
+        <form action="#" method="GET">
+            <div class="form-group searchGroup">
+
+                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+                <!--<button id="placeSearchButton" class="search-button" style="top: 12px; left: -11px;"></button> -->
+                <button id="placeSearchButton" class="search-button"></button>
+                <!--<a id="placeSearchButton" href="#" class="button">Find</a> -->
+
+            </div>
+            <p class="initialInstructionText">Or zoom to the area using the map.</p>
+
+            <div class="postSearchText hiddenList">
+                <h2 class="heading-small">This is the map for EX4 1AX</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+
+            </div>
+            <p>
+                <a href="search-results-from-map" class="button disabled continueButton hiddenList">Search in this area</a>
+            </p>
+
+            <div class="resultsList hiddenList">
+                <h2 class="heading-small">There are 6 charges in this location.</h2>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<!-- <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/search.js"></script> -->
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    $('.point').remove();
+    $('.line').remove();
+    $('.remove').remove();
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
+</script>
+<script>
+    $('#placeSearchButton').click(function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.postSearchText').removeClass('hiddenList');
+        return false;
+    });
+
+    $('.addressList a').click(function() {
+        $('.addressList').addClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        /*$('.postSearchText').removeClass('hiddenList');
+        $('.continueButton').removeClass('hiddenList');*/
+        var placeSelected = $(this).html();
+        $('.placeSelected').text(placeSelected);
+        sessionStorage.setItem('placeSelected', placeSelected);
+        var placeSearched = $('#search_term').val();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
+        return false;
+
+    })
+
+    $('.map-button').click(function() {
+        $('.continueButton').removeClass('disabled');
+        $('.continueButton').removeClass('hiddenList');
+        var clickedButton = $(this);
+        $(clikedButton).click(function() {
+            $(this).attr('id', '');
+        });
+    });
+
+    /*$('.continueButton').click(function() {
+        $(this).addClass('hiddenList');
+        $('.postSearchText').addClass('hiddenList');
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
+    });*/
+
+
+
+
+
+
+
+
+    $('#mapButton').click(function() {
+        var searchTerm = $('#search_term').val();
+        sessionStorage.setItem('searchTerm', searchTerm);
+    });
+</script>
+{% endblock %}

@@ -65,14 +65,14 @@
 #search-panel {
     width: 26vw;
     box-sizing: border-box;
-    height: calc(100vh - 107px);
+    height: calc(100vh - 106px);
     padding: 0 2vw;
     z-index: 10000000000;
     background-color: white;
     box-shadow: 3px 3px 2px #DEE0E2;
     position: absolute;
     overflow: auto;
-    top: 106px !important;
+    top: 104px !important;
     & .results-list li {
         border-bottom: 1px solid #DEE0E2 !important;
     }

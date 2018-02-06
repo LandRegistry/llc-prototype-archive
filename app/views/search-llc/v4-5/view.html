@@ -1,0 +1,101 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">
+                Download your official search result of local land charges
+
+            </h1>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-medium">3 Clinton Street, Exeter EX4 1AX</span>
+            </h2>
+            <img src="{{ asset_path }}images/citizen-service/search-extent-new.png" width="50%" height="auto">
+            <p>There are <span class="bold-small">8 local land charges</span> that affect the land you searched.</p>
+            <div class="panel panel-border-wide download-panel">
+                <p>
+                    Download your official search result. Unless you <a href="login-searched" class="bold-small">sign-in</a> or <a href="register-from-search" id="register" class="bold-small">register</a>, you will lose it once you leave this page.</p>
+                <p class="bold-small">Create a free account and you wil get:</p>
+                <ul class="list list-bullet">
+                    <li>Cloud storage for your searches</li>
+                    <li>Search result archive</li>
+                    <li>See active and lapsed searches</li>
+                </ul>
+                <p class="bold-small">For 6 months each search will have:</p>
+                <ul class="list list-bullet">
+                    <li>unlimited downloads</li>
+                    <li>unlimited refreshes</li>
+                    <li>different download formats (PDF, JSON, CSV, XML)</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="column-two-thirds">
+            <br>
+            <div class="form-group">
+                <a class="button" href="/public/documents/official-doc.pdf" download>Download PDF</a><br><br>
+                <h2 class="heading-medium">Other formats</h2>
+                <table class="check-your-answers">
+                    <!--<thead>
+                        <tr>
+                            <th><span class="visuallyhidden">Formay</span></th>
+                            <th><span class="visuallyhidden">#</span></th>
+                            <th><span class="visuallyhidden">Download link</span></th>
+                        </tr>
+                    </thead> -->
+
+                    <tbody>
+                        <tr>
+                            <td class="bold-small">JSON</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">CSV</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">XML</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+								Download
+							</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><a href="dashboard">Start a new search</a></p>
+        </div>
+    </div>
+    <script>
+        var locationSearched = sessionStorage.getItem('searchTerm');
+        document.getElementById('address-selected').textContent = locationSearched;
+
+        document.getElementById('register').onclick = function() {
+            sessionStorage.setItem('register', 'true');
+        }
+    </script>
+</main>
+
+{% endblock %}
