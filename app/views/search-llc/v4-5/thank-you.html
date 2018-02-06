@@ -10,7 +10,7 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Check your email</h1>
-            <p>We've sent an email to example@test.com.<br>Click the link in this email to create your password.</p>
+            <p>We've sent an email to <span id="emailRegistered"></span>.<br>Click the link in this email to create your password.</p>
             <p>Didn't get the email? Check your junk folder.<br>If it isn't in your junk folder, email <a href="mailto:LocalLandCharges@landregistry.gov.uk">LocalLandCharges@landregistry.gov.uk</a></p>
 
         </div>
@@ -19,9 +19,7 @@
 </main>
 {% endblock %} {% block body_end_additional %}
 <script>
-    document.getElementById('registerButton').onclick = function() {
-        var userName = document.getElementById('name').value;
-        sessionStorage.setItem('userName', userName);
-    }
+    var emailRegistered = sessionStorage.getItem('emailRegistered');
+    document.getElementById('emailRegistered').textContent = emailRegistered;
 </script>
 {% endblock %}

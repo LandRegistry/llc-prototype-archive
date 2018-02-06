@@ -9,6 +9,14 @@
     </div>
     <div class="grid-row">
         <div class="column-two-thirds">
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+                    There was a problem submitting the following fields
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#email-address">Email already exists</a></li>
+                </ul>
+            </div>
             <h1 class="heading-large">Create an account</h1>
             <form action="thank-you" method="GET">
                 <div class="form-group">
@@ -23,23 +31,27 @@
                             <input class="form-control" id="lastName" name="register" type="text">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
-                            <input class="form-control" id="email" name="register" type="email">
+                            <legend id="email-address">
+
+                                <label class="form-label" for="email">Email</label>
+                                <span class="error-message">
+                                    We have an account for this email. Do you want to <a href="reset-password">reset passoword</a> or <a href="login">sign in now</a>?</a> 
+                                </span>
+                                <input class="form-control" id="email" name="register" type="email" value="email@exists.com">
+                            </legend>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="emailConfirmation">Confirm email</label>
                             <input class="form-control" id="emailConfirmation" name="register" type="email">
                         </div>
-                        <p>
-                            <a href="#" id="registerButton" class="button">Submit</a>
-                        </p>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <input id="registerButton" class="button" type="submit" value="Submit">
-                        </div> -->
+                        </div>
                         <p>Already registered? <a href="login">Sign in now</a></p>
                     </fieldset>
                 </div>
             </form>
+
 
         </div>
     </div>
@@ -48,15 +60,8 @@
 {% endblock %} {% block body_end_additional %}
 <script>
     document.getElementById('registerButton').onclick = function() {
-        var userName = document.getElementById('firstName').value;
+        var userName = document.getElementById('name').value;
         sessionStorage.setItem('userName', userName);
-        var email = document.getElementById('email').value;
-        if (email === 'email@exists.com') {
-            document.getElementById('registerButton').setAttribute('href', 'register-email-exists-error');
-        } else {
-            sessionStorage.setItem('emailRegistered', email);
-            document.getElementById('registerButton').setAttribute('href', 'thank-you');
-        }
     }
 </script>
 {% endblock %}
