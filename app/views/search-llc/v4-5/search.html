@@ -36,6 +36,33 @@
                 <!--<a id="placeSearchButton" href="#" class="button">Find</a> -->
 
             </div>
+            <ul id="address-list-for-postcode" class="list hiddenList">
+                <p><a href="#" class="closeMenu hiddenList" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
+                <li><a href="draw-an-extent" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="draw-an-extent" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+            </ul>
+            <ul id="address-list-for-street" class="list hiddenList">
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Exeter EX1</a></li>
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Newcastle NE1</a></li>
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, London SW3</a></li>
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Southampton SO14</a></li>
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
+                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
+            </ul>
             <p class="initialInstructionText">Or zoom to the area using the map.</p>
 
             <div class="postSearchText hiddenList">
@@ -80,28 +107,9 @@
         var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
         MAP_HELPERS.zoom_map(geometry);
         $('.postSearchText').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
         return false;
     });
-
-    $('.addressList a').click(function() {
-        $('.addressList').addClass('hiddenList');
-        $('.initialInstructionText').addClass('hiddenList');
-        /*$('.postSearchText').removeClass('hiddenList');
-        $('.continueButton').removeClass('hiddenList');*/
-        var placeSelected = $(this).html();
-        $('.placeSelected').text(placeSelected);
-        sessionStorage.setItem('placeSelected', placeSelected);
-        var placeSearched = $('#search_term').val();
-        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-        MAP_HELPERS.zoom_map(geometry);
-        $('.resultsList').removeClass('hiddenList');
-        $('.searchGroup').css({
-            'position': 'relative',
-            'bottom': '1.5em'
-        });
-        return false;
-
-    })
 
     $('.map-button').click(function() {
         $('.continueButton').removeClass('disabled');
@@ -133,5 +141,15 @@
         var searchTerm = $('#search_term').val();
         sessionStorage.setItem('searchTerm', searchTerm);
     });
+
+
+
+
+
+    // search by street
+    //      display street options
+    //      select street
+    //          map zooms in to the street
+    //          show the optional street numbers
 </script>
 {% endblock %}
