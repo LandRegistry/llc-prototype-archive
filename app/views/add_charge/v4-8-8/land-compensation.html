@@ -1,0 +1,59 @@
+{% extends "layout.html" %} {% block page_title %} Land compensation {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner">
+        <p><strong class="phase-tag">BETA</strong></p>
+    </div>
+
+    <a href="start-llc" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px">Do you know the amount of compensation?</h1>
+
+
+
+            <form action="#">
+                <fieldset>
+                    <legend class="visually-hidden">
+                        Do you know the amount of compensation?
+                    </legend>
+                    <div class="form-group">
+                        <!-- Add class form-group-error when error occurs on the page -->
+                        <label id="amountKnownLabel" class="block-label selection-button-radio form-label" for="amountKnown">
+                     <input id="amountKnown" name="land-compensation" type="radio" value="Yes">
+                     Yes
+                     <!-- I know the amount of compensation -->
+                     <!-- <span class="error-message"> Choose one option   </span> -->
+                  </label>
+                        <label id="amountNotKnownLabel" class="block-label selection-button-radio form-label" for="amountNotKnown">
+                     <input id="amountNotKnown" name="land-compensation" type="radio" value="No">
+                    No
+                    <!-- I do not know the amount of compensation -->
+                     <!-- <span class="error-message"> Choose one option  </span> -->
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="landCompButton" role="button" href="what-does-charge-do">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('landCompButton').onclick = function() {
+        var amountKnownLabel = document.getElementById('amountKnownLabel');
+        var amountNotKnownLabel = document.getElementById('amountNotKnownLabel');
+        if (amountKnownLabel.classList.contains('selected')) {
+            sessionStorage.setItem('landCompAmountKnown', 'yes');
+            document.getElementById('landCompButton').setAttribute('href', 'amount-of-compensation');
+        } else if (amountNotKnownLabel.classList.contains('selected')) {
+            sessionStorage.setItem('landCompAmountKnown', 'Amount not known');
+            document.getElementById('landCompButton').setAttribute('href', 'lc-section8-4');
+
+        }
+    }
+</script>
+{% endblock %}
