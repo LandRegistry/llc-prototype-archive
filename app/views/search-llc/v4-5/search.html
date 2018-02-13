@@ -38,30 +38,30 @@
             </div>
             <ul id="address-list-for-postcode" class="list hiddenList">
                 <p><a href="#" class="closeMenu hiddenList" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
-                <li><a href="draw-an-extent" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
-                <li><a href="draw-an-extent" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
             </ul>
             <ul id="address-list-for-street" class="list hiddenList">
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Exeter EX1</a></li>
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Newcastle NE1</a></li>
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, London SW3</a></li>
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Southampton SO14</a></li>
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
-                <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Exeter EX1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Newcastle NE1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, London SW3</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Southampton SO14</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
             </ul>
             <p class="initialInstructionText">Or use the map buttons to find the place you want to search.</p>
 
@@ -71,7 +71,7 @@
 
             </div>
             <p>
-                <a href="search-results-from-map" class="button disabled continueButton hiddenList">Search in this area</a>
+                <a href="search-results-from-map" class="button continueButton hiddenList">Search in this area</a>
             </p>
 
             <div class="resultsList hiddenList">
@@ -103,22 +103,46 @@
     MAP_HELPERS.zoom_map(geometry);
 </script>
 <script>
-    $('#placeSearchButton').click(function() {
-        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-        MAP_HELPERS.zoom_map(geometry);
-        $('.postSearchText').removeClass('hiddenList');
-        $('.initialInstructionText').addClass('hiddenList');
+    /*$('#placeSearchButton').click(function() {
+                                                                var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+                                                                MAP_HELPERS.zoom_map(geometry);
+                                                                $('.postSearchText').removeClass('hiddenList');
+                                                                $('.initialInstructionText').addClass('hiddenList');
+                                                                return false;
+                                                            });*/
+
+    $('#placeSearchButton').on('click', function() {
+        if ($('#search_term').val() === 'EX41AX' || $('#search_term').val() === 'ex41ax' || $('#search_term').val() === 'EX4 1AX' || $('#search_term').val() === 'ex4 1ax') {
+            $('#address-list-for-postcode').removeClass('hiddenList');
+        } else if ($('#search_term').val() === 'Clinton ' || $('#search_term').val() === 'Clinton Street' || $('#search_term').val() === 'clinton ' || $('#search_term').val() === 'clinton street' || $('#search_term').val() === 'Clinton street' || $('#search_term').val() === 'clinton Street' || $('#search_term').val() === '3 clinton ' || $('#search_term').val() === '3 clinton street' || $('#search_term').val() === '3 Clinton Street' || $('#search_term').val() === '3 Clinton ' || $('#search_term').val() === '3 Clinton street' || $('#search_term').val() === '3 clinton Street') {
+            $('#address-list-for-street').removeClass('hiddenList');
+        }
         return false;
     });
 
-    $('.map-button').click(function() {
+    $('#address-list-for-postcode li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list-for-postcode').addClass('hiddenList');
+        $('.continueButton').removeClass('hiddenList');
+    });
+
+    $('#address-list-for-street li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list-for-postcode').removeClass('hiddenList');
+        $('#address-list-for-street').addClass('hiddenList');
+        $('.continueButton').removeClass('hiddenList');
+    })
+
+    /*$('.map-button').click(function() {
         $('.continueButton').removeClass('disabled');
         $('.continueButton').removeClass('hiddenList');
         var clickedButton = $(this);
         $(clikedButton).click(function() {
             $(this).attr('id', '');
         });
-    });
+    });*/
 
     /*$('.continueButton').click(function() {
         $(this).addClass('hiddenList');
