@@ -63,20 +63,55 @@
                 <li><a a href="#" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
                 <li><a a href="#" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
             </ul>
-            <p class="initialInstructionText">Or use the map buttons to find the place you want to search.</p>
+            <p class="initialInstructionText">You can also browse to a place using the map.</p>
 
             <div class="postSearchText hiddenList">
-                <h2 class="heading-small">This is the map for EX4 1AX</h2>
+                <h2 class="heading-small">This is the map for 1 Clinton Street Exeter EX4 1AX</h2>
                 <p>Use the map buttons to draw an extent around the area you want to search.</p>
 
             </div>
+            <div class="postSearchText-2 hiddenList">
+                    <h2 class="heading-small">This is the map for Clinton Street Exeter EX4 1AX</h2>
+                    <p>Use the map buttons to draw an extent around the area you want to search.</p>
+    
+                </div>
+            <div id="address-list-for-postcode-2" class="hiddenList">
+                    <details>
+                        <summary>
+                            <span class="summary">You can select a property to filter your search</span>
+                        </summary>
+                            <div class="panel panel-border-narrow">
+                                <ul class="list propertyList">
+                                    <li><a href="#" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+                                </ul>
+                            </div>
+                        
+                    </details>
+                    
+                </div><br>
             <p>
-                <a href="search-results-from-map" class="button continueButton hiddenList">Search in this area</a>
+                <a href="search-results-clinton-street" class="button continueButton">Search in this area</a>
             </p>
 
-            <div class="resultsList hiddenList">
-                <h2 class="heading-small">There are 6 charges in this location.</h2>
-            </div>
+            
+
+            
+
         </form>
     </div>
 </div>
@@ -120,20 +155,36 @@
         return false;
     });
 
-    $('#address-list-for-postcode li a').on('click', function() {
+    /*$('#address-list-for-postcode li a').on('click', function() {
         var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
         MAP_HELPERS.zoom_map(geometry);
         $('#address-list-for-postcode').addClass('hiddenList');
-        $('.continueButton').removeClass('hiddenList');
+        $('.postSearchText').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+    });*/
+    $('#address-list-for-postcode li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[292267, 92293], [292515, 92334]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list-for-postcode').addClass('hiddenList');
+        $('.postSearchText').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
     });
+
 
     $('#address-list-for-street li a').on('click', function() {
         var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
         MAP_HELPERS.zoom_map(geometry);
-        $('#address-list-for-postcode').removeClass('hiddenList');
+        $('.postSearchText-2').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        $('#address-list-for-postcode-2').removeClass('hiddenList');
         $('#address-list-for-street').addClass('hiddenList');
-        $('.continueButton').removeClass('hiddenList');
-    })
+    });
+
+    $('.propertyList li a').on('click', function() {
+        $('#address-list-for-postcode-2').addClass('hiddenList');
+        $('.postSearchText-2').addClass('hiddenList');
+        $('.postSearchText').removeClass('hiddenList');
+    });
 
     /*$('.map-button').click(function() {
         $('.continueButton').removeClass('disabled');

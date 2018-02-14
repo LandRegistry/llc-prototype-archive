@@ -12,7 +12,7 @@ draw_layer_styles = {
     style: {
         0: new ol.style.Style({
             fill: new ol.style.Fill({
-                color: [255, 255, 255, 0.4]
+                color: [6, 88, 229, 0.4]
             }),
             stroke: new ol.style.Stroke({
                 color: '#0658e5',
@@ -61,17 +61,17 @@ draw_layer_styles = {
         }),
         3: new ol.style.Style({
             fill: new ol.style.Fill({
-                color: [255, 255, 255, 0.4]
+                color: [255, 255, 255, 1]
             }),
             stroke: new ol.style.Stroke({
-                color: '#b2b2ab',
+                color: '#0658e5',
                 width: 2,
                 lineDash: [1, 5]
             }),
             image: new ol.style.Circle({
                 radius: 5,
                 fill: new ol.style.Fill({
-                    color: '#b2b2ab'
+                    color: '#0658e5'
                 })
             })
         })

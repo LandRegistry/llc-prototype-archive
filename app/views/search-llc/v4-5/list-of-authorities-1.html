@@ -422,7 +422,7 @@
         });
         $('#authorityListButton').on('click ', function() {
             var authoritySelected = $('#org_search').val();
-            if (authoritySelected === 'City of London Corporation') {
+            if (authoritySelected === 'City of London Corporation' || authoritySelected === 'Exeter City Council') {
                 $('#selectedAuthority').text(authoritySelected + ' is on the register.');
                 $('#continueButton').removeClass('hiddenList');
                 $('#contactText').addClass('hiddenList');
