@@ -205,14 +205,6 @@
     MAP_HELPERS.zoom_map(geometry);
 </script>
 <script>
-    /*$('#placeSearchButton').click(function() {
-                                                                    var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-                                                                    MAP_HELPERS.zoom_map(geometry);
-                                                                    $('.postSearchText').removeClass('hiddenList');
-                                                                    $('.initialInstructionText').addClass('hiddenList');
-                                                                    return false;
-                                                                });*/
-
     $('#placeSearchButton').on('click', function() {
         if ($('#search_term').val() === 'EX41AX' || $('#search_term').val() === 'ex41ax' || $('#search_term').val() === 'EX4 1AX' || $('#search_term').val() === 'ex4 1ax') {
             $('#address-list-for-postcode-ex41ax').removeClass('hiddenList');
