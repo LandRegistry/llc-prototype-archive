@@ -189,8 +189,8 @@
     $('.remove').remove();
     zoomslider = new ol.control.Zoom();
     map.addControl(zoomslider);
-    /*var geometry = "{{ geometry }}";
-    MAP_HELPERS.zoom_map(geometry);*/
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
 </script>
 <script>
     $('#placeSearchButton').on('click', function() {
