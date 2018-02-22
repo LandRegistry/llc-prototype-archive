@@ -1,0 +1,116 @@
+{% extends "layout.html" %} {% block page_title %} Planning {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px;">Choose a planning category</h1>
+
+            <form action="#">
+
+                <fieldset>
+                    <legend class="visually-hidden">Choose a category</legend>
+                    <div class="form-group">
+                        <label id="changeDevelopmentLabel" class="block-label selection-button-radio" for="changeDevelopment">
+                  <input id="changeDevelopment" name="planningLegislation" type="radio" value="Article 4 direction">
+                  Change a development
+                  </label>
+                        <label id="breachOfConditionsLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Breach of conditions">
+                  Breach of conditions
+                  </label>
+                        <label id="conservationAreaLabel" class="block-label selection-button-radio" for="landCompensation">
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Conservation area">
+                  Conservation area
+                  </label>
+                        <label id="conditionalPlanningConsentLabel" class="block-label selection-button-radio" for="conditionPlanning">
+                  <input id="conditionPlanning" name="planningLegislation" type="radio" value="Conditional planning consent">
+                  Conditional planning consent
+                  </label>
+                        <label id="enforcementNoticeLabel" class="block-label selection-button-radio" for="enforcementNotice">
+                  <input id="enforcementNotice" name="planningLegislation" type="radio" value="Enforcement notice">
+                  Enforcement notice
+                  </label>
+                        <label id="article4Label" class="block-label selection-button-radio" for="article4">
+                  <input id="article4" name="planningLegislation" type="radio" value="No permitted development">
+                  Article 4
+                  </label>
+                        <label id="planningNoticesLabel" class="block-label selection-button-radio" for="planningNotice">
+                  <input id="planningNotice" name="planningLegislation" type="radio" value="Planning notices">
+                  Planning notices
+                  </label>
+                        <label id="planningAgreementLabel" class="block-label selection-button-radio" for="planningAgree">
+                  <input id="planningAgree" name="planningLegislation" type="radio" value="Planning agreement">
+                  Planning agreement
+                  </label>
+                        <label id="tpoLabel" class="block-label selection-button-radio" for="treeOrder">
+                  <input id="treeOrder" name="planningLegislation" type="radio" value="Tree preservation order (TPO)">
+                  Tree preservation order (TPO)
+                  </label>
+                        <label id="listedPlanningLabel" class="block-label selection-button-radio" for="listedPlanning">
+                    <input id="listedPlanning" name="planningLegislation" type="radio" value="Listed building conditional planning consent">
+                    Listed building conditional planning consent
+                    </label>
+                        <label id="dunnoLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="I don't know the charge category">
+                  I don't know the charge category
+                  </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="subcategoryButton" role="button" href="date-document-created">Continue</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    document.getElementById('subcategoryButton').onclick = function() {
+        var changeDevelopment = document.getElementById('changeDevelopmentLabel');
+        var breachOfConditions = document.getElementById('breachOfConditionsLabel');
+        var conservationArea = document.getElementById('conservationAreaLabel');
+        var conditionalPlanningConsent = document.getElementById('conditionalPlanningConsentLabel');
+        var enforcementNotice = document.getElementById('enforcementNoticeLabel');
+        var article4Development = document.getElementById('article4Label');
+        var planningNotices = document.getElementById('planningNoticesLabel');
+        var planningAgreement = document.getElementById('planningAgreementLabel');
+        var tpo = document.getElementById('tpoLabel');
+        var listedPlanning = document.getElementById('listedPlanningLabel');
+        var dunno = document.getElementById('dunnoLabel');
+        var subcategoryButton = this;
+        if (changeDevelopment.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Change a development');
+        } else if (breachOfConditions.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Breach of conditions');
+        } else if (conservationArea.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conservation area');
+        } else if (conditionalPlanningConsent.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
+        } else if (enforcementNotice.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
+        } else if (article4.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Article 4');
+        } else if (planningNotices.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
+        } else if (planningAgreement.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Planning agreement');
+        } else if (tpo.classList.contains('selected')) {
+            sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
+        } else if (listedPlanning.classList.contains('selected')) {
+            sessionStorage.setItem('listedPlanning', 'Listed building conditional planning consent');
+        } else if (dunno.classList.contains('selected')) {
+            subcategoryButton.setAttribute('href', 'contact-HMLR');
+        }
+    }
+</script>
+{% endblock %}
