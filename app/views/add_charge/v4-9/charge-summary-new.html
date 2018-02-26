@@ -163,8 +163,7 @@
                     <!-- IF ADDRESS EXISTS -->
                     <tr id="whereToFindTheChargeRow" class="hiddenList">
                         <td class="bold-small">Location</td>
-                        <td id><span id="whereToFindTheCharge"></span><br> Exeter
-                            <br>EX4 1AY</td>
+                        <td id><span id="whereToFindTheCharge"></span></td>
                         <td class="change-answer">
                             <a id="whereToFindTheChargeChange" class="edit" href="more-information_2">
                                 Change <span class="visuallyhidden">where to find the charge</span>
@@ -287,7 +286,7 @@
         }
 
         // Land compensation
-    } else if (chargeCategoryReturned === 'Land compensation') {
+        } else if (chargeCategoryReturned === 'Land compensation') {
         document.getElementById('chargeSubcategoryRow').classList.add('hiddenList');
         var landCompensationAmountCheck = sessionStorage.getItem('landCompAmountKnown');
         if (landCompensationAmountCheck === 'Amount not known') {

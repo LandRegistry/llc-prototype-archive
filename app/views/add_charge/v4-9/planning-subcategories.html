@@ -67,7 +67,7 @@
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="subcategoryButton" role="button" href="date-document-created">Continue</a>
+                    <a class="button" id="subcategoryButton" role="button" href="confirm-stat-prov-1-2-1-mand">Continue</a>
                 </p>
 
             </form>
@@ -94,6 +94,7 @@
             sessionStorage.setItem('chargeSubcategory', 'Breach of conditions');
         } else if (conservationArea.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Conservation area');
+            sessionStorage.setItem('statProv', '69(4) P(LB&CA) Act 1990');
         } else if (conditionalPlanningConsent.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
         } else if (enforcementNotice.classList.contains('selected')) {
@@ -104,6 +105,7 @@
             sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
         } else if (planningAgreement.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planning agreement');
+            sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990 Part III Control over Development s.106');
         } else if (tpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
         } else if (listedPlanning.classList.contains('selected')) {

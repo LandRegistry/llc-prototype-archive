@@ -51,7 +51,7 @@
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="otherButton" role="button" href="date-document-created">Continue</a>
+                    <a class="button" id="otherButton" role="button" href="confirm-stat-prov-1-2-1-mand">Continue</a>
                 </p>
 
             </form>
@@ -72,6 +72,7 @@
             sessionStorage.setItem('chargeSubcategory', 'Ancient Monuments');
         } else if (assets.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Assets of community value');
+            sessionStorage.setItem('statProv', 'Localism Act 2011, section 100(a)')
         } else if (cpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Compulsory purchase order');
         } else if (improveHighway.classList.contains('selected')) {
@@ -80,6 +81,7 @@
             sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
         } else if (sssi.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Site of special scientific Interest (SSSI)');
+            sessionStorage.setItem('statProv', 'Wildlife and Countryside Act 1981 Part II section 28');
         } else if (dunno.classList.contains('selected')) {
             subcategoryButton.setAttribute('href', 'contact-HMLR');
         }
