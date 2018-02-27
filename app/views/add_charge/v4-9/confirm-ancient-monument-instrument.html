@@ -1,0 +1,54 @@
+{% extends "layout.html" %} {% block page_title %} Planning {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm legal document</h1>
+            Based on your choice of:<br>
+                <span class="bold-small" id="stat-prov"></span>.</p>
+                <form action="#">
+
+                        <fieldset>
+        
+                            <legend class="visually-hidden">
+                                Confirm the legal document
+                            </legend>
+                            <div class="form-group">
+                                <label id="ancientMonumentLabelInstrument1" class="block-label selection-button-radio" for="ancientMonumentInstrument1">
+                          <input id="ancientMonumentInstrument1" name="ancientMonumentInstrument" type="radio" value="Notice">
+                          Notice
+                          </label>
+                                <label id="ancientMonumentLabelInstrument2" class="block-label selection-button-radio" for="ancientMonumentInstrument2">
+                          <input id="ancientMonumentInstrument2" name="ancientMonumentInstrument" type="radio" value="Deed">
+                          Deed
+                          </label>
+                                <label id="ancientMonumentLabelInstrument3" class="block-label selection-button-radio" for="ancientMonumentInstrument3">
+                          <input id="ancientMonument3Instrument" name="ancientMonumentInstrument" type="radio" value="Order">
+                          Order
+                          </label>
+                        </div>
+                    </fieldset>
+                </form>
+
+            <p><a href="date-document-created" class="button">Continue</a></p>
+            <p><a href="type-of-charge">Choose a different charge category</a></p>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var statProvAssigned = sessionStorage.getItem('statProv');
+    document.getElementById('stat-prov').textContent = statProvAssigned;
+</script>
+
+{% endblock %}

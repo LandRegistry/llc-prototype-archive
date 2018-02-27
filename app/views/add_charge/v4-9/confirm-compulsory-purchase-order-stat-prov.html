@@ -1,0 +1,81 @@
+{% extends "layout.html" %} {% block page_title %} Confirm the law {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm the law</h1>
+            <p>We found more than 1 law for your charge, based on your choice of:<br>
+                <span class="bold-small" id="charge-subcategory-selected"></span>.</p>
+            <form action="#">
+
+                <fieldset>
+
+                    <legend class="visually-hidden">
+                        Confirm the law
+                    </legend>
+                    <div class="form-group">
+                        <label id="compulsoryPurchaseLabel1" class="block-label selection-button-radio" for="compulsoryPurchase1">
+                  <input id="compulsoryPurchase1" name="compulsoryPurchase" type="radio" value="Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6">
+                  Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6
+                  </label>
+                        <label id="compulsoryPurchaseLabel2" class="block-label selection-button-radio" for="compulsoryPurchase2">
+                  <input id="compulsoryPurchase2" name="compulsoryPurchase" type="radio" value="Planning Act 2008 s.134(6A)">
+                  Planning Act 2008 s.134(6A)
+                  </label>
+                        <label id="compulsoryPurchaseLabel3" class="block-label selection-button-radio" for="compulsoryPurchase3">
+                  <input id="compulsoryPurchase3" name="compulsoryPurchase" type="radio" value="New Towns Act 1981, s.12">
+                  New Towns Act 1981, s.12
+                  </label>
+                        <label id="compulsoryPurchaseLabel4" class="block-label selection-button-radio" for="compulsoryPurchase4">
+                  <input id="compulsoryPurchase4" name="compulsoryPurchase" type="radio" value="Forestry Act 1967 Schedule 5 Paragraph 2F">
+                  Forestry Act 1967 Schedule 5 Paragraph 2F
+                  </label>
+                        <label id="compulsoryPurchaseLabel5" class="block-label selection-button-radio" for="compulsoryPurchase5">
+                     <input id="compulsoryPurchase5" name="compulsoryPurchase" type="radio" value="Transport and Works Act 1992 Part 1, s.14A(6)">
+                     Transport and Works Act 1992 Part 1, s.14A(6) 
+                        </label>
+                    </div>
+                </fieldset>
+
+            </form>
+            <p><a href="confirm-compulsory-purchase-order-instrument" id="compulsoryPurchaseButton" class="button">Continue</a></p>
+            <p><a href="type-of-charge">Choose a different charge category</a></p>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
+    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
+
+    document.getElementById('compulsoryPurchaseButton').onclick = function() {
+        var compulsoryPurchase1 = document.getElementById('compulsoryPurchaseLabel1');
+        var compulsoryPurchase2 = document.getElementById('compulsoryPurchaseLabel2');
+        var compulsoryPurchase3 = document.getElementById('compulsoryPurchaseLabel3');
+        var compulsoryPurchase4 = document.getElementById('compulsoryPurchaseLabel4');
+        var compulsoryPurchase5 = document.getElementById('compulsoryPurchaseLabel5');
+        if (compulsoryPurchase1.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6');
+        } else if (compulsoryPurchase2.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Planning Act 2008 s.134(6A)');
+        } else if (compulsoryPurchase3.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'New Towns Act 1981, s.12');
+        } else if (compulsoryPurchase4.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Forestry Act 1967 Schedule 5 Paragraph 2F');
+        } else if (compulsoryPurchase5.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Transport and Works Act 1992 Part 1, s.14A(6)')
+        }
+    }
+</script>
+
+{% endblock %}

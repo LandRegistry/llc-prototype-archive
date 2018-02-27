@@ -41,8 +41,8 @@
                   Smoke control order
                   </label>
                         <label id="sssiLabel" class="block-label selection-button-radio" for="sssi">
-                  <input id="sssi" name="other" type="radio" value="Site of Special Scientific Interest (SSSI)">
-                  Site of special scientific Interest (SSSI)
+                  <input id="sssi" name="other" type="radio" value="Site of special scientific snterest (SSSI)">
+                  Site of special scientific interest (SSSI)
                   </label>
                         <label id="dunnoLabel" class="block-label selection-button-radio" for="dunno">
                   <input id="dunno" name="other" type="radio" value="I don't know the charge category">
@@ -70,18 +70,23 @@
         var subcategoryButton = this;
         if (ancientMonuments.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Ancient Monuments');
+            document.getElementById('otherButton').setAttribute('href', 'confirm-ancient-monuments-stat-prov');
         } else if (assets.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Assets of community value');
-            sessionStorage.setItem('statProv', 'Localism Act 2011, section 100(a)')
+            sessionStorage.setItem('statProv', 'Localism Act 2011, section 100(a)');
+            sessionStorage.setItem('instrument', 'Added to the list of assets of community value');
         } else if (cpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Compulsory purchase order');
+            document.getElementById('otherButton').setAttribute('href', 'confirm-compulsory-purchase-order-stat-prov');
         } else if (improveHighway.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Improve a highway');
+            document.getElementById('otherButton').setAttribute('href', 'date-document-created');
         } else if (sco.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
         } else if (sssi.classList.contains('selected')) {
-            sessionStorage.setItem('chargeSubcategory', 'Site of special scientific Interest (SSSI)');
+            sessionStorage.setItem('chargeSubcategory', 'Site of special scientific interest (SSSI)');
             sessionStorage.setItem('statProv', 'Wildlife and Countryside Act 1981 Part II section 28');
+            sessionStorage.setItem('instrument', 'Notice');
         } else if (dunno.classList.contains('selected')) {
             subcategoryButton.setAttribute('href', 'contact-HMLR');
         }

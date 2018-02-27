@@ -92,9 +92,11 @@
             sessionStorage.setItem('chargeSubcategory', 'Change a development');
         } else if (breachOfConditions.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Breach of conditions');
+            document.getElementById('subcategoryButton').setAttribute('href', 'date-document-created');
         } else if (conservationArea.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Conservation area');
-            sessionStorage.setItem('statProv', '69(4) P(LB&CA) Act 1990');
+            sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act (1990), section 69(4)');
+            sessionStorage.setItem('instrument', 'Notice');
         } else if (conditionalPlanningConsent.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
         } else if (enforcementNotice.classList.contains('selected')) {
@@ -103,9 +105,11 @@
             sessionStorage.setItem('chargeSubcategory', 'Article 4');
         } else if (planningNotices.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
+            document.getElementById('subcategoryButton').setAttribute('href', 'date-document-created');
         } else if (planningAgreement.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planning agreement');
             sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990 Part III Control over Development s.106');
+            sessionStorage.setItem('instrument', 'Agreement');
         } else if (tpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
         } else if (listedPlanning.classList.contains('selected')) {

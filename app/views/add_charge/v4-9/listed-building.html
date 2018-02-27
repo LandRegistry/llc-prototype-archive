@@ -52,18 +52,18 @@
         var enforcementNotice = document.getElementById('enforcementNoticeLabel');
         var repairsNotice = document.getElementById('repairsNoticeLabel');
         var dunno = document.getElementById('dunnoLabel');
-        var subcategoryButton = this;
+        var listedBuildingButton = this;
         if (listedBuilding.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Listed building');
             sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 2(2)');
+            sessionStorage.setItem('instrument', 'List');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
-        } else if (conditionalPlanningConsent.classList.contains('selected')) {
-            sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
         } else if (repairsNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Repairs notice');
+            document.getElementById('listedBuildingButton').setAttribute('href', 'date-document-created');
         } else if (dunno.classList.contains('selected')) {
             subcategoryButton.setAttribute('href', 'contact-HMLR');
         }
