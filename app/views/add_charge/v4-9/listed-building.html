@@ -59,8 +59,8 @@
             sessionStorage.setItem('instrument', 'List');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
-        } else if (enforcementNotice.classList.contains('selected')) {
-            sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
+            sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 38');
+            document.getElementById('listedBuildingButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
         } else if (repairsNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Repairs notice');
             document.getElementById('listedBuildingButton').setAttribute('href', 'date-document-created');

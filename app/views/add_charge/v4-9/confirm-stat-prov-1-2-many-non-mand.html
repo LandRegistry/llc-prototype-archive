@@ -1,0 +1,172 @@
+{% extends "layout.html" %} {% block page_title %} Planning {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm the law</h1>
+            <p>We recommend you include the law. If you don't have this information, continue to the next page.</p>
+            <div class="form-group">
+                    <label class="form-label" for="law_search">
+                        Enter for the law, for example 'Rights of Light Act'
+                    </label>
+
+                    
+                        <input class="form-control search-field" id="org_search" name="law_search" type="text" value="" autofocus="autofocus" style="width:100%;">
+                   
+
+
+                </div>
+    
+
+            <p><a href="date-document-created" class="button" id="statProvButton">Continue</a></p>
+            <p><a href="type-of-charge">Choose a different charge category</a></p>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var chargeCategorySelected = sessionStorage.getItem('chargeCategory');
+    var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
+    if (chargeSubCategorySelected === 'Enforcement notice') {
+        document.getElementById('statProvButton').setAttribute('href', 'confirm-instrument-1-2-many-non-mand');
+    }
+    var statProvAssigned = sessionStorage.getItem('statProv');
+    var instrumentAssigned = sessionStorage.getItem('instrument');
+    document.getElementById('charge-category-selected').textContent = chargeCategorySelected
+    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected
+    document.getElementById('stat-prov').textContent = statProvAssigned;
+    document.getElementById('instrument').textContent = instrumentAssigned;
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var legislationList = [
+            "Acquisition of Land Act 1981, section 15(6)",
+            "Acquisition of Land Act 1981, Schedule 1, para 6(6)",
+            "Agriculture Act 1967, Schedule 3, para 2",
+            "Ancient Monuments and Archaeological Areas Act 1979, section 1(9)",
+            "Ancient Monuments and Archaeological Areas Act 1979, section 8 (Recovery of compensation), subsection (6)",
+            "Ancient Monuments and Archaeological Areas Act 1979, section 12 (Power to place ancient monument under guardianship), subsection (7)",
+            "Ancient Monuments and Archaeological Areas Act 1979, section 16",
+            "Ancient Monuments and Archaeological Areas Act 1979, section 33 (Designation of areas of archaeological importance), subsection (5)",
+            "Anti-social Behaviour Act 2003, section 69 (Remedial notices), subsection (8)",
+            "Anti-social Behaviour Act 2003, section 77 (Recovery of expenses), subsection (3)",
+            "Caravan Sites and Control of Developments Act 1960, section 9 (Recovery of expenses), subsection",
+            "Caravans Sites and Control of Development Act 1960, section 91(3)",
+            "Cardiff Bay Barrage Act 1993 Schedule 7, para 23(1 )",
+            "Care of Churches and Ecclesiastical Jurisdiction Measure 1991, section 22 (Power of bishop to remove legal effects of consecration), subsection (8)",
+            "Children and Young Persons Act 1993, section 12C(5)",
+            "City of London (Various Powers) Act 1960, section 33 (Binding undertakings and agreements), subsection (2)",
+            "City of London (Various Powers) Act 1967 (Declaration of city walkway) 6 3A(b) (a)",
+            "Civil Aviation Act 1982, section 55",
+            "Coast Protection Act 1949, section 8 (Confirmation of works schemes), subsection (8)",
+            "Coast Protection Act 1949, section 13(6)",
+            "Community Infrastructure Levy Regulations 2010, regulation 66 (Liability notice), para (1)",
+            "Conservation (Natural Habitats, &c) Regulations 1994, regulation 14",
+            "Conservation (Natural Habitats, &c) Regulations 1994, regulation 22 (special nature conservation order), para (4)",
+            "Conservation of Habitats and Species Regulations 2010, regulation 35(4)",
+            "Conservation of Habitats and Species Regulations 2010, regulation 25 (special nature conservation order), para (4)",
+            "Conservation of Habitats and Species Regulations 2017, regulation 17(4)",
+            "Conservation of Habitats and Species Regulations 2017, regulation 27(4)",
+            "Countryside and Rights of Way Act 2000, section 16 (Dedication of land as access land), subsection (8)",
+            "Countryside and Rights of Way Act 2000, Schedule 9 (Sites of Special Scientific Interest), para 28 (9)",
+            "Criminal Justice and Immigration Act 2008, section 143 (Persistent sale of tobacco to persons under 18 – restricted premises order), subsection (5)",
+            "Crossrail Act 2008, section 47 (Temporary possession agreements), subsection (10)",
+            "Disused Burial Grounds (Amendment) Act 1981, section 2 (Disposal of human remains), subsection (4)",
+            "Education (Inner London Education Authority) (Property Transfer) Order 1990, article 4 (Transfer of land to specified bodies), para (3)",
+            "Education (London Residuary Body) (Property Transfer) Order 1991, article 10 (enforcement of conditions), para (2)",
+            "Energy Act 2013, section 123 (Registration of rights), subsection (3)",
+            "Environmental Permitting (England and Wales) Regulations 2010, regulation 15 (Conditions in an environmental permit), para (4)",
+            "Flood and Water Management Act 2010, Schedule 1 (Effect of designation), para 5(1)",
+            "Forestry Act 1967, Schedule 5 (Validity and operation of compulsory purchase orders), para 2F",
+            "Gas Act 1965, section 5 (Control of mining and other operations in storage area and protective area), para (10)",
+            "Gas Act 1965, section 11 (Compensation repayable), subsection (3)",
+            "Greater London Council (General Powers) Act 1973, section 24 (Agreements as to parking places), subsection (2)(b)",
+            "Greater London Council (General Powers) Act 1973, section 28 (Power to charge unpaid rates on premises), subsection (2)(b)",
+            "Greater London Council (General Powers) Act 1974, section 16 (Undertakings and agreements binding successive owners), subsection (2)",
+            "Greater London Council (General Powers) Act 1986 (Incorporation of certain banks, walls, etc, into flood defences) 4 (5) A notice under subsection (1) above shall be a local land charge and the Council shall send to the registering authority a copy of any notice served by the Council under subsection (4) above",
+            "Harbours Act 1964, Schedule 3 (Orders made by Secretary of State), para 24(2F)",
+            "High Speed Rail (London—West Midlands) Act 2017, section 51 (Enforcement of environmental covenant), subsection (8)",
+            "High Speed Rail (London—West Midlands) Act 2017, Schedule 14 (Preliminary notices), para 3A(4)",
+            "Highways Act 1980, section 224 (Certain matters to be local land charges), subsection (1)",
+            "Highways Act 1980, section 35 (Creation of walkways), subsection (5)",
+            "Highways Act 1980, section 87 (Agreements for use of land for cattle-grids or by-passes), subsection (7)",
+            "Highways Act 1980, section 253 (Agreements as to use of land near highways), subsection (4)",
+            "Highways Act 1980, section 305 (Recovery of expenses by councils and highway authorities), subsection (6)",
+            "Housing Act 1985, section 36A (Right of first refusal), subsection (10)",
+            "Housing Act 1985, section 37 (Restriction on disposal of dwelling-house in National Parks etc), subsection (5)",
+            "Housing Act 1985, section 156A (Right of first refusal), subsection (11)",
+            "Housing Act 1985 (Restrictions on disposition of dwelling house in National Parks 157 (7) Where such a covenant imposes the limitation specified in subsection (2), the limitation is a local land charge and the Chief Land Registrar shall enter [a restriction in the register of title reflecting the limitation]",
+            "Housing Act 1985, section 239 (Declaration of housing action area), subsection (5)",
+            "Housing Act 1988, Schedule 11 (Right of first refusal for housing action trust), para 2A (10)",
+            "Housing Act 1996, section 12A (Right of first refusal for registered social landlord), subsection (9)",
+            "Housing Act 1996, section 13 (Restrictions on disposal of houses in National Parks), para (5)",
+            "Housing Act 2004, section 37 (Effect of improvement notices and prohibition orders as local land charges), subsection (1)",
+            "Housing Act 2004, section 50 (Recovery of charge under section 49), subsection (10)",
+            "Housing Act 2004, section 74 (Further provisions about rent repayment orders), subsection (9)",
+            "Housing Act 2004, section 97 (Further provisions about rent repayment orders), subsection (9)",
+            "Housing Act 2004, section 107 (Interim Management Orders), subsection (9)",
+            "Housing Act 2004, section 116 (Final Management Orders), subsection (9)",
+            "Housing Act 2004, section 129 (Termination of management orders: financial arrangements), subsection (8) The charge takes effect on the termination date for the order as a legal charge which is a local land charge",
+            "Housing Act 2004, Schedule 7 (Interim EDMO), para 2(9)",
+            "Housing Act 2004 Schedule 7 (Final EDMO), para 10 (9)",
+            "Housing Act 2004, Schedule 7 (Termination of EDMOs), para 23 (9)",
+            "Housing Grants, Construction and Regeneration Act 1996, section 52 (Power to impose other conditions where a housing authority approve an application for a grant), subsection (2)",
+            "Land Compensation Act 1973, section 8(4A)",
+            "Land Compensation Act 1973, section 52(8A)",
+            "Land Drainage Act 1991, section 18(8)",
+            "Land Powers (Defence) Act 1958, section 17(1)",
+            "Land Powers (Defence) Act 1958, section 17(3)",
+            "Leasehold Reform Act 1967, section 19(10)",
+            "Leasehold Reform, Housing and Urban Development Act 1993, section 70(11)",
+            "Local Government and Housing Act 1989, section 89(8)",
+            "Localism Act 2011, section 100(a)",
+            "London Building Acts (Amendment) Act 1939, section 70(2)(a)",
+            "London County Council (General Powers) Act 1962, section 23(10)",
+            "Mission and Pastoral Measure 2001, section 78(5)",
+            "New Roads and Street Works Act 1991, section 87(2)",
+            "New Towns Act 1981, section 1",
+            "New Towns Act 1981, section 12",
+            "Opencast Coal Act 1958, section 11(1)",
+            "Pipe-lines Act 1962, Schedule 2, paragraph 7(6)",
+            "Planning (Listed Buildings and Conservation Areas) Act 1990, section 2(2)",
+            "Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)",
+            "Planning (Listed Buildings and Conservation Areas) Act, section 69(4)",
+            "Planning Act 2008, section 134(6A)",
+            "Requisitioned Land and War Works Act 1948 s12 ",
+            "Rights of Light Act 1959 section 2(4)",
+            "Thames Barrier and Flood Prevention Act 1972 section 68(6)-notice given to owner of land to comply with requirements for securing that flood dams are closed shall be a local land charge",
+            "Town and Country Planning Act 1990 Part III Control over Development s.106",
+            "Town and Country Planning Act 1990 Part IV section 110(4)",
+            "Town and Country Planning Act 1990 Schedule 9 para 8",
+            "Transport and Works Act 1992 Part I (Orders Authorising Works etc",
+            "Underground Works (London) Act 1956 section 6",
+            "Water Industry Act 1991 Part III Water Supply s82(5)",
+            "Weeds Act 1959-section 3(3)",
+            "Wildlife and Countryside Act 1981 Part II Nature Conservation, Countryside and National Parks section 28(9) ",
+            "Wildlife and Countryside Act 1981 Part II Section 28C"
+        ]
+        $("#org_search").autocomplete({
+            source: legislationList
+        });
+        $('#statProvButton').on('click', function() {
+            var statProv = $('#org_search').val();
+            if (statProv !== '') {
+                sessionStorage.setItem('statProv', statProv);
+            }
+        });
+        
+    })
+</script>
+{% endblock %}

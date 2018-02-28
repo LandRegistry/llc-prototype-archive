@@ -83,6 +83,9 @@
             document.getElementById('otherButton').setAttribute('href', 'date-document-created');
         } else if (sco.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
+            sessionStorage.setItem('statProv', 'Clean Air Act 1993, section 18');
+            sessionStorage.setItem('instrument', 'Order');
+            document.getElementById('otherButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
         } else if (sssi.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Site of special scientific interest (SSSI)');
             sessionStorage.setItem('statProv', 'Wildlife and Countryside Act 1981 Part II section 28');

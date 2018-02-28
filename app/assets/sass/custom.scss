@@ -454,3 +454,10 @@
         right: 1em !important;
     }
 }
+
+.ui-autocomplete {
+    max-width: 960px !important;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

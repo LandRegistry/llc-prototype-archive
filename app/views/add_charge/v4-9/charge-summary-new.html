@@ -46,7 +46,7 @@
                     </tr>
 
                     <!-- STAT PROV ROW -->
-                    <tr id="statProvRow">
+                    <tr id="statProvRow" class="hiddenList">
                         <td class="bold-small">Statutory provision</td>
                         <td id="statProv"></td>
                         <td class="change-answer">
@@ -54,7 +54,7 @@
                     </tr>
 
                     <!-- INSTRUMENT ROW -->
-                    <tr id="statProvRow">
+                    <tr id="instrumentRow" class="hiddenList">
                         <td class="bold-small">Instrument</td>
                         <td id="instrument"></td>
                         <td class="change-answer">
@@ -365,21 +365,15 @@
     document.getElementById('chargeDescription').textContent = chargeDescriptionReturned;
 
     // stat provs and instruments
-    if (chargeSubcategoryReturned === 'Conservation area') {
-        document.getElementById('statProv').textContent = '69(4) P(LB&CA) Act 1990';
-        document.getElementById('instrument').textContent = 'Notice';
-    } else if (chargeSubcategoryReturned === 'Planning agreement') {
-        document.getElementById('statProv').textContent = 'Town and Country Planning Act 1990 Part III Control over Development s.106';
-        document.getElementById('instrument').textContent = 'Agreement';
-    } else if (chargeSubcategoryReturned === 'Listed building') {
-        document.getElementById('statProv').textContent = 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 2(2)';
-        document.getElementById('instrument').textContent = 'List';
-    } else if (chargeSubcategoryReturned === 'Assets of community value') {
-        document.getElementById('statProv').textContent = 'Localism Act 2011, section 100(a)';
-        document.getElementById('instrument').textContent = '?';
-    } else if (chargeSubcategoryReturned === 'Site of special scientific Interest (SSSI)') {
-        document.getElementById('statProv').textContent = 'Wildlife and Countryside Act 1981 Part II section 28';
-        document.getElementById('instrument').textContent = 'Notice';
+    var statProvReturned = sessionStorage.getItem('statProv');
+    if (statProvReturned !== null) {
+        document.getElementById('statProvRow').classList.remove('hiddenList');
+        document.getElementById('statProv').textContent = statProvReturned;
+    }
+    var instrumentReturned = sessionStorage.getItem('instrument');
+    if (instrumentReturned !== null) {
+        document.getElementById('instrumentRow').classList.remove('hiddenList');
+        document.getElementById('instrument').textContent = instrumentReturned;
     }
 </script>
 {% endblock %}
