@@ -11,7 +11,7 @@
     <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Confirm the law</h1>
+            <h1 class="heading-large" style="margin-top:20px">Confirm the law</h1>
             <p>We found more than 1 law for your charge, based on your choice of:<br>
                 <span class="bold-small" id="charge-category-selected"></span>.</p>
             <form action="#">
@@ -58,6 +58,11 @@
                             <input id="financial9" name="financial" type="radio" value="Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)">
                             Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)
                             </label>
+                            <p class="form-block">or</p>
+                            <label id="financialLabel10" class="block-label selection-button-radio" for="financial10">
+                            <input id="financial10" name="financial" type="radio" value="I don't know the law for this charge">
+                            I don't know the law for this charge
+                            </label>
                     </div>
                 </fieldset>
 
@@ -84,6 +89,7 @@
         var financial7 = document.getElementById('financialLabel7');
         var financial8 = document.getElementById('financialLabel8');
         var financial9 = document.getElementById('financialLabel9');
+        var financial10 = document.getElementById('financialLabel10');
         if (financial1.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Coast Protection Act 1949, sections 8(8) & 13(6)');
             sessionStorage.setItem('instrument', 'Scheme');
@@ -106,7 +112,10 @@
             sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)');
             sessionStorage.setItem('instrument', 'Notice');
             document.getElementById('financialStatProv').setAttribute('href', 'confirm-financial-instrument');
+        } else if (financial10.classList.contains('selected')) {
+            document.getElementById('financialStatProv').setAttribute('href', 'no-stat-prov-stop');
         }
+        var editable = true;
     }
 </script>
 

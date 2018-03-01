@@ -67,7 +67,7 @@
         var sco = document.getElementById('scoLabel');
         var sssi = document.getElementById('sssiLabel');
         var dunno = document.getElementById('dunnoLabel');
-        var subcategoryButton = this;
+        var otherButton = this;
         if (ancientMonuments.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Ancient Monuments');
             document.getElementById('otherButton').setAttribute('href', 'confirm-ancient-monuments-stat-prov');
@@ -77,21 +77,21 @@
             sessionStorage.setItem('instrument', 'Added to the list of assets of community value');
         } else if (cpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Compulsory purchase order');
+            sessionStorage.setItem('instrument', 'Order');
             document.getElementById('otherButton').setAttribute('href', 'confirm-compulsory-purchase-order-stat-prov');
         } else if (improveHighway.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Improve a highway');
-            document.getElementById('otherButton').setAttribute('href', 'date-document-created');
+            document.getElementById('otherButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
         } else if (sco.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Smoke control order');
             sessionStorage.setItem('statProv', 'Clean Air Act 1993, section 18');
-            sessionStorage.setItem('instrument', 'Order');
             document.getElementById('otherButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
         } else if (sssi.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Site of special scientific interest (SSSI)');
             sessionStorage.setItem('statProv', 'Wildlife and Countryside Act 1981 Part II section 28');
             sessionStorage.setItem('instrument', 'Notice');
         } else if (dunno.classList.contains('selected')) {
-            subcategoryButton.setAttribute('href', 'contact-HMLR');
+            otherButton.setAttribute('href', 'contact-HMLR');
         }
     }
 </script>

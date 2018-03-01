@@ -11,7 +11,7 @@
     <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large">Confirm the law</h1>
+            <h1 class="heading-large" style="margin-top:20px;">Confirm the law</h1>
             <p>We recommend you include the law. If you don't have this information, continue to the next page.</p>
             <div class="form-group">
                     <label class="form-label" for="law_search">
@@ -37,15 +37,12 @@
 <script>
     var chargeCategorySelected = sessionStorage.getItem('chargeCategory');
     var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
-    if (chargeSubCategorySelected === 'Enforcement notice') {
-        document.getElementById('statProvButton').setAttribute('href', 'confirm-instrument-1-2-many-non-mand');
+    if (chargeCategorySelected === 'Land compensation') {
+        document.getElementById('statProvButton').setAttribute('href', 'land-compensation');
+    } else if (chargeSubCategorySelected === 'Change a development' || chargeSubCategorySelected === 'Conditional planning consent' || chargeSubCategorySelected === 'Enforcement notice' || chargeSubCategorySelected === 'Article 4' || chargeSubCategorySelected === 'Tree preservation order (TPO)' || chargeSubCategorySelected === 'Smoke control order') {
+        document.getElementById('statProvButton').setAttribute('href', 'confirm-instrument');
     }
-    var statProvAssigned = sessionStorage.getItem('statProv');
-    var instrumentAssigned = sessionStorage.getItem('instrument');
-    document.getElementById('charge-category-selected').textContent = chargeCategorySelected
-    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected
-    document.getElementById('stat-prov').textContent = statProvAssigned;
-    document.getElementById('instrument').textContent = instrumentAssigned;
+
 </script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -165,6 +162,7 @@
             if (statProv !== '') {
                 sessionStorage.setItem('statProv', statProv);
             }
+            var editable = true;
         });
         
     })

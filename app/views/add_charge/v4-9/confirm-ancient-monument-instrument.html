@@ -38,7 +38,7 @@
                     </fieldset>
                 </form>
 
-            <p><a href="date-document-created" class="button">Continue</a></p>
+            <p><a href="date-document-created" id="ancientMonumentButton" class="button">Continue</a></p>
             <p><a href="type-of-charge">Choose a different charge category</a></p>
 
         </div>
@@ -49,6 +49,19 @@
 <script>
     var statProvAssigned = sessionStorage.getItem('statProv');
     document.getElementById('stat-prov').textContent = statProvAssigned;
+    document.getElementById('ancientMonumentButton').onclick = function() {
+        var ancientMonumentSelected1 = document.getElementById('ancientMonumentLabelInstrument1');
+        var ancientMonumentSelected2 = document.getElementById('ancientMonumentLabelInstrument2');
+        var ancientMonumentSelected3 = document.getElementById('ancientMonumentLabelInstrument3');
+        if (ancientMonumentSelected1.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Notice');
+        } else if (ancientMonumentSelected2.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Deed');
+        } else if (ancientMonumentSelected3.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Order');
+        }
+    }
+    
 </script>
 
 {% endblock %}

@@ -51,7 +51,7 @@
                     </div>
                 </fieldset>
                 <p>
-                    <a class="button" id="housingButton" role="button" href="date-document-created">Continue</a>
+                    <a class="button" id="housingButton" role="button" href="confirm-stat-prov-1-2-many-non-mand">Continue</a>
                 </p>
 
             </form>
@@ -67,26 +67,21 @@
         var reApproval = document.getElementById('reApprovalLabel');
         var reApprovalHmo = document.getElementById('reApprovalHmoLabel');
         var dunno = document.getElementById('dunnoLabel');
-        var subcategoryButton = this;
+        var housingButton = this;
         if (approval.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Approval under house in multiple occupation (HMO)');
         } else if (grant.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Grant');
-            document.getElementById('housingButton').setAttribute('href', 'date-document-created');
         } else if (interimCertificate.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Interim certificate under HMO');
-            document.getElementById('housingButton').setAttribute('href', 'date-document-created');
         } else if (noticeOfWorks.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Notice of works or repairs');
-            document.getElementById('housingButton').setAttribute('href', 'date-document-created');
         } else if (reApproval.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Re-approval of grant');
-            document.getElementById('housingButton').setAttribute('href', 'date-document-created');
         } else if (reApprovalHmo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Re-approval under HMO');
-            document.getElementById('housingButton').setAttribute('href', 'date-document-created');
         } else if (dunno.classList.contains('selected')) {
-            subcategoryButton.setAttribute('href', 'contact-HMLR');
+            housingButton.setAttribute('href', 'contact-HMLR');
         }
     }
 </script>

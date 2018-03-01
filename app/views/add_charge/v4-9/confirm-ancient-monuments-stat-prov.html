@@ -42,6 +42,11 @@
                      <input id="ancientMonument5" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 33(5)">
                      Ancient Monuments and Archaeological Areas Act 1979, section 33(5) 
                         </label>
+                        <p class="form-block">or</p>
+                        <label id="ancientMonumentLabel6" class="block-label selection-button-radio" for="ancientMonument6">
+                                <input id="ancientMonument6" name="ancientMonument" type="radio" value="I don't know the law for this charge">
+                                I don't know the law for this charge
+                                   </label>
                     </div>
                 </fieldset>
 
@@ -64,6 +69,7 @@
         var ancientMonument3 = document.getElementById('ancientMonumentLabel3');
         var ancientMonument4 = document.getElementById('ancientMonumentLabel4');
         var ancientMonument5 = document.getElementById('ancientMonumentLabel5');
+        var ancientMonument6 = document.getElementById('ancientMonumentLabel6');
         if (ancientMonument1.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 1(9)');
         } else if (ancientMonument2.classList.contains('selected')) {
@@ -74,7 +80,10 @@
             sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 16(8)');
         } else if (ancientMonument5.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 33(5)')
+        } else if (ancientMonument6.classList.contains('selected')) {
+            document.getElementById('ancientMonumentButton').setAttribute('href', 'no-stat-prov-stop');
         }
+        var editable = true;
     }
 </script>
 

@@ -42,6 +42,11 @@
                      <input id="compulsoryPurchase5" name="compulsoryPurchase" type="radio" value="Transport and Works Act 1992 Part 1, s.14A(6)">
                      Transport and Works Act 1992 Part 1, s.14A(6) 
                         </label>
+                        <p class="form-block">or</p>
+                        <label id="compulsoryPurchaseLabel6" class="block-label selection-button-radio" for="compulsoryPurchase6">
+                                <input id="compulsoryPurchase6" name="compulsoryPurchase" type="radio" value="I don't know the law for this charge">
+                                I don't know the law for this charge
+                                   </label>
                     </div>
                 </fieldset>
 
@@ -64,6 +69,7 @@
         var compulsoryPurchase3 = document.getElementById('compulsoryPurchaseLabel3');
         var compulsoryPurchase4 = document.getElementById('compulsoryPurchaseLabel4');
         var compulsoryPurchase5 = document.getElementById('compulsoryPurchaseLabel5');
+        var compulsoryPurchase6 = document.getElementById('compulsoryPurchaseLabel6');
         if (compulsoryPurchase1.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6');
         } else if (compulsoryPurchase2.classList.contains('selected')) {
@@ -74,7 +80,10 @@
             sessionStorage.setItem('statProv', 'Forestry Act 1967 Schedule 5 Paragraph 2F');
         } else if (compulsoryPurchase5.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Transport and Works Act 1992 Part 1, s.14A(6)')
+        } else if (compulsoryPurchase6.classList.contains('selected')) {
+            document.getElementById('compulsoryPurchaseButton').setAttribute('href', 'no-stat-prov-stop');
         }
+        var editable = true;
     }
 </script>
 
