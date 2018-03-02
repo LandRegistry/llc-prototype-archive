@@ -1,135 +1,133 @@
-{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
 
-<!--<style>
-  .summary table, tr, td {
-    border-bottom: 0px solid !important;
+<main id="content" role="main">
 
-  }
-</style> -->
-<div class="map-page">
-    <script>
-        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
-    </script>
-    <main id="content" role="main" style="padding:0px">
-        <div class="phase-banner-beta">
-            <p>
-                <strong class="phase-tag">BETA</strong>
-                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
-            </p>
-        </div>
-    </main>
-    <div class="container">
-        <div id="map" class="map"></div>
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
     </div>
-    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
 
-        <h1 class="heading-medium">Enter a location</h1>
-
-
+    <div class="grid-row">
+        <div class="column-two-thirds">
 
 
-
-        <form action="pay-now" method="GET">
-            <div class="form-group">
-                <legend class="visuallyhidden">Enter a location</legend>
-                <p><span class="form-hint"> <p>Before you start,  <a href="list-of-authorities-1">check your search area is on this register</a>.</p></span></p>
-
-                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
-
-                <a id="placeSearchButton" href="#" class="button">Search</a>
+            <h1 class="heading-xlarge">
+                Search for local land charges
+            </h1>
+            
+         
 
             </div>
+            <p>Use this service to search for restrictions (local land charges) on land or property.</p>
+        
+               <div class="panel panel-border-wide download-panel" style="margin-top: -2em">
+                
+                <p>Before you start, <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+            </div>
+           
+            <p>By starting a search you agree to our <a href="#">terms and conditions</a>.</p>
+            <p><a class="button button-start" href="search" role="button" id="start" style="background-image:url(/public/images/icon-pointer.png); background-position: 220px 50%">Accept and start</a></p>
+            <br>
+               <h2 class="heading-large">What's on your search result?</h2>
+<table class="search-fees">
+<thead>
+<tr>
+<td>What you get</td>
+<td>Free</td>
+<td>&pound;15</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Type of charge</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Registration date</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Contact details <br /> (Local Land Charges Officer)</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Create an account</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>
+<p>Account-holders can:</p>
+<ul class="list list-bullet">
+<li>download</li>
+<li>save</li>
+<li>return to their result</li>
+</ul>
+</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
 
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
 
-            <p><a href="search-results" id="mapButton" class="button">Continue</a></p>
-
-            <!--<div class="form-group">
-                      <fieldset>
-                          <legend class="visuallyhidden">Zoom to a place on the map</legend>
-                          <div class="form-group">
-                              <h1 class="heading-medium">Zoom to a place on the map</h1>
-                              <p>Use the '+' and '-' buttons to find the place you want to search.</p>
-                              <p>Once you have found the place you need, draw a shape around it.</p>
-                              <p>Your search results will show charges inside this shape.</p>
-                              <div class="form-group spacing-bottom-half">
-                                  <input class="button" type="submit" value="Continue">
-                                  <br><br><a href="postcode-search">Search by postcode, address or place name</a>
-                              </div>
-                          </div>
-                      </fieldset>
-                  </div> -->
-        </form>
-    </div>
-    <div class="panel-control close panel-control-citizen">
-        <img src="{{ asset_path }}images/arrow_collapse.png">
-    </div>
+</tr>
+<tr>
+<td>
+<p>For 6 months, they also get:</p>
+<ul class="list list-bullet">
+<li>free refresh</li>
+<li>free repeats</li>
+<li>free search history</li>
+</ul>
+</td>
+<td>&nbsp;</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>
+<p>Download in a:</p>
+<ul class="list list-bullet">
+<li>tamper proof format 
+    <br> (digitally signed by HM Land Registry)</li>
+<li>copy and paste format</li>
+</ul>
+</td>
+<td>&nbsp;</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Find out where to get source documents</td>
+<td>&nbsp;</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+<tr>
+<td>Boundary (on a map)</td>
+<td>&nbsp;</td>
+<td style="text-align: center; vertical-align: top; color: green;">✔</td>
+</tr>
+</tbody>
+</table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<script>
-    $(document).ready(function() {
-        var closePanel = function() {
-            $("#search-panel").animate({
-                "margin-left": "-1000px"
-            }, 100);
-            $(".panel-control").removeClass("close");
-            $(".panel-control").addClass("open-button");
-            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
-        }
+                 
 
-        var openPanel = function() {
-            $("#search-panel").animate({
-                "margin-left": "0"
-            }, 100);
-            $(".panel-control").removeClass("open-button");
-            $(".panel-control").addClass("close");
-            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
-        }
+        </div>
+        <!-- <div class="column-one-third">
+            <aside class="login-box">
+                <h2 class="heading-small">Existing users</h2>
+                <p><a href="login">Sign in</a></p>
+                <h2 class="heading-small">New users</h2>
+                <p><a href="register">Register</a></p>
+            </aside>
+        </div> -->
+    </div>
+</main>
 
-        $(".panel-control").click(function() {
-            if ($(this).hasClass("close")) {
-                closePanel();
-            } else {
-                openPanel();
-            }
-        });
-
-    });
-</script>
-
-{% endblock %} {% block body_end_additional %}{% include "includes/osm_scripts.html" %}
-<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
-<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
-<script src="/public/javascripts/map/map-styles.js"></script>
-<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
-<script src="/public/javascripts/map/search/sample_data.js"></script>
-<script src="/public/javascripts/map/search/search.js"></script> -->
-<script>
-    zoomslider = new ol.control.Zoom();
-    map.addControl(zoomslider);
-    var geometry =
-        "{{geometry}}";
-    //   MAP_HELPERS.zoom_map(geometry);
-    // hide tools that are not needed
-
-    /*$('.point').remove()
-    $('.line').remove()
-    $('.copy').remove()
-    $('.remove').remove()
-    $('#snap-to').remove()*/
-</script>
-<script>
-    $('#placeSearchButton').click(function() {
-        var placeSearched = $('#search_term').val();
-        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
-        MAP_HELPERS.zoom_map(geometry);
-        $('#search_term').val(addressSearched);
-        return false;
-    });
-
-    $('#mapButton').click(function() {
-        var searchTerm = $('#search_term').val();
-        sessionStorage.setItem('searchTerm', searchTerm);
-    });
-</script>
 {% endblock %}
