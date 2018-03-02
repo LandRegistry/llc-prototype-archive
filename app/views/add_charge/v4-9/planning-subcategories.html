@@ -90,7 +90,9 @@
         var subcategoryButton = this;
         if (changeDevelopment.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Change a development');
-            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+            sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990 s.97');
+            sessionStorage.setItem('instrument', 'Order');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-non-express');
         } else if (breachOfConditions.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Breach of conditions');
             document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
@@ -100,13 +102,19 @@
             sessionStorage.setItem('instrument', 'Notice');
         } else if (conditionalPlanningConsent.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Conditional planning consent');
-            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+            sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990 s.70');
+            sessionStorage.setItem('instrument', 'Planning permission');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-non-express');
         } else if (enforcementNotice.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Enforcement notice');
-            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+            sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990 s.172');
+            sessionStorage.setItem('instrument', 'Notice');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-non-express');
         } else if (article4Development.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Article 4');
-            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+            sessionStorage.setItem('statProv', 'Town and Country Planning (GPD) Order (Gdo) Article 4');
+            sessionStorage.setItem('instrument', 'Direction');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-non-express');
         } else if (planningNotices.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Planinng notices');
             document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
@@ -116,9 +124,14 @@
             sessionStorage.setItem('instrument', 'Agreement');
         } else if (tpo.classList.contains('selected')) {
             sessionStorage.setItem('chargeSubcategory', 'Tree preservation order (TPO)');
-            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+            sessionStorage.setItem('statProv', 'Town and Country Planning Act 1990');
+            sessionStorage.setItem('instrument', 'Order');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-tpo');
         } else if (listedPlanning.classList.contains('selected')) {
-            sessionStorage.setItem('listedPlanning', 'Listed building conditional planning consent');
+            sessionStorage.setItem('chargeSubcategory', 'Listed building conditional planning consent');
+            sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990 section 17');
+            sessionStorage.setItem('instrument', 'Consent');
+            document.getElementById('subcategoryButton').setAttribute('href', 'confirm-stat-prov-1-2-non-express');
         } else if (dunno.classList.contains('selected')) {
             subcategoryButton.setAttribute('href', 'contact-HMLR');
         }

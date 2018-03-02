@@ -11,8 +11,7 @@
     <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
     <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large" style="margin-top:20px;">Confirm the law</h1>
-            <p>We recommend you include the law. If you don't have this information, continue to the next page.</p>
+            <h1 class="heading-large" style="margin-top:20px;">Search for the law</h1>
             <div class="form-group">
                     <label class="form-label" for="law_search">
                         Enter for the law, for example 'Town and Country Planning Act 1990'
@@ -39,8 +38,6 @@
     var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
     if (chargeCategorySelected === 'Land compensation') {
         document.getElementById('statProvButton').setAttribute('href', 'land-compensation');
-    } else if (chargeSubCategorySelected === 'Change a development' || chargeSubCategorySelected === 'Conditional planning consent' || chargeSubCategorySelected === 'Enforcement notice' || chargeSubCategorySelected === 'Article 4' || chargeSubCategorySelected === 'Tree preservation order (TPO)' || chargeSubCategorySelected === 'Smoke control order') {
-        document.getElementById('statProvButton').setAttribute('href', 'confirm-instrument');
     }
 
 </script>

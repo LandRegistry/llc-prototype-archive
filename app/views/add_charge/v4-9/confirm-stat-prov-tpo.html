@@ -1,0 +1,99 @@
+{% extends "layout.html" %} {% block page_title %} Planning {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px;">Confirm the law</h1>
+            <div class="form-group">
+                    <label class="form-label" for="law_search">
+                        Enter for the law, for example 'Town and Country Planning Act 1990'
+                    </label>
+
+                    
+                        <input class="form-control search-field" id="org_search" name="law_search" type="text" value="" autofocus="autofocus" style="width:100%;">
+                   
+
+
+                </div>
+    
+
+            <p><a href="date-document-created" class="button" id="statProvButton">Continue</a></p>
+            <p><a href="type-of-charge">Choose a different charge category</a></p>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var chargeCategorySelected = sessionStorage.getItem('chargeCategory');
+    var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
+    if (chargeCategorySelected === 'Land compensation') {
+        document.getElementById('statProvButton').setAttribute('href', 'land-compensation');
+    } else if (chargeSubCategorySelected === 'Change a development' || chargeSubCategorySelected === 'Conditional planning consent' || chargeSubCategorySelected === 'Enforcement notice' || chargeSubCategorySelected === 'Article 4' || chargeSubCategorySelected === 'Tree preservation order (TPO)' || chargeSubCategorySelected === 'Smoke control order') {
+        document.getElementById('statProvButton').setAttribute('href', 'confirm-instrument');
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var legislationList = [
+        "Town and Country Planning (Control of Advertisements) (Amendment Number 2) regulations 1987 SI 1987/2227",
+"Town and Country Planning (Control of Advertisements) (England) regulations 1960, regulations 23",
+"Town and Country Planning (Control of Advertisements) (England) regulations 2007",
+"Town and Country Planning (Control of Advertisements) (England) regulations 2007 SI 2007/783",
+"Town and Country Planning (Control of Advertisements) regulations 1984 SI 1984/421",
+"Town and Country Planning (Control of Advertisements) regulations 1987 SI 1987/804",
+"Town and Country Planning (Control of Advertisements) regulations 1989 SI 1989/670",
+"Town and Country Planning (Control of Advertisements) regulations 1992 SI 1992/666",
+"Town and Country Planning (General Permitted Development) Order 1995",
+"Town and Country Planning Act 1954 sub-section 28",
+"Town and Country Planning Act 1954 sub-section 57",
+"Town and Country Planning Act 1968",
+"Town and Country Planning Act 1971",
+"Town and Country Planning Act 1971 sub-section 158",
+"Town and Country Planning Act 1971 sub-section 159",
+"Town and Country Planning Act 1990",
+"Town and Country Planning Act 1990 (section N/K)",
+"Town and Country Planning Act 1990 schedule 9",
+"Town and Country Planning Act 1990 section 102",
+"Town and Country Planning Act 1990 section 106",
+"Town and Country Planning Act 1990 section 110(4)",
+"Town and Country Planning Act 1990 section 131",
+"Town and Country Planning Act 1990 section 132",
+"Town and Country Planning Act 1990 section 133",
+"Town and Country Planning Act 1990 section 172",
+"Town and Country Planning Act 1990 section 178(1)(b)",
+"Town and Country Planning Act 1990 section 187A",
+"Town and Country Planning Act 1990 section 198",
+"Town and Country Planning Act 1990 section 201",
+"Town and Country Planning Act 1990 section 202",
+"Town and Country Planning Act 1990 section 215",
+"Town and Country Planning Act 1990 section 70",
+"Town and Country Planning Act 1990 section 97",
+"Town and Country Planning General regulations 1992 section 219(1)"
+        ]
+        $("#org_search").autocomplete({
+            source: legislationList
+        });
+        $('#statProvButton').on('click', function() {
+            var statProv = $('#org_search').val();
+            if (statProv !== '') {
+                sessionStorage.setItem('statProv', statProv);
+            }
+            var editable = true;
+        });
+        
+    })
+</script>
+{% endblock %}
