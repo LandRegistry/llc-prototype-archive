@@ -66,6 +66,9 @@
     document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
 
     document.getElementById('ancientMonumentButton').onclick = function() {
+        var edited = sessionStorage.getItem('edited');
+        sessionStorage.setItem('statProvEditable', 'true');
+        sessionStorage.setItem('statProvReturnURL', 'confirm-ancient-monuments-stat-prov');
         var ancientMonument1 = document.getElementById('ancientMonumentLabel1');
         var ancientMonument2 = document.getElementById('ancientMonumentLabel2');
         var ancientMonument3 = document.getElementById('ancientMonumentLabel3');
@@ -82,10 +85,10 @@
             sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 16(8)');
         } else if (ancientMonument5.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 33(5)')
-        } else if (ancientMonument6.classList.contains('selected')) {
-            document.getElementById('ancientMonumentButton').setAttribute('href', 'no-stat-prov-stop');
         }
-        var editable = true;
+        if (edited === 'true') {
+            document.getElementById('ancientMonumentButton').setAttribute('href', 'charge-summary-new');
+        } 
     }
 </script>
 

@@ -64,6 +64,7 @@
     document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
 
     document.getElementById('compulsoryPurchaseButton').onclick = function() {
+        sessionStorage.setItem('statProvEditable', 'true');
         var compulsoryPurchase1 = document.getElementById('compulsoryPurchaseLabel1');
         var compulsoryPurchase2 = document.getElementById('compulsoryPurchaseLabel2');
         var compulsoryPurchase3 = document.getElementById('compulsoryPurchaseLabel3');

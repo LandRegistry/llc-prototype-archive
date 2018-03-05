@@ -381,5 +381,18 @@
         document.getElementById('instrumentRow').classList.remove('hiddenList');
         document.getElementById('instrument').textContent = instrumentReturned;
     }
+    var statProvReturnURL = sessionStorage.getItem('statProvReturnURL');
+    var statProvEditable = sessionStorage.getItem('statProvEditable');
+    if (statProvEditable === 'true') {
+        document.getElementById('statProvChange').classList.remove('hiddenList');
+        document.getElementById('statProvChange').setAttribute('href', statProvReturnURL);
+    }
+    document.getElementById('statProvChange').onclick = function() {
+        sessionStorage.setItem('edited', 'true');
+    }
+    var instrumentEditable = sessionStorage.getItem('instrumentEditable');
+    if (instrumentEditable === 'true') {
+        document.getElementById('instrumentChange').classList.remove('hiddenList');
+    }
 </script>
 {% endblock %}

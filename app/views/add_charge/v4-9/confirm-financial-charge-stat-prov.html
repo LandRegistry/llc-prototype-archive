@@ -80,6 +80,7 @@
     document.getElementById('charge-category-selected').textContent = chargeCategorySelected;
 
     document.getElementById('financialStatProv').onclick = function() {
+        sessionStorage.setItem('statProvEditable', 'true');
         var financial1 = document.getElementById('financialLabel1');
         var financial2 = document.getElementById('financialLabel2');
         var financial3 = document.getElementById('financialLabel3');
