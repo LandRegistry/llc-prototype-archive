@@ -39,6 +39,11 @@
     if (chargeCategorySelected === 'Land compensation') {
         document.getElementById('statProvButton').setAttribute('href', 'land-compensation');
     }
+    var chargeCategory = sessionStorage.getItem('chargeCategory');
+        console.log(chargeCategory);
+        if (chargeCategory === 'Financial') {
+            document.getElementById('statProvButton').setAttribute('href', 'secured-charge-amount');
+        };
 
 </script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
