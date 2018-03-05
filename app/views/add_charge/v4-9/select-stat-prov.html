@@ -365,6 +365,10 @@
             }
             sessionStorage.setItem('statProvEditable', 'true');
         });
+        var edited = sessionStorage.getItem('edited');
+        if (edited === 'true') {
+            $('#statProvButton').href('charge-summary-new');
+        }
         
     })
 </script>

@@ -42,11 +42,6 @@
                      <input id="compulsoryPurchase5" name="compulsoryPurchase" type="radio" value="Transport and Works Act 1992 Part 1, s.14A(6)">
                      Transport and Works Act 1992 Part 1, s.14A(6) 
                         </label>
-                        <p class="form-block">or</p>
-                        <label id="compulsoryPurchaseLabel6" class="block-label selection-button-radio" for="compulsoryPurchase6">
-                                <input id="compulsoryPurchase6" name="compulsoryPurchase" type="radio" value="I don't know the law for this charge">
-                                I don't know the law for this charge
-                                   </label>
                     </div>
                 </fieldset>
 
@@ -64,6 +59,7 @@
     document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
 
     document.getElementById('compulsoryPurchaseButton').onclick = function() {
+        var edited = sessionStorage.getItem('edited');
         sessionStorage.setItem('statProvEditable', 'true');
         var compulsoryPurchase1 = document.getElementById('compulsoryPurchaseLabel1');
         var compulsoryPurchase2 = document.getElementById('compulsoryPurchaseLabel2');
@@ -84,7 +80,9 @@
         } else if (compulsoryPurchase6.classList.contains('selected')) {
             document.getElementById('compulsoryPurchaseButton').setAttribute('href', 'no-stat-prov-stop');
         }
-        var editable = true;
+        if (edited === 'true') {
+            document.getElementById('compulsoryPurchaseButton').setAttribute('href', 'charge-summary-new');
+        } 
     }
 </script>
 

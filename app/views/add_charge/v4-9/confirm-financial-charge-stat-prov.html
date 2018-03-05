@@ -80,6 +80,7 @@
     document.getElementById('charge-category-selected').textContent = chargeCategorySelected;
 
     document.getElementById('financialStatProv').onclick = function() {
+        var edited = sessionStorage.getItem('edited');
         sessionStorage.setItem('statProvEditable', 'true');
         var financial1 = document.getElementById('financialLabel1');
         var financial2 = document.getElementById('financialLabel2');
@@ -111,10 +112,10 @@
         } else if (financial9.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)');
             document.getElementById('financialStatProv').setAttribute('href', 'confirm-financial-instrument');
-        } else if (financial10.classList.contains('selected')) {
-            document.getElementById('financialStatProv').setAttribute('href', 'no-stat-prov-stop');
         }
-        var editable = true;
+        if (edited === 'true') {
+            document.getElementById('financialStatProv').setAttribute('href', 'charge-summary-new');
+        } 
     }
 </script>
 
