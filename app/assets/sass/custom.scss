@@ -461,3 +461,16 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+/* search service header */
+.menuDropdown {
+    position: absolute;
+    top: 2.5em;
+    padding: 0.5em;
+    margin-left: -0.5em;
+    background-color: #0b0c0c;
+    width: 160px;
+    & li {
+        display: block !important;
+    }
+}

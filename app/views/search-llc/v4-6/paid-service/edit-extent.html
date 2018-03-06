@@ -1,0 +1,109 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" class="maintain-llc-map"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list charge-list-maintain-v1-4 citizen-search-panel">
+        <form id="searchForm" method="GET" action="paid-charge-details">
+            <div class="form-group">
+                <fieldset>
+                    <legend class="visuallyhidden">Update extent</legend>
+                    <div class="form-group">
+                        <h1 class="heading-medium">Update extent</h1>
+
+                        <p>If you are happy with the extent, click continue to download your results.</p>
+                        <a href="download" class="button">Continue</a><br><br>
+                        <p>Or <a href="search-again">search in another area</a></p>
+                        <p style="color:red">Again, we need content here. I guess the purpose of this page is to edit the extent / search area. But we're also giving them the option to search again using postcode / address etc. I guess we can have the search field again on
+                            this page.</p>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <div class="panel-control close">
+        <img src="{{ asset_path }}images/arrow_collapse.png">
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        var closePanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "-1000px"
+            }, 100);
+            $(".panel-control").removeClass("close");
+            $(".panel-control").addClass("open-button");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_open.png");
+        }
+
+        var openPanel = function() {
+            $("#search-panel").animate({
+                "margin-left": "0"
+            }, 100);
+            $(".panel-control").removeClass("open-button");
+            $(".panel-control").addClass("close");
+            $(".panel-control img").attr("src", "{{ asset_path }}images/arrow_collapse.png");
+        }
+
+        $(".panel-control").click(function() {
+            if ($(this).hasClass("close")) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+        $('.button').click(function() {
+            var searchTerm = $('#location').val();
+            sessionStorage.setItem('searchTerm', searchTerm);
+            if (searchTerm === 'EX4 1AY' || searchTerm === 'ex4 1ay') {
+                $('.citizenSearchButton').attr('href', 'search-results_address_list');
+            } else {
+                $('.citizenSearchButton').attr('href', 'payment-benefits');
+            }
+        });
+
+        var searchedTermRetrieved = sessionStorage.getItem("searchedTerm");
+        console.log(searchedTermRetrieved);
+        $("#searched_term").val(searchedTermRetrieved);
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script>
+<script>
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry =
+        "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
+
+    // hide tools that are not needed
+
+    $('.point').remove()
+    $('.line').remove()
+    $('.copy').remove()
+    $('.remove').remove()
+    $('#snap-to').remove()
+</script>
+{% endblock %}

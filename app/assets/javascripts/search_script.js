@@ -2,9 +2,7 @@ var loggedInCheck = sessionStorage.getItem('loggedIn');
 if (loggedInCheck === 'true') {
     $('.notLoggedIn').remove();
     $('#login-links').append(
-        '<li class="loggedIn"><a href="account">Jane Smith</a></li>'
-        /* +
-                '<li class="loggedIn"><a href="dashboard" style="font-size:16px; text-decoration:none; color:white; font-weight: 700; margin-right: 1em;">Dashboard</a></li>'*/
+        '<li class="loggedIn account"><a href="#">Jane Smith</a><ul class="menuDropdown hiddenList"><li><a href="dashboard">Dashboard</a></li><li><a href="account">My account</a></li></ul></li>'
         +
         '<li class="loggedIn signOut"><a href="start">Sign out</a></li>'
     );
@@ -19,4 +17,12 @@ if (loggedInCheck === 'true') {
 
 $('.signOut').on('click', function() {
     sessionStorage.setItem('loggedIn', 'false');
-})
+});
+
+$('.account').on('click', function() {
+    if ($('.menuDropdown').hasClass('hiddenList')) {
+        $('.menuDropdown').removeClass('hiddenList');
+    } else {
+        $('.menuDropdown').addClass('hiddenList');
+    }
+});
