@@ -48,9 +48,11 @@
         var amountNotKnownLabel = document.getElementById('amountNotKnownLabel');
         if (amountKnownLabel.classList.contains('selected')) {
             sessionStorage.setItem('landCompAmountKnown', 'yes');
+            sessionStorage.setItem('statProv', 'Land Compensation Act 1973 section 52(8)');
             document.getElementById('landCompButton').setAttribute('href', 'amount-of-compensation');
         } else if (amountNotKnownLabel.classList.contains('selected')) {
             sessionStorage.setItem('landCompAmountKnown', 'Amount not known');
+            sessionStorage.setItem('statProv', 'Land Compensation Act 1973 section 8(4)');
             document.getElementById('landCompButton').setAttribute('href', 'lc-section8-4');
 
         }
