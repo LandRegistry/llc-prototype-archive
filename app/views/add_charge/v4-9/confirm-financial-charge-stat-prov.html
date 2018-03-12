@@ -19,11 +19,16 @@
                     <legend class="visually-hidden">
                         Confirm the law
                     </legend>
+                    <p>Can't find the correct law? <a href="select-stat-prov">Search for the law</a></p>
                     <div class="form-group">
                         <label id="financialLabel1" class="block-label selection-button-radio" for="financial1">
-                  <input id="financial1" name="financial" type="radio" value="Coast Protection Act 1949, sections 8(8) &amp; 13(6)">
-                  Coast Protection Act 1949, sections 8(8) &amp; 13(6)
+                  <input id="financial1" name="financial" type="radio" value="Coast Protection Act 1949, section 8(8)">
+                  Coast Protection Act 1949, section 8(8)
                   </label>
+                  <label id="financialLabel10" class="block-label selection-button-radio" for="financial10">
+                        <input id="financial10" name="financial" type="radio" value="Coast Protection Act 1949, section 13(6)">
+                        Coast Protection Act 1949, section 13(6)
+                        </label>
                         <label id="financialLabel2" class="block-label selection-button-radio" for="financial2">
                   <input id="financial2" name="financial" type="radio" value="Local Land Charges Act 1977, section 6(2)">
                   Local Land Charges Act 1977, section 6(2)
@@ -45,9 +50,13 @@
                      Greater London Council (General Powers) Act 1973, section 28(b)
                      </label>
                      <label id="financialLabel7" class="block-label selection-button-radio" for="financial7">
-                            <input id="financial7" name="financial" type="radio" value="Highways Act 1980, sections 224(1) &amp; 305(6)">
-                            Highways Act 1980, sections 224(1) &amp; 305(6)
+                            <input id="financial7" name="financial" type="radio" value="Highways Act 1980, section 224(1)">
+                            Highways Act 1980, section 224(1)
                             </label>
+                            <label id="financialLabel11" class="block-label selection-button-radio" for="financial11">
+                                    <input id="financial11" name="financial" type="radio" value="Highways Act 1980, section 305(6)">
+                                    Highways Act 1980, section 305(6)
+                                    </label>
                             <label id="financialLabel8" class="block-label selection-button-radio" for="financial8">
                             <input id="financial8" name="financial" type="radio" value="London Buildings Act (Amendment) at 1939, section 70(2)(a)">
                             London Buildings Act (Amendment) at 1939, section 70(2)(a)
@@ -67,9 +76,6 @@
             </form>
             <p><a href="confirm-financial-instrument" id="financialStatProv" class="button">Continue</a></p>
             <p><a href="type-of-charge">Choose a different charge category</a></p>
-                <p>or</p>
-            <p><a href="select-stat-prov">Search for the law</a></p>
-
         </div>
 
             
@@ -92,8 +98,9 @@
         var financial8 = document.getElementById('financialLabel8');
         var financial9 = document.getElementById('financialLabel9');
         var financial10 = document.getElementById('financialLabel10');
+        var financial11 = document.getElementById('financialLabel10');
         if (financial1.classList.contains('selected')) {
-            sessionStorage.setItem('statProv', 'Coast Protection Act 1949, sections 8(8) & 13(6)');
+            sessionStorage.setItem('statProv', 'Coast Protection Act 1949, section 8(8)');
             document.getElementById('financialStatProv').setAttribute('href', 'confirm-financial-instrument');
         } else if (financial2.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Local Land Charges Act 1977, section 6(2)');
@@ -106,13 +113,19 @@
         } else if (financial6.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Greater London Council (General Powers) Act 1973, section 28(b)');
         } else if (financial7.classList.contains('selected')) {
-            sessionStorage.setItem('statProv', 'Highways Act 1980, sections 224(1) & 305(6)');
+            sessionStorage.setItem('statProv', 'Highways Act 1980, sections 224(1)');
         } else if (financial8.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'London Buildings Act (Amendment) at 1939, section 70(2)(a)');
         } else if (financial9.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Planning (Listed Buildings and Conservation Areas) Act 1990, section 55(5D)');
             document.getElementById('financialStatProv').setAttribute('href', 'confirm-financial-instrument');
+        } else if (financial10.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Coast Protection Act 1949, section 13(6)');
+            document.getElementById('financialStatProv').setAttribute('href', 'confirm-financial-instrument');
+        } else if (financial11.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Highways Act 1980, section 305(6)');
         }
+
         if (edited === 'true') {
             document.getElementById('financialStatProv').setAttribute('href', 'charge-summary-new');
         } 
