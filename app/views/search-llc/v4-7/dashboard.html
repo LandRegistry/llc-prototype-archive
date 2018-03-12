@@ -1,0 +1,176 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-full">
+            <h1 class="heading-large">Search history</h1>
+            <p class="bold-medium">Welcome Jane Smith</p>
+            <div class="panel panel-border-wide download-panel" style="margin-top:-3em;margin-bottom:3em;position:relative; top:2em">
+                    <p>Before you start <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+                </div>
+            <form action="search" method="GET">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Start now">
+                </div>
+            </form>
+            <h2 class="heading-medium dashboardHeader"><span class="tabHeader active activeTabHeader">Active searches</span><span class="tabHeader expired">Searches older than 6 months</span></h2>
+            <table class="dashboard activeDashboard">
+                <thead>
+                    <tr>
+                        <td class="bold-small">Reference</td>
+                        <td class="bold-small">Date of search</td>
+                        <td class="bold-small">Date of last repeat</td>
+                        <td></td>
+                        <td class="bold-small numberOfSearches">Number of repeats</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="accordion-parent-1">
+                        <td>LLC1/1234ABC-09</td>
+                        <td>12 May 2017<br>
+                            <a href="view">View</a>
+                        </td>
+                        <td>18 September 2017<br>
+                            <a href="view">View</a>
+                        </td>
+                        <td><a href="refresh-1">Repeat</a></td>
+                        <td class="numberOfSearches">3</td>
+                        <td class="accordionIcon-1"><img src="{{asset_path}}images/icons-plus.png"></td>
+                    </tr>
+                    <tr class="accordion-child-1 hidden-accordion-content">
+                        <td>LLC1/1234ABC-10</td>
+                        <td>18 September 2017</td>
+                        <td><a href="view">View</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="accordion-child-1 hidden-accordion-content">
+                        <td>LLC1/1234ABC-11</td>
+                        <td>10 August 2017</td>
+                        <td><a href="view">View</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="accordion-child-1 hidden-accordion-content">
+                        <td>LLC1/1234ABC-12</td>
+                        <td>8 July 2017</td>
+                        <td><a href="view">View</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="accordion-parent-2">
+                        <td>LLC1/5678DEF-01</td>
+                        <td>12 May 2017<br>
+                            <a href="view">View</a>
+                        </td>
+                        <td>12 August 2017<br>
+                            <a href="view">View</a>
+                        </td>
+                        <td><a href="refresh-2">Repeat</a></td>
+                        <td class="numberOfSearches">0</td>
+                        <td></td>
+                    </tr>
+                    <tr class="accordion-parent-3">
+                        <td>LLC1/5612GHI-11</td>
+                        <td>1 May 2017<br>
+                            <!-- <a href="view-existing-3">View</a> -->
+                        </td>
+                        <td>24 August 2017<br>
+                            <!-- <a href="view-existing-3">View</a> -->
+                        </td>
+                        <td>
+                            <!-- <a href="refresh-3">Refresh</a> --></td>
+                        <td class="numberOfSearches">1</td>
+                        <td class="accordionIcon-3"><img src="{{asset_path}}images/icons-plus.png"></td>
+                    </tr>
+                    <tr class="accordion-child-3 hidden-accordion-content">
+                        <td>LLC1/1234ABC-10</td>
+                        <td>24 August 2017</td>
+                        <!-- <td><a href="view-existing-3">View</a></td> -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="dashboard expiredDashboard hiddenList">
+                <thead>
+                    <tr>
+                        <td class="bold-small">Reference</td>
+                        <td class="bold-small">Date of search</td>
+                        <td class="bold-small">Lapsed</td>
+                        <td class="bold-small">Restore</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LLC1/4567DEF-10</td>
+                        <td>5 September 2016</td>
+                        <td>5 March 2017</td>
+                        <td><a href="search-results-clinton-street">Review and pay</a></td>
+                    </tr>
+                    <tr>
+                        <td>LLC1/4567DEF-09</td>
+                        <td>1 April 2016</td>
+                        <td>1 October 2016</td>
+                        <td><a href="search-results-clinton-street">Review and pay</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    $('.accordionIcon-1').click(function() {
+        if ($('.accordion-child-1').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-1').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-1').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+    $('.accordionIcon-3').click(function() {
+        if ($('.accordion-child-3').hasClass('hidden-accordion-content')) {
+            $('.accordion-child-3').removeClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-minus.png');
+            $(this).parent().css('background-color', '#F8F8F8');
+        } else {
+            $('.accordion-child-3').addClass('hidden-accordion-content');
+            $(this).children('img').attr('src', '/public/images/icons-plus.png');
+            $(this).parent().css('background-color', 'white');
+        }
+    });
+
+    $('.tabHeader').click(function() {
+        $('.tabHeader').removeClass('activeTabHeader');
+        $(this).addClass('activeTabHeader');
+        if ($(this).hasClass('expired')) {
+            $('.activeDashboard').addClass('hiddenList');
+            $('.expiredDashboard').removeClass('hiddenList');
+        } else if ($(this).hasClass('active')) {
+            $('.expiredDashboard').addClass('hiddenList');
+            $('.activeDashboard').removeClass('hiddenList');
+        }
+    });
+
+    var loginCheck = sessionStorage.getItem('loggedIn');
+    console.log(loginCheck);
+</script>
+{% endblock %}
