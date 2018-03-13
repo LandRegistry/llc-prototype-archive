@@ -1,0 +1,113 @@
+{% extends "layout.html" %} {% block page_title %} Upload file {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content -->
+    <a href="search-property" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <!-- <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+				<h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+					There are errors on this page
+				</h1>
+
+				<p>You haven’t uploaded a file.  </p>
+				<p>File is not in the accepted format. Upload a shapefile (.shp). </p>
+				<p>File is too large. Reduce file size. </p>
+				<p>File can’t be read.  Extent not uploaded. </p>
+
+				<ul class="error-summary-list">
+					<li><a href="#uploadFile">Upload a file</a></li>
+					<li><a href="#uploadFile">Upload a shapefile</a></li>
+					<li><a href="#uploadFile">Upload a file under 1MB</a></li>
+					<li><a href="#uploadFile">Try again</a></li>
+				</ul>
+			</div> -->
+
+            <h1 class="heading-large">Upload file</h1>
+
+            <!-- <div class="notice">
+				<span class="icon icon-important">
+					<span class="visually-hidden">Warning</span>
+				</span>
+				<strong class="bold-small">
+					This will replace the other boundary you uploaded. 					
+				</strong>
+			</div> -->
+
+            <form action="check-charge-boundary" method="get">
+
+                <fieldset>
+                    <div class="panel panel-border-narrow">
+                        <legend class="form-label-bold">Your file must be in this format:</legend>
+
+                        <ul class="list list-bullet">
+                            <li>shapefile (.shp) or zip file (.zip)</li>
+                            <li>under 1MB</li>
+                            <li>British National Grid (BNG) coordinates</li>
+                        </ul>
+                        <p>If your file does not use British National Grid (BNG) coordinates:</p>
+                        <ul class="list list-bullet">
+                            <li>Your extent might not look the same way on our map as it does on your file</li>
+                            <li>Check the extent you have uploaded to make sure it is the right place, size and shape</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <!-- Add form-group-error class when error occured on the page -->
+                        <label id="uploadFile" class="form-label-bold" for="file-input">
+							Upload file
+
+							<!-- <span class="error-message">
+					          Upload a file
+					      </span> -->
+
+					      <!-- <span class="error-message">
+								Upload a shapefile
+							</span> -->
+
+					      <!-- <span class="error-message">
+					          Upload a file under 1MB
+					      </span> -->
+
+					      <!-- <span class="error-message">
+					          Upload a new file
+					      </span> -->
+
+					      <span class="form-hint"></span>
+
+					  </label>
+                        <input type="file" id="file-input">
+
+                        <!-- <br>
+					  1. <input type="file" id="file-input">
+					  <p class="form-group">
+					  2. <input type="file" id="file-input">
+					  </p> -->
+
+                    </div>
+                </fieldset>
+
+                <br>
+                <input class="button shape-button" type="submit" value="Continue">
+                <br><br>
+
+                <p class="form-block">Or</p>
+                <p><a href="search-property">Cancel upload</a></p>
+            </form>
+
+
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

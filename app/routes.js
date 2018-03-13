@@ -1210,4 +1210,164 @@ router.post('/search-llc/v4-5/search-results-from-map', (req, res, next) => {
     })
 })
 
+router.get('/search-llc/v4-6/search-results', (req, res, next) => {
+    res.render('search-llc/v4-6/search-results')
+})
+
+router.get('/search-llc/v4-6/pay-successful', (req, res, next) => {
+    const reference = req.params['reference']
+
+    const id = map.get(reference)
+    map.remove(reference)
+
+    debug('Lookup id %s=%s', reference, id)
+
+    payments.checkPaymentStatus(id, (result) => {
+        debug(JSON.stringify(result))
+
+        res.render('search-llc/v4-6/pay-successful', {
+            transaction: result
+        })
+    })
+})
+
+router.post('/search-llc/v4-6/search-results', (req, res, next) => {
+    req.body.amount = '1500'
+    req.body.reference = 'Official search result of local land charges'
+    req.body.description = 'Official search result of local land charges'
+
+    payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
+        debug('Initial request completed')
+
+        debug('State : %s', result.status)
+        debug('Payment id: %s', result.payment_id)
+        debug('Reference: %s', result.reference)
+        debug('URL: %s', result._links.next_url.href)
+
+        map.set(result.reference, result.payment_id)
+
+        res.redirect(result._links.next_url.href)
+    })
+})
+
+router.get('/search-llc/v4-6/search-results-from-map', (req, res, next) => {
+    res.render('search-llc/v4-6/search-results-from-map')
+})
+
+router.get('/search-llc/v4-6/pay-successful', (req, res, next) => {
+    const reference = req.params['reference']
+
+    const id = map.get(reference)
+    map.remove(reference)
+
+    debug('Lookup id %s=%s', reference, id)
+
+    payments.checkPaymentStatus(id, (result) => {
+        debug(JSON.stringify(result))
+
+        res.render('search-llc/v4-6/pay-successful', {
+            transaction: result
+        })
+    })
+})
+
+router.post('/search-llc/v4-6/search-results-from-map', (req, res, next) => {
+    req.body.amount = '1500'
+    req.body.reference = 'Official search result of local land charges'
+    req.body.description = 'Official search result of local land charges'
+
+    payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
+        debug('Initial request completed')
+
+        debug('State : %s', result.status)
+        debug('Payment id: %s', result.payment_id)
+        debug('Reference: %s', result.reference)
+        debug('URL: %s', result._links.next_url.href)
+
+        map.set(result.reference, result.payment_id)
+
+        res.redirect(result._links.next_url.href)
+    })
+})
+
+router.get('/search-llc/v4-7/search-results', (req, res, next) => {
+    res.render('search-llc/v4-7/search-results')
+})
+
+router.get('/search-llc/v4-7/pay-successful', (req, res, next) => {
+    const reference = req.params['reference']
+
+    const id = map.get(reference)
+    map.remove(reference)
+
+    debug('Lookup id %s=%s', reference, id)
+
+    payments.checkPaymentStatus(id, (result) => {
+        debug(JSON.stringify(result))
+
+        res.render('search-llc/v4-7/pay-successful', {
+            transaction: result
+        })
+    })
+})
+
+router.post('/search-llc/v4-7/search-results', (req, res, next) => {
+    req.body.amount = '1500'
+    req.body.reference = 'Official search result of local land charges'
+    req.body.description = 'Official search result of local land charges'
+
+    payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
+        debug('Initial request completed')
+
+        debug('State : %s', result.status)
+        debug('Payment id: %s', result.payment_id)
+        debug('Reference: %s', result.reference)
+        debug('URL: %s', result._links.next_url.href)
+
+        map.set(result.reference, result.payment_id)
+
+        res.redirect(result._links.next_url.href)
+    })
+})
+
+router.get('/search-llc/v4-7/search-results-from-map', (req, res, next) => {
+    res.render('search-llc/v4-7/search-results-from-map')
+})
+
+router.get('/search-llc/v4-7/pay-successful', (req, res, next) => {
+    const reference = req.params['reference']
+
+    const id = map.get(reference)
+    map.remove(reference)
+
+    debug('Lookup id %s=%s', reference, id)
+
+    payments.checkPaymentStatus(id, (result) => {
+        debug(JSON.stringify(result))
+
+        res.render('search-llc/v4-7/pay-successful', {
+            transaction: result
+        })
+    })
+})
+
+router.post('/search-llc/v4-7/search-results-from-map', (req, res, next) => {
+    req.body.amount = '1500'
+    req.body.reference = 'Official search result of local land charges'
+    req.body.description = 'Official search result of local land charges'
+
+    payments.sendRequstForPayment(req.body.amount, req.body.reference, req.body.description, (result) => {
+        debug('Initial request completed')
+
+        debug('State : %s', result.status)
+        debug('Payment id: %s', result.payment_id)
+        debug('Reference: %s', result.reference)
+        debug('URL: %s', result._links.next_url.href)
+
+        map.set(result.reference, result.payment_id)
+
+        res.redirect(result._links.next_url.href)
+    })
+})
+
 module.exports = router

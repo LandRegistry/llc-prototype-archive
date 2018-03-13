@@ -237,7 +237,7 @@ typeSelect.onchange = function() {
 addInteraction()
 
 // Postcode search
-var searchForm = document.getElementById('search')
+/*var searchForm = document.getElementById('search')
 
 searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -259,7 +259,7 @@ function openLayersPlacesLookup(searchQuery) {
             $('#error').slideDown('slow')
         }
     })
-}
+}*/
 
 function goBack() {
     window.history.back()

@@ -1,0 +1,215 @@
+{% extends "layout_map.html" %} {% block page_title %} Enter a location {% endblock %} {% block content %}
+
+
+<!-- alpha banner -->
+<main id="content" role="main" style="padding:0px">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+</main>
+<!-- main content starts -->
+<div id="map" style="width: 100%; position:relative;">
+    <!-- map goes in here -->
+</div>
+<div id="search-panel">
+    <a href="date-document-created" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-medium" style="margin-top:1em">Enter a location</h1>
+    <form>
+
+        <div class="form-group">
+            <legend class="visuallyhidden">Enter a postcode, street name or town</legend>
+
+            <!-- <input class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+            <input id="postcodeSearchButton" class="search-button" type="submit" name="search" value=""> -->
+
+            <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+            <a id="postcodeSearchButton" class="button">Search</a>
+
+        </div>
+
+
+        <!-- 
+  <p>You will see a map showing this address on the next page. Use this map to start drawing the extent.</p> -->
+
+
+
+        <ul id="address-list-for-postcode" class="list hiddenList">
+            <p><a href="#" class="closeMenu hiddenList" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
+            <li><a href="draw-an-extent" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+            <li><a href="draw-an-extent" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+        </ul>
+        <ul id="address-list-for-street" class="list hiddenList">
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Exeter EX4</a></li>
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Newcastle NE1</a></li>
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, London SW3</a></li>
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Southampton SO14</a></li>
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
+            <li><a a href="draw-an-extent" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
+        </ul>
+
+        <div class="originalText">
+            <p>Use the buttons on this map to draw the charge extent.
+            </p>
+        </div>
+        <div class="newText hiddenList">
+            <p class="bold-small">This is the map for <span class="selectedAddress"></span></p>
+            <p>Use the buttons on this map to draw the charge extent.</p>
+            <div class="panel panel-border-narrow">
+                <p>You have added<strong class="bold-small"><span> 0 </span> </strong> (polygons, points or lines) out of 500 possible extents.</p>
+            </div>
+
+            <p><a href="more-information_2" class="button continueButton hiddenList">Continue</a></p>
+        </div>
+
+        <!--<div class="panel panel-border-narrow">
+            <p>You have added
+                <strong class="bold-small"><span> 0 </span> </strong> (polygons, points or lines) out of 500 possible extents.
+            </p>
+        </div>
+        <p>
+
+            <a href="more-information_2" class="button disabled continueButton">Continue</a></p> -->
+
+
+        <p> Do you have an extent saved on file? <a href="upload-shape-file">Upload the file </a></p>
+
+    </form>
+</div>
+
+
+
+
+
+<!-- <div class="panel-control close">
+    <img src="{{ asset_path }}images/arrow_collapse.png">
+</div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+
+        /*$("#search_term").keydown(function(e) {
+            var keycode = e.which;
+            if (keycode == 13) {
+                $('#postcodeSearchButton').removeAttr('href');
+                $("#address-list").removeClass("hiddenList")
+                return false;
+            }
+
+        });*/
+        /*$("#postcodeSearchButton").click(function() {
+            if ($("#search_term").val() === "EXT123456") {
+                $("#postcodeSearchButton").attr("href", "address-confirm");
+            } else if ($('#search_term').val() === 'EX4' || $('#search_term').val() === 'ex4') {
+                $('#postcodeSearchButton').attr('href', 'search-property-by-title');
+            } else if ($("#search_term").val() === "EX4 1AX" || $("#search_term").val() === "ex4 1ax" || $("#search_term").val() === "EX41AX" || $("#search_term").val() === "ex41ax") {
+                $('#postcodeSearchButton').removeAttr('href');
+                $("#address-list").removeClass("hiddenList")
+            } else {
+                $("#postcodeSearchButton").attr("href", "draw-an-extent");
+            }
+        });*/
+        $('#postcodeSearchButton').on('click', function() {
+            if ($('#search_term').val() === 'EX41AX' || $('#search_term').val() === 'ex41ax' || $('#search_term').val() === 'EX4 1AX' || $('#search_term').val() === 'ex4 1ax') {
+                $('#address-list-for-postcode').removeClass('hiddenList');
+            } else if ($('#search_term').val() === 'Clinton ' || $('#search_term').val() === 'Clinton Street' || $('#search_term').val() === 'clinton ' || $('#search_term').val() === 'clinton street' || $('#search_term').val() === 'Clinton street' || $('#search_term').val() === 'clinton Street' || $('#search_term').val() === '3 clinton ' || $('#search_term').val() === '3 clinton street' || $('#search_term').val() === '3 Clinton Street' || $('#search_term').val() === '3 Clinton ' || $('#search_term').val() === '3 Clinton street' || $('#search_term').val() === '3 clinton Street') {
+                $('#address-list-for-street').removeClass('hiddenList');
+            }
+        });
+
+        $('.selectedOption').on('click', function() {
+            var addressSelected = $(this).text();
+            sessionStorage.setItem('addressSelected', addressSelected);
+        });
+
+        $('.selectedOption1').on('click', function() {
+            $('#address-list-for-street').addClass('hiddenList');
+            $('#address-list-for-postcode').removeClass('hiddenList');
+            $('.closeMenu').removeClass('hiddenList');
+            return false;
+        });
+
+        $(".selectedOption").click(function() {
+            $('.continueButton').attr('href', 'more-information');
+            var location = $(this).html();
+            var postcodeSearched = $("#search_term").val();
+            sessionStorage.setItem("location", location);
+            sessionStorage.setItem("postcodeSearched", postcodeSearched);
+        });
+
+        $('.closeMenu').on('click', function() {
+            $('#address-list-for-postcode').addClass('hiddenList');
+            return false;
+        })
+
+
+
+    });
+</script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script>
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    //map.getControls().clear();
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    //var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+    MAP_HELPERS.zoom_map(geometry);
+</script>
+<script>
+    $('#address-list-for-postcode li a').click(function() {
+        var addressSearched = $(this).text();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.list').addClass('hiddenList');
+        $('.originalText').addClass('hiddenList');
+        $('.newText').removeClass('hiddenList');
+        $('.selectedAddress').text(addressSearched);
+        $('#search_term').val(addressSearched);
+        return false;
+    });
+    $('#address-list-for-street li a').click(function() {
+        var addressSearched1 = $(this).text();
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.list').addClass('hiddenList');
+        $('.originalText').addClass('hiddenList');
+        $('.newText').removeClass('hiddenList');
+        $('.selectedAddress').text(addressSearched1);
+        $('#search_term').val(addressSearched1);
+        return false;
+    });
+    $('button').click(function() {
+        $('.continueButton').removeClass('hiddenList');
+        var clickedButton = $(this);
+        $(clikedButton).click(function() {
+            $(this).attr('id', '');
+        });
+    });
+</script>
+{% endblock %}

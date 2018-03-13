@@ -16,7 +16,7 @@ function configure_geoserver_layer_for_user(is_lr, organisation, geoserver_url) 
     }
     GEOSERVER_CONFIG.boundaries_layer = new ol.layer.Tile({
         source: new ol.source.TileWMS({
-            url: geoserver_url + '/geoserver/llc/wms?',
+            /*url: geoserver_url + '/geoserver/llc/wms?',*/
             params: params
         }),
         zIndex: MAP_CONFIG.boundary_layer_zindex

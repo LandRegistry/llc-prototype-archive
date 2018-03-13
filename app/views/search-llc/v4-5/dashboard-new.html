@@ -10,7 +10,7 @@
 
     <div class="grid-row">
         <div class="column-full">
-            <h1 class="heading-large">Welcome Jane Doe</h1>
+            <h1 class="heading-large">Welcome Jane Smith</h1>
             <form action="search" method="GET">
                 <div class="form-group">
                     <input class="button" type="submit" value="Start now">
@@ -224,6 +224,6 @@
     var day = d.getDate();
 
     var refreshDay = day + ' ' + month + ' ' + d.getFullYear();
-    $('.refresh-date').text(refreshDay).append('<br><a href="paid-service/view-existing">View</a>');
+    $('.refresh-date').text(refreshDay).append('<br><a href="view-logged-in">View</a>');
 </script>
 {% endblock %}

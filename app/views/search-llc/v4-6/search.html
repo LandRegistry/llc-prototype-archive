@@ -1,0 +1,314 @@
+{% extends "layout_map.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<style>
+    @-moz-document url-prefix() {
+        .search-button {
+            position: relative;
+            top: -5px;
+        }
+    }
+</style>
+<div class="map-page">
+    <script>
+        var maintainMapAddressSelected = sessionStorage.getItem("maintainMapAddress")
+    </script>
+    <main id="content" role="main" style="padding:0px">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+    </main>
+    <div class="container">
+        <div id="map-nav" class="maintain-map form-group">
+            <div id="map" style="width:100%;"></div>
+        </div>
+    </div>
+    <div id="search-panel" class="charge-list">
+            <div class="panel panel-border-wide download-panel" style="margin-top:-2em; padding-top:1em;position:relative; top:2em">
+                    <p>Before you start <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+                </div>
+        <h1 class="heading-small" style="padding-top: 2em">Enter a location</h1>
+        <form action="#" method="GET">
+            <div class="form-group searchGroup">
+
+                <input style="width: 70%;" class="form-control search-field" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+                <!--<button id="placeSearchButton" class="search-button" style="top: 12px; left: -11px;"></button> -->
+                <button id="placeSearchButton" class="search-button"></button>
+                <!--<a id="placeSearchButton" href="#" class="button">Find</a> -->
+
+            </div>
+            <ul id="address-list-for-postcode-ex41ax" class="list hiddenList">
+                <p><a href="#" class="closeMenu hiddenList" style="float: right; position:relative; top:-1.5em; padding-bottom: 0,5em;">Close</a></p><br>
+                <li><a href="#" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+                <li><a href="#" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+            </ul>
+            <ul id="address-list-for-street-clinton-street" class="list hiddenList">
+                <li><a a href="#" class="selectedOption1">Clinton Street, Exeter EX4</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Newcastle NE1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, London SW3</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Southampton SO14</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Liverpool L1</a></li>
+                <li><a a href="#" class="selectedOption1">Clinton Street, Bristol BS1</a></li>
+            </ul>
+
+            <ul id="address-list-for-postcode-ex24hn" class="list hiddenList">
+                
+                <li><a href="#" class="selectedOption">63 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">64 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">65 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">66 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">67 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">68 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">69 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">70 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">71 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">72 Magdalen Street, Exeter EEX2 4HN</a></li>
+            </ul>
+            <ul id="address-list-for-street-magdalen-street" class="list hiddenList">
+                <li><a a href="#" class="selectedOption1">Magdalen Street, Exeter EX2</a></li>
+                <li><a a href="#" class="selectedOption1">Magdalen Street, Newcastle NE1</a></li>
+                <li><a a href="#" class="selectedOption1">Magdalen Street, London SW3</a></li>
+                <li><a a href="#" class="selectedOption1">Magdalen Street, Southampton SO14</a></li>
+                <li><a a href="#" class="selectedOption1">Magdalen Street, Liverpool L1</a></li>
+                <li><a a href="#" class="selectedOption1">Magdalen Street, Bristol BS1</a></li>
+            </ul>
+
+
+            <p class="initialInstructionText">You can also browse to a place using the map.</p>
+
+            <div class="postSearchText hiddenList">
+                <h2 class="heading-small">This is the map for 1 Clinton Street Exeter EX4 1AX</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+
+            </div>
+            <div class="postSearchText-2 hiddenList">
+                <h2 class="heading-small">This is the map for Clinton Street Exeter EX4 1AX</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+    
+            </div>
+            <div class="postSearchText-3 hiddenList">
+                <h2 class="heading-small">This is the map for 65 Magdalen Street Exeter EX2 4HN</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+            </div>
+            <div class="postSearchText-4 hiddenList">
+                <h2 class="heading-small">This is the map for Magdalen Street Exeter EX2 4HN</h2>
+                <p>Use the map buttons to draw an extent around the area you want to search.</p>
+            </div>
+            <div id="address-list-for-postcode-clinton-street" class="hiddenList">
+                    <details>
+                        <summary>
+                            <span class="summary">You can select a property to filter your search</span>
+                        </summary>
+                            <div class="panel panel-border-narrow">
+                                <ul class="list propertyList-clinton-street">
+                                    <li><a href="#" class="selectedOption">1 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">2 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">3 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">4 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">5 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">6 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">7 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">8 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">9 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">10 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">11 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">12 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">13 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">14 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">15 Clinton Street, Exeter EX4 1AX</a></li>
+                                    <li><a href="#" class="selectedOption">16 Clinton Street, Exeter EX4 1AX</a></li>
+                                </ul>
+                            </div>
+                        
+                    </details>
+                    <br>
+                </div>
+                <div id="address-list-for-postcode-magdalen-street" class="hiddenList">
+                        <details>
+                            <summary>
+                                <span class="summary">You can select a property to filter your search</span>
+                            </summary>
+                                <div class="panel panel-border-narrow">
+                                    <ul class="list propertyList-magdalen-street">
+                                        <li><a href="#" class="selectedOption">63 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">64 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">65 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">66 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">67 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">68 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">69 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">70 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">71 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                        <li><a href="#" class="selectedOption">72 Magdalen Street, Exeter EEX2 4HN</a></li>
+                                    </ul>
+                                </div>
+                            
+                        </details>
+                        <br>
+                    </div>
+            <p id="continueButton" class="hiddenList">
+                <a href="#" class="button continueButton">Search in this area</a>
+            </p>
+
+            
+
+            
+
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %} {% block body_end_additional %} {% include "includes/map_scripts.html" %}
+<!-- <script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<script src="/public/javascripts/map/search/local_land_charges_layer.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/sample_data.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/search.js"></script> -->
+<script src="/public/javascripts/map/search/llc_layer_styles.js"></script>
+<!-- <script src="/public/javascripts/map/search/local_land_charges_layer.js"></script> -->
+<!-- <script src="/public/javascripts/map/search/map_events.js"></script>
+<script src="/public/javascripts/map/search/sample_data.js"></script>
+<script src="/public/javascripts/map/search/search.js"></script> -->
+<script>
+    $('.point').remove();
+    $('.line').remove();
+    $('.remove').remove();
+    zoomslider = new ol.control.Zoom();
+    map.addControl(zoomslider);
+    var geometry = "{{ geometry }}";
+    MAP_HELPERS.zoom_map(geometry);
+</script>
+<script>
+    $('#placeSearchButton').on('click', function() {
+        if ($('#search_term').val() === 'EX41AX' || $('#search_term').val() === 'ex41ax' || $('#search_term').val() === 'EX4 1AX' || $('#search_term').val() === 'ex4 1ax') {
+            $('#address-list-for-postcode-ex41ax').removeClass('hiddenList');
+        } else if ($('#search_term').val() === 'Clinton ' || $('#search_term').val() === 'Clinton Street' || $('#search_term').val() === 'clinton ' || $('#search_term').val() === 'clinton street' || $('#search_term').val() === 'Clinton street' || $('#search_term').val() === 'clinton Street' || $('#search_term').val() === '3 clinton ' || $('#search_term').val() === '3 clinton street' || $('#search_term').val() === '3 Clinton Street' || $('#search_term').val() === '3 Clinton ' || $('#search_term').val() === '3 Clinton street' || $('#search_term').val() === '3 clinton Street') {
+            $('#address-list-for-street-clinton-street').removeClass('hiddenList');
+        } else if ($('#search_term').val() === 'EX24HN' || $('#search_term').val() === 'ex24hn' || $('#search_term').val() === 'EX2 4HN' || $('#search_term').val() === 'ex2 4hn') {
+            $('#address-list-for-postcode-ex24hn').removeClass('hiddenList');
+        } else if ($('#search_term').val() === 'Magdalen ' || $('#search_term').val() === 'Magdalen Street' || $('#search_term').val() === 'magdalen ' || $('#search_term').val() === 'magdalen street' || $('#search_term').val() === 'Magdalen street' || $('#search_term').val() === 'magdalen Street') {
+            $('#address-list-for-street-magdalen-street').removeClass('hiddenList');
+        }
+        return false;
+    });
+
+    // EX4 1AX
+    $('#address-list-for-postcode-ex41ax li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list-for-postcode-ex41ax').addClass('hiddenList');
+        $('.postSearchText').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        $('#continueButton').removeClass('hiddenList');
+        $('.continueButton').attr('href', 'search-results-clinton-street');
+    });
+
+    // Clinton Street
+    $('#address-list-for-street-clinton-street li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[291228.7125000001, 92032.63750000006], [291338.61250000016, 92055.2125000001]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.postSearchText-2').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        $('#address-list-for-postcode-clinton-street').removeClass('hiddenList');
+        $('#address-list-for-street-clinton-street').addClass('hiddenList');
+        $('#continueButton').removeClass('hiddenList');
+        $('.continueButton').attr('href', 'search-results-clinton-street');
+    });
+
+    // EX2 4HN
+    $('#address-list-for-postcode-ex24hn li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[292267, 92293], [292515, 92334]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('#address-list-for-postcode-ex24hn').addClass('hiddenList');
+        $('.postSearchText-3').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        $('#continueButton').removeClass('hiddenList');
+        $('.continueButton').attr('href', 'search-results-magdalen-street');
+    });
+
+    // Magdalen Street
+    $('#address-list-for-street-magdalen-street li a').on('click', function() {
+        var geometry = "{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;: [[292267, 92293], [292515, 92334]]}";
+        MAP_HELPERS.zoom_map(geometry);
+        $('.postSearchText-4').removeClass('hiddenList');
+        $('.initialInstructionText').addClass('hiddenList');
+        $('#address-list-for-postcode-magdalen-street').removeClass('hiddenList');
+        $('#address-list-for-street-magdalen-street').addClass('hiddenList');
+        $('#continueButton').removeClass('hiddenList');
+        $('.continueButton').attr('href', 'search-results-magdalen-street');
+    });
+
+
+    
+
+    $('.propertyList-clinton-street li a').on('click', function() {
+        $('#address-list-for-postcode-clinton-street').addClass('hiddenList');
+        $('.postSearchText-2').addClass('hiddenList');
+        $('.postSearchText').removeClass('hiddenList');
+    });
+
+    $('.propertyList-magdalen-street li a').on('click', function() {
+        $('#address-list-for-postcode-magdalen-street').addClass('hiddenList');
+        $('.postSearchText-4').addClass('hiddenList');
+        $('.postSearchText-3').removeClass('hiddenList');
+    });
+
+    /*$('.map-button').click(function() {
+        $('.continueButton').removeClass('disabled');
+        $('.continueButton').removeClass('hiddenList');
+        var clickedButton = $(this);
+        $(clikedButton).click(function() {
+            $(this).attr('id', '');
+        });
+    });*/
+
+    /*$('.continueButton').click(function() {
+        $(this).addClass('hiddenList');
+        $('.postSearchText').addClass('hiddenList');
+        $('.resultsList').removeClass('hiddenList');
+        $('.searchGroup').css({
+            'position': 'relative',
+            'bottom': '1.5em'
+        });
+    });*/
+
+
+
+
+
+
+
+
+    $('#mapButton').click(function() {
+        var searchTerm = $('#search_term').val();
+        sessionStorage.setItem('searchTerm', searchTerm);
+    });
+
+
+
+
+
+    // search by street
+    //      display street options
+    //      select street
+    //          map zooms in to the street
+    //          show the optional street numbers
+</script>
+{% endblock %}
