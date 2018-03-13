@@ -21,26 +21,27 @@
                     <legend class="visually-hidden">
                         Confirm the law
                     </legend>
+                    <p>Can't find the correct law? <a href="select-stat-prov">Search for the law</a></p>
                     <div class="form-group">
                         <label id="compulsoryPurchaseLabel1" class="block-label selection-button-radio" for="compulsoryPurchase1">
-                  <input id="compulsoryPurchase1" name="compulsoryPurchase" type="radio" value="Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6">
-                  Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6
+                  <input id="compulsoryPurchase1" name="compulsoryPurchase" type="radio" value="Acquisition of Land Act 1981, section 15(6) and Scheme 1 Paragraph 6">
+                  Acquisition of Land Act 1981, section 15(6) and Scheme 1 Paragraph 6
                   </label>
                         <label id="compulsoryPurchaseLabel2" class="block-label selection-button-radio" for="compulsoryPurchase2">
-                  <input id="compulsoryPurchase2" name="compulsoryPurchase" type="radio" value="Planning Act 2008 s.134(6A)">
-                  Planning Act 2008 s.134(6A)
+                  <input id="compulsoryPurchase2" name="compulsoryPurchase" type="radio" value="Planning Act 2008 section 134(6A)">
+                  Planning Act 2008 section 134(6A)
                   </label>
                         <label id="compulsoryPurchaseLabel3" class="block-label selection-button-radio" for="compulsoryPurchase3">
-                  <input id="compulsoryPurchase3" name="compulsoryPurchase" type="radio" value="New Towns Act 1981, s.12">
-                  New Towns Act 1981, s.12
+                  <input id="compulsoryPurchase3" name="compulsoryPurchase" type="radio" value="New Towns Act 1981, section 12">
+                  New Towns Act 1981, section 12
                   </label>
                         <label id="compulsoryPurchaseLabel4" class="block-label selection-button-radio" for="compulsoryPurchase4">
                   <input id="compulsoryPurchase4" name="compulsoryPurchase" type="radio" value="Forestry Act 1967 Schedule 5 Paragraph 2F">
                   Forestry Act 1967 Schedule 5 Paragraph 2F
                   </label>
                         <label id="compulsoryPurchaseLabel5" class="block-label selection-button-radio" for="compulsoryPurchase5">
-                     <input id="compulsoryPurchase5" name="compulsoryPurchase" type="radio" value="Transport and Works Act 1992 Part 1, s.14A(6)">
-                     Transport and Works Act 1992 Part 1, s.14A(6) 
+                     <input id="compulsoryPurchase5" name="compulsoryPurchase" type="radio" value="Transport and Works Act 1992 Part 1, section 14A(6)">
+                     Transport and Works Act 1992 Part 1, section 14A(6) 
                         </label>
                     </div>
                 </fieldset>
@@ -70,13 +71,13 @@
         if (compulsoryPurchase1.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Acquisition of Land Act 1981, s.15(6) and Scheme 1 Paragraph 6');
         } else if (compulsoryPurchase2.classList.contains('selected')) {
-            sessionStorage.setItem('statProv', 'Planning Act 2008 s.134(6A)');
+            sessionStorage.setItem('statProv', 'Planning Act 2008 section 134(6A)');
         } else if (compulsoryPurchase3.classList.contains('selected')) {
-            sessionStorage.setItem('statProv', 'New Towns Act 1981, s.12');
+            sessionStorage.setItem('statProv', 'New Towns Act 1981, section 12');
         } else if (compulsoryPurchase4.classList.contains('selected')) {
             sessionStorage.setItem('statProv', 'Forestry Act 1967 Schedule 5 Paragraph 2F');
         } else if (compulsoryPurchase5.classList.contains('selected')) {
-            sessionStorage.setItem('statProv', 'Transport and Works Act 1992 Part 1, s.14A(6)')
+            sessionStorage.setItem('statProv', 'Transport and Works Act 1992 Part 1, section 14A(6)')
         } else if (compulsoryPurchase6.classList.contains('selected')) {
             document.getElementById('compulsoryPurchaseButton').setAttribute('href', 'no-stat-prov-stop');
         }
