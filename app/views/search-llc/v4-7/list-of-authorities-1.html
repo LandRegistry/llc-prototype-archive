@@ -35,8 +35,8 @@
                             </div>
                             <p id="selectedAuthority" class="bold-small"></p>
                             <p id="contactText" class="hiddenList">Contact this authority.</p>
-                            <p class="hiddenList">By starting a search you agree to our <a href="#">terms of use</a>.</p>
-                            <p><a href="search" class="button hiddenList" id="continueButton">Continue</a></p>
+                            <p id="acceptLink" class="hiddenList">By starting a search you agree to our <a href="#">terms of use</a>.</p>
+                            <p><a href="search" class="button hiddenList" id="continueButton">Accept and continue</a></p>
 
 
                         </div>
@@ -426,6 +426,7 @@
             if (authoritySelected === 'City of London Corporation' || authoritySelected === 'Exeter City Council') {
                 $('#selectedAuthority').text(authoritySelected + ' is on the register.');
                 $('#continueButton').removeClass('hiddenList');
+                $('#acceptLink').removeClass('hiddenList');
                 $('#contactText').addClass('hiddenList');
             } else {
                 $('#selectedAuthority').text(authoritySelected + ' is not on the register yet.');
