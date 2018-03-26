@@ -9,12 +9,11 @@
         </p>
     </div>
 
-    <!--<div class="grid-row">
+    <div class="grid-row">
         <div class="column-two-thirds">
-            <h1 class="heading-large" style="margin-top:20px">Is this the address for your search?</h1>
+            <h1 class="heading-large" style="margin-top:20px">Is there a single address for your search area?</h1>
             <form action="search-results" method="POST">
                 <p class="form-hint">This is for your search result, to show where you have searched for charges.</p>
-                <p>1 Clinton Street, Exeter EX4 1AX</p>
                 <div class="notice">
                         <i class="icon icon-important">
                           <span class="visually-hidden">Warning</span>
@@ -28,7 +27,7 @@
 
                 <div class="form-group" id="search-field">
                     <fieldset>
-                        <legend class="visually-hidden">Is this the address for your search?
+                        <legend class="visually-hidden">Is there a single address for your search area?
 
                         </legend>
                         <div class="form-group">
@@ -65,7 +64,7 @@
                                     </div>
                                     <div id="manualAddressEntry" class="hiddenList">
                                         <p><span id="selectedAddress"></span>, Exeter EX4 1AY</p>
-                                        <p>Not the right location? <a href="confirm-address-2">Search again</a></p>
+                                        <p>Not the right location? <a href="confirm-address">Search again</a></p>
                                     </div>
 
                                 </div>
@@ -88,9 +87,17 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <!--<div class="notice">
+                                <i class="icon icon-important">
+                                  <span class="visually-hidden">Warning</span>
+                                </i>
+                                <strong class="bold-small">
+                                  You can't change this after you've paid.<br><span>Check that this is where you want to search for charges</span>
+                                </strong>
+                                
+                              </div>
+                              <br> -->
                         <input class="button" type="submit" value="Pay now">
-                        
                     </fieldset>
 
                 </div>
@@ -98,36 +105,7 @@
             </form>
 
         </div>
-    </div> -->
-    <div class="grid-row">
-            <div class="column-two-thirds">
-                <h1 class="heading-large">Confirm the address</h1>
-                <p>This is the address you're searching against<br>
-                    <span class="bold-small">1 Clinton Street, Exeter EX4 1AX</span></p>
-                
-                
-                    <div class="notice">
-                            <i class="icon icon-important">
-                              <span class="visually-hidden">Warning</span>
-                            </i>
-                            <strong class="bold-small">
-                              You can't change this after you've paid.<br><span>Check that this is where you want to search for charges</span>
-                            </strong>
-                            
-                          </div>
-                          <br>
-                
-                   
-                    <span><a href="confirm-address-3">Choose a different address</a></span>
-                </p>
-                <form action="search-results" method="POST">
-                <input class="button" type="submit" value="Pay now">
-            </form>
-    
-            </div>
-    
-                
-        </div>
+    </div>
 
 
 
