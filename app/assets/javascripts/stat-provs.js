@@ -98,7 +98,7 @@ $('.list a').on('click', function() {
             // sessionStorage.setItem('instrument', 'Notice');
             $(this).attr('href', 'confirm-stat-prov-1-2-many-non-mand');
             break;
-        case 'Improve a highway':
+        case 'Highways':
             sessionStorage.setItem('chargeCategory', 'Other');
             sessionStorage.setItem('chargeSubcategory', subCategory);
             // sessionStorage.setItem('statProv', '');
@@ -195,6 +195,20 @@ $('.list a').on('click', function() {
             // sessionStorage.setItem('statProv', '');
             // sessionStorage.setItem('instrument', '');
             $(this).attr('href', 'land-compensation');
+            break;
+        case 'Licences':
+            sessionStorage.setItem('chargeCategory', 'Other');
+            sessionStorage.setItem('chargeSubcategory', subCategory);
+            // sessionStorage.setItem('statProv', '');
+            // sessionStorage.setItem('instrument', '');
+            $(this).attr('href', 'confirm-stat-prov-1-2-non-express');
+            break;
+        case 'Local acts':
+            sessionStorage.setItem('chargeCategory', 'Other');
+            sessionStorage.setItem('chargeSubcategory', subCategory);
+            // sessionStorage.setItem('statProv', '');
+            // sessionStorage.setItem('instrument', '');
+            $(this).attr('href', 'confirm-stat-prov-1-2-non-express');
             break;
         default:
             $(this).attr('confirm-stat-prov-1-2-many-non-mand');
