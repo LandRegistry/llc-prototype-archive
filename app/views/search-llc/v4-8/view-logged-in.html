@@ -1,0 +1,89 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">
+                Download your official search result of local land charges
+
+            </h1>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-medium">3 Clinton Street, Exeter EX4 1AX</span>
+            </h2>
+            <img src="{{ asset_path }}images/citizen-service/search-extent-magdalen-street.png" width="50%" height="auto">
+            <p>There are <span class="bold-small">4 local land charges</span> that affect the land you searched.</p>
+            <p>Choose a format to download your official search result. Keep a copy for your records.</p>
+
+
+        </div>
+
+
+        <div class="column-two-thirds">
+            <br>
+            <div class="form-group">
+                <a class="button" href="/public/documents/magdalen-street.pdf">Download PDF</a><br><br>
+                <h2 class="heading-medium">Other formats</h2>
+                <table class="check-your-answers">
+                    <!--<thead>
+                        <tr>
+                            <th><span class="visuallyhidden">Formay</span></th>
+                            <th><span class="visuallyhidden">#</span></th>
+                            <th><span class="visuallyhidden">Download link</span></th>
+                        </tr>
+                    </thead> -->
+
+                    <tbody>
+                        <tr>
+                            <td class="bold-small">JSON</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">CSV</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bold-small">XML</td>
+                            <td></td>
+                            <td class="change-answer">
+                                <a class="edit" href="#">
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><a href="search-by-postcode">Start a new search</a></p>
+            <p><a href="dashboard-new" id="dashboardLink">Go to your your search history</a></p>
+        </div>
+    </div>
+    <script>
+        var locationSearched = sessionStorage.getItem('searchTerm');
+        document.getElementById('address-selected').textContent = locationSearched;
+
+        var registerCheck = sessionStorage.getItem('register');
+        if (registerCheck === 'true') {
+            document.getElementById('dashboardLink').setAttribute('href', 'dashboard-first-time');
+        }
+    </script>
+</main>
+
+{% endblock %}

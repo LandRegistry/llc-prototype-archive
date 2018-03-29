@@ -1,0 +1,100 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <h1 class="heading-xlarge">
+                Search for local land charges
+            </h1>
+            <div class="panel panel-border-wide download-panel" style="margin-top: -2em">
+                <p>Before you start <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+            </div>
+            <p>Use this service to search for restrictions (local land charges) on land or property.</p>
+            <div class="panel panel-border-wide">
+                <p>A personal search of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR).</p>
+            </div>
+            <p>By starting a search you agree to our <a href="#">terms of use</a>.</p>
+            <p><a class="button button-start" href="search" role="button" id="start" style="background-image:url(/public/images/icon-pointer.png); background-position: 220px 50%">Accept and start</a></p>
+            <h2 class="heading-large">Your search result: what you'll see</h2>
+            <table class="search-fees">
+                <thead>
+                    <tr>
+                        <td>What you get</td>
+                        <td>Official search (&pound;15)</td>
+                        <td>Personal search (free)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Description of charge</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Registration date</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Contact details<br>
+                        (authority responsible for charges)</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Download and save<br>
+                        (in PDF, JSON, CSV, XML)</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Create an account and you will get:
+                            <ul class="list list-bullet">
+                                <li>unlimited downloads<br>(for 6 months)</li>
+                                <li>unlimited repeats of official searches<br>(for 6 months)<br>Check for new charges, before you exchange contracts or re-mortgage</li>
+                                <li>free search history</li>
+                            </ul>
+                        </td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Official search certificates are:
+                            <ul class="list list-bullet">
+                                <li>secure (tamper proof)</li>
+                                <li>digitally signed and assured by HM Land Registry</li>
+                            </ul>
+                        </td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Find out where to get source documents</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Boundary (on a map)</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

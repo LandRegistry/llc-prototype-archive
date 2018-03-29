@@ -1,0 +1,114 @@
+{% extends "layout.html" %} {% block page_title %} Confirm legal document {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px;">Confirm legal document (optional)</h1>
+            <form action="08_creation_date" method="GET">
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="visuallyhidden">What created the charge?</legend>
+                            <div>
+                                <label id="instrument1" class="block-label selection-button-radio" for="reason-1">
+                                    <input id="reason-1" name="reason-types" type="radio" value="agreement">
+                                    Agreement
+                                </label>
+                                <label id="instrument2" class="block-label selection-button-radio" for="reason-2">
+                                    <input id="reason-2" name="reason-types" type="radio" value="certificate">
+                                    Certificate
+                                </label>
+                                <label id="instrument3" class="block-label selection-button-radio" for="reason-3">
+                                    <input id="reason-3" name="reason-types" type="radio" value="covenants">
+                                    Covenants
+                                </label>
+                                <label id="instrument4" class="block-label selection-button-radio" for="reason-4">
+                                    <input id="reason-4" name="reason-types" type="radio" value="deed">
+                                    Deed
+                                </label>
+                                <label id="instrument5" class="block-label selection-button-radio" for="reason-5">
+                                    <input id="reason-5" name="reason-types" type="radio" value="deed-of-modification">
+                                    Deed of modification
+                                </label>
+                                <label id="instrument6" class="block-label selection-button-radio" for="reason-6">
+                                    <input id="reason-6" name="reason-types" type="radio" value="notice">
+                                    Notice
+                                </label>
+                                <label id="instrument7" class="block-label selection-button-radio" for="reason-7">
+                                    <input id="reason-7" name="reason-types" type="radio" value="order">
+                                    Order
+                                </label>
+                                <label id="instrument8" class="block-label selection-button-radio" for="reason-8">
+                                    <input id="reason-8" name="reason-types" type="radio" value="resolution">
+                                    Resolution
+                                </label>
+                                <label id="instrument8" class="block-label selection-button-radio" for="reason-9">
+                                    <input id="reason-9" name="reason-types" type="radio" value="scheme">
+                                    Scheme
+                                </label>
+                                <label id="instrument10" class="block-label selection-button-radio" for="reason-10">
+                                    <input id="reason-10" name="reason-types" type="radio" value="transfer">
+                                    Transfer
+                                </label>
+                                <label id="instrument11" class="block-label selection-button-radio" for="reason-11">
+                                    <input id="reason-11" name="reason-types" type="radio" value="undertaking">
+                                    Undertaking
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <p><a id="instrumentButton" class="button" href="date-document-created" role="button">Continue</a></p>
+                </form>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var agreementLabel = document.getElementById('instrument1');
+    var certificateLabel = document.getElementById('instrument2');
+    var covenantsLabel = document.getElementById('instrument3');
+    var deedLabel = document.getElementById('instrument4');
+    var deedOfModificationLabel = document.getElementById('instrument5');
+    var noticeLabel = document.getElementById('instrument6');
+    var orderLabel = document.getElementById('instrument7');
+    var resolutionLabel = document.getElementById('instrument8');
+    var schemeLabel = document.getElementById('instrument9');
+    var transferLabel = document.getElementById('instrument10');
+    var undertakingLabel = document.getElementById('instrument11');
+    document.getElementById('instrumentButton').onclick = function() {
+        if (agreementLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Agreement');
+        } else if (certificateLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Certificate');
+        } else if (covenantsLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Covenants');
+        } else if (deedLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Deed');
+        } else if (deedOfModificationLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Deed of modification');
+        } else if (noticeLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Notice');
+        } else if (orderLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Order');
+        } else if (resolutionLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Resolution');
+        } else if (schemeLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Scheme');
+        } else if (transferLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Transfer');
+        } else if (undertakingLabel.classList.contains('selected')) {
+            sessionStorage.setItem('instrument', 'Undertaking');
+        } 
+    }
+</script>
+
+{% endblock %}
