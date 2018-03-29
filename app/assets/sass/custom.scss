@@ -474,3 +474,13 @@
         display: block !important;
     }
 }
+
+/* Alphabet list */
+.alphabet-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alphabet-list li {
+    color: #6F777B;
+}
