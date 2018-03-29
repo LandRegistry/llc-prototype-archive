@@ -8,12 +8,12 @@
             <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
         </p>
     </div>
-    <a href="type-of-charge" class="link-back" style="margin-bottom:0">Back</a>
+    <a href="subcategory-page-alpha" class="link-back" style="margin-bottom:0">Back</a>
     <div class="grid-row">
         <div class="column-two-thirds">
             <h1 class="heading-large">Confirm the law and legal document</h1>
-            <p>We found 1 law and 1 instrument for your charge, based on your choice of:<br>
-                <span class="bold-small" id="charge-category-selected"></span> and <span class="bold-small" id="charge-subcategory-selected"></span>.</p>
+            <p>We found 1 law and 1 legal document for your charge, based on your choice of:<br>
+                <span class="bold-small" id="charge-subcategory-selected"></span>.</p>
             
             
             
@@ -30,7 +30,7 @@
 
             <p><a href="date-document-created" class="button">Continue</a></p>
             
-            <p><a href="type-of-charge">Choose a different charge category</a></p>
+            <p><a href="subcategory-page-alpha">Choose a different charge</a></p>
         </div>
 
             
@@ -41,8 +41,7 @@
     var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
     var statProvAssigned = sessionStorage.getItem('statProv');
     var instrumentAssigned = sessionStorage.getItem('instrument');
-    document.getElementById('charge-category-selected').textContent = chargeCategorySelected
-    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected
+    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
     document.getElementById('stat-prov').textContent = statProvAssigned;
     document.getElementById('instrument').textContent = instrumentAssigned;
 </script>
