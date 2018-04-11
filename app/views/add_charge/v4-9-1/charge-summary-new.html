@@ -350,8 +350,17 @@
     // console.log(chargeDescriptionReturned);
     
     // populate relevant fields
-    document.getElementById('chargeCategory').textContent = chargeCategoryReturned;
-    document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
+    if (chargeCategoryReturned === 'Not provided') {
+        document.getElementById('chargeCategory').textContent = 'Other';
+    } else {
+        document.getElementById('chargeCategory').textContent = chargeCategoryReturned;
+    }
+    if (chargeSubcategoryReturned === 'Not provided') {
+        document.getElementById('chargeSubcategory').textContent = 'Other';
+    } else {
+        document.getElementById('chargeSubcategory').textContent = chargeSubcategoryReturned;
+    }
+    
     document.getElementById('creationDate').textContent = startDayReturned + ' ' + startMonthReturned + ' ' + startYearReturned;
     if (locationDescriptionExists === 'true') {
         document.getElementById('locationDescriptionRow').classList.remove('hiddenList');

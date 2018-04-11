@@ -210,6 +210,13 @@ $('.list a').on('click', function() {
             // sessionStorage.setItem('instrument', '');
             $(this).attr('href', 'confirm-stat-prov-1-2-non-express');
             break;
+        case 'Right to buy':
+            sessionStorage.setItem('chargeCategory', 'Housing');
+            sessionStorage.setItem('chargeSubcategory', subCategory);
+            sessionStorage.setItem('statProv', 'Housing Act 1985 section 156A');
+            // sessionStorage.setItem('instrument', '');
+            $(this).attr('href', 'confirm-stat-prov-right-to-buy');
+            break;
         default:
             $(this).attr('confirm-stat-prov-1-2-many-non-mand');
     };
