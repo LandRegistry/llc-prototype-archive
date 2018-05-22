@@ -484,3 +484,274 @@
 .alphabet-list li {
     color: #6F777B;
 }
+
+/* mobile test stuff */
+
+/* general 'non-tablet' rules */
+@media all and (max-width: 420px) {
+    /* hiding the tab headers and page headers accessibly; might need to add a class to this header */
+    /* it might be best to add a new class to the `download-panel` so we can target it specifically here and not interfere with the styles on the download page */
+    .test-table h1,
+    .test-table .download-panel,
+    .test-table thead
+    .test-table table.SEARCHES_OLDER_THAN_6_MONTHS_CLASS tr td:nth-of-type(3) {
+        position: absolute;
+        top: -9999px
+    }
+
+    .test-table .search-history-table-header {
+        /* to get rid of the space between table header border and the second tab */
+        padding-bottom: 0;
+    }
+
+    .test-table .search-history-table-header .tab {
+        /* to make the tab headers span the whole width */
+        display: block;
+        /* custom styles for the collapsed versions */
+        border: none;
+        font-size: 16px;
+        padding: 0.5em;
+        /* so user knows it's not a clickable element, for active tab */
+        cursor: pointer;
+        /* some custom rules for the inactive tab */
+        border-bottom: 1px solid #BFC1C3;
+        color: #005ea5;
+        text-decoration: underline;
+        background-color: #DEE0E2;
+    }
+    .test-table .search-history-table-header .active-tab {
+        cursor: inherit;
+        background-color: white;
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+    /* so that they don't act like tables */
+    .test-table table,
+    .test-table thead,
+    .test-table tbody,
+    .test-table th,
+    .test-table tr,
+    .test-table td {
+        display: block;
+    }
+
+    /* to remove the border from the <td>'s */
+    .test-table td {
+        border-bottom: none;
+    }
+
+    /* to make the pseudoc-column headers and search reference number bold bold */
+    .test-table tr td:before,
+    .test-table tr td:nth-of-type(1) {
+        font-weight: bold;
+    }
+
+    /* making the repeat link look like a button */
+    .test-table input.link {
+        width: 100%;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid #00823B;
+        background-color: white;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0.5em;
+    }
+
+    /* moving all of the 'view' links for the original searches to the row above */
+    .test-table tr td a[id*="search-result"] {
+        position: relative;
+        bottom: 3.6em;
+    }
+
+    /* hiding the 'view' link for the latest repeat, because this will be available when accordion is expanded anyway */
+    .test-table tr td a[id*="repeat-search"] {
+        display: none;
+    }
+
+    /* adding a border after every charge */
+    .test-table tr {
+        border-bottom: 3px solid #BFC1C3;
+    }
+
+    .test-table tr td:nth-of-type(2) {
+        height: 1.2em;
+    }
+
+    .test-table tr td:nth-of-type(2):before {
+        content: 'Date of search';
+    }
+
+    .test-table tr td:nth-of-type(3):before {
+        content: 'Date of last-repeat';
+    }
+
+    .test-table tr td:nth-of-type(5):before {
+        content: 'Number of repeats';
+    }
+
+    .test-table tr td:nth-of-type(5) {
+        float: left;
+    }
+
+    .test-table .ACCORDION_EXPANDED_TD_CLASS,
+    .test-table tr td:nth-of-type(5).EXPANDED_CLASS,
+    .test-table tr td:nth-of-type(6).EXPANDED_CLASS {
+        background-color: #F8F8F8;
+    }
+
+    .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(1) {
+        font-weight: bold;
+        float: left;
+    }
+
+    /* putting the view link in another row, very hacky */
+    .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(3) {
+        clear: all;
+    }
+}
+
+/* smaller phones */
+@media all and (max-width: 320px) {
+
+    /* hacky way to maintain the row heights the same because we are moving the 'vew' link to the top row */
+    /* aligning the cell content to the right means no need to calculate the position */
+    .test-table tr td:nth-of-type(2) {
+        text-align: right;
+    }
+
+    /* adding a pseudo-element for the column name and a hacky padding to maintain layout */
+    .test-table tr td:nth-of-type(2):before {
+        padding-right: 4.9em;
+    }
+
+    /* same as above */
+    .test-table tr td:nth-of-type(3):before {
+        padding-right: 3em;
+    }
+
+    /* hacky way to put the last two rows next to each other */
+    .test-table tr td:nth-of-type(5) {
+        float: left;
+        padding-right: 4.5em;
+    }
+
+    /* again, adding a pseudo-class for column header */
+    .test-table tr td:nth-of-type(5):before {
+        padding-right: 3em;
+    }
+
+    .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(1) {
+        padding-right: 3em; /* adjust accordingly */
+    }
+
+}
+
+/* mid-size phones */
+@media all and (min-width: 321px) and (max-width: 375px) {
+     /* hacky way to maintain the row heights the same because we are moving the 'vew' link to the top row */
+    /* aligning the cell content to the right means no need to calculate the position */
+    
+    /* adding a pseudo-element for the column name and a hacky padding to maintain layout */
+    .test-table tr td:nth-of-type(2):before {
+        padding-right: 8em;
+    }
+
+    /* same as above */
+    .test-table tr td:nth-of-type(3):before {
+        padding-right: 6.1em;
+    }
+
+    /* hacky way to put the last two rows next to each other */
+    .test-table tr td:nth-of-type(5) {
+        float: left;
+        padding-right: 7em;
+    }
+
+    /* again, adding a pseudo-class for column header */
+    .test-table tr td:nth-of-type(5):before {
+        padding-right: 3em;
+    }
+
+    .test-table tr td a[id*="search-result"] {
+        left: 18em;
+    }
+
+    .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(1) {
+        padding-right: 3em; /* adjust accordingly */
+    }
+}
+
+/* larger phones */
+@media all and (min-width: 376px) and (max-width: 420px) {
+    /* hacky way to maintain the row heights the same because we are moving the 'vew' link to the top row */
+    /* aligning the cell content to the right means no need to calculate the position */
+    .test-table tr td:nth-of-type(2),
+    .test-table tr td:nth-of-type(3) {
+        text-align: right;
+    }
+
+    /* adding a pseudo-element for the column name and a hacky padding to maintain layout */
+    .test-table tr td:nth-of-type(2):before {
+        padding-right: 10.7em;
+    }
+
+    /* same as above */
+    .test-table tr td:nth-of-type(3):before {
+        padding-right: 8.7em;
+    }
+
+    /* hacky way to put the last two rows next to each other */
+    .test-table tr td:nth-of-type(5) {
+        float: left;
+        padding-right: 9.7em;
+    }
+
+    /* again, adding a pseudo-class for column header */
+    .test-table tr td:nth-of-type(5):before {
+        padding-right: 3em;
+    }
+
+    .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(1) {
+        padding-right: 3em; /* adjust accordingly */
+    }
+}
+
+/* for searches older than 6 months, repeat the open accorion view of ID + Date + Restore & pay */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* adding a subtle background-color to the expanded row and the expand / collapse row for the charge details */
+
+
+/* to get the search IDs of the repeated searches in bold */    
+.test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(1) {
+    font-weight: bold;
+    float: left;
+    /* ADJUST ACCORDING TO SPACE */
+    padding-right: 3em;
+}
+
+/* putting the view link in another row, very hacky */
+.test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(3) {
+    clear: all;
+}
