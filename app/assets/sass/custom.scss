@@ -755,3 +755,11 @@
 .test-table tr.ACCORDION_TABLE_ROW td:nth-of-type(3) {
     clear: all;
 }
+
+#os__terms__list li {
+    list-style-type: upper-roman;
+}
+
+.os__terms__list__secondary li {
+    list-style-type: lower-latin !important;
+}
