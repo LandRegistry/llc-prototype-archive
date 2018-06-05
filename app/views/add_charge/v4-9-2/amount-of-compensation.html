@@ -1,0 +1,90 @@
+{% extends "layout.html" %} {% block page_title %} Advance payment {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="../land-compensation" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">
+        Advance payment
+    </h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <form action="../what-does-charge-do" method="GET">
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">What is the amount of advance payment?</h2>
+                    </legend>
+                    <span class="form-hint">For example, 100000</span>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="compensation-amount">
+                          
+
+                        </label>
+                        <span class="bold-small">£ </span>
+                        <input class="form-control form-control-1-4" type="text" name="amount" id="compensation-amount">
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Is this the:</h2>
+                    </legend>
+
+                    <div class="form-group">
+
+                        <label id="totalAmountLabel" class="block-label selection-button-radio" for="total-amount">
+                          <input id="total-amount" name="extent" type="radio" value="no"> agreed amount
+                        </label>
+
+                        <label id="estimatedAmountLabel" class="block-label selection-button-radio" for="estimated">
+                          <input id="estimated" name="extent" type="radio" value="no"> estimated amount
+                        </label>
+
+                        <!-- <label id="advance-label" class="block-label selection-button-radio" for="advance">
+                        <input id="advance" name="extent" type="radio" value="no"> Advance payment (part of the total)
+                        </label> -->
+
+                    </div>
+                </fieldset>
+            </form>
+            <p>
+                <a class="button" id="amountLandCompensationBtn" role="button" href="land-ownership">Continue</a>
+            </p>
+
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('amountLandCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
+    document.getElementById('amountLandCompensationBtn').onclick = function() {
+        sessionStorage.setItem('landCompAmountGiven', 'true');
+        var landCompAmount = document.getElementById('compensation-amount').value;
+        sessionStorage.setItem('landCompAmount', landCompAmount);
+        var totalAmountLabel = document.getElementById('totalAmountLabel');
+        var estimatedAmountLabel = document.getElementById('estimatedAmountLabel');
+        if (totalAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Agreed amount');
+        } else if (estimatedAmountLabel.classList.contains('selected')) {
+            sessionStorage.setItem('amountType', 'Estimated amount');
+        }
+        var otherLandCompInfo = document.getElementById('anything').value;
+        sessionStorage.setItem('otherLandCompInfo', otherLandCompInfo);
+    }
+</script>
+
+{% endblock %}

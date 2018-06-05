@@ -1,0 +1,73 @@
+{% extends "layout.html" %} {% block page_title %} WWhat do you want to do? {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">What do you want to do?</h1>
+
+            <h2 class="heading-medium">Manage charges</h2>
+            <ul class="list">
+                <li><a href="subcategory-page-alpha">Add a charge </a></li>
+                <li><a href="add-charge-on-behalf-of">Add a charge on behalf of another organisation</a></li>
+                <li><a href="#">Find, update or cancel a charge</a></li>
+            </ul>
+            <br>
+            <div class="notice">
+                <i class="icon icon-information">
+                  <span class="visually-hidden">Important</span>
+                </i>
+                <strong class="bold-small"> You need a code to manage users or source information.
+                </strong>
+              </div>
+
+            <details style="margin-top:0.5em">
+
+                <summary><span class="summary">Why do I need a code?</span></summary>
+              
+                <div class="panel panel-border-narrow">
+              
+                  <p>
+                    We add an extra layer of security here, because these include sensitive information.
+                  </p>
+              
+                </div>
+              
+              </details>
+
+            <h2 class="heading-medium" style="margin-top:1em">Manage users</h2>
+            <ul class="list">
+                <li><a href="check-your-email" id="addUserButton">Add a new user </a></li>
+                <li><a href="check-your-email" id="updateUserButton">Update an existing user</a></li>
+            </ul>
+
+            <h2 class="heading-medium">Source information</h2>
+            <ul class="list">
+                <li><a href="check-your-email" id="sourceInfoButton">Manage source information</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</main>
+<script>
+    document.getElementById('addUserButton').onclick = function() {
+        sessionStorage.setItem('accountManagementType', 'Add a new user');
+    }
+    document.getElementById('updateUserButton').onclick = function() {
+        sessionStorage.setItem('accountManagementType', 'Update an existing user');
+    }
+    document.getElementById('sourceInfoButton').onclick = function() {
+        sessionStorage.setItem('accountManagementType', 'Manage source information');
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block page_title %} Check your email {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Check your email</h1>
+            <p>We've emailed a security code to the email address you registered with.</p>
+            <form action="#">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="form-label" for="emailCode">Email code
+                        </label>
+                        <input class="form-control" id="emailCode" type="text" name="emailCode" style="width:100px">
+                        
+                    </div>
+                    
+                </fieldset>
+                
+            </form>
+            <p><a href="" class="button" id="continueButton">Continue</a></p>
+            
+            <p><a href="resend-the-code">Not received an email?</a></p>
+
+
+        </div>
+
+    </div>
+
+</main>
+<script>
+        var button = document.getElementById('continueButton');
+        button.onclick = function() {
+            var emailCode = document.getElementById('emailCode');
+            if (emailCode.value === '') {
+                button.setAttribute('href', 'code-error-empty');
+            } else if (isNaN(emailCode.value)) {
+                button.setAttribute('href', 'code-error-numbers-only');
+            } else if (emailCode.value !== '36789') {
+                button.setAttribute('href', 'code-error-not-found');
+            } else {
+                button.setAttribute('href', 'account-management');
+            }
+        }
+    </script>
+{% endblock %}
+emailCode.value === '' || emailCode.value !== '36789'
