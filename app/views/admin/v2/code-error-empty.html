@@ -39,6 +39,14 @@
 </main>
 <script>
         var button = document.getElementById('continueButton');
+        var accountManagementType = sessionStorage.getItem('accountManagementType');
+        if (accountManagementType === 'Add a new user') {
+            var linkToChange = 'https://preview.maintain-llc.landregistry.gov.uk/manage-users/add/add-user';
+        } else if (accountManagementType === 'Update an existing user') {
+            var linkToChange = 'https://preview.maintain-llc.landregistry.gov.uk/manage-users/find/all-users';
+        } else if (accountManagementType === 'Manage source information') {
+            var linkToChange = 'https://preview.maintain-llc.landregistry.gov.uk/source-information';
+        }
         button.onclick = function() {
             var emailCode = document.getElementById('emailCode');
             if (emailCode.value === '') {
@@ -48,7 +56,7 @@
             } else if (emailCode.value !== '36789') {
                 button.setAttribute('href', 'code-error-not-found');
             } else {
-                button.setAttribute('href', 'account-management');
+                button.setAttribute('href', linkToChange);
             }
         }
     </script>
