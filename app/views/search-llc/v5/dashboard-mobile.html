@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" class="test-table" role="main">
+    <p class="bold-medium">Welcome Jane Doe</p>
+    <input class="button" value="Start now" type="submit">
+        <div id="history-table-with-js" class="">
+                <h2 class="heading-medium search-history-table-header">
+                    <span id="active-search-tab" onkeypress="searchHistory.toggleTabWithKey(event, this)" onclick="searchHistory.toggleActiveTab(this)" class="tab active-tab" tabindex="0">Active searches</span>
+                    <span id="inactive-search-tab" onkeypress="searchHistory.toggleTabWithKey(event, this)" onclick="searchHistory.toggleActiveTab(this)" class="tab" tabindex="0">Searches older than 6 months</span>
+                </h2>
+                <div id="active-search-table-content">
+                    
+    <table class="search-history-table">
+        <thead>
+        <tr>
+            <td class="bold-small">Reference</td>
+            <td class="bold-small">Date of search</td>
+            <td class="bold-small">Date of last repeat</td>
+            <td></td>
+            <td class="bold-small">Number of repeats</td>
+            
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr id="search-history-433" onclick="searchHistory.toggleRepeatAccordion(433)" class="search-history-table-row">
+                <td aria-label="433">000 000 433</td>
+                <td>
+                    10 May 2018<br>
+                    <a id="view-search-result-433" tabindex="0" aria-label="View search result from 10 May 2018 12 15 PM" onclick="searchHistory.preventAccordionExpanding(event)" href="https://search-llc.landregistry.gov.uk/search-history/433">View</a>
+                </td>
+                <td>
+                    
+                        <span>10 May 2018</span><br>
+                        <a id="view-repeat-search-434" tabindex="0" aria-label="View search result from 10 May 2018 12 15 PM" onclick="searchHistory.preventAccordionExpanding(event)" href="https://search-llc.landregistry.gov.uk/search-history/434">View</a>
+                    
+                </td>
+                <td>
+                        <form name="repeat-search-433" id="repeat-search-433" method="post" aria-label="Repeat search with id 433" action="https://search-llc.landregistry.gov.uk/search-history/repeat">
+        <input class="link" type="submit" tabindex="0" value="Repeat" onclick="searchHistory.preventAccordionExpanding(event)">
+        <input type="hidden" name="search_id" value="433">
+        <input type="hidden" name="csrf_token" value="Ijg0NTY3ZjViYjc2NGE5NmY2MGVmNWExNDE3ZDM5MTQ0M2UxOTg4Nzci.DdcG8Q.vSK-7sPb1LHyH93w85S1lH8XqMo">
+    </form>
+                    </td>
+                <td>
+                    
+                        <span>1</span>
+                    
+                </td>
+                
+                
+                <td>
+                    
+                        
+                        <span>+</span>
+                        <span id="expand-icon-433" class="icon" tabindex="0" onkeypress="searchHistory.toggleRepeatAccordionWithKey(event, 433)"></span>
+                    
+                </td>
+            </tr>
+            
+                
+    
+            
+        
+        </tbody>
+    </table>
+                </div>
+                <div id="inactive-search-table-content" class="visually-hidden">
+                    
+    <span>You have no expired searches.</span>
+                </div>
+                <script src="/static/search-history/js/search-history-table.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        searchHistory.init();
+                    });
+                </script>
+            </div>
+</main>
+
+{% endblock %}

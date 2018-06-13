@@ -1,0 +1,41 @@
+{% extends "layout_citizen.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-large">
+                Check your order before you pay
+
+            </h1>
+            <h2 class="heading-medium">
+                <span id="address-selected" class="heading-medium"></span>
+            </h2>
+            <p>There are <span class="bold-small">2 charges</span> that affect the land of this property.</p>
+            <img src="{{ asset_path }}images/citizen-service/paid.png" width="50%" height="auto">
+            <p>This preview shows the place you have asked us to search for charges.</p>
+            <p>Check that this is the correct land or property and then continue to payment.</p>
+            <form action="pay-now" method="POST">
+                <div class="form-group">
+                    <input class="button" type="submit" value="Pay now">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</main>
+<script>
+    var searchedTermRetrieved = sessionStorage.getItem("searchTerm");
+    console.log(searchedTermRetrieved);
+    document.getElementById('address-selected').textContent = searchedTermRetrieved;
+</script>
+
+{% endblock %}

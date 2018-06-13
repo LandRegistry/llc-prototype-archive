@@ -1,0 +1,89 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a local land charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <h1 class="heading-xlarge">
+                Search for local land charges
+            </h1>
+            <div class="panel panel-border-wide download-panel" style="margin-top: -2em">
+                <p>Before you start <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+            </div>
+            <p>Use this service to search for restrictions (local land charges) on land or property.</p>
+            <div class="panel panel-border-wide">
+                <p>A personal search of the Local Land Charges Register is free under the Environmental Information Regulations 2004 (EIR).</p>
+            </div>
+            <p>By starting a search you agree to our <a href="#">terms of use</a>.</p>
+            <p><a class="button button-start" href="search" role="button" id="start" style="background-image:url(/public/images/icon-pointer.png); background-position: 100px 50%">Start</a></p>
+
+            <ul class="startTab">
+                <li class="tabHeader freeHeader activeTabHeader font-xsmall">Free search</li>
+                <li class="tabHeader paidHeader font-xsmall">Paid search</li>
+            </ul>
+            <div class="activeContent freeContent tab">
+                <p>It is free to search for local land charges online. You can do this yourself and it takes about 5 minutes.</p>
+                <h3 class="heading-small">You can search by:</h3>
+                <ul class="list list-bullet">
+                    <li>postcode</li>
+                    <li>street name</li>
+                    <li>address</li>
+                    <li>using the map to find a place</li>
+                </ul>
+                <h3 class="heading-small">What you'll see on a free search result</h3>
+                <p>You'll get a list of local land charges we find in your search area.<br><a href="#">See an example of a free search result</a></p>
+            </div>
+            <div class="paidContent tab hiddenList">
+                <h3 class="heading-small">At the end of your free search</h3>
+                <p>You can choose to pay &pound;15 to download your list of local land charges. It takes about 2 minutes to pay.<br><a href="#">See an example of a &pound;15 search result</a></p>
+                <h3 class="heading-small">What you'll get with a &pound;15 search result</h3>
+                <p>When you pay, you will get a secure (tamper proof) document digitally signed by HM Land Registry. This includes:</p>
+                <ul class="list list-bullet">
+                    <li>charge outlines on a map (spatial extent)</li>
+                    <li>links to source document, where aavailable</li>
+                    <li>free repeat search of the same area (must be done within 6 months)</li>
+                </ul>
+                <h3 class="heading-small">What's a repeat search?</h3>
+                <p>For 6 months after you've paid, you can search the same area again, for free. To do this:</p>
+                <ul class="list list-buller">
+                    <li>contact HM Land Registry (we will do this for you)</li>
+                    <li>open a free account and repeat the search yourself</li>
+                </ul>
+                <h3 class="heading-small">Open a free account if you want to save your paid search result online</h3>
+                <p>If you do lots of searches like this one, you can open an account. With an account, you can keep all your lists of charges in one place (your search history) so you won't lose your search results. <a href="#">Sign in</a> or <a href="#">register</a> now.</p>
+            </div>
+
+
+
+        </div>
+    </div>
+</main>
+
+
+
+
+{% endblock %}
+{% block body_end_additional %}
+<script>
+    $('.tabHeader').click(function() {
+        $('.tabHeader').removeClass('activeTabHeader');
+        $(this).addClass('activeTabHeader');
+        if ($(this).hasClass('freeHeader')) {
+            $('.paidContent').addClass('hiddenList');
+            $('.freeContent').removeClass('hiddenList');
+        } else if ($(this).hasClass('paidHeader')) {
+            $('.freeContent').addClass('hiddenList');
+            $('.paidContent').removeClass('hiddenList');
+        }
+    });
+</script>
+{% endblock %}
