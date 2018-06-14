@@ -834,8 +834,7 @@ a[title="Search by reference"]:focus {
     color: #005EA5;
     text-decoration: underline;
     background-color: white;
-    padding: 0.1em 1em;
-    border-bottom: 1px solid #BFC1C3;
+    padding: 1px 1em;
     margin: 0;
     cursor: pointer;
     &.activeTabHeader {
@@ -845,7 +844,7 @@ a[title="Search by reference"]:focus {
         border-top: 1px solid #BFC1C3;
         border-right: 1px solid #BFC1C3;
         border-left: 1px solid #BFC1C3;
-        border-bottom: 1px solid white;
+        border-bottom: 2px solid white;
         cursor: inherit;
     }
     &.clicked {
