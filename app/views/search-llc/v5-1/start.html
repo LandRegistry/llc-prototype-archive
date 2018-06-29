@@ -1,0 +1,125 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a local land charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <h1 class="heading-xlarge">
+                Search for local land charges
+            </h1>
+            <div class="panel panel-border-wide download-panel" style="margin-top: -2em">
+                <p>Before you start <a href="list-of-authorities-1">check that your search area is on this register</a>.</p>
+            </div>
+            <p>Use this service to search for restrictions (local land charges) on land or property.</p>
+            <p>The most straightforward way to access information under the Environmental Information Regulations 2004 is by conducting an online personal search. The information will be provided to view on screen instantly and free of charge.</p>
+            <h2 class="heading-medium">Difference between personal and official searches.</h2>
+            <h3 class="heading-small">Personal</h3>
+            <p>You will be able to view on screen all the details of registration for charges that affect the land you are searching, but will not have access to additional features of the official search.</p>
+            <h3 class="heading-small">Official</h3>
+            <p>You will be able to view all the details of registration for charges that affect the land you are searching on an official certificate that is digitally signed and guaranteed by HM Land Registry. You will also benefit from additional features below.</p>
+            <p>By starting a search you agree to our <a href="#">terms of use</a>.</p>
+            <p><a class="button button-start" href="search" role="button" id="start" style="background-image:url(/public/images/icon-pointer.png); background-position: 100px 50%">Start</a></p>
+
+            <table class="search-fees">
+                <thead>
+                    <tr>
+                        <td>What you get</td>
+                        <td>Official search<br>(&pound;15)</td>
+                        <td>Personal search<br>(free)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="bold-small">Official search certificates are:</span>
+                            <ul class="list list-bullet">
+                                <li>secure (tamper-proof) - ensuring authenticity</li>
+                                <li>digitally signed and guaranteed by HM Land Registry</li>
+                            </ul>
+                        </td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top">-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="bold-small">For 6 months each search will have:</span>
+                            <ul class="list list-bullet">
+                                <li>unlimited downloads of official certificates</li>
+                                <li>unlimited repeat official searches to check for new charges before completing a transaction</li>
+                                <li>
+                                    download in multiple formats (PDF, JSON, CSV, XML)
+                                </li>
+                                <li>search history dashboard (account dependant)</li>
+                                <li>access to active and lapsed searches (account dependant)</li>
+                            </ul>
+                        </td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top">-</td>
+                    </tr>
+                    <tr>
+                        <td>Link to source information that gives more information about the charge</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top">-</td>
+                    </tr>
+                    <tr>
+                        <td>Local land charge boundary on a map</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top">-</td>
+                    </tr>
+                    <tr>
+                        <td>Search area on a map</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Description of the local land charge</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Registration date (this is the date when the charge is added to the register)</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Contact details for the authority that can answer questions about this local land charge (name of the authority that can answer questions about this local land charge)</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                        <td style="text-align:center; vertical-align:top; color:green">&#10004;</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</main>
+
+
+
+
+{% endblock %}
+{% block body_end_additional %}
+<script>
+    $('.tabHeader').click(function() {
+        $('.tabHeader').removeClass('activeTabHeader');
+        $(this).addClass('activeTabHeader');
+        if ($(this).hasClass('freeHeader')) {
+            $('.paidContent').addClass('hiddenList');
+            $('.freeContent').removeClass('hiddenList');
+        } else if ($(this).hasClass('paidHeader')) {
+            $('.freeContent').addClass('hiddenList');
+            $('.paidContent').removeClass('hiddenList');
+        }
+    });
+</script>
+{% endblock %}
