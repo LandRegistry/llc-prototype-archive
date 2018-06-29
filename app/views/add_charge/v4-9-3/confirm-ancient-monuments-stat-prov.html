@@ -1,0 +1,95 @@
+{% extends "layout.html" %} {% block page_title %} Confirm the law {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <a href="subcategory-page-alpha" class="link-back" style="margin-bottom:0">Back</a>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm the law</h1>
+            <p>We found more than 1 law for your charge, based on your choice of:<br>
+                <span class="bold-small" id="charge-subcategory-selected"></span>.</p>
+            <form action="#">
+
+                <fieldset>
+
+                    <legend class="visually-hidden">
+                        Confirm the law
+                    </legend>
+                    <div class="form-group">
+                        <label id="ancientMonumentLabel1" class="block-label selection-button-radio" for="ancientMonument1">
+                  <input id="ancientMonument1" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 1(9)">
+                  Ancient Monuments and Archaeological Areas Act 1979, section 1(9)
+                  </label>
+                        <label id="ancientMonumentLabel2" class="block-label selection-button-radio" for="ancientMonument2">
+                  <input id="ancientMonument2" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 8(6)">
+                  Ancient Monuments and Archaeological Areas Act 1979, section 8(6)
+                  </label>
+                        <label id="ancientMonumentLabel3" class="block-label selection-button-radio" for="ancientMonument3">
+                  <input id="ancientMonument3" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 12(7)">
+                  Ancient Monuments and Archaeological Areas Act 1979, section 12(7)
+                  </label>
+                        <label id="ancientMonumentLabel4" class="block-label selection-button-radio" for="ancientMonument4">
+                  <input id="ancientMonument4" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 16(8)">
+                  Ancient Monuments and Archaeological Areas Act 1979, section 16(8)
+                  </label>
+                        <label id="ancientMonumentLabel5" class="block-label selection-button-radio" for="ancientMonument5">
+                     <input id="ancientMonument5" name="ancientMonument" type="radio" value="Ancient Monuments and Archaeological Areas Act 1979, section 33(5)">
+                     Ancient Monuments and Archaeological Areas Act 1979, section 33(5) 
+                        </label>
+                        <!--<p class="form-block">or</p>
+                        <label id="ancientMonumentLabel6" class="block-label selection-button-radio" for="ancientMonument6">
+                                <input id="ancientMonument6" name="ancientMonument" type="radio" value="I don't know the law for this charge">
+                                I don't know the law for this charge
+                                   </label> -->
+                    </div>
+                </fieldset>
+
+            </form>
+            <p><a href="confirm-ancient-monument-instrument" id="ancientMonumentButton" class="button">Continue</a></p>
+            <p><a href="subcategory-page-alpha">Choose a different charge</a></p>
+                <p>or</p>
+            <p><a href="select-stat-prov">Search for the law</a></p>
+
+        </div>
+
+            
+    </div>
+</main>
+<script>
+    var chargeSubCategorySelected = sessionStorage.getItem('chargeSubcategory');
+    document.getElementById('charge-subcategory-selected').textContent = chargeSubCategorySelected;
+
+    document.getElementById('ancientMonumentButton').onclick = function() {
+        var edited = sessionStorage.getItem('edited');
+        sessionStorage.setItem('statProvEditable', 'true');
+        sessionStorage.setItem('statProvReturnURL', 'confirm-ancient-monuments-stat-prov');
+        var ancientMonument1 = document.getElementById('ancientMonumentLabel1');
+        var ancientMonument2 = document.getElementById('ancientMonumentLabel2');
+        var ancientMonument3 = document.getElementById('ancientMonumentLabel3');
+        var ancientMonument4 = document.getElementById('ancientMonumentLabel4');
+        var ancientMonument5 = document.getElementById('ancientMonumentLabel5');
+        var ancientMonument6 = document.getElementById('ancientMonumentLabel6');
+        if (ancientMonument1.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 1(9)');
+        } else if (ancientMonument2.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 8(6)');
+        } else if (ancientMonument3.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 12(7)');
+        } else if (ancientMonument4.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 16(8)');
+        } else if (ancientMonument5.classList.contains('selected')) {
+            sessionStorage.setItem('statProv', 'Ancient Monuments and Archaeological Areas Act 1979, section 33(5)')
+        }
+        if (edited === 'true') {
+            document.getElementById('ancientMonumentButton').setAttribute('href', 'charge-summary-new');
+        } 
+    }
+</script>
+
+{% endblock %}

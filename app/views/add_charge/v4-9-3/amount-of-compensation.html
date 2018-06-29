@@ -1,0 +1,78 @@
+{% extends "layout.html" %} {% block page_title %} Advance payment {% endblock %} {% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="../land-compensation" class="link-back" style="margin-bottom:0">Back</a>
+    <h1 class="heading-large" style="margin-top:20px">
+        Advance payment
+    </h1>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <form action="../what-does-charge-do" method="GET">
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">What is the amount of advance payment?</h2>
+                    </legend>
+                    <span class="form-hint">For example, 100000</span>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="compensation-amount">
+                          
+
+                        </label>
+                        <span class="bold-small">£ </span>
+                        <input class="form-control form-control-1-4" type="text" name="amount" id="compensation-amount">
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <h2 class="heading-medium">Percentage of agreed or estimated compensation</h2>
+                    </legend>
+                    <span class="form-hint">This is the % of the agreed or estimated compensation. For example, 90</span>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="compensation-amount">
+                            
+
+                        </label>
+                        
+                        <input class="form-control form-control-1-8" type="text" name="percentage" id="percentage-compensation"><span class="bold-small"> %</span>
+
+                    </div>
+
+                </fieldset>
+            </form>
+            <p>
+                <a class="button" id="amountLandCompensationBtn" role="button" href="land-ownership">Continue</a>
+            </p>
+
+
+        </div>
+
+    </div>
+</main>
+
+<script>
+    var editCheck = sessionStorage.getItem('editing');
+    if (editCheck === 'true') {
+        document.getElementById('amountLandCompensationBtn').setAttribute('href', 'charge-summary-new');
+    }
+    document.getElementById('amountLandCompensationBtn').onclick = function() {
+        sessionStorage.setItem('landCompAmountGiven', 'true');
+        var landCompAmount = document.getElementById('compensation-amount').value;
+        sessionStorage.setItem('landCompAmount', landCompAmount);
+        var percentageOfAmount = document.getElementById('percentage').value;
+        sessionStorage.setItem('percentageOfAmount', percentageOfAmount);
+    }
+</script>
+
+{% endblock %}

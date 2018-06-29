@@ -1,0 +1,145 @@
+{% extends "layout.html" %} {% block page_title %} Choose a charge category {% endblock %} {% block content %}
+<main id="content" role="main">
+    <!-- alpha banner -->
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <!-- main content starts -->
+    <a href="start-llc" class="link-back" style="margin-bottom:0">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin-top:20px;">Choose a charge category</h1>
+
+
+            <form action="#">
+
+                <fieldset>
+
+                    <legend class="visually-hidden">
+                        Choose a charge category
+                    </legend>
+                    <div class="form-group">
+                            
+                    <div class="form-group">
+                        <label id="planningLabel" class="block-label selection-button-radio" for="planning">
+                  <input id="planning" name="planningLegislation" type="radio" value="Planning">
+                  Planning
+                  </label>
+                        <label id="financialLabel" class="block-label selection-button-radio" for="financial">
+                  <input id="financial" name="planningLegislation" type="radio" value="Financial">
+                  Financial
+                  </label>
+                        <label id="listedBuildingLabel" class="block-label selection-button-radio" for="listedBuilding">
+                  <input id="listedBuilding" name="planningLegislation" type="radio" value="Listed Building">
+                  Listed building
+                  </label>
+                        <label id="landCompensationLabel" class="block-label selection-button-radio" for="landCompensation">
+                  <input id="landCompensation" name="planningLegislation" type="radio" value="Land Compensation">
+                  Land compensation 
+                  </label>
+                        <label id="housingLabel" class="block-label selection-button-radio" for="housing">
+                     <input id="housing" name="planningLegislation" type="radio" value="Housing">
+                     Housing 
+                     </label>
+                        <label id="otherLabel" class="block-label selection-button-radio" for="other" data-target="part-extent">
+                     <input id="other" name="planningLegislation" type="radio" value="Other" aria-controls="part-extent">
+                     Other
+                     </label>
+                    </div>
+                </fieldset>
+                <p>
+                    <a class="button" id="typeOfChargeButton" role="button" href="#">Continue</a>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+<script>
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var planningCategory = document.getElementById('planningLabel');
+        var financialCategory = document.getElementById('financialLabel');
+        var listedBuildingCategory = document.getElementById('listedBuildingLabel');
+        var landCompensationCategory = document.getElementById('landCompensationLabel');
+        var housingCategory = document.getElementById('housingLabel');
+        var otherCategory = document.getElementById('otherLabel');
+        var categoryButton = this;
+        // planning clicked
+        if (planningCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Planning');
+            categoryButton.setAttribute('href', 'planning-subcategories');
+        } else if (financialCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Financial');
+            categoryButton.setAttribute('href', 'confirm-financial-charge-stat-prov');
+        } else if (listedBuildingCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Listed building');
+            categoryButton.setAttribute('href', 'listed-building');
+        } else if (landCompensationCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Land compensation');
+            categoryButton.setAttribute('href', 'confirm-stat-prov-1-2-many-non-mand');
+        } else if (housingCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Housing');
+            categoryButton.setAttribute('href', 'housing');
+        } else if (otherCategory.classList.contains('selected')) {
+            sessionStorage.setItem('chargeCategory', 'Other');
+            categoryButton.setAttribute('href', 'more-charges');
+        }
+    }
+</script>
+<!--<script>
+
+    document.getElementById('typeOfChargeButton').onclick = function() {
+        var financialLabel = document.getElementById('financialLabel');
+        var planningLabel = document.getElementById('planningLabel');
+        var listedBuildingLabel = document.getElementById('listedBuildingLabel');
+        var landCompensationLabel = document.getElementById('landCompensationLabel');
+        var housingLabel = document.getElementById('housingLabel');
+        var otherLabel = document.getElementById('otherLabel');
+        // financial journey radio button clicked 
+        if (financialLabel.classList.contains('selected')) {
+            var chargeType = 'Financial';  
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'financial-charge/secured-charge-amount');
+        } else if (planningLabel.classList.contains('selected')) {
+            var chargeType = 'Planning';
+
+            // Planning radio button clicked - display   
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'planning-conditions');
+
+        } else if (listedBuildingLabel.classList.contains('selected')) {
+            var chargeType = 'Listed Building';
+            sessionStorage.setItem('listedBuilding', 'true');
+
+            // Listed building radio button clicked  
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'listed-building');
+
+        } else if (landCompensationLabel.classList.contains('selected')) {
+            var chargeType = 'Land Compensation';
+
+            // Land compensation radio button clicked    
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'land-compensation');
+
+        } else if (housingLabel.classList.contains('selected')) {
+            var chargeType = 'Housing';
+
+            // Housing radio button clicked    
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'housing');
+
+        } else if (lonLabel.classList.contains('selected')) {
+            var chargeType = 'Light Obstruction Notice';
+
+        } else if (otherLabel.classList.contains('selected')) {
+            var chargeType = 'Other';
+
+            // Other radio button clicked    
+            document.getElementById('typeOfChargeButton').setAttribute('href', 'more-charges');
+        }
+
+        sessionStorage.setItem('chargeType', chargeType);
+    }
+</script> -->
+{% endblock %}
