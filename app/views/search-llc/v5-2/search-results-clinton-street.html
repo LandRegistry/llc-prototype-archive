@@ -1,0 +1,94 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">
+                Search results
+            </h1>
+            <img src="{{ asset_path }}images/citizen-service/search-extent-1-clinton-street.png" width="50%" height="auto">
+            <br>
+            <p>Not the right area? <a href="search">Search again on the map</a>.</p>
+            <p>There are <span class="bold-small">3 local land charges</span> that affect the land you searched.</p>
+            <h3 class="chargeCategory heading-medium">Planning</h3>
+            <ul class="list">
+                <li><a href="clinton-street-planning-1" class="bold-small">Planning charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">10 November 2017</span></span>
+                </li>
+                <li><a href="clinton-street-planning-2" class="bold-small">Planning charge 2</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">Not provided</span></span>
+                </li>
+                <!-- <li><a href="free-charge-details-3" class="bold-small">Local land charge 3</a><br> Charge creation date is 20 April 2002
+                </li> -->
+            </ul>
+            <h3 class="chargeCategory heading-medium">Housing</h3>
+            <ul class="list">
+                <li><a href="clinton-street-housing" class="bold-small">Housing charge 1</a><br> <span class="font-xsmall">Charge creation date is <span class="bold-xsmall">22 March 2013</span></span>
+                </li>
+            </ul>
+            
+            <br>
+
+            <div class="payPromo">
+                    <h2 class="heading-small">Upgrade to an official search (&pound;15)</h2>
+                <p>Upgrade to an official search and you can download all charges in your search area (in PDF, JSON, CSV, XML)</p>
+                <p>You also get:</p>
+                <ul class="list list-bullet">
+                    <li>unlimited downloads<br>(for 6 months)</li>
+                    <li>unlimited repeats of official searches<br>(for 6 months)<br>Check for new charges, before you exchange contracts or re-mortgage</li>
+                    <li>free search history</li>
+                </ul>
+                <p>Official search results are:</p>
+                <ul class="list list-bullet">
+                    <li>secure (tamper proof)</li>
+                    <li>digitally signed and assured by HM Land Registry</li>
+                </ul>
+                <p>This includes:</p>
+                <ul class="lost list-bullet">
+                    <li>where to get source documents</li>
+                    <li>charge boundary (on a map)</li>
+                </ul><br>
+                <!--<form action="search-results" method="POST">
+                        <div class="form-group">
+                            <input class="button" type="submit" value="Continue to official search">
+                        </div><br><br><br>
+                    </form> -->
+                    <form action="confirm-address" method="GET">
+                        <div class="form-group">
+                            <input class="button" type="submit" value="Continue to official search">
+                        </div><br><br><br>
+                    </form>
+            </div>
+            <br>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</main>
+<script>
+    var addressSelected = sessionStorage.getItem('addressSelected');
+    document.getElementById('address-selected').textContent = addressSelected;
+    /*var addressRetrieved = sessionStorage.getItem('addressSelected');
+    console.log(addressRetrieved);
+    var textToChange = document.getElementById("address-selected");
+    textToChange.textContent = addressRetrieved;*/
+
+    /*var creationDateRetrieved = sessionStorage.getItem('creationDate');
+    console.log(creationDateRetrieved);
+    var dateToChange = document.getElementById('creationDateText');
+    dateToChange.textContent = creationDateRetrieved;*/
+</script>
+
+{% endblock %}

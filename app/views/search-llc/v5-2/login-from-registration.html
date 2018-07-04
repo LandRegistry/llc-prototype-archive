@@ -1,0 +1,49 @@
+{% extends "layout_citizen_regular.html" %} {% block page_title %} Search for a charge {% endblock %} {% block content %}
+
+<main id="content">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="../../feedback">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="govuk-box-highlight">
+                <h1 class="bold-medium" style="position:relative; top: -0.25em">Your password has been updated</h1>
+
+            </div>
+            <h1 class="heading-large">Sign in</h1>
+            <form action="dashboard" method="GET">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="visually-hidden">Sign in to the service</legend>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" id="email" name="login" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" id="password" name="login" type="password">
+                        </div>
+                        <h3 class="heading-medium">Problems signing in?</h3>
+                        <ul class="list">
+                            <li><a href="reset-password">I forgot my password</a></li>
+                            <li><a href="register">I need to register</a></li>
+                        </ul>
+                        <input class="button" id="loginButton" type="submit" value="Sign in">
+                    </fieldset>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+{% endblock %} {% block body_end_additional %}
+<script>
+    document.getElementById('loginButton').onclick = function() {
+        sessionStorage.setItem('loggedIn', 'true');
+    }
+</script>
+{% endblock %}
